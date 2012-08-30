@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 github: bcardarella
 twitter: bcardarella
-category: ruby
+category: opinion
 social: true
 summary: "What to expect when you start hiring"
 published: true
