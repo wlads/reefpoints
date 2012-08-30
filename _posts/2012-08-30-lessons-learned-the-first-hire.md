@@ -8,7 +8,7 @@ twitter: bcardarella
 category: opinion
 social: true
 summary: "What to expect when you start hiring"
-published: false
+published: true
 ---
 
 In February we made our first full-time hire with Dan McClain. He came
