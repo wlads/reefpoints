@@ -8,7 +8,7 @@ twitter: bcardarella
 github: bcardarella
 category: opinion
 social: true
-summary: "Brian talks about what has workked, what has not worked, and
+summary: "Brian talks about what has worked, what has not worked, and
 the changes that have been made at DockYard during its first six month"
 published: true
 ---
