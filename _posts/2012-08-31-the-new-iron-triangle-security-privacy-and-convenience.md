@@ -11,7 +11,7 @@ summary: "Pick two"
 published: false
 ---
 
-If you have not heard of The Iron Triangle here is the basic idea: in a
+If you have not heard of [The Iron Triangle](http://en.wikipedia.org/wiki/Project_management_triangle) here is the basic idea: in a
 software project you generally have three constraints: time, money, and
 quality. If you need the project done more quickly but maintain quality you will need to
 increase the budget. If you want to increase quality you will need to
