@@ -7,7 +7,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 body {
-    line-height: 1;
+    line-height: 1.5;
 }
 ol, ul {
     list-style: none;
@@ -34,17 +34,139 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
     display: block;
 }
+
 @font-face {
-    font-family: "league-gothic";
-    src: url(/fonts/league_gothic.otf) format("opentype");
+  font-family: cubano;
+  src: url('/fonts/cubano.eot');
+  src: url('/fonts/cubano.eot?#iefix') format("embedded-opentype"), url('/fonts/cubano.woff') format("woff"), url('/fonts/cubano.svg') format('svg');
+  font-weight: normal;
 }
+
+@font-face {
+  font-family: leaguegothic;
+  src: url('/fonts/leaguegothic.eot');
+  src: url('/fonts/leaguegothic.eot?#iefix') format('embedded-opentype'), url('/fonts/leaguegothic.woff') format('woff'), url('/fonts/leaguegothic.svg') format('svg');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: fontello;
+  src: url('/fonts/fontello.eot');
+  src: url('/fonts/fontello.eot?#iefix') format("embedded-opentype"), url('/fonts/fontello.woff') format("woff"), url('/fonts/fontello.svg') format('svg');
+  font-weight: normal;
+}
+
 body {
-    color: #2a4954;
-    background: #cfe5e4;
-    font-family: ff-meta-web-pro,  sans-serif;
+  color: #2A5567; /* $blue */
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 1em;
+  min-width: 1000px;
 }
+
 a {
-    color: #BA4F3A;
+  text-decoration: none;
+  color: #2A5567; /* $blue */
+}
+
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+#site-header {
+  background-color: #F05051; /* $red */
+  height: 50px;
+}
+#site-header a {
+  color: #FFFFFF;
+}
+#site-header .nav h1 a {
+  font-family: leaguegothic, helvetica, arial, sans-serif;
+  font-size: 2.15em;
+  float: left;
+}
+#site-header .nav ul {
+  float: right;
+  padding-top: 19px;
+}
+#site-header .nav ul li {
+  float: left;
+}
+#site-header .nav ul li a {
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 25px 15px 10px;
+}
+#site-header .nav ul li a:hover {
+  background-color: #F37172; /* lighten($red, 7%) */
+}
+#blog li.nav-blog a {
+  background-color: #F26364; /* lighten($red, 4%) */
+}
+
+@-moz-document url-prefix() {
+  footer .copyright {
+    top: -10px;
+  }
+}
+
+.social-icon a {
+  font-family: fontello;
+  font-size: 1.35em;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  float: left;
+  background-color: $blue;
+  color: $white;
+  margin: 0 .1em;
+}
+.social-icon a:hover {
+  background-color: $red;
+}
+
+.twitter {
+  line-height: 40px;
+}
+
+.github {
+  line-height: 42px;
+}
+
+footer {
+  padding-top: 7.5em;
+  height: 6em;
+  clear: both;
+  text-align: center;
+}
+footer a {
+  background-color: #2A5567; /* $blue */
+  color: #FFFFFF;
+}
+footer a:hover {
+  background-color: #F05051; /* $red */
+}
+footer ul li {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+footer ul li p {
+  position: relative;
+  top: -1em;
+}
+
+
+
+
+
+
+/*
+a {
+    color: #f05051;
     text-decoration: none;
 }
 a.current, a.current:hover {
@@ -54,30 +176,29 @@ a:hover {
     color: #E65C17;
     text-decoration: underline;
 }
-h1, h2, h3, h4 {
-    font-family: league-gothic, sans-serif;
-}
+
 h1 {
     color: #2A5568;
     font-size: 48px;
     margin: 0 0 20px 0;
-    line-height: 1.1em;
+    font-family: league-gothic, sans-serif;
 }
 h2, h3, h4 {
-    color: #4A7588;
-    font-size: 36px;
-    margin: 0 0 20px 0;
-    line-height: 1.1em;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
 }
-h4 {
-    font-size: 30px;
+h2 {
+  color: #4A7588;
+}
+h3 {
+  color: #5D95AE;
+  font-size: 18px;
 }
 p {
-    line-height: 20px;
+    line-height: 1.5em;
     margin: 0 0 20px 0;
-}
-ul {
-    line-height: 20px;
 }
 header {
     color: #4A7588;
@@ -133,9 +254,8 @@ section section section {
     overflow: hidden;
 }
 section section section header {
-    overflow: hidden;
     background: none;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 section section section header h2 {
     margin: 0;
@@ -311,7 +431,7 @@ section #contact input[type='submit'] {
     color: #FFF;
     font-size: 16px;
     padding: 5px 10px;
-    background: #BA4F3A;
+    background: #f05051;
     letter-spacing: 2px;
     border: 4px solid #FFF;
     text-transform: uppercase;
@@ -322,7 +442,7 @@ section #contact input[type='submit']:hover {
     background: #E65C17;
 }
 section #contact input[type='submit']:active {
-    background: #BA4F3A;
+    background: #f05051;
 }
 section #contact div.string input {
     margin: 0;
@@ -344,7 +464,7 @@ section #contact .error {
     height: 28px;
     padding: 2px 5px;
     line-height: 28px;
-    background: #BA4F3A;
+    background: #f05051;
     vertical-align: middle;
 }
 footer {
@@ -399,3 +519,4 @@ div.field_with_errors div.ui-effects-wrapper {
 strong {
   font-weight: bold;
 }
+*/

@@ -1,4 +1,9 @@
-/* header */
+.nav h1 .reefpoints {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  color: #ABD4E7; /* $l-blue */
+}
+
+/* header 
 
 header section {
   padding-bottom: 0px;
@@ -23,7 +28,7 @@ header section header h2 {
   font-size: 20px;
   text-align: center;
   font-weight: normal;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   text-transform: uppercase;
 }
 
@@ -36,7 +41,7 @@ header section header h2 a:hover {
   text-decoration: none;
 }
 
-/* content */
+content 
 
 section.wrapper {
   width: 980px;
@@ -115,7 +120,6 @@ section#posts article p {
 section#posts li a {
   margin-left: 20px;
   font-size: 1.25em;
-  /* font-weight: bold;*/
 }
 
 section#posts li {
@@ -387,7 +391,7 @@ textarea {
   font-family: ff-meta-web-pro, sans-serif;
 }
 
-/* jquery in field label  */
+jquery in field label  
 
 form.inFieldLabel label {
   display: none;
@@ -405,7 +409,7 @@ header .mobile-nav {
   display: none;
 }
 
-/* Smartphones (portrait and landscape) ----------- */
+Smartphones (portrait and landscape) ----------- 
 
 @media only screen
 and (min-width : 320px)
@@ -607,3 +611,4 @@ and (max-width : 480px) {
     display: block;
   }
 }
+*/
