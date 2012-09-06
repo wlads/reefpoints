@@ -68,6 +68,26 @@ a {
   color: #2A5567; /* $blue */
 }
 
+.clear {
+  clear: both;
+}
+
+.logo-big {
+  font-family: leaguegothic;
+  font-size: 7.25em;
+  margin: 0 auto;
+  width: 300px;
+}
+.reefpoints {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  color: #ABD4E7;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 1.5em;
+  margin: -1.5em 0 1em 0;
+}
+
 .wrap {
   width: 980px;
   margin: 0 auto;
