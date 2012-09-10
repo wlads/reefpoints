@@ -120,7 +120,7 @@
 
 #contact-link {
   clear: both;
-  width: 300px;
+  width: 235px;
   height: 80px;
   border-style: solid;
   border-color: #2A5567; /* $blue */;
@@ -136,6 +136,7 @@
 
 #contact-link h1 {
   font-family: leaguegothic;
+  font-size: ;
 }
 
 input.search {
