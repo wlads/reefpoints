@@ -6,22 +6,16 @@ layout: default
 
   <section class='post-wrap'>
 
-    <div class='post-content'>
-      <header>
-        <h1 class='post-title'>{{ page.title }}</h1>
-      </header>
-      <article class='blog-post'>
-        {{ content }}
-      </article>
-    </div>
+    
 
     <aside>
       <ul class='meta'>
         <li class='date'>{{ page.date | date_to_string }}</li>
           {% if page.author %}
-          <li class='author'>
-            By: {{ page.author }}
-            {% endif %}
+        <li class='author'>
+          By: {{ page.author }}
+          {% endif %}
+<!--
             {% if page.social %}
             {% endif %}
           </li>
@@ -38,15 +32,20 @@ layout: default
                 <a class='github' href='http://github.com/{{ page.github }}' target='_blank'>g</a>
               {% endif %}
             </span>
+-->
           </li>
       </ul>
 
-      <div id='contact-link'>
-        <img src='/images/narwin.png' class='narwin' alt='DockYard Narwin'>
-        <h1>Contact Us</h1>
-      </div>
-
     </aside>
+
+    <div class='post-content'>
+      <h1 class='post-title'>{{ page.title }}</h1>
+      <article class='blog-post'>
+        {{ content }}
+      </article>
+    </div>
+
+    
 
   </section>
 </section>

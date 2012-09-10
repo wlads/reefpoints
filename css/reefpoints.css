@@ -1,6 +1,9 @@
 #posts {
   clear: left;
 }
+#post {
+  clear: left;
+}
 
 #posts article header {
   text-align: right;
@@ -14,17 +17,13 @@
   width: 670px;
   float: right;
   position: relative;
-  right: 50px;
+  right: 30px;
 }
 
 #posts article {
-  margin-bottom: 3em;
-  padding-bottom: 3em;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
   border-bottom: 1px solid #E6E7E8;
-}
-
-#posts article:last-child {
-  border-bottom-style: none;
 }
 
 #posts article a:hover {
@@ -32,9 +31,18 @@
   color: #F05051; /* $red */
 }
 
+.post-wrap {
+  position: relative;
+  top: 2em;
+}
+
+.date {
+  font-size: 1.15em;
+}
 .author {
   font-family: poly;
   font-style: italic;
+  font-size: 1.15em;
 }
 
 .blog-date {
@@ -48,14 +56,16 @@
 }
 
 .post-content {
-  width: 650px;
-  margin: 2em 20px 2em -5.5em;
-  float: left;
+  width: 680px;
+  float: right;
+  margin-right: 4em;
 }
 
 .post-title {
-  font-weight: bold;
-  font-size: 2em;
+  font-family: cubano;
+  font-size: 2.5em;
+  line-height: 1.15em;
+  margin-bottom: .75em;
 }
 
 .blog-post h2 {
@@ -70,10 +80,29 @@
   font-size: 1.25em;
 }
 
+#post a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#post a:hover {
+  color: #F05051; /* $red */
+}
+#post p {
+  margin-bottom: 1em;
+}
+
+.blog-post ul li {
+  margin-left: 1em;
+  list-style-type: square;
+}
+.blog-post ul {
+  margin-bottom: 1em;
+}
+.blog-post ol {margin-bottom: 1em;}
+
 #post aside {
-  width: 250px;
-  float: right;
-  margin-top: 5em;
+  width: 200px;
+  float: left;
 }
 
 #post aside li {
@@ -95,6 +124,7 @@
   clear: both;
 }
 
+/*
 #post aside .social a {
   font-family: fontello;
   font-size: 1.35em;
@@ -104,39 +134,19 @@
   border-radius: 50%;
   display: block;
   text-align: center;
-  background-color: #2A5567; /* $blue */;
+  background-color: #2A5567;
   color: #FFFFFF;
   margin-top: -.35em;
 }
 
 #post aside .social a:hover {
-  background-color: #F05051; /* $red */
+  background-color: #F05051;
 }
+*/
 
 #share {
   clear: both;
   margin-top: 2em;
-}
-
-#contact-link {
-  clear: both;
-  width: 235px;
-  height: 80px;
-  border-style: solid;
-  border-color: #2A5567; /* $blue */;
-  border-width: 1px;
-  border-radius: 5px;
-}
-
-#contact-link img {
-  width: 80px;
-  height: 72px;
-  float: left;
-}
-
-#contact-link h1 {
-  font-family: leaguegothic;
-  font-size: ;
 }
 
 input.search {

@@ -16,7 +16,7 @@ The `lib/` directory is the Red Headed Stepchild of your Rails
 application. Let's discuss some conventions for keeping it clean and
 what should and shouldn't go in there.
 
-#### It's not a dump ####
+## It's not a dump ##
 
 ![Dump](/images/dump.jpg)
 
@@ -42,7 +42,7 @@ working on that is so generic it can be shared with other applications
 you are (or will be) working on. Or, even better, with the community in
 general as Open Source. That brings me to the next point.
 
-#### Understanding the load path ####
+## Understanding the load path ##
 
 If you have written a Rubygem, or at the very least, looked through one,
 you know that the `lib/` directory is special. The short version of the
@@ -77,7 +77,7 @@ app's `lib/` instead of in the proper gem. This of course is more of an interest
 useful. But it does do a good job of demonstrating how Rubygems' lookup
 happens.
 
-#### Use initializers for initializing, that is all ####
+## Use initializers for initializing, that is all ##
 
 I have seen developers dump code into initializers that has no business
 being there. Yes, it loads and it works. That is not the point. We have
@@ -88,7 +88,7 @@ directory. If you **must** monkey patch. Put it into the `lib/`
 directory. If you are creating a new class or module that has no
 business being in `app/models` put it in to the `lib/` directory.
 
-#### Using lib/ to extend core, stlib, or a gem ####
+## Using lib/ to extend core, stlib, or a gem ##
 
 Far too often I've needed to extend a class that is being defined
 outside of my project. There are a few ways to deal with this. You can
@@ -169,7 +169,7 @@ surprises. In addition this pattern can
 be repeated for `Core` and `Stdlib` classes in `core_ext` and `stdlib_ext`
 respectively.
 
-#### Using lib/ as a pattern to extracting Rubygems ####
+## Using lib/ as a pattern to extracting Rubygems ##
 
 A pattern I have fallen upon when wanting to extract functionality out
 of an app into a Rubygem has been to first extract that code into the
@@ -194,7 +194,7 @@ From here, if Patrick wanted to release this as a gem it wouldn't take
 too much effort. Some renaming of classes would be required but he has
 all of the major parts in place.
 
-#### Go forth and show some <3<3<3<3 ####
+## Go forth and show some <3<3<3<3 ##
 
 Keeping your code clean pays itself forward in many way. The team you
 are apart of or the team you are handing off to will thank you. Heck,
