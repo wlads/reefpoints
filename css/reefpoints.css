@@ -40,9 +40,7 @@
   font-size: 1.15em;
 }
 .author {
-  font-family: poly;
   font-style: italic;
-  font-size: 1.15em;
 }
 
 .blog-date {
@@ -147,6 +145,18 @@
 #share {
   clear: both;
   margin-top: 2em;
+  padding-top: 2em;
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: #ABD4E7;
+  margin-bottom: 1em;
+}
+#share h1 {
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+.twitter-share-button {
+  float: left;
 }
 
 input.search {
