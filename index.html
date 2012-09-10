@@ -4,9 +4,8 @@ title: DockYard Blog
 ---
 
 <section id='posts'>
-  
-  <h1 class='logo-big'>DockYard</h1>
-  <h2 class='reefpoints'>Reefpoints</h2>
+
+  <h1 class='reefpoints'>Reefpoints</h1>
 
   {% for post in site.posts %}
     <article>
@@ -28,4 +27,7 @@ title: DockYard Blog
       <div class='clear'></div>
     </article>
   {% endfor %}
+  
+  <input class="search" name="search" type="text" value="Search all of our posts...">
+  
 </section>
