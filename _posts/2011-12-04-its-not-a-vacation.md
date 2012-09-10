@@ -8,7 +8,7 @@ github: bcardarella
 social: true
 ---
 
-DockYard is invading The Ocean State!
+### DockYard is invading The Ocean State! ###
 
 ![Ocean State](/images/ocean_state.jpg)
 

@@ -10,7 +10,7 @@ published: false
 
 Every platform should have the [Killer App](http://en.wikipedia.org/wiki/Killer_application) The [AppleII](http://en.wikipedia.org/wiki/Apple_II) had [VisiCalc](http://en.wikipedia.org/wiki/VisiCalc), 3D accelerated hardware had [Quake](http://en.wikipedia.org/wiki/Quake_(video_game)), and the [XBox](http://en.wikipedia.org/wiki/Xbox) had [Halo](http://en.wikipedia.org/wiki/Halo_(series)) (just some examples of killer apps). Are we to believe that games such as [Angry Birds](http://en.wikipedia.org/wiki/Angry_Birds) and [Fruit Ninja](http://en.wikipedia.org/wiki/Fruit_Ninja) are the **true** Killer Apps for mobile?
 
-#### I don't think so ####
+## I don't think so ##
 
 IMO a killer app must provide a reason for you to purchase the hardware.
 The software is so good, something that you cannot obtain on any other
@@ -19,7 +19,7 @@ entire system. Even though I see many people playing these games on
 their mobile phone I find it hard to believe they bought their mobile
 phones for the purpose of any one of these games.
 
-#### The platform of the future ####
+## The platform of the future ##
 
 In a [recent Fast Company interview, Bill Nguyen spoke about the "post-PC
 world"](http://www.fastcompany.com/magazine/160/bill-nguyen-startups).
@@ -39,7 +39,7 @@ they want to take on any risk? It doesn't make sense. So when the
 state-of-the-art moves forward there becomes opportunity for disruption.
 We're currently in the beginning of this "Post-PC world".
 
-#### If there is no killer app then why do I have a phone? ####
+## If there is no killer app then why do I have a phone? ##
 
 That's a good question. When I think about what defines my experience as
 a mobile user I come up with: email, Twitter, maps, and phone calls. In
@@ -64,7 +64,7 @@ important calls from my gMail account.
 Geolocating myself with maps and getting directions is great. Of course
 his is better than the PC.
 
-#### And that's the point ####
+## And that's the point ##
 
 Maps are a better experience on my phone because they make use of
 several technologies that my PC does have: GPS and compass.

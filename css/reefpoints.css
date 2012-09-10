@@ -21,12 +21,16 @@
   margin-bottom: 1em;
 }
 
+#posts article:last-child {
+  border-bottom-style: none;
+}
+
 #posts article a:hover {
   text-decoration: underline;
   color: #F05051; /* $red */
 }
 
-.blog-author {
+.author {
   font-family: poly;
   font-style: italic;
 }
@@ -40,9 +44,9 @@
 }
 
 .post-content {
-  width: 670px;
+  width: 650px;
+  margin: 2em 20px 2em -5.5em;
   float: left;
-  margin: 0 20px 0 0;
 }
 
 .post-title {
@@ -63,13 +67,71 @@
 }
 
 #post aside {
-  width: 230px;
+  width: 250px;
   float: right;
+  margin-top: 5em;
+}
+
+#post aside li {
+  float: left;
+  margin-right: .75em;
+}
+
+#post aside .author {
+  margin-bottom: 2em;
+  clear: both;
+}
+
+#post aside .date {
+  font-weight: bold;
+  margin-bottom: .15em;
+}
+
+.hire-us {
+  clear: both;
+}
+
+#post aside .social a {
+  font-family: fontello;
+  font-size: 1.35em;
+  font-style: normal;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  background-color: #2A5567; /* $blue */;
+  color: #FFFFFF;
+  margin-top: -.35em;
+}
+
+#post aside .social a:hover {
+  background-color: #F05051; /* $red */
 }
 
 #share {
   clear: both;
   margin-top: 2em;
+}
+
+#contact-link {
+  clear: both;
+  width: 300px;
+  height: 80px;
+  border-style: solid;
+  border-color: #2A5567; /* $blue */;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+#contact-link img {
+  width: 80px;
+  height: 72px;
+  float: left;
+}
+
+#contact-link h1 {
+  font-family: leaguegothic;
 }
 
 /* header 

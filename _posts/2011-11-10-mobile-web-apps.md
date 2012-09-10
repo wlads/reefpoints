@@ -21,7 +21,7 @@ Native applications (iOS, Android, etc.) still have and will continue
 to have some significant advantages over mobile web apps. Let's start
 with the obvious...
 
-#### Native functionality
+### Native functionality ###
 
 Having access to mobile hardware such as the camera, microphone, and
 storage (file system, internal datbases, etc...) is important. There is also the issue
@@ -50,7 +50,7 @@ canvas apps to close the gap between their native desktop counterparts.
 Mobile web gaming will not be competing with native mobile gaming
 anytime soon.
 
-#### Performance
+### Performance ###
 
 Native is the clear winner here but with each new generation of phone
 hardware the lead is becoming less noticeable. In fact, I'm going to
@@ -79,7 +79,7 @@ list for 1.0 Gold is a [performance boost for page enhancement](https://github.c
 Closing the performance gap on jQuery Mobile is going to be a watershed
 moment for mobile web application development.
 
-#### Distribution
+### Distribution ###
 
 Nothing beats the web as a distribution platform. Every time I use a web
 app I am on the latest version of that app. If there are any business
@@ -93,7 +93,7 @@ your phone, mobile web applications do not. Yes, you can save links to
 the mobile web app and make it appear you have it installed. But what
 about off-line mode?
 
-#### Discovery
+### Discovery ###
 
 I'm going to argue that native applications win here. Finding a native
 mobile application is easier than finding a mobile web application.
@@ -108,7 +108,7 @@ understand why the mobile app stores have not put more effort into
 perfecting discovery. I'm more likely to purchase an application that I
 like if I can find it easily.
 
-#### PhoneGap (Apache Callback)
+### PhoneGap (Apache Callback) ###
 
 If you've made it this far you've probably been yelling at your screen
 "**PhoneGap!**" to several of the points I've made above. Yes, PhoneGap solves many of these problems. But how do
@@ -164,7 +164,7 @@ others](http://wiki.phonegap.com/w/page/36752779/PhoneGap%20Plugins).
 PhoneGap is fantastic (despite some of the criticism I've stated). We have
 high hopes for the project now that it is accepted into Apache.
 
-### Conclusion
+## Conclusion ##
 
 Perhaps [Adobe's announcement that they are abandoning Flash in
 favor of HTML5 for mobile](http://techland.time.com/2011/11/09/mobile-flash-abandoned-for-html5-adobe-surrenders-apple-wins/?iid=tl-main-lede) will be seen as the turning point when

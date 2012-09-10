@@ -39,7 +39,7 @@ those people find other consultancies/freelancers.
 
 ## Employees ##
 
-#### Salary ####
+### Salary ###
 
 DockYard started as bringing together three freelance developers. The
 first mistake I made was not insisting that everyone start on fulltime
@@ -77,14 +77,14 @@ Here are some things that, arguably, are
 [bikeshedding](http://en.wikipedia.org/wiki/Parkinson's_Law_of_Triviality)
 but I have been insisting on:
 
-#### The trivial ####
+### The trivial ###
 
 * Whitespace
 * Single quotes instead of double quotes
 * Verbose variable names
 * Consistency between backend model names and HTML markup class names
 
-#### The important ####
+### The important ###
 
 * Testing
 * Code quality

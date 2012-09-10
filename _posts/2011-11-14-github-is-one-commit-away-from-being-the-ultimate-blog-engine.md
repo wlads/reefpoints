@@ -17,9 +17,9 @@ browser. Here at [DockYard](http://dockyard.com) we've been using
 are written in [Jekyll](https://github.com/mojombo/jekyll). So we're
 doing all of our post creation and editing locally.
 
-#### The Dream ####
+## The Dream ##
 
-It would be great if GitHub allowed us to create new [blobs](http://book.git-scm.com/1_the_git_object_model.html) from the web interface.
+It would be great if GitHub allowed us to create new [blogs](http://book.git-scm.com/1_the_git_object_model.html) from the web interface.
 At that point GitHub would be a full-service blog engine. Think about it, they already do the
 hosting, version tracking, and editing of files through the web
 interface. If file creation was added that's pretty much all I would

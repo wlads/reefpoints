@@ -2,57 +2,68 @@
 layout: default
 ---
 
-<section id="post">
+<section id='post'>
 
-  <section class="post-wrap">
+  <section class='post-wrap'>
+
     <div class='post-content'>
       <header>
         <h1 class='post-title'>{{ page.title }}</h1>
       </header>
-    
       <article class='blog-post'>
         {{ content }}
       </article>
     </div>
+
     <aside>
-      <ul class="meta">
-        {% if page.author %}
-          <li class="author">
+      <ul class='meta'>
+        <li class='date'>{{ page.date | date_to_string }}</li>
+          {% if page.author %}
+          <li class='author'>
             By: {{ page.author }}
+            {% endif %}
             {% if page.social %}
-              <span class="social">
-                {% if page.twitter %}
-                  <a class="twitter" href="http://twitter.com/{{ page.twitter }}">Twitter</a>
-                {% endif %}
-                {% if page.github %}
-                  <a class="github" href="http://github.com/{{ page.github }}">Github</a>
-                {% endif %}
-              </span>
             {% endif %}
           </li>
-        {% endif %}
-        <li class="date">{{ page.date | date_to_string }}</li>
+          <li>
+            <span class='social'>
+              {% if page.twitter %}
+                <a class='twitter' href='http://twitter.com/{{ page.twitter }}' target='_blank'>t</a>
+              {% endif %}
+            </span>
+          </li>
+          <li>
+            <span class='social'>
+              {% if page.github %}
+                <a class='github' href='http://github.com/{{ page.github }}' target='_blank'>g</a>
+              {% endif %}
+            </span>
+          </li>
       </ul>
 
-      <h2 class="hire-us"><a href="#">We build mobile &amp; web apps.<span>You should hire us.</span><em id="arrow">&#9654;</em></a></h2>
-      <section id="form-container">
-        <iframe src="http://dockyard.com/contact_enquiry" height="460" width="390"></iframe>
-       </section>
+      <div id='contact-link'>
+        <img src='/images/narwin.png' class='narwin' alt='DockYard Narwin'>
+        <h1>Contact Us</h1>
+      </div>
+
     </aside>
+
   </section>
 </section>
-<section id="share">
-  <h4>Like the article? Please share!</h4>
-  <div class="social-button"><a href="https://twitter.com/share" class="twitter-share-button" data-via="DockYard">Tweet</a></div>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-  <div class="social-button"><div class="g-plusone" data-size="medium" data-width="100" data-href="#"></div></div>
-  <script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+<section id='share'>
+  <h4>Like the article? Please share!</h4>
+  <div class='social-button'><a href='https://twitter.com/share' class='twitter-share-button' data-via='DockYard'>Tweet</a></div>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>
+
+  <div class='social-button'><div class='g-plusone' data-size='medium' data-width='100' data-href='#'></div></div>
+  <script type='text/javascript'>(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
 </section>
-<section id="comments">
+
+<section id='comments'>
   {% if page.comments %}
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
+  <div id='disqus_thread'></div>
+  <script type='text/javascript'>
     var disqus_shortname = 'reefpoints';
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -60,6 +71,6 @@ layout: default
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
   {% endif %}
 </section>
