@@ -15,27 +15,23 @@ layout: default
         <li class='author'>
           {{ page.author }}
           {% endif %}
-<!--
-            {% if page.social %}
+          {% if page.social %}
+          {% endif %}
+        </li>
+        <li>
+          <span class='social'>
+            {% if page.twitter %}
+              <a class='twitter' href='http://twitter.com/{{ page.twitter }}' target='_blank'>t</a>
             {% endif %}
-          </li>
-          <li>
-            <span class='social'>
-              {% if page.twitter %}
-                <a class='twitter' href='http://twitter.com/{{ page.twitter }}' target='_blank'>t</a>
-              {% endif %}
-            </span>
-          </li>
-          <li>
-            <span class='social'>
-              {% if page.github %}
-                <a class='github' href='http://github.com/{{ page.github }}' target='_blank'>g</a>
-              {% endif %}
-            </span>
--->
-          </li>
+            {% if page.github %}
+              <a class='github' href='http://github.com/{{ page.github }}' target='_blank'>g</a>
+            {% endif %}
+          </span>
+        </li>
+        <li>
+          
+        </li>
       </ul>
-
     </aside>
 
     <div class='post-content'>

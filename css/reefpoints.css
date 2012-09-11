@@ -87,6 +87,7 @@
 }
 #post p {
   margin-bottom: 1em;
+  line-height: 1.65;
 }
 
 .blog-post ul li {
@@ -103,16 +104,6 @@
   float: left;
 }
 
-#post aside li {
-  float: left;
-  margin-right: .75em;
-}
-
-#post aside .author {
-  margin-bottom: 2em;
-  clear: both;
-}
-
 #post aside .date {
   font-weight: bold;
   margin-bottom: .15em;
@@ -122,11 +113,11 @@
   clear: both;
 }
 
-/*
 #post aside .social a {
   font-family: fontello;
   font-size: 1.35em;
   font-style: normal;
+  font-weight: normal;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -134,13 +125,15 @@
   text-align: center;
   background-color: #2A5567;
   color: #FFFFFF;
-  margin-top: -.35em;
+  margin-top: .25em;
+  text-decoration: none;
+  float: left;
+  margin-right: .25em;
 }
 
 #post aside .social a:hover {
   background-color: #F05051;
 }
-*/
 
 #share {
   clear: both;
