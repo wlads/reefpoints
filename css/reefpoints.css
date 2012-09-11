@@ -13,8 +13,15 @@
   padding: 0 10px;
 }
 
+#posts article header h4 a {
+  opacity: .5;
+}
+#posts article header h4 a:hover {
+  color: #2A5567;
+}
+
 .blog-entries {
-  width: 670px;
+  width: 665px;
   float: right;
   position: relative;
   right: 30px;
@@ -38,9 +45,6 @@
 
 .date {
   font-size: 1.15em;
-}
-.author {
-  font-style: italic;
 }
 
 .blog-date {
