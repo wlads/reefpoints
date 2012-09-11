@@ -33,10 +33,6 @@
   border-bottom: 1px solid #E6E7E8;
 }
 
-#posts article:last-child {
-  border-bottom-style: none;
-}
-
 #posts article a:hover {
   text-decoration: underline;
   color: #F05051; /* $red */
