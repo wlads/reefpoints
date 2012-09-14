@@ -5,6 +5,11 @@ title: DockYard Blog
 
 <h1 class='reefpoints'>Reef Points</h1>
 
+<form class="search_reefpoints">
+  <label for="search">Search ReefPoints</label>
+  <input class="search" id="search" name="search" type="text" value="">
+</form>
+
 <section id='posts'>
   {% for post in site.posts %}
     <article>
@@ -29,8 +34,3 @@ title: DockYard Blog
   {% endfor %}
 
 </section>
-
-<form>
-  <label for="search">Search ReefPoints</label>
-  <input class="search" id="search" name="search" type="text" value="">
-</form>

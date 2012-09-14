@@ -85,13 +85,13 @@ a {
   margin: 0 auto;
   width: 300px;
 }
+
 .reefpoints {
   font-family: candy, sans-serif;
   text-align: center;
   font-size: 6em;
-  margin-bottom: .55em;
   position: relative;
-  top: .25em;
+  margin: .25em 0 .5em 0;
 }
 
 .wrap {
