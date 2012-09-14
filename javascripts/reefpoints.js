@@ -12,4 +12,7 @@ $(function(){
     $('header ul').slideUp();
     return false;
   });
+  $('#search').liveUpdate('#posts');
+  $('#posts article:gt(4)').hide();
 });
+

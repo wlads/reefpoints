@@ -3,10 +3,9 @@ layout: default
 title: DockYard Blog
 ---
 
+<h1 class='reefpoints'>Reef Points</h1>
+
 <section id='posts'>
-
-  <h1 class='reefpoints'>Reef Points</h1>
-
   {% for post in site.posts %}
     <article>
       <header>
@@ -28,7 +27,10 @@ title: DockYard Blog
       <div class='clear'></div>
     </article>
   {% endfor %}
-  
-  <input class="search" name="search" type="text" value="Search all of our posts...">
-  
+
 </section>
+
+<form>
+  <label for="search">Search ReefPoints</label>
+  <input class="search" id="search" name="search" type="text" value="">
+</form>
