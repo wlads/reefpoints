@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Angelo Siemoni is a DockYarder!
+title: Angelo Simeoni is a DockYarder!
 comments: true
 author: Brian Cardarella
 twitter: bcardarella
