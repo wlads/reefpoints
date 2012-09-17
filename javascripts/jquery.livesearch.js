@@ -24,7 +24,10 @@ jQuery.fn.liveUpdate = function(list){
 
     if ( !term ) {
       rows.show();
-      $('#posts article:gt(4)').hide();
+      if ( window.viewedAll !== true ) {
+        $('#posts article:gt(4)').hide();
+      };
+      $('.nothin').hide();
     } else {
       rows.hide();
 
@@ -33,9 +36,23 @@ jQuery.fn.liveUpdate = function(list){
         if (score > 0) { scores.push([score, i]); }
       });
 
+      var count = 0;
+      
       jQuery.each(scores.sort(function(a, b){return b[0] - a[0];}), function(){
+        count += 1;
         jQuery(rows[ this[1] ]).show();
       });
+
+      if ( count === 0 ){
+        $('.nothin').fadeIn();
+        if ( window.playedSound !== true ) {
+          $('.trombone').get(0).play();
+          window.playedSound = true;
+        };
+      } else {
+        $('.nothin').hide();
+        window.playedSound = false;
+      };
     }
   }
 };
