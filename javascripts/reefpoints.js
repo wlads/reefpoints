@@ -21,6 +21,7 @@ $(function(){
     $('.nothin').hide();
     window.viewedAll = true
     window.playedSound = false;
+    $('.show-all-posts').hide();
   });
 });
 

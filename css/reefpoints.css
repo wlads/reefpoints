@@ -105,7 +105,14 @@
 .blog-post ul {
   margin-bottom: 1em;
 }
-.blog-post ol {margin-bottom: 1em;}
+.blog-post ol {
+  margin-bottom: 1em;
+}
+
+.blog-post img {
+  display: block;
+  margin: 0 auto;
+}
 
 #post aside {
   width: 200px;
