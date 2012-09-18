@@ -8,7 +8,7 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Storing arrays natively in PostgreSQL is now supported by Rails"
-published: false
+published: true
 ---
 
 I'm happy to announce that [Rails 4.0 now has support for PostgreSQL
@@ -84,7 +84,7 @@ If we then retrieved this record from the database, the `nicknames`
 value would be casted to an array, instead of returning the string of
 `{Jack,Johnny}`.  Rails 4.0 has a pure ruby array value parser, but if
 you would like to speed up the parsing process, the previously mentioned
-[pg_array_parser](https://github.com/dockyard/pg_array_parser)
+[pg\_array\_parser](https://github.com/dockyard/pg_array_parser)
 gem will be used if it is available. PgArrayParser has
 a C extension, and a Java implementation for JRuby (although the gem
 currently broken in JRuby, this is something I am fixing now).
