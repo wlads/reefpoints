@@ -46,9 +46,10 @@ jQuery.fn.liveUpdate = function(list){
       if ( count === 0 ){
         $('.nothin').fadeIn();
         if ( window.playedSound !== true ) {
-          $('.trombone').get(0).play();
+          $('.foghorn').get(0).play();
           window.playedSound = true;
         };
+        $('.show-all-posts').show();
       } else {
         $('.nothin').hide();
         window.playedSound = false;
