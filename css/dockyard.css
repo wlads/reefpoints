@@ -182,3 +182,24 @@ footer ul li p {
   position: relative;
   top: -1em;
 }
+footer .copyright {
+  line-height: .35;
+  position: relative;
+  top: -.35em;
+}
+footer .copyright p {
+  margin-bottom: 0;
+}
+footer .copyright a {
+  background-color: transparent;
+  color: #2A5567; /* $blue */
+  font-weight: bold;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  text-align: center;
+  font-size: 1em;
+  width: 385px;
+}
+footer .copyright a:hover {
+  color: #F05051; /* $red */
+  text-decoration: underline;
+}
