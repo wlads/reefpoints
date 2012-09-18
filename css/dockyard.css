@@ -101,19 +101,18 @@ a {
 
 #site-header {
   background-color: #F05051; /* $red */
-  height: 50px;
+  height: 48px;
 }
 #site-header a {
   color: #FFFFFF;
 }
 #site-header .nav h1 a {
   font-family: leaguegothic, helvetica, arial, sans-serif;
-  font-size: 2.15em;
+  font-size: 32px;
   float: left;
 }
 #site-header .nav ul {
   float: right;
-  padding-top: 19px;
 }
 #site-header .nav ul li {
   float: left;
@@ -121,7 +120,8 @@ a {
 #site-header .nav ul li a {
   font-weight: bold;
   font-size: 0.8em;
-  padding: 25px 15px 10px;
+  padding: 19px 15px 10px 15px;
+  float: left;
 }
 #site-header .nav ul li a:hover {
   background-color: #F37172; /* lighten($red, 7%) */
@@ -182,4 +182,3 @@ footer ul li p {
   position: relative;
   top: -1em;
 }
-
