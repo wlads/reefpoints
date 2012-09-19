@@ -3,23 +3,19 @@ layout: default
 ---
 <div class='wrap'>
 <section id='post'>
-
-  <section class='post-wrap'>
-
-    
-
+<section class='post-wrap'>
     <aside>
-      <ul class='meta'>
-        <li class='date'>{{ page.date | date_to_string }}</li>
+      <ul>
+        <li class='post-date'>{{ page.date | date_to_string }}</li>
           {% if page.author %}
-        <li class='author'>
+        <li>
           {{ page.author }}
           {% endif %}
           {% if page.social %}
           {% endif %}
         </li>
         <li>
-          <span class='social'>
+          <span>
             {% if page.twitter %}
               <a class='twitter' href='http://twitter.com/{{ page.twitter }}' target='_blank'>t</a>
             {% endif %}
@@ -34,13 +30,13 @@ layout: default
       </ul>
     </aside>
 
-    <div class='post-content'>
+    <div class='post-div'>
       <h1 class='post-title'>{{ page.title }}</h1>
-      <article class='blog-post'>
+      <article class='post-content'>
         {{ content }}
       </article>
       
-      <section id='share'>
+      <section class='post-share'>
         <h1>Like the article? Please share!</h1>
         <div class='social-button'><a href='https://twitter.com/share' class='twitter-share-button' data-via='DockYard'>Tweet</a></div>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>
@@ -49,7 +45,7 @@ layout: default
         <script type='text/javascript'>(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
       </section>
       
-      <section id='comments'>
+      <section id='post-comments'>
         {% if page.comments %}
         <div id='disqus_thread'></div>
         <script type='text/javascript'>
@@ -65,7 +61,6 @@ layout: default
       </section>
       
     </div>
-
-  </section>
+</section>
 </section>
 </div>

@@ -4,7 +4,7 @@ jQuery.fn.liveUpdate = function(list){
   if ( list.length ) {
     var rows = list.children('article'),
       cache = rows.map(function(){
-        var $blogDetails = $(this).find('.blog-entries');
+        var $blogDetails = $(this).find('.index-post');
         var title = $blogDetails.find('h2 a').text().toLowerCase();
         var summary = $blogDetails.find('p').text().toLowerCase();
         return title + " " + summary;
@@ -25,7 +25,7 @@ jQuery.fn.liveUpdate = function(list){
     if ( !term ) {
       rows.show();
       if ( window.viewedAll !== true ) {
-        $('#posts article:gt(4)').hide();
+        $('#index article:gt(4)').hide();
       };
       $('.nothin').hide();
     } else {

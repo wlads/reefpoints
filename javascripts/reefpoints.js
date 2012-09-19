@@ -13,11 +13,11 @@ $(function(){
     return false;
   });
   
-  $('#search').liveUpdate('#posts');
-  $('#posts article:gt(4)').hide();
+  $('#search').liveUpdate('#index');
+  $('#index article:gt(4)').hide();
   $('.show-all-posts').click(function(event) {
     event.preventDefault();
-    $('#posts article').fadeIn();
+    $('#index article').fadeIn();
     $('.nothin').hide();
     window.viewedAll = true
     window.playedSound = false;

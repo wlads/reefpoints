@@ -3,28 +3,27 @@ layout: default
 title: DockYard Blog
 ---
 
-<h1 class='reefpoints'>Reef Points</h1>
+<h1 class='logo'>Reef Points</h1>
 
 <form class="search_reefpoints">
   <label for="search">Search Reef Points</label>
   <input class="search" id="search" name="search" type="text" value="">
 </form>
 
-<section id='posts'>
+<section id='index'>
   {% for post in site.posts %}
     <article>
       <header>
-        <time class='blog-date' pubdate datetime='{{ post.date }}'>{{ post.date || date_to_string }}</time>
-        <p class='author'>
+        <time class='index-date' pubdate datetime='{{ post.date }}'>{{ post.date || date_to_string }}</time>
+        <p class='index-author'>
           {{ post.author }}
         </p>
         {% if post.comments %}
           <h4><a href='{{ post.url }}#disqus_thread'>.</a><h4>
         {% endif %}
       </header>
-      <div class='blog-entries'>
-        <h2><a href='{{ post.url }}' class='blog-title'>{{ post.title }}</a></h2>
-        
+      <div class='index-post'>
+        <h2><a href='{{ post.url }}' class='index-title'>{{ post.title }}</a></h2>
         <p>
           {{ post.summary }}
         </p>
