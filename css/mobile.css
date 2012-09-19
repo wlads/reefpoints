@@ -1,12 +1,13 @@
-@media only screen and (max-device-width: 480px)
+@media only screen and (min-width : 320px) and (max-width : 480px)
 {
-  body {
-    min-width: 480px;
-  }
-  .wrap {
-    width: 480px;
-    margin: 0 auto;
-  }
-  
-  
+  body {min-width: 0;}
+  .wrap {width: 400px;}
+  input.search {width: 375px;}
+  #index article header {display: none;}
+  .index-post {width: auto; right: 0; text-align: center; float: none;}
+  .index-post p {margin: 1em 2em 0;}
+  .show-all-posts {width: auto; font-weight: bold; background-color: #ABD4E7; color: #FFFFFF; width: 375px; border-radius: 10px; padding: .75em 0; font-size: 1.5em;}
+  .footer-text {width: 250px;}
+  footer ul .footer-text {line-height: 1.5;}
+  footer ul .footer-text a {width: 250px; margin-top: -1em;}
 }
