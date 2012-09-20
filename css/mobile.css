@@ -3,55 +3,66 @@
 @media only screen and (min-width : 320px) and (max-width : 480px){
   
   #mobile-header {
-    display: inline;
+    display: block;
+    background-color: #F05051; /* $red */
+  }
+  
+  .mobile-bar {
+    display: block;
+    width: 380px;
+    margin: 0 auto;
+  }
+  
+  #mobile-logo {
+    font-family: leaguegothic;
+    font-size: 2em;
+    color: #FFFFFF;
+  }
+  
+  .mobile-button {
+    color: #FFFFFF;
+    font-family: fontello;
+    font-size: 1.5em;
+    text-align: right;
+    display: block;
+    position: absolute;
+    top: .25em;
+    right: 2em;
+    cursor: pointer;
   }
   
   #mobile-nav {
-    margin: 0 auto;
     width: 100%;
-    background-color: #333;
-    display: none;    
+    display: none;
+    text-align: center;
   }
-
-  .menu-button {
+  
+  .mobile-nav-icon {
     font-family: fontello;
-    text-align: right;
-    display: block;
-    padding: 1em;
-    background-color: #F05051; /* $red */
-    color: #fff;
-    cursor: pointer;
+    font-size: 2em;
   }
 
   #mobile-nav li {
     position: relative;
-    display: block;  
-    background-color: #333;  
-    width: 330px;
-    margin: 0 auto;    
+    display: inline-block;   
+    width: 32%;
+    margin: 0 auto .35em;
   }
 
   #mobile-nav li a {
-    margin-right: 20%;
     display: block;
-    color: #ddd;
-    border-bottom: 1px solid #111;
+    color: #FFFFFF;
     position: relative;
-    background-color: #333;
+    background-color: #F26364;
     padding: 1em;
-    z-index: 2;
     text-align: center;
     font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     font-weight: bold;
   }
   
-  
-  
-  
-  
-  
-  
-  
+  #mobile-nav li a:active {
+    background-color: #F37172;
+  }
   
   #site-header {display: none;}
   
