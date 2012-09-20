@@ -8,7 +8,7 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Returning records based on array elements and network subnets"
-published: false
+published: true
 ---
 
 I created the postgres\_ext gem to add ActiveRecord support for 
@@ -23,3 +23,19 @@ PostgreSQL's query support for these datatypes. Wait, we can already do
 that!
 
 ## Querying against arrays using `ANY` and `ALL`
+
+In PostgreSQL, you can query for records where any or all elements match
+a given predicate.
+
+{% highlight sql %}
+SELECT *
+FROM users
+WHERE 'johnny' = ANY(nicknames)
+-- Finds any record that has 'johnny' stored in the nicknames array
+
+SELECT *
+FROM user_scores
+WHERE 1000 > ALL(scores)
+-- Finds any record that has over 1000 stored in every element in the
+-- scores array
+{% endhighlight %}
