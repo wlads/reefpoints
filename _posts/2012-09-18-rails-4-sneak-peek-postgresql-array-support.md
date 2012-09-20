@@ -118,12 +118,13 @@ john.save
 
 One last note about arrays in PostgreSQL: there are no element count
 constraints, and any array can be multidimensional. With the
-multidimensional arrays, they must be "square" (aka, elements in an
-array have to be either values, or arrays, not mixed).
+multidimensional arrays, they must be "square" (the sub arrays must all
+have the same number of elements).
 
 {% highlight ruby %}
-[ [1,2,3], [2,3], []]
-# Valid array value in PostgreSQL
+[ [1,2,3], [2,3,4], [4,5,nil]
+# Valid array value in PostgreSQL, each subarray has the same number of
+# elements
 [ 1,2,[3,4]]
 # Invalid array, we are mixing values and arrays at a single level
 {% endhighlight %}
