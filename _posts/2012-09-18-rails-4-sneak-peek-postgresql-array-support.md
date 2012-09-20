@@ -122,10 +122,10 @@ multidimensional arrays, they must be "square" (the sub arrays must all
 have the same number of elements).
 
 {% highlight ruby %}
-[ [1,2,3], [2,3,4], [4,5,nil]
+[[1,2,3], [2,3,4], [4,5,nil]]
 # Valid array value in PostgreSQL, each subarray has the same number of
 # elements
-[ 1,2,[3,4]]
+[1,2,[3,4]]
 # Invalid array, we are mixing values and arrays at a single level
 {% endhighlight %}
 
