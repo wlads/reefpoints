@@ -9,7 +9,7 @@
   
   .mobile-bar {
     display: block;
-    width: 380px;
+    width: 360px;
     margin: 0 auto;
   }
   
@@ -76,7 +76,7 @@
   .index-post p {margin: 1em 2em 0;}
   .show-all-posts {width: auto; font-weight: bold; background-color: #ABD4E7; color: #FFFFFF; width: 330px; border-radius: 10px; padding: .75em 0; font-size: 1.5em;}
   
-  #post aside {margin: 0 0 2em 1em;}
+  #post aside {margin: 0 0 2em 1.3em;}
   .post-div {width: 360px; float: none; margin: 0 auto; clear: both;}
   
   footer {margin-top: 3em;}
