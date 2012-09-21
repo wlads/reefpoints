@@ -1,24 +1,20 @@
 #mobile-header {display: none;}
 
-@media only screen and (min-width : 320px) and (max-width : 480px){
-  
+@media only screen and (max-width : 480px){
   #mobile-header {
     display: block;
     background-color: #F05051; /* $red */
   }
-  
   .mobile-bar {
     display: block;
-    width: 360px;
+    width: 80%;
     margin: 0 auto;
   }
-  
   #mobile-logo {
     font-family: leaguegothic;
     font-size: 2em;
     color: #FFFFFF;
   }
-  
   .mobile-button {
     color: #FFFFFF;
     font-family: fontello;
@@ -27,28 +23,24 @@
     display: block;
     position: absolute;
     top: .25em;
-    right: 2em;
+    right: 10%;
     cursor: pointer;
   }
-  
   #mobile-nav {
     width: 100%;
     display: none;
     text-align: center;
   }
-  
   .mobile-nav-icon {
     font-family: fontello;
     font-size: 2em;
   }
-
   #mobile-nav li {
     position: relative;
     display: inline-block;   
     width: 32%;
     margin: 0 auto .35em;
   }
-
   #mobile-nav li a {
     display: block;
     color: #FFFFFF;
@@ -59,28 +51,31 @@
     font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     font-weight: bold;
   }
-  
   #mobile-nav li a:active {
     background-color: #F37172;
   }
-  
   #site-header {display: none;}
-  
   .logo {font-size: 5em;}
   body {min-width: 320px;}
-  .wrap {width: 400px;}
-  input.search {width: 330px; margin-bottom: 38px;}
-  #index article {width: 330px; margin: 0 auto 2em;}
+  .wrap {width: 90%;}
+  input.search {width: 90%; margin-bottom: 38px;}
+  #index article {width: 90%; margin: 0 auto 2em;}
   #index article header {display: none;}
   .index-post {width: auto; right: 0; text-align: center; float: none;}
   .index-post p {margin: 1em 2em 0;}
-  .show-all-posts {width: auto; font-weight: bold; background-color: #ABD4E7; color: #FFFFFF; width: 330px; border-radius: 10px; padding: .75em 0; font-size: 1.5em;}
-  
+  .index-title {font-size: 28px;}
+  .show-all-posts {width: auto; font-weight: bold; background-color: #ABD4E7; color: #FFFFFF; width: 90%; border-radius: 10px; padding: .75em 0; font-size: 1.5em;}
   #post aside {margin: 0 0 2em 1.3em;}
-  .post-div {width: 360px; float: none; margin: 0 auto; clear: both;}
-  
+  .post-content img {width: 100%;}
+  .post-div {width: 90%; float: none; margin: 0 auto; clear: both;}
   footer {margin-top: 3em;}
   .footer-text {width: 180px;}
   footer ul .footer-text {line-height: 1.5;}
   footer ul .footer-text a {width: 180px; margin-top: -1em;}
+}
+
+@media only screen and (max-width : 320px){
+  .logo {font-size: 4em;}
+  .index-post p {margin: 1em 0 0;}
+  footer ul li {margin: 0;}
 }
