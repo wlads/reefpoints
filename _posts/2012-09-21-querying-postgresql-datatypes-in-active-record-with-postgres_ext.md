@@ -8,13 +8,12 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Returning records based on array elements and network subnets"
-published: false
+published: true
 ---
 
-I created the postgres\_ext gem to add ActiveRecord support for 
+I created the [postgres\_ext](https://github.com/dockyard/postgres_ext) gem to add ActiveRecord support for 
 PostgreSQL datatypes in Rails 3.2+. So far, I have added support for
-the CIDR, INET, MACADDR, UUID, and array datatypes. Please open an issue
-on GitHub if you'd like other datatypes supported that aren't currently.
+the CIDR, INET, MACADDR, UUID, and array datatypes. [Please open an issue on GitHub if you'd like other datatypes supported that aren't currently](https://github.com/dockyard/postgres_ext/issues).
 Since we can now add these columns via Rails migrations, and have
 INET/CIDR and array columns converted to Ruby `IPAddr` and `Array`
 objects, resepectively.
@@ -49,8 +48,7 @@ We can actually use arel to generate these queries.
 {% highlight ruby %}
 user_arel = User.arel_table
 
-any_nicknames_function = Arel::Nodes::NamedFunction.new('ANY',
-                          [user_arel[:nicknames]])
+any_nicknames_function = Arel::Nodes::NamedFunction.new('ANY', [user_arel[:nicknames]])
 predicate = Arel::Nodes::Equality('test', any_nicknames_function)
 
 sql_statement = user_arel.project('*').where(predicate).to_sql
@@ -75,7 +73,7 @@ common by using the overlap operator, `&&`.
 {% highlight sql %}
 '{1,2,3}' && '{4,5,6}'
 -- f
-'{1,2,3]' && '{3,4}'
+'{1,2,3}' && '{3,4}'
 -- t
 {% endhighlight %}
 
