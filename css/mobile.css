@@ -25,6 +25,7 @@
     top: .25em;
     right: 10%;
     cursor: pointer;
+    padding-left: 2em;
   }
   #mobile-nav {
     width: 100%;
