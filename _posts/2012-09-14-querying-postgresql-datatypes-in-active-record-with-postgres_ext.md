@@ -8,7 +8,7 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Returning records based on array elements and network subnets"
-published: true
+published: false
 ---
 
 I created the postgres\_ext gem to add ActiveRecord support for 
