@@ -18,6 +18,7 @@ layout: nil
  <entry>
    <title>{{ post.title }}</title>
    <category>{{ post.category }}</category>
+   <summary>{{ post.summary }}</summary>
    <link href="http://reefpoints.dockyard.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://reefpoints.dockyard.com{{ post.id }}</id>
