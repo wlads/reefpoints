@@ -9,6 +9,7 @@
     display: block;
     width: 80%;
     margin: 0 auto;
+    cursor: pointer;
   }
   #mobile-logo {
     font-family: leaguegothic;
@@ -24,7 +25,6 @@
     position: absolute;
     top: .25em;
     right: 10%;
-    cursor: pointer;
     padding-left: 2em;
   }
   #mobile-nav {
@@ -69,10 +69,8 @@
   #post aside {margin: 0 0 2em 1.3em;}
   .post-content img {width: 100%;}
   .post-div {width: 90%; float: none; margin: 0 auto; clear: both;}
-  footer {margin-top: 3em;}
-  .footer-text {width: 180px;}
-  footer ul .footer-text {line-height: 1.5;}
-  footer ul .footer-text a {width: 180px; margin-top: -1em;}
+  footer {margin-top: 1em;}
+  footer p {width: 250px; margin: 0 auto;}
 }
 
 @media only screen and (max-width : 320px){

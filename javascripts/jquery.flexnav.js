@@ -12,7 +12,7 @@
 (function($) {
   $.fn.flexNav = function(options) {
       var settings = $.extend({
-          'breakpoint': '800',
+          'breakpoint': '481',
           'animationSpeed': 'fast'
       },
       options);
@@ -47,7 +47,7 @@
       }
 
       // Toggle for nav menu
-      $('.mobile-button').click(function() {
+      $('.mobile-bar').click(function() {
           $this.slideToggle(settings.animationSpeed);
       });
 

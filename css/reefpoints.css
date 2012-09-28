@@ -122,19 +122,14 @@ a {
   background-color: #F37172; /* lighten($red, 7%) */
 }
 
-.twitter {
-  line-height: 40px;
-}
-
-.github {
-  line-height: 42px;
-}
-
 footer {
   padding-top: 3em;
-  height: 6em;
+  height: 8em;
   clear: both;
   text-align: center;
+}
+footer p {
+  margin-top: .25em;
 }
 footer a {
   background-color: #2A5567; /* $blue */
@@ -143,44 +138,23 @@ footer a {
 footer a:hover {
   background-color: #F05051; /* $red */
 }
-footer ul li {
+footer div {
   position: relative;
   display: inline-block;
   margin: 0 10px;
 }
-footer ul li p {
-  position: relative;
-  top: -1em;
-}
-footer .footer-text {
-  line-height: .35;
-  position: relative;
-  top: -.35em;
-}
-footer .footer-text p {
-  margin-bottom: 0;
-}
-footer .footer-text a {
-  background-color: transparent;
-  color: #2A5567; /* $blue */
-  font-weight: bold;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  text-align: center;
-  font-size: 1em;
-  width: 385px;
-}
-footer .footer-text a:hover {
-  color: #F05051; /* $red */
-  text-decoration: underline;
-}
+.twitter {line-height: 40px;}
+.github {line-height: 42px;}
+footer .rss {line-height: 38px; font-size: 1.65em;}
+footer .email {line-height: 40px; font-size: 1.5em;}
 
 @-moz-document url-prefix() {
-  footer .footer-text {
+  footer p {
     top: -10px;
   }
 }
 
-.social-icon a {
+footer div a {
   font-family: fontello;
   font-size: 1.35em;
   position: relative;
@@ -190,9 +164,9 @@ footer .footer-text a:hover {
   display: block;
   text-align: center;
   float: left;
-  margin: 0 .1em;
+  margin: 0 .25em;
 }
-.social-icon a:hover {
+footer div a:hover {
   background-color: $red;
 }
 
@@ -347,8 +321,6 @@ input.search:focus {
   margin-right: 6.15em;
 }
 
-
-
 .post-content h2 {
   font-weight: bold;
   font-size: 1.5em;
@@ -385,8 +357,6 @@ input.search:focus {
   display: block;
   margin: 0 auto;
 }
-
-
 
 .post-share {
   clear: both;
