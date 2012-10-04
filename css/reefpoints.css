@@ -60,7 +60,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: candy;
+  font-family: candyscript;
   src: url('/fonts/candyscript.eot');
   src: url('/fonts/candyscript.ttf');
   src: url('/fonts/candyscript.eot?#iefix') format("embedded-opentype"), url('/fonts/candyscript.woff') format("woff"), url('/fonts/candyscript.svg') format('svg');
@@ -173,7 +173,7 @@ footer div a:hover {
 /* INDEX PAGE */
 
 .logo {
-  font-family: candy, sans-serif;
+  font-family: candyscript, sans-serif;
   text-align: center;
   font-size: 6em;
   position: relative;
