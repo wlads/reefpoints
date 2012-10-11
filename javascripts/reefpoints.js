@@ -24,5 +24,9 @@ $(function(){
     window.playedSound = false;
     $('.show-all-posts').hide();
   });
+
+  // Post specific js
+  $('.expanding-the-yard aside ul li:eq(2)').after($('aside ul li:eq(0)'));
+
 });
 
