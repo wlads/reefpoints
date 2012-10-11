@@ -14,7 +14,7 @@ published: true
 <div class="one">
   <div class="content">
     <h2>Outgrowing simplicity</h2>
-    <p>The first version of our site was contained within a single page. At the time, it served its purpose well. As we added more things over time, it began to feel like it trying to do too much. Upon recognizing this, we began reimagining our site.</p>
+    <p>The first version of our site was contained within a single page. At the time, it served its purpose well. As we added more, it began to feel like it trying to do too much. Upon recognizing this, we began reimagining our site.</p>
   </div>
 </div>
 
