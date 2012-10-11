@@ -1,4 +1,5 @@
 $(function(){
+  $('body').addClass((window.location.pathname.match(/([\w|-]+).html/g) || [''])[0].split(".html")[0]);
   $('input, textarea').inFieldLabel();
   $('h2.hire-us').click(function() {
     $(this).toggleClass('active');
