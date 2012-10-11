@@ -7,7 +7,7 @@ github: cssboy
 twitter: cssboy
 category: design
 social: true
-summary: "How we reimagined our site."
+summary: "The story of how we reimagined our site."
 published: true
 ---
 
