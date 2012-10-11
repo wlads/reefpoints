@@ -492,3 +492,37 @@ input.search:focus {
 .expanding-the-yard .four img {
   margin: 0 auto 40px auto;
 }
+
+@media only screen and (max-width : 480px){
+
+  .expanding-the-yard #post h1.post-title {
+    margin: 20px 0;
+    font-size: 64px;
+  }
+
+  .expanding-the-yard #post h2 {
+    margin: .5em 0;
+    line-height: 1;
+  }
+
+  .expanding-the-yard #post h1,
+  .expanding-the-yard #post aside ul,
+  .expanding-the-yard #post-comments,
+  .expanding-the-yard .post-share {
+    width: auto;
+  }
+
+  .expanding-the-yard #post aside ul li {
+    margin: 0;
+  }
+
+  .expanding-the-yard .content {
+    width: auto;
+  }
+  
+  .expanding-the-yard #post-comments,
+  .expanding-the-yard .post-share {
+    padding: 20px;
+  }
+
+}
