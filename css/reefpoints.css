@@ -307,7 +307,7 @@ input.search:focus {
   background-color: #F05051;
 }
 
-.post-title {
+.post-title h1 {
   font-family: cubano;
   font-size: 2.5em;
   line-height: 1.15em;
@@ -374,62 +374,59 @@ input.search:focus {
   float: left;
 }
 
-/* Post specific styles */
+/* Designed post styles */
 
-/* Expanding the Yard */
+.design {
+  min-width: 0;
+}
 
-.expanding-the-yard #content .wrap,
-.expanding-the-yard .post-div,
-.expanding-the-yard #post aside {
+.design #site-header .wrap {
+  width: auto;
+  max-width: 980px;
+}
+
+.design #content .wrap,
+.design .post-div,
+.design #post aside {
   margin: 0;
   float: none;
   width: auto;
 }
 
-.expanding-the-yard .post-div {
-  font-size: 1.2em;
+.design .post-content {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 720px;
 }
 
-.expanding-the-yard .post-wrap {
+.design .post-wrap {
   top: 0;
 }
 
-.expanding-the-yard #post h1.post-title,
-.expanding-the-yard #post aside ul,
-.expanding-the-yard #post-comments,
-.expanding-the-yard .post-share {
-  width: 980px;
+.design #post aside ul,
+.design #post-comments,
+.design .post-share {
   margin: 0 auto;
+  max-width: 980px;
   overflow: hidden;
 }
 
-.expanding-the-yard .post-share {
+.design .post-share {
   border: none;
 }
 
-.expanding-the-yard .content {
-  width: 720px;
-  padding: 20px;
+.design #post .post-title {
   margin: 0 auto;
-  overflow: hidden;
+  max-width: 940px;
+  padding: 40px 20px;
 }
 
-.expanding-the-yard #post h1.post-title {
-  color: #F05051;
-  font-size: 100px;
-  margin: 40px auto;
+.design #post .post-title h1 {
+  margin: 0;
   text-align: center;
 }
 
-.expanding-the-yard #post h2 {
-  margin: 0;
-  line-height: 2;
-  font-size: 40px;
-  font-weight: normal;
-  font-family: cubano;
-}
-
-.expanding-the-yard #post aside {
+.design #post aside {
   color: #777;
   padding: 20px 0;
   text-align: center;
@@ -439,16 +436,16 @@ input.search:focus {
   background: url(http://dockyard.com/assets/wave.png);
 }
 
-.expanding-the-yard #post aside ul li {
-  margin: 0 4em;
+.design #post aside ul li {
   display: inline;
+  font-size: .9em;
 }
 
-.expanding-the-yard .post-date {
+.design .post-date {
   font-weight: normal;
 }
 
-.expanding-the-yard #post aside span a {
+.design #post aside span a {
   float: none;
   margin: 0 .2em;
   background: #777;
@@ -456,10 +453,72 @@ input.search:focus {
   display: inline-block;
 }
 
-.expanding-the-yard #post aside span a:hover,
-.expanding-the-yard #post aside span a:focus,
-.expanding-the-yard #post aside span a:active {
+.design #post aside span a:hover,
+.design #post aside span a:focus,
+.design #post aside span a:active {
   background-color: #F05051;
+}
+
+@media only screen and (max-width : 480px){
+  .design #post .post-title h1,
+  .design #post aside ul,
+  .design #post-comments,
+  .design .post-share {
+    width: auto;
+  }
+  
+  .design #post .post-title {
+    padding: 20px;
+  }
+  
+  .design #post .post-title h1 {
+    line-height: 1;
+    font-size: 40px;
+    white-space: normal;
+  }
+
+  .design #post aside ul li {
+    margin: 0;
+  }
+
+  .design .content {
+    width: auto;
+  }
+
+  .design .post-content,
+  .design #post-comments,
+  .design .post-share {
+    padding: 20px;
+  }
+}
+
+/* Expanding the Yard */
+
+.expanding-the-yard #post .post-title h1 {
+  color: #F05051;
+}
+
+.expanding-the-yard #post h2 {
+  margin: .5em 0;
+  line-height: 1;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: cubano;
+}
+
+.expanding-the-yard .post-div {
+  font-size: 1.2em;
+}
+
+.expanding-the-yard .post-content {
+  padding: 0;
+  max-width: none;
+}
+
+.expanding-the-yard .post-content .content {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 40px 20px;
 }
 
 .expanding-the-yard .one,
@@ -494,36 +553,10 @@ input.search:focus {
 }
 
 @media only screen and (max-width : 480px){
-
-  .expanding-the-yard #post h1.post-title {
-    margin: 20px;
-    font-size: 48px;
-    text-align: left;
+  .expanding-the-yard .post-content {
+    padding: 0;
   }
-
-  .expanding-the-yard #post h2 {
-    margin: .5em 0;
-    line-height: 1;
-  }
-
-  .expanding-the-yard #post h1.post-title,
-  .expanding-the-yard #post aside ul,
-  .expanding-the-yard #post-comments,
-  .expanding-the-yard .post-share {
-    width: auto;
-  }
-
-  .expanding-the-yard #post aside ul li {
-    margin: 0;
-  }
-
-  .expanding-the-yard .content {
-    width: auto;
-  }
-  
-  .expanding-the-yard #post-comments,
-  .expanding-the-yard .post-share {
+  .expanding-the-yard .post-content .content {
     padding: 20px;
   }
-
 }

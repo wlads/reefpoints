@@ -25,8 +25,10 @@ $(function(){
     $('.show-all-posts').hide();
   });
 
-  // Post specific js
-  $('.expanding-the-yard aside ul li:eq(2)').after($('aside ul li:eq(0)'));
-
+  // Art directed posts
+  $('.design aside ul li:eq(2)').after($('aside ul li:eq(0)'));
+  $('.design .post-title').bigtext({
+    childSelector: '> h1'
+  });
 });
 
