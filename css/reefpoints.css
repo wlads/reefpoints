@@ -394,7 +394,7 @@ input.search:focus {
   top: 0;
 }
 
-.expanding-the-yard #post h1,
+.expanding-the-yard #post h1.post-title,
 .expanding-the-yard #post aside ul,
 .expanding-the-yard #post-comments,
 .expanding-the-yard .post-share {
@@ -496,8 +496,9 @@ input.search:focus {
 @media only screen and (max-width : 480px){
 
   .expanding-the-yard #post h1.post-title {
-    margin: 20px 0;
-    font-size: 64px;
+    margin: 20px;
+    font-size: 48px;
+    text-align: left;
   }
 
   .expanding-the-yard #post h2 {
@@ -505,7 +506,7 @@ input.search:focus {
     line-height: 1;
   }
 
-  .expanding-the-yard #post h1,
+  .expanding-the-yard #post h1.post-title,
   .expanding-the-yard #post aside ul,
   .expanding-the-yard #post-comments,
   .expanding-the-yard .post-share {
