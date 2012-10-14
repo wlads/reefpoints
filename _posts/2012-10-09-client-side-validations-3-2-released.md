@@ -78,7 +78,7 @@ dynamically later:
 
 This method can also take validator specific options.
 
-## JavaSrcript API Additions and Changes ##
+## JavaScript API Additions and Changes ##
 
 The first major change is that `data-validate="true"` is no longer
 rendered on the inputs server-side. It is added to the input at
