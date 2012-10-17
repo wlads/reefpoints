@@ -13,9 +13,8 @@ $(function(){
     $('header ul').slideUp();
     return false;
   });
-  
+
   $('#search').liveUpdate('#index');
-  $('#index article:gt(4)').hide();
   $('.show-all-posts').click(function(event) {
     event.preventDefault();
     $('#index article').fadeIn();

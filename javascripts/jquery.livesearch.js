@@ -25,7 +25,6 @@ jQuery.fn.liveUpdate = function(list){
     if ( !term ) {
       rows.show();
       if ( window.viewedAll !== true ) {
-        $('#index article:gt(4)').hide();
       };
       $('.nothin').hide();
     } else {
@@ -37,7 +36,7 @@ jQuery.fn.liveUpdate = function(list){
       });
 
       var count = 0;
-      
+
       jQuery.each(scores.sort(function(a, b){return b[0] - a[0];}), function(){
         count += 1;
         jQuery(rows[ this[1] ]).show();
