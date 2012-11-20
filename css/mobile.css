@@ -1,10 +1,8 @@
-#mobile-header {display: none;}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+@media (max-width : 1100px){
   body {min-width: 768px;}
-  .wrap {width: 700px;}
-  #index article header {width: 170px; padding: 0 20px;}
-  .index-post {width: 450px; right: 20px;}
+  .wrap {width: 90%;}
+  #index article header {width: 20%; padding: 0 20px 0 0;}
+  .index-post {width: 70%; right: 20px;}
   .show-all-posts {font-weight: bold; background-color: #ABD4E7; color: #FFFFFF; width: 90%; border-radius: 10px; padding: .75em 0; font-size: 1.5em;}
   .post-div {
     width: auto;
@@ -17,62 +15,7 @@
   #blog footer {padding-top: 7em;}
 }
 
-@media only screen and (max-width : 480px){
-  #mobile-header {
-    display: block;
-    background-color: #F05051; /* $red */
-  }
-  .mobile-bar {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    cursor: pointer;
-  }
-  #mobile-logo {
-    font-family: leaguegothic;
-    font-size: 2em;
-    color: #FFFFFF;
-  }
-  .mobile-button {
-    color: #FFFFFF;
-    font-family: fontello;
-    font-size: 1.5em;
-    text-align: right;
-    display: block;
-    position: absolute;
-    top: .25em;
-    right: 10%;
-    padding-left: 2em;
-  }
-  #mobile-nav {
-    width: 100%;
-    display: none;
-    text-align: center;
-  }
-  .mobile-nav-icon {
-    font-family: fontello;
-    font-size: 2em;
-  }
-  #mobile-nav li {
-    position: relative;
-    display: inline-block;   
-    width: 32%;
-    margin: 0 auto .35em;
-  }
-  #mobile-nav li a {
-    display: block;
-    color: #FFFFFF;
-    position: relative;
-    background-color: #F26364;
-    padding: 1em;
-    text-align: center;
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-    font-weight: bold;
-  }
-  #mobile-nav li a:active {
-    background-color: #F37172;
-  }
-  #site-header {display: none;}
+@media (max-width : 780px){
   .logo {font-size: 5em;}
   body {min-width: 320px;}
   .wrap {width: 90%;}
@@ -86,11 +29,9 @@
   #post aside {margin: 0 0 2em 1.3em;}
   .post-content img {width: 100%;}
   .post-div {width: 90%; float: none; margin: 0 auto; clear: both;}
-  footer {margin-top: 1em;}
-  footer p {width: 250px; margin: 0 auto;}
 }
 
-@media only screen and (max-width : 320px){
+@media (max-width : 320px){
   .logo {font-size: 4em;}
   .index-post p {margin: 1em 0 0;}
   footer ul li {margin: 0;}

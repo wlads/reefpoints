@@ -1,0 +1,140 @@
+#mobile-header {display: none;}
+
+#site-header {
+  background-color: #F05051; /* $red */
+  height: 48px;
+}
+#site-header a {
+  color: #FFFFFF;
+}
+#site-header .nav h1 a {
+  font-family: leaguegothic, helvetica, arial, sans-serif;
+  font-size: 32px;
+  float: left;
+}
+#site-header .nav ul {
+  float: right;
+}
+#site-header .nav ul li {
+  float: left;
+}
+#site-header .nav ul li a {
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 19px 15px 10px 15px;
+  float: left;
+}
+#site-header .nav ul li a:hover {
+  background-color: #F37172; /* lighten($red, 7%) */
+}
+
+@media (max-width : 650px){
+  #site-header {display: none;}
+  #mobile-header {
+    display: block;
+    background-color: #F05051; /* $red */
+  }
+  .mobile-bar {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  #mobile-logo {
+    font-family: leaguegothic;
+    font-size: 2em;
+    color: #FFFFFF;
+  }
+  .mobile-button {
+    color: #FFFFFF;
+    font-family: fontello;
+    font-size: 1.5em;
+    text-align: right;
+    display: block;
+    position: absolute;
+    top: .25em;
+    right: 10%;
+    padding-left: 2em;
+  }
+  #mobile-nav {
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+  .mobile-nav-icon {
+    font-family: fontello;
+    font-size: 2em;
+  }
+  #mobile-nav li {
+    position: relative;
+    display: inline-block;   
+    width: 32%;
+    margin: 0 auto .35em;
+  }
+  #mobile-nav li a {
+    display: block;
+    color: #FFFFFF;
+    position: relative;
+    background-color: #F26364;
+    padding: 1em;
+    text-align: center;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-weight: bold;
+  }
+  #mobile-nav li a:active {
+    background-color: #F37172;
+  }
+}
+
+footer {
+  padding-top: 3em;
+  height: 8em;
+  clear: both;
+  text-align: center;
+}
+footer p {
+  margin-top: .25em;
+}
+footer a {
+  background-color: #2A5567; /* $blue */
+  color: #FFFFFF;
+}
+footer a:hover {
+  background-color: #F05051; /* $red */
+}
+footer div {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+.twitter {line-height: 40px;}
+.github {line-height: 42px;}
+footer .rss {line-height: 38px; font-size: 1.65em;}
+footer .email {line-height: 40px; font-size: 1.5em;}
+
+@-moz-document url-prefix() {
+  footer p {
+    top: -10px;
+  }
+}
+
+footer div a {
+  font-family: fontello;
+  font-size: 1.35em;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  float: left;
+  margin: 0 .25em;
+}
+footer div a:hover {
+  background-color: $red;
+}
+
+@media (max-width : 650px){
+  footer {margin-top: 1em;}
+  footer p {width: 250px; margin: 0 auto;}
+}
