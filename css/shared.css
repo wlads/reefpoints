@@ -113,6 +113,10 @@ footer .rss {line-height: 38px; font-size: 1.65em;}
 footer .email {line-height: 40px; font-size: 1.5em;}
 
 @-moz-document url-prefix() {
+  footer {
+    position: relative;
+    top: 3em;
+  }
   footer p {
     top: -10px;
   }
