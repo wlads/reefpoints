@@ -16,10 +16,9 @@ but they really only need to see it once? With the
 [`dismissible_helpers`](https://github.com/dockyard/dismissible_helpers)
 gem, you can quickly add dismissible help text to your application.
 
-[View the project on
-GitHub](https://github.com/dockyard/dismissible_helpers)
-[View the demo here](http://dismissible-helpers-example.herokuapp.com/)
-[View the demo source code](https://github.com/dockyard/dismissible_helpers_example)
+* [View the project on GitHub](https://github.com/dockyard/dismissible_helpers)
+* [View the demo here](http://dismissible-helpers-example.herokuapp.com/)
+* [View the demo source code](https://github.com/dockyard/dismissible_helpers_example)
 
 ## What you get
 
