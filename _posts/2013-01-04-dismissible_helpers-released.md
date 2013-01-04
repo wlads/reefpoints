@@ -8,7 +8,7 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Add simple to implement help text that users can dismiss"
-published: false
+published: true
 ---
 
 Have an application where you want to add some help text for the user,
@@ -74,7 +74,6 @@ file.
 
 ### Changing the way the help text is removed
 
-You can customize
 By default, the dismissed helper is removed from the page via
 `$(helper).remove()`. This can be customized by passing a callback to the
 `.dismissible()` call. To use jQuery's `.slideUp()` you would use the
@@ -130,7 +129,7 @@ end
 {% endhighlight %}
 
 If you are using PostgreSQL as your database, you could use
-[`postgres_ext`](https://github.com/dockyard/postgres_ext) to
+[postgres_ext](https://github.com/dockyard/postgres_ext) to
 add native array support to your models. You would just need the
 following migration to add the dismissed_helpers attribute
 to your model:
