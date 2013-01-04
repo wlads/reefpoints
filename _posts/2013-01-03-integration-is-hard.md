@@ -7,7 +7,7 @@ github: gilltots
 category: web development
 social: true
 summary: A description of techniques used to integrate with various vendors on a recent DockYard project for the AFL-CIO.
-published: true
+published: false
 ---
 
 There's no one-size-fits-all approach to integrating with external systems because each system comes with its own unique requirements and constraints.  This article aims to describe some of the varying approaches we used to integrate with external systems in a recent project we built for the AFL-CIO.
