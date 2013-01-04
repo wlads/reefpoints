@@ -41,7 +41,10 @@ Here's how we did it in each system:
 
 ## VAN Sync ##
 
-VAN, which was recently voted [Most Valuable Tech](http://rootscamp.neworganizing.com/awards/2012/) at [RootsCamp 2012](http://rootscamp.neworganizing.com/), has a SOAP-based API that allows us to list survey questions, list activist codes, and create and list volunteers (among other things) - all of which we use to get that data into RePurpose, but the API doesn't support retrieving the raw canvasser data - which is the piece we really need to award credit.  To get this data the two options were a nightly sync of flat files, or getting direct access to a replicated database.  We opted for the flat file sync as we knew it had worked for other organizations (among them the Democratic National Committee) and the replicated database approach would have incurred extra time, expense, and risk.
+VAN, which was recently voted [Most Valuable
+Tech](http://rootscamp.neworganizing.com/awards/2012/) at [RootsCamp
+2012](http://rootscamp.neworganizing.com/), has a
+[SOAP](http://en.wikipedia.org/wiki/SOAP)-based API that allows us to list survey questions, list activist codes, and create and list volunteers (among other things) - all of which we use to get that data into RePurpose, but the API doesn't support retrieving the raw canvasser data - which is the piece we really need to award credit.  To get this data the two options were a nightly sync of flat files, or getting direct access to a replicated database.  We opted for the flat file sync as we knew it had worked for other organizations (among them the Democratic National Committee) and the replicated database approach would have incurred extra time, expense, and risk.
 
 We worked with the great folks at VAN to get a nightly data sync into
 place.  Each night around 3am, VAN uploads a zipped TSV (tab-separated
