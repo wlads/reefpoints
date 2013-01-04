@@ -39,6 +39,15 @@ To start using `dismissible_helpers` without any customization, you only
 three steps away.
 
  1. Add `dismissible_helpers_routes` to your `config/routes.rb`
+
+{% highlight ruby %}
+YourApplication::Application.routes.draw do
+  dismissible_helpers_routes
+
+  # Your other routes
+end
+{% endhighlight %}
+
  2. Add the Javascript: Add the following to your `app/assets/javascripts/application.js`.
 
 {% highlight javascript %}
