@@ -35,7 +35,12 @@ The volunteering and activism data for which RePurpose points get awarded exists
 
     Amicus is a new online tool that leverages Facebook connections of volunteers to enhance fundraising and advocacy campaigns.  It stores a set of volunteer records, friend invite records, and social calling records.
 
-The goal was straightforward - RePurpose needed to know when a volunteer was performing tasks in external systems, so that the user could receive points in RePurpose for those tasks.  RePurpose itself has a Task model that supports multiple kinds of tasks in the various external systems - survey tasks, activist code tasks, and canvass tasks in VAN, donation tasks and action tasks in Salsa, and friend invite tasks and call tasks in Amicus.  So a RePurpose administrator could set up a task that would award 10 RePurpose points each time a volunteer knocked on a door, made a phone call, or made a donation.
+The goal was straightforward - RePurpose needed to know when a volunteer
+was performing tasks in external systems, so that the user could receive
+points in RePurpose for those tasks.  RePurpose itself has a Task model
+that supports multiple kinds of tasks in the various external systems -
+survey tasks, activist code tasks, and
+[canvass](http://en.wikipedia.org/wiki/Canvassing) tasks in VAN, donation tasks and action tasks in Salsa, and friend invite tasks and call tasks in Amicus.  So a RePurpose administrator could set up a task that would award 10 RePurpose points each time a volunteer knocked on a door, made a phone call, or made a donation.
 
 Here's how we did it in each system:
 
