@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dismissible_helpers released"
+title: "DismissibleHelpers released"
 comments: true
 author: Dan McClain
 twitter: "_danmcclain"
@@ -39,17 +39,19 @@ dismissal status of the help text.
 To start using `dismissible_helpers` without any customization, you only
 three steps away.
 
- 1. Add `dismissible_helpers_routes` to your `config/routes.rb`
+<ol>
+
+  <li> Add <code>dismissible_helpers_routes</code> to your <code>config/routes.rb</code>
 
 {% highlight ruby %}
 YourApplication::Application.routes.draw do
   dismissible_helpers_routes
 
   # Your other routes
-end
-{% endhighlight %}
+end{% endhighlight %}
+  </li>
 
- 2. Add the Javascript: Add the following to your `app/assets/javascripts/application.js`.
+  <li> Add the Javascript: Add the following to your <code>app/assets/javascripts/application.js</code>.
 
 {% highlight javascript %}
 // Your other require statments
@@ -58,18 +60,20 @@ end
 
 $(function(){
   $('.dismissible').dismissible()
-})
-{% endhighlight %}
+}){% endhighlight %}
+  </li>
 
- 3. Call the `render_dismissible_helper` method with the string you want to
-render. The string passed to the method will be processed by the I18n method
-`t`, so the content of the help message should be stored in your localization
-file.
+  <li> Call the <code>render_dismissible_helper</code> method with the string you want to
+       render. The string passed to the method will be processed by the I18n method
+       <code>t</code>, so the content of the help message should be stored in your localization
+       file.
 
 {% highlight erb %}
 <%= render_dismissible_helper 'help.some_help_message' %>
 {% endhighlight %}
+  </li>
 
+</ol>
 
 ## Advanced setup
 
