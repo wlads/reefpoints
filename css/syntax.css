@@ -1,4 +1,4 @@
-code { background: #E6E7E8; font-family: "Lucida Console", Monaco, monospace;}
+html body code { background: #E6E7E8; font-family: "Lucida Console", Monaco, monospace; padding: 2px 5px; font-size: 13px; border-radius: 3px;}
 
 .highlight  { background: #E6E7E8; font-family: "Lucida Console", Monaco, monospace; padding: 10px; overflow-x: scroll; margin-bottom: 1em;}
 .highlight .c { color: #999988; font-style: italic } /* Comment */

@@ -85,17 +85,20 @@
     text-align: center;
     font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
   }
   #mobile-nav li a:active {
     background-color: #F37172;
   }
 }
 
-footer {
+html body footer {
   padding-top: 3em;
   height: 8em;
   clear: both;
   text-align: center;
+  margin-bottom: 3em;
 }
 footer p {
   margin-top: .25em;
