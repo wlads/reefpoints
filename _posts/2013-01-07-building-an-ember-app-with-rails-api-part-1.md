@@ -229,8 +229,8 @@ That is all the view that your Ember app will need. Ember will automatically att
 Let's add some data to `db/seeds.rb`
 
 {% highlight ruby %}
-User.create(:first_name => 'William', :last_name => 'Harrison', :age => 68, :quote => "I'm just singin' in the rain!")
-User.create(:first_name => 'Abraham', :last_name => 'Lincoln', :age => 56, :quote => "I'd like to see a show tonight.")
+User.create(:first_name => 'William', :last_name => 'Harrison', :quote => "I'm just singin' in the rain!")
+User.create(:first_name => 'Abraham', :last_name => 'Lincoln', :quote => "I'd like to see a show tonight.")
 {% endhighlight %}
 
 Now run your migrations and seed
