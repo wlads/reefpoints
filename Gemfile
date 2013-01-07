@@ -1,4 +1,4 @@
 source :rubygems
 
-gem 'jekyll', '0.11.2'
-gem 'redcarpet', '1.17.2'
+gem 'jekyll', '0.12.0'
+gem 'redcarpet', '2.2.2'
