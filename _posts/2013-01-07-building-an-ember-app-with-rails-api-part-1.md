@@ -64,7 +64,7 @@ cd ../../..
 Let's setup the directory structure for our Ember app
 
 {% highlight bash %}
-mkdir -p app/assets/javascripts/{controllers,models,templates}
+mkdir -p app/assets/javascripts/{controllers,models,views,templates}
 {% endhighlight %}
 
 And now we'll setup the load order in our `app/assets/javascripts/application.coffee` file
@@ -204,7 +204,7 @@ A few things are happening here:
 So let's create that `Ember` controller. This will act as the primary application serving controller that is hit when people visit the app.
 
 {% highlight ruby %}
-class EmberController < ApplicationController::Base; end
+class EmberController < ActionController::Base; end
 {% endhighlight %}
 
 Note that we are inheriting from `ApplicationController::Base` this time and not `ApplicationController`. This was the controller actions can respondt to non `JSON` requests.
