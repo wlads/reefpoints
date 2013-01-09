@@ -11,7 +11,7 @@ summary: "Setting up RailsAPI for writing an Ember App"
 published: true
 ---
 
-[Fork the project on Github!](https://github.com/bcardarella/ember-rails-api)
+[Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
 [Use the app live on Heroku](http://ember-rails-api.herokuapp.com/)
 
