@@ -271,7 +271,7 @@ Reload your app and click through to the show page and you should see
 
 ![Show](http://i.imgur.com/8VCIi.png)
 
-Hooray! But wait, as Rails devs we love to be [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) and the routes have a perfect candidate for this. We can create a base route class that our to Users routes can inherit from:
+Hooray! But wait, as Rails devs we love to be [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) and the routes have a perfect candidate for this. We can create a base route class that our `Users` routes can inherit from:
 
 {% highlight coffeescript %}
 App.UsersRoute = Ember.Route.extend
