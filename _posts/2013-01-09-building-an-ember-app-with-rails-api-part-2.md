@@ -8,7 +8,7 @@ github: bcardarella
 category: ember
 social: true
 summary: "Building the Ember app"
-published: true
+published: false
 ---
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-rails-api)
