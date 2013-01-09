@@ -8,10 +8,10 @@ github: bcardarella
 category: ember
 social: true
 summary: "Building the Ember app"
-published: false
+published: true
 ---
 
-[Fork the project on Github!](https://github.com/bcardarella/ember-rails-api)
+[Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
 [Use the app live on Heroku](http://ember-rails-api.herokuapp.com/)
 
@@ -30,6 +30,9 @@ if defined?(HandlebarsAssets)
   HandlebarsAssets::Config.ember = true
 end
 {% endhighlight %}
+
+Let's dive in by creating out application layout template in `app/assets/javascripts/templates/application.hbs`
+
 {% highlight html %}
 {% raw %}
 <div class='navbar navbar-inverse navbar-fixed-top'>
@@ -59,7 +62,7 @@ end
 
 [Read more about Ember Templates](http://emberjs.com/guides/templates/handlebars-basics)
 
-This is the Ember equivalent of a Rails layout template. The `{{outlet}}` is the Ember equivalient to `yield` in Rails. So this template will wrap the other templates we plan on rendering. I will come back to the `<li>`s in the nav later.
+This is the Ember equivalent of a Rails layout template. The `outlet` is the Ember equivalient to `yield` in Rails. So this template will wrap the other templates we plan on rendering. I will come back to the `<li>`s in the nav later.
 
 Next we're going to setup a default route and render a template. In `app/assets/javascripts/routes.coffee`
 
@@ -151,13 +154,25 @@ Two new concepts:
 
 Now reload your app and click between the actions and your should see the active states properly set depending upon your route.
 
-Next we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with creating a new model in `app/assets/javascripts/models/user.coffee`
+Next we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascript/store.coffee`
+
+{% highlight coffeescript %}
+App.Store = DS.Store.extend
+  revision: 11
+  adapter: DS.RESTAdapter.create({ bulkCommit: false })
+{% endhighlight %}
+
+[Read more about Ember's REST Adapter](http://emberjs.com/guides/models/the-rest-adapter)
+
+The REST adapter allows us to pull from an API backend assuming certain conventions are followed in the URIs and JSON response. Thankfully we set this up properly in [Part 1](http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html)
+
+Now we'll create a new model in `app/assets/javascripts/models/user.coffee`
 
 {% highlight coffeescript %}
 App.User = DS.Model.extend(
-  firstName: attr('string')
-  lastName:  attr('string')
-  quote:     attr('string')
+  firstName: DS.attr('string')
+  lastName:  DS.attr('string')
+  quote:     DS.attr('string')
   fullName: (->
     "#{@get('firstName')} #{@get('lastName')}"
   ).property('firstName', 'lastName')
@@ -213,7 +228,9 @@ App.Router.map (match) ->
     match('/:user_id').to 'showUser'
 {% endhighlight %}
 
-I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated, lets add the `show` route
+Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
+
+I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated, lets add the `show` route.
 
 {% highlight coffeescript %}
 App.showUserRoute = Ember.Route.extend    
@@ -239,6 +256,16 @@ And we'll add the `app/assets/javascripts/templates/showUser.hbs` template
 {{#linkTo 'usersIndex' class='btn'}}Back{{/linkTo}}
 {% endraw %}
 {% endhighlight %}
+
+Finally we need to replace the `<a>` tags in the `usersIndex` template to:
+
+{% highlight html %}
+{% raw %}
+{{#linkTo 'showUser' user}}{{user.fullName}}{{/linkTo}}
+{% endraw %}
+{% endhighlight %}
+
+So we are linking to the `showUsers` named route and passing the instance of a `User` as the paramater. Ember will pull out the id on the object and set that to the `:user_id` segment on the path.
 
 Reload your app and click through to the show page and you should see
 
@@ -266,6 +293,8 @@ App.showUserRoute = App.UsersRoute.extend
     controller.set('content', model)
 {% endhighlight %}
 
-So now we have a common route class to set the `currentRoute` attribute. And because we are using the `setupController` function in each of our child route classes we have to use the Ember `this._super()` call up the inheritance chain. Reload our app and everything should work!
+So now we have a common route class to set the `currentRoute` attribute. And because we are using the `setupController` function in each of our child route classes we have to use the Ember `this._super()` call up the inheritance chain. `_super()` is something added to Ember to work similar to `super` in Ruby provided you have made proper use of `extend` and `reopen`.
+
+Reload our app and everything should work!
 
 So we have only implemented the 'Read' of 'CRUD' in this part, but we have also introduced alot of new concepts. In Part 3 we will implement the 'Create Update Destroy' actions.
