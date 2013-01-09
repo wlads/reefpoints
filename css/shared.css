@@ -106,6 +106,14 @@ footer p {
 footer a {
   background-color: #2A5567; /* $blue */
   color: #FFFFFF;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
 }
 footer a:hover {
   background-color: #F05051; /* $red */
