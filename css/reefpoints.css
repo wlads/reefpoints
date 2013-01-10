@@ -512,7 +512,7 @@ input.search:focus {
 
 .issue {
   font-weight: bold;
-  margin-bottom: 1em;
+  margin: .5em 0 1em;
 }
 .issue a {
   text-decoration: underline;
