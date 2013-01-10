@@ -509,3 +509,14 @@ input.search:focus {
     padding: 20px;
   }
 }
+
+.issue {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.issue a {
+  text-decoration: underline;
+}
+.issue a:hover {
+  color: #F05051;
+}
