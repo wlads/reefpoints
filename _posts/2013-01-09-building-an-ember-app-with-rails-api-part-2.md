@@ -78,7 +78,7 @@ App.Router.map (match) ->
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
 
-This will tell the Ember Router to use the History API intead of the default 'hash' URLs for routes. We also map the root url of our app to `home`. The new Ember Router will use this string to make some assumptions. If there is a `App.HomeController` object it will use that controller. If not it will just render out the `home` template. Now, under the hood Ember is still using a `App.HomeController` controller but it will define one on the fly. I will get into this in a future blog post. When you call `reopen` this is the Ember way to reopen and monkey match a class. As you can see the Ember Router syntax is similar to the one in Rails. This is by design. We need the 2nd route there so our `application.hbs` template can compile as it is referencing the `usersIndex` route.
+This will tell the Ember Router to use the History API intead of the default 'hash' URLs for routes. We also map the root url of our app to `home`. The new Ember Router will use this string to make some assumptions. If there is a `App.HomeController` object it will use that controller. If not it will just render out the `home` template. Now, under the hood Ember is still using a `App.HomeController` controller but it will define one on the fly. I will get into this in a future blog post. When you call `reopen` this is the Ember way to reopen and monkey patch a class. As you can see the Ember Router syntax is similar to the one in Rails. This is by design. We need the 2nd route there so our `application.hbs` template can compile as it is referencing the `usersIndex` route.
 
 Let's write `app/assets/javascripts/templates/home.hbs`
 
