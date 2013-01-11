@@ -41,7 +41,7 @@ three steps away.
 
 <ol>
 
-  <li> Add <code>dismissible_helpers_routes</code> to your <code>config/routes.rb</code>
+  <li><p> Add <code>dismissible_helpers_routes</code> to your <code>config/routes.rb</code>
 
 {% highlight ruby %}
 YourApplication::Application.routes.draw do
@@ -49,9 +49,9 @@ YourApplication::Application.routes.draw do
 
   # Your other routes
 end{% endhighlight %}
-  </li>
+  </p></li>
 
-  <li> Add the Javascript: Add the following to your <code>app/assets/javascripts/application.js</code>.
+  <li><p> Add the Javascript: Add the following to your <code>app/assets/javascripts/application.js</code>.
 
 {% highlight javascript %}
 // Your other require statments
@@ -61,9 +61,9 @@ end{% endhighlight %}
 $(function(){
   $('.dismissible').dismissible()
 }){% endhighlight %}
-  </li>
+  </p></li>
 
-  <li> Call the <code>render_dismissible_helper</code> method with the string you want to
+  <li><p> Call the <code>render_dismissible_helper</code> method with the string you want to
        render. The string passed to the method will be processed by the I18n method
        <code>t</code>, so the content of the help message should be stored in your localization
        file.
@@ -71,7 +71,7 @@ $(function(){
 {% highlight erb %}
 <%= render_dismissible_helper 'help.some_help_message' %>
 {% endhighlight %}
-  </li>
+  </p></li>
 
 </ol>
 
