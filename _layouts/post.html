@@ -24,7 +24,7 @@ layout: default
           </span>
         </li>
         <li>
-          
+
         </li>
       </ul>
     </aside>
@@ -72,9 +72,9 @@ layout: default
 </section>
 
 <script>
-  var path = window.location.pathname.split('/')
-  var postname = path[5].split('.')
-  var change = postname[0] + '.md'
-  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[2] + '-' + path[3] + '-' + path[4] + '-' + change
-  $('.issue a').attr('href', newpath)
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
 </script>
