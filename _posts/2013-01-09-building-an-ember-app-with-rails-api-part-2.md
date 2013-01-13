@@ -41,7 +41,7 @@ Let's dive in by creating out application layout template in `app/assets/javascr
       <div class='nav-collapse collapse'>
         <ul class='nav'>
           <li>{{#linkTo 'home'}}Home{{/linkTo}}</li>
-          <li>{{#linkTo 'usersIndex'}}Users{{/linkTo}}</li>
+          <li>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
         </ul>
       </div>
     </div>
@@ -73,7 +73,7 @@ App.Router.reopen
 
 App.Router.map (match) ->
   match('/').to 'home'
-  match('/users').to 'usersIndex'
+  match('/users').to 'users'
 {% endhighlight %}
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
@@ -93,7 +93,7 @@ That's it. If you run your rails server and load the app you should see the foll
 
 Congratulations you've build your first Ember app! Let's make it do
 something useful. We are going to add the `/users` page, so edit
-`app/assets/javascripts/templates/usersIndex.hbs`
+`app/assets/javascripts/templates/users/index.hbs`
 
 {% highlight html %}
 {% raw %}
@@ -114,7 +114,7 @@ Now when clicking between the two pages the nav is not properly updating the `ac
 {% highlight html %}
 {% raw %}
 <li {{bindAttr class="isHome:active"}}>{{#linkTo 'home'}}Home{{/linkTo}}</li>
-<li {{bindAttr class="isUsers:active"}}>{{#linkTo 'usersIndex'}}Users{{/linkTo}}</li>
+<li {{bindAttr class="isUsers:active"}}>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
 {% endraw %}
 {% endhighlight %}
 
@@ -149,7 +149,7 @@ App.UsersIndexRoute = Ember.Route.extend
 
 Two new concepts:
 
-* `setupControllers` a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we'll see this in a bit)
+* `setupController` a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we'll see this in a bit)
 * `this.controllerFor` when interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is `ApplicationController` and we need to update the `currentRoute` attribute. You *must* use the `set` function otherwise Ember won't know to notify any computer property observers.
 
 Now reload your app and click between the actions and your should see the active states properly set depending upon your route.
@@ -183,7 +183,7 @@ App.User = DS.Model.extend(
 
 We are defining each attribute taht is coming over the wire, as well as a computed propery that will combine `firstName` and `lastName`. Simple enough!
 
-Now we need to modify the `usersIndex` route to fetch the data
+Now we need to modify the `users` route to fetch the data
 
 {% highlight coffeescript %}
 App.UsersIndexRoute = Ember.Route.extend
@@ -224,8 +224,7 @@ We need to next update `App.Router` for the proper mapping
 App.Router.map (match) -> 
   match('/').to 'home'
   match('/users').to 'users', (match) -> 
-    match('/').to 'usersIndex'
-    match('/:user_id').to 'showUser'
+    match('/:user_id').to 'show'
 {% endhighlight %}
 
 Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
@@ -233,7 +232,7 @@ Note how we are matching against `:user_id` and not `:id` that Rails developers 
 I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated, lets add the `show` route.
 
 {% highlight coffeescript %}
-App.showUserRoute = Ember.Route.extend    
+App.UsersShowRoute = Ember.Route.extend    
   model: (params) ->
     App.User.find(params.user_id)
   setupController: (controller, model) ->
@@ -241,7 +240,7 @@ App.showUserRoute = Ember.Route.extend
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-And we'll add the `app/assets/javascripts/templates/showUser.hbs` template
+And we'll add the `app/assets/javascripts/templates/users/show.hbs` template
 
 {% highlight html %}
 {% raw %}
@@ -253,15 +252,15 @@ And we'll add the `app/assets/javascripts/templates/showUser.hbs` template
 
 <div class='page-header'></div>
 
-{{#linkTo 'usersIndex' class='btn'}}Back{{/linkTo}}
+{{#linkTo 'users' class='btn'}}Back{{/linkTo}}
 {% endraw %}
 {% endhighlight %}
 
-Finally we need to replace the `<a>` tags in the `usersIndex` template to:
+Finally we need to replace the `<a>` tags in the `users` template to:
 
 {% highlight html %}
 {% raw %}
-{{#linkTo 'showUser' user}}{{user.fullName}}{{/linkTo}}
+{{#linkTo 'users.show' user}}{{user.fullName}}{{/linkTo}}
 {% endraw %}
 {% endhighlight %}
 
@@ -285,7 +284,7 @@ App.UsersIndexRoute = App.UsersRoute.extend
     @_super()
     controller.set('users', model)
 
-App.showUserRoute = App.UsersRoute.extend    
+App.UsersShowRoute = App.UsersRoute.extend    
   model: (params) ->
     App.User.find(params.user_id)
   setupController: (controller, model) ->

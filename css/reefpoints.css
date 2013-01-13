@@ -520,3 +520,7 @@ input.search:focus {
 .issue a:hover {
   color: #F05051;
 }
+
+em {
+  font-weight: bold;
+}
