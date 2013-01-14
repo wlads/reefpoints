@@ -8,7 +8,7 @@ github: bcardarella
 category: ember
 social: true
 summary: "CUD, it isn't just for cows"
-published: false
+published: true
 ---
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
