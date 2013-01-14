@@ -210,7 +210,7 @@ App.UsersIndexRoute = Ember.Route.extend
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-The `App.User.find()` makes a remote call, fetches the collection, and instantizes the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this colleciton to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates.usersIndex.hbs` and add in the following before closing the `</table>` tag
+The `App.User.find()` makes a remote call, fetches the collection, and instantizes the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this colleciton to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users/index.hbs` and add in the following before closing the `</table>` tag
 
 {% highlight html %}
 {% raw %}
