@@ -86,7 +86,7 @@ Don't be fooled by the `createRecord()` call. This will not write anything to th
 
 <a href='#' {{action cancel}} class='btn btn-inverse'>Cancel</a>
 {% endraw %}
-{% endhighlight %} 
+{% endhighlight %}
 
 Next we'll add `app/assets/javascripts/controllers/users/newController.coffeescript`
 
@@ -114,7 +114,7 @@ There is (what I believe is) a bug in Ember-Data that currently prevents you fro
 
 {% highlight coffeescript %}
 save: ->
-  @content.one 'didCreate.user, ->
+  @content.one 'didCreate.user', ->
     @content.die '.user'
     @transitionToRoute 'users.show', @content
   @content.one 'didError.user', ->
@@ -161,7 +161,7 @@ Now when we add data and create it will write to the back end, take us to the sh
 Adding `Edit` should be straight forward now that we have done create. Start will adding the route:
 
 {% highlight coffeescript %}
-App.UsersEditRoute = Ember.Route.extend    
+App.UsersEditRoute = Ember.Route.extend
   model: (params) ->
     App.User.find(params.user_id)
   setupController: (controller, model) ->
@@ -172,7 +172,7 @@ App.UsersEditRoute = Ember.Route.extend
 You'll notice that this route is identity to `App.UsersShowRoute` we wrote in Part 2, let's DRY this up
 
 {% highlight coffeescript %}
-App.UserRoute = Ember.Route.extend    
+App.UserRoute = Ember.Route.extend
   model: (params) ->
     App.User.find(params.user_id)
   setupController: (controller, model) ->
