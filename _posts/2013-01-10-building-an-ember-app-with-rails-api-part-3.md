@@ -25,7 +25,7 @@ Today we're going to do some coding on the Rails side and the Ember side to add 
 
 In [Part 1](http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html) we setup the backend using [Rails API](https://github.com/rails-api/rails-api/). In [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) we built out the basics of an Ember app, reading from a remote data source and displaying that data. Now we're going to add the ability to Create, Update, and Destroy that data. This part will be a mix of Ember and Rails code.
 
-*Note: If you have been following along that [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) was recently updated to reflect new changes to the Ember Router, you may need to go back and update your code. Absolute make sure to update your ember.js and ember-data.js dependencies as they have been updated on the github repo*
+*Note: If you have been following along that [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) was recently updated to reflect new changes to the Ember Router, you will need to go back and update your code. Absolute make sure to update your ember.js and ember-data.js dependencies as they have been updated on the github repo*
 
 ### Create ###
 
