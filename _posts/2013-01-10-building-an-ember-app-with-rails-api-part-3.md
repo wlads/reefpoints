@@ -41,11 +41,12 @@ We need to add the proper route so the index page doesn't blog up. While we're i
 
 {% highlight coffeescript %}
 App.Router.map (match) ->
-  match('/').to 'home'
-  match('/users').to 'users', (match) ->
-    match('/new').to 'new'
-    match('/:user_id/edit').to 'edit'
-    match('/:user_id').to 'show'
+  @resource 'users', ->
+    @route 'new'
+    @route 'edit',
+      path: '/:user_id/edit'
+    @route 'show'
+      path: '/:user_id'
 {% endhighlight %}
 
 And now we can add the `UsersNewRoute`

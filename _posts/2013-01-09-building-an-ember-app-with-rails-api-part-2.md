@@ -21,6 +21,11 @@ In this part I will go over building the Ember app from the perspective of a Rai
 
 I know I promised a 2-part series but I'm going to extend this to 3-parts. This post was growing too large to cover everything.
 
+* Note: this post has been updated since it was originally written. If
+you were following along you should start from the beginning of this
+post as changes have been made to reflect the changes on Ember's master
+branch! *
+
 ## Part 2 - Building with Ember
 
 We need to start with something I forgot to setup in Part 1. Ember looks for templates in the `Ember.TEMPLATES` JavaScript object which is provided to us with the `handlebars_assets` gem we setup in Part 1. We just need to tell the gem to compile for Ember, do this in `config/initializers/handlebars_assets.rb`
@@ -40,7 +45,7 @@ Let's dive in by creating out application layout template in `app/assets/javascr
     <div class='container'>
       <div class='nav-collapse collapse'>
         <ul class='nav'>
-          <li>{{#linkTo 'home'}}Home{{/linkTo}}</li>
+          <li>{{#linkTo 'index'}}Home{{/linkTo}}</li>
           <li>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
         </ul>
       </div>
@@ -71,16 +76,27 @@ App.Router.reopen
   location: 'history'
   rootURL: '/'
 
-App.Router.map (match) ->
-  match('/').to 'home'
-  match('/users').to 'users'
+App.Router.map ->
+  @resource 'users'
 {% endhighlight %}
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
 
-This will tell the Ember Router to use the History API intead of the default 'hash' URLs for routes. We also map the root url of our app to `home`. The new Ember Router will use this string to make some assumptions. If there is a `App.HomeController` object it will use that controller. If not it will just render out the `home` template. Now, under the hood Ember is still using a `App.HomeController` controller but it will define one on the fly. I will get into this in a future blog post. When you call `reopen` this is the Ember way to reopen and monkey patch a class. As you can see the Ember Router syntax is similar to the one in Rails. This is by design. We need the 2nd route there so our `application.hbs` template can compile as it is referencing the `usersIndex` route.
+This will tell the Ember Router to use the History API intead of the
+default 'hash' URLs for routes. The mapping of the `/` in our app is
+implicit in Ember, and it will be assigned to a route of 
+`index`. The new Ember Router will use this string to make some
+assumptions. If there is a `App.IndexController` object it will use that
+controller. If not it will just render out the `index` template. Now,
+under the hood Ember is still using a `App.IndexController` controller
+but it will define one on the fly. I will get into this in a future blog
+post. When you call `reopen` this is the Ember way to reopen and monkey
+patch a class. As you can see the Ember Router syntax is similar to the
+one in Rails. This is by design. We need the 2nd route there so our
+`application.hbs` template can compile as it is referencing the
+`users.index` route.
 
-Let's write `app/assets/javascripts/templates/home.hbs`
+Let's write `app/assets/javascripts/templates/index.hbs`
 
 {% highlight html %}
 <h1>Welcome!</h1>
@@ -113,7 +129,7 @@ Now when clicking between the two pages the nav is not properly updating the `ac
 
 {% highlight html %}
 {% raw %}
-<li {{bindAttr class="isHome:active"}}>{{#linkTo 'home'}}Home{{/linkTo}}</li>
+<li {{bindAttr class="isHome:active"}}>{{#linkTo 'index'}}Home{{/linkTo}}</li>
 <li {{bindAttr class="isUsers:active"}}>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
 {% endraw %}
 {% endhighlight %}
@@ -138,7 +154,7 @@ Each attribute is a function that will compare the `currentRoute` attribute to a
 Finally we're going to update our routes to set `currentRoute` depending upon the route. Let's add two route classes to `app/assets/javascripts/routes.coffee`
 
 {% highlight coffeescript %}
-App.HomeRoute = Ember.Route.extend
+App.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'home')
 
@@ -222,9 +238,9 @@ We need to next update `App.Router` for the proper mapping
 
 {% highlight coffeescript %}
 App.Router.map (match) -> 
-  match('/').to 'home'
-  match('/users').to 'users', (match) -> 
-    match('/:user_id').to 'show'
+  @resource 'users', ->
+    @route 'show',
+      path: '/:user_id'
 {% endhighlight %}
 
 Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
