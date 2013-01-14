@@ -312,4 +312,4 @@ So now we have a common route class to set the `currentRoute` attribute. And bec
 
 Reload our app and everything should work!
 
-So we have only implemented the 'Read' of 'CRUD' in this part, but we have also introduced alot of new concepts. In Part 3 we will implement the 'Create Update Destroy' actions.
+So we have only implemented the 'Read' of 'CRUD' in this part, but we have also introduced alot of new concepts. In [Part 3](http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html) we will implement the 'Create Update Destroy' actions.
