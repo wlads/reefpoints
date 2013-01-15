@@ -77,7 +77,8 @@ App.Router.reopen
   rootURL: '/'
 
 App.Router.map ->
-  @resource 'users'
+  @resource 'users', ->
+    @route 'new'
 {% endhighlight %}
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
@@ -101,8 +102,6 @@ Let's write `app/assets/javascripts/templates/index.hbs`
 {% highlight html %}
 <h1>Welcome!</h1>
 {% endhighlight %}
-
-Now let's 
 
 That's it. If you run your rails server and load the app you should see the following
 ![Welcome](http://i.imgur.com/1j50C.png?1)
