@@ -68,7 +68,7 @@ Don't be fooled by the `createRecord()` call. This will not write anything to th
 <form>
   <fieldset>
     <div>
-      <label {{bindAttr for="firstNameField.field_id"}}>First Name</label>
+      <label {{bindAttr for="firstNameField.elementId"}}>First Name</label>
       {{view Ember.TextField valueBinding='firstName' name='first_name' viewName='firstNameField'}}
     </div>
     <div>
@@ -199,7 +199,7 @@ Now the edit template itself in `app/assets/javascripts/templates/users/edit.hbs
 <form>
   <fieldset>
     <div>
-      <label {{bindAttr for="firstNameField.field_id"}}>First Name</label>
+      <label {{bindAttr for="firstNameField.elementId"}}>First Name</label>
       {{view Ember.TextField valueBinding='firstName' name='first_name' viewName='firstNameField'}}
     </div>
     <div>
@@ -246,7 +246,7 @@ I'm sure you know what is next. The `new` template is nearly identical to the `e
 <form>
   <fieldset>
     <div>
-      <label {{bindAttr for="firstNameField.field_id"}}>First Name</label>
+      <label {{bindAttr for="firstNameField.elementId"}}>First Name</label>
       {{view Ember.TextField valueBinding='firstName' name='first_name' viewName='firstNameField'}}
     </div>
     <div>
