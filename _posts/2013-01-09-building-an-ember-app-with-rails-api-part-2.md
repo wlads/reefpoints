@@ -213,10 +213,10 @@ The `App.User.find()` makes a remote call, fetches the collection, and instantiz
 
 {% highlight html %}
 {% raw %}
-{{#each user in users}}
+{{#each controller}}
   <tr>
-    <td>{{user.id}}</td>
-    <td><a href='#'>{{user.fullName}}</a></td>
+    <td>{{id}}</td>
+    <td><a href='#'>{{fullName}}</a></td>
   </tr>
 {{/each}}
 {% endraw %}
