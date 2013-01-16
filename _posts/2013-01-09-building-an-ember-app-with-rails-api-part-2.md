@@ -165,7 +165,7 @@ App.UsersIndexRoute = Ember.Route.extend
 Two new concepts:
 
 * `setupController` a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we'll see this in a bit)
-* `this.controllerFor` when interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is `ApplicationController` and we need to update the `currentRoute` attribute. You *must* use the `set` function otherwise Ember won't know to notify any computer property observers.
+* `this.controllerFor` when interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is `ApplicationController` and we need to update the `currentRoute` attribute. You *must* use the `set` function otherwise Ember won't know to notify any computed property observers.
 
 Now reload your app and click between the actions and your should see the active states properly set depending upon your route.
 
