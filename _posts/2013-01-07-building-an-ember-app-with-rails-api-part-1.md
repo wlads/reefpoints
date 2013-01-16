@@ -246,3 +246,4 @@ Ok, now our app is in a good spot to start developing an Ember app with. Let's r
 3. Wrote a very simple JSON API for returning all users
 
 If you fire up your app you'll see a blank page. Not too interesting. In [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) we'll build the Ember app itself.
+
