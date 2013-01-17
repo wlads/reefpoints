@@ -37,7 +37,7 @@ Let's start by adding a `Create` button to our index page:
 {% endraw %}
 {% endhighlight %}
 
-We need to add the proper route so the index page doesn't blog up. While we're in here we'll add the `edit` route as well.
+We need to add the proper route so the index page doesn't blow up. While we're in here we'll add the `edit` route as well.
 
 {% highlight coffeescript %}
 App.Router.map (match) ->
