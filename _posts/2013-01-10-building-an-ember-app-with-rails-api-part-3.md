@@ -105,7 +105,7 @@ App.UsersNewController = Ember.ObjectController.extend
     @transitionToRoute('users.show', @content)
 {% endhighlight %}
 
-The first two function `save` and `cancel` are actions that are mapped in the template. Let's break down each:
+The first two functions `save` and `cancel` are actions that are mapped in the template. Let's break down each:
 
 * `save` will make a call to `this.store.commit()`. You will notice we are not modifying a model, assigning params, etc... as you would in a Rails app. Keep in mind that when you modify data that is bound in the form you are actually modifying the data in the model itself. The datastore in Ember needs to be directed when these modifications should be made "permanent", and because we are using the RESTAdapter Ember will attempt to write these changes to the backend. We then attach an observer to the model's `id` attribute, when it changes we want to then transition off the page and to the `show` page for the model.
 * `cancel` If the user decides to not create a new user we must delete the record we created then transition to the `index` page.
