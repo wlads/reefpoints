@@ -173,7 +173,7 @@ App.UsersEditRoute = Ember.Route.extend
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-You'll notice that this route is identity to `App.UsersShowRoute` we wrote in Part 2, let's DRY this up
+You'll notice that this route is identical to `App.UsersShowRoute` we wrote in Part 2, let's DRY this up
 
 {% highlight coffeescript %}
 App.UserRoute = Ember.Route.extend
