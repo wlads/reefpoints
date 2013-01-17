@@ -110,7 +110,7 @@ The first two function `save` and `cancel` are actions that are mapped in the te
 * `save` will make a call to `this.store.commit()`. You will notice we are not modifying a model, assigning params, etc... as you would in a Rails app. Keep in mind that when you modify data that is bound in the form you are actually modifying the data in the model itself. The datastore in Ember needs to be directed when these modifications should be made "permanent", and because we are using the RESTAdapter Ember will attempt to write these changes to the backend. We then attach an observer to the model's `id` attribute, when it changes we want to then transition off the page and to the `show` page for the model.
 * `cancel` If the user decides to not create a new user we must delete the record we created then transition to the `index` page.
 
-There is (what I believe is) a bug in Ember-Data that currently prevents you from using the Model Lifecycles to properly handle creates. In the example above the code will only move forward if the backend responds with a 200. This of course won't work if there is an error of some type. The use will get stuck. Ideally the code should be:
+There is currently (what I believe to be) a bug in Ember-Data that prevents you from using the Model Lifecycles to properly handle creates. In the example above the code will only move forward if the backend responds with a 200. This of course won't work if there is an error of some type. The user will get stuck. Ideally the code should be:
 
 {% highlight coffeescript %}
 save: ->
