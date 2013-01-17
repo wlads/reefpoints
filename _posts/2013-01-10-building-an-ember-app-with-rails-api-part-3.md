@@ -158,8 +158,6 @@ App.User = DS.Model.extend
   ).property('firstName', 'lastName')
 {% endhighlight %}
 
-If anybody knows of a cleaner way to do this please leave a comment below. I suspect there is a way to set the default value in the model itself.
-
 Now when we add data and create it will write to the back end, take us to the show page. When can then click `Back` and we can see the record has been automatically added to the collection on the `index` page.
 
 Adding `Edit` should be straight forward now that we have done create. Start will adding the route:
