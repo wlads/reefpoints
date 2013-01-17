@@ -146,12 +146,16 @@ Now let's run our app and see how it goes.
 
 ![New1](http://i.imgur.com/JnTn3.png)
 
-Whoops, we have `undefined undefined` for the `fullName`. Let's set `firstName` and `lastName` to empty strings in our `new` route:
+Whoops, we have `undefined undefined` for the `fullName`. Let's set default values of an empty string in our user model:
 
 {% highlight coffeescript %}
-App.UsersNewRoute = App.UsersRoute.extend
-  model: ->
-    App.User.createRecord({firstName: '', lastName: ''})
+App.User = DS.Model.extend
+  firstName: DS.attr('string', defaultValue: '' )
+  lastName: DS.attr('string', defaultValue: '' )
+  quote: DS.attr('string')
+  fullName: (->
+    "#{@get('firstName')} #{@get('lastName')}"
+  ).property('firstName', 'lastName')
 {% endhighlight %}
 
 If anybody knows of a cleaner way to do this please leave a comment below. I suspect there is a way to set the default value in the model itself.
