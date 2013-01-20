@@ -169,7 +169,7 @@ Two new concepts:
 
 Now reload your app and click between the actions and your should see the active states properly set depending upon your route.
 
-Next we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascript/store.coffee`
+Next we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascripts/store.coffee`
 
 {% highlight coffeescript %}
 App.Store = DS.Store.extend
