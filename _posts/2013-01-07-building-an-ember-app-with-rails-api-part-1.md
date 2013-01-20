@@ -112,7 +112,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11tch '
 gem 'rails-api'
 gem 'thin'
 gem 'active_model_serializers', :github => 'rails-api/active_model_serializers'
