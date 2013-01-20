@@ -196,7 +196,7 @@ App.User = DS.Model.extend(
 
 [Read more about Ember models](http://emberjs.com/guides/models)
 
-We are defining each attribute that is coming over the wire, as well as a computed propery that will combine `firstName` and `lastName`. Simple enough!
+We are defining each attribute that is coming over the wire, as well as a computed property that will combine `firstName` and `lastName`. Simple enough!
 
 Now we need to modify the `users` route to fetch the data
 
