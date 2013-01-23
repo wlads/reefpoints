@@ -127,9 +127,9 @@ input.search {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 24px;
   border-radius: 9px;
-  border: 2px solid #CCC;
+  border: 1px solid #CCC;
   margin: 0 auto 72px auto;
-  background-color: #F9F9F9;
+  background-color: #F8F8F8;
 }
 
 @media (max-width : 700px){
