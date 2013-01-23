@@ -1,6 +1,6 @@
-html body #post p > code, html body #post li code { background: #E6E7E8; font-family: "Lucida Console", Monaco, monospace; padding: 2px 5px; font-size: 13px; border-radius: 3px;}
+html body #post p > code, html body #post li code { border: 1px solid #ccc; background: #f8f8f8; font-family: "Lucida Console", Monaco, monospace; padding: 2px 5px; font-size: 13px; border-radius: 3px;}
 
-.highlight  { background: #E6E7E8; font-family: "Lucida Console", Monaco, monospace; padding: 10px; overflow-x: scroll; margin-bottom: 1em;}
+.highlight  { border: 1px solid #ccc; background: #f8f8f8; font-family: "Lucida Console", Monaco, monospace; padding: 10px; overflow-x: scroll; margin-bottom: 1em;}
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
