@@ -93,6 +93,67 @@
   }
 }
 
+.fontello {
+  font-family: fontello;
+}
+
+.fontello:before {
+  content: attr(data-icon);
+}
+
+.link {
+  float: left;
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 1.35em;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 1.75;
+}
+
+footer {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.footer-links {
+  height: 50px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-in-footer {
+  margin-left: 5px;
+  background-color: #2A5567;
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -otransition-duration: .5s;
+  transition-duration: .5s;
+}
+
+.link-in-footer:hover {
+  background-color: #F05051;
+}
+
+.footer-number {
+  display: block;
+  text-align: center;
+}
+
+.footer-copyright {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+/*
 html body footer {
   padding-top: 3em;
   height: 8em;
@@ -104,7 +165,7 @@ footer p {
   margin-top: .25em;
 }
 footer a {
-  background-color: #2A5567; /* $blue */
+  background-color: #2A5567;
   color: #FFFFFF;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
@@ -116,7 +177,7 @@ footer a {
   transition-property: background-color;
 }
 footer a:hover {
-  background-color: #F05051; /* $red */
+  background-color: #F05051;
 }
 footer div {
   position: relative;
@@ -158,3 +219,4 @@ footer div a:hover {
   footer {margin-top: 1em;}
   footer p {width: 250px; margin: 0 auto;}
 }
+*/

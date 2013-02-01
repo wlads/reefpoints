@@ -3,4 +3,5 @@ future:      true
 lsi:         false
 pygments:    true
 markdown:    redcarpet
+server:      true
 permalink:   date
