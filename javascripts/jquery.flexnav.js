@@ -47,7 +47,7 @@
       }
 
       // Toggle for nav menu
-      $('.mobile-bar').click(function() {
+      $('.mobile-button').click(function() {
           $this.slideToggle(settings.animationSpeed);
       });
 

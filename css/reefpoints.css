@@ -112,7 +112,8 @@ a {
   text-align: center;
   font-size: 6em;
   position: relative;
-  margin: .25em 0;
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 .search_reefpoints label {
@@ -222,35 +223,6 @@ input.search:focus {
   margin-bottom: .15em;
 }
 
-#post aside span a {
-  font-family: fontello;
-  font-size: 1.35em;
-  font-style: normal;
-  font-weight: normal;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  text-align: center;
-  background-color: #2A5567;
-  color: #FFFFFF;
-  margin-top: .25em;
-  text-decoration: none;
-  float: left;
-  margin-right: .25em;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-}
-
-#post aside span a:hover {
-  background-color: #F05051;
-}
-
 #post aside {
   color: #777;
   padding: 20px 0;
@@ -258,7 +230,8 @@ input.search:focus {
   letter-spacing: 1px;
   vertical-align: middle;
   text-transform: uppercase;
-  background: url(http://dockyard.com/assets/wave.png);
+  background-image: url(http://dockyard.com/assets/bg.svg);
+  background-repeat: repeat;
   margin-bottom: 2em;
 }
 
@@ -276,22 +249,8 @@ input.search:focus {
   font-weight: normal;
 }
 
-#post aside span a {
-  float: none;
-  margin: 0 .2em;
-  background: #777;
-  text-transform: none;
-  display: inline-block;
-}
-
-#post aside span a:hover,
-#post aside span a:focus,
-#post aside span a:active {
-  background-color: #F05051;
-}
-
 .post-title h1 {
-  font-family: cubano;
+  font-family: cubano, sans-serif;
   font-size: 2.5em;
   line-height: 1.15em;
   margin-bottom: .75em;

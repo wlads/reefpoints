@@ -6,9 +6,9 @@
   {% else %}
     <title>DockYard ~ Ruby on Rails Development - Boston based Web and Mobile software development</title>
   {% endif %}
-<link href="/css/syntax.css" media="screen" rel="stylesheet">
-<link href="/css/shared.css" media="screen" rel="stylesheet">
 <link href="/css/reefpoints.css" media="screen" rel="stylesheet">
+<link href="/css/shared.css" media="screen" rel="stylesheet">
+<link href="/css/syntax.css" media="screen" rel="stylesheet">
 <link href="/css/mobile.css" media="screen" rel="stylesheet">
 <link href='http://reefpoints.dockyard.com/atom.xml' rel='alternate' title='ATOM' type='application/atom+xml'>
 <meta content='DockYard is consultancy for hire based in Boston, MA. We specialize in Ruby on Rails development, web development, mobile development, software development, and mobile web development for startups and enterprise.' name='description'>
@@ -20,9 +20,11 @@
 <script src="/javascripts/bigtext.js"></script>
 <script src="/javascripts/reefpoints.js"></script>
 <script src="/javascripts/jquery.flexnav.js"></script>
+
 <!--[if lt IE 9]>
 <script src='//html5shim.googlecode.com/svn/trunk/html5.js'></script>
 <![endif]-->
+
 <script>
   //<![CDATA[
     var _gaq = _gaq || [];
@@ -35,14 +37,18 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   //]]>
+
 </script>
 {% if page %}
   <meta content='DockYard.com - {{ page.summary }}' name='description'>
 {% else %}
   <meta content='DockYard is a web and mobile software development consultancy for hire based in Boston, MA' name='description'>
 {% endif %}
+
 <meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'>
+
 <link href='http://dockyard.com/humans.txt' rel='author'>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
 
 <!--
@@ -94,36 +100,62 @@
 <body id='blog' class='{{ page.category }}'>
 
 <header id='mobile-header'>
-  <div class='mobile-bar'>
-    <h1 id='mobile-logo'>DockYard</h1>
-    <div class='mobile-button'>n</div>
+  <div class='wrap'>
+    <a class='header-logo' href='/'>DockYard</a>
+    <div class='mobile-button fontello'>n</div>
   </div>
-  <nav>
-    <ul id="mobile-nav">
-      <li><a href="http://dockyard.com"><span class='mobile-nav-icon'>h</span><br>Home</a></li>
-      <li><a href="http://dockyard.com/work"><span class='mobile-nav-icon'>w</span><br>Work</a></li>
-      <li><a href="http://dockyard.com/people"><span class='mobile-nav-icon'>p</span><br>People</a></li>
-      <li><a href="http://dockyard.com/community"><span class='mobile-nav-icon'>c</span><br>Community</a></li>
-      <li><a href="/"><span class='mobile-nav-icon'>b</span><br>Blog</a></li>
-      <li><a href="http://dockyard.com/contact"><span class='mobile-nav-icon'>m</span><br>Contact</a></li>
-    </ul>
-  </nav>
+ <ul id="mobile-nav">
+   <li class='mobile-nav-link-wrap'>
+     <a href='http://dockyard.com' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>h</span>
+         <p class='main-nav-item'>Home</p>
+     </a>
+   </li>
+   <li class='mobile-nav-link-wrap'>
+     <a href='http://dockyard.com/work' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>w</span>
+         <p class='main-nav-item'>Work</p>
+     </a>
+   </li>
+   <li class='mobile-nav-link-wrap'>
+     <a href='http://dockyard.com/people' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>p</span>
+         <p class='main-nav-item'>People</p>
+     </a>
+   </li>
+   <li class='mobile-nav-link-wrap'>
+     <a href='http://dockyard.com/community' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>c</span>
+         <p class='main-nav-item'>Community</p>
+     </a>
+   </li>
+   <li class='mobile-nav-link-wrap'>
+     <a href='/' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>b</span>
+         <p class='main-nav-item'>Blog</p>
+     </a>
+   </li>
+   <li class='mobile-nav-link-wrap'>
+     <a href='http://dockyard.com/contact' class='mobile-nav-link'>
+       <span class='mobile-nav-icon fontello'>m</span>
+         <p class='main-nav-item'>Contact</p>
+     </a>
+   </li>
+ </ul>
 </header>
 
 <header id='site-header'>
   <div class='wrap'>
-    <div class='nav'>
-      <h1>
-        <a href='http://dockyard.com/'>DockYard </a>
-      </h1>
-      <ul>
-        <li><a href='http://dockyard.com/work'>Work</a></li>
-        <li><a href='http://dockyard.com/people'>People</a></li>
-        <li><a href='http://dockyard.com/community'>Community</a></li>
-        <li class='nav-blog'><a href='/'>Blog</a></li>
-        <li><a href='http://dockyard.com/contact'>Contact</a></li>
-      </ul>
-    </div>
+    <h1>
+      <a href='http://dockyard.com/' class='header-logo'>DockYard </a>
+    </h1>
+    <ul class='main-nav'>
+      <li class='nav-work'><a href='http://dockyard.com/work' class='main-nav-item'>Work</a></li>
+      <li class='nav-people'><a href='http://dockyard.com/people' class='main-nav-item'>People</a></li>
+      <li class='nav-community'><a href='http://dockyard.com/community' class='main-nav-item'>Community</a></li>
+      <li class='nav-blog'><a href='/' class='main-nav-item'>Blog</a></li>
+      <li class='nav-contact'><a href='http://dockyard.com/contact' class='main-nav-item'>Contact</a></li>
+    </ul>
   </div>
 </header>
 
@@ -147,7 +179,6 @@
     </li>
   </ul>
   <a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a>
-  <a class='footer-email' href='mailto:contact@dockyard.com' target='_blank'>contact@dockyard.com</a>
   <p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p>
 </footer>
 
