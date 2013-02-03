@@ -70,10 +70,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* GENERAL STYLES */
 
 body {
-  color: #2A5567; /* $blue */
+  min-width: 1000px;
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 1em;
-  min-width: 1000px;
+  color: #2A5567; /* $blue */
+}
+
+a, h1, h2, p, input, span, label {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
@@ -84,12 +87,18 @@ body {
 }
 
 @media (max-width : 1100px){
-  body {min-width: 480px;}
-  .wrap {width: 90%;}
+  body {
+    min-width: 480px;
+  }
+  .wrap {
+    width: 90%;
+  }
 }
 
 @media (max-width : 650px){
-  body {min-width: 0px;}
+  body {
+    min-width: 0px;
+  }
 }
 
 a {
@@ -108,12 +117,12 @@ a {
 /* INDEX PAGE */
 
 .logo {
-  font-family: candyscript, sans-serif;
-  text-align: center;
-  font-size: 6em;
-  position: relative;
   margin-top: .25em;
   margin-bottom: .25em;
+  position: relative;
+  text-align: center;
+  font-family: candyscript, sans-serif;
+  font-size: 6em;
 }
 
 .search_reefpoints label {
@@ -121,16 +130,16 @@ a {
 }
 
 input.search {
-  color: #444;
-  width: 608px;
+  margin: 0 auto 72px auto;
   padding: 12px;
   display: block;
+  width: 608px;
+  border: 1px solid #CCC;
+  border-radius: 9px;
+  background-color: #F8F8F8;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 24px;
-  border-radius: 9px;
-  border: 1px solid #CCC;
-  margin: 0 auto 72px auto;
-  background-color: #F8F8F8;
+  color: #444;
 }
 
 @media (max-width : 700px){
@@ -146,15 +155,15 @@ input.search:focus {
 }
 
 .nothin {
-  font-size: 24px;
-  text-align: center;
   margin: 0 0 72px 0;
   display: none;
+  font-size: 24px;
+  text-align: center;
 }
 
 .show-all-posts {
-  width: 480px;
   margin: 0 auto;
+  width: 480px;
   display: block;
   text-align: center;
 }
@@ -164,10 +173,10 @@ input.search:focus {
 }
 
 #index article header {
-  text-align: right;
+  padding-left: 5%;
   width: 170px;
   float: left;
-  padding-left: 5%;
+  text-align: right;
 }
 
 #index article header h4 a {
@@ -178,11 +187,11 @@ input.search:focus {
 }
 
 #index article {
+  width: 80%;
+  max-width: 980px;
   margin: 0 auto 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid #E6E7E8;
-  width: 80%;
-  max-width: 980px;
 }
 
 #index article a:hover {
@@ -209,14 +218,6 @@ input.search:focus {
 
 /* Post Page */
 
-#post {
-  clear: left;
-}
-
-#post aside {
-  width: 100%;
-}
-
 .post-date {
   font-size: 1.15em;
   font-weight: bold;
@@ -224,15 +225,15 @@ input.search:focus {
 }
 
 #post aside {
-  color: #777;
+  width: 100%;
+  margin-bottom: 2em;
   padding: 20px 0;
-  text-align: center;
-  letter-spacing: 1px;
-  vertical-align: middle;
-  text-transform: uppercase;
   background-image: url(http://dockyard.com/assets/bg.svg);
   background-repeat: repeat;
-  margin-bottom: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
 }
 
 #post aside ul {
@@ -262,15 +263,15 @@ input.search:focus {
 }
 
 .post-content h2 {
-  font-weight: bold;
-  font-size: 1.5em;
   margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 .post-content h3 {
-  font-weight: bold;
-  color: #65A4BA;
   margin-top: .5em;
   font-size: 1.25em;
+  font-weight: bold;
+  color: #65A4BA;
 }
 .post-content p {
   margin-bottom: 1em;
@@ -299,17 +300,16 @@ input.search:focus {
 }
 
 .post-share {
-  clear: both;
   margin-top: 2em;
-  padding-top: 2em;
-  border-top-style: solid;
-  border-width: 2px;
-  border-color: #ABD4E7;
   margin-bottom: 1em;
+  padding-top: 2em;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #ABD4E7;
 }
 .post-share h1 {
-  font-weight: bold;
   margin-bottom: .5em;
+  font-weight: bold;
 }
 .twitter-share-button {
   float: left;
@@ -324,7 +324,7 @@ input.search:focus {
 .design #content .wrap,
 .design .post-div,
 .design #post aside {
-  margin: 0;
+  margin: 0 auto;
   float: none;
   width: auto;
 }
@@ -417,7 +417,7 @@ input.search:focus {
   line-height: 1;
   font-size: 40px;
   font-weight: normal;
-  font-family: cubano;
+  font-family: cubano, sans-serif;
 }
 
 .expanding-the-yard .post-div {
