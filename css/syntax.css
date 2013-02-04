@@ -1,3 +1,40 @@
+.post-content h2 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.post-content h3 {
+  margin-top: .5em;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #65A4BA;
+}
+.post-content p {
+  margin-bottom: 1em;
+  line-height: 1.65;
+}
+.post-content a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.post-content a:hover {
+  color: #F05051; /* $red */
+}
+.post-content ul li {
+  margin-left: 1em;
+  list-style-type: square;
+}
+.post-content ul {
+  margin-bottom: 1em;
+}
+.post-content ol {
+  margin-bottom: 1em;
+}
+.post-content img {
+  display: block;
+  margin: 0 auto;
+}
+
 html body #post p > code, html body #post li code { border: 1px solid #ccc; background: #f8f8f8; font-family: "Lucida Console", Monaco, monospace; padding: 2px 5px; font-size: 13px; border-radius: 3px;}
 
 .highlight  { border: 1px solid #ccc; background: #f8f8f8; font-family: "Lucida Console", Monaco, monospace; padding: 10px; overflow-x: scroll; margin-bottom: 1em;}

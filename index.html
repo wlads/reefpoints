@@ -12,23 +12,22 @@ title: DockYard Blog
 
 <section id='index'>
   {% for post in site.posts %}
-    <article>
-      <header>
+    <article class='index-section'>
+      <header class='index-meta'>
         <time class='index-date' pubdate datetime='{{ post.date }}'>{{ post.date || date_to_string }}</time>
         <p class='index-author'>
           {{ post.author }}
         </p>
         {% if post.comments %}
-          <h4><a href='{{ post.url }}#disqus_thread'>.</a><h4>
+          <h4><a href='{{ post.url }}#disqus_thread' class='index-comments'>.</a><h4>
         {% endif %}
       </header>
       <div class='index-post'>
         <h2><a href='{{ post.url }}' class='index-title'>{{ post.title }}</a></h2>
-        <p>
+        <p class='index-summary'>
           {{ post.summary }}
         </p>
       </div>
-      <div class='clear'></div>
     </article>
   {% endfor %}
 </section>

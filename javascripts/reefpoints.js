@@ -13,7 +13,7 @@ $(function(){
   });
 
   // Art directed posts
-  $('.design .post-title').bigtext({
+  $('.design .post-title-wrap').bigtext({
     childSelector: '> h1'
   });
 });

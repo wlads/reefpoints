@@ -70,35 +70,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* GENERAL STYLES */
 
 body {
-  min-width: 1000px;
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 1em;
   color: #2A5567; /* $blue */
 }
 
-a, h1, h2, p, input, span, label {
+a, h1, h2, p, input, span, label, div {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-}
-
-.wrap {
-  width: 980px;
-  margin: 0 auto;
-}
-
-@media (max-width : 1100px){
-  body {
-    min-width: 480px;
-  }
-  .wrap {
-    width: 90%;
-  }
-}
-
-@media (max-width : 650px){
-  body {
-    min-width: 0px;
-  }
 }
 
 a {
@@ -117,93 +96,80 @@ a {
 /* INDEX PAGE */
 
 .logo {
+  position: relative;
   margin-top: .25em;
   margin-bottom: .25em;
-  position: relative;
-  text-align: center;
   font-family: candyscript, sans-serif;
-  font-size: 6em;
+  text-align: center;
+}
+
+@media (min-width: 780px){
+  .logo {
+    font-size: 6em;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 780px){
+  .logo {
+    font-size: 5em;
+  }
+}
+
+@media (max-width: 400px){
+  .logo {
+    font-size: 4em;
+  }
 }
 
 .search_reefpoints label {
   display: none;
 }
 
-input.search {
-  margin: 0 auto 72px auto;
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
   padding: 12px;
   display: block;
-  width: 608px;
   border: 1px solid #CCC;
-  border-radius: 9px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
   background-color: #F8F8F8;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 24px;
   color: #444;
 }
 
-@media (max-width : 700px){
-  input.search {
+@media (min-width: 700px){
+  .search {
+    width: 608px;
+  }
+}
+
+@media (max-width: 700px){
+  .search {
     width: 90%;
   }
 }
 
-input.search:focus {
+.search:focus {
   outline: none;
   border-color: #999;
   background: #FCFCFC;
 }
 
 .nothin {
-  margin: 0 0 72px 0;
   display: none;
   font-size: 24px;
   text-align: center;
 }
 
-.show-all-posts {
-  margin: 0 auto;
-  width: 480px;
-  display: block;
-  text-align: center;
-}
-
-#index {
-  clear: left;
-}
-
-#index article header {
-  padding-left: 5%;
-  width: 170px;
-  float: left;
-  text-align: right;
-}
-
-#index article header h4 a {
-  opacity: .5;
-}
-#index article header h4 a:hover {
-  color: #2A5567;
-}
-
-#index article {
-  width: 80%;
-  max-width: 980px;
-  margin: 0 auto 2em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid #E6E7E8;
-}
-
-#index article a:hover {
+.index-title:hover {
   text-decoration: underline;
   color: #F05051; /* $red */
-}
-
-.index-post {
-  width: 100%;
-  max-width: 680px;
-  float: right;
-  padding-right: 5%;
 }
 
 .index-date {
@@ -216,15 +182,17 @@ input.search:focus {
   line-height: 36px;
 }
 
-/* Post Page */
-
-.post-date {
-  font-size: 1.15em;
-  font-weight: bold;
-  margin-bottom: .15em;
+.index-comments {
+  opacity: .5;
 }
 
-#post aside {
+.index-comments:hover {
+  text-decoration: underline;
+}
+
+/* Post Page */
+
+.post-metas-wrap {
   width: 100%;
   margin-bottom: 2em;
   padding: 20px 0;
@@ -236,21 +204,17 @@ input.search:focus {
   color: #777;
 }
 
-#post aside ul {
+.post-metas {
   margin: 0 auto;
   overflow: hidden;
 }
 
-#post aside ul li {
+.post-meta {
   display: inline;
   font-size: .9em;
 }
 
-.post-date {
-  font-weight: normal;
-}
-
-.post-title h1 {
+.post-title {
   font-family: cubano, sans-serif;
   font-size: 2.5em;
   line-height: 1.15em;
@@ -259,43 +223,6 @@ input.search:focus {
 
 .post-div {
   width: 720px;
-  margin: 0 auto;
-}
-
-.post-content h2 {
-  margin-top: 1em;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-.post-content h3 {
-  margin-top: .5em;
-  font-size: 1.25em;
-  font-weight: bold;
-  color: #65A4BA;
-}
-.post-content p {
-  margin-bottom: 1em;
-  line-height: 1.65;
-}
-.post-content a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-.post-content a:hover {
-  color: #F05051; /* $red */
-}
-.post-content ul li {
-  margin-left: 1em;
-  list-style-type: square;
-}
-.post-content ul {
-  margin-bottom: 1em;
-}
-.post-content ol {
-  margin-bottom: 1em;
-}
-.post-content img {
-  display: block;
   margin: 0 auto;
 }
 
@@ -323,7 +250,7 @@ input.search:focus {
 
 .design #content .wrap,
 .design .post-div,
-.design #post aside {
+.design .post-metas-wrap {
   margin: 0 auto;
   float: none;
   width: auto;
@@ -355,48 +282,26 @@ input.search:focus {
   width: 90%;
 }
 
-.design #post .post-title {
+.design .post-title-wrap {
   margin: 0 auto;
   max-width: 940px;
   padding: 40px 20px;
 }
 
-.design #post .post-title h1 {
+.design .post-title {
   margin: 0;
   text-align: center;
 }
 
 @media (max-width : 480px){
-  .design #post .post-title h1,
-  #post aside ul,
-  .design #post-comments,
-  .design .post-share {
-    width: auto;
-  }
-  
-  .design #post .post-title {
+  .design .post-title-wrap {
     padding: 20px;
   }
   
-  .design #post .post-title h1 {
+  .design .post-title {
     line-height: 1;
     font-size: 40px;
     white-space: normal;
-  }
-
-  #post aside ul li {
-    margin: 0;
-  }
-  
-  #post aside ul li span a {
-    display: none;
-  }
-  #post aside ul li.post-date {
-    display: block;
-  }
-
-  .design .content {
-    width: auto;
   }
 
   .design .post-content,
@@ -408,11 +313,11 @@ input.search:focus {
 
 /* Expanding the Yard */
 
-.expanding-the-yard #post .post-title h1 {
+.expanding-the-yard .post-title {
   color: #F05051;
 }
 
-.expanding-the-yard #post h2 {
+.expanding-the-yard .content h2 {
   margin: .5em 0;
   line-height: 1;
   font-size: 40px;
@@ -421,8 +326,8 @@ input.search:focus {
 }
 
 .expanding-the-yard .post-div {
-  font-size: 1.2em;
   max-width: 100%;
+  font-size: 1.2em;
 }
 
 .expanding-the-yard .post-content {
@@ -430,10 +335,11 @@ input.search:focus {
   max-width: none;
 }
 
-.expanding-the-yard .post-content .content {
-  margin: 0 auto;
-  max-width: 720px;
+.expanding-the-yard .content {
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px 20px;
+  max-width: 720px;
 }
 
 .expanding-the-yard .one,
@@ -480,12 +386,15 @@ input.search:focus {
   font-weight: bold;
   margin: .5em 0 1em;
 }
+
 .issue a {
   text-decoration: underline;
 }
+
 .issue a:hover {
   color: #F05051;
 }
+
 .design .issue {
   margin: 1em auto -1em;
   max-width: 980px;

@@ -84,6 +84,38 @@
   }
 }
 
+footer {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.footer-links {
+  height: 50px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-in-footer {
+  margin-left: 5px;
+  background-color: #2A5567;
+}
+
+.link-in-footer:hover {
+  background-color: #F05051;
+}
+
+.footer-number {
+  display: block;
+  text-align: center;
+}
+
+.footer-copyright {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
 .fontello {
   font-family: fontello;
 }
@@ -112,27 +144,6 @@
   transition-duration: .5s;
 }
 
-footer {
-  padding-top: 3em;
-  padding-bottom: 3em;
-}
-
-.footer-links {
-  height: 50px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.link-in-footer {
-  margin-left: 5px;
-  background-color: #2A5567;
-}
-
-.link-in-footer:hover {
-  background-color: #F05051;
-}
-
 .link-in-post {
   display: inline-block;
   float: none;
@@ -146,82 +157,3 @@ footer {
 .link-in-post:hover {
   background-color: #F05051;
 }
-
-.footer-number {
-  display: block;
-  text-align: center;
-}
-
-.footer-copyright {
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
-}
-
-/*
-html body footer {
-  padding-top: 3em;
-  height: 8em;
-  clear: both;
-  text-align: center;
-  margin-bottom: 3em;
-}
-footer p {
-  margin-top: .25em;
-}
-footer a {
-  background-color: #2A5567;
-  color: #FFFFFF;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-}
-footer a:hover {
-  background-color: #F05051;
-}
-footer div {
-  position: relative;
-  display: inline-block;
-  margin: 0 10px;
-}
-.twitter {line-height: 40px;}
-.github {line-height: 42px;}
-footer .rss {line-height: 38px; font-size: 1.65em;}
-footer .email {line-height: 40px; font-size: 1.5em;}
-
-@-moz-document url-prefix() {
-  footer {
-    position: relative;
-    top: 3em;
-  }
-  footer p {
-    top: -10px;
-  }
-}
-
-footer div a {
-  font-family: fontello;
-  font-size: 1.35em;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: block;
-  text-align: center;
-  float: left;
-  margin: 0 .25em;
-}
-footer div a:hover {
-  background-color: $red;
-}
-
-@media (max-width : 650px){
-  footer {margin-top: 1em;}
-  footer p {width: 250px; margin: 0 auto;}
-}
-*/
