@@ -85,8 +85,8 @@ a {
   color: #2A5567; /* $blue */
 }
 
-.clear {
-  clear: both;
+em {
+  font-weight: bold;
 }
 
 #blog li.nav-blog a {
@@ -167,11 +167,6 @@ a {
   text-align: center;
 }
 
-.index-title:hover {
-  text-decoration: underline;
-  color: #F05051; /* $red */
-}
-
 .index-date {
   font-weight: bold;
 }
@@ -180,6 +175,11 @@ a {
   font-size: 32px;
   font-weight: bold;
   line-height: 36px;
+}
+
+.index-title:hover {
+  text-decoration: underline;
+  color: #F05051; /* $red */
 }
 
 .index-comments {
@@ -193,20 +193,13 @@ a {
 /* Post Page */
 
 .post-metas-wrap {
-  width: 100%;
   margin-bottom: 2em;
   padding: 20px 0;
   background-image: url(http://dockyard.com/assets/bg.svg);
-  background-repeat: repeat;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #777;
-}
-
-.post-metas {
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 .post-meta {
@@ -242,146 +235,6 @@ a {
   float: left;
 }
 
-/* Designed post styles */
-
-.design {
-  min-width: 0;
-}
-
-.design #content .wrap,
-.design .post-div,
-.design .post-metas-wrap {
-  margin: 0 auto;
-  float: none;
-  width: auto;
-}
-
-.design .post-content {
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 720px;
-}
-
-.design .post-wrap {
-  top: 0;
-}
-
-.design #post-comments,
-.design .post-share {
-  margin: 0 auto;
-  max-width: 980px;
-  overflow: hidden;
-}
-
-.design .post-share {
-  border: none;
-  width: 90%;
-}
-
-.design #post-comments {
-  width: 90%;
-}
-
-.design .post-title-wrap {
-  margin: 0 auto;
-  max-width: 940px;
-  padding: 40px 20px;
-}
-
-.design .post-title {
-  margin: 0;
-  text-align: center;
-}
-
-@media (max-width : 480px){
-  .design .post-title-wrap {
-    padding: 20px;
-  }
-  
-  .design .post-title {
-    line-height: 1;
-    font-size: 40px;
-    white-space: normal;
-  }
-
-  .design .post-content,
-  .design #post-comments,
-  .design .post-share {
-    padding: 20px;
-  }
-}
-
-/* Expanding the Yard */
-
-.expanding-the-yard .post-title {
-  color: #F05051;
-}
-
-.expanding-the-yard .content h2 {
-  margin: .5em 0;
-  line-height: 1;
-  font-size: 40px;
-  font-weight: normal;
-  font-family: cubano, sans-serif;
-}
-
-.expanding-the-yard .post-div {
-  max-width: 100%;
-  font-size: 1.2em;
-}
-
-.expanding-the-yard .post-content {
-  padding: 0;
-  max-width: none;
-}
-
-.expanding-the-yard .content {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 20px;
-  max-width: 720px;
-}
-
-.expanding-the-yard .one,
-.expanding-the-yard .two,
-.expanding-the-yard .three,
-.expanding-the-yard .four {
-  overflow: hidden;
-}
-
-.expanding-the-yard .one {
-  color: #ADE;
-  background: #1A4557;
-}
-
-.expanding-the-yard .two {
-  color: #BEF;
-  background: #3A6577;
-}
-
-.expanding-the-yard .three {
-  color: #145;
-  background: #9AC5D7;
-}
-
-.expanding-the-yard .four {
-  color: #256;
-  background: #BAE5F7;
-}
-
-.expanding-the-yard .four img {
-  margin: 0 auto 40px auto;
-}
-
-@media only screen and (max-width : 480px){
-  .expanding-the-yard .post-content {
-    padding: 0;
-  }
-  .expanding-the-yard .post-content .content {
-    padding: 20px;
-  }
-}
-
 .issue {
   font-weight: bold;
   margin: .5em 0 1em;
@@ -395,17 +248,83 @@ a {
   color: #F05051;
 }
 
-.design .issue {
-  margin: 1em auto -1em;
-  max-width: 980px;
+/* Designed post styles */
+
+.design #content .wrap,
+.design .post-div,
+.design .post-metas-wrap {
+  width: auto;
+}
+
+.design .post-content,
+.design .issue,
+.design .post-share,
+.design #post-comments {
   width: 90%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (max-width : 480px){
-  .design .issue {
-    width: 91.5%;
+.design .issue {
+  margin-top: 2em;
+  margin-bottom: -1em;
 }
 
-em {
-  font-weight: bold;
+.design .post-share {
+  border: none;
+}
+
+.design .post-title-wrap {
+  width: 90%;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Expanding the Yard */
+
+.expanding-the-yard .post-title {
+  color: #F05051;
+}
+
+.expanding-the-yard .content h2 {
+  margin: .5em 0;
+  font-size: 40px;
+  font-family: cubano, sans-serif;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.expanding-the-yard .post-content {
+  width: 100%;
+}
+
+.expanding-the-yard .post-div {
+  max-width: 100%;
+  font-size: 1.2em;
+}
+
+.expanding-the-yard .one {
+  color: #ADE;
+  background-color: #1A4557;
+}
+
+.expanding-the-yard .two {
+  color: #BEF;
+  background-color: #3A6577;
+}
+
+.expanding-the-yard .three {
+  color: #145;
+  background-color: #9AC5D7;
+}
+
+.expanding-the-yard .four {
+  color: #256;
+  background-color: #BAE5F7;
+}
+
+.expanding-the-yard img {
+  margin: 0 auto 40px auto;
 }
