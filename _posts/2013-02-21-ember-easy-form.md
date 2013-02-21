@@ -28,7 +28,7 @@ uncommon to have to write something like so:
     {{view Ember.TextField valueBinding='firstName' name='last_name' viewName='lastNameField'}}
   </div>
   <div class="input string">
-    <label {{bindAttr for="ageField.field_id"}}>First Name</label>
+    <label {{bindAttr for="ageField.field_id"}}>Age</label>
     {{view Ember.TextField valueBinding='age' name='age' viewName='ageField'}}
   </div>
   <input type="submit" value="Submit">
