@@ -40,6 +40,19 @@
     },
     {
       "search": [
+        "mail",
+        "email"
+      ],
+      "code": 109,
+      "from": 9993,
+      "uid": "ae3so8q0b0n2h8esv9flua2nmwswa8fd",
+      "css": "mail",
+      "orig_css": "mail",
+      "orig_code": 109,
+      "src": "modernpics"
+    },
+    {
+      "search": [
         "chat",
         "talk"
       ],
@@ -62,19 +75,6 @@
       "orig_code": 114,
       "src": "entypo",
       "from": 59194
-    },
-    {
-      "search": [
-        "mail",
-        "email"
-      ],
-      "code": 109,
-      "uid": "ccc2329632396dc096bb638d4b46fb98",
-      "css": "mail-alt",
-      "orig_css": "mail-alt",
-      "orig_code": 109,
-      "src": "fontawesome",
-      "from": 61664
     },
     {
       "search": [

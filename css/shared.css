@@ -137,7 +137,7 @@ footer {
   font-size: 1.35em;
   text-align: center;
   color: #FFFFFF;
-  line-height: 1.75;
+  line-height: 1.85;
   -webkit-transition-duration: .5s;
   -moz-transition-duration: .5s;
   -otransition-duration: .5s;
@@ -156,4 +156,9 @@ footer {
 
 .link-in-post:hover {
   background-color: #F05051;
+}
+
+.footer-mail-icon {
+  font-size: 1.5em;
+  line-height: 1.675;
 }
