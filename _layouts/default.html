@@ -49,7 +49,15 @@
 
 <link href='http://dockyard.com/humans.txt' rel='author'>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+{% if page %}
+  <meta name='twitter:card' content='summary'>
+  <meta name='twitter:site' content='@DockYard'>
+  <meta name='twitter:url' content='{{ post.url }}'>
+  <meta name='twitter:title' content='{{ post.title }}'>
+  <meta name='twitter:description' content='{{ post.summary }}'>
+{% endif %}
 
 <!--
                                                                         ..
