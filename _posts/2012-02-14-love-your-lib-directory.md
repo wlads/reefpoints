@@ -100,7 +100,7 @@ Patch](http://en.wikipedia.org/wiki/Monkey_patch).
 
 The pattern I have fallen upon is to define a `gem_ext/` directory and a
 `gem_ext.rb` file in lib. I then make sure the extensions are loaded up
-using an initializer. For last of a better term I call this
+using an initializer. For lack of a better term I call this
 `lib_loader.rb`. Lets start with the loader.
 
 {% highlight ruby %}
