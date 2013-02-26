@@ -51,13 +51,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
-
 <meta name='twitter:card' content='summary'>
 <meta name='twitter:site' content='@DockYard'>
-<meta name='twitter:creator' content='{{ page.author }}'>
-<meta name='twitter:url' content='{{ post.url }}'>
+{% if page.twitter %}
+  <meta name='twitter:creator' content='{{ page.twitter }}'>
+{% endif %}
+<meta name='twitter:url' content='http://reefpoints.dockyard.com{{ page.url }}'>
 <meta name='twitter:title' content='{{ page.title }}'>
-<meta name='twitter:description' content='{{ post.summary }}'>
+<meta name='twitter:description' content="{{ page.summary }}">
 
 <!--
                                                                         ..
