@@ -35,7 +35,12 @@ fill_in '[data-name="password"]', :with => '123456'
 fill_in '[data-name="password_confirmation"]', :with => '123456'
 {% endhighlight %}
 
-Doesn't sit right with me. So, to fix this problem simply add the
+Doesn't sit right with me. Users are looking at the text, not the selectors.
+I get that apps have the ability to show different languages but that doesn't conern me, I don't need
+to test if the Rails `i18n` works or not. I just care about asserting the happy and sad
+paths in my app.
+
+So, to fix this problem simply add the
 following code into your `test_helper.rb`
 
 {% highlight ruby %}
