@@ -8,12 +8,12 @@ github: danmcclain
 category: ruby
 social: true
 summary: "Prevent new indexes from locking up your tables"
-published: false
+published: true
 ---
 
 PostgreSQL allows you to [create your indexes
 concurrently](http://www.postgresguide.com/performance/indexes.html#create-index-concurrently)
-so that you lock your table up as the index builds. This allows you to
+so that your table isn't locked as the index builds. This allows you to
 avoid taking a performance hit when adding a new index to a large table.
 Yesterday, I submitted a [pull request to
 Rails](https://github.com/rails/rails/pull/9923) that as merged in this
