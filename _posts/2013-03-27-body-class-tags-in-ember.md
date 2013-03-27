@@ -18,11 +18,11 @@ building an Ember app and this is how I got it working:
 {% highlight javascript %}
 Ember.Route.reopen({
   enter: function() {
-    this.super();
+    this._super();
     Ember.$('body').addClass(this.toCssClass());
   },
   exit: function() {
-    this.super();
+    this._super();
     Ember.$('body').removeClass(this.toCssClass());
   },
   toCssClass: function() {
