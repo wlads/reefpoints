@@ -26,7 +26,7 @@ Ember.Route.reopen({
     Ember.$('body').removeClass(this.toCssClass());
   },
   toCssClass: function() {
-    this.routeName.dasherize();
+    return this.routeName.dasherize();
   }
 });
 {% endhighlight %}
