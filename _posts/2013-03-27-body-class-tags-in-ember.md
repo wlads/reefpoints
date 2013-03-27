@@ -19,11 +19,11 @@ building an Ember app and this is how I got it working:
 Ember.Route.reopen({
   enter: function() {
     this.super();
-    $('body').addClass(this.toCssClass());
+    Ember.$('body').addClass(this.toCssClass());
   },
   exit: function() {
     this.super();
-    $('body').removeClass(this.toCssClass());
+    Ember.$('body').removeClass(this.toCssClass());
   },
   toCssClass: function() {
     this.toString().split('.')[1].split(':')[0].split('Route')[0].dasherize();
