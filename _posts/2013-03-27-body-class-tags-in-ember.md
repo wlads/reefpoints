@@ -17,8 +17,7 @@ building an Ember app and this is how I got it working:
 
 {% highlight javascript %}
 Ember.Route.reopen({
-  enter: function() {
-    this._super();
+  activate: function() {
     var cssClass = this.toCssClass();
     // you probably don't need the application class
     // to be added to the body
@@ -26,8 +25,7 @@ Ember.Route.reopen({
       Ember.$('body').addClass(cssClass);
     }
   },
-  exit: function() {
-    this._super();
+  deactivate: function() {
     Ember.$('body').removeClass(this.toCssClass());
   },
   toCssClass: function() {
