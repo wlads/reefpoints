@@ -23,7 +23,7 @@ Ember.Route.reopen({
     // you probably don't need the application class
     // to be added to the body
     if (cssClass != 'application') {
-      Ember.$('body').addClass(this.toCssClass());
+      Ember.$('body').addClass(cssClass);
     }
   },
   exit: function() {
