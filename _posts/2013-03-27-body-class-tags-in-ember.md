@@ -13,7 +13,7 @@ published: true
 
 Our [designer](http://twitter.com/cssboy) likes to use body class tags
 depending upon the context of the app he is designing. We're currently
-building an ember app and this is how I got it working:
+building an Ember app and this is how I got it working:
 
 {% highlight javascript %}
 Ember.Route.reopen({
