@@ -19,7 +19,12 @@ building an Ember app and this is how I got it working:
 Ember.Route.reopen({
   enter: function() {
     this._super();
-    Ember.$('body').addClass(this.toCssClass());
+    var cssClass = this.toCssClass();
+    // you probably don't need the application class
+    // to be added to the body
+    if (cssClass != 'application') {
+      Ember.$('body').addClass(this.toCssClass());
+    }
   },
   exit: function() {
     this._super();
