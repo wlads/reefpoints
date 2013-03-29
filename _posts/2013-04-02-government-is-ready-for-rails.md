@@ -140,4 +140,8 @@ to a given timezone. All datetime data is written to the database as
 UTC-0. Then custom offsets can be assigned to user accounts. This is out
 of the box in Rails and takes moments to implement. 
 
+## Security Vulnerabilities ##
 
+[Every](http://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-3091/Microsoft-Asp.net.html)
+[major](http://www.cvedetails.com/vulnerability-list/vendor_id-93/product_id-19116/version_id-127974/Oracle-JDK-1.7.0.html)
+[framework]
