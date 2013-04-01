@@ -75,10 +75,10 @@ afterwards.
 
 ## Conclusion ##
 Overall, I'm pretty happy with our set up as it is. The one issue I have
-with it is the way ci_reporter and jenkins interact. Since Jenkins was
+with it is the way ci\_reporter and jenkins interact. Since Jenkins was
 origianlly built for Java, builds are BROKEN when they don't build, but
 UNSTABLE when their tests fail.  UNSTABLE builds are seen as successful.
 I would rather an UNSTABLE build be seen as a failure, since the
 campfire notification plugin plays the same sound for successful and
-unstable builds.  I may poke around with the plugin or ci_reporter to
+unstable builds.  I may poke around with the plugin or ci\_reporter to
 have jenkins notify us of builds in a way that makes more sense.
