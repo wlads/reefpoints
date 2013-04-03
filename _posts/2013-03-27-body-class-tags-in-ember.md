@@ -29,7 +29,7 @@ Ember.Route.reopen({
     Ember.$('body').removeClass(this.toCssClass());
   },
   toCssClass: function() {
-    return this.routeName.dasherize();
+    return this.routeName.replace(/\./g, '-').dasherize();
   }
 });
 {% endhighlight %}
