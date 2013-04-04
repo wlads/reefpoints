@@ -32,7 +32,8 @@ Our current tech stack:
 
 [DockYard](http://dockyard.com) is a Boston-based consultancy that always wants to work with
 the best people and the best technology. We are committed to Ember.js as
-a client side framework. We help organize the Boston Ember.js meetup and
+a client side framework. We help organize the Boston [Ember.js
+meetup](http://www.meetup.com/Boston-Ember-js) and
 I recently spoke at [Ember Camp in San Francisco](http://embercamp.com). We are already [building
 tools around Ember.js](https://github.com/dockyard/ember-builds) and hope to continue to improve and build new ones
 in the upcoming years.
