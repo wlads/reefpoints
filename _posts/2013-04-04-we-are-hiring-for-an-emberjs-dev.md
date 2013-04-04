@@ -11,7 +11,7 @@ summary: "Work at DockYard building Ember.js apps!"
 published: true
 ---
 
-We are looking for Ember.js Developer. Our ideal
+We are looking for an Ember.js Developer. Our ideal
 candidate:
 
 * Work on cutting-edge Ember.js applications
