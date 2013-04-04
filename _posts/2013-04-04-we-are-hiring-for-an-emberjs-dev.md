@@ -15,7 +15,7 @@ We are looking for Ember.js application developer. Our ideal
 candidate:
 
 * Work on cutting-edge Ember.js applications
-* Passionate about new HTML/JavaScrpt technologies
+* Passionate about new HTML/JavaScript technologies
 * Has experience building complex client side applications
 * Some backend experience would be nice
 * Some database experience would be nice
