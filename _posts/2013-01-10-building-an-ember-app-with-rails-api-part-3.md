@@ -279,15 +279,15 @@ And in both the `new` and `edit` template remove the markup and replace with
 Now we need to edit the two controllers. In `App.UsersNewController` add to the two attributes:
 
 {% highlight coffeescript %}
-headerTitle: 'Edit'
-buttonTitle: 'Update'
+headerTitle: 'Create'
+buttonTitle: 'Create'
 {% endhighlight %}
 
 And likewise in `App.UsersEditController`:
 
 {% highlight coffeescript %}
-headerTitle: 'Create'
-buttonTitle: 'Create'
+headerTitle: 'Edit'
+buttonTitle: 'Update'
 {% endhighlight %}
 
 Last part for this section is to add the `update` action to `app/controllers/users_controller.rb`:
