@@ -112,7 +112,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 gem 'rails-api'
 gem 'thin'
 gem 'active_model_serializers', :github => 'rails-api/active_model_serializers'
@@ -207,7 +207,7 @@ So let's create that `Ember` controller. This will act as the primary applicatio
 class EmberController < ActionController::Base; end
 {% endhighlight %}
 
-Note that we are inheriting from `ApplicationController::Base` this time and not `ApplicationController`. This was the controller actions can respondt to non `JSON` requests.
+Note that we are inheriting from `ActionController::Base` this time and not `ApplicationController`. This was the controller actions can respondt to non `JSON` requests.
 
 Now we will add the view in `app/views/ember/index.html.erb`
 
