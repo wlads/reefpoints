@@ -6,7 +6,7 @@ author: Tyler Loch
 twitter: "notnarwal"
 category: process
 social: true
-summary: "The basics of collecting and writing user stories"
+summary: "The basics of collecting and writing user stories."
 published: true
 ---
 
