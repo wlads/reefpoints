@@ -31,4 +31,4 @@ Some suggested methods for gathering user stories are interviews, questionnaires
 
 In some circumstances, especially for developers working within limited resources or without a well-organized customer team, user role modeling could help generate a clearer picture for user story formation. Create hypothetical users who reflect real-world populations that are inclined to use the product. It might help to draw up a couple user profiles to address multiple lifestyle-types that the product could be used within. This could be especially helpful in designing products for foreign markets or third world countries where the adoption of technology does not follow the western standard.
 
-For a more in-depth description see Mike Cohn’s book “User Stories Applied,”.
+For a more in-depth description see Mike Cohn’s book [User Stories Applied](http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685).
