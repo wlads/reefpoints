@@ -25,7 +25,7 @@ otherwords your order of precedence is:
 
 1. Annual car related deaths in the United States
 2. Chemical plant explosion in Texas
-3. Boston Marathon Bomber
+3. Boston Marathon Bombing
 
 That's your list of importance, based solely upon simple math.
 
