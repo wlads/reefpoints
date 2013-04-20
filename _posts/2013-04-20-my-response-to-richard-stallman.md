@@ -4,6 +4,7 @@ title: "My Response to Richard Stallman"
 comments: true
 author: "Brian Cardarella"
 github: bcardarella
+twitter: bcardarella
 category: opinion
 social: true
 summary: "Brian's public response to Richard Stallman's recent reaction to the events in Boston"
