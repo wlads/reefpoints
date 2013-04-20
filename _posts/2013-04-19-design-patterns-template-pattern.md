@@ -8,7 +8,7 @@ github: duggieawesome
 category: ruby, design_patterns
 social: true
 summary: 'Exploring design patterns and their applications.'
-published: true
+published: false
 ---
 
 ## Our First Day in Construction
