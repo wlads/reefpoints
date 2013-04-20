@@ -45,7 +45,7 @@ like dogs. At the cost of a $1 Billion/day economy. At the inconvenience
 to its population.
 
 The 100 car accidents a day are not planned and for the most part are
-unavoidable. The deaths from the explosion in Texas was avoidable and
+unavoidable. The deaths from the explosion in Texas were avoidable and
 the result of negligence by really stupid people. In both cases there
 are not people that are actively looking to destroy others.
 
