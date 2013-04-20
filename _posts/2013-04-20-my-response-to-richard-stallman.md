@@ -10,7 +10,7 @@ summary: "Brian's public response to Richard Stallman's recent reaction to the e
 published: true
 ---
 
-This is not a numbers game you want it to be.
+This is not the numbers game you want it to be.
 
 In your recent [email to CSAIL](http://pastebin.com/DVysCXPj) you go out
 of your way to make a political point about how the number of deaths
