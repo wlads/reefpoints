@@ -5,7 +5,7 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>DockYard - Reefpoints</title>
- <link href="http://reefpoints.dockyard.com.com/atom.xml" rel="self"/>
+ <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
  <link href="http://reefpoints.dockyard.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://reefpoints.dockyard.com/</id>
