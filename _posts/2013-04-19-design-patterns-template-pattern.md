@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Design Patterns: The Template Pattern'
+title: 'Design Patterns: The Template Method Pattern'
 comments: true
 author: 'Doug Yun'
 twitter: 'dougyun'
@@ -16,23 +16,27 @@ published: false
 ### The Right Tools
 
 In his seminal book, [Code Complete](http://www.cc2e.com/Default.aspx),
-Steve McConnell introduces the analogy between creating software and 
-building houses. As we pour the concrete foundation and put up walls, an
-incredible amount of tools will be used. For example, a hammer will allow us to pound
-nails into walls, but if we use a nail gun, we'll get the same task
-done before lunch.
+Steve McConnell introduces the analogy between creating software and
+building houses, and in this blog entry, we'll be running with that
+comparison.
 
-Design patterns are tools that help us construct software. However,
-just like tools, we need to use the correct one for the task. We
+Quite simply, design patterns are just tools that help us construct software. However,
+just like tools, we need to use the correct and proper one for the task. We
 cooooould use a hammer on screws, but we'd be better off using a
 power drill. Before using any one of the numerous design patterns, it is
 crucial to understand the problem we wish to solve.
 
-Simply, *it is incorrect to use a particular design pattern on the wrong
-problem*.
+However, unlike tools, *it is incorrect to use a particular design pattern on the wrong
+type of problem*. In other words, it is poor practice to use a
+particular design pattern on a problem that does not require
+aforementioned design pattern.
 
-In this series, we'll will explore various design patterns and discuss
-when to apply them. Today, we'll focus on the *Template Pattern*.
+In other words, it is in poor practice to use a design pattern
+if the specific problem, in which the particular design pattern is
+supposed to solve, arises.
+
+In this series, we'll explore various design patterns and discuss
+when to apply them. Our topic for today will be the *Template Method* pattern.
 
 ### Let's Build Some Walls
 
@@ -48,16 +52,12 @@ require 'minitest/autorun'
 describe Wall do
   let(:wall) { Wall.new }
 
-  it 'should have a length of 30 feet' do
-    wall.length.must_equal 30
-  end
-
-  it 'should have a height of 20 feet' do
-    wall.height.must_equal 20
+  it 'should state its dimensions' do
+    wall.dimensions.must_equal 'I am 30ft. long and 20ft. wide!'
   end
 
   it 'should be made from brick' do
-    wall.material.must_equal 'brick'
+    wall.made_from.must_equal 'I am made from brick!'
   end
 end
 {% endhighlight %}
@@ -67,16 +67,12 @@ Now it's just up to us to build out the `Wall`.
 
 {% highlight ruby %}
 class Wall
-  def length
-    30
-  end
-  
-  def width
-    20
+  def dimensions
+    'I am 30ft. long and 20ft. wide!'
   end
 
-  def material
-    'brick'
+  def made_from
+    'I am made from brick!'
   end
 end
 {% endhighlight %}
@@ -94,61 +90,123 @@ different wall requirements.
 
 {% highlight ruby %}
 # Blueprints for a BrickWall
-describe BrickWall
+describe BrickWall do
   let(:brick_wall) { BrickWall.new }
 
-  it 'should have a length of 30 feet' do
-    brick_wall.length.must_equal 30
-  end
-
-  it 'should have a height of 20 feet' do
-    brick_wall.height.must_equal 20
+  it 'should state its dimensions' do
+    brick_wall.dimensions.must_equal 'I am 30ft. long and 20ft. wide!'
   end
 
   it 'should be made from brick' do
-    brick_wall.material.must_equal 'brick'
+    brick_wall.made_from.must_equal 'I am made from brick!'
   end
 end
 
 # Blueprints for a ConcreteWall
-describe ConcreteWall
+describe ConcreteWall do
   let(:concrete_wall) { ConcreteWall.new }
 
-  it 'should have a length of 10 feet' do
-    concrete_wall.length.must_equal 10
+  it 'should state its dimensions' do
+    concrete_wall.dimensions.must_equal 'I am 20ft. long and 20ft. wide!'
   end
 
-  it 'should have a height of 20 feet' do
-    concrete_wall.height.must_equal 20
-  end
-
-  it 'should be made from concrete' do
-    concrete_wall.material.must_equal 'concrete'
+  it 'should be made from brick' do
+    concrete_wall.made_from.must_equal 'I am made from concrete!'
   end
 end
 
 # Blueprints for a WoodWall
-describe WoodWall
+describe WoodWall do
   let(:wood_wall) { WoodWall.new }
 
-  it 'should have a length of 20 feet' do
-    wood_wall.length.must_equal 20
+  it 'should state its dimensions' do
+    wood_wall.dimensions.must_equal 'I am 10ft. long and 20ft. wide!'
   end
 
-  it 'should have a height of 20 feet' do
-    wood_wall.height.must_equal 20
-  end
-
-  it 'should be made from wood' do
-    wood_wall.material.must_equal 'wood'
+  it 'should be made from brick' do
+    wood_wall.made_from.must_equal 'I am made from wood!'
   end
 end
 {% endhighlight %}
 
-Hmm... What could we do here?
+Hmm... A couple of ideas run through our heads. We could follow the initial `Wall` class and
+define each method, hardcoding each string output, for the `BrickWall`, `ConcreteWall`, and `WoodWall`
+classes. That seems like an okay idea, but we'd have to hard code each
+instance method. What if our house requires a dozen different types of walls?
 
 ### Open That Toolbox!
 
+Sipping on our after-lunch coffee, we realize that we've got a tool right
+for the job, the *Template Method* pattern.
+
+In the *Template Method* pattern, the creation of a *skeletal class* will
+serve as the basis for various *subclasses*. Within the *skeletal class*
+there are *abstract methods*, which in turn, will be overridden by the
+methods of *subclasses*. Essentially, we'll define a `Wall` class (our
+*skeletal class*) and its *subclasses*, `BrickWall`, `ConcreteWall`, and
+`WoodWall`.
+
+Going over the blueprints, we notice that the three different classes of
+walls each contain the methods `dimensions` and `made_from`, which
+result in slighty different strings. With this knowledge, let's
+create our `Wall` class and its subclasses.
+
 {% highlight ruby %}
-require 'minitest/autorun'
+class Wall
+  def dimensions
+    "I am #{length}ft. long and #{width}ft. wide!"
+  end
+
+  def made_from
+    "I am made from #{material}!"
+  end
+end
+
+class BrickWall < Wall
+  private
+
+  def length
+    30
+  end
+
+  def width
+    20
+  end
+
+  def material
+    'brick'
+  end
+end
+
+class ConcreteWall < Wall
+  private
+
+  def length
+    30
+  end
+
+  def width
+    20
+  end
+
+  def material
+    'brick'
+  end
+end
+
+class WoodWall < Wall
+  private
+
+  def length
+    30
+  end
+
+  def width
+    20
+  end
+
+  def material
+    'brick'
+  end
+end
 {% endhighlight %}
