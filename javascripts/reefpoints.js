@@ -14,6 +14,7 @@ $(function(){
 
   // Art directed posts
   $('.design .post-title-wrap').bigtext({
-    childSelector: '> h1'
+    childSelector: '> h1',
+    minfontsize: 40
   });
 });
