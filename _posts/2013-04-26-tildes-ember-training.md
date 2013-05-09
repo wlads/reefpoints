@@ -26,23 +26,31 @@ the concepts via slides and JSBin.
 
 ### Day 1
 
-Day 1 was spent outlining the core concepts of Ember. We spent time
-going through the basic application set up, Handlebars, routing, outlets
-and Handlebars helpers.
+Day 1 was spent outlining the core concepts of
+[Handlebars](http://handlebarsjs.com) and Ember. We
+started with Handlebars, which is what Ember uses as its templating
+language. After covering the basics of Handlebars, we learned about how
+[Ember handles routing and outlets](http://emberjs.com/guides/routing/).
+After we finished routing, we moved onto creating Handlebars helper
+functions.
 
 ### Day 2
-
-After arming us with the how ember works, and the pieces we needed to
-start building applications, day 2 covered controllers, computed
-properties, view and custom controls.
+On day 2, we started off with
+[Ember controllers](http://emberjs.com/guides/controllers/) and how they
+serve as proxy objects for the model of your current resource. After
+controllers, we covered computed properties.
+[Views](http://emberjs.com/guides/views/) followed computed properties,
+then we wrapted up the day with creating custom controls with Ember and
+Handlebars.
 
 ### Day 3
 
 Once we had built the majority of the app, we had a couple more
 exercises that built upon all the exercise we had completed. Tom and
 Yehuda also went over how we would use Ajax requests to pull in data
-from a remote source, the Ember run loop, and some general testing
-practices.
+from a remote source. After wrapping up the remainder of the exercises,
+we covered how the Ember Run Loop works, and discussed approaches to
+testing Ember applications
 
 ## Feedback
 
