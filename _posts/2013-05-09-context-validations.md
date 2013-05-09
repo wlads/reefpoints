@@ -14,7 +14,7 @@ published: true
 I just released a new [gem called ContextValidations](https://github.com/dockyard/context_validations)
 
 ContextValidations allows you to set validations on the instance of
-AcitveRecord models. Any class-level validations you have already set
+ActiveRecord models. Any class-level validations you have already set
 in your models are ignored. You may be asking yourself "Whaaaaaat?" so
 let's look into why.
 
