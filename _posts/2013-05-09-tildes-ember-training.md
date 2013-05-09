@@ -8,7 +8,7 @@ github: danmcclain
 category: ember
 social: true
 summary: "We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft"
-published: false
+published: true
 ---
 
 A couple weeks ago, Yehuda Katz and Tom Dale of [Tilde](http://tilde.io) ran
