@@ -7,11 +7,11 @@ twitter: "_danmcclain"
 github: danmcclain
 category: ember
 social: true
-summary: "We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft this week"
+summary: "We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft"
 published: false
 ---
 
-This week, Yehuda Katz and Tom Dale of [Tilde](http://tilde.io) ran
+A couple weeks ago, Yehuda Katz and Tom Dale of [Tilde](http://tilde.io) ran
 their 3-day [Introduction to Ember.js Training](http://www.tilde.io/training/)
 at [Bocoup](http://bocoup.com/) here in Boston. I, along with Amanda,
 Doug and Chris, attended the training.
@@ -38,7 +38,8 @@ functions.
 On day 2, we started off with
 [Ember controllers](http://emberjs.com/guides/controllers/) and how they
 serve as proxy objects for the model of your current resource. After
-controllers, we covered computed properties.
+controllers, we covered
+[computed properties](http://emberjs.com/guides/object-model/computed-properties/).
 [Views](http://emberjs.com/guides/views/) followed computed properties,
 then we wrapted up the day with creating custom controls with Ember and
 Handlebars.
@@ -47,10 +48,11 @@ Handlebars.
 
 Once we had built the majority of the app, we had a couple more
 exercises that built upon all the exercise we had completed. Tom and
-Yehuda also went over how we would use Ajax requests to pull in data
-from a remote source. After wrapping up the remainder of the exercises,
-we covered how the Ember Run Loop works, and discussed approaches to
-testing Ember applications
+Yehuda also went over how we would use
+[Ajax requests to pull in data from a remote source with Promises](http://eviltrout.com/2013/03/23/ember-without-data.html).
+After wrapping up the remainder of the exercises, we covered how the
+[Ember Run Loop works](http://stackoverflow.com/questions/13597869/what-is-ember-runloop-and-how-does-it-work),
+and discussed approaches to testing Ember applications.
 
 ## Feedback
 
