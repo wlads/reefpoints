@@ -18,9 +18,9 @@ Doug and Chris, attended the training.
 
 ## Format
 
-Throughout the training, attendees where building a simplified Rdio/Spotify clone
+Throughout the training, attendees were building a simplified Rdio/Spotify clone
 using Ember. It was broken up into a series of exercises, which built
-upon each other. The exercise were test driven, each having set of QUnit tests that defined the
+upon each other. The exercises were test driven, each having set of QUnit tests that defined the
 exercise. Before each exercise, Tom and Yehuda would explain and demo
 the concepts via slides and JSBin.
 
@@ -41,7 +41,7 @@ serve as proxy objects for the model of your current resource. After
 controllers, we covered
 [computed properties](http://emberjs.com/guides/object-model/computed-properties/).
 [Views](http://emberjs.com/guides/views/) followed computed properties,
-then we wrapted up the day with creating custom controls with Ember and
+then we wrapped up the day with creating custom controls with Ember and
 Handlebars.
 
 ### Day 3
@@ -61,7 +61,7 @@ useful demos and exercises. They did a great job of, what Tom stated as,
 "Providing a sufficient level of confusion" in the exercises. Before
 each exercise, they would provide all the information needed for the
 exercise, but would not give you a list of steps to complete the task.
-You may stuggle a bit, but they answer any questions you would
+You may struggle a bit, but they answer any questions you would
 have during the exercise. This would help the attendees actually learn
 the concepts, rather than just copy/paste a set of code and modify it
 here and there and have it work. I, personally, felt that this worked
@@ -69,7 +69,7 @@ really well.
 
 I have worked on a couple side project with Ember before taking this
 training, and had a very shallow understanding of some of the concepts.
-Coming out of this training, I feel I have a great place to start build
+Coming out of this training, I feel I have a great place to start building
 Ember apps. I really fleshed out my understanding of Ember and am really
 excited about the technology. I am planning on using it for
 any upcoming side projects, to really explore it further. 
