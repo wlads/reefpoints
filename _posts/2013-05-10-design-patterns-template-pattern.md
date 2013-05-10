@@ -7,7 +7,7 @@ twitter: 'dougyun'
 github: duggieawesome
 category: ruby, design_patterns
 social: true
-summary: 'Exploring design patterns and their applications.'
+summary: 'Exploring design patterns and their use cases'
 published: false
 ---
 ## Introduction
@@ -268,3 +268,5 @@ at all. We first defined a base class, within which we defined necessary
 *hook methods* to be overridden by our *subclasses*. Of course, this
 particular design pattern does not solve every conceivable problem, but
 helps keep our code clean by the use of inheritance.
+
+Next we'll be discussing the *Strategy* method pattern. Stay tuned!
