@@ -201,7 +201,7 @@ A few things are happening here:
 * We are constraining against the format with a custom `FormatTest` class. We only want to map certain routes to `JSON` requests and certain routes to `HTML` requesets.
 * The `get '*foo'...` will greedily match all routes except `/` so we have the following line. We want to direct all `HTML` requests to a single `controller#action`. I will go into the reason why in a bit.
 
-So let's create that `Ember` controller. This will act as the primary application serving controller that is hit when people visit the app.
+So let's create that `Ember` controller. This will act as the primary application serving controller that is hit when people visit the app. Create and edit `app/controllers/ember_controller.rb`
 
 {% highlight ruby %}
 class EmberController < ActionController::Base; end

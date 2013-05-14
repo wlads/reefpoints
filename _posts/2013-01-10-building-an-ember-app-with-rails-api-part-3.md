@@ -40,7 +40,7 @@ Let's start by adding a `Create` button to our index page:
 We need to add the proper route so the index page doesn't blow up. While we're in here we'll add the `edit` route as well.
 
 {% highlight coffeescript %}
-App.Router.map (match) ->
+App.Router.map ->
   @resource 'users', ->
     @route 'new'
     @route 'edit',
@@ -92,37 +92,26 @@ Next we'll add `app/assets/javascripts/controllers/users/newController.coffeescr
 
 {% highlight coffeescript %}
 App.UsersNewController = Ember.ObjectController.extend
-  save: ->
-    @store.commit()
-    @content.addObserver 'id', @, 'afterSave'
+  headerTitle: 'Create'
+  buttonTitle: 'Create'
 
+  save: ->
+    @content.one 'didCreate.user', =>
+      @content.off '.user'
+      @transitionToRoute('users.show', @content)
+    @get('store').commit()
+    @content.one 'didError.user', =>
+      @content.off '.user'
+    
   cancel: ->
     @content.deleteRecord()
     @transitionToRoute('users.index')
-
-  afterSave: ->
-    @content.removeObserver 'id', @, 'afterSave'
-    @transitionToRoute('users.show', @content)
 {% endhighlight %}
 
 The first two functions `save` and `cancel` are actions that are mapped in the template. Let's break down each:
 
-* `save` will make a call to `this.store.commit()`. You will notice we are not modifying a model, assigning params, etc... as you would in a Rails app. Keep in mind that when you modify data that is bound in the form you are actually modifying the data in the model itself. The datastore in Ember needs to be directed when these modifications should be made "permanent", and because we are using the RESTAdapter Ember will attempt to write these changes to the backend. We then attach an observer to the model's `id` attribute, when it changes we want to then transition off the page and to the `show` page for the model.
+* `save` will make a call to `this.store.commit()`. You will notice we are not modifying a model, assigning params, etc... as you would in a Rails app. Keep in mind that when you modify data that is bound in the form you are actually modifying the data in the model itself. The datastore in Ember needs to be directed when these modifications should be made "permanent", and because we are using the RESTAdapter Ember will attempt to write these changes to the backend.
 * `cancel` If the user decides to not create a new user we must delete the record we created then transition to the `index` page.
-
-There is currently (what I believe to be) a bug in Ember-Data that prevents you from using the Model Lifecycles to properly handle creates. In the example above the code will only move forward if the backend responds with a 200. This of course won't work if there is an error of some type. The user will get stuck. Ideally the code should be:
-
-{% highlight coffeescript %}
-save: ->
-  @content.one 'didCreate.user', ->
-    @content.die '.user'
-    @transitionToRoute 'users.show', @content
-  @content.one 'didError.user', ->
-   @content.die '.user'
-   # handle the errors however you want
-{% endhighlight %}
-
-This would use the life cycle callbacks and the jQuery `one` event. Hopefully this issue is addressed soon as this is the ideal way to handle these create events.
 
 [Learn more about the Ember Model Lifecycle](http://emberjs.com/guides/models/model-lifecycle)
 
@@ -225,14 +214,26 @@ And now the controller `app/assets/javascripts/controllers/users/editController.
 
 {% highlight coffeescript %}
 App.UsersEditController = Ember.ObjectController.extend
+  headerTitle: 'Edit'
+  buttonTitle: 'Update'
+  
   save: ->
-    @store.commit()
-    @transitionToRoute 'users.show', @content
+    @get('store').commit()
+    @content.one 'didUpdate.user', =>
+      @content.off '.user'
+      @transitionToRoute('users.show', @content)
+    @content.one 'didError.user', =>
+      @content.off '.user'
 
   cancel: ->
     if @content.isDirty
       @content.rollback()
     @transitionToRoute 'users.show', @content
+    
+  destroy: ->
+    @content.deleteRecord()
+    @store.commit()
+    @transitionToRoute 'users.index'
 {% endhighlight %}
 
 This controller looks similar to `App.UsersNewController` but let's explore the differences

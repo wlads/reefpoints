@@ -36,7 +36,15 @@ if defined?(HandlebarsAssets)
 end
 {% endhighlight %}
 
-Let's dive in by creating out application layout template in `app/assets/javascripts/templates/application.hbs`
+*NOTE* If you have skipped ahead and come back to this initializer you will need to run:
+
+{% highlight bash %}
+rm -rf tmp/*
+{% endhighlight %}
+
+Otherwise your Ember templates won't compile properly.
+
+Let's dive in by creating our application layout template in `app/assets/javascripts/templates/application.hbs`
 
 {% highlight html %}
 {% raw %}
@@ -67,7 +75,7 @@ Let's dive in by creating out application layout template in `app/assets/javascr
 
 [Read more about Ember Templates](http://emberjs.com/guides/templates/handlebars-basics)
 
-This is the Ember equivalent of a Rails layout template. The `outlet` is the Ember equivalient to `yield` in Rails. So this template will wrap the other templates we plan on rendering. I will come back to the `<li>`s in the nav later.
+This is the Ember equivalent of a Rails layout template. The `outlet` is the Ember equivalent to `yield` in Rails. So this template will wrap the other templates we plan on rendering. I will come back to the `<li>`s in the nav later.
 
 Next we're going to setup a default route and render a template. In `app/assets/javascripts/routes.coffee`
 
@@ -83,7 +91,7 @@ App.Router.map ->
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
 
-This will tell the Ember Router to use the History API intead of the
+This will tell the Ember Router to use the History API instead of the
 default 'hash' URLs for routes. The mapping of the `/` in our app is
 implicit in Ember, and it will be assigned to a route of 
 `index`. The new Ember Router will use this string to make some
@@ -106,9 +114,9 @@ Let's write `app/assets/javascripts/templates/index.hbs`
 That's it. If you run your rails server and load the app you should see the following
 ![Welcome](http://i.imgur.com/1j50C.png?1)
 
-Congratulations you've build your first Ember app! Let's make it do
+Congratulations you've built your first Ember app! Let's make it do
 something useful. We are going to add the `/users` page, so edit
-`app/assets/javascripts/templates/users/index.hbs`
+`app/assets/javascripts/templates/users.hbs`
 
 {% highlight html %}
 {% raw %}
@@ -148,7 +156,7 @@ App.ApplicationController = Ember.Controller.extend
 
 [Read more about Ember Controllers](http://emberjs.com/guides/controllers)
 
-Each attribute is a function that will compare the `currentRoute` attribute to a value and return that boolean result. We instruct the attribute to be a [computed property](http://emberjs.com/guides/object-model/computed-properties) Computed properties are simple to understand, we tell Ember that when `currentRoute` is `set` to a different value the value of `isHome` will be automatically updated. Ember will then instruct anything bound to that attribute to update as well.
+Each attribute is a function that will compare the `currentRoute` attribute to a value and return that boolean result. We instruct the attribute to be a [computed property](http://emberjs.com/guides/object-model/computed-properties). Computed properties are simple to understand, we tell Ember that when `currentRoute` is `set` to a different value the value of `isHome` will be automatically updated. Ember will then instruct anything bound to that attribute to update as well.
 
 Finally we're going to update our routes to set `currentRoute` depending upon the route. Let's add two route classes to `app/assets/javascripts/routes.coffee`
 
@@ -157,7 +165,7 @@ App.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'home')
 
-App.UsersIndexRoute = Ember.Route.extend
+App.UsersRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
@@ -173,8 +181,7 @@ Next we're going to start using real data. We're going to fetch the collection o
 
 {% highlight coffeescript %}
 App.Store = DS.Store.extend
-  revision: 11
-  adapter: DS.RESTAdapter.create({ bulkCommit: false })
+  revision: 12
 {% endhighlight %}
 
 [Read more about Ember's REST Adapter](http://emberjs.com/guides/models/the-rest-adapter)
@@ -201,31 +208,39 @@ We are defining each attribute that is coming over the wire, as well as a comput
 Now we need to modify the `users` route to fetch the data
 
 {% highlight coffeescript %}
-App.UsersIndexRoute = Ember.Route.extend
+App.UsersRoute = Ember.Route.extend
   model: ->
     App.User.find()
   setupController: (controller, model) ->
-    controller.set('users', model)
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-The `App.User.find()` makes a remote call, fetches the collection, and instantizes the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this colleciton to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users/index.hbs` and add in the following before closing the `</table>` tag
+The `App.User.find()` makes a remote call, fetches the collection, and instantizes the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this collection to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users.hbs` to include a list of our users and an outlet through which we'll render `users/index`.
 
 {% highlight html %}
 {% raw %}
-{{#each controller}}
-  <tr>
-    <td>{{id}}</td>
-    <td><a href='#'>{{fullName}}</a></td>
-  </tr>
-{{/each}}
+<table class='table table-striped'>
+	{{#each controller}}
+	  <tr>
+	    <td>{{id}}</td>
+	    <td>{{#linkTo "users.show" this}}{{fullName}}{{/linkTo}}</td>
+	  </tr>
+	{{/each}}
+</table>
+{{outlet}}
 {% endraw %}
 {% endhighlight %}
 
 Reload your page and you should see something similar to
-![List](http://i.imgur.com/Pq8pc.png)
+![List](http://i.imgur.com/Pq8pc.png). Our `user/index.hbs` file has some placeholder text:
 
-Finally we're going to add a `show` page to round out this post. Let's start with the index template that we just updated. Modify the 2nd `<td>` element to:
+{% highlight html %}
+{% raw %}
+  <p>Please choose a user.</p>
+{% endraw %}
+{% endhighlight %}
+
+Next, we're going to add a `show` page to round out this post. Let's start with the index template that we just updated. Modify the 2nd `<td>` element to:
 
 {% highlight html %}
 {% raw %}
@@ -236,10 +251,10 @@ Finally we're going to add a `show` page to round out this post. Let's start wit
 We need to next update `App.Router` for the proper mapping
 
 {% highlight coffeescript %}
-App.Router.map (match) -> 
+App.Router.map -> 
   @resource 'users', ->
     @route 'show',
-      path: '/:user_id'
+      path: ':user_id'
 {% endhighlight %}
 
 Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
@@ -284,31 +299,5 @@ So we are linking to the `showUsers` named route and passing the instance of a `
 Reload your app and click through to the show page and you should see
 
 ![Show](http://i.imgur.com/8VCIi.png)
-
-Hooray! But wait, as Rails devs we love to be [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) and the routes have a perfect candidate for this. We can create a base route class that our `Users` routes can inherit from:
-
-{% highlight coffeescript %}
-App.UsersRoute = Ember.Route.extend
-  setupController: ->
-    @controllerFor('application').set('currentRoute', 'users')
-
-App.UsersIndexRoute = App.UsersRoute.extend
-  model: ->
-    App.User.find()
-  setupController: (controller, model) ->
-    @_super()
-    controller.set('users', model)
-
-App.UsersShowRoute = App.UsersRoute.extend    
-  model: (params) ->
-    App.User.find(params.user_id)
-  setupController: (controller, model) ->
-    @_super()
-    controller.set('content', model)
-{% endhighlight %}
-
-So now we have a common route class to set the `currentRoute` attribute. And because we are using the `setupController` function in each of our child route classes we have to use the Ember `this._super()` call up the inheritance chain. `_super()` is something added to Ember to work similar to `super` in Ruby provided you have made proper use of `extend` and `reopen`.
-
-Reload our app and everything should work!
 
 So we have only implemented the 'Read' of 'CRUD' in this part, but we have also introduced alot of new concepts. In [Part 3](http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html) we will implement the 'Create Update Destroy' actions.
