@@ -328,3 +328,7 @@ em {
 .expanding-the-yard img {
   margin: 0 auto 40px auto;
 }
+
+strong {
+  font-weight: bold;
+}
