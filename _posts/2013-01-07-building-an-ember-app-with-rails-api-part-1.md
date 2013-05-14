@@ -11,7 +11,7 @@ summary: "Setting up RailsAPI for writing an Ember App"
 published: true
 ---
 
-** This article was last updated on May 14, 2013 and reflects the state of Ember and Ember-Data's latest builds on that date **
+**This article was last updated on May 14, 2013 and reflects the state of Ember and Ember-Data's latest builds on that date.**
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
