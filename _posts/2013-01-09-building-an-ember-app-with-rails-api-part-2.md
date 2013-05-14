@@ -232,7 +232,7 @@ The `App.User.find()` makes a remote call, fetches the collection, and instantiz
 {% endhighlight %}
 
 Reload your page and you should see something similar to
-![List](http://i.imgur.com/Pq8pc.png). Our `user/index.hbs` file has some placeholder text:
+![Show](http://i.imgur.com/NNGbzIz.png). Our `user/index.hbs` file has some placeholder text:
 
 {% highlight html %}
 {% raw %}
@@ -298,6 +298,6 @@ So we are linking to the `showUsers` named route and passing the instance of a `
 
 Reload your app and click through to the show page and you should see
 
-![Show](http://i.imgur.com/8VCIi.png)
+![Show](http://i.imgur.com/jNKhnrJ.png)
 
 So we have only implemented the 'Read' of 'CRUD' in this part, but we have also introduced alot of new concepts. In [Part 3](http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html) we will implement the 'Create Update Destroy' actions.

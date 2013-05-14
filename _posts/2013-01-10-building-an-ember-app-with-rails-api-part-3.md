@@ -133,7 +133,7 @@ It has been mentioned that `422` is the proper status code for validation failur
 
 Now let's run our app and see how it goes.
 
-![New1](http://i.imgur.com/JnTn3.png)
+![New1](http://i.imgur.com/kFC9arb.png)
 
 Whoops, we have `undefined undefined` for the `fullName`. Let's set default values of an empty string in our user model:
 
