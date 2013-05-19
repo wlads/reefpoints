@@ -46,7 +46,7 @@ point in time.
 
 ## Context Matters ##
 
-I have come to believe that defining a monolithic validation set in you
+I have come to believe that defining a monolithic validation set in your
 model is the wrong way to go. Context matters. If I am an admin I should
 be able to write data to a record that might not be acceptable to a
 regular user. Even the simple case of not requiring a password unless
