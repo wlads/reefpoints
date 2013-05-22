@@ -63,6 +63,8 @@ wget https://raw.github.com/bcardarella/ember-railsapi/master/vendor/assets/java
 cd ../../..
 {% endhighlight %}
 
+Note that if you're a Mac user, just replace `wget` (the Linux command) with `curl -O` (the Unix command) on the above lines.
+
 Let's setup the directory structure for our Ember app
 
 {% highlight bash %}
@@ -147,6 +149,8 @@ There are two gems to take note of:
 * [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers) is a project that is written by the `Ember` core team which will normalize the [JSON](http://en.wikipedia.org/wiki/JSON) output for models in a `Rails` app.
 * [HandlebarsAssets](https://github.com/leshill/handlebars_assets) will allow the `AssetPipeline` to compile [Handlebars](http://handlebarsjs.com/) templates which is required for Ember. There is the [Ember-Rails](https://github.com/emberjs/ember-rails) gem which will also do this but I have found `HandlebarsAssets` to be a leaner solution.
 
+After this, don't forget to run `bundle install` from the command line to pick up the gems we just added.
+
 Let's create a simple model and the serializer
 
 {% highlight bash %}
@@ -209,7 +213,7 @@ So let's create that `Ember` controller. This will act as the primary applicatio
 class EmberController < ActionController::Base; end
 {% endhighlight %}
 
-Note that we are inheriting from `ActionController::Base` this time and not `ApplicationController`. This was the controller actions can respondt to non `JSON` requests.
+Note that we are inheriting from `ActionController::Base` this time and not `ApplicationController`. This is so that the controller actions can respond to non `JSON` requests.
 
 Now we will add the view in `app/views/ember/index.html.erb`
 
