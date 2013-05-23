@@ -113,6 +113,13 @@ Let's write `app/assets/javascripts/templates/index.hbs`
 <h1>Welcome!</h1>
 {% endhighlight %}
 
+We need to do one last thing before we check out the homepage. By default, Rails includes a sample `index` page in `public/index.html`. If we were to go to the homepage now, we would see that.
+But we want to see the index page we just made. To remove the Rails default page, simply run
+
+`rm public/index.html`
+
+from the command line.
+
 That's it. If you run your rails server and load the app you should see the following
 ![Welcome](http://i.imgur.com/1j50C.png?1)
 
