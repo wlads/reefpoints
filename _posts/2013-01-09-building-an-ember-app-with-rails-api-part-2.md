@@ -30,7 +30,7 @@ branch! *
 
 ## Part 2 - Building with Ember
 
-We need to start with something I forgot to setup in Part 1. Ember looks for templates in the `Ember.TEMPLATES` JavaScript object which is provided to us with the `handlebars_assets` gem we setup in Part 1. We just need to tell the gem to compile for Ember, do this in `config/initializers/handlebars_assets.rb`
+We need to start with something I forgot to setup in Part 1. Ember looks for templates in the `Ember.TEMPLATES` JavaScript object which is provided to us with the `handlebars_assets` gem we setup in Part 1. We just need to tell the gem to compile for Ember. We can do this in `config/initializers/handlebars_assets.rb`
 
 {% highlight ruby %}
 if defined?(HandlebarsAssets)
@@ -98,7 +98,7 @@ default 'hash' URLs for routes. The mapping of the `/` in our app is
 implicit in Ember, and it will be assigned to a route of 
 `index`. The new Ember Router will use this string to make some
 assumptions. If there is a `App.IndexController` object it will use that
-controller. If not it will just render out the `index` template. Now,
+controller. If not, it will just render out the `index` template. Now,
 under the hood Ember is still using a `App.IndexController` controller
 but it will define one on the fly. I will get into this in a future blog
 post. When you call `reopen` this is the Ember way to reopen and monkey
@@ -123,7 +123,7 @@ from the command line.
 That's it. If you run your rails server and load the app you should see the following
 ![Welcome](http://i.imgur.com/1j50C.png?1)
 
-Congratulations you've built your first Ember app! Let's make it do
+Congratulations! You've built your first Ember app! Let's make it do
 something useful. We are going to add the `/users` page, so edit
 `app/assets/javascripts/templates/users.hbs`
 
@@ -139,9 +139,9 @@ something useful. We are going to add the `/users` page, so edit
 {% endraw %}
 {% endhighlight %}
 
-Reload your app and you can click back and forth between 'Users' and 'Home'. Thanks to the `linkTo` actions we setup in `application.hbs` that map to controllers being automatically generated because we haven't created them yet and those controllers automatically render the templates all of same naming convention. Does that sound familiar? That's right, its our good friend [Convention Over Configuration](http://en.wikipedia.org/wiki/Convention_over_configuration)!
+Reload your app and you can click back and forth between 'Users' and 'Home', thanks to the `linkTo` actions we setup in `application.hbs`. These actions map to controllers being automatically generated because we haven't created them yet; those controllers automatically render the templates with the same naming convention. Does that sound familiar? That's right, its our good friend [Convention Over Configuration](http://en.wikipedia.org/wiki/Convention_over_configuration)!
 
-Now when clicking between the two pages the nav is not properly updating the `active` class on the `<li>` tags. In Ember you can [bind element class names to actions](http://emberjs.com/guides/templates/binding-element-class-names) This will require a bit of code but as we add more controllers I'll show how we can easily reuse what we're about to write. Let's start by adding the bindings to `application.hbs` Modify the `<li>` tags in the nav menu to:
+Now, when clicking between the two pages the nav is not properly updating the `active` class on the `<li>` tags. In Ember, you can [bind element class names to actions](http://emberjs.com/guides/templates/binding-element-class-names). This will require a bit of code, but as we add more controllers I'll show how we can easily reuse what we're about to write. Let's start by adding the bindings to `application.hbs` Modify the `<li>` tags in the nav menu to:
 
 {% highlight html %}
 {% raw %}
@@ -167,7 +167,7 @@ App.ApplicationController = Ember.Controller.extend
 
 Each attribute is a function that will compare the `currentRoute` attribute to a value and return that boolean result. We instruct the attribute to be a [computed property](http://emberjs.com/guides/object-model/computed-properties). Computed properties are simple to understand, we tell Ember that when `currentRoute` is `set` to a different value the value of `isHome` will be automatically updated. Ember will then instruct anything bound to that attribute to update as well.
 
-Finally we're going to update our routes to set `currentRoute` depending upon the route. Let's add two route classes to `app/assets/javascripts/routes.coffee`
+Finally, we're going to update our routes to set `currentRoute` depending upon the route. Let's add two route classes to `app/assets/javascripts/routes.coffee`
 
 {% highlight coffeescript %}
 App.IndexRoute = Ember.Route.extend
@@ -181,12 +181,12 @@ App.UsersRoute = Ember.Route.extend
 
 Two new concepts:
 
-* `setupController` a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we'll see this in a bit)
-* `this.controllerFor` when interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is `ApplicationController` and we need to update the `currentRoute` attribute. You *must* use the `set` function otherwise Ember won't know to notify any computed property observers.
+* `setupController` is a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we'll see this in a bit)
+* `this.controllerFor` When interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is `ApplicationController` and we need to update the `currentRoute` attribute. You *must* use the `set` function otherwise Ember won't know to notify any [computed property observers](http://emberjs.com/guides/object-model/computed-properties/).
 
-Now reload your app and click between the actions and your should see the active states properly set depending upon your route.
+Now reload your app and click between the actions and you should see the active states properly set depending upon your route.
 
-Next we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascripts/store.coffee`
+Next, we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascripts/store.coffee`
 
 {% highlight coffeescript %}
 App.Store = DS.Store.extend
@@ -224,7 +224,7 @@ App.UsersRoute = Ember.Route.extend
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-The `App.User.find()` makes a remote call, fetches the collection, and instantizes the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this collection to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users.hbs` to include a list of our users and an outlet through which we'll render `users/index`.
+The `App.User.find()` makes a remote call, fetches the collection, and instantiates the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this collection to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users.hbs` to include a list of our users and an outlet through which we'll render `users/index`.
 
 {% highlight html %}
 {% raw %}
@@ -268,7 +268,7 @@ App.Router.map ->
 
 Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
 
-I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated, lets add the `show` route.
+I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated. Let's add the `show` route.
 
 {% highlight coffeescript %}
 App.UsersShowRoute = Ember.Route.extend    
@@ -295,7 +295,7 @@ And we'll add the `app/assets/javascripts/templates/users/show.hbs` template
 {% endraw %}
 {% endhighlight %}
 
-Finally we need to replace the `<a>` tags in the `users` template to:
+Finally, we need to replace the `<td>` tags in the `users` template to:
 
 {% highlight html %}
 {% raw %}
