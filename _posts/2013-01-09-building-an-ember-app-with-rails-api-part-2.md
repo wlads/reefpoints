@@ -205,7 +205,7 @@ App.User = DS.Model.extend(
 
 [Read more about Ember models](http://emberjs.com/guides/models)
 
-We are defining each attribute that is coming over the wire, as well as a computed property that will combine `firstName` and `lastName`. Simple enough!
+We are defining each attribute that is coming over the wire, as well as a computed property that will combine `firstName` and `lastName`. If you're wondering about that call to `property`, you have to let Ember know when a method on an object is using a property computed from dependency properties on that object. Here `fullName` depends on `firstName` and `lastName`. When we call `property` and let Ember know which properties to observe, the `fullName` property will update if either the `firstName` or `lastName` changes. If you like, you can [read more about computed properties](http://emberjs.com/guides/object-model/computed-properties/).
 
 Now we need to modify the `users` route to fetch the data
 
@@ -253,10 +253,10 @@ Next, we're going to add a `show` page to round out this post. Let's start with 
 We need to next update `App.Router` for the proper mapping
 
 {% highlight coffeescript %}
-App.Router.map -> 
+App.Router.map ->
   @resource 'users', ->
     @route 'show',
-      path: ':user_id'
+      path: '/:user_id'
 {% endhighlight %}
 
 Note how we are matching against `:user_id` and not `:id` that Rails developers are used to.
@@ -264,7 +264,7 @@ Note how we are matching against `:user_id` and not `:id` that Rails developers 
 I must confess I don't entirely understand why the `/` map is necessary under `/users`, I would have thought the top nesting could be used and it wouldn't be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated. Let's add the `show` route.
 
 {% highlight coffeescript %}
-App.UsersShowRoute = Ember.Route.extend    
+App.UsersShowRoute = Ember.Route.extend
   model: (params) ->
     App.User.find(params.user_id)
   setupController: (controller, model) ->
@@ -292,11 +292,11 @@ Finally, we need to replace the `<td>` tags in the `users` template to:
 
 {% highlight html %}
 {% raw %}
-{{#linkTo 'users.show' user}}{{user.fullName}}{{/linkTo}}
+<td>{{#linkTo "users.show" this}}{{fullName}}{{/linkTo}}</td>
 {% endraw %}
 {% endhighlight %}
 
-So we are linking to the `showUsers` named route and passing the instance of a `User` as the paramater. Ember will pull out the id on the object and set that to the `:user_id` segment on the path.
+So we are linking to the `show` named route and passing the instance of a `User` (which is what `this` refers to) as the paramater. Ember will pull out the id on the object and set that to the `:user_id` segment on the path.
 
 Reload your app and click through to the show page and you should see
 
