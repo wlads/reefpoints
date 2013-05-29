@@ -99,12 +99,8 @@ App.UsersNewController = Ember.ObjectController.extend
   buttonTitle: 'Create'
 
   save: ->
-    @content.one 'didCreate.user', =>
-      @content.off '.user'
+    @content.save().then =>
       @transitionToRoute('users.show', @content)
-    @get('store').commit()
-    @content.one 'didError.user', =>
-      @content.off '.user'
     
   cancel: ->
     @content.deleteRecord()
@@ -217,26 +213,22 @@ And now the controller `app/assets/javascripts/controllers/users/editController.
 
 {% highlight coffeescript %}
 App.UsersEditController = Ember.ObjectController.extend
-  headerTitle: 'Edit'
-  buttonTitle: 'Update'
-  
+  destroy: ->
+    @content.deleteRecord()
+    @store.commit()
+    @transitionTo('users.index')
+
   save: ->
-    @get('store').commit()
-    @content.one 'didUpdate.user', =>
-      @content.off '.user'
+    @content.save().then =>
       @transitionToRoute('users.show', @content)
-    @content.one 'didError.user', =>
-      @content.off '.user'
 
   cancel: ->
     if @content.isDirty
       @content.rollback()
-    @transitionToRoute 'users.show', @content
-    
-  destroy: ->
-    @content.deleteRecord()
-    @store.commit()
-    @transitionToRoute 'users.index'
+    @transitionTo('users.show', @content)
+
+  buttonTitle: 'Edit'
+  headerTitle: 'Editing'
 {% endhighlight %}
 
 This controller looks similar to `App.UsersNewController` but let's explore the differences
