@@ -11,7 +11,9 @@ summary: "Setting up RailsAPI for writing an Ember App"
 published: true
 ---
 
-**This article was last updated on May 14, 2013 and reflects the state of Ember and Ember-Data's latest builds on that date.**
+**This article was last updated on May 28, 2013 and reflects the state
+ of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
+that date.**
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
@@ -114,7 +116,7 @@ Let's setup the necessary gem dependencies in our `Gemfile`. Just replace the en
 {% highlight ruby %}
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'rails', '3.2.13'
 gem 'rails-api'
@@ -136,7 +138,7 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier'
   gem 'bootstrap-sass', '~> 2.0.3.0'
-  gem 'handlebars_assets', '0.12.0'
+  gem 'handlebars_assets', '0.12.3'
 end
 
 group :development do
@@ -158,7 +160,7 @@ rails-api g model User first_name:string last_name:string quote:text
 rails-api g serializer User
 {% endhighlight %}
 
-Now open up `app/serializers/user_serializer.rb` and add the fields that require serialization
+Run 'rake db:migrate' to run the migration for our User model. Now open up `app/serializers/user_serializer.rb` and add the fields that require serialization
 
 {% highlight ruby %}
 class UserSerializer < ActiveModel::Serializer
@@ -166,7 +168,9 @@ class UserSerializer < ActiveModel::Serializer
 end
 {% endhighlight %}
 
-Again, this will instruct `Rails` to turn our `ActiveRecord` object into a `JSON` object properly normalized for `Ember`. Let's write the Controller. Create and edit `app/controllers/users_controller.rb`
+Again, this will instruct `Rails` to turn our `ActiveRecord` object into a `JSON` object properly normalized for `Ember`. 
+
+Let's write the Controller. Create and edit `app/controllers/users_controller.rb`
 
 {% highlight ruby %}
 class UsersController < ApplicationController
@@ -251,5 +255,5 @@ Ok, now our app is in a good spot to start developing an Ember app with. Let's r
 2. Set up the javascript and stylesheet assets
 3. Wrote a very simple JSON API for returning all users
 
-If you fire up your app you'll see a blank page. Not too interesting. In [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) we'll build the Ember app itself.
+In [Part 2](http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html) we'll build the Ember app itself.
 

@@ -11,7 +11,9 @@ summary: "Building the Ember app"
 published: true
 ---
 
-**This article was last updated on May 14, 2013 and reflects the state of Ember and Ember-Data's latest builds on that date.**
+**This article was last updated on May 28, 2013 and reflects the state
+ of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
+that date.**
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
@@ -38,7 +40,7 @@ if defined?(HandlebarsAssets)
 end
 {% endhighlight %}
 
-*NOTE* If you have skipped ahead and come back to this initializer you will need to run:
+*NOTE:* If you have skipped ahead and come back to this initializer you will need to run:
 
 {% highlight bash %}
 rm -rf tmp/*
@@ -56,7 +58,7 @@ Let's dive in by creating our application layout template in `app/assets/javascr
       <div class='nav-collapse collapse'>
         <ul class='nav'>
           <li>{{#linkTo 'index'}}Home{{/linkTo}}</li>
-          <li>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
+          <li>{{#linkTo 'users'}}Users{{/linkTo}}</li>
         </ul>
       </div>
     </div>
@@ -87,8 +89,7 @@ App.Router.reopen
   rootURL: '/'
 
 App.Router.map ->
-  @resource 'users', ->
-    @route 'new'
+  @resource 'users'
 {% endhighlight %}
 
 [Read more about Ember Routes](http://emberjs.com/guides/routing)
@@ -96,7 +97,7 @@ App.Router.map ->
 This will tell the Ember Router to use the History API instead of the
 default 'hash' URLs for routes. The mapping of the `/` in our app is
 implicit in Ember, and it will be assigned to a route of 
-`index`. The new Ember Router will use this string to make some
+`index`. The Ember Router will use this string to make some
 assumptions. If there is a `App.IndexController` object it will use that
 controller. If not, it will just render out the `index` template. Now,
 under the hood Ember is still using a `App.IndexController` controller
@@ -130,12 +131,14 @@ something useful. We are going to add the `/users` page, so edit
 {% highlight html %}
 {% raw %}
 <h1>Users</h1>
-<table class='table table-striped'>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-  </tr>
-</table>
+<div class="span3">
+  <table class='table table-striped'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </table>
+</div>
 {% endraw %}
 {% endhighlight %}
 
@@ -165,7 +168,7 @@ App.ApplicationController = Ember.Controller.extend
 
 [Read more about Ember Controllers](http://emberjs.com/guides/controllers)
 
-Each attribute is a function that will compare the `currentRoute` attribute to a value and return that boolean result. We instruct the attribute to be a [computed property](http://emberjs.com/guides/object-model/computed-properties). Computed properties are simple to understand, we tell Ember that when `currentRoute` is `set` to a different value the value of `isHome` will be automatically updated. Ember will then instruct anything bound to that attribute to update as well.
+Each attribute is a function that will compare the `currentRoute` attribute to a value and return that boolean result. We instruct the attribute to be a [computed property](http://emberjs.com/guides/object-model/computed-properties). Computed properties are simple to understand: we tell Ember to automatically update the value of 'isHome' when `currentRoute` is `set` to a different value. Ember will then instruct anything bound to that attribute to update as well.
 
 Finally, we're going to update our routes to set `currentRoute` depending upon the route. Let's add two route classes to `app/assets/javascripts/routes.coffee`
 
@@ -189,8 +192,7 @@ Now reload your app and click between the actions and you should see the active 
 Next, we're going to start using real data. We're going to fetch the collection of Users from the server and display them on the index page. Let's start with telling Ember what our data store looks like in `app/assets/javascripts/store.coffee`
 
 {% highlight coffeescript %}
-App.Store = DS.Store.extend
-  revision: 12
+App.Store = DS.Store.extend()
 {% endhighlight %}
 
 [Read more about Ember's REST Adapter](http://emberjs.com/guides/models/the-rest-adapter)
@@ -224,40 +226,36 @@ App.UsersRoute = Ember.Route.extend
     @controllerFor('application').set('currentRoute', 'users')
 {% endhighlight %}
 
-The `App.User.find()` makes a remote call, fetches the collection, and instantiates the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this collection to the `users` attribute on the controller. Now edit `app/assets/javascripts/templates/users.hbs` to include a list of our users and an outlet through which we'll render `users/index`.
+The `App.User.find()` makes a remote call, fetches the collection, and instantiates the models. This collection is then passed to `setupController` through the `model` attribute. We then assign this collection to the `users` attribute on the controller. 
+
+Now edit `app/assets/javascripts/templates/users.hbs` to include a list of our users and an outlet through which we'll render a users index page and our users show page.
 
 {% highlight html %}
 {% raw %}
-<table class='table table-striped'>
-	{{#each controller}}
-	  <tr>
-	    <td>{{id}}</td>
-	    <td>{{#linkTo "users.show" this}}{{fullName}}{{/linkTo}}</td>
-	  </tr>
-	{{/each}}
-</table>
-{{outlet}}
+<div class="span3">
+  <table class='table table-striped'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  	{{#each controller}}
+  	  <tr>
+  	    <td>{{id}}</td>
+  	    <td>{{#linkTo "users.show" this}}{{fullName}}{{/linkTo}}</td>
+  	  </tr>
+  	{{/each}}
+  </table>
+</div>
+
+<div class="span8">
+  {{outlet}}
+</div>
 {% endraw %}
 {% endhighlight %}
 
-Reload your page and you should see something similar to
-![Show](http://i.imgur.com/NNGbzIz.png). Our `user/index.hbs` file has some placeholder text:
+We are linking to the `show` named route and passing the instance of a `User` (which is what `this` refers to) as the paramater. Ember will pull out the id on the object and set that to the `:user_id` segment on the path.
 
-{% highlight html %}
-{% raw %}
-  <p>Please choose a user.</p>
-{% endraw %}
-{% endhighlight %}
-
-Next, we're going to add a `show` page to round out this post. Let's start with the index template that we just updated. Modify the 2nd `<td>` element to:
-
-{% highlight html %}
-{% raw %}
-<td>{{#linkTo 'showUser' user}}{{user.fullName}}{{/linkTo}}</td>
-{% endraw %}
-{% endhighlight %}
-
-We need to next update `App.Router` for the proper mapping
+We need to next update 'App.Router' for the proper mapping
 
 {% highlight coffeescript %}
 App.Router.map ->
@@ -295,15 +293,14 @@ And we'll add the `app/assets/javascripts/templates/users/show.hbs` template
 {% endraw %}
 {% endhighlight %}
 
-Finally, we need to replace the `<td>` tags in the `users` template to:
+And finally, we'll add the 'app/assets/javascripts/users/index.hbs' template
 
 {% highlight html %}
 {% raw %}
-<td>{{#linkTo "users.show" this}}{{fullName}}{{/linkTo}}</td>
+  <p>Please choose a user.</p>
 {% endraw %}
 {% endhighlight %}
 
-So we are linking to the `show` named route and passing the instance of a `User` (which is what `this` refers to) as the paramater. Ember will pull out the id on the object and set that to the `:user_id` segment on the path.
 
 Reload your app and click through to the show page and you should see
 

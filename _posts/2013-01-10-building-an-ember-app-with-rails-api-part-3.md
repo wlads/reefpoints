@@ -11,7 +11,9 @@ summary: "CUD, it isn't just for cows"
 published: true
 ---
 
-**This article was last updated on May 14, 2013 and reflects the state of Ember and Ember-Data's latest builds on that date.**
+**This article was last updated on May 28, 2013 and reflects the state
+ of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
+that date.**
 
 [Fork the project on Github!](https://github.com/bcardarella/ember-railsapi)
 
@@ -58,7 +60,6 @@ App.UsersNewRoute = App.UsersRoute.extend
   model: ->
     App.User.createRecord()
   setupController: (controller, model) ->
-    @_super()
     controller.set('content', model)
 {% endhighlight %}
 
@@ -240,7 +241,7 @@ App.UsersEditController = Ember.ObjectController.extend
 
 This controller looks similar to `App.UsersNewController` but let's explore the differences
 
-* `save` here because the model already has an `id` we can commit to the datastore and transition. Again, once the bug mentioned above is resolved we would handle this differently.
+* `save` here because the model already has an `id` we can commit to the datastore and transition.
 * `cancel` instead of deleting the record we want to rollback to its previous state. And we can only rollback if the record has changed.
 
 I'm sure you know what is next. The `new` template is nearly identical to the `edit` template. Let's create `app/assets/javascripts/templates/users/form.hbs`
