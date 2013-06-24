@@ -1,0 +1,23 @@
+---
+layout: layout
+title: DockYard Blog
+---
+%h1.logo Reef Points
+
+%form.search_reefpoints
+  %label{for: 'search'} Search ReefPoints
+  %input#search.search{name: 'search', type: 'text', value: ''}
+
+%section#index
+  - page_articles.each do |article|
+    %article.index-section
+      %header.index-meta
+        %time.index-date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
+        %p.index-author= link_to article.author, blog_author_path(article.author)
+        - if article.comments
+          %h4
+            %a.index-comments{href: '#disqus_thread'}.
+      .index-post
+        %h2= link_to article.title, article, class: 'index-title'
+        - if article.summary
+          %p.index-summary= article.summary
