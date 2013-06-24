@@ -4,7 +4,7 @@
       %ul.post-metas
         %li.post-meta
           - if current_page.author
-            = link_to current_page.author, blog_author_path(current_page.author)
+            = link_to current_page.author, blog_author_path(current_page.author), class: 'post-author'
         %li.post_meta
           %span
             - if current_page.twitter

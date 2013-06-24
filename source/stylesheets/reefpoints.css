@@ -186,7 +186,7 @@ em {
   opacity: .5;
 }
 
-.index-comments:hover {
+.index-comments:hover, .index-author:hover, .post-author:hover {
   text-decoration: underline;
 }
 
@@ -370,4 +370,13 @@ strong {
 .post-content img {
   display: block;
   margin: 0 auto;
+}
+
+h1.author-name {
+  font-family: cubano, sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1.15em;
+  margin-bottom: .75em;
+  margin-top: .75em;
 }
