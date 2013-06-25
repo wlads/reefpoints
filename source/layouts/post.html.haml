@@ -5,13 +5,14 @@
         %li.post-meta
           - if current_page.author
             = link_to current_page.author, blog_author_path(current_page.author), class: 'post-author'
+        %li.post-meta.post-date= current_page.date.to_s(:short)
         %li.post_meta
           %span
             - if current_page.twitter
               %a.link.link-in-post.fontello{href: "http://twitter.com/#{current_page.twitter}", target: '_blank'} t
             - if current_page.github
               %a.link.link-in-post.fontello{href: "https://github.com/#{current_page.github}", target: '_blank'} g
-        %li.post-meta.post-date= current_page.date.to_s(:short)
+        %li.post-meta.post-tags= tag_links(current_page.tags)
 
     .post-div
       .post-title-wrap

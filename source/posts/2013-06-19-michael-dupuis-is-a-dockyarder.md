@@ -5,7 +5,7 @@ comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
 github: bcardarella
-category: announcement
+legacy_category: announcement
 social: true
 summary: 'Grow baby grow!'
 published: true

@@ -7,7 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Doug Yun
 social: true
-category: announcement
+legacy_category: announcement
 ---
 
 ![Doug Yun](/images/doug-yun.png)

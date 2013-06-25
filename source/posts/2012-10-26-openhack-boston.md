@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
-category: community
+legacy_category: community
 social: true
 summary: Come one, come all!
 published: true

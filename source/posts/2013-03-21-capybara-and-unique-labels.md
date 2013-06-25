@@ -5,7 +5,7 @@ comments: true
 author: "Brian Cardarella"
 twitter: bcardarella
 github: bcardarella
-category: ember
+legacy_category: ember
 social: true
 summary: "Capybara is broken, they refused to fix. Here is the monkey patch"
 published: true

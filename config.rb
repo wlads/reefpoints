@@ -15,6 +15,25 @@ module Middleman::Blog::BlogArticle
   def summary
     data['summary']
   end
+
+  def tags
+    article_tags = data['tags']
+
+    if data['tags'].is_a? String
+        article_tags = article_tags.split(',').map(&:strip)
+    else
+      article_tags = Array.wrap(article_tags)
+    end
+    Array.wrap(data['legacy_category']) + article_tags
+  end
+end
+
+helpers do
+  def tag_links(tags)
+    tags.map do |tag|
+      link_to tag, tag_path(tag), class: 'tag-link'
+    end.join(', ')
+  end
 end
 
 set :markdown_engine, :redcarpet
@@ -27,21 +46,3 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :haml, remove_whitespace: true
-
-# Build-specific configuration
-configure :build do
-  # For example, change the Compass output style for deployment
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
-
-  # Enable cache buster
-  # activate :asset_hash
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
-end

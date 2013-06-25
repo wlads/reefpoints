@@ -5,7 +5,7 @@ comments: true
 author: "Brian Cardarella"
 twitter: bcardarella
 github: bcardarella
-category: ember
+legacy_category: ember
 social: true
 summary: "Building the Ember app"
 published: true

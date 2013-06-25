@@ -6,7 +6,7 @@ author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
 summary: Brian summarizes the changes to come in ClientSideValidations 3.2.0
-category: ruby
+legacy_category: ruby
 social: true
 ---
 

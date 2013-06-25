@@ -5,7 +5,7 @@ comments: true
 author: 'Doug Yun'
 twitter: 'dougyun'
 github: duggieawesome
-category: ruby, design_patterns
+legacy_category: ruby, design_patterns
 social: true
 summary: 'Exploring design patterns and their use cases'
 published: false

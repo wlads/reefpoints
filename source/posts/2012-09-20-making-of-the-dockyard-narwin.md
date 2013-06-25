@@ -4,7 +4,7 @@ title: "Making of the DockYard Narwin"
 comments: true
 author: Amanda Cheung
 github: acacheung
-category: design
+legacy_category: design
 social: true
 summary: "Animated gif of the evolution of the narwin"
 published: true

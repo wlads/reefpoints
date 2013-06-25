@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 github: bcardarella
 twitter: bcardarella
-category: ruby
+legacy_category: ruby
 social: true
 summary: "How to send your emails using the new Rails 4.0 Queue"
 published: true

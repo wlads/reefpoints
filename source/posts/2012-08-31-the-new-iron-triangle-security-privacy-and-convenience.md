@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 github: bcardarella
 twitter: bcardarella
-category: opinion
+legacy_category: opinion
 social: true
 summary: "Pick two"
 published: false

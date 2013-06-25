@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 github: bcardarella
 twitter: bcardarella
-category: ruby
+legacy_category: ruby
 social: true
 summary: "A look at the new Queueing API"
 published: true

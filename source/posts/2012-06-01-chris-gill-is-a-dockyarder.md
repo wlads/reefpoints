@@ -7,7 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Chris Gill
 social: true
-category: announcement
+legacy_category: announcement
 ---
 
 ![Chris Gill](/images/chris-gill.png)

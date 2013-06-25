@@ -4,7 +4,7 @@ title: "Models, Views, and Controllers, Oh My!"
 comments: true
 author: Amanda Cheung
 github: acacheung
-category: training
+legacy_category: training
 social: true
 summary: "Getting started in Ruby on Rails"
 published: true

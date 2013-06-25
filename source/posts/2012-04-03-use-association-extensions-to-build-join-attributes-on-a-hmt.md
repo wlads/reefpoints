@@ -6,7 +6,7 @@ author: Russell Jones
 twitter: codeofficer
 github: codeofficer
 summary: Russ lays down a use case for ActiveRecord association extensions
-category: ruby
+legacy_category: ruby
 social: true
 ---
 

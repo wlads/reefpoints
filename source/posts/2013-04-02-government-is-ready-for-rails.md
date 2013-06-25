@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 github: bcardarella
 twitter: bcardarella
-category: ruby
+legacy_category: ruby
 social: true
 summary: "And not the other way around"
 published: false

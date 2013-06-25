@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
-category: ruby
+legacy_category: ruby
 social: true
 summary: Patterns for happy hacking
 ---

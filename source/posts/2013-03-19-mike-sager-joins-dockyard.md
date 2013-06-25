@@ -5,7 +5,7 @@ comments: true
 author: "Brian Cardarella"
 twitter: bcardarella
 github: bcardarella
-category: ember
+legacy_category: ember
 social: true
 summary: "Sager!!!!!"
 published: true

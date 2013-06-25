@@ -5,7 +5,7 @@ comments: true
 author: Russ Jones
 twitter: codeofficer
 github: codeofficer
-category: javascript
+legacy_category: javascript
 social: true
 summary: "Throwing them together in a way that makes sense."
 ---

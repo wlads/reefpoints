@@ -5,7 +5,7 @@ comments: true
 author: Dan McClain
 twitter: "_danmcclain"
 github: danmcclain
-category: ruby
+legacy_category: ruby
 social: true
 summary: "Announcing postgres_ext, a gem that adds support for PostgreSQL data types to ActiveRecord"
 published: true

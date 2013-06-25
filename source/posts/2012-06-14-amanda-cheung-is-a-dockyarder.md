@@ -7,7 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Amanda Cheung
 social: true
-category: announcement
+legacy_category: announcement
 ---
 
 ![Amanda Cheung](/images/amanda-cheung.png)

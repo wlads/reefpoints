@@ -6,7 +6,7 @@ author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
 summary: A simple extraction from ClientSideValidations
-category: ruby
+legacy_category: ruby
 social: true
 ---
 

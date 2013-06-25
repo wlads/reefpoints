@@ -5,7 +5,7 @@ comments: true
 author: "Brian Cardarella"
 twitter: bcardarella
 github: bcardarella
-category: ember
+legacy_category: ember
 social: true
 summary: "Setting up RailsAPI for writing an Ember App"
 published: true

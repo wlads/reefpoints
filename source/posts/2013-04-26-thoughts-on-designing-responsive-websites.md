@@ -4,7 +4,7 @@ title: "Thoughts on Designing Responsive Websites"
 comments: true
 author: Amanda Cheung
 github: acacheung
-category: design
+legacy_category: design
 social: true
 summary: "What I've learned by making a few responsive websites - Part 1"
 published: true

@@ -5,7 +5,7 @@ comments: true
 author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
-category: ruby
+legacy_category: ruby
 summary: Why comparing the too frameworks is dumb and how Ruby is still the best choice
 published: false
 social: true

@@ -5,7 +5,7 @@ comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
 github: bcardarella
-category: announcements
+legacy_category: announcements
 social: true
 summary: 'Our first developer intern'
 published: true

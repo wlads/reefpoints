@@ -5,7 +5,7 @@ comments: true
 author: Dan McClain
 twitter: "_danmcclain"
 github: danmcclain
-category: ember
+legacy_category: ember
 social: true
 summary: "We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft"
 published: true

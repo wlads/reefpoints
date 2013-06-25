@@ -5,7 +5,7 @@ comments: true
 author: Dan McClain
 twitter: "_danmcclain"
 github: danmcclain
-category: ruby
+legacy_category: ruby
 social: true
 summary: "Storing arrays natively in PostgreSQL is now supported by Rails"
 published: true

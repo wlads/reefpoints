@@ -6,7 +6,7 @@ author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Russ Jones as a partner
-category: announcement
+legacy_category: announcement
 ---
 
 ![Russ Jones](/images/russ-jones.png)

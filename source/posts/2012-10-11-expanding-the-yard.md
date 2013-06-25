@@ -5,7 +5,7 @@ comments: true
 author: Angelo Simeoni
 github: cssboy
 twitter: cssboy
-category: design
+legacy_category: design
 social: true
 summary: "The story of how we reimagined our site."
 published: true

@@ -5,7 +5,7 @@ comments: true
 author: Dan McClain
 twitter: _danmcclain
 github: danmcclain
-category: ruby
+legacy_category: ruby
 social: true
 summary: "What we are doing to keep our developers honest with their tests"
 published: true

@@ -6,7 +6,7 @@ comments: true
 author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
-category: opinion
+legacy_category: opinion
 social: true
 summary: "Brian talks about what has worked, what has not worked, and
 the changes that have been made at DockYard during its first six month"

@@ -1,14 +1,2 @@
-%h1.author-name #{page_articles.size} articles by #{authorname}
-%section#index
-  - page_articles.each do |article|
-    %article.index-section
-      %header.index-meta
-        %time.index-date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
-        %p.index-author= link_to article.author, blog_author_path(article.author)
-        - if article.comments
-          %h4
-            %a.index-comments{href: '#disqus_thread'}.
-      .index-post
-        %h2= link_to article.title, article, class: 'index-title'
-        - if article.summary
-          %p.index-summary= article.summary
+%h1.author-name #{pluralize(page_articles.size, 'article')} by #{authorname}
+= partial 'articles', :locals => { :articles => page_articles }

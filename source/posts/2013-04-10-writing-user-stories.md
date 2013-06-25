@@ -4,7 +4,7 @@ title: "Writing User Stories"
 comments: true
 author: Tyler Loch
 twitter: "notnarwal"
-category: process
+legacy_category: process
 social: true
 summary: "The basics of collecting and writing user stories."
 published: true

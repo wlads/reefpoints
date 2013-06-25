@@ -6,7 +6,7 @@ author: Brian Cardarella
 twitter: bcardarella
 github: bcardarella
 summary: Using the Strategy Pattern to clean up multiple login paths
-category: ruby
+legacy_category: ruby
 social: true
 ---
 

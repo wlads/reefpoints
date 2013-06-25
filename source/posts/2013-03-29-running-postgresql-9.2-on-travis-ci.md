@@ -5,7 +5,7 @@ comments: true
 author: Dan McClain
 twitter: "_danmcclain"
 github: danmcclain
-category: ruby
+legacy_category: ruby
 social: true
 summary: "Test your gem against the latest PostgreSQL version (or an older one)"
 published: true
