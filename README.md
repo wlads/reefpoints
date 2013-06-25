@@ -14,7 +14,7 @@ bundle exec middleman
 
 ## Legal ##
 
-[DockYard](http://dockyard.com), LLC &copy; 2012
+[DockYard](http://dockyard.com), LLC &copy; 2013
 
 [@dockyard](http://twitter.com/dockyard)
 
