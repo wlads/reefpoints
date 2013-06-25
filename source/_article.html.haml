@@ -1,7 +1,7 @@
 %article.index-section
   %header.index-meta
     %time.index-date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
-    %p.index-author= link_to article.author, blog_author_path(article.author)
+    %p.index-author= link_to article.author, author_path(article.author)
     - if article.comments
       %h4
         %a.index-comments{href: '#disqus_thread'}.

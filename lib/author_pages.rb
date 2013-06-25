@@ -29,7 +29,7 @@ end
 module AuthorPages
   def self.registered(app)
     app.helpers do
-      def blog_author_path(author)
+      def author_path(author)
         sitemap.find_resource_by_path(::AuthorPages::AuthoredPage.link(self, author)).try(:url)
       end
     end
