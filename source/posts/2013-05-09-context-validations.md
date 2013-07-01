@@ -69,8 +69,8 @@ what is considered "valid data" should also be different.
 
 ## Context Validations ##
 
-To handle this need I have just releaed
-[ContextValidations](http://rubygems.org/gems/context_validations).
+To handle this need I have just released
+[ContextValidations](https://github.com/dockyard/context_validations).
 The goals of this gem are simple:
 
 1. Maintain simplicity

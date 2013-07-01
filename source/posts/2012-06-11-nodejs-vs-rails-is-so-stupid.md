@@ -36,7 +36,7 @@ number.
 As of this writing Rails has 1,779 contributors while Node has 362. You
 can grab these numbers for yourself:
 
-```bash
+```text
 $ git shortlog -s | wc -l
 ```
 

@@ -80,7 +80,7 @@ $(function(){
 });
 ```
 
-```bash
+```text
 <form id="form" action="#" method="POST" data-remote="true">
   <p><input type="text" value="..."></p>
   <p><input type="submit" value="Continue &rarr;"></p>

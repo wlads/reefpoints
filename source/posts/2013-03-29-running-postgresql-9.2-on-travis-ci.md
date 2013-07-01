@@ -50,7 +50,7 @@ Using the `$DISTRIB_CODENAME` variable, we can set up the pgdg.list file
 that we will add to the apt-get sources list directory. We do so with
 the following command:
 
-```bash
+```text
 echo "deb http://apt.postgresql.org/pub/repos/apt/ $DISTRIB_CODENAME-pgdg main" > pgdg.list
 sudo mv pgdg.list /etc/apt/sources.list.d/
 ```
@@ -58,7 +58,7 @@ sudo mv pgdg.list /etc/apt/sources.list.d/
 The last thing we have to do before we can start installing the 9.2 is
 to import postgresql.org's apt key via
 
-```bash
+```text
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 ```
 
@@ -68,7 +68,7 @@ After we update our package listing via `sudo apt-get update`, we can
 install `postgresql-9.2` and `postgresql-contrib-9.2` (needed for the
 PostgreSQL extensions) via:
 
-```bash
+```text
 sudo apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" install postgresql-9.2 postgresql-contrib-9.2 -qq
 ```
 
@@ -83,7 +83,7 @@ prompt for a password for the `postgres` role. We then need to stop the
 server, replace the 9.2 `pg_hba.conf` with the custom Travis-CI one we
 copied earlier, then restart the server:
 
-```bash
+```text
 sudo /etc/init.d/postgresql stop
 sudo cp ./pg_hba.conf /etc/postgresql/9.2/main
 sudo /etc/init.d/postgresql start

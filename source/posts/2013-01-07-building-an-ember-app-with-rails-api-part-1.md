@@ -29,7 +29,7 @@ backend. We're going to build a new app and deploy to Heroku.
 
 ## Part 1 - Getting Set Up
 
-```bash
+```text
 gem install rails-api
 rails-api new ember-app
 cd ember-app
@@ -49,14 +49,14 @@ save us a lot of time. `RailsAPI` is bundled with
 which has `Sprockets` as a dependency. All we need to do is add in the
 directories
 
-```bash
+```text
 mkdir -p app/assets/{javascripts,stylesheets,images}
 mkdir -p vendor/assets/{javascripts,stylesheets,images}
 ```
 
 Now we need to copy in the vendored asset files. You can either build yourself our run the following to copy directly from my Github project
 
-```bash
+```text
 cd vendor/assets/javascripts
 wget https://raw.github.com/bcardarella/ember-railsapi/master/vendor/assets/javascripts/ember-data.js
 wget https://raw.github.com/bcardarella/ember-railsapi/master/vendor/assets/javascripts/ember.js
@@ -69,7 +69,7 @@ Note that if you're a Mac user, just replace `wget` (the Linux command) with `cu
 
 Let's setup the directory structure for our Ember app
 
-```bash
+```text
 mkdir -p app/assets/javascripts/{controllers,models,views,templates}
 ```
 
@@ -95,14 +95,14 @@ window.App = Ember.Application.create()
 
 Add the `routes.coffee` and `store.coffee` files:
 
-```bash
+```text
 touch app/assets/javascripts/routes.coffee
 touch app/assets/javascripts/store.coffee
 ```
 
 And the `app/assets/stylesheets/application.sass` file
 
-{% highlight sass %}
+```sass
 @import 'bootstrap'
 
 body
@@ -155,7 +155,7 @@ After this, don't forget to run `bundle install` from the command line to pick u
 
 Let's create a simple model and the serializer
 
-```bash
+```text
 rails-api g model User first_name:string last_name:string quote:text
 rails-api g serializer User
 ```
@@ -245,7 +245,7 @@ User.create(:first_name => 'Abraham', :last_name => 'Lincoln', :quote => "I'd li
 
 Now run your migrations and seed
 
-```bash
+```text
 rake db:migrate db:seed
 ```
 

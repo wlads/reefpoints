@@ -42,7 +42,7 @@ end
 
 *NOTE:* If you have skipped ahead and come back to this initializer you will need to run:
 
-```bash
+```text
 rm -rf tmp/*
 ```
 
@@ -108,7 +108,7 @@ one in Rails. This is by design. We need the 2nd route there so our
 
 Let's write `app/assets/javascripts/templates/index.hbs`
 
-```bash
+```text
 <h1>Welcome!</h1>
 ```
 
