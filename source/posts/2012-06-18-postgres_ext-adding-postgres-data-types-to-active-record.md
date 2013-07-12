@@ -83,12 +83,12 @@ end
 inetExample = InetExample.new
 inetExample.ip_address = '127.0.0.0/24'
 inetExample.ip_address
-# => #<IPAddr: IPv4:127.0.0.0/255.255.255.0> 
+# => #<IPAddr: IPv4:127.0.0.0/255.255.255.0>
 inetExample.save
 
 inet_2 = InetExample.first
 inet_2.ip_address
-# => #<IPAddr: IPv4:127.0.0.0/255.255.255.0> 
+# => #<IPAddr: IPv4:127.0.0.0/255.255.255.0>
 ```
 
 ### Array Type Casting example
@@ -132,4 +132,4 @@ and Array support to Rails master.  Then I plan to backport Rails 4's
 hstore support back to postgres\_ext. After adding support for the other
 PostgreSQL types, I plan to add support to arel for PostgreSQL type
 specific where clauses (ie ANY for array comparison, `<<` and `>>` for
-INET and CIDR comparisons. 
+INET and CIDR comparisons.
