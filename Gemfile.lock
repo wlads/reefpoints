@@ -1,12 +1,12 @@
 GIT
   remote: git://github.com/dgeb/coderay.git
-  revision: 73767aa80301ef5de74f625d597dde5cd940e74d
-  branch: handlebars
+  revision: 1362fd4af63331aed51ce9907ad7295cea228874
+  ref: 1362fd4af63331aed51ce9907ad7295cea228874
   specs:
-    coderay (1.0.8.rc1)
+    coderay (1.1.0.rc1)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (3.2.12)
       i18n (~> 0.6)

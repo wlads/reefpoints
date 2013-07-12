@@ -1,9 +1,9 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem "middleman", "~> 3.1.1"
 gem "middleman-blog", "~> 3.2.0"
 gem 'redcarpet'
-gem "coderay", :git => "git://github.com/dgeb/coderay.git", :branch => "handlebars"
+gem "coderay", :github => 'dgeb/coderay', ref: '1362fd4af63331aed51ce9907ad7295cea228874'
 gem 'nokogiri'
 
 # For feed.xml.builder
