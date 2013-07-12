@@ -5,16 +5,16 @@
         %li.post-meta
           - if current_page.author
             = link_to current_page.author, author_path(current_page.author), class: 'post-author'
-        %li.post-meta.post-date= current_page.date.to_s(:short)
-        %li.post_meta
+        %li.post-meta
           %span
             - if current_page.twitter
               %a.link.link-in-post.fontello{href: "http://twitter.com/#{current_page.twitter}", target: '_blank'} t
             - if current_page.github
               %a.link.link-in-post.fontello{href: "https://github.com/#{current_page.github}", target: '_blank'} g
-        %li.post-meta.post-tags= tag_links(current_page.tags)
+        %li.post-meta.post-date= current_page.date.to_s(:short)
 
     .post-div
+      %li.post-meta.post-tags= tag_links(current_page.tags)
       .post-title-wrap
         %h1.post-title= current_page.title
 
@@ -22,7 +22,7 @@
         = yield
 
       %p.issue
-        See a problem with the current_page?
+        See a problem with the current_page? &nbsp;
         %a{href: 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/', target: '_blank'} Send a pull request to contribute, we'll happily accept!
 
       %section.post-share
