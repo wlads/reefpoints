@@ -5,10 +5,10 @@ activate :blog do |blog|
   blog.sources = "posts/:year-:month-:day-:title.html"
   blog.paginate = true
   blog.tag_template = 'tag.html'
-  blog.taglink = 'categories/:tag'
+  blog.taglink = 'categories/:tag.html'
   blog.calendar_template = 'calendar.html'
   blog.author_template = 'author.html'
-  blog.authorlink = 'authors/:author'
+  blog.authorlink = 'authors/:author.html'
 end
 
 module Middleman::Blog::BlogArticle

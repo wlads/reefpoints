@@ -42,7 +42,7 @@ module AuthorPages
   def self.included(*args)
     self.registered(*args)
   end
-  
+
   class AuthoredPage
     def self.link(app, author)
       ::Middleman::Util.normalize_path(app.blog.options.authorlink.sub(':author', author.parameterize))
