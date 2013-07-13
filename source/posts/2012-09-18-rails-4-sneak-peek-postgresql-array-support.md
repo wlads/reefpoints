@@ -9,7 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Storing arrays natively in PostgreSQL is now supported by Rails"
 published: true
-tags: ruby on rails, postgres
+tags: ruby on rails, postgresql
 ---
 
 I'm happy to announce that [Rails 4.0 now has support for PostgreSQL

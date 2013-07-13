@@ -1,3 +1,4 @@
+require 'builder'
 Dir['./lib/*'].each { |f| require f }
 
 activate :blog do |blog|
@@ -31,8 +32,29 @@ end
 helpers do
   def tag_links(tags)
     tags.map do |tag|
-      link_to tag, tag_path(tag), class: 'tag-link'
+      link_to tag_name(tag), tag_path(tag), class: 'tag-link'
     end.join(', ')
+  end
+
+  def tag_name(tag)
+    case tag
+    when 'ruby on rails'
+      'Ruby on Rails'
+    when 'jquery'
+      'jQuery'
+    when 'postgresql', 'postgres'
+      'PostgreSQL'
+    when 'jquery'
+      'jQuery'
+    when 'javascript'
+      'JavaScript'
+    when 'ember'
+      'Ember.js'
+    when 'backbone'
+      'Backbone.js'
+    else
+      tag.split(' ').map(&:capitalize).join(' ')
+    end
   end
 end
 
@@ -42,6 +64,7 @@ activate :highlighter
 activate :author_pages
 activate :legacy_category
 ignore 'author.html.haml'
+page 'sitemap.xml', layout: false
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'

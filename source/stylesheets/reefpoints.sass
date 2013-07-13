@@ -306,10 +306,24 @@ strong
     margin: 0 auto 2em
 
 h1
-  &.author-name, &.tag-name
+  &.author-name, &.tag-name, &.categories, &.authors
     font-family: cubano, sans-serif
     text-align: center
     font-size: 2.5em
     line-height: 1.15em
     margin-bottom: .75em
     margin-top: .75em
+
+ul.categories, ul.authors
+  list-style-type: disc
+  width: 500px
+  margin: 0 auto
+  a
+    font-weight: bold
+    span.count
+      font-weight: normal
+      margin-left: 10px
+    &:hover
+      text-decoration: underline
+      span.count
+        text-decoration: none

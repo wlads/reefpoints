@@ -9,7 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Support added to ActiveRecord for INET, CIDR and MACADDR types for PostgreSQL"
 published: true
-tags: ruby on rails
+tags: ruby on rails, postgresql
 ---
 
 This week, I had a [pull request accepted](https://github.com/rails/rails/commit/835df6f3ed9b1575fd6a1fb62516d8ebeffbf114#diff-0)

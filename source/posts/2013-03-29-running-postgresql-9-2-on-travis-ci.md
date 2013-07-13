@@ -9,7 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Test your gem against the latest PostgreSQL version (or an older one)"
 published: true
-tags: postgres
+tags: postgresql
 ---
 
 I spent most of yesterday trying to get PostgreSQL 9.2 running [Travis-CI](http://travis-ci.org).

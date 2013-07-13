@@ -1,2 +1,2 @@
-%h1.tag-name #{pluralize(page_articles.size, 'Article')} in #{tagname.capitalize}
+%h1.tag-name #{pluralize(page_articles.size, 'Article')} in #{tag_name(tagname)}
 = partial 'articles', :locals => { :articles => page_articles }

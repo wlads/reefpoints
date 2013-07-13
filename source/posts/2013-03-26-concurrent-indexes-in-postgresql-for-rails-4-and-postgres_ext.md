@@ -9,7 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Prevent new indexes from locking up your tables"
 published: true
-tags: ruby on rails, postgres
+tags: ruby on rails, postgresql
 ---
 
 PostgreSQL allows you to [create your indexes

@@ -8,6 +8,7 @@ legacy_category: politics
 social: true
 summary: A description of techniques used to integrate with various vendors on a recent DockYard project for the AFL-CIO's Super PAC Worker's Voice.
 published: true
+tags: postgresql
 ---
 
 There's no one-size-fits-all approach to integrating with external
