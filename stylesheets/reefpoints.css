@@ -1,0 +1,372 @@
+/* line 1, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* line 9, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+body {
+  line-height: 1.5; }
+
+/* line 12, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+ul {
+  list-style: none; }
+
+/* line 15, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 19, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 24, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+q, blockquote {
+  quotes: none; }
+
+/* line 28, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+q:before, q:after {
+  content: "";
+  content: none; }
+
+/* line 33, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+/* line 37, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+a img {
+  border: none; }
+
+/* line 40, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+@font-face {
+  font-family: cubano;
+  src: url("/fonts/cubano.eot");
+  src: url("/fonts/cubano.ttf");
+  src: url("/fonts/cubano.eot?#iefix") format("embedded-opentype"), url("/fonts/cubano.woff") format("woff"), url("/fonts/cubano.svg") format("svg");
+  font-weight: normal; }
+
+@font-face {
+  font-family: leaguegothic;
+  src: url("/fonts/leaguegothic.eot");
+  src: url("/fonts/leaguegothic.ttf");
+  src: url("/fonts/leaguegothic.eot?#iefix") format("embedded-opentype"), url("/fonts/leaguegothic.woff") format("woff"), url("/fonts/leaguegothic.svg") format("svg");
+  font-weight: normal; }
+
+@font-face {
+  font-family: fontello;
+  src: url("/fonts/fontello.eot");
+  src: url("/fonts/fontello.ttf");
+  src: url("/fonts/fontello.eot?#iefix") format("embedded-opentype"), url("/fonts/fontello.woff") format("woff"), url("/fonts/fontello.svg") format("svg");
+  font-weight: normal; }
+
+@font-face {
+  font-family: candyscript;
+  src: url("/fonts/candyscript.eot");
+  src: url("/fonts/candyscript.ttf");
+  src: url("/fonts/candyscript.eot?#iefix") format("embedded-opentype"), url("/fonts/candyscript.woff") format("woff"), url("/fonts/candyscript.svg") format("svg");
+  font-weight: normal; }
+
+/* line 74, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1em;
+  color: #2a5567; }
+
+/* line 79, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+a, h1, h2, p, input, span, label, div {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+/* line 83, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+a {
+  text-decoration: none;
+  color: #2a5567; }
+
+/* line 87, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+em {
+  font-weight: bold; }
+
+/* line 90, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+#blog li.nav-blog a {
+  background-color: #f26364; }
+
+/* line 93, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.logo {
+  position: relative;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  font-family: candyscript, sans-serif;
+  text-align: center; }
+
+@media (min-width: 780px) {
+  /* line 101, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .logo {
+    font-size: 6em; } }
+@media (min-width: 400px) and (max-width: 780px) {
+  /* line 105, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .logo {
+    font-size: 5em; } }
+@media (max-width: 400px) {
+  /* line 109, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .logo {
+    font-size: 4em; } }
+/* line 112, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.search_reefpoints label {
+  display: none; }
+
+/* line 115, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding: 12px;
+  display: block;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 24px;
+  color: #444444; }
+  /* line 131, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .search:focus {
+    outline: none;
+    border-color: #999999;
+    background: #fcfcfc; }
+
+@media (min-width: 700px) {
+  /* line 137, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .search {
+    width: 608px; } }
+@media (max-width: 700px) {
+  /* line 141, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .search {
+    width: 90%; } }
+/* line 144, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.nothin {
+  display: none;
+  font-size: 24px;
+  text-align: center; }
+
+/* line 149, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.index-date {
+  font-weight: bold; }
+
+/* line 152, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.index-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px; }
+  /* line 156, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .index-title:hover {
+    text-decoration: underline;
+    color: #f05051; }
+
+/* line 160, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.index-comments {
+  opacity: 0.5; }
+  /* line 162, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .index-comments:hover {
+    text-decoration: underline; }
+
+/* line 165, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.index-author:hover, .post-author:hover {
+  text-decoration: underline; }
+
+/* line 168, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-metas-wrap {
+  margin-bottom: 2em;
+  padding: 20px 0;
+  background-image: url(http://dockyard.com/assets/bg.svg);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777777; }
+
+/* line 177, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-meta {
+  display: inline;
+  font-size: 0.9em; }
+
+/* line 181, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-author {
+  color: #777777; }
+
+/* line 184, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-tags {
+  margin-bottom: 1em;
+  display: block; }
+
+/* line 188, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.tag-link {
+  text-transform: capitalize;
+  opacity: 0.5; }
+  /* line 191, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .tag-link:hover {
+    text-decoration: underline; }
+
+/* line 194, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-title {
+  font-family: cubano, sans-serif;
+  font-size: 2.5em;
+  line-height: 1.15em;
+  margin-bottom: 0.75em; }
+
+/* line 200, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-div {
+  width: 720px;
+  margin: 0 auto; }
+
+/* line 204, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-share {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding-top: 2em;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #abd4e7; }
+  /* line 211, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .post-share h1 {
+    margin-bottom: 0.5em;
+    font-weight: bold; }
+
+/* line 215, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.twitter-share-button {
+  float: left; }
+
+/* line 218, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.issue {
+  font-weight: bold;
+  margin: 0.5em 0 1em; }
+  /* line 221, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .issue a {
+    text-decoration: underline; }
+    /* line 223, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+    .issue a:hover {
+      color: #f05051; }
+
+/* line 227, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.design #content .wrap, .design .post-div, .design .post-metas-wrap {
+  width: auto; }
+/* line 229, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.design .post-content, .design .issue, .design .post-share, .design #post-comments {
+  width: 90%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto; }
+/* line 234, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.design .issue {
+  margin-top: 2em;
+  margin-bottom: -1em; }
+/* line 237, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.design .post-share {
+  border: none; }
+/* line 239, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.design .post-title-wrap {
+  width: 90%;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 246, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .post-title {
+  color: #f05051; }
+/* line 248, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .content h2 {
+  margin: 0.5em 0;
+  font-size: 40px;
+  font-family: cubano, sans-serif;
+  font-weight: normal;
+  line-height: 1; }
+/* line 254, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .post-content {
+  width: 100%; }
+/* line 256, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .post-div {
+  max-width: 100%;
+  font-size: 1.2em; }
+/* line 259, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .one {
+  color: #aaddee;
+  background-color: #1a4557; }
+/* line 262, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .two {
+  color: #bbeeff;
+  background-color: #3a6577; }
+/* line 265, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .three {
+  color: #114455;
+  background-color: #9ac5d7; }
+/* line 268, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard .four {
+  color: #225566;
+  background-color: #bae5f7; }
+/* line 271, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.expanding-the-yard img {
+  margin: 0 auto 40px auto; }
+
+/* line 274, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+strong {
+  font-weight: bold; }
+
+/* line 278, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content h2 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold; }
+/* line 282, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content h3 {
+  margin-top: 0.5em;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #65a4ba; }
+/* line 287, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content p {
+  margin-bottom: 1em;
+  line-height: 1.65; }
+/* line 290, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content a {
+  font-weight: bold;
+  text-decoration: underline; }
+  /* line 293, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .post-content a:hover {
+    color: #f05051; }
+/* line 295, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content ul {
+  margin-bottom: 1em; }
+  /* line 296, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .post-content ul li {
+    margin-left: 2em;
+    list-style-type: square; }
+/* line 300, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content ol {
+  margin-bottom: 1em; }
+  /* line 302, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  .post-content ol li {
+    margin-left: 2em; }
+/* line 304, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.post-content img {
+  display: block;
+  margin: 0 auto 2em; }
+
+/* line 309, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+h1.author-name, h1.tag-name {
+  font-family: cubano, sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1.15em;
+  margin-bottom: 0.75em;
+  margin-top: 0.75em; }

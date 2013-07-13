@@ -1,0 +1,577 @@
+<!DOCTYPE html><html><head><title>Building an Ember app with RailsAPI - Part 3</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content="DockYard.com - CUD, it isn't just for cows" name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html' name='twitter:url'><meta content='Building an Ember app with RailsAPI - Part 3' name='twitter:title'><meta content="CUD, it isn't just for cows" name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>10 Jan 2013</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/ember">ember</a></p><div class='post-title-wrap'><h1 class='post-title'>Building an Ember app with RailsAPI - Part 3</h1></div><current_page class='post-content'><p><strong>This article was last updated on May 28, 2013 and reflects the state
+ of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
+that date.</strong></p>
+
+<p><a href="https://github.com/bcardarella/ember-railsapi">Fork the project on Github!</a></p>
+
+<p><a href="http://ember-rails-api.herokuapp.com/">Use the app live on Heroku</a></p>
+
+<p>In <a href="/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html">Part 1</a> I showed you how to setup a <code>Rails-API</code> app for Ember.</p>
+
+<p>In <a href="/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html">Part 2</a> I showed you the basics of building an Ember app, reading from a backend API and displaying that information.</p>
+
+<p>Today we&#39;re going to do some coding on the Rails side and the Ember side to add Creating, Updating, and Destroying records.</p>
+
+<h2>Part 3 - The Big Finish</h2>
+
+<p>In <a href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html">Part 1</a> we setup the backend using <a href="https://github.com/rails-api/rails-api/">Rails API</a>. In <a href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html">Part 2</a> we built out the basics of an Ember app, reading from a remote data source and displaying that data. Now we&#39;re going to add the ability to Create, Update, and Destroy that data. This part will be a mix of Ember and Rails code.</p>
+
+<p><em>Note: If you have been following along that <a href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html">Part 2</a> was recently updated to reflect new changes to the Ember Router, you will need to go back and update your code. Absolute make sure to update your ember.js and ember-data.js dependencies as they have been updated on the github repo</em></p>
+
+<h3>Create</h3>
+
+<p>Let&#39;s start by adding a <code>Create</code> button to our index page:</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">users.new</span><span class="error">'</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-primary</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>Create<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>We need to add the proper route so the index page doesn&#39;t blow up. While we&#39;re in here we&#39;ll add the <code>edit</code> route as well.</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td>
+  <td class="code"><pre>App.Router.map -&gt;
+  @resource 'users', -&gt;
+    @route 'new'
+    @route 'edit',
+      path: '/:user_id/edit'
+    @route 'show'
+      path: '/:user_id'
+</pre></td>
+</tr></table>
+</div></div>
+<p>And now we can add the <code>UsersNewRoute</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>App.UsersNewRoute = App.UsersRoute.extend
+  model: -&gt;
+    App.User.createRecord()
+  setupController: (controller, model) -&gt;
+    controller.set('content', model)
+</pre></td>
+</tr></table>
+</div></div>
+<p>Don&#39;t be fooled by the <code>createRecord()</code> call. This will not write anything to the backend. This call is simply used to create a new model. Now let&#39;s create the template <code>app/assets/javascripts/templates/users/new.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h1&gt;</span>Create <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">fullName</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">firstNameField.elementId</span><span class="delimiter">&quot;</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>First Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">first_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Last Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">last_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Quote<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextArea</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">save</span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-success</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Create<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">page-header</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">cancel</span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-inverse</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Cancel<span class="tag">&lt;/a&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Next we&#39;ll add <code>app/assets/javascripts/controllers/users/newController.coffeescript</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre>App.UsersNewController = Ember.ObjectController.extend
+  headerTitle: 'Create'
+  buttonTitle: 'Create'
+
+  save: -&gt;
+    @content.save().then =&gt;
+      @transitionToRoute('users.show', @content)
+
+  cancel: -&gt;
+    @content.deleteRecord()
+    @transitionToRoute('users.index')
+</pre></td>
+</tr></table>
+</div></div>
+<p>The first two functions <code>save</code> and <code>cancel</code> are actions that are mapped in the template. Let&#39;s break down each:</p>
+
+<ul>
+<li><code>save</code> will make a call to <code>this.store.commit()</code>. You will notice we are not modifying a model, assigning params, etc... as you would in a Rails app. Keep in mind that when you modify data that is bound in the form you are actually modifying the data in the model itself. The datastore in Ember needs to be directed when these modifications should be made &quot;permanent&quot;, and because we are using the RESTAdapter Ember will attempt to write these changes to the backend.</li>
+<li><code>cancel</code> If the user decides to not create a new user we must delete the record we created then transition to the <code>index</code> page.</li>
+</ul>
+
+<p><a href="http://emberjs.com/guides/models/model-lifecycle">Learn more about the Ember Model Lifecycle</a></p>
+
+<p>Finally we&#39;re going to hook up the back end in <code>app/controllers/users_controller.rb</code></p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre><span class="keyword">def</span> <span class="function">create</span>
+  user = <span class="constant">User</span>.new(params[<span class="symbol">:user</span>])
+
+  <span class="keyword">if</span> user.save
+    render <span class="key">json</span>: user
+  <span class="keyword">else</span>
+    render <span class="key">json</span>: user, <span class="key">status</span>: <span class="integer">422</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>It has been mentioned that <code>422</code> is the proper status code for validation failures. Personally I would prefer to use <code>respond_with</code> but it isn&#39;t part of the default Rails-API stack, <a href="https://groups.google.com/forum/?fromgroups=#!topic/rails-api-core/QhPh2VG7yTU">hopefully this will change</a>.</p>
+
+<p>Now let&#39;s run our app and see how it goes.</p>
+
+<p><img src="http://i.imgur.com/kFC9arb.png" alt="New1"></p>
+
+<p>Whoops, we have <code>undefined undefined</code> for the <code>fullName</code>. Let&#39;s set default values of an empty string in our user model:</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td>
+  <td class="code"><pre>App.User = DS.Model.extend
+  firstName: DS.attr('string', defaultValue: '' )
+  lastName: DS.attr('string', defaultValue: '' )
+  quote: DS.attr('string')
+  fullName: (-&gt;
+    &quot;#{@get('firstName')} #{@get('lastName')}&quot;
+  ).property('firstName', 'lastName')
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now when we add data and create it will write to the back end, take us to the show page. When can then click <code>Back</code> and we can see the record has been automatically added to the collection on the <code>index</code> page.</p>
+
+<p>Adding <code>Edit</code> should be straight forward now that we have done create. Start will adding the route:</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre>App.UsersEditRoute = Ember.Route.extend
+  model: (params) -&gt;
+    App.User.find(params.user_id)
+  setupController: (controller, model) -&gt;
+    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')
+</pre></td>
+</tr></table>
+</div></div>
+<p>You&#39;ll notice that this route is identical to <code>App.UsersShowRoute</code> we wrote in Part 2, let&#39;s DRY this up</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre>App.UserRoute = Ember.Route.extend
+  model: (params) -&gt;
+    App.User.find(params.user_id)
+  setupController: (controller, model) -&gt;
+    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')
+
+App.UsersShowRoute = App.UserRoute.extend()
+App.UsersEditRoute = App.UserRoute.extend()
+</pre></td>
+</tr></table>
+</div></div>
+<p>Next we&#39;ll add the edit link to <code>app/assets/javascripts/templates/users/show.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">users.edit</span><span class="error">'</span> <span class="attribute-name">content</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-primary</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>Edit<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now the edit template itself in <code>app/assets/javascripts/templates/users/edit.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h1&gt;</span>Edit <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">fullName</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">firstNameField.elementId</span><span class="delimiter">&quot;</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>First Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">first_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Last Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">last_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Quote<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextArea</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">save</span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-success</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Update<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">page-header</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">cancel</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">'</span><span class="content">controller</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-inverse</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Cancel<span class="tag">&lt;/a&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And now the controller <code>app/assets/javascripts/controllers/users/editController.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+</pre></td>
+  <td class="code"><pre>App.UsersEditController = Ember.ObjectController.extend
+  destroy: -&gt;
+    @content.deleteRecord()
+    @store.commit()
+    @transitionTo('users.index')
+
+  save: -&gt;
+    @content.save().then =&gt;
+      @transitionToRoute('users.show', @content)
+
+  cancel: -&gt;
+    if @content.isDirty
+      @content.rollback()
+    @transitionTo('users.show', @content)
+
+  buttonTitle: 'Edit'
+  headerTitle: 'Editing'
+</pre></td>
+</tr></table>
+</div></div>
+<p>This controller looks similar to <code>App.UsersNewController</code> but let&#39;s explore the differences</p>
+
+<ul>
+<li><code>save</code> here because the model already has an <code>id</code> we can commit to the datastore and transition.</li>
+<li><code>cancel</code> instead of deleting the record we want to rollback to its previous state. And we can only rollback if the record has changed.</li>
+</ul>
+
+<p>I&#39;m sure you know what is next. The <code>new</code> template is nearly identical to the <code>edit</code> template. Let&#39;s create <code>app/assets/javascripts/templates/users/form.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h1&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">headerTitle</span><span class="inline-delimiter">}}</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">fullName</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">firstNameField.elementId</span><span class="delimiter">&quot;</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>First Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">first_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">firstNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Last Name<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextField</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastName</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">last_name</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">lastNameField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+      <span class="tag">&lt;label</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField.elementId</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span>Quote<span class="tag">&lt;/label&gt;</span>
+      <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">view</span> <span class="attribute-name">Ember.TextArea</span> <span class="attribute-name">valueBinding</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">'</span><span class="content">quote</span><span class="delimiter">'</span></span> <span class="attribute-name">viewName</span>=<span class="string"><span class="delimiter">'</span><span class="content">quoteField</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">save</span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-success</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">buttonTitle</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">page-header</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="attribute-name">cancel</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">'</span><span class="content">controller</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-inverse</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Cancel<span class="tag">&lt;/a&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And in both the <code>new</code> and <code>edit</code> template remove the markup and replace with</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="inline"><span class="inline-delimiter">{{</span> <span class="attribute-name">template</span> <span class="error">'</span><span class="attribute-name">users</span><span class="error">/</span><span class="attribute-name">form</span><span class="error">'</span> <span class="inline-delimiter">}}</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now we need to edit the two controllers. In <code>App.UsersNewController</code> add to the two attributes:</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre>headerTitle: 'Create'
+buttonTitle: 'Create'
+</pre></td>
+</tr></table>
+</div></div>
+<p>And likewise in <code>App.UsersEditController</code>:</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre>headerTitle: 'Edit'
+buttonTitle: 'Update'
+</pre></td>
+</tr></table>
+</div></div>
+<p>Last part for this section is to add the <code>update</code> action to <code>app/controllers/users_controller.rb</code>:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre><span class="keyword">def</span> <span class="function">update</span>
+  user = <span class="constant">User</span>.find(params[<span class="symbol">:id</span>])
+  <span class="keyword">if</span> user.update_attributes(params[<span class="symbol">:user</span>])
+    render <span class="key">json</span>: user
+  <span class="keyword">else</span>
+    render <span class="key">json</span>: user, <span class="key">status</span>: <span class="integer">422</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now go through and everything should work! This allows us to treat the templates similar to a partial in Rails.</p>
+
+<p>Finally we&#39;re going to add the ability to delete records. Because this is an action we are going to limit to the <code>edit</code> page we will put the link below the <code>render</code> call</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">action</span> <span class="error">'</span><span class="attribute-name">destroy</span><span class="error">'</span><span class="inline-delimiter">}}</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn btn-danger</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>Destroy<span class="tag">&lt;/a&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now we add the action to the <code>App.UsersEditController</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>destroy: -&gt;
+  @content.deleteRecord()
+  @store.commit()
+  @transitionToRoute 'users.index'
+</pre></td>
+</tr></table>
+</div></div>
+<p>And we add the <code>destroy</code> action to the backend</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre><span class="keyword">def</span> <span class="function">destroy</span>
+  user = <span class="constant">User</span>.find(params[<span class="symbol">:id</span>])
+  <span class="keyword">if</span> user.destroy
+    render <span class="key">json</span>: user, <span class="key">status</span>: <span class="integer">204</span>
+  <span class="keyword">else</span>
+    render <span class="key">json</span>: user
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>The <code>204</code> status here is refers to <code>No Content</code>. Ember-data expects this to ensure the destroy action is a success.</p>
+
+<p>That&#39;s it! You&#39;ve just created your very first Ember app with all of the CRUD actions. Congratulations!</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2013-01-10-building-an-ember-app-with-rails-api-part-3.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

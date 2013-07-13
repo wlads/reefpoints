@@ -1,0 +1,497 @@
+<!DOCTYPE html><html><head><title>Building an Ember app with RailsAPI - Part 2</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Building the Ember app' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html' name='twitter:url'><meta content='Building an Ember app with RailsAPI - Part 2' name='twitter:title'><meta content='Building the Ember app' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>09 Jan 2013</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/ember">ember</a></p><div class='post-title-wrap'><h1 class='post-title'>Building an Ember app with RailsAPI - Part 2</h1></div><current_page class='post-content'><p><strong>This article was last updated on May 28, 2013 and reflects the state
+ of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
+that date.</strong></p>
+
+<p><a href="https://github.com/bcardarella/ember-railsapi">Fork the project on Github!</a></p>
+
+<p><a href="http://ember-rails-api.herokuapp.com/">Use the app live on Heroku</a></p>
+
+<p>In <a href="/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html">Part 1</a> I showed you how to setup a <code>Rails-API</code> app for Ember. Now let&#39;s build the app itself.</p>
+
+<p>In this part I will go over building the Ember app from the perspective of a Rails developer. I will be making comparisons to where Ember resembles common patterns in Rails and even Ruby itself.</p>
+
+<p>I know I promised a 2-part series but I&#39;m going to extend this to 3-parts. This post was growing too large to cover everything.</p>
+
+<ul>
+<li>Note: this post has been updated since it was originally written. If
+you were following along you should start from the beginning of this
+post as changes have been made to reflect the changes on Ember&#39;s master
+branch! *</li>
+</ul>
+
+<h2>Part 2 - Building with Ember</h2>
+
+<p>We need to start with something I forgot to setup in Part 1. Ember looks for templates in the <code>Ember.TEMPLATES</code> JavaScript object which is provided to us with the <code>handlebars_assets</code> gem we setup in Part 1. We just need to tell the gem to compile for Ember. We can do this in <code>config/initializers/handlebars_assets.rb</code></p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span> <span class="keyword">defined?</span>(<span class="constant">HandlebarsAssets</span>)
+  <span class="constant">HandlebarsAssets</span>::<span class="constant">Config</span>.ember = <span class="predefined-constant">true</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p><em>NOTE:</em> If you have skipped ahead and come back to this initializer you will need to run:</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre>rm -rf tmp/*
+</pre></td>
+</tr></table>
+</div></div>
+<p>Otherwise your Ember templates won&#39;t compile properly.</p>
+
+<p>Let&#39;s dive in by creating our application layout template in <code>app/assets/javascripts/templates/application.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">navbar navbar-inverse navbar-fixed-top</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">navbar-inner</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">container</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">nav-collapse collapse</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;ul</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">nav</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;li&gt;</span><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">index</span><span class="error">'</span><span class="inline-delimiter">}}</span></span>Home<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/li&gt;</span>
+          <span class="tag">&lt;li&gt;</span><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">users</span><span class="error">'</span><span class="inline-delimiter">}}</span></span>Users<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;/ul&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">container</span><span class="delimiter">'</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">'</span><span class="content">main</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">content</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">row</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">span12</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">page-header</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+        <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">outlet</span><span class="inline-delimiter">}}</span></span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p><a href="http://emberjs.com/guides/templates/handlebars-basics">Read more about Ember Templates</a></p>
+
+<p>This is the Ember equivalent of a Rails layout template. The <code>outlet</code> is the Ember equivalent to <code>yield</code> in Rails. So this template will wrap the other templates we plan on rendering. I will come back to the <code>&lt;li&gt;</code>s in the nav later.</p>
+
+<p>Next we&#39;re going to setup a default route and render a template. In <code>app/assets/javascripts/routes.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre>App.Router.reopen
+  location: 'history'
+  rootURL: '/'
+
+App.Router.map -&gt;
+  @resource 'users'
+</pre></td>
+</tr></table>
+</div></div>
+<p><a href="http://emberjs.com/guides/routing">Read more about Ember Routes</a></p>
+
+<p>This will tell the Ember Router to use the History API instead of the
+default &#39;hash&#39; URLs for routes. The mapping of the <code>/</code> in our app is
+implicit in Ember, and it will be assigned to a route of 
+<code>index</code>. The Ember Router will use this string to make some
+assumptions. If there is a <code>App.IndexController</code> object it will use that
+controller. If not, it will just render out the <code>index</code> template. Now,
+under the hood Ember is still using a <code>App.IndexController</code> controller
+but it will define one on the fly. I will get into this in a future blog
+post. When you call <code>reopen</code> this is the Ember way to reopen and monkey
+patch a class. As you can see the Ember Router syntax is similar to the
+one in Rails. This is by design. We need the 2nd route there so our
+<code>application.hbs</code> template can compile as it is referencing the
+<code>users.index</code> route.</p>
+
+<p>Let&#39;s write <code>app/assets/javascripts/templates/index.hbs</code></p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre>&lt;h1&gt;Welcome!&lt;/h1&gt;
+</pre></td>
+</tr></table>
+</div></div>
+<p>We need to do one last thing before we check out the homepage. By default, Rails includes a sample <code>index</code> page in <code>public/index.html</code>. If we were to go to the homepage now, we would see that.
+But we want to see the index page we just made. To remove the Rails default page, simply run</p>
+
+<p><code>rm public/index.html</code></p>
+
+<p>from the command line.</p>
+
+<p>That&#39;s it. If you run your rails server and load the app you should see the following
+<img src="http://i.imgur.com/1j50C.png?1" alt="Welcome"></p>
+
+<p>Congratulations! You&#39;ve built your first Ember app! Let&#39;s make it do
+something useful. We are going to add the <code>/users</code> page, so edit
+<code>app/assets/javascripts/templates/users.hbs</code></p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h1&gt;</span>Users<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">span3</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">table table-striped</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th&gt;</span>ID<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th&gt;</span>Name<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/table&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Reload your app and you can click back and forth between &#39;Users&#39; and &#39;Home&#39;, thanks to the <code>linkTo</code> actions we setup in <code>application.hbs</code>. These actions map to controllers being automatically generated because we haven&#39;t created them yet; those controllers automatically render the templates with the same naming convention. Does that sound familiar? That&#39;s right, its our good friend <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a>!</p>
+
+<p>Now, when clicking between the two pages the nav is not properly updating the <code>active</code> class on the <code>&lt;li&gt;</code> tags. In Ember, you can <a href="http://emberjs.com/guides/templates/binding-element-class-names">bind element class names to actions</a>. This will require a bit of code, but as we add more controllers I&#39;ll show how we can easily reuse what we&#39;re about to write. Let&#39;s start by adding the bindings to <code>application.hbs</code> Modify the <code>&lt;li&gt;</code> tags in the nav menu to:</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;li</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">isHome:active</span><span class="delimiter">&quot;</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">index</span><span class="error">'</span><span class="inline-delimiter">}}</span></span>Home<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;li</span> <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">bindAttr</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">isUsers:active</span><span class="delimiter">&quot;</span></span><span class="inline-delimiter">}}</span></span><span class="tag">&gt;</span><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">users.index</span><span class="error">'</span><span class="inline-delimiter">}}</span></span>Users<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/li&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>This binding of <code>isHome:active</code> tells Ember to make the class <code>active</code> if the <code>isHome</code> attribute on the controller is <code>true</code>. If it is <code>false</code> the value will be nothing. The same goes for <code>isUsers</code>. Because this code lives in <code>application.hbs</code> we need to add these attributes to <code>app/assets/javascripts/controllers/applicationController.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>App.ApplicationController = Ember.Controller.extend
+  isHome: (-&gt;
+    @get('currentRoute') == 'home'
+  ).property('currentRoute')
+
+  isUsers: (-&gt;
+    @get('currentRoute') == 'users'
+  ).property('currentRoute')
+</pre></td>
+</tr></table>
+</div></div>
+<p><a href="http://emberjs.com/guides/controllers">Read more about Ember Controllers</a></p>
+
+<p>Each attribute is a function that will compare the <code>currentRoute</code> attribute to a value and return that boolean result. We instruct the attribute to be a <a href="http://emberjs.com/guides/object-model/computed-properties">computed property</a>. Computed properties are simple to understand: we tell Ember to automatically update the value of &#39;isHome&#39; when <code>currentRoute</code> is <code>set</code> to a different value. Ember will then instruct anything bound to that attribute to update as well.</p>
+
+<p>Finally, we&#39;re going to update our routes to set <code>currentRoute</code> depending upon the route. Let&#39;s add two route classes to <code>app/assets/javascripts/routes.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td>
+  <td class="code"><pre>App.IndexRoute = Ember.Route.extend
+  setupController: (controller, model) -&gt;
+    @controllerFor('application').set('currentRoute', 'home')
+
+App.UsersRoute = Ember.Route.extend
+  setupController: (controller, model) -&gt;
+    @controllerFor('application').set('currentRoute', 'users')
+</pre></td>
+</tr></table>
+</div></div>
+<p>Two new concepts:</p>
+
+<ul>
+<li><code>setupController</code> is a function automatically called on each visit to the route. It will pass in an instance of the controller and a model if you supply one (we&#39;ll see this in a bit)</li>
+<li><code>this.controllerFor</code> When interacting with a specific controller you may want to modify a different controller. In this case the wrapping controller is <code>ApplicationController</code> and we need to update the <code>currentRoute</code> attribute. You <em>must</em> use the <code>set</code> function otherwise Ember won&#39;t know to notify any <a href="http://emberjs.com/guides/object-model/computed-properties/">computed property observers</a>.</li>
+</ul>
+
+<p>Now reload your app and click between the actions and you should see the active states properly set depending upon your route.</p>
+
+<p>Next, we&#39;re going to start using real data. We&#39;re going to fetch the collection of Users from the server and display them on the index page. Let&#39;s start with telling Ember what our data store looks like in <code>app/assets/javascripts/store.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre>App.Store = DS.Store.extend()
+</pre></td>
+</tr></table>
+</div></div>
+<p><a href="http://emberjs.com/guides/models/the-rest-adapter">Read more about Ember&#39;s REST Adapter</a></p>
+
+<p>The REST adapter allows us to pull from an API backend assuming certain conventions are followed in the URIs and JSON response. Thankfully we set this up properly in <a href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html">Part 1</a></p>
+
+<p>Now we&#39;ll create a new model in <code>app/assets/javascripts/models/user.coffee</code></p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>App.User = DS.Model.extend(
+  firstName: DS.attr('string')
+  lastName:  DS.attr('string')
+  quote:     DS.attr('string')
+  fullName: (-&gt;
+    &quot;#{@get('firstName')} #{@get('lastName')}&quot;
+  ).property('firstName', 'lastName')
+)
+</pre></td>
+</tr></table>
+</div></div>
+<p><a href="http://emberjs.com/guides/models">Read more about Ember models</a></p>
+
+<p>We are defining each attribute that is coming over the wire, as well as a computed property that will combine <code>firstName</code> and <code>lastName</code>. If you&#39;re wondering about that call to <code>property</code>, you have to let Ember know when a method on an object is using a property computed from dependency properties on that object. Here <code>fullName</code> depends on <code>firstName</code> and <code>lastName</code>. When we call <code>property</code> and let Ember know which properties to observe, the <code>fullName</code> property will update if either the <code>firstName</code> or <code>lastName</code> changes. If you like, you can <a href="http://emberjs.com/guides/object-model/computed-properties/">read more about computed properties</a>.</p>
+
+<p>Now we need to modify the <code>users</code> route to fetch the data</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>App.UsersRoute = Ember.Route.extend
+  model: -&gt;
+    App.User.find()
+  setupController: (controller, model) -&gt;
+    @controllerFor('application').set('currentRoute', 'users')
+</pre></td>
+</tr></table>
+</div></div>
+<p>The <code>App.User.find()</code> makes a remote call, fetches the collection, and instantiates the models. This collection is then passed to <code>setupController</code> through the <code>model</code> attribute. We then assign this collection to the <code>users</code> attribute on the controller. </p>
+
+<p>Now edit <code>app/assets/javascripts/templates/users.hbs</code> to include a list of our users and an outlet through which we&#39;ll render a users index page and our users show page.</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">span3</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">table table-striped</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th&gt;</span>ID<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th&gt;</span>Name<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">each</span> <span class="attribute-name">controller</span><span class="inline-delimiter">}}</span></span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">id</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span><span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">&quot;</span><span class="attribute-name">users.show</span><span class="error">&quot;</span> <span class="attribute-name">this</span><span class="inline-delimiter">}}</span></span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">fullName</span><span class="inline-delimiter">}}</span></span><span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">each</span><span class="inline-delimiter">}}</span></span>
+  <span class="tag">&lt;/table&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">span8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">outlet</span><span class="inline-delimiter">}}</span></span>
+<span class="tag">&lt;/div&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>We are linking to the <code>show</code> named route and passing the instance of a <code>User</code> (which is what <code>this</code> refers to) as the paramater. Ember will pull out the id on the object and set that to the <code>:user_id</code> segment on the path.</p>
+
+<p>We need to next update &#39;App.Router&#39; for the proper mapping</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>App.Router.map -&gt;
+  @resource 'users', -&gt;
+    @route 'show',
+      path: '/:user_id'
+</pre></td>
+</tr></table>
+</div></div>
+<p>Note how we are matching against <code>:user_id</code> and not <code>:id</code> that Rails developers are used to.</p>
+
+<p>I must confess I don&#39;t entirely understand why the <code>/</code> map is necessary under <code>/users</code>, I would have thought the top nesting could be used and it wouldn&#39;t be necessary to redefine a root path. Please enlighten me in the comments! Ok, the router maps are updated. Let&#39;s add the <code>show</code> route.</p>
+<div class="highlight coffeescript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre>App.UsersShowRoute = Ember.Route.extend
+  model: (params) -&gt;
+    App.User.find(params.user_id)
+  setupController: (controller, model) -&gt;
+    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')
+</pre></td>
+</tr></table>
+</div></div>
+<p>And we&#39;ll add the <code>app/assets/javascripts/templates/users/show.hbs</code> template</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h1&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">fullName</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/h1&gt;</span>
+
+<span class="tag">&lt;div&gt;</span>
+  <span class="tag">&lt;q&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">quote</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/q&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">page-header</span><span class="delimiter">'</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">linkTo</span> <span class="error">'</span><span class="attribute-name">users</span><span class="error">'</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">'</span><span class="content">btn</span><span class="delimiter">'</span></span><span class="inline-delimiter">}}</span></span>Back<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">linkTo</span><span class="inline-delimiter">}}</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And finally, we&#39;ll add the &#39;app/assets/javascripts/users/index.hbs&#39; template</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;p&gt;</span>Please choose a user.<span class="tag">&lt;/p&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Reload your app and click through to the show page and you should see</p>
+
+<p><img src="http://i.imgur.com/jNKhnrJ.png" alt="Show"></p>
+
+<p>So we have only implemented the &#39;Read&#39; of &#39;CRUD&#39; in this part, but we have also introduced alot of new concepts. In <a href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html">Part 3</a> we will implement the &#39;Create Update Destroy&#39; actions.</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2013-01-09-building-an-ember-app-with-rails-api-part-2.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

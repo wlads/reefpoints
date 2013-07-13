@@ -1,0 +1,349 @@
+<!DOCTYPE html><html><head><title>Rails Engines and Monkey Patching</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - A simple pattern for extending your Rails Engines in your app' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html' name='twitter:url'><meta content='Rails Engines and Monkey Patching' name='twitter:title'><meta content='A simple pattern for extending your Rails Engines in your app' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>20 Feb 2012</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/ruby">ruby</a></p><div class='post-title-wrap'><h1 class='post-title'>Rails Engines and Monkey Patching</h1></div><current_page class='post-content'><p>We&#39;ve started extracting simple behavior into Rails Engines lately. An
+example of this is our
+<a href="https://github.com/dockyard/invitable">Invitable</a> engine. As you may
+have guessed, it adds invitation request support to an existing app.
+It&#39;s about 50% complete right now but for the purposes of this post it
+will act as the example.</p>
+
+<p>As an engine it has a very slim <code>Invitation</code> model that only
+expects an <code>email</code> attribute. A client app we&#39;re currently
+building requires two additional attributes to be gathered: <code>name</code> and <code>zipcode</code>.</p>
+
+<p>There is no need to overwrite the model, I just want to extend it. The cleanest 
+thing to do is just monkey patch it.</p>
+
+<p>Let&#39;s start with writing the spec of where I want the model to be (I am
+using <a href="https://github.com/bcardarella/valid_attribute">ValidAttribute</a> if
+the specs don&#39;t look familiar, I suggest you try it test spec your
+validations)</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>require <span class="string"><span class="delimiter">'</span><span class="content">spec_helper</span><span class="delimiter">'</span></span>
+
+describe <span class="constant">Invitable</span>::<span class="constant">Invitation</span> <span class="keyword">do</span>
+  it { should     have_valid(<span class="symbol">:name</span>).when(<span class="string"><span class="delimiter">'</span><span class="content">Henry Ford</span><span class="delimiter">'</span></span>) }
+  it { should_not have_valid(<span class="symbol">:name</span>).when(<span class="predefined-constant">nil</span>, <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>) }
+  it { should     have_valid(<span class="symbol">:zipcode</span>).when(<span class="string"><span class="delimiter">'</span><span class="content">02115</span><span class="delimiter">'</span></span>) }
+  it { should_not have_valid(<span class="symbol">:zipcode</span>).when(<span class="predefined-constant">nil</span>, <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">hello</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">0211</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">021156</span><span class="delimiter">'</span></span>) }
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>To make this spec green there are two things that I have to do</p>
+
+<ol>
+<li>Add the <code>name</code> and <code>zipcode</code> columsn to the correct table</li>
+<li>Open up the class and add the proper validations on those attributes</li>
+</ol>
+
+<p>The first is simple. I just create a new migration and add the columns
+to <code>invitable_invitations</code>.</p>
+
+<p>The second is not so straight forward. If I open up the class in the client app and
+attempt to add the validations like so:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre><span class="keyword">module</span> <span class="class">Invitable</span>
+  <span class="keyword">class</span> <span class="class">Invitation</span>
+    validates <span class="symbol">:name</span>, <span class="symbol">:zipcode</span>, <span class="symbol">:presence</span> =&gt; <span class="predefined-constant">true</span>
+    validates <span class="symbol">:zipcode</span>, <span class="symbol">:format</span> =&gt; <span class="regexp"><span class="delimiter">/</span><span class="content">^</span><span class="char">\d</span><span class="content">{5}$|^</span><span class="char">\d</span><span class="content">{5}-</span><span class="char">\d</span><span class="content">{4}$</span><span class="delimiter">/</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>The app will raise a <code>NoMethodError</code> exception complaining that
+<code>validates</code> is undefined. In the load path there are two
+<code>app/models/invitable/invitation.rb</code> files and the one in the app takes precendence
+over the one in the engine. This is fine because you might want to
+overwrite the model entirely, but in this case I want to extend it. So
+you must explicitly require the engine&#39;s model at the top of the app&#39;s model.</p>
+
+<p>Thankfully the engine itself has a nice helper <code>called_from</code> that tracks its full path
+on the file system. In this example we access it with
+<code>Invitable::Engine.called_from</code>. This will point to the <code>lib/invitable</code> directory
+in the gem itself. Here is what I ended up with in the model:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>require <span class="constant">File</span>.expand_path(<span class="string"><span class="delimiter">'</span><span class="content">../../app/models/invitable/invitation</span><span class="delimiter">'</span></span>, <span class="constant">Invitable</span>::<span class="constant">Engine</span>.called_from)
+
+<span class="keyword">module</span> <span class="class">Invitable</span>
+  <span class="keyword">class</span> <span class="class">Invitation</span>
+    validates <span class="symbol">:name</span>, <span class="symbol">:zipcode</span>, <span class="symbol">:presence</span> =&gt; <span class="predefined-constant">true</span>
+    validates <span class="symbol">:zipcode</span>, <span class="symbol">:format</span> =&gt; <span class="regexp"><span class="delimiter">/</span><span class="content">^</span><span class="char">\d</span><span class="content">{5}$|^</span><span class="char">\d</span><span class="content">{5}-</span><span class="char">\d</span><span class="content">{4}$</span><span class="delimiter">/</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>It&#39;s verbose and this could be better so let&#39;s clean that up.</p>
+
+<p>In my engine I&#39;ve added a spec to <code>spec/lib/invitable/engine_spec.rb</code>
+with the following (I&#39;m using <a href="https://github.com/floehopper/mocha">Mocha</a> for the stubbing)</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
+33
+34
+35
+</pre></td>
+  <td class="code"><pre>require <span class="string"><span class="delimiter">'</span><span class="content">spec_helper</span><span class="delimiter">'</span></span>
+
+describe <span class="constant">Invitable</span>::<span class="constant">Engine</span> <span class="keyword">do</span>
+  before { <span class="constant">Invitable</span>::<span class="constant">Engine</span>.stubs(<span class="symbol">:called_from</span>).returns(<span class="string"><span class="delimiter">'</span><span class="content">/lib/invitable</span><span class="delimiter">'</span></span>) }
+
+  describe <span class="string"><span class="delimiter">'</span><span class="content">.app_path</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+    it <span class="string"><span class="delimiter">'</span><span class="content">returns the path to the engine app directory</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+      <span class="constant">Invitable</span>::<span class="constant">Engine</span>.app_path.should eq <span class="string"><span class="delimiter">'</span><span class="content">/app</span><span class="delimiter">'</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+
+  describe <span class="string"><span class="delimiter">'</span><span class="content">controller_path</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+    it <span class="string"><span class="delimiter">'</span><span class="content">returns the path to the named engine controller</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+      <span class="constant">Invitable</span>::<span class="constant">Engine</span>.controller_path(<span class="symbol">:test_controller</span>).should eq <span class="string"><span class="delimiter">'</span><span class="content">/app/controllers/invitable/test_controller.rb</span><span class="delimiter">'</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+
+  describe <span class="string"><span class="delimiter">'</span><span class="content">helper_path</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+    it <span class="string"><span class="delimiter">'</span><span class="content">returns the path to the named engine helper</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+      <span class="constant">Invitable</span>::<span class="constant">Engine</span>.helper_path(<span class="symbol">:test_helper</span>).should eq <span class="string"><span class="delimiter">'</span><span class="content">/app/helpers/invitable/test_helper.rb</span><span class="delimiter">'</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+
+  describe <span class="string"><span class="delimiter">'</span><span class="content">mailer_path</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+    it <span class="string"><span class="delimiter">'</span><span class="content">returns the path to the named engine mailer</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+      <span class="constant">Invitable</span>::<span class="constant">Engine</span>.mailer_path(<span class="symbol">:test_mailer</span>).should eq <span class="string"><span class="delimiter">'</span><span class="content">/app/mailers/invitable/test_mailer.rb</span><span class="delimiter">'</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+
+  describe <span class="string"><span class="delimiter">'</span><span class="content">model_path</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+    it <span class="string"><span class="delimiter">'</span><span class="content">returns the path to the named engine model</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+      <span class="constant">Invitable</span>::<span class="constant">Engine</span>.model_path(<span class="symbol">:test_model</span>).should eq <span class="string"><span class="delimiter">'</span><span class="content">/app/models/invitable/test_model.rb</span><span class="delimiter">'</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>This looks good enough to me. Now to make it green I added the following
+to <code>lib/invitable/engine.rb</code></p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre><span class="keyword">def</span> <span class="predefined-constant">self</span>.<span class="function">app_path</span>
+  <span class="constant">File</span>.expand_path(<span class="string"><span class="delimiter">'</span><span class="content">../../app</span><span class="delimiter">'</span></span>, called_from)
+<span class="keyword">end</span>
+
+<span class="string"><span class="delimiter">%w{</span><span class="content">controller helper mailer model</span><span class="delimiter">}</span></span>.each <span class="keyword">do</span> |resource|
+  class_eval <span class="string"><span class="delimiter">&lt;&lt;-RUBY</span></span><span class="string"><span class="content">
+    def self.</span><span class="inline"><span class="inline-delimiter">#{</span>resource<span class="inline-delimiter">}</span></span><span class="content">_path(name)
+      File.expand_path(&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>resource.pluralize<span class="inline-delimiter">}</span></span><span class="content">/invitable/</span><span class="char">\#</span><span class="content">{name}.rb&quot;, app_path)
+    end</span><span class="delimiter">
+  RUBY</span></span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And now in the app model I can do the following</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>require <span class="constant">Inivitable</span>::<span class="constant">Engine</span>.model_path <span class="symbol">:invitation</span>
+
+<span class="keyword">module</span> <span class="class">Invitable</span>
+  <span class="keyword">class</span> <span class="class">Invitation</span>
+    validates <span class="symbol">:name</span>, <span class="symbol">:zipcode</span>, <span class="symbol">:presence</span> =&gt; <span class="predefined-constant">true</span>
+    validates <span class="symbol">:zipcode</span>, <span class="symbol">:format</span> =&gt; <span class="regexp"><span class="delimiter">/</span><span class="content">^</span><span class="char">\d</span><span class="content">{5}$|^</span><span class="char">\d</span><span class="content">{5}-</span><span class="char">\d</span><span class="content">{4}$</span><span class="delimiter">/</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Nice and clean!</p>
+
+<p>This simple pattern can be applied to the controllers, mailers, etc... any class you want to actually
+extend from the engine instead of overwrite entirely.</p>
+
+<p>Finally, I&#39;d like the address a question I&#39;m sure some of you have. Why
+not subclass? For this engine the <code>Invitable::InvitationsController</code> is
+expecting a class of <code>Invitation</code> within the context of the <code>Invitable</code>
+module. So if I were to subclass</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">Inivtation</span> &lt; <span class="constant">Inivitable</span>::<span class="constant">Invitation</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>You would then have to subclass the controller</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">InvitationsController</span> &lt; <span class="constant">Invitable</span>::<span class="constant">InvitationsController</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And because the <code>InvitationsController</code> is referencing
+<code>InvitationMailer</code> within the context of the <code>Invitable</code> module you
+would have to subclass the mailer</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">InvitationMailer</span> &lt; <span class="constant">Invitable</span>::<span class="constant">InvitationMailer</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Finally, because you&#39;ve subclassed the controller the mount in
+<code>routes.rb</code> becomes meaningless. If you head down the subclass path you
+defeat the purpose of using the engine in the first place.</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2012-02-20-rails-engines-and-monkey-patching.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

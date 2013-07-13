@@ -1,0 +1,315 @@
+<!DOCTYPE html><html><head><title>Love Your lib Directory</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Patterns for happy hacking' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html' name='twitter:url'><meta content='Love Your lib Directory' name='twitter:title'><meta content='Patterns for happy hacking' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>14 Feb 2012</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/ruby">ruby</a></p><div class='post-title-wrap'><h1 class='post-title'>Love Your lib Directory</h1></div><current_page class='post-content'><p><a href="http://blog.codeclimate.com/blog/2012/02/07/what-code-goes-in-the-lib-directory">Be sure to check out Bryan Helmkamp&#39;s blog post on the same topic</a></p>
+
+<p>The <code>lib/</code> directory is the Red Headed Stepchild of your Rails
+application. Let&#39;s discuss some conventions for keeping it clean and
+what should and shouldn&#39;t go in there.</p>
+
+<h2>It&#39;s not a dump</h2>
+
+<p><img src="/images/dump.jpg" alt="Dump"></p>
+
+<p>Does this look familiar? It does to me. This is what my <code>lib/</code> directory
+looked like before I got fed up with it. That truck, that was me dumping more
+code into <code>lib/</code>.</p>
+
+<p>In my experience there is one outstanding reason why code ends up
+getting dumped into the lib/ directory: A poor understanding of what a
+model is. Rails has this way of reinforcing bad habits. Perhaps because
+it is so easy to get going some developers never bother to learn that a
+model does not in any way need to be attached to a persitence layer.
+(i.e. ActiveRecord)</p>
+
+<p>Let&#39;s all agree to the following:</p>
+
+<ol>
+<li>All Business Logic Goes Into A Model</li>
+<li>All Models Go Into <code>app/models</code></li>
+</ol>
+
+<p>When we say &quot;Business Logic&quot; we are of course talking about &quot;Application
+Specific Business Logic&quot;. There is always the case of something you&#39;re
+working on that is so generic it can be shared with other applications
+you are (or will be) working on. Or, even better, with the community in
+general as Open Source. That brings me to the next point.</p>
+
+<h2>Understanding the load path</h2>
+
+<p>If you have written a Rubygem, or at the very least, looked through one,
+you know that the <code>lib/</code> directory is special. The short version of the
+story is that Rubygems iterates over all of the libraries you have
+installed as a gem, and appends any <code>lib/</code> directories onto Ruby&#39;s Load
+Path. This is basically how Ruby gem files are exposed, so when you as
+do a gem require it will iterate through every path in the load path and
+give you the first match.</p>
+
+<p>This is also true with Rails. After all of your gems are loaded and your
+application is up Rails will append <code>./lib/</code> to your load path. Any
+files you put in there can now be required the exact same way gems are.
+This gives us an excellent path to extracting general functionality out
+into. You can even play tricks with this, in your <code>application.rb</code> file
+put the following at the top:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="global-variable">$:</span>.unshift(<span class="constant">File</span>.expand_path(<span class="string"><span class="delimiter">'</span><span class="content">../../lib</span><span class="delimiter">'</span></span>, <span class="predefined-constant">__FILE__</span>))
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now in your lib directory create an &#39;active_record&#39; directory and add a
+file called &#39;base.rb&#39;. Inside that file add the following:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre>raise <span class="string"><span class="delimiter">&quot;</span><span class="content">ZOMG I BROKE RAILS!</span><span class="delimiter">&quot;</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Load up your Rails app and watch it throw an exception. Why? Because
+your app&#39;s <code>lib/</code> directory was prepended to the load paths and when the
+lookup for <code>active_record/base</code> happened the first match was in your
+app&#39;s <code>lib/</code> instead of in the proper gem. This of course is more of an interesting hack than anything really
+useful. But it does do a good job of demonstrating how Rubygems&#39; lookup
+happens.</p>
+
+<h2>Use initializers for initializing, that is all</h2>
+
+<p>I have seen developers dump code into initializers that has no business
+being there. Yes, it loads and it works. That is not the point. We have
+conventions for a reason. Any code that you feel needs to go into an
+initializer and has nothing to do with actually setting preferences or
+something of that manner almost always should go into the <code>lib/</code>
+directory. If you <strong>must</strong> monkey patch. Put it into the <code>lib/</code>
+directory. If you are creating a new class or module that has no
+business being in <code>app/models</code> put it in to the <code>lib/</code> directory.</p>
+
+<h2>Using lib/ to extend core, stlib, or a gem</h2>
+
+<p>Far too often I&#39;ve needed to extend a class that is being defined
+outside of my project. There are a few ways to deal with this. You can
+use a <a href="http://en.wikipedia.org/wiki/Composite_pattern">Composite</a> to
+define a new class that you can then play around with. The downside to
+this is that I sometimes want to modify a class that is being inherited
+by other classes. This is when I think it is appropriate to <a href="http://en.wikipedia.org/wiki/Monkey_patch">Monkey
+Patch</a>.</p>
+
+<p>The pattern I have fallen upon is to define a <code>gem_ext/</code> directory and a
+<code>gem_ext.rb</code> file in lib. I then make sure the extensions are loaded up
+using an initializer. For lack of a better term I call this
+<code>lib_loader.rb</code>. Lets start with the loader.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre><span class="comment"># config/initializers/lib_loader.rb</span>
+
+require <span class="string"><span class="delimiter">'</span><span class="content">gem_ext</span><span class="delimiter">'</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Simple enough. Now for this example I&#39;ll use a <a href="http://haml-lang.com/">Haml</a> custom filter I wrote.
+This filter allows me to write <a href="http://handlebarsjs.com">Handlebars</a>
+templates in my views like so:</p>
+<div class="highlight haml "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>-<span class="comment"># app/views/home/show.html.haml</span>
+
+<span class="comment">:handlebars</span><span class="comment">
+  // handlebars code goes here</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now I can easily add handlebar templates to any haml file. This is how I
+did it.</p>
+
+<p>Under <code>lib/gem_ext</code> I defined a <code>haml/</code> directory and a <code>haml.rb</code> file. Then I defined <code>haml/custom_filters.rb</code> and inside that file
+I added</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td>
+  <td class="code"><pre><span class="comment"># lib/gem_ext/haml/custom_filters.rb</span>
+
+<span class="keyword">module</span> <span class="class">Haml::Filters</span>
+  <span class="keyword">module</span> <span class="class">Handlebars</span>
+    include <span class="constant">Base</span>
+
+    <span class="keyword">def</span> <span class="function">render_with_options</span>(text, options)
+      type = <span class="string"><span class="delimiter">&quot;</span><span class="content"> type=</span><span class="inline"><span class="inline-delimiter">#{</span>options[<span class="symbol">:attr_wrapper</span>]<span class="inline-delimiter">}</span></span><span class="content">text/x-handlebars</span><span class="inline"><span class="inline-delimiter">#{</span>options[<span class="symbol">:attr_wrapper</span>]<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span>
+      <span class="string"><span class="delimiter">&lt;&lt;-END</span></span><span class="string"><span class="content">
+&lt;script</span><span class="inline"><span class="inline-delimiter">#{</span>type<span class="inline-delimiter">}</span></span><span class="content">&gt;
+//&lt;![CDATA[
+  </span><span class="inline"><span class="inline-delimiter">#{</span>text.rstrip.gsub(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="content">    </span><span class="delimiter">&quot;</span></span>)<span class="inline-delimiter">}</span></span><span class="content">
+//]]&gt;
+&lt;/script&gt;</span><span class="delimiter">
+      END</span></span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now in <code>haml.rb</code> I added</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre><span class="comment"># lib/gem_ext/haml.rb</span>
+
+require <span class="string"><span class="delimiter">'</span><span class="content">gem_ext/haml/custom_filters</span><span class="delimiter">'</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>And finally in <code>gem_ext.rb</code> I added</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre><span class="comment"># lib/gem_ext.rb</span>
+
+require <span class="string"><span class="delimiter">'</span><span class="content">gem_ext/haml</span><span class="delimiter">'</span></span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>This gives me a very clean approach to extending classes without
+worrying about muddying up the load path with name collisions or other
+surprises. In addition this pattern can
+be repeated for <code>Core</code> and <code>Stdlib</code> classes in <code>core_ext</code> and <code>stdlib_ext</code>
+respectively.</p>
+
+<h2>Using lib/ as a pattern to extracting Rubygems</h2>
+
+<p>A pattern I have fallen upon when wanting to extract functionality out
+of an app into a Rubygem has been to first extract that code into the
+<code>lib/</code> directoy. From there I have a nice way to test the code in
+isolation. I am also forced to write the code as a class independent
+from my app. After I am satisfied with what I have I can think about
+extracting that into an external gem.</p>
+
+<p>A great example of this is something that <a href="http://p-rob.me">Patrick Robertson</a> wrote for
+<a href="http://bostonrb.org">BostonRB</a></p>
+
+<p>We wanted to show the next upcoming event at the top of the website. All
+of our events are stored in a Google Calendar. Unfortunately most of the
+Google Calendar gems out there are crap. Patrick decided to roll his
+own.</p>
+
+<p>You can see that the <a href="https://github.com/bostonrb/bostonrb/blob/master/lib/boston_rb_calendar.rb">boston<em>rb</em>calendar.rb</a>
+is requiring several files just like any Gem would. Because of the
+isolation <a href="https://github.com/bostonrb/bostonrb/blob/master/spec/lib/boston_rb_calendar_spec.rb">he was able to test the class very easily</a>.</p>
+
+<p>From here, if Patrick wanted to release this as a gem it wouldn&#39;t take
+too much effort. Some renaming of classes would be required but he has
+all of the major parts in place.</p>
+
+<h2>Go forth and show some &lt;3&lt;3&lt;3&lt;3</h2>
+
+<p>Keeping your code clean pays itself forward in many way. The team you
+are apart of or the team you are handing off to will thank you. Heck,
+your future self might thank you. The patterns I&#39;ve described here are
+ones that I have found success with. If you have noticed other patterns
+concerning the <code>lib/</code> directory please feel free to comment!</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2012-02-14-love-your-lib-directory.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

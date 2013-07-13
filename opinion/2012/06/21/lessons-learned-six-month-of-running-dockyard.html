@@ -1,0 +1,354 @@
+<!DOCTYPE html><html><head><title>Lessons Learned: The First Six Months of Running a Software Consultancy</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Brian talks about what has worked, what has not worked, and the changes that have been made at DockYard during its first six month' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html' name='twitter:url'><meta content='Lessons Learned: The First Six Months of Running a Software Consultancy' name='twitter:title'><meta content='Brian talks about what has worked, what has not worked, and the changes that have been made at DockYard during its first six month' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>21 Jun 2012</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/opinion">opinion</a></p><div class='post-title-wrap'><h1 class='post-title'>Lessons Learned: The First Six Months of Running a Software Consultancy</h1></div><current_page class='post-content'><p>Before I get into it, I&#39;m writing this because when I was first setting
+out with DockYard there was little to no guidance. It seems that most
+agencies are hush-hush on how they work internally. Or I just suck at
+the Googles. In any event, I wanted to share our experience in the hope
+that others can learn and give feedback.</p>
+
+<h2>Clients</h2>
+
+<p>Be selective! If your gut tells you something is wrong listen to it. I
+made a huge mistake with taking our very first client and an even bigger
+mistake about re-signing with said client. It ended ugly, I always felt
+it might. The client was bad (no I won&#39;t say who it was) and it really
+put us in a very difficult position when we were getting started. I went
+back to re-sign because the first contract ended in December. It turns
+out December is a <em>terrible</em> month for finding new work. I panicked,
+rookie move. Thankfully we have had great clients since. That&#39;s not to
+say we haven&#39;t had to dodge potentially bad clients from time to time.</p>
+
+<p>Some clients are just bad, but many are just &quot;bad for us&quot;. Those two
+statements are very different and recognizing the difference is
+important. &quot;Bad for us&quot; clients might be fantasic people but the
+projects aren&#39;t in our wheel house, in those cases I try my best to help
+those people find other consultancies/freelancers.</p>
+
+<h2>Employees</h2>
+
+<h3>Salary</h3>
+
+<p>DockYard started as bringing together three freelance developers. The
+first mistake I made was not insisting that everyone start on fulltime
+salary. We were still paying out the full hourly rates then paying taxes
+on top of that. Needless to say, accounting is not my strong point. It
+took 2 months before I figured out why we weren&#39;t making any money.
+Whoops.</p>
+
+<h3>Process</h3>
+
+<p>I&#39;ve changed from the &quot;anything goes&quot; type boss to the &quot;I&#39;m going to be
+the hard-ass&quot; over the past six months. Here is why: we want to balance
+multiple projects. Finding a client that has enough of a budget for a 6
+person team is great but not very likely if we stick with startups. So
+our team sizes are small, but we need to be redundant. I tell everyone
+on my team that they &quot;need to be replacable&quot;. Don&#39;t take this statement
+the wrong way, I&#39;m clear that this doesn&#39;t mean they&#39;re getting canned
+at the drop of a hat. It means that I don&#39;t want to be in a position
+where someone gets sick, goes on vacation, or leaves for another
+opportunity and we plug someone else into that project and it takes that
+person a week to ramp up because we need to figure out what the last
+person was doing. <em>Process is very important</em>, I would rather have good
+developers that buy into our process than have awesome developers that
+don&#39;t. We function best as a team. So when someone isn&#39;t buying into the
+process we&#39;ve been outlining I need to be the guy that says &quot;no&quot;. A few times this
+has turned into debates, sometimes into arguments. I&#39;m willing to modify
+our process if something better is proposed but I&#39;m not willing to
+switch into the &quot;just get it done&quot;. At the start I avoided uncomfortable conversations, 
+if something was happening that I didn&#39;t think was right for DockYard I would wait it out.
+This was a bad idea, the best time to correct something is now. Today I 
+am jumping on these things immediately. I would rather have an airing of grievances 
+when the issue is small rather than let it blow up.</p>
+
+<p>Here are some things that, arguably, are
+<a href="http://en.wikipedia.org/wiki/Parkinson&#x27;s_Law_of_Triviality">bikeshedding</a>
+but I have been insisting on:</p>
+
+<h3>The trivial</h3>
+
+<ul>
+<li>Whitespace</li>
+<li>Single quotes instead of double quotes</li>
+<li>Verbose variable names</li>
+<li>Consistency between backend model names and HTML markup class names</li>
+</ul>
+
+<h3>The important</h3>
+
+<ul>
+<li>Testing</li>
+<li>Code quality</li>
+<li>CoffeeScript</li>
+<li>File/class naming conventions and organization</li>
+</ul>
+
+<h3>Remotes</h3>
+
+<p>We started as entirely remote team. Angelo in Rhode Island, Russ in
+Maine, and myself in Boston. This is OK but I must admit I&#39;m not a big
+fan of this. We have been hiring in Boston and will continue to grow a
+team here.</p>
+
+<h2>Rates</h2>
+
+<p>We originally started at $120/hour. We have since moved to a flat
+$4,000/week per developer. This buys the client about 32 hours of our
+time.
+This has been the single best change we&#39;ve made. Keeping track of every
+hours sucks, and I had to be on everyone&#39;s ass making sure they got
+their hours in. Now it is pretty simple. The clients also prefer this
+system of invoicing, especially many of the large enterprise type
+clients we are looking to go after.</p>
+
+<p>That being said, I think our rate is below our market value. I&#39;ve spoken
+with many other consultancies and the average seems to be $6k - 7k per
+week for full stack (which we are). We are planning on raising our rates
+to $5k in September then hopefully up to $6k by next year. It&#39;s not that
+I don&#39;t think we are technically qualified to justify those rates yet,
+its that I want to build out our portfolio first.</p>
+
+<p>I&#39;ve noticed that many people don&#39;t want to talk about money. I actually
+don&#39;t mind it, to the point that some people might find it annoying. In
+order for the market to adjust properly I think an open discussion on
+rates is necessary.</p>
+
+<p>I have also started telling potential clients our minimum project budget
+($30k) before we get into any details of the engagement. Some might find
+this off-putting. Here is my perspective: the client&#39;s time is valuable
+and I don&#39;t want to waste their time. In most cases budget is a deciding
+factor, let&#39;s get that out into the open immediately rather than dealing
+with surprises a month from now.</p>
+
+<p>We have reduced our rates to work on interesting projects. We&#39;re nearly
+done with a real-time chat app using an EventMachine backend with a
+websocket front end. That was a fun one to build, we reduced our rate by
+17% because of the client&#39;s limited budget.</p>
+
+<h2>Business Development</h2>
+
+<p>This is something I have learned as I go. Not to toot my own horn but I
+believe one of my strengths is selling DockYard as a business to
+potential clients. Finding new clients has not been easy. Here are some
+things that led directly to client contact (sorted by most effective):</p>
+
+<ul>
+<li>Writing blog posts</li>
+<li>Giving presentations to general tech audiences (more beginners than
+experts)</li>
+<li>LinkedIn</li>
+<li>Referrals</li>
+<li>Being found on Google</li>
+</ul>
+
+<p>LinkedIn?? Yeah, it actually worked. But I did something incredibly
+douchey. I modified my LinkedIn profile to basically be an ad for
+DockYard then I went to LinkedIn&#39;s &quot;People you may know&quot; page and
+clicked on over a thousand people. I got flagged for spamming but it
+worked. Yes, I know it was a huge douchebag move. However, I suspected
+that people would look at my profile to see if they knew me, or wanted
+to be connected. If they happened to have a development need they would
+contact me, if they didn&#39;t they wouldn&#39;t. At the very least I was
+exposing DockYard to many people. I went from less than 100 LinkedIn
+connections to close to 1000 in a week. We got two contracts from doing
+this, it was worth it.</p>
+
+<p>Here are things that have not worked for us (yet)</p>
+
+<ul>
+<li>Running Community Events</li>
+<li>Sponsoring</li>
+<li>Open Source Development (see the comments for some interesting debate on this topic)</li>
+</ul>
+
+<p>I organize <a href="http://bostonrb.org">BostonRB</a>, it is one of the largest
+Ruby user groups in the world. We have awesome speakers every month.
+Every now and then when I talk shop with someone about work I get the
+&quot;I&#39;m sure running BostonRB doesn&#39;t hurt&quot; with a wink. I find this
+annoying. I&#39;ve gone out of my way to make sure BostonRB doesn&#39;t get
+co-opted by any one company for promotional purposes. There is another
+&quot;Boston Rails Meetup&quot; in Newton, MA that is essentially used to boost
+SEO for another consultancy. I think this is bullshit. I&#39;ll say it right
+now: We have never been contacted by a client because of running
+BostonRB. I&#39;m not saying I would turn any down, but in my experience
+running a user group is not driving clients to us.</p>
+
+<p>Now that I&#39;m getting off my soapbox in the upcoming months DockYard will
+be listed as a Sponsor for BostonRB, along with every other company that
+is donating time, pizza, meeting space, etc...</p>
+
+<p>I&#39;m a huge advocate for Open Source Development, but it also has very
+poor ROI if your goal is to get clients. I believe there is a threshold
+for this, if you&#39;re on a certain tier (i.e. core committer to a popular
+framework) it might be different.</p>
+
+<h2>Targeting Startups</h2>
+
+<p>On any given day people will hear me complain about startups. By their
+very definition startups don&#39;t have money. As a consultancy we are
+looking to make money by engaging clients. If anybody tells you they&#39;re
+consulting because it is their passion or work with startups, they are
+full of shit. This is a cash game. Demand is at an all time high, there
+is a lot of opportunity to do well and work for yourself. While some of
+the technology challenges startups present are very interesting I am
+also running a business. This is why we have begun to favor enterprise.
+We can get longer term contracts and these companies pay on time. The
+downside is the technology is not terribly interesting.</p>
+
+<p>We are striving to find a balance here. I would be interested in hearing
+others experience.</p>
+
+<h2>Doing Too Much</h2>
+
+<p>Right now I&#39;m the guy wearing all of the hats. On any given day I&#39;m
+doign the following:</p>
+
+<ul>
+<li>Biz development</li>
+<li>Marketing</li>
+<li>Lead Development</li>
+<li>Project Management</li>
+<li>Paying bills</li>
+</ul>
+
+<p>Thankfully I haven&#39;t burnt out yet but this cannot continue much longer.
+The biggest mistake I have made over the first six months was not making
+an early hire to take some of this load off. I must admit, this one
+stumps me. I know how to hire a good developer, I know how to hire a
+good designer. I have no idea how to hire for non-tech positions. We
+have already hired a accountant to handle some of the larger items but
+I&#39;m still responsible for every day invoicing and book keeping. In my
+mind, here are the priority hires:</p>
+
+<ol>
+<li><p>Business developer. I have had light feelers out for this position
+over the past few months. We really need someone focused on this
+fulltime. Ideally someone that wants to hook into the startup community
+in Boston or has existing sales relationships in the enterprise world.
+Or if you happen to be in DC and have existing connection in the
+political world we&#39;d love to talk. <a href="mailto:contact@dockyard.com">Contact
+us</a>.</p></li>
+<li><p>Office manager. We will be moving into our own space in the Fall. At
+that time we will be looking to fill this position.</p></li>
+<li><p>More developers and designers.</p></li>
+</ol>
+
+<h2>Our Process</h2>
+
+<p>We have modified how to engage clients. This is what we are currently
+doing</p>
+
+<h3>Initial Engagement</h3>
+
+<p>Phone call, get to know the client. Determine if we are a good fit. If
+so and the client is happy with references, rate, etc... we move
+forward.</p>
+
+<h3>Kick off</h3>
+
+<p>We charge for this. Currently it is $1000. We will sit down the client and
+will run through what they want soup to nuts. We&#39;ll have development and
+design on hand for this meeting.</p>
+
+<h3>Design Phase</h3>
+
+<p>We originally combined development and design after the kickoff. This
+was a mistake. There is a lot to be learned by doing an upfront design
+phase. It helps us make informed estimations. The clients are happier
+when we can deliver what we estimate. This phase we generally go for
+wireframes and workflow. Nothing polished. We like to wireframe in
+HTML/CSS.</p>
+
+<h3>Development Phase</h3>
+
+<p>Now that we have the general design worked out we begin development.
+There will also be design done during this phase as well.</p>
+
+<p>I would love to hear about other processes. What works, what doesn&#39;t
+work.</p>
+
+<h2>Conclusion</h2>
+
+<p>I hope some peope find this information useful. Please feel free to ask
+any questions or if you need me to elaborate on anything. If you feel
+I&#39;m off the mark or have suggestions feel free to comment as well. We&#39;re
+always looking to improve.</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2012-06-21-lessons-learned-six-month-of-running-dockyard.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

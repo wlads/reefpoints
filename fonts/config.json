@@ -1,0 +1,147 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "home"
+      ],
+      "code": 104,
+      "uid": "513ac180ff85bd275f2b736720cbbf5e",
+      "css": "home",
+      "orig_css": "home",
+      "orig_code": 104,
+      "src": "entypo",
+      "from": 8962
+    },
+    {
+      "search": [
+        "right",
+        "arrow"
+      ],
+      "code": 82,
+      "from": 9656,
+      "uid": "fb1c799ffe5bf8fb7f8bcb647c8fe9e6",
+      "css": "right-dir",
+      "orig_css": "right-dir",
+      "orig_code": 82,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "menu",
+        "list"
+      ],
+      "code": 110,
+      "uid": "2cfb3f2b46b34a1790aec0aa846297b6",
+      "css": "menu",
+      "orig_css": "menu",
+      "orig_code": 110,
+      "src": "entypo",
+      "from": 9776
+    },
+    {
+      "search": [
+        "heart"
+      ],
+      "code": 99,
+      "from": 9829,
+      "uid": "hi76m8qggwn5lbl286oeqp64q0n8kusy",
+      "css": "heart-1",
+      "orig_css": "heart",
+      "orig_code": 99,
+      "src": "typicons"
+    },
+    {
+      "search": [
+        "mail",
+        "email"
+      ],
+      "code": 109,
+      "from": 9993,
+      "uid": "ae3so8q0b0n2h8esv9flua2nmwswa8fd",
+      "css": "mail",
+      "orig_css": "mail",
+      "orig_code": 109,
+      "src": "modernpics"
+    },
+    {
+      "search": [
+        "chat",
+        "talk"
+      ],
+      "code": 98,
+      "uid": "2c0b53280f82068f6bab4e2200025d9f",
+      "css": "chat-1",
+      "orig_css": "chat",
+      "orig_code": 98,
+      "src": "entypo",
+      "from": 59168
+    },
+    {
+      "search": [
+        "rss"
+      ],
+      "code": 114,
+      "uid": "3e617d8049807e128c80d0344ba09e37",
+      "css": "rss",
+      "orig_css": "rss",
+      "orig_code": 114,
+      "src": "entypo",
+      "from": 59194
+    },
+    {
+      "search": [
+        "github",
+        "social",
+        "logo"
+      ],
+      "code": 103,
+      "uid": "d94334f23acba022bfd68e49d76b31bb",
+      "css": "github",
+      "orig_css": "github",
+      "orig_code": 103,
+      "src": "entypo",
+      "from": 62208
+    },
+    {
+      "search": [
+        "twitter",
+        "social",
+        "logo"
+      ],
+      "code": 116,
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "orig_css": "twitter",
+      "orig_code": 116,
+      "src": "entypo",
+      "from": 62217
+    },
+    {
+      "search": [
+        "profile",
+        "contact",
+        "user"
+      ],
+      "code": 112,
+      "from": 128100,
+      "uid": "bczb7qup4axmc490xmuuv8qdhcnbgeyf",
+      "css": "user",
+      "orig_css": "user",
+      "orig_code": 112,
+      "src": "typicons"
+    },
+    {
+      "search": [
+        "folder"
+      ],
+      "code": 119,
+      "uid": "0ccb084ddeeae372673793ed0b45bb4a",
+      "css": "folder",
+      "orig_css": "folder",
+      "orig_code": 119,
+      "src": "entypo",
+      "from": 128193
+    }
+  ]
+}

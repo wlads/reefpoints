@@ -1,0 +1,249 @@
+<!DOCTYPE html><html><head><title>Mobile Web Apps Still Have Some Major Hurdles</title><link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content="DockYard.com - Brian summarizes DockYard's experience thus far with mobile web apps and some of the existing challenges to compete with native" name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html' name='twitter:url'><meta content='Mobile Web Apps Still Have Some Major Hurdles' name='twitter:title'><meta content="Brian summarizes DockYard's experience thus far with mobile web apps and some of the existing challenges to compete with native" name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O.. 
+                                                             OZ..O.   
+                                                         ..OO..87.    
+                                                        .O7O..O...    
+                                                      .O...Z~O.       
+                                                   .:Z~. ..Z..        
+                                                  +O.O   .8..         
+                                     ...       .OO.  O  O?.           
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..            
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.              
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.                
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.                 
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO                   
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.                 
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.                 
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.                 
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.                 
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:                  
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..                 
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z                   
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O                   
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.                   
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.                   
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.                    
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.                    
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..                    
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.                       
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..                        
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...                          
+          .....~OOOOOOOOOOOOOOOOO:........                            
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/brian-cardarella">Brian Cardarella</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/bcardarella' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/bcardarella' target='_blank'>g</a></span></li><li class='post-meta post-date'>10 Nov 2011</li></ul></aside><div class='post-div'><p class='post-meta post-tags'></p><div class='post-title-wrap'><h1 class='post-title'>Mobile Web Apps Still Have Some Major Hurdles</h1></div><current_page class='post-content'><p>Over the past 24 hours I&#39;ve seen several articles (<a href="http://venturebeat.com/2011/11/09/mobile-web/">1</a>,<a href="http://www.guardian.co.uk/technology/blog/2011/nov/03/will-html5-replace-native-apps">2</a>) on <a href="http://news.ycombinator.com">Hacker News</a>
+predicting that in the near future mobile web apps are going to
+replace their native counterparts. Here at DockYard we really hope this
+happens. We believe in the mobile web and have decided forego regular
+web application development in favor of focusing on mobile web
+application development. However, experience has told us the future is not as nigh as we
+all hope.</p>
+
+<p>Native applications (iOS, Android, etc.) still have and will continue
+to have some significant advantages over mobile web apps. Let&#39;s start
+with the obvious...</p>
+
+<h3>Native functionality</h3>
+
+<p>Having access to mobile hardware such as the camera, microphone, and
+storage (file system, internal datbases, etc...) is important. There is also the issue
+of running the application in the background. None of this is currently
+possible in a mobile web application. Immediately the scope of a mobile
+web application is much smaller.</p>
+
+<p>The <a href="http://www.w3.org/TR/html-media-capture/">W3C has a working draft of what a media capture API should
+be</a>. It may be a
+matter of time until we see mobile browsers begin to provide access to
+this native functionality. Personally, I would like to see this API
+developed further. In its current form it is simply a delegator API to
+the camera and microphone applications. We hand off application control and wait for a
+callback that has the list of media just captured. This is not good
+enough. How can a mobile web application compete with the many
+different native camera applications that exist with custom camera
+functionality if there is no way to
+customize the camera experience? Simple: it can&#39;t. Augmented reality
+mobile web application? Nope. What about something as simple as skinning
+the camera? Not with the current working draft of the MediaCapture API.</p>
+
+<p>Most mobile web browsers implement the HTML canvas element. So mobile
+web gaming is possible. But what we really want is hardware accelerated
+WebGL. It&#39;s not here yet. We&#39;re still waiting for the desktop
+canvas apps to close the gap between their native desktop counterparts.
+Mobile web gaming will not be competing with native mobile gaming
+anytime soon.</p>
+
+<h3>Performance</h3>
+
+<p>Native is the clear winner here but with each new generation of phone
+hardware the lead is becoming less noticeable. In fact, I&#39;m going to
+predict that in the 2nd half of 2012 (iPhone5, assuming Apple goes back
+to the previous iPhone release cycle) for everything
+except gaming, the difference will be negligible.</p>
+
+<p>We&#39;re getting closer and closer to the point of convergence. Hardware is
+getting faster, JavaScript VMs are getting faster. Native and mobile web
+apps will never be equally as fast, native will <strong>always</strong> be faster.
+With each generation of mobile hardware we will care less because the gap will continue to get asymptotically
+smaller.</p>
+
+<p>This current performance gap can be felt most with <a href="http://jquerymobile.com">jQuery
+Mobile</a>. We use jQuery Mobile, we believe in
+it. On the latest iPhone 4S there is still a noticeable lag when
+doing page trasitions, even on mobile web applications that have very few
+pages of low complexity. The page enhancement algorithm does <strong>a lot</strong> of
+DOM manipulation and hoop jumping. Elements are pulled out of the DOM,
+wrapped, reinserted. In the end it allows us to
+provide very little markup and get some beautiful results.</p>
+
+<p>As of this writing jQuery Mobile is in 1.0 Release Candidate 2. On the bucket
+list for 1.0 Gold is a <a href="https://github.com/jquery/jquery-mobile/issues/2853">performance boost for page enhancement</a>.
+<a href="https://twitter.com/#!/jquerymobile/status/133670336318291969">Most likely this will only have an effect upon very complex pages</a>.
+Closing the performance gap on jQuery Mobile is going to be a watershed
+moment for mobile web application development.</p>
+
+<h3>Distribution</h3>
+
+<p>Nothing beats the web as a distribution platform. Every time I use a web
+app I am on the latest version of that app. If there are any business
+critical updates they are immediately available for everybody. Native
+mobile applications are at a clear disadvantage here. We&#39;re comparing a
+passive opt-in system to an active apt-in system.</p>
+
+<p>One disadvantage (for now) that mobile web applications have is
+accessibility after distribution. Native apps default to installing on
+your phone, mobile web applications do not. Yes, you can save links to
+the mobile web app and make it appear you have it installed. But what
+about off-line mode?</p>
+
+<h3>Discovery</h3>
+
+<p>I&#39;m going to argue that native applications win here. Finding a native
+mobile application is easier than finding a mobile web application.
+Google has made a large dent for the web with Chrome&#39;s Omnibar. (btw,
+why hasn&#39;t everybody copied the omnibar? This should be the default for mobile
+web browsers, screen real estate is already at a premium.)</p>
+
+<p>That being said, discovery for native is not great. We&#39;ve
+all see the studies where the Top 10 apps have a significantly skewed
+download rate compared to the below Top 10. This is be expected. I don&#39;t
+understand why the mobile app stores have not put more effort into
+perfecting discovery. I&#39;m more likely to purchase an application that I
+like if I can find it easily.</p>
+
+<h3>PhoneGap (Apache Callback)</h3>
+
+<p>If you&#39;ve made it this far you&#39;ve probably been yelling at your screen
+&quot;<strong>PhoneGap!</strong>&quot; to several of the points I&#39;ve made above. Yes, PhoneGap solves many of these problems. But how do
+we define a PhoneGap application? The technology stack I&#39;m using is that
+of a mobile web application: HTML, CSS, JavaScript. However, the
+distribution and discovery systems I am using are that of a native
+application. PhoneGap application straddle the fence between the two
+worlds.</p>
+
+<p>For those that don&#39;t know, PhoneGap extends a WebUI. It will add certain
+functionality to the JavaScript API. Access to the camera, microphone,
+file system <a href="http://docs.phonegap.com/en/1.2.0/index.html">as well as many other wonderful features</a>.
+The PhoneGap developers were smart, they saw the W3C&#39;s proposed API for
+some of this and modeled the PhoneGap API after it. In fact, PhoneGap
+should acts as a polyfill if certain functionality already exists.</p>
+
+<p>From a developer&#39;s point of view, PhoneGap in most cases should be a no
+brainer. I am most likely developing a web site alongside the mobile
+application. The website is likely going to be sharing the
+functionality of the mobile application. It makes sense if my
+mobile application can share a technology stack with my web application.
+I don&#39;t have to employ a separate team to develop the mobile
+application, and if you want to target more than one mobile platform
+you&#39;ll most likely have to employ more than one team.</p>
+
+<p>From our perspective PhoneGap gives us a
+huge advantage. Why pay two teams to develop the same application when you
+pay us once? Then when we hand off the team maintaining and developing
+your website can also maintain and develop the mobile application. It&#39;s
+a no-brainer. In most cases.</p>
+
+<p>There are some serious issues with the PhoneGap project. The first of
+which is the difficulty in reporting errors. This will hopefully change
+now that the project is under Apache (as <a href="http://wiki.phonegap.com/w/page/46311152/apache-callback-proposal">Apache Callback</a>)
+but the project has been split into different Github repos for each
+platform. So there is one for <a href="https://github.com/phonegap/phonegap-iphone">iOS</a>, <a href="https://github.com/phonegap/phonegap-android">Android</a>, <a href="https://github.com/phonegap/phonegap-wp7">Windows Phone 7</a>, <a href="https://github.com/phonegap/phonegap-blackberry-webworks">BlackBerry</a>, <a href="https://github.com/phonegap/phonegap-webos">WebOS</a>, etc... they are all under separate development with very dedicated teams. If I find a common problem that affects all platforms (for example, <a href="https://github.com/phonegap/phonegap-iphone/issues/280">a suggestion I proposed on how PhoneGap currently implements its File API</a>) I have to report this issue individually on each platform. This is a very inefficient process.</p>
+
+<p>The second is the same issue stated above with the camera. While PhoneGap does give us the access to the camera we are still stuck
+with the same experience we will have with the W3C MediaCapture API: no
+camera customization, this is just a delegation with a callback. You can
+hack together the camera experience you want if decide to write some
+native code.</p>
+
+<p>The third is lack of any background processing. When I throw my PhoneGap
+app into the background it does nothing. It would be nice if we could
+get a callback in the PhoneGap API that allowed us to kick off function
+if the app is sent to the background. When it is up front again give us
+another callback to halt the previous function.</p>
+
+<p><a href="http://wiki.phonegap.com/w/page/36752779/PhoneGap%20Plugins">Check out the &quot;Limitations&quot; section on the PhoneGap wiki for some
+others</a>.</p>
+
+<p>PhoneGap is fantastic (despite some of the criticism I&#39;ve stated). We have
+high hopes for the project now that it is accepted into Apache.</p>
+
+<h2>Conclusion</h2>
+
+<p>Perhaps <a href="http://techland.time.com/2011/11/09/mobile-flash-abandoned-for-html5-adobe-surrenders-apple-wins/?iid=tl-main-lede">Adobe&#39;s announcement that they are abandoning Flash in
+favor of HTML5 for mobile</a> will be seen as the turning point when
+mobile web application development begins to be a serious contender to
+native. Or maybe it is just a coincidence that this buzz is happening
+all at once. Either way, we&#39;re happy
+people are talking about this. Discussions, arguments, and all of the
+attention in between are the best way to push this technology into the
+future we all know is just a matter of time.</p>
+
+<p>As my friend <a href="http://twitter.com/cykod">Pascal Rettig</a> says: It is a great time to be a web developer.</p>
+</current_page><p class='issue'>See a problem with the current_page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current_page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/posts/2011-11-10-mobile-web-apps.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorm.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>
