@@ -57,196 +57,126 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-06-19T00:00:00Z</updated>
+  <updated>2013-07-10T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>Michael Dupuis is a DockYarder</title>
-    <link rel="alternate" href="/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html"/>
-    <id>/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html</id>
-    <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-06-19T00:00:00Z</updated>
+    <title>Design Patterns: The Template Method Pattern</title>
+    <link rel="alternate" href="/ruby/2013/07/10/design-patterns-template-pattern.html"/>
+    <id>/ruby/2013/07/10/design-patterns-template-pattern.html</id>
+    <published>2013-07-10T00:00:00Z</published>
+    <updated>2013-07-10T00:00:00Z</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/dupuis.jpg" alt="Michael"&gt;
-Recently we added another great mind to the DockYard team: Michael
-Dupuis. Mike joins our Boston office and has already been busy building
-out client apps in Ruby on Rails and Ember.js for us! He also comes with
-some design chops. Welcome Mike!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Marin Abernethy is a DockYarder</title>
-    <link rel="alternate" href="/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
-    <id>/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
-    <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-06-19T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/abernethy.jpg" alt="Marin"&gt;
-Marin comes to us as from Trinity College for the summer. We&amp;#39;ve been
-overwhelming her with Ruby, Linux, SQL, JavaScript, and VIM. She&amp;#39;s
-excelled and we&amp;#39;re excited to see what she can accomplish over the
-remainder of the summer.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Tilde's Ember Training</title>
-    <link rel="alternate" href="/ember/2013/05/09/tildes-ember-training.html"/>
-    <id>/ember/2013/05/09/tildes-ember-training.html</id>
-    <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-05-09T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;A couple weeks ago, Yehuda Katz and Tom Dale of &lt;a href="http://tilde.io"&gt;Tilde&lt;/a&gt; ran
-their 3-day &lt;a href="http://www.tilde.io/training/"&gt;Introduction to Ember.js Training&lt;/a&gt;
-at &lt;a href="http://bocoup.com/"&gt;Bocoup&lt;/a&gt; here in Boston. I, along with Amanda,
-Doug and Chris, attended the training.&lt;/p&gt;
+    <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 
-&lt;h2&gt;Format&lt;/h2&gt;
+&lt;p&gt;As the field of software development grows, we developers are
+continuously trying to catch up with the latest technologies.
+Fortunately, the craft of writing maintainable code is language
+agnostic, and in this series of blogposts, we&amp;#39;ll focus on a powerful set of
+timeless tools: &lt;em&gt;Design Patterns&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Throughout the training, attendees were building a simplified Rdio/Spotify clone
-using Ember. It was broken up into a series of exercises, which built
-upon each other. The exercises were test driven, each having set of QUnit tests that defined the
-exercise. Before each exercise, Tom and Yehuda would explain and demo
-the concepts via slides and JSBin.&lt;/p&gt;
+&lt;p&gt;I highly recommend Russ Olsen&amp;#39;s book &lt;a href="http://designpatternsinruby.com/"&gt;Design
+Patterns in Ruby&lt;/a&gt;. Our series
+will draw inspiration from it and is brief in comparison. So if you
+enjoy these posts (and I hope you do!), the book will be a great
+investment.&lt;/p&gt;
 
-&lt;h3&gt;Day 1&lt;/h3&gt;
+&lt;p&gt;We&amp;#39;ll explore various design patterns and learn
+when to apply them. Our topic for today will be the &lt;em&gt;Template Method&lt;/em&gt;
+pattern, the simplest design pattern.&lt;/p&gt;
 
-&lt;p&gt;Day 1 was spent outlining the core concepts of
-&lt;a href="http://handlebarsjs.com"&gt;Handlebars&lt;/a&gt; and Ember. We
-started with Handlebars, which is what Ember uses as its templating
-language. After covering the basics of Handlebars, we learned about how
-&lt;a href="http://emberjs.com/guides/routing/"&gt;Ember handles routing and outlets&lt;/a&gt;.
-After we finished routing, we moved onto creating Handlebars helper
-functions.&lt;/p&gt;
+&lt;h2&gt;Our First Day in Construction&lt;/h2&gt;
 
-&lt;h3&gt;Day 2&lt;/h3&gt;
+&lt;h3&gt;The Right Tools&lt;/h3&gt;
 
-&lt;p&gt;On day 2, we started off with
-&lt;a href="http://emberjs.com/guides/controllers/"&gt;Ember controllers&lt;/a&gt; and how they
-serve as proxy objects for the model of your current resource. After
-controllers, we covered
-&lt;a href="http://emberjs.com/guides/object-model/computed-properties/"&gt;computed properties&lt;/a&gt;.
-&lt;a href="http://emberjs.com/guides/views/"&gt;Views&lt;/a&gt; followed computed properties,
-then we wrapped up the day with creating custom controls with Ember and
-Handlebars.&lt;/p&gt;
+&lt;p&gt;Quite simply, design patterns are just tools that help us construct software. However,
+just like tools, we need to use the correct and proper one for the task. We
+could use a hammer on screws, but we&amp;#39;d damage the wood planks and using a
+power drill will be much more efficient. Before using any one of the numerous design patterns, it is
+crucial to understand the problem we wish to solve.&lt;/p&gt;
 
-&lt;h3&gt;Day 3&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;It is incorrect to use a particular design pattern on the wrong
+type of problem&lt;/em&gt;. In other words, it is in poor practice to use a
+particular design pattern on a problem that does not require the
+aforementioned design pattern.&lt;/p&gt;
 
-&lt;p&gt;Once we had built the majority of the app, we had a couple more
-exercises that built upon all the exercise we had completed. Tom and
-Yehuda also went over how we would use
-&lt;a href="http://eviltrout.com/2013/03/23/ember-without-data.html"&gt;Ajax requests to pull in data from a remote source with Promises&lt;/a&gt;.
-After wrapping up the remainder of the exercises, we covered how the
-&lt;a href="http://stackoverflow.com/questions/13597869/what-is-ember-runloop-and-how-does-it-work"&gt;Ember Run Loop works&lt;/a&gt;,
-and discussed approaches to testing Ember applications.&lt;/p&gt;
+&lt;h3&gt;Let&amp;#39;s Build Some Walls&lt;/h3&gt;
 
-&lt;h2&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Today, we&amp;#39;ve been asked by our foreman to build a couple of walls. All
+the walls will share the same dimensions and will be made from the same
+material (for this construction project, our foreman has given us an
+&amp;quot;easy&amp;quot; set of requirements).&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for Wall&lt;/span&gt;
+require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;minitest/autorun&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
 
-&lt;p&gt;Yehuda and Tom provided a great balance of not-to-dense information,
-useful demos and exercises. They did a great job of, what Tom stated as,
-&amp;quot;Providing a sufficient level of confusion&amp;quot; in the exercises. Before
-each exercise, they would provide all the information needed for the
-exercise, but would not give you a list of steps to complete the task.
-You may struggle a bit, but they answer any questions you would
-have during the exercise. This would help the attendees actually learn
-the concepts, rather than just copy/paste a set of code and modify it
-here and there and have it work. I, personally, felt that this worked
-really well.&lt;/p&gt;
+describe &lt;span class="constant"&gt;Wall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:wall&lt;/span&gt;) { &lt;span class="constant"&gt;Wall&lt;/span&gt;.new }
 
-&lt;p&gt;I have worked on a couple side project with Ember before taking this
-training, and had a very shallow understanding of some of the concepts.
-Coming out of this training, I feel I have a great place to start building
-Ember apps. I really fleshed out my understanding of Ember and am really
-excited about the technology. I am planning on using it for
-any upcoming side projects, to really explore it further. &lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Context Validations</title>
-    <link rel="alternate" href="/ruby/2013/05/09/context-validations.html"/>
-    <id>/ruby/2013/05/09/context-validations.html</id>
-    <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-05-09T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I just released a new &lt;a href="https://github.com/dockyard/context_validations"&gt;gem called ContextValidations&lt;/a&gt;&lt;/p&gt;
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
 
-&lt;p&gt;ContextValidations allows you to set validations on the instance of
-ActiveRecord models. Any class-level validations you have already set
-in your models are ignored. You may be asking yourself &amp;quot;Whaaaaaat?&amp;quot; so
-let&amp;#39;s look into why.&lt;/p&gt;
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;What a nice boss, he&amp;#39;s handed us the blueprints!
+Now it&amp;#39;s just up to us to build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
 
-&lt;h2&gt;Conditional Validations Are A Smell&lt;/h2&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Nice! Our tests pass, everybody is happy, and we&amp;#39;re off to lunch!&lt;/p&gt;
 
-&lt;p&gt;When applications grow in complexity the validation models required to
-support them usually grow too. Eventually you will have to &amp;quot;work around&amp;quot;
-the validations with conditionals that rely upon state flags. In some
-cases you end up writing empty model objects for use with your forms to
-avoid the mess that conditional validations introduce.&lt;/p&gt;
+&lt;h3&gt;A Hammer or a Nailgun?&lt;/h3&gt;
 
-&lt;p&gt;The problem here is that the model is defining a single set of
-validations but the model needs to absorb different sets of data under
-different circumstances. Imagine you have a user account that where
-depending upon how the users get to your app will depend upon what data
-they need to provide. You might also be importing data from an external
-incomplete data set. Do you set these records aside into another table
-until the records are claimed and the user can complete registration? Or
-do you allow the records to save and have the model enter a state of
-&lt;code&gt;unclaimed&lt;/code&gt; to avoid authentication until &lt;code&gt;claimed&lt;/code&gt;? You could just
-avoid the validations all together but you definitely don&amp;#39;t want to
-allow records that don&amp;#39;t have the most basic of identifying information
-such as &lt;code&gt;email&lt;/code&gt; or &lt;code&gt;username&lt;/code&gt; to be saved.&lt;/p&gt;
+&lt;p&gt;Coming back to the site, our foreman has informed us that we need more
+walls. &amp;quot;That&amp;#39;s a piece of cake,&amp;quot; we reply, recalling how easy it was to
+build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;You can imagine with this scenario the current solution with Rails is
-either a very complex and messy validation model or breaking things out
-into other models and having a strategy to reconciling that at a later
-point in time.&lt;/p&gt;
-
-&lt;h2&gt;Context Matters&lt;/h2&gt;
-
-&lt;p&gt;I have come to believe that defining a monolithic validation set in your
-model is the wrong way to go. Context matters. If I am an admin I should
-be able to write data to a record that might not be acceptable to a
-regular user. Even the simple case of not requiring a password unless
-the record is new.&lt;/p&gt;
-
-&lt;h3&gt;Controllers Are the Context&lt;/h3&gt;
-
-&lt;p&gt;I believe the rule of &amp;quot;Fat Model, Skinny Controller&amp;quot; has conditioned
-Rails developers to never ever put anything more than a few lines of
-code into your controllers. For the most part this is a good trend. But
-as we have seen with &lt;a href="https://github.com/rails/strong_parameters"&gt;Strong Parameters&lt;/a&gt; 
-there are circumstances where adding a few more lines to our controllers
-isn&amp;#39;t going to end the world. I submit the case is also true for
-validations. The controller is the context in which the user is
-interacting with the data. Going back to the admin example, you most
-likely have a &lt;code&gt;UsersController&lt;/code&gt; and an &lt;code&gt;Admin::UsersController&lt;/code&gt; defined.
-Two controllers, same data. Different contexts. Not only should you
-allow mass assignment to the models differently for each context but
-what is considered &amp;quot;valid data&amp;quot; should also be different.&lt;/p&gt;
-
-&lt;h2&gt;Context Validations&lt;/h2&gt;
-
-&lt;p&gt;To handle this need I have just released
-&lt;a href="https://github.com/dockyard/context_validations"&gt;ContextValidations&lt;/a&gt;.
-The goals of this gem are simple:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Maintain simplicity&lt;/li&gt;
-&lt;li&gt;Enable instance level validations&lt;/li&gt;
-&lt;li&gt;Don&amp;#39;t deviate from exisitng Rails validations&lt;/li&gt;
-&lt;li&gt;Backwards compatibility with 3rd party libraries&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Before I dive into each one let&amp;#39;s see how a set of validations might be
-applied in a controller&lt;/p&gt;
+&lt;p&gt;&amp;quot;Not so fast,&amp;quot; our foreman retorts. We&amp;#39;re given new blueprints with
+different wall requirements.&lt;/p&gt;
 &lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
@@ -271,42 +201,84 @@ applied in a controller&lt;/p&gt;
 21
 22
 23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;UsersController&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ApplicationController&lt;/span&gt;
-  include &lt;span class="constant"&gt;ContextValidations&lt;/span&gt;::&lt;span class="constant"&gt;Controller&lt;/span&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for a BrickWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;BrickWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:brick_wall&lt;/span&gt;) { &lt;span class="constant"&gt;BrickWall&lt;/span&gt;.new }
 
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;create&lt;/span&gt;
-    &lt;span class="instance-variable"&gt;@user&lt;/span&gt; = &lt;span class="constant"&gt;User&lt;/span&gt;.new(user_params)
-    &lt;span class="instance-variable"&gt;@user&lt;/span&gt;.validations = validations(&lt;span class="symbol"&gt;:create&lt;/span&gt;)
-    &lt;span class="keyword"&gt;if&lt;/span&gt; &lt;span class="instance-variable"&gt;@user&lt;/span&gt;.save
-      &lt;span class="comment"&gt;# happy path&lt;/span&gt;
-    &lt;span class="keyword"&gt;else&lt;/span&gt;
-      &lt;span class="comment"&gt;# sad path&lt;/span&gt;
-    &lt;span class="keyword"&gt;end&lt;/span&gt;
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    brick_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;base_validations&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:first_name&lt;/span&gt;, &lt;span class="symbol"&gt;:last_name&lt;/span&gt; &lt;span class="symbol"&gt;:email&lt;/span&gt;, &lt;span class="symbol"&gt;:presence&lt;/span&gt; =&amp;gt; &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:email&lt;/span&gt;, &lt;span class="symbol"&gt;:uniqueness&lt;/span&gt; =&amp;gt; &lt;span class="predefined-constant"&gt;true&lt;/span&gt;, &lt;span class="symbol"&gt;:format&lt;/span&gt; =&amp;gt; &lt;span class="constant"&gt;EmailFormat&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="symbol"&gt;:confirmation&lt;/span&gt; =&amp;gt; &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    brick_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="comment"&gt;# Blueprints for a ConcreteWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:concrete_wall&lt;/span&gt;) { &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    concrete_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;create_validations&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="symbol"&gt;:presence&lt;/span&gt; =&amp;gt; &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    concrete_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from concrete!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="comment"&gt;# Blueprints for a WoodWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;WoodWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:wood_wall&lt;/span&gt;) { &lt;span class="constant"&gt;WoodWall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wood_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 10ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wood_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from wood!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;h3&gt;Maintain Simplicity&lt;/h3&gt;
+&lt;p&gt;Hmm... A couple of ideas run through our heads. We could follow the initial &lt;code&gt;Wall&lt;/code&gt; class and
+define each method, hardcoding each string output, for the &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and &lt;code&gt;WoodWall&lt;/code&gt;
+classes. That seems like an okay idea, but we&amp;#39;d have to hard code each
+instance method. What if our house requires a dozen different types of walls?&lt;/p&gt;
 
-&lt;p&gt;At this point some of you are probably thinking &lt;a href="http://rhnh.net/2012/12/03/form-objects-in-rails"&gt;Form Objects&lt;/a&gt;.
-Perhaps in the end, Form Objects will be the real answer for what I
-strive for. But right now I don&amp;#39;t see a justification for the increase
-in complexity. &lt;code&gt;ContextValidations&lt;/code&gt; has attempted to keep the complexity
-as low as possible while still allowing for flexibility. The
-&lt;code&gt;ContextValidations::Controller&lt;/code&gt; module can be mixed into any object,
-not just controllers. Let&amp;#39;s say you had a &lt;a href="http://stevelorek.com/service-objects.html"&gt;Service Object&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Open That Toolbox!&lt;/h3&gt;
+
+&lt;p&gt;Sipping on our after-lunch coffee, we realize that we&amp;#39;ve got a tool right
+for the job, the &lt;em&gt;Template Method&lt;/em&gt; pattern.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;em&gt;Template Method&lt;/em&gt; pattern, the creation of a &lt;em&gt;skeletal class&lt;/em&gt; will
+serve as the basis for various &lt;em&gt;subclasses&lt;/em&gt; or &lt;em&gt;concrete classes&lt;/em&gt;. Within the &lt;em&gt;skeletal class&lt;/em&gt;
+there are &lt;em&gt;abstract methods&lt;/em&gt;, which in turn, will be overridden by the
+methods of &lt;em&gt;subclasses&lt;/em&gt;. Essentially, we&amp;#39;ll define a &lt;code&gt;Wall&lt;/code&gt; class (our
+&lt;em&gt;skeletal class&lt;/em&gt;) and its &lt;em&gt;subclasses&lt;/em&gt;, &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and
+&lt;code&gt;WoodWall&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Going over the blueprints, we notice that the three different classes of
+walls each contain the methods &lt;code&gt;#dimensions&lt;/code&gt; and &lt;code&gt;#made_from&lt;/code&gt;, which
+result in slighty different strings. With this knowledge, let&amp;#39;s
+create our &lt;code&gt;Wall&lt;/code&gt; class and its subclasses.&lt;/p&gt;
 &lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
@@ -320,146 +292,321 @@ not just controllers. Let&amp;#39;s say you had a &lt;a href="http://stevelorek.
 &lt;strong&gt;10&lt;/strong&gt;
 11
 12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+55
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;UserService&lt;/span&gt;
-  include &lt;span class="constant"&gt;ContextValidations&lt;/span&gt;::&lt;span class="constant"&gt;Controller&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(params)
-    &lt;span class="instance-variable"&gt;@params&lt;/span&gt; = params
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;length&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. long and &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;width&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;create&lt;/span&gt;
-    &lt;span class="instance-variable"&gt;@user&lt;/span&gt; = &lt;span class="constant"&gt;User&lt;/span&gt;.new(create_params)
-    &lt;span class="instance-variable"&gt;@user&lt;/span&gt; = validations(&lt;span class="symbol"&gt;:create&lt;/span&gt;)
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am made from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;material&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;30&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;ConcreteWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;WoodWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;10&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;At this point the code looks identitly to the controller example from
-above. The validations are accessible anywhere, from any object.&lt;/p&gt;
+&lt;h2&gt;Discussion&lt;/h2&gt;
 
-&lt;h3&gt;Instance level validations&lt;/h3&gt;
+&lt;h3&gt;Hook Methods&lt;/h3&gt;
 
-&lt;p&gt;The real key here is that the instance of the model is able to declare
-what its validations are rather than the class. To that end you must
-mixin the &lt;code&gt;ContextValidations::Model&lt;/code&gt; module into any model you want to
-use &lt;code&gt;ContextValidations&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Within the &lt;code&gt;Wall&lt;/code&gt; class we have defined a private method called &lt;code&gt;#length&lt;/code&gt;
+because we see that &lt;code&gt;BrickWall&lt;/code&gt; and &lt;code&gt;ConcreteWall&lt;/code&gt; share the same
+length. As for the &lt;code&gt;WoodWall&lt;/code&gt; class, we simply overwrite the &lt;code&gt;#length&lt;/code&gt;
+and give it a value of &lt;code&gt;10&lt;/code&gt;. These are examples of &lt;em&gt;Hook Methods&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hook Methods&lt;/em&gt; serve two purposes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Override the skeletal implementation and define something new&lt;/li&gt;
+&lt;li&gt;Or, accept the default implementation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Please note that the default implemetation, within the skeletal class, does
+not necessarily need to define a method. For example, we could have had:&lt;/p&gt;
 &lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
 3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;User&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="constant"&gt;Base&lt;/span&gt;
-  include &lt;span class="constant"&gt;ContextValidations&lt;/span&gt;::&lt;span class="constant"&gt;Model&lt;/span&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+
+  ...
+
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    raise &lt;span class="constant"&gt;NotImplementedError&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Sorry, you have to override length&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  ...
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;30&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This mixin will do several things to you &lt;code&gt;ActiveRecord&lt;/code&gt; model&lt;/p&gt;
+&lt;p&gt;In the example above, the &lt;code&gt;#length&lt;/code&gt; method within the &lt;code&gt;Wall&lt;/code&gt; class
+served as a placeholder for the &lt;code&gt;#length&lt;/code&gt; for the &lt;code&gt;BrickWall&lt;/code&gt;, it&amp;#39;s
+&lt;em&gt;concrete class&lt;/em&gt;. Essentially, &lt;em&gt;hook methods&lt;/em&gt; inform all &lt;em&gt;concrete
+classes&lt;/em&gt; that the method may require an override. If the base
+implementation is undefined the subclasses must define the &lt;em&gt;hook
+methods&lt;/em&gt;.&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;A &lt;code&gt;#validations&lt;/code&gt; setter and getter is added. The default for
-&lt;code&gt;#validations&lt;/code&gt; is an empty array. When any arrays are assigned they are
-wrapped in an array and falttened out.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The &lt;code&gt;:validate&lt;/code&gt; callbacks are completed removed. This allows the
-model to accept validations set on the class by 3rd party libraries but
-these validations will never run.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The &lt;code&gt;#run_validations!&lt;/code&gt; protected method is overwritten to run
-through the instance level validations instead of running the
-&lt;code&gt;:validate&lt;/code&gt; callback.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2&gt;Those Are Some Nice Walls&lt;/h2&gt;
 
-&lt;h3&gt;Don&amp;#39;t deviate from exisitng Rails validations&lt;/h3&gt;
+&lt;p&gt;Our foreman is delighted with the results and we&amp;#39;re going to call it a
+day. As we can see, using the &lt;em&gt;Template Method&lt;/em&gt; pattern is not difficult
+at all. We first defined a base class, within which we defined necessary
+&lt;em&gt;hook methods&lt;/em&gt; to be overridden by our &lt;em&gt;subclasses&lt;/em&gt;. Of course, this
+particular design pattern does not solve every conceivable problem, but
+helps keep our code clean by the use of inheritance.&lt;/p&gt;
 
-&lt;p&gt;The only difference from writing your validations now is they are
-written on the instance. The &lt;code&gt;#validates&lt;/code&gt; method functions exactly the
-same way. You can still pass conditional validations if you&amp;#39;d like but I
-wouldn&amp;#39;t recommend it.&lt;/p&gt;
-
-&lt;h3&gt;Backwards compatibility with 3rd party libraries&lt;/h3&gt;
-
-&lt;p&gt;As mentioned above we don&amp;#39;t want your Rails app to crash if 3rd party
-libraries are declaring regular Rails validations in your models. They
-are just ignored.&lt;/p&gt;
-
-&lt;h2&gt;Moving forward&lt;/h2&gt;
-
-&lt;p&gt;There are a few directions things could move in. I still haven&amp;#39;t come
-up with a simple way to test &lt;code&gt;ContextValidations&lt;/code&gt;. There will also be
-validations that are always used regardless of the context. I don&amp;#39;t
-think it makes sense to constantly rewrite these validations. One
-possibility would be to consider the class validations the
-&lt;code&gt;base_validations&lt;/code&gt; that are always run then you can declare context
-validations on the instance. This might cause issues with 3rd party
-libraries that are using conditional validations. But, we could easily
-get around that by ignoring any class level validations that have
-conditionals on them.&lt;/p&gt;
-
-&lt;p&gt;I am eager to get feedback on this. I am sure this might cause some
-friction as it moves outside of the comfort zone for many Rails devs but
-now I am happy with the direction.&lt;/p&gt;
+&lt;p&gt;Next we&amp;#39;ll be discussing the &lt;em&gt;Strategy&lt;/em&gt; method pattern. Stay tuned!&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Thoughts on Designing Responsive Websites</title>
-    <link rel="alternate" href="/design/2013/04/26/thoughts-on-designing-responsive-websites.html"/>
-    <id>/design/2013/04/26/thoughts-on-designing-responsive-websites.html</id>
-    <published>2013-04-26T00:00:00Z</published>
-    <updated>2013-04-26T00:00:00Z</updated>
+    <title>First Month at DockYard</title>
+    <link rel="alternate" href="/office/2013/07/09/first-month-at-dockyard.html"/>
+    <id>/office/2013/07/09/first-month-at-dockyard.html</id>
+    <published>2013-07-09T00:00:00Z</published>
+    <updated>2013-07-09T00:00:00Z</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Things I have learned about the design process of making responsive websites:&lt;/p&gt;
+    <content type="html">&lt;p&gt;I came to the programming party a little late in my &lt;a href="http://www.trincoll.edu/Pages/default.aspx"&gt;college&lt;/a&gt; career, 
+only having a year and a half of classroom experience under my belt. Due
+to my limited CS background, I was rather anxious to start work at a
+web development startup, fearing my qualifications were not up to par.
+However, my feelings of inadequacy quickly subsided after starting at
+DockYard! I was welcomed by a comfortable learning environment and an
+atmosphere of positivity and productivity. My coworkers are very
+approachable and always willing to answer my questions. Because of
+DockYard&amp;#39;s intimate size I am able to see all sides of the business, and
+get to know everyone in the office.&lt;/p&gt;
 
-&lt;h2&gt;Design Mobile First&lt;/h2&gt;
+&lt;p&gt;It has now been a month since I began working and already I feel I am
+light-years ahead of where I started. My nerves have been replaced by an
+eagerness to continue learning and grow as a developer. The amount of
+information that has been thrown my way is rather overwhelming. I have
+already pored through 6 books, including: &lt;a href="http://pragprog.com/book/rails32/agile-web-development-with-rails-3-2"&gt;Agile Web Development with
+Rails&lt;/a&gt; by Sam Ruby and, &lt;a href="http://jsninja.com/"&gt;Secrets of the JavaScript Ninja&lt;/a&gt; by John Resig, in
+addition to other readings on &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;, version control (&lt;a href="http://git-scm.com"&gt;git&lt;/a&gt;), and
+&lt;a href="http://en.wikipedia.org/wiki/User_story"&gt;user stories&lt;/a&gt;. Not to mention my introduction to vim and all the commands
+that accompany it. While I cannot claim all of the information has
+stuck, the exposure will surely breed understanding. I have learned that
+it isn&amp;#39;t about having all the answers, but the efficiency of finding
+them that is important.&lt;/p&gt;
 
-&lt;p&gt;Why do I like to design for narrower screen sizes first? Because it places emphasis on hierarchy and content organization. It prioritizes making decisions about organizing the content of the site, which of course is the most important part! (Take a look at some of &lt;a href="http://karenmcgrane.com/category/content-strategy/"&gt;Karen McGrane&amp;#39;s stuff&lt;/a&gt; if you want to read more about content strategy) Which sections make the most sense near each other? Does the layout order make it easy for a user to find what she or he is looking for? Imagine how disjointed it could be for a mobile user if the content groupings didn&amp;#39;t flow in context among each other. Figuring all this out before moving on to designing wider screen sizes can be very helpful. Everything can&amp;#39;t be shoved &lt;a href="http://iampaddy.com/lifebelow600/"&gt;&amp;quot;above the fold&amp;quot;&lt;/a&gt; in mobile. Say goodbye to hearing that everything is important!&lt;/p&gt;
-
-&lt;h2&gt;Don&amp;#39;t Fight the Web, Work With It!&lt;/h2&gt;
-
-&lt;p&gt;Think ahead about how design elements are going to be implemented during initial design stages. Can it be written out of CSS? Maybe some elements can&amp;#39;t be, but let&amp;#39;s keep those to a minimal. With all the fancy CSS3 things we can do now, we shouldn&amp;#39;t have to open up Photoshop to make design edits. In the way that form should follow function, allow implementation to inform design. This is not an argument against &lt;a href="http://sachagreif.com/flat-pixels/"&gt;skeuomorphism&lt;/a&gt;, but it just so happens that flatter designs tend to be more web-friendly. Sorry, pirate scrolls. Not sorry.&lt;/p&gt;
-
-&lt;h2&gt;Get in the Browser ASAP&lt;/h2&gt;
-
-&lt;p&gt;After laying out a few basic wireframes, I like to jump right into HTML and CSS (or really, &lt;a href="http://haml.info/"&gt;HAML&lt;/a&gt; and &lt;a href="http://sass-lang.com/"&gt;SASS&lt;/a&gt;). Whether you start on paper, Illustrator, or Photoshop, the design won&amp;#39;t look like how it&amp;#39;s really going to look until it&amp;#39;s in the browser. It makes more sense for me to get right in to iterations while seeing how layouts are behaving at different screen sizes. I find myself doing a lot of trial and error because I can never be sure of what may or may not work. If I think of a possible solution, I try it out. If it doesn&amp;#39;t work better than what I had, I&amp;#39;ll revert it and try something else. The majority of my designing and problem-solving happens in the browser now where I can shrink and expand the width of the window to see how everything is coming together. For me, getting right into this &lt;a href="http://en.wikipedia.org/wiki/Iterative_design"&gt;iterative design&lt;/a&gt; process beats out creating thorough mockups that will only represent so little of the &amp;quot;final product&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;There&amp;#39;s a lot of stuff to know so the best way to learn is to dive right in!&lt;/p&gt;
+&lt;p&gt;In addition to all the reading, I have worked on a small side project: a
+simple blog site (my introduction to &lt;a href="http://en.wikipedia.org/wiki/Test-driven_development"&gt;test-driven
+development&lt;/a&gt;) that I
+rebuilt 3 times, each time adding more features. The saying, &amp;quot;repetition
+is the mother of all learning&amp;quot;, has certainly resonated with me after
+this exercise.  Also &lt;a href="http://en.wikipedia.org/wiki/Pair_programming"&gt;pair programming&lt;/a&gt; with others in the office has also
+been extremely helpful, giving me an idea of the day-to-day. Overall, I
+feel lucky to be at DockYard in the midst of the growing field of web
+development. Already I can say my experience has been invaluable and I
+thoroughly look forward to the rest of the summer.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Writing User Stories</title>
-    <link rel="alternate" href="/process/2013/04/10/writing-user-stories.html"/>
-    <id>/process/2013/04/10/writing-user-stories.html</id>
-    <published>2013-04-10T00:00:00Z</published>
-    <updated>2013-04-10T00:00:00Z</updated>
+    <title>Steven Trevathan is a DockYarder</title>
+    <link rel="alternate" href="/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"/>
+    <id>/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-08T00:00:00Z</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;h2&gt;User Story Writing Basics&lt;/h2&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/steven-trevathan.jpg" alt="Steven"&gt;&lt;/p&gt;
 
-&lt;p&gt;The goal in writing user stories is to establish a human voice at every step of the development process. This can be a difficult picture for technically minded developers to imagine, who base a majority of their decisions on logic and efficiency. Each story must determine one of the functions that a finalized product will perform while also acknowledging the social and cultural context surrounding that function.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m very happy to announce today that DockYard has joined forces with
+Boston design firm Dobot! Leader designer Steven Trevathan has come on
+as a partner and Creative Director (until we come up with a title he
+prefers) of DockYard.&lt;/p&gt;
 
-&lt;p&gt;Language can be deceptive in conveying story goals. In the story-carding phase, take measures to eliminate technical jargon that could confuse non-developers. Story cards are only prompts that need to be expanded on through ongoing conversation between users, developers, and other individuals within a carefully selected customer team.&lt;/p&gt;
+&lt;p&gt;This is a huge step forward for us. While we have had in-house designers
+we have been actually leaning on Steven from time to time for our
+concept design needs. Now with Steven coming on as part of our team he
+will focus on building out the design side of DockYard and putting
+together a formal concept design process for us.&lt;/p&gt;
 
-&lt;p&gt;The customer team should reflect the unique functions of the product under development. It operates as the central hub in maintaining the balance between business and tech interests. It should combine thinkers who represent general and targeted user interests with developers and other skilled individuals. This will help direct the development of the product by prioritizing stories based on what users are most interested in seeing in the final product. Additional stories can be prioritized in interactions following initial release based on the extent of desired development.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://twitter.com/strevat"&gt;Follow Steven on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Logan Faerber is a DockYarder</title>
+    <link rel="alternate" href="/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"/>
+    <id>/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-08T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/logan-faerber.jpg" alt="Logan"&gt;
+Along with his other fellow Dobot-er we welcome Logan Faerber to the
+DockYard team today!&lt;/p&gt;
 
-&lt;h2&gt;6 Parameters For User Stories&lt;/h2&gt;
+&lt;p&gt;Logan is a &lt;a href="http://www.loganfaerber.com/"&gt;kick ass illustrator&lt;/a&gt; who
+has done work for New York Life, Dynamo Labs, CareShare, CustomMade,
+&lt;a href="http://www.biowarestore.com/garrus-screenprint-poster.html"&gt;Bioware&lt;/a&gt;,
+and &lt;a href="http://www.archaia.com/archaia-titles/hawken-genesis/"&gt;Archaia&lt;/a&gt;.&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Each story should be Independent so that product development can be easily broken down and reorganized. Avoid unnecessary entanglement with other stories to maintain flexibility and freedom in the design process.&lt;/li&gt;
-&lt;li&gt;The customer team should make changes and negotiate stories to ensure that all relevant perspectives are acknowledged. This is essential to maintaining an agile development process through multiple iterations.&lt;/li&gt;
-&lt;li&gt;Let the concept behind the technology shine brightest. Use careful phrasing to ensure that users are able to look at the stories and acknowledge how each is valuable to the product experience.&lt;/li&gt;
-&lt;li&gt;Write stories that can be easily calculated. While abstract language may be necessary to communicate technical concepts with users, every story should be rooted in a logical and quantifiable plan for development.&lt;/li&gt;
-&lt;li&gt;Each story is just a unit in a much greater epic. Keep them small to maintain maximum control over the design process and reduce miscalculations in time and cost estimation.&lt;/li&gt;
-&lt;li&gt;Finally, all stories must be testable. There must be a logical set of criteria to designate whether or not a story has achieved its purpose. A rigorous testing plan will reduce long-term costs in maintenance and development.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Logan has been working out of our office for the last few months and we
+are excited to have his unique talents at DockYard.&lt;/p&gt;
 
-&lt;p&gt;Some suggested methods for gathering user stories are interviews, questionnaires, observations and story-writing workshops. It is important to note that the best data collection methods should be as diverse as the range of users themselves, encompassing a wide range of information gathering tactics. This will give the customer team a wealth of knowledge to analyze and story-card. Some users might be more assertive about their opinion in an interview with developers while others may prefer story-writing workshops. Take into account the nature of the project itself and what implications it might have for response rate. Users may prefer to respond to some more sensitive subject material through an anonymous questionnaire or survey.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://twitter.com/loganfaerber"&gt;Follow Logan on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>DockYard Acquires Dobot</title>
+    <link rel="alternate" href="/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
+    <id>/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-08T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Today I&amp;#39;m very happy to announce that we have acquired local design firm
+&lt;a href="http://dobotdo.com"&gt;Dobot&lt;/a&gt;, its two partners Steven &amp;amp; Logan have joined us full-time.
+This is a huge move for DockYard, and a simple one for Dobot (they have
+been working out of our office for the past few months so they don&amp;#39;t
+actually need to move anywhere).&lt;/p&gt;
 
-&lt;p&gt;In some circumstances, especially for developers working within limited resources or without a well-organized customer team, user role modeling could help generate a clearer picture for user story formation. Create hypothetical users who reflect real-world populations that are inclined to use the product. It might help to draw up a couple user profiles to address multiple lifestyle-types that the product could be used within. This could be especially helpful in designing products for foreign markets or third world countries where the adoption of technology does not follow the western standard.&lt;/p&gt;
-
-&lt;p&gt;For a more in-depth description see Mike Cohn&amp;#39;s book &lt;a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685"&gt;User Stories Applied&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please see the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"&gt;Steven
+Trevathan&lt;/a&gt;
+and the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"&gt;Logan
+Faerber&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Sean Hussey is a DockYarder</title>
+    <link rel="alternate" href="/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
+    <id>/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
+    <published>2013-07-01T00:00:00Z</published>
+    <updated>2013-07-01T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/hussey.png" alt="Sean Hussey"&gt;
+Today is the first day for Sean Hussey at DockYard. He has been
+contracting with us for the past few months and I was finally able to
+lock him down recently. Sean and I have known one another for years as
+he hired me for my first Ruby job at
+&lt;a href="http://global.rakuten.com/en/"&gt;RakutenUSA&lt;/a&gt;. He brings years of Sr.
+level Ruby experience to our team.&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -4,16 +4,604 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-06-19T00:00:00Z</updated>
+  <updated>2013-07-10T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Design Patterns: The Template Method Pattern</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
+    <id>http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html</id>
+    <published>2013-07-10T00:00:00Z</published>
+    <updated>2013-07-13T11:59:40-04:00</updated>
+    <author>
+      <name>Doug Yun</name>
+    </author>
+    <summary type="html">Exploring design patterns and their use cases</summary>
+    <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;As the field of software development grows, we developers are
+continuously trying to catch up with the latest technologies.
+Fortunately, the craft of writing maintainable code is language
+agnostic, and in this series of blogposts, we&amp;#39;ll focus on a powerful set of
+timeless tools: &lt;em&gt;Design Patterns&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I highly recommend Russ Olsen&amp;#39;s book &lt;a href="http://designpatternsinruby.com/"&gt;Design
+Patterns in Ruby&lt;/a&gt;. Our series
+will draw inspiration from it and is brief in comparison. So if you
+enjoy these posts (and I hope you do!), the book will be a great
+investment.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ll explore various design patterns and learn
+when to apply them. Our topic for today will be the &lt;em&gt;Template Method&lt;/em&gt;
+pattern, the simplest design pattern.&lt;/p&gt;
+
+&lt;h2&gt;Our First Day in Construction&lt;/h2&gt;
+
+&lt;h3&gt;The Right Tools&lt;/h3&gt;
+
+&lt;p&gt;Quite simply, design patterns are just tools that help us construct software. However,
+just like tools, we need to use the correct and proper one for the task. We
+could use a hammer on screws, but we&amp;#39;d damage the wood planks and using a
+power drill will be much more efficient. Before using any one of the numerous design patterns, it is
+crucial to understand the problem we wish to solve.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;It is incorrect to use a particular design pattern on the wrong
+type of problem&lt;/em&gt;. In other words, it is in poor practice to use a
+particular design pattern on a problem that does not require the
+aforementioned design pattern.&lt;/p&gt;
+
+&lt;h3&gt;Let&amp;#39;s Build Some Walls&lt;/h3&gt;
+
+&lt;p&gt;Today, we&amp;#39;ve been asked by our foreman to build a couple of walls. All
+the walls will share the same dimensions and will be made from the same
+material (for this construction project, our foreman has given us an
+&amp;quot;easy&amp;quot; set of requirements).&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for Wall&lt;/span&gt;
+require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;minitest/autorun&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+describe &lt;span class="constant"&gt;Wall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:wall&lt;/span&gt;) { &lt;span class="constant"&gt;Wall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;What a nice boss, he&amp;#39;s handed us the blueprints!
+Now it&amp;#39;s just up to us to build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Nice! Our tests pass, everybody is happy, and we&amp;#39;re off to lunch!&lt;/p&gt;
+
+&lt;h3&gt;A Hammer or a Nailgun?&lt;/h3&gt;
+
+&lt;p&gt;Coming back to the site, our foreman has informed us that we need more
+walls. &amp;quot;That&amp;#39;s a piece of cake,&amp;quot; we reply, recalling how easy it was to
+build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Not so fast,&amp;quot; our foreman retorts. We&amp;#39;re given new blueprints with
+different wall requirements.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for a BrickWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;BrickWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:brick_wall&lt;/span&gt;) { &lt;span class="constant"&gt;BrickWall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    brick_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    brick_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="comment"&gt;# Blueprints for a ConcreteWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:concrete_wall&lt;/span&gt;) { &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    concrete_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    concrete_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from concrete!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="comment"&gt;# Blueprints for a WoodWall&lt;/span&gt;
+describe &lt;span class="constant"&gt;WoodWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  let(&lt;span class="symbol"&gt;:wood_wall&lt;/span&gt;) { &lt;span class="constant"&gt;WoodWall&lt;/span&gt;.new }
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wood_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 10ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    wood_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from wood!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Hmm... A couple of ideas run through our heads. We could follow the initial &lt;code&gt;Wall&lt;/code&gt; class and
+define each method, hardcoding each string output, for the &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and &lt;code&gt;WoodWall&lt;/code&gt;
+classes. That seems like an okay idea, but we&amp;#39;d have to hard code each
+instance method. What if our house requires a dozen different types of walls?&lt;/p&gt;
+
+&lt;h3&gt;Open That Toolbox!&lt;/h3&gt;
+
+&lt;p&gt;Sipping on our after-lunch coffee, we realize that we&amp;#39;ve got a tool right
+for the job, the &lt;em&gt;Template Method&lt;/em&gt; pattern.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;em&gt;Template Method&lt;/em&gt; pattern, the creation of a &lt;em&gt;skeletal class&lt;/em&gt; will
+serve as the basis for various &lt;em&gt;subclasses&lt;/em&gt; or &lt;em&gt;concrete classes&lt;/em&gt;. Within the &lt;em&gt;skeletal class&lt;/em&gt;
+there are &lt;em&gt;abstract methods&lt;/em&gt;, which in turn, will be overridden by the
+methods of &lt;em&gt;subclasses&lt;/em&gt;. Essentially, we&amp;#39;ll define a &lt;code&gt;Wall&lt;/code&gt; class (our
+&lt;em&gt;skeletal class&lt;/em&gt;) and its &lt;em&gt;subclasses&lt;/em&gt;, &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and
+&lt;code&gt;WoodWall&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Going over the blueprints, we notice that the three different classes of
+walls each contain the methods &lt;code&gt;#dimensions&lt;/code&gt; and &lt;code&gt;#made_from&lt;/code&gt;, which
+result in slighty different strings. With this knowledge, let&amp;#39;s
+create our &lt;code&gt;Wall&lt;/code&gt; class and its subclasses.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+55
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;length&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. long and &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;width&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am made from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;material&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;30&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;ConcreteWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;WoodWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;10&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
+    &lt;span class="integer"&gt;20&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Discussion&lt;/h2&gt;
+
+&lt;h3&gt;Hook Methods&lt;/h3&gt;
+
+&lt;p&gt;Within the &lt;code&gt;Wall&lt;/code&gt; class we have defined a private method called &lt;code&gt;#length&lt;/code&gt;
+because we see that &lt;code&gt;BrickWall&lt;/code&gt; and &lt;code&gt;ConcreteWall&lt;/code&gt; share the same
+length. As for the &lt;code&gt;WoodWall&lt;/code&gt; class, we simply overwrite the &lt;code&gt;#length&lt;/code&gt;
+and give it a value of &lt;code&gt;10&lt;/code&gt;. These are examples of &lt;em&gt;Hook Methods&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hook Methods&lt;/em&gt; serve two purposes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Override the skeletal implementation and define something new&lt;/li&gt;
+&lt;li&gt;Or, accept the default implementation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Please note that the default implemetation, within the skeletal class, does
+not necessarily need to define a method. For example, we could have had:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
+
+  ...
+
+  private
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    raise &lt;span class="constant"&gt;NotImplementedError&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Sorry, you have to override length&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
+  private
+
+  ...
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
+    &lt;span class="integer"&gt;30&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the example above, the &lt;code&gt;#length&lt;/code&gt; method within the &lt;code&gt;Wall&lt;/code&gt; class
+served as a placeholder for the &lt;code&gt;#length&lt;/code&gt; for the &lt;code&gt;BrickWall&lt;/code&gt;, it&amp;#39;s
+&lt;em&gt;concrete class&lt;/em&gt;. Essentially, &lt;em&gt;hook methods&lt;/em&gt; inform all &lt;em&gt;concrete
+classes&lt;/em&gt; that the method may require an override. If the base
+implementation is undefined the subclasses must define the &lt;em&gt;hook
+methods&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Those Are Some Nice Walls&lt;/h2&gt;
+
+&lt;p&gt;Our foreman is delighted with the results and we&amp;#39;re going to call it a
+day. As we can see, using the &lt;em&gt;Template Method&lt;/em&gt; pattern is not difficult
+at all. We first defined a base class, within which we defined necessary
+&lt;em&gt;hook methods&lt;/em&gt; to be overridden by our &lt;em&gt;subclasses&lt;/em&gt;. Of course, this
+particular design pattern does not solve every conceivable problem, but
+helps keep our code clean by the use of inheritance.&lt;/p&gt;
+
+&lt;p&gt;Next we&amp;#39;ll be discussing the &lt;em&gt;Strategy&lt;/em&gt; method pattern. Stay tuned!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>First Month at DockYard</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html"/>
+    <id>http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html</id>
+    <published>2013-07-09T00:00:00Z</published>
+    <updated>2013-07-13T11:58:13-04:00</updated>
+    <author>
+      <name>Marin Abernethy</name>
+    </author>
+    <summary type="html">Our summer intern shares her thoughts on her first month with us</summary>
+    <content type="html">&lt;p&gt;I came to the programming party a little late in my &lt;a href="http://www.trincoll.edu/Pages/default.aspx"&gt;college&lt;/a&gt; career, 
+only having a year and a half of classroom experience under my belt. Due
+to my limited CS background, I was rather anxious to start work at a
+web development startup, fearing my qualifications were not up to par.
+However, my feelings of inadequacy quickly subsided after starting at
+DockYard! I was welcomed by a comfortable learning environment and an
+atmosphere of positivity and productivity. My coworkers are very
+approachable and always willing to answer my questions. Because of
+DockYard&amp;#39;s intimate size I am able to see all sides of the business, and
+get to know everyone in the office.&lt;/p&gt;
+
+&lt;p&gt;It has now been a month since I began working and already I feel I am
+light-years ahead of where I started. My nerves have been replaced by an
+eagerness to continue learning and grow as a developer. The amount of
+information that has been thrown my way is rather overwhelming. I have
+already pored through 6 books, including: &lt;a href="http://pragprog.com/book/rails32/agile-web-development-with-rails-3-2"&gt;Agile Web Development with
+Rails&lt;/a&gt; by Sam Ruby and, &lt;a href="http://jsninja.com/"&gt;Secrets of the JavaScript Ninja&lt;/a&gt; by John Resig, in
+addition to other readings on &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;, version control (&lt;a href="http://git-scm.com"&gt;git&lt;/a&gt;), and
+&lt;a href="http://en.wikipedia.org/wiki/User_story"&gt;user stories&lt;/a&gt;. Not to mention my introduction to vim and all the commands
+that accompany it. While I cannot claim all of the information has
+stuck, the exposure will surely breed understanding. I have learned that
+it isn&amp;#39;t about having all the answers, but the efficiency of finding
+them that is important.&lt;/p&gt;
+
+&lt;p&gt;In addition to all the reading, I have worked on a small side project: a
+simple blog site (my introduction to &lt;a href="http://en.wikipedia.org/wiki/Test-driven_development"&gt;test-driven
+development&lt;/a&gt;) that I
+rebuilt 3 times, each time adding more features. The saying, &amp;quot;repetition
+is the mother of all learning&amp;quot;, has certainly resonated with me after
+this exercise.  Also &lt;a href="http://en.wikipedia.org/wiki/Pair_programming"&gt;pair programming&lt;/a&gt; with others in the office has also
+been extremely helpful, giving me an idea of the day-to-day. Overall, I
+feel lucky to be at DockYard in the midst of the growing field of web
+development. Already I can say my experience has been invaluable and I
+thoroughly look forward to the rest of the summer.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Steven Trevathan is a DockYarder</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-13T11:58:05-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary type="html">DockYard absorbs Dobot!</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/steven-trevathan.jpg" alt="Steven"&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m very happy to announce today that DockYard has joined forces with
+Boston design firm Dobot! Leader designer Steven Trevathan has come on
+as a partner and Creative Director (until we come up with a title he
+prefers) of DockYard.&lt;/p&gt;
+
+&lt;p&gt;This is a huge step forward for us. While we have had in-house designers
+we have been actually leaning on Steven from time to time for our
+concept design needs. Now with Steven coming on as part of our team he
+will focus on building out the design side of DockYard and putting
+together a formal concept design process for us.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://twitter.com/strevat"&gt;Follow Steven on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Logan Faerber is a DockYarder</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-13T11:57:58-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary type="html">DockYard absorbs Dobot!</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/logan-faerber.jpg" alt="Logan"&gt;
+Along with his other fellow Dobot-er we welcome Logan Faerber to the
+DockYard team today!&lt;/p&gt;
+
+&lt;p&gt;Logan is a &lt;a href="http://www.loganfaerber.com/"&gt;kick ass illustrator&lt;/a&gt; who
+has done work for New York Life, Dynamo Labs, CareShare, CustomMade,
+&lt;a href="http://www.biowarestore.com/garrus-screenprint-poster.html"&gt;Bioware&lt;/a&gt;,
+and &lt;a href="http://www.archaia.com/archaia-titles/hawken-genesis/"&gt;Archaia&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Logan has been working out of our office for the last few months and we
+are excited to have his unique talents at DockYard.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://twitter.com/loganfaerber"&gt;Follow Logan on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>DockYard Acquires Dobot</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-07-13T11:57:51-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary type="html">Joining forces</summary>
+    <content type="html">&lt;p&gt;Today I&amp;#39;m very happy to announce that we have acquired local design firm
+&lt;a href="http://dobotdo.com"&gt;Dobot&lt;/a&gt;, its two partners Steven &amp;amp; Logan have joined us full-time.
+This is a huge move for DockYard, and a simple one for Dobot (they have
+been working out of our office for the past few months so they don&amp;#39;t
+actually need to move anywhere).&lt;/p&gt;
+
+&lt;p&gt;Please see the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"&gt;Steven
+Trevathan&lt;/a&gt;
+and the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"&gt;Logan
+Faerber&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Sean Hussey is a DockYarder</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
+    <published>2013-07-01T00:00:00Z</published>
+    <updated>2013-07-13T11:57:42-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary type="html">We snag one of the tallest guys in Ruby</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/hussey.png" alt="Sean Hussey"&gt;
+Today is the first day for Sean Hussey at DockYard. He has been
+contracting with us for the past few months and I was finally able to
+lock him down recently. Sean and I have known one another for years as
+he hired me for my first Ruby job at
+&lt;a href="http://global.rakuten.com/en/"&gt;RakutenUSA&lt;/a&gt;. He brings years of Sr.
+level Ruby experience to our team.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Introducing destroyed_at</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html"/>
+    <id>http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html</id>
+    <published>2013-06-28T00:00:00Z</published>
+    <updated>2013-07-13T11:57:32-04:00</updated>
+    <author>
+      <name>Michael Dupuis</name>
+    </author>
+    <summary type="html">An ActiveRecord mixin for safe destroys</summary>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/dockyard/destroyed_at"&gt;See the project on GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ve found that more and more clients are requesting &amp;quot;undestroy&amp;quot;
+functionality in their apps. We recently extracted this common pattern into a gem
+we&amp;#39;re calling &lt;a href="https://github.com/dockyard/destroyed_at"&gt;DestroyedAt&lt;/a&gt;, an ActiveRecord mixin that makes un-destroying records
+simple. &lt;/p&gt;
+
+&lt;p&gt;By
+setting the datetime of the &lt;code&gt;#destroyed_at&lt;/code&gt; field of your record, you can
+mark records as destroyed, without actually deleting them. By default, the
+model in which you &lt;code&gt;include DestroyedAt&lt;/code&gt; is scoped to only include
+records that have not been destroyed. So something like
+&lt;code&gt;User.all&lt;/code&gt; will only return &lt;code&gt;User&lt;/code&gt;s with &lt;code&gt;#destroyed_at&lt;/code&gt; values of &lt;code&gt;nil&lt;/code&gt;;
+and &lt;code&gt;User.unscoped.all&lt;/code&gt; will return all &lt;code&gt;User&lt;/code&gt; records.&lt;/p&gt;
+
+&lt;p&gt;When you want to bring a
+record back, simply call &lt;code&gt;#undestroy&lt;/code&gt; on the instance and its
+&lt;code&gt;#destroyed_at&lt;/code&gt; will be set to &lt;code&gt;nil&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ve baked a bunch of other functionality in as well, including
+undestroy callbacks. For the full rundown, head over to &lt;a href="https://github.com/dockyard/destroyed_at"&gt;DestroyedAt&amp;#39;s
+GitHub page&lt;/a&gt; .&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Michael Dupuis is a DockYarder</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -30,7 +618,7 @@ some design chops. Welcome Mike!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -47,7 +635,7 @@ remainder of the summer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -122,7 +710,7 @@ any upcoming side projects, to really explore it further. &lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -357,7 +945,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html"/>
     <id>http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html</id>
     <published>2013-04-26T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -384,7 +972,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html"/>
     <id>http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html</id>
     <published>2013-04-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Tyler Loch</name>
     </author>
@@ -420,7 +1008,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html</id>
     <published>2013-04-04T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -467,7 +1055,7 @@ fulltime Ember.js developer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html</id>
     <published>2013-03-29T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -593,7 +1181,7 @@ to postgres_ext, which was added in 9.2. You should be able use this
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html</id>
     <published>2013-03-27T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -644,7 +1232,7 @@ building an Ember app and this is how I got it working:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html</id>
     <published>2013-03-26T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -689,7 +1277,7 @@ issues, &lt;a href="https://github.com/dockyard/postgres_ext/issue"&gt;open an i
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html</id>
     <published>2013-03-25T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -768,7 +1356,7 @@ well.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html</id>
     <published>2013-03-21T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -841,7 +1429,7 @@ following code into your &lt;code&gt;test_helper.rb&lt;/code&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/19/mike-sager-joins-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/19/mike-sager-joins-dockyard.html</id>
     <published>2013-03-19T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -869,7 +1457,7 @@ in politics. &lt;a href="mailto:contact@dockyard.com"&gt;Join us!&lt;/a&gt;&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html</id>
     <published>2013-02-21T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1015,7 +1603,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html</id>
     <published>2013-01-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1522,7 +2110,7 @@ buttonTitle: 'Update'
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html</id>
     <published>2013-01-09T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1949,7 +2537,7 @@ App.UsersRoute = Ember.Route.extend
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html</id>
     <published>2013-01-07T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2332,7 +2920,7 @@ rails-api g serializer User
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html</id>
     <published>2013-01-04T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2524,7 +3112,7 @@ to your model:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html"/>
     <id>http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html</id>
     <published>2013-01-03T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Chris Gill</name>
     </author>
@@ -2619,7 +3207,7 @@ easy&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html"/>
     <id>http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html</id>
     <published>2012-10-26T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2650,7 +3238,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html</id>
     <published>2012-10-11T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -2693,7 +3281,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html</id>
     <published>2012-10-09T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2832,7 +3420,7 @@ removed. Please add &lt;code&gt;ClientSideValidations::Config.disabled_validator
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html</id>
     <published>2012-09-21T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -3010,7 +3598,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html</id>
     <published>2012-09-20T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -3029,7 +3617,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html</id>
     <published>2012-09-18T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -3215,7 +3803,7 @@ postgres_ext and Rails 4.0. Go forth and use arrays in Rails 4.0!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html</id>
     <published>2012-09-05T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3236,7 +3824,7 @@ released him from his cage on the nearest client app. He&amp;#39;s running wild!
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html</id>
     <published>2012-08-30T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3402,7 +3990,7 @@ perspective, or any general advice I&amp;#39;d love to hear it.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html</id>
     <published>2012-06-26T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3505,7 +4093,7 @@ Plante&lt;/a&gt;&amp;#39;s
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html</id>
     <published>2012-06-25T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3768,11 +4356,26 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Models, Views, and Controllers, Oh My!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
+    <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
+    <published>2012-06-21T00:00:00Z</published>
+    <updated>2013-07-13T11:56:33-04:00</updated>
+    <author>
+      <name>Amanda Cheung</name>
+    </author>
+    <summary type="html">Getting started in Ruby on Rails</summary>
+    <content type="html">&lt;p&gt;Eight days ago, I hardly had an idea of what &amp;quot;object-oriented&amp;quot; meant. The MVC framework was beyond me, and the thought of having to go in to the Command Line? Yikes. Since joining DockYard, I have been reading &amp;quot;Agile Web Development with Rails&amp;quot; to get a grasp on both Ruby and Rails. Having only coded in HTML, CSS and a bit of JavaScript prior to starting, my bearings were a bit shaken. But since stressing out is not for me, I said to myself, &amp;quot;Everyone was a beginner at one point,&amp;quot; and chugged along. Even though I didn&amp;#39;t fully understand the lines of code as I followed along with the book, I made sure I typed out the edits so I could at least get used to the syntax. With the help of my fellow DockYarders, it is all starting to come together. Needless to say, there were several hiccups. To name a couple, install and setting up my machine wasn&amp;#39;t a breeze. There was also an update to Rails that wasn&amp;#39;t included in the book (the mass-assignment feature) where an extra line of code was needed to make the app work.&lt;/p&gt;
+
+&lt;p&gt;For those Ruby-beginners like me, don&amp;#39;t get discouraged! Getting stuck? A great place to come for help is at &lt;a href="http://bostonrb.org/"&gt;Boston Ruby Group&amp;#39;s Project Nights&lt;/a&gt; if you are in the Boston area. &lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Lessons Learned: The First Six Months of Running a Software Consultancy</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4052,26 +4655,11 @@ always looking to improve.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Models, Views, and Controllers, Oh My!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
-    <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
-    <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
-    <author>
-      <name>Amanda Cheung</name>
-    </author>
-    <summary type="html">Getting started in Ruby on Rails</summary>
-    <content type="html">&lt;p&gt;Eight days ago, I hardly had an idea of what &amp;quot;object-oriented&amp;quot; meant. The MVC framework was beyond me, and the thought of having to go in to the Command Line? Yikes. Since joining DockYard, I have been reading &amp;quot;Agile Web Development with Rails&amp;quot; to get a grasp on both Ruby and Rails. Having only coded in HTML, CSS and a bit of JavaScript prior to starting, my bearings were a bit shaken. But since stressing out is not for me, I said to myself, &amp;quot;Everyone was a beginner at one point,&amp;quot; and chugged along. Even though I didn&amp;#39;t fully understand the lines of code as I followed along with the book, I made sure I typed out the edits so I could at least get used to the syntax. With the help of my fellow DockYarders, it is all starting to come together. Needless to say, there were several hiccups. To name a couple, install and setting up my machine wasn&amp;#39;t a breeze. There was also an update to Rails that wasn&amp;#39;t included in the book (the mass-assignment feature) where an extra line of code was needed to make the app work.&lt;/p&gt;
-
-&lt;p&gt;For those Ruby-beginners like me, don&amp;#39;t get discouraged! Getting stuck? A great place to come for help is at &lt;a href="http://bostonrb.org/"&gt;Boston Ruby Group&amp;#39;s Project Nights&lt;/a&gt; if you are in the Boston area. &lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>postgres_ext: Adding Postgres data types to Rails</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html</id>
     <published>2012-06-18T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4260,7 +4848,7 @@ INET and CIDR comparisons.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html</id>
     <published>2012-06-14T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4279,7 +4867,7 @@ skills and much needed illustration skills.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html</id>
     <published>2012-06-11T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4331,7 +4919,7 @@ option.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html</id>
     <published>2012-06-01T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4356,7 +4944,7 @@ located in DC and we hope to soon build out a team in that area.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html</id>
     <published>2012-05-18T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4393,7 +4981,7 @@ while MACADDR will continue to be converted to a string.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html</id>
     <published>2012-05-01T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4433,7 +5021,7 @@ much time was remaining. So I whipped up the following:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html"/>
     <id>http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html</id>
     <published>2012-04-16T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -4586,7 +5174,7 @@ Here&amp;#39;s a quick example of how Backbone views can listen for jquery-ujs c
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html</id>
     <published>2012-04-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4668,7 +5256,7 @@ an issue.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html</id>
     <published>2012-04-03T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Russell Jones</name>
     </author>
@@ -4947,7 +5535,7 @@ role assignment of &amp;#39;admin&amp;#39;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html</id>
     <published>2012-03-05T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -5041,7 +5629,7 @@ have jenkins notify us of builds in a way that makes more sense.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html</id>
     <published>2012-02-27T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5070,7 +5658,7 @@ of Jenkins and keeping us honest with our test suites.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html</id>
     <published>2012-02-20T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5349,7 +5937,7 @@ defeat the purpose of using the engine in the first place.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html</id>
     <published>2012-02-16T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5488,7 +6076,7 @@ you may want to consider other options.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html</id>
     <published>2012-02-15T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5553,7 +6141,7 @@ variables in my specs as a smell and you should too.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html</id>
     <published>2012-02-14T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5798,7 +6386,7 @@ concerning the &lt;code&gt;lib/&lt;/code&gt; directory please feel free to comme
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html</id>
     <published>2012-02-13T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5985,35 +6573,11 @@ But we&amp;#39;ll cross that road when we get there.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Angelo Simeoni is a DockYarder!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
-    <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
-    <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary type="html">DockYard welcomes Angelo Simeoni as a partner</summary>
-    <content type="html">&lt;p&gt;&lt;img src="/images/angelo-simeoni.png" alt="Angelo Simeoni"&gt;&lt;/p&gt;
-
-&lt;p&gt;I first met Angelo when we both worked at &lt;a href="http://zendesk.com"&gt;zendesk&lt;/a&gt; two years ago. I had heard about him before this as he had done some redesigns for &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt; website. Over the few months that zendesk was in Boston we got to be friends, and when we both left zendesk I knew this was someone I wanted to work with again in the future. That opportunity came when I moved back to Boston in the summer of 2010. For the past year Angelo and I have been collaborating on several projects and I&amp;#39;m happy to announce that he has agreed to come on as a partner for DockYard.&lt;/p&gt;
-
-&lt;p&gt;Angelo has been working in Rails for a few years now, and is a master of
-all things CSS. His love for typefaces has influenced me quite a bit in
-how I approach web design.&lt;/p&gt;
-
-&lt;p&gt;You can view a lot of Angelo&amp;#39;s work over at his personal site:
-&lt;a href="http://cssboy.com"&gt;CSSBoy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://twitter.com/cssboy"&gt;Follow Angelo on Twitter&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Russ Jones is a DockYarder!</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6034,11 +6598,35 @@ partner.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Angelo Simeoni is a DockYarder!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
+    <published>2012-02-10T00:00:00Z</published>
+    <updated>2013-07-13T11:56:33-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary type="html">DockYard welcomes Angelo Simeoni as a partner</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/angelo-simeoni.png" alt="Angelo Simeoni"&gt;&lt;/p&gt;
+
+&lt;p&gt;I first met Angelo when we both worked at &lt;a href="http://zendesk.com"&gt;zendesk&lt;/a&gt; two years ago. I had heard about him before this as he had done some redesigns for &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt; website. Over the few months that zendesk was in Boston we got to be friends, and when we both left zendesk I knew this was someone I wanted to work with again in the future. That opportunity came when I moved back to Boston in the summer of 2010. For the past year Angelo and I have been collaborating on several projects and I&amp;#39;m happy to announce that he has agreed to come on as a partner for DockYard.&lt;/p&gt;
+
+&lt;p&gt;Angelo has been working in Rails for a few years now, and is a master of
+all things CSS. His love for typefaces has influenced me quite a bit in
+how I approach web design.&lt;/p&gt;
+
+&lt;p&gt;You can view a lot of Angelo&amp;#39;s work over at his personal site:
+&lt;a href="http://cssboy.com"&gt;CSSBoy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://twitter.com/cssboy"&gt;Follow Angelo on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>ClientSideValidations goes modular</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html</id>
     <published>2012-01-22T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6141,7 +6729,7 @@ JavaScript MVC frameworks.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html"/>
     <id>http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html</id>
     <published>2012-01-04T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6193,7 +6781,7 @@ in the future.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html"/>
     <id>http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html</id>
     <published>2011-12-04T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6227,7 +6815,7 @@ of the week on how things went.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html</id>
     <published>2011-11-18T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6272,7 +6860,7 @@ them in the comments.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html</id>
     <published>2011-11-14T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6303,7 +6891,7 @@ flag&lt;/a&gt;)&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html</id>
     <published>2011-11-10T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6482,7 +7070,7 @@ future we all know is just a matter of time.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/08/24/launch.html"/>
     <id>http://reefpoints.dockyard.com/2011/08/24/launch.html</id>
     <published>2011-08-24T00:00:00Z</published>
-    <updated>2013-07-13T11:45:20-04:00</updated>
+    <updated>2013-07-13T11:56:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
