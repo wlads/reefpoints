@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Better late than never"
 published: true
+tags: ruby on rails, gems
 ---
 
 I just released [ClientSideValidations 3.2](https://github.com/bcardarella/client_side_validations)

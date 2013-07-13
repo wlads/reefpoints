@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Add simple to implement help text that users can dismiss"
 published: true
+tags: ruby on rails, gems
 ---
 
 Have an application where you want to add some help text for the user,

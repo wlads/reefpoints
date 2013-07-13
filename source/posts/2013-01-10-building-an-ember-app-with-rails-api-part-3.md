@@ -9,6 +9,7 @@ legacy_category: ember
 social: true
 summary: "CUD, it isn't just for cows"
 published: true
+tags: javascript, ruby on rails
 ---
 
 **This article was last updated on May 28, 2013 and reflects the state

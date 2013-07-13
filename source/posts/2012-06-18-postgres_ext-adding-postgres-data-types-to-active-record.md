@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Announcing postgres_ext, a gem that adds support for PostgreSQL data types to ActiveRecord"
 published: true
+tags: postgres, ruby on rails, gems
 ---
 
 Over the past few weeks, I have been working on a new gem which adds

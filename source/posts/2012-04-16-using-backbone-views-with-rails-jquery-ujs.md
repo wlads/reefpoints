@@ -8,6 +8,7 @@ github: codeofficer
 legacy_category: javascript
 social: true
 summary: "Throwing them together in a way that makes sense."
+tags: backbone, ruby on rails, jquery
 ---
 
 I often meet Rails developers that have unwittingly jumped on the unobtrusive javascript bandwagon. 

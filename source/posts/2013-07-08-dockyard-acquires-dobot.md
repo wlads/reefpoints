@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'Joining forces'
 published: true
+tags: business, office
 ---
 
 Today I'm very happy to announce that we have acquired local design firm

@@ -8,6 +8,7 @@ github: bcardarella
 legacy_category: ruby
 social: true
 summary: Patterns for happy hacking
+tags: ruby on rails
 ---
 
 [Be sure to check out Bryan Helmkamp's blog post on the same topic](http://blog.codeclimate.com/blog/2012/02/07/what-code-goes-in-the-lib-directory)

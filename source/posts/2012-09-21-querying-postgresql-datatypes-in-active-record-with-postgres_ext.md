@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Returning records based on array elements and network subnets"
 published: true
+tags: ruby on rails, postgres, gems
 ---
 
 I created the [postgres\_ext](https://github.com/dockyard/postgres_ext) gem to add ActiveRecord support for 

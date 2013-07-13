@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "A clean helper for giving visual feedback on long sleeps in your request tests"
 published: true
+tags: testing
 ---
 
 We have been using [capybara-webkit](http://github.com/thoughtbot/capybara-webkit) quite a bit.

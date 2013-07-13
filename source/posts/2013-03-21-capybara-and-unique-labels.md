@@ -9,6 +9,7 @@ legacy_category: ember
 social: true
 summary: "Capybara is broken, they refused to fix. Here is the monkey patch"
 published: true
+tags: testing
 ---
 
 I love Capybara, it makes integration testing a breeze. However, one of

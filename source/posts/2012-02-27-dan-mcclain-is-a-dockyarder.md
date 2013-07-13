@@ -7,6 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Dan McClain
 legacy_category: announcement
+tags: office
 ---
 
 ![Dan McClain](/images/dan-mcclain.png)

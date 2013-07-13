@@ -8,6 +8,7 @@ github: bcardarella
 legacy_category: ruby
 social: true
 summary: A simple pattern for extending your Rails Engines in your app
+tags: ruby on rails
 ---
 
 We've started extracting simple behavior into Rails Engines lately. An

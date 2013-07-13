@@ -8,6 +8,7 @@ legacy_category: process
 social: true
 summary: "The basics of collecting and writing user stories."
 published: true
+tags: workflow
 ---
 
 ## User Story Writing Basics ##

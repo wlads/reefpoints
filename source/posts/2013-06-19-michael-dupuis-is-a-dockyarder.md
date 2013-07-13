@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'Grow baby grow!'
 published: true
+tags: office
 ---
 
 ![Michael](/images/dupuis.jpg)

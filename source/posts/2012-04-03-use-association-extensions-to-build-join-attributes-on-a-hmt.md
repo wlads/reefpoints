@@ -8,6 +8,7 @@ github: codeofficer
 summary: Russ lays down a use case for ActiveRecord association extensions
 legacy_category: ruby
 social: true
+tags: ruby on rails
 ---
 
 It's common in Rails to use a `has_many :through` relationship to model User/Group Memberships. 

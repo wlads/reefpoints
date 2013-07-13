@@ -9,6 +9,7 @@ legacy_category: ember
 social: true
 summary: "Setting up RailsAPI for writing an Ember App"
 published: true
+tags: javascript, ruby on rails
 ---
 
 **This article was last updated on May 28, 2013 and reflects the state

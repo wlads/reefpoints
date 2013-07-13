@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Work at DockYard building Ember.js apps!"
 published: true
+tags: ember, javascript, office, jobs
 ---
 
 We are looking for an Ember.js Developer. Our ideal

@@ -7,6 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: DockYard welcomes Angelo Simeoni as a partner
 legacy_category: announcement
+tags: office
 ---
 
 ![Angelo Simeoni](/images/angelo-simeoni.png)

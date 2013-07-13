@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'Our first developer intern'
 published: true
+tags: office, intern
 ---
 
 ![Marin](/images/abernethy.jpg)

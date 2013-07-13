@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'DockYard absorbs Dobot!'
 published: true
+tags: office
 ---
 
 ![Logan](/images/logan-faerber.jpg)

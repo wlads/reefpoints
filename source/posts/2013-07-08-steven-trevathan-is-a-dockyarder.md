@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'DockYard absorbs Dobot!'
 published: true
+tags: office
 ---
 
 ![Steven](/images/steven-trevathan.jpg)

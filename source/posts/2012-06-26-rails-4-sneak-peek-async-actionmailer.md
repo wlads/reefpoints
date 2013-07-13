@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "How to send your emails using the new Rails 4.0 Queue"
 published: true
+tags: ruby on rails
 ---
 
 My previous [deep dive into the Rails 4.0 Queueing system](http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html)

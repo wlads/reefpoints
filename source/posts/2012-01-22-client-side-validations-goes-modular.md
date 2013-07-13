@@ -7,6 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: Brian summarizes the changes to come in ClientSideValidations 3.2.0
 legacy_category: ruby
+tags: ruby on rails, gems
 social: true
 ---
 

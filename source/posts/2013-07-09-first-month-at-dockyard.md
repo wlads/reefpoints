@@ -8,7 +8,9 @@ legacy_category: office
 social: true
 summary: 'Our summer intern shares her thoughts on her first month with us'
 published: true
+tags: intern
 ---
+
 I came to the programming party a little late in my [college](http://www.trincoll.edu/Pages/default.aspx) career, 
 only having a year and a half of classroom experience under my belt. Due
 to my limited CS background, I was rather anxious to start work at a

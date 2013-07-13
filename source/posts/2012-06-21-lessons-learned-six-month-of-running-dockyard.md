@@ -11,6 +11,7 @@ social: true
 summary: "Brian talks about what has worked, what has not worked, and
 the changes that have been made at DockYard during its first six month"
 published: true
+tags: business, consulting
 ---
 
 Before I get into it, I'm writing this because when I was first setting

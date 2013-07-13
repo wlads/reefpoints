@@ -8,6 +8,7 @@ github: bcardarella
 legacy_category: ruby
 social: true
 summary: Clean up your specs with let and subject
+tags: testing
 ---
 
 If you've been writing [RSpec](https://www.relishapp.com/rspec) for any

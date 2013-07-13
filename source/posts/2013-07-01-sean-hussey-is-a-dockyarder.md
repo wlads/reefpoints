@@ -9,6 +9,7 @@ legacy_category: announcement
 social: true
 summary: 'We snag one of the tallest guys in Ruby'
 published: true
+tags: office
 ---
 
 ![Sean Hussey](/images/hussey.png)

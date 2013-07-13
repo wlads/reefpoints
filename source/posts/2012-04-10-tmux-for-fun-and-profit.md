@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "Pair programming at distance"
 published: true
+tags: workflow
 ---
 
 ## Screen - the gateway drug ##

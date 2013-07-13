@@ -7,6 +7,7 @@ twitter: bcardarella
 github: bcardarella
 summary: A simple extraction from ClientSideValidations
 legacy_category: ruby
+tags: javascript
 social: true
 ---
 

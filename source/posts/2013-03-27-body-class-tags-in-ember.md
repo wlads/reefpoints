@@ -9,6 +9,7 @@ legacy_category: ember
 social: true
 summary: "For design!"
 published: true
+tags: javascript, design
 ---
 
 Our [designer](http://twitter.com/cssboy) likes to use body class tags

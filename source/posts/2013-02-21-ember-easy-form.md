@@ -9,6 +9,7 @@ legacy_category: ember
 social: true
 summary: "A SimpleForm-like FormBuilder for Ember"
 published: true
+tags: javascript, ember libraries
 ---
 
 [View the project on GitHub](https://github.com/dockyard/ember-easyForm)

@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "A look at the new Queueing API"
 published: true
+tags: ruby on rails
 ---
 
 Recently a [queueing system was added to Rails](https://github.com/rails/rails/commit/adff4a706a5d7ad18ef05303461e1a0d848bd662).

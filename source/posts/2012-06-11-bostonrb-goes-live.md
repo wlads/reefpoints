@@ -8,6 +8,7 @@ github: bcardarella
 legacy_category: ruby
 summary: Live streaming and expansion comes to BostonRB
 social: true
+tags: community
 ---
 
 ![BostonRB](/images/bostonrb.png)

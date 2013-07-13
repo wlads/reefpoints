@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: 'An ActiveRecord mixin for safe destroys'
 published: true
+tags: ruby on rails, gems
 ---
 
 [See the project on GitHub](https://github.com/dockyard/destroyed_at)

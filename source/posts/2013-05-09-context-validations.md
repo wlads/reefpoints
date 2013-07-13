@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: An alternative to the normal Rails validations
 published: true
+tags: ruby on rails, gems
 ---
 
 I just released a new [gem called ContextValidations](https://github.com/dockyard/context_validations)

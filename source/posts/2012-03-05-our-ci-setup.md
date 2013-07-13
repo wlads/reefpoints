@@ -9,6 +9,7 @@ legacy_category: ruby
 social: true
 summary: "What we are doing to keep our developers honest with their tests"
 published: true
+tags: testing, linux
 ---
 
 When I started at DockYard, Brian tasked me with setting up a continous

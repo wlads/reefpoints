@@ -8,6 +8,7 @@ github: bcardarella
 summary: Using the Strategy Pattern to clean up multiple login paths
 legacy_category: ruby
 social: true
+tags: ruby onr rails, software design patterns
 ---
 
 A current project requires that there be multiple models that can sign
