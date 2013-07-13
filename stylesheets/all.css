@@ -363,13 +363,32 @@ strong {
   margin: 0 auto 2em; }
 
 /* line 309, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
-h1.author-name, h1.tag-name {
+h1.author-name, h1.tag-name, h1.categories, h1.authors {
   font-family: cubano, sans-serif;
   text-align: center;
   font-size: 2.5em;
   line-height: 1.15em;
   margin-bottom: 0.75em;
   margin-top: 0.75em; }
+
+/* line 317, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+ul.categories, ul.authors {
+  list-style-type: disc;
+  width: 500px;
+  margin: 0 auto; }
+  /* line 321, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+  ul.categories a, ul.authors a {
+    font-weight: bold; }
+    /* line 323, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+    ul.categories a span.count, ul.authors a span.count {
+      font-weight: normal;
+      margin-left: 10px; }
+    /* line 326, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+    ul.categories a:hover, ul.authors a:hover {
+      text-decoration: underline; }
+      /* line 328, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+      ul.categories a:hover span.count, ul.authors a:hover span.count {
+        text-decoration: none; }
 /* line 1, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .header-logo, .main-nav-item, .mobile-nav-icon, .menu-button {
   color: white; }
