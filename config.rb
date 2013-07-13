@@ -41,6 +41,7 @@ set :markdown, :layout_engine => :erb, :fenced_code_blocks => true, :lax_html_bl
 activate :highlighter
 activate :author_pages
 activate :legacy_category
+ignore 'author.html.haml'
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
