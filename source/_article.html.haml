@@ -4,7 +4,7 @@
     %p.index-author= link_to article.author, author_path(article.author)
     - if article.comments
       %h4
-        %a.index-comments{href: '#disqus_thread'}.
+        %a.index-comments{href: "#{article.url}#disqus_thread"}.
   .index-post
     %h2= link_to article.title, article, class: 'index-title'
     - if article.summary
