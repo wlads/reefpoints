@@ -23,11 +23,11 @@
         = yield
 
       %p.issue
-        See a problem with the current_page? &nbsp;
-        %a{href: 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/', target: '_blank'} Send a pull request to contribute, we'll happily accept!
+        See a problem with the current page? &nbsp;
+        %a{href: 'https://github.com/dockyard/reefpoints/blob/master/source/posts/', target: '_blank'} Send a pull request to contribute, we'll happily accept!
 
       %section.post-share
-        %h1 Like the current_page? Please share!
+        %h1 Like the current page? Please share!
         .social-button
           %a.twitter-share-button{href: 'https://twitter.com/share', data: { url: "http://reefpoints.dockyard.com/#{current_page.path}", via: 'DockYard' }} Tweet
         :javascript
@@ -54,5 +54,5 @@
     var path = window.location.pathname.split('/').reverse();
     var postname = path[0].split('.');
     var change = postname[0] + '.md';
-    var newpath = 'https://github.com/dockyard/reefpoints/blob/gh-pages/_posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+    var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
     $('.issue a').attr('href', newpath);
