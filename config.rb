@@ -63,7 +63,7 @@ set :markdown, :layout_engine => :erb, :fenced_code_blocks => true, :lax_html_bl
 activate :highlighter
 activate :author_pages
 activate :legacy_category
-activate :asset_hash
+activate :asset_hash, ignore: /images/
 ignore 'author.html.haml'
 page 'sitemap.xml', layout: false
 
