@@ -5,4 +5,4 @@
       %li
         = link_to tag_path(tag) do
           #{tag_name(tag)}
-          %span.count (#{page_articles.select { |article| article.tags.include?(tag) }.size })
+          %span.count (#{tag_count(tag)})

@@ -32,8 +32,14 @@ end
 helpers do
   def tag_links(tags)
     tags.map do |tag|
-      link_to tag_name(tag), tag_path(tag), class: 'tag-link'
+      link_to tag_path(tag), class: 'tag-link' do
+        "#{tag_name(tag)} (#{tag_count(tag)})"
+      end
     end.join(', ')
+  end
+
+  def tag_count(tag)
+    page_articles.select { |article| article.tags.include?(tag) }.size
   end
 
   def tag_name(tag)
