@@ -50,30 +50,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: cubano;
-  src: url("/fonts/cubano.eot");
-  src: url("/fonts/cubano.ttf");
-  src: url("/fonts/cubano.eot?#iefix") format("embedded-opentype"), url("/fonts/cubano.woff") format("woff"), url("/fonts/cubano.svg") format("svg");
+  src: url("/fonts/cubano-0c978f61.eot");
+  src: url("/fonts/cubano-21ee28a2.ttf");
+  src: url("/fonts/cubano-0c978f61.eot?#iefix") format("embedded-opentype"), url("/fonts/cubano-90fd16da.woff") format("woff"), url("/fonts/cubano-810a79ba.svg") format("svg");
   font-weight: normal; }
 
 @font-face {
   font-family: leaguegothic;
-  src: url("/fonts/leaguegothic.eot");
-  src: url("/fonts/leaguegothic.ttf");
-  src: url("/fonts/leaguegothic.eot?#iefix") format("embedded-opentype"), url("/fonts/leaguegothic.woff") format("woff"), url("/fonts/leaguegothic.svg") format("svg");
+  src: url("/fonts/leaguegothic-b0dde0c6.eot");
+  src: url("/fonts/leaguegothic-592aeab8.ttf");
+  src: url("/fonts/leaguegothic-b0dde0c6.eot?#iefix") format("embedded-opentype"), url("/fonts/leaguegothic-0ef587a6.woff") format("woff"), url("/fonts/leaguegothic-2387d402.svg") format("svg");
   font-weight: normal; }
 
 @font-face {
   font-family: fontello;
-  src: url("/fonts/fontello.eot");
-  src: url("/fonts/fontello.ttf");
-  src: url("/fonts/fontello.eot?#iefix") format("embedded-opentype"), url("/fonts/fontello.woff") format("woff"), url("/fonts/fontello.svg") format("svg");
+  src: url("/fonts/fontello-a355cb48.eot");
+  src: url("/fonts/fontello-c9a49f73.ttf");
+  src: url("/fonts/fontello-a355cb48.eot?#iefix") format("embedded-opentype"), url("/fonts/fontello-4385ad19.woff") format("woff"), url("/fonts/fontello-e7432851.svg") format("svg");
   font-weight: normal; }
 
 @font-face {
   font-family: candyscript;
-  src: url("/fonts/candyscript.eot");
-  src: url("/fonts/candyscript.ttf");
-  src: url("/fonts/candyscript.eot?#iefix") format("embedded-opentype"), url("/fonts/candyscript.woff") format("woff"), url("/fonts/candyscript.svg") format("svg");
+  src: url("/fonts/candyscript-087abc55.eot");
+  src: url("/fonts/candyscript-d1dc5527.ttf");
+  src: url("/fonts/candyscript-087abc55.eot?#iefix") format("embedded-opentype"), url("/fonts/candyscript-a885d2b5.woff") format("woff"), url("/fonts/candyscript-59728705.svg") format("svg");
   font-weight: normal; }
 
 /* line 74, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
