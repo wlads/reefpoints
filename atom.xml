@@ -17,7 +17,7 @@
     <author>
       <name>Doug Yun</name>
     </author>
-    <summary type="html">Exploring design patterns and their use cases</summary>
+    <summary>Exploring design patterns and their use cases</summary>
     <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;As the field of software development grows, we developers are
@@ -433,7 +433,7 @@ helps keep our code clean by the use of inheritance.&lt;/p&gt;
     <author>
       <name>Marin Abernethy</name>
     </author>
-    <summary type="html">Our summer intern shares her thoughts on her first month with us</summary>
+    <summary>Our summer intern shares her thoughts on her first month with us</summary>
     <content type="html">&lt;p&gt;I came to the programming party a little late in my &lt;a href="http://www.trincoll.edu/Pages/default.aspx"&gt;college&lt;/a&gt; career, 
 only having a year and a half of classroom experience under my belt. Due
 to my limited CS background, I was rather anxious to start work at a
@@ -479,7 +479,7 @@ thoroughly look forward to the rest of the summer.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard absorbs Dobot!</summary>
+    <summary>DockYard absorbs Dobot!</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/steven-trevathan.jpg" alt="Steven"&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;#39;m very happy to announce today that DockYard has joined forces with
@@ -505,7 +505,7 @@ together a formal concept design process for us.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard absorbs Dobot!</summary>
+    <summary>DockYard absorbs Dobot!</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/logan-faerber.jpg" alt="Logan"&gt;
 Along with his other fellow Dobot-er we welcome Logan Faerber to the
 DockYard team today!&lt;/p&gt;
@@ -530,7 +530,7 @@ are excited to have his unique talents at DockYard.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Joining forces</summary>
+    <summary>Joining forces</summary>
     <content type="html">&lt;p&gt;Today I&amp;#39;m very happy to announce that we have acquired local design firm
 &lt;a href="http://dobotdo.com"&gt;Dobot&lt;/a&gt;, its two partners Steven &amp;amp; Logan have joined us full-time.
 This is a huge move for DockYard, and a simple one for Dobot (they have
@@ -552,7 +552,7 @@ Faerber&lt;/a&gt;&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">We snag one of the tallest guys in Ruby</summary>
+    <summary>We snag one of the tallest guys in Ruby</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/hussey.png" alt="Sean Hussey"&gt;
 Today is the first day for Sean Hussey at DockYard. He has been
 contracting with us for the past few months and I was finally able to
@@ -571,7 +571,7 @@ level Ruby experience to our team.&lt;/p&gt;
     <author>
       <name>Michael Dupuis</name>
     </author>
-    <summary type="html">An ActiveRecord mixin for safe destroys</summary>
+    <summary>An ActiveRecord mixin for safe destroys</summary>
     <content type="html">&lt;p&gt;&lt;a href="https://github.com/dockyard/destroyed_at"&gt;See the project on GitHub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;We&amp;#39;ve found that more and more clients are requesting &amp;quot;undestroy&amp;quot;
@@ -605,7 +605,7 @@ GitHub page&lt;/a&gt; .&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Grow baby grow!</summary>
+    <summary>Grow baby grow!</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/dupuis.jpg" alt="Michael"&gt;
 Recently we added another great mind to the DockYard team: Michael
 Dupuis. Mike joins our Boston office and has already been busy building
@@ -622,7 +622,7 @@ some design chops. Welcome Mike!&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Our first developer intern</summary>
+    <summary>Our first developer intern</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/abernethy.jpg" alt="Marin"&gt;
 Marin comes to us as from Trinity College for the summer. We&amp;#39;ve been
 overwhelming her with Ruby, Linux, SQL, JavaScript, and VIM. She&amp;#39;s
@@ -639,7 +639,7 @@ remainder of the summer.&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft</summary>
+    <summary>We sent a group of developers to the Ember.js training that Tilde taught at Bocoup Loft</summary>
     <content type="html">&lt;p&gt;A couple weeks ago, Yehuda Katz and Tom Dale of &lt;a href="http://tilde.io"&gt;Tilde&lt;/a&gt; ran
 their 3-day &lt;a href="http://www.tilde.io/training/"&gt;Introduction to Ember.js Training&lt;/a&gt;
 at &lt;a href="http://bocoup.com/"&gt;Bocoup&lt;/a&gt; here in Boston. I, along with Amanda,
@@ -714,7 +714,7 @@ any upcoming side projects, to really explore it further. &lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">An alternative to the normal Rails validations</summary>
+    <summary>An alternative to the normal Rails validations</summary>
     <content type="html">&lt;p&gt;I just released a new &lt;a href="https://github.com/dockyard/context_validations"&gt;gem called ContextValidations&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ContextValidations allows you to set validations on the instance of
@@ -949,7 +949,7 @@ now I am happy with the direction.&lt;/p&gt;
     <author>
       <name>Amanda Cheung</name>
     </author>
-    <summary type="html">What I've learned by making a few responsive websites - Part 1</summary>
+    <summary>What I've learned by making a few responsive websites - Part 1</summary>
     <content type="html">&lt;p&gt;Things I have learned about the design process of making responsive websites:&lt;/p&gt;
 
 &lt;h2&gt;Design Mobile First&lt;/h2&gt;
@@ -976,7 +976,7 @@ now I am happy with the direction.&lt;/p&gt;
     <author>
       <name>Tyler Loch</name>
     </author>
-    <summary type="html">The basics of collecting and writing user stories.</summary>
+    <summary>The basics of collecting and writing user stories.</summary>
     <content type="html">&lt;h2&gt;User Story Writing Basics&lt;/h2&gt;
 
 &lt;p&gt;The goal in writing user stories is to establish a human voice at every step of the development process. This can be a difficult picture for technically minded developers to imagine, who base a majority of their decisions on logic and efficiency. Each story must determine one of the functions that a finalized product will perform while also acknowledging the social and cultural context surrounding that function.&lt;/p&gt;
@@ -1012,7 +1012,7 @@ now I am happy with the direction.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Work at DockYard building Ember.js apps!</summary>
+    <summary>Work at DockYard building Ember.js apps!</summary>
     <content type="html">&lt;p&gt;We are looking for an Ember.js Developer. Our ideal
 candidate:&lt;/p&gt;
 
@@ -1059,7 +1059,7 @@ fulltime Ember.js developer.&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Test your gem against the latest PostgreSQL version (or an older one)</summary>
+    <summary>Test your gem against the latest PostgreSQL version (or an older one)</summary>
     <content type="html">&lt;p&gt;I spent most of yesterday trying to get PostgreSQL 9.2 running &lt;a href="http://travis-ci.org"&gt;Travis-CI&lt;/a&gt;.
 After almost 30 attempts, I successfully tested &lt;a href="https://github.com/dockyard/postgres_ext"&gt;postgres_ext&lt;/a&gt; against PostgreSQL 9.2.&lt;/p&gt;
 
@@ -1185,7 +1185,7 @@ to postgres_ext, which was added in 9.2. You should be able use this
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">For design!</summary>
+    <summary>For design!</summary>
     <content type="html">&lt;p&gt;Our &lt;a href="http://twitter.com/cssboy"&gt;designer&lt;/a&gt; likes to use body class tags
 depending upon the context of the app he is designing. We&amp;#39;re currently
 building an Ember app and this is how I got it working:&lt;/p&gt;
@@ -1236,7 +1236,7 @@ building an Ember app and this is how I got it working:&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Prevent new indexes from locking up your tables</summary>
+    <summary>Prevent new indexes from locking up your tables</summary>
     <content type="html">&lt;p&gt;PostgreSQL allows you to &lt;a href="http://www.postgresguide.com/performance/indexes.html#create-index-concurrently"&gt;create your indexes
 concurrently&lt;/a&gt;
 so that your table isn&amp;#39;t locked as the index builds. This allows you to
@@ -1281,7 +1281,7 @@ issues, &lt;a href="https://github.com/dockyard/postgres_ext/issue"&gt;open an i
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">We built an App Store for Heroku, got bored with it, and now open sourced it</summary>
+    <summary>We built an App Store for Heroku, got bored with it, and now open sourced it</summary>
     <content type="html">&lt;p&gt;&lt;a href="https://github.com/dockyard/igata"&gt;View the code&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://igata.io"&gt;Try it out!&lt;/a&gt;&lt;/p&gt;
@@ -1360,7 +1360,7 @@ well.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Capybara is broken, they refused to fix. Here is the monkey patch</summary>
+    <summary>Capybara is broken, they refused to fix. Here is the monkey patch</summary>
     <content type="html">&lt;p&gt;I love Capybara, it makes integration testing a breeze. However, one of
 the decisions made for Capybara 2.0 confuses an annoys me. In Capybara
 1.x you could do the following:&lt;/p&gt;
@@ -1433,7 +1433,7 @@ following code into your &lt;code&gt;test_helper.rb&lt;/code&gt;&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Sager!!!!!</summary>
+    <summary>Sager!!!!!</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/mike-sager.png" alt="Sager"&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;#39;m very happy to announce that Mike Sager has joined DockYard! Sager
@@ -1461,7 +1461,7 @@ in politics. &lt;a href="mailto:contact@dockyard.com"&gt;Join us!&lt;/a&gt;&lt;/
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">A SimpleForm-like FormBuilder for Ember</summary>
+    <summary>A SimpleForm-like FormBuilder for Ember</summary>
     <content type="html">&lt;p&gt;&lt;a href="https://github.com/dockyard/ember-easyForm"&gt;View the project on GitHub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the more tedious tasks in Ember is writing forms. It is not
@@ -1607,7 +1607,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">CUD, it isn't just for cows</summary>
+    <summary>CUD, it isn't just for cows</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;This article was last updated on May 28, 2013 and reflects the state
  of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
 that date.&lt;/strong&gt;&lt;/p&gt;
@@ -2114,7 +2114,7 @@ buttonTitle: 'Update'
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Building the Ember app</summary>
+    <summary>Building the Ember app</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;This article was last updated on May 28, 2013 and reflects the state
  of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
 that date.&lt;/strong&gt;&lt;/p&gt;
@@ -2541,7 +2541,7 @@ App.UsersRoute = Ember.Route.extend
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Setting up RailsAPI for writing an Ember App</summary>
+    <summary>Setting up RailsAPI for writing an Ember App</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;This article was last updated on May 28, 2013 and reflects the state
  of Ember (1.0.0-rc4) and the latest build of Ember Data (0.13) as of
 that date.&lt;/strong&gt;&lt;/p&gt;
@@ -2924,7 +2924,7 @@ rails-api g serializer User
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Add simple to implement help text that users can dismiss</summary>
+    <summary>Add simple to implement help text that users can dismiss</summary>
     <content type="html">&lt;p&gt;Have an application where you want to add some help text for the user,
 but they really only need to see it once? With the
 &lt;a href="https://github.com/dockyard/dismissible_helpers"&gt;&lt;code&gt;dismissible_helpers&lt;/code&gt;&lt;/a&gt;
@@ -3116,7 +3116,7 @@ to your model:&lt;/p&gt;
     <author>
       <name>Chris Gill</name>
     </author>
-    <summary type="html">A description of techniques used to integrate with various vendors on a recent DockYard project for the AFL-CIO's Super PAC Worker's Voice.</summary>
+    <summary>A description of techniques used to integrate with various vendors on a recent DockYard project for the AFL-CIO's Super PAC Worker's Voice.</summary>
     <content type="html">&lt;p&gt;There&amp;#39;s no one-size-fits-all approach to integrating with external
 systems because each system comes with its own unique requirements and
 constraints.  This article aims to describe some of the varying
@@ -3211,7 +3211,7 @@ easy&lt;/a&gt;.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Come one, come all!</summary>
+    <summary>Come one, come all!</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/openhack.png" alt="OpenHack"&gt;
 Last night we hosted Boston&amp;#39;s first
 &lt;a href="http://openhack.github.com/"&gt;OpenHack&lt;/a&gt;
@@ -3242,7 +3242,7 @@ announcements.&lt;/p&gt;
     <author>
       <name>Angelo Simeoni</name>
     </author>
-    <summary type="html">The story of how we reimagined our site.</summary>
+    <summary>The story of how we reimagined our site.</summary>
     <content type="html">&lt;div class="one"&gt;
   &lt;div class="content"&gt;
     &lt;h2&gt;Outgrowing simplicity&lt;/h2&gt;
@@ -3285,7 +3285,7 @@ announcements.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Better late than never</summary>
+    <summary>Better late than never</summary>
     <content type="html">&lt;p&gt;I just released &lt;a href="https://github.com/bcardarella/client_side_validations"&gt;ClientSideValidations 3.2&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This is a very big release for the gem, one that took &lt;em&gt;way&lt;/em&gt; too much
@@ -3424,7 +3424,7 @@ removed. Please add &lt;code&gt;ClientSideValidations::Config.disabled_validator
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Returning records based on array elements and network subnets</summary>
+    <summary>Returning records based on array elements and network subnets</summary>
     <content type="html">&lt;p&gt;I created the &lt;a href="https://github.com/dockyard/postgres_ext"&gt;postgres_ext&lt;/a&gt; gem to add ActiveRecord support for 
 PostgreSQL datatypes in Rails 3.2+. So far, I have added support for
 the CIDR, INET, MACADDR, UUID, and array datatypes. &lt;a href="https://github.com/dockyard/postgres_ext/issues"&gt;Please open an issue on GitHub if you&amp;#39;d like other datatypes supported that aren&amp;#39;t currently&lt;/a&gt;.
@@ -3602,7 +3602,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <author>
       <name>Amanda Cheung</name>
     </author>
-    <summary type="html">Animated gif of the evolution of the narwin</summary>
+    <summary>Animated gif of the evolution of the narwin</summary>
     <content type="html">&lt;p&gt;Half narwhal, half penguin. He&amp;#39;s a cute lil&amp;#39; fella with quite the personality. He set the stage for the redesign of our website while becoming DockYard&amp;#39;s new brand mascot.&lt;/p&gt;
 
 &lt;p&gt;The Final Version:
@@ -3621,7 +3621,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Storing arrays natively in PostgreSQL is now supported by Rails</summary>
+    <summary>Storing arrays natively in PostgreSQL is now supported by Rails</summary>
     <content type="html">&lt;p&gt;I&amp;#39;m happy to announce that &lt;a href="https://github.com/rails/rails/pull/7547"&gt;Rails 4.0 now has support for PostgreSQL
 arrays&lt;/a&gt;. You can create an
 array column easily at the time of migration by adding &lt;code&gt;:array =&amp;gt; true&lt;/code&gt;.
@@ -3807,7 +3807,7 @@ postgres_ext and Rails 4.0. Go forth and use arrays in Rails 4.0!&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Doug Yun</summary>
+    <summary>DockYard welcomes Doug Yun</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/doug-yun.png" alt="Doug Yun"&gt;&lt;/p&gt;
 
 &lt;p&gt;Doug has been training with us for the past month and this week we&amp;#39;ve
@@ -3828,7 +3828,7 @@ released him from his cage on the nearest client app. He&amp;#39;s running wild!
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">What to expect when you start hiring</summary>
+    <summary>What to expect when you start hiring</summary>
     <content type="html">&lt;p&gt;In February we made our first full-time hire with Dan McClain. He came
 on board at a time when our company was not very stable but we needed to
 grow to accomodate the larger contracts we wanted. I want to discuss the
@@ -3994,7 +3994,7 @@ perspective, or any general advice I&amp;#39;d love to hear it.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">How to send your emails using the new Rails 4.0 Queue</summary>
+    <summary>How to send your emails using the new Rails 4.0 Queue</summary>
     <content type="html">&lt;p&gt;My previous &lt;a href="http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html"&gt;deep dive into the Rails 4.0 Queueing system&lt;/a&gt;
  was motivated by a patch to Rails I was working on while at &lt;a href="http:/railscamps.org"&gt;RailsCamp New England&lt;/a&gt; this past weekend. I&amp;#39;m happy to say that &lt;a href="https://github.com/rails/rails/pull/6839"&gt;Rails 4.0 now has an optional asynchronous ActionMailer&lt;/a&gt;.&lt;/p&gt;
 
@@ -4097,7 +4097,7 @@ Plante&lt;/a&gt;&amp;#39;s
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">A look at the new Queueing API</summary>
+    <summary>A look at the new Queueing API</summary>
     <content type="html">&lt;p&gt;Recently a &lt;a href="https://github.com/rails/rails/commit/adff4a706a5d7ad18ef05303461e1a0d848bd662"&gt;queueing system was added to Rails&lt;/a&gt;.
 Let&amp;#39;s dive in and see how to use it.&lt;/p&gt;
 
@@ -4364,7 +4364,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <author>
       <name>Amanda Cheung</name>
     </author>
-    <summary type="html">Getting started in Ruby on Rails</summary>
+    <summary>Getting started in Ruby on Rails</summary>
     <content type="html">&lt;p&gt;Eight days ago, I hardly had an idea of what &amp;quot;object-oriented&amp;quot; meant. The MVC framework was beyond me, and the thought of having to go in to the Command Line? Yikes. Since joining DockYard, I have been reading &amp;quot;Agile Web Development with Rails&amp;quot; to get a grasp on both Ruby and Rails. Having only coded in HTML, CSS and a bit of JavaScript prior to starting, my bearings were a bit shaken. But since stressing out is not for me, I said to myself, &amp;quot;Everyone was a beginner at one point,&amp;quot; and chugged along. Even though I didn&amp;#39;t fully understand the lines of code as I followed along with the book, I made sure I typed out the edits so I could at least get used to the syntax. With the help of my fellow DockYarders, it is all starting to come together. Needless to say, there were several hiccups. To name a couple, install and setting up my machine wasn&amp;#39;t a breeze. There was also an update to Rails that wasn&amp;#39;t included in the book (the mass-assignment feature) where an extra line of code was needed to make the app work.&lt;/p&gt;
 
 &lt;p&gt;For those Ruby-beginners like me, don&amp;#39;t get discouraged! Getting stuck? A great place to come for help is at &lt;a href="http://bostonrb.org/"&gt;Boston Ruby Group&amp;#39;s Project Nights&lt;/a&gt; if you are in the Boston area. &lt;/p&gt;
@@ -4379,7 +4379,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Brian talks about what has worked, what has not worked, and the changes that have been made at DockYard during its first six month</summary>
+    <summary>Brian talks about what has worked, what has not worked, and the changes that have been made at DockYard during its first six month</summary>
     <content type="html">&lt;p&gt;Before I get into it, I&amp;#39;m writing this because when I was first setting
 out with DockYard there was little to no guidance. It seems that most
 agencies are hush-hush on how they work internally. Or I just suck at
@@ -4663,7 +4663,7 @@ always looking to improve.&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Announcing postgres_ext, a gem that adds support for PostgreSQL data types to ActiveRecord</summary>
+    <summary>Announcing postgres_ext, a gem that adds support for PostgreSQL data types to ActiveRecord</summary>
     <content type="html">&lt;p&gt;Over the past few weeks, I have been working on a new gem which adds
 support to Rail&amp;#39;s ActiveRecord for PostgreSQL&amp;#39;s native data types. I am
 happy to announce that I have released the
@@ -4852,7 +4852,7 @@ INET and CIDR comparisons.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Amanda Cheung</summary>
+    <summary>DockYard welcomes Amanda Cheung</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/amanda-cheung.png" alt="Amanda Cheung"&gt;&lt;/p&gt;
 
 &lt;p&gt;Yesterday was Amanda&amp;#39;s first day with DockYard, she joins our growing
@@ -4871,7 +4871,7 @@ skills and much needed illustration skills.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Live streaming and expansion comes to BostonRB</summary>
+    <summary>Live streaming and expansion comes to BostonRB</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/bostonrb.png" alt="BostonRB"&gt;&lt;/p&gt;
 
 &lt;p&gt;Starting tomorrow night (June 12th, 2012) &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt;
@@ -4923,7 +4923,7 @@ option.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Chris Gill</summary>
+    <summary>DockYard welcomes Chris Gill</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/chris-gill.png" alt="Chris Gill"&gt;&lt;/p&gt;
 
 &lt;p&gt;Today I&amp;#39;m happy to announce that Chris Gill is joining our team!
@@ -4948,7 +4948,7 @@ located in DC and we hope to soon build out a team in that area.&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Support added to ActiveRecord for INET, CIDR and MACADDR types for PostgreSQL</summary>
+    <summary>Support added to ActiveRecord for INET, CIDR and MACADDR types for PostgreSQL</summary>
     <content type="html">&lt;p&gt;This week, I had a &lt;a href="https://github.com/rails/rails/commit/835df6f3ed9b1575fd6a1fb62516d8ebeffbf114#diff-0"&gt;pull request accepted&lt;/a&gt;
 into Rails which adds support for
 &lt;a href="http://www.postgresql.org/docs/current/static/datatype-net-types.html"&gt;PostgreSQL&amp;#39;s MACADDR, INET, and CIDR datatypes&lt;/a&gt;.
@@ -4985,7 +4985,7 @@ while MACADDR will continue to be converted to a string.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">A clean helper for giving visual feedback on long sleeps in your request tests</summary>
+    <summary>A clean helper for giving visual feedback on long sleeps in your request tests</summary>
     <content type="html">&lt;p&gt;We have been using &lt;a href="http://github.com/thoughtbot/capybara-webkit"&gt;capybara-webkit&lt;/a&gt; quite a bit.
 Because of the async nature of JavaScript you sometimes have to use
 &lt;a href="http://rubydoc.org/stdlib/core/1.9.2/Kernel#sleep-instance_method"&gt;sleeps&lt;/a&gt; in your tests if the action is taking longer than the default
@@ -5025,7 +5025,7 @@ much time was remaining. So I whipped up the following:&lt;/p&gt;
     <author>
       <name>Russ Jones</name>
     </author>
-    <summary type="html">Throwing them together in a way that makes sense.</summary>
+    <summary>Throwing them together in a way that makes sense.</summary>
     <content type="html">&lt;p&gt;I often meet Rails developers that have unwittingly jumped on the unobtrusive javascript bandwagon. 
 They throw &amp;#39;:remote =&amp;gt; true&amp;#39; on a form and benefit from its conventions, but don&amp;#39;t know how to make it really work for them. 
 They&amp;#39;re probably still inclined to write out procedural jQuery code the same way they were doing it before &lt;a href="https://github.com/rails/jquery-ujs"&gt;jquery-ujs&lt;/a&gt; became popular. 
@@ -5178,7 +5178,7 @@ Here&amp;#39;s a quick example of how Backbone views can listen for jquery-ujs c
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">Pair programming at distance</summary>
+    <summary>Pair programming at distance</summary>
     <content type="html">&lt;h2&gt;Screen - the gateway drug&lt;/h2&gt;
 
 &lt;p&gt;I had been using &lt;a href="http://www.gnu.org/software/screen"&gt;screen&lt;/a&gt; for a while to multiplex my terminal when
@@ -5260,7 +5260,7 @@ an issue.&lt;/p&gt;
     <author>
       <name>Russ Jones</name>
     </author>
-    <summary type="html">Russ lays down a use case for ActiveRecord association extensions</summary>
+    <summary>Russ lays down a use case for ActiveRecord association extensions</summary>
     <content type="html">&lt;p&gt;It&amp;#39;s common in Rails to use a &lt;code&gt;has_many :through&lt;/code&gt; relationship to model User/Group Memberships. 
 Sometimes we have extra data in the join that we would like to make use of, but getting that 
 data in there can be combersome depending on our approach. For example, given the
@@ -5539,7 +5539,7 @@ role assignment of &amp;#39;admin&amp;#39;.&lt;/p&gt;
     <author>
       <name>Dan McClain</name>
     </author>
-    <summary type="html">What we are doing to keep our developers honest with their tests</summary>
+    <summary>What we are doing to keep our developers honest with their tests</summary>
     <content type="html">&lt;p&gt;When I started at DockYard, Brian tasked me with setting up a continous
 integration (CI) server so that we could keep an eye on our RSpec test
 suite. We went with Jenkins since we are writing client code, so
@@ -5633,7 +5633,7 @@ have jenkins notify us of builds in a way that makes more sense.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Dan McClain</summary>
+    <summary>DockYard welcomes Dan McClain</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/dan-mcclain.png" alt="Dan McClain"&gt;&lt;/p&gt;
 
 &lt;p&gt;Today I&amp;#39;m happy to announce that Dan McClain is joining our team! I&amp;#39;ve
@@ -5662,7 +5662,7 @@ of Jenkins and keeping us honest with our test suites.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">A simple pattern for extending your Rails Engines in your app</summary>
+    <summary>A simple pattern for extending your Rails Engines in your app</summary>
     <content type="html">&lt;p&gt;We&amp;#39;ve started extracting simple behavior into Rails Engines lately. An
 example of this is our
 &lt;a href="https://github.com/dockyard/invitable"&gt;Invitable&lt;/a&gt; engine. As you may
@@ -5941,7 +5941,7 @@ defeat the purpose of using the engine in the first place.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">An opinion on when to use the different quoting styles with some performance notes</summary>
+    <summary>An opinion on when to use the different quoting styles with some performance notes</summary>
     <content type="html">&lt;p&gt;I have a simple rule when it comes to strings: I always start out with
 single quotes&lt;/p&gt;
 &lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
@@ -6080,7 +6080,7 @@ you may want to consider other options.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Clean up your specs with let and subject</summary>
+    <summary>Clean up your specs with let and subject</summary>
     <content type="html">&lt;p&gt;If you&amp;#39;ve been writing &lt;a href="https://www.relishapp.com/rspec"&gt;RSpec&lt;/a&gt; for any
 period of time I&amp;#39;m sure you&amp;#39;ve come across &lt;a href="https://www.relishapp.com/rspec/rspec-core/v/2-8/docs/helper-methods/let-and-let"&gt;let&lt;/a&gt; and &lt;a href="https://www.relishapp.com/rspec/rspec-core/v/2-8/docs/subject/explicit-subject"&gt;subject&lt;/a&gt;. (please take a moment to check out the links if you have no idea what I&amp;#39;m talking about) In most cases you can write the same specs with instance variables. For example:&lt;/p&gt;
 &lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
@@ -6145,7 +6145,7 @@ variables in my specs as a smell and you should too.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Patterns for happy hacking</summary>
+    <summary>Patterns for happy hacking</summary>
     <content type="html">&lt;p&gt;&lt;a href="http://blog.codeclimate.com/blog/2012/02/07/what-code-goes-in-the-lib-directory"&gt;Be sure to check out Bryan Helmkamp&amp;#39;s blog post on the same topic&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;lib/&lt;/code&gt; directory is the Red Headed Stepchild of your Rails
@@ -6390,7 +6390,7 @@ concerning the &lt;code&gt;lib/&lt;/code&gt; directory please feel free to comme
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Using the Strategy Pattern to clean up multiple login paths</summary>
+    <summary>Using the Strategy Pattern to clean up multiple login paths</summary>
     <content type="html">&lt;p&gt;A current project requires that there be multiple models that can sign
 in and each one must use the same sign in form. The original
 &lt;code&gt;SessionsController#create&lt;/code&gt; action looked like the following:&lt;/p&gt;
@@ -6581,7 +6581,7 @@ But we&amp;#39;ll cross that road when we get there.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Russ Jones as a partner</summary>
+    <summary>DockYard welcomes Russ Jones as a partner</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/russ-jones.png" alt="Russ Jones"&gt;&lt;/p&gt;
 
 &lt;p&gt;Russ and I met during the first &lt;a href="http://railscamps.com"&gt;Rails Camp New
@@ -6606,7 +6606,7 @@ partner.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">DockYard welcomes Angelo Simeoni as a partner</summary>
+    <summary>DockYard welcomes Angelo Simeoni as a partner</summary>
     <content type="html">&lt;p&gt;&lt;img src="/images/angelo-simeoni.png" alt="Angelo Simeoni"&gt;&lt;/p&gt;
 
 &lt;p&gt;I first met Angelo when we both worked at &lt;a href="http://zendesk.com"&gt;zendesk&lt;/a&gt; two years ago. I had heard about him before this as he had done some redesigns for &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt; website. Over the few months that zendesk was in Boston we got to be friends, and when we both left zendesk I knew this was someone I wanted to work with again in the future. That opportunity came when I moved back to Boston in the summer of 2010. For the past year Angelo and I have been collaborating on several projects and I&amp;#39;m happy to announce that he has agreed to come on as a partner for DockYard.&lt;/p&gt;
@@ -6630,7 +6630,7 @@ how I approach web design.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Brian summarizes the changes to come in ClientSideValidations 3.2.0</summary>
+    <summary>Brian summarizes the changes to come in ClientSideValidations 3.2.0</summary>
     <content type="html">&lt;p&gt;&lt;a href="https://github.com/bcardarella/client_side_validations"&gt;ClientSideValidations&lt;/a&gt; has been gaining popularity over the past few
 months as it is nearing 1000 watchers on Github. With the release of
 Rails 3.2.0 I&amp;#39;ve decided to start extracting out all of the non-Rails
@@ -6733,7 +6733,7 @@ JavaScript MVC frameworks.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html"/>
+    <summary/>
     <content type="html">&lt;p&gt;We have been pretty busy here at DockYard and I haven&amp;#39;t had a chance to
 follow up on the &lt;a href="/2011/12/04/its-not-a-vacation.html"&gt;previous post&lt;/a&gt;&lt;/p&gt;
 
@@ -6785,7 +6785,7 @@ in the future.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html"/>
+    <summary/>
     <content type="html">&lt;h3&gt;DockYard is invading The Ocean State!&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src="/images/ocean_state.jpg" alt="Ocean State"&gt;&lt;/p&gt;
@@ -6819,7 +6819,7 @@ of the week on how things went.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">A simple extraction from ClientSideValidations</summary>
+    <summary>A simple extraction from ClientSideValidations</summary>
     <content type="html">&lt;p&gt;This has a very limited use case, but I needed it for
 &lt;a href="http://github.com/bcardarella/client_side_validations"&gt;ClientSideValidations&lt;/a&gt;. It took a while
 to track down some of the possible conversion issues, I figure someone
@@ -6864,7 +6864,7 @@ them in the comments.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html"/>
+    <summary/>
     <content type="html">&lt;p&gt;This past August &lt;a href="https://github.com/blog/905-edit-like-an-ace"&gt;GitHub released file editing using the Ace code
 editor&lt;/a&gt;. It&amp;#39;s pretty damn
 awesome if you haven&amp;#39;t tried it. Basically, you get
@@ -6895,7 +6895,7 @@ flag&lt;/a&gt;)&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html">Brian summarizes DockYard's experience thus far with mobile web apps and some of the existing challenges to compete with native</summary>
+    <summary>Brian summarizes DockYard's experience thus far with mobile web apps and some of the existing challenges to compete with native</summary>
     <content type="html">&lt;p&gt;Over the past 24 hours I&amp;#39;ve seen several articles (&lt;a href="http://venturebeat.com/2011/11/09/mobile-web/"&gt;1&lt;/a&gt;,&lt;a href="http://www.guardian.co.uk/technology/blog/2011/nov/03/will-html5-replace-native-apps"&gt;2&lt;/a&gt;) on &lt;a href="http://news.ycombinator.com"&gt;Hacker News&lt;/a&gt;
 predicting that in the near future mobile web apps are going to
 replace their native counterparts. Here at DockYard we really hope this
@@ -7074,7 +7074,7 @@ future we all know is just a matter of time.&lt;/p&gt;
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary type="html"/>
+    <summary/>
     <content type="html">&lt;p&gt;DockYard has officialy launched! Hoo-ray!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="/images/hooraybeer.jpg" alt="Hoo-ray!"&gt;&lt;/p&gt;
