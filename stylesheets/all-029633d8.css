@@ -389,6 +389,10 @@ ul.categories, ul.authors {
       /* line 328, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
       ul.categories a:hover span.count, ul.authors a:hover span.count {
         text-decoration: none; }
+
+/* line 331, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/reefpoints.sass */
+.current {
+  background-color: #f17275 !important; }
 /* line 1, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .header-logo, .main-nav-item, .mobile-nav-icon, .menu-button {
   color: white; }
