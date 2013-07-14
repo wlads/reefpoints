@@ -5256,9 +5256,9 @@ an issue.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html</id>
     <published>2012-04-03T00:00:00Z</published>
-    <updated>2013-07-13T14:06:38-04:00</updated>
+    <updated>2013-07-13T22:18:42-04:00</updated>
     <author>
-      <name>Russell Jones</name>
+      <name>Russ Jones</name>
     </author>
     <summary type="html">Russ lays down a use case for ActiveRecord association extensions</summary>
     <content type="html">&lt;p&gt;It&amp;#39;s common in Rails to use a &lt;code&gt;has_many :through&lt;/code&gt; relationship to model User/Group Memberships. 
