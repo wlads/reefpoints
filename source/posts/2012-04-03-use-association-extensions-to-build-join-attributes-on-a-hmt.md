@@ -2,7 +2,7 @@
 layout: post
 title: Use Association Extensions to Build Join Attributes on a HMT
 comments: true
-author: Russell Jones
+author: Russ Jones
 twitter: codeofficer
 github: codeofficer
 summary: Russ lays down a use case for ActiveRecord association extensions

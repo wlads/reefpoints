@@ -1,4 +1,6 @@
 require 'builder'
+require 'middleman-blog/tag_pages'
+
 Dir['./lib/*'].each { |f| require f }
 
 activate :blog do |blog|
@@ -43,24 +45,7 @@ helpers do
   end
 
   def tag_name(tag)
-    case tag
-    when 'ruby on rails'
-      'Ruby on Rails'
-    when 'jquery'
-      'jQuery'
-    when 'postgresql', 'postgres'
-      'PostgreSQL'
-    when 'jquery'
-      'jQuery'
-    when 'javascript'
-      'JavaScript'
-    when 'ember'
-      'Ember.js'
-    when 'backbone'
-      'Backbone.js'
-    else
-      tag.split(' ').map(&:capitalize).join(' ')
-    end
+    Middleman::Blog::TagPages.tag_name(tag)
   end
 end
 

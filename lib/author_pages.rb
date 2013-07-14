@@ -62,7 +62,8 @@ module AuthorPages
         resource.add_metadata :locals => {
           'page_type' => 'author',
           'authorname' => author,
-          'articles' => articles
+          'articles' => articles,
+          'title' => "DockYard ReefPoints - #{author}'s Articles"
         }
 
         resource.add_metadata do
