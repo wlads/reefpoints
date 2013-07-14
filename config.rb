@@ -57,6 +57,7 @@ activate :legacy_category
 activate :asset_hash, ignore: /images/
 ignore 'author.html.haml'
 page 'sitemap.xml', layout: false
+page 'atom.xml', layout: false
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
