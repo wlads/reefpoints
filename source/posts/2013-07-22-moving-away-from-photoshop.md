@@ -14,7 +14,7 @@ tags: software design patterns
 
 We’re not ready to make the shift from Photoshop, *yet*.
 
-The internet doesn’t have the tools to replace Adobe’s Photoshop. Indeed, the times are a changin, but plain and simply put: our tools that aim to replace Photoshop today just suck. I’m not going to compare tools though; I’m going to talk to you about how good mental partitioning can help us design for the web today using with the antiquated tools we’re stuck with.
+The internet doesn’t have the tools to replace Adobe’s Photoshop. Indeed, the times are a changin, but plain and simply put: our tools that aim to replace Photoshop today just suck. I’m not going to compare tools though; I’m going to talk to you about how good mental partitioning can help us design for the web today using the antiquated tools we’re stuck with.
 
 ##An example & the problem
 
@@ -46,6 +46,6 @@ For all intents and purposes this is what we’ve found works best for us *today
 
 Using the pareto principle, we’ll take each step of our design process to 80%, collect feedback, iterate, test as necessary, and then move on to the next. We’ll come back later and spend the remaining 20% working on UI improvements and conduct any additional tests we think necessary.
 
-Your process will very likely look different, and that's OK. I'm sure that ours is not perfect, and as long as the times keep changing, it never will be. The truth is, of course, that design is never done, but let’s first focus on getting to 80%.
+Your process will very likely look different than our's, and that's OK. You'll need to formulate your process around your core talents and purpose. The truth is, of course, that design is never done and the times will always change. We believe the first step is focusomg on getting to 80%.
 
 <span class="italic"><a name="footnote_1"></a>*[1]* We use [Typecast](http://typecast.com/) for testing and discovering typography, [Gridset](https://gridsetapp.com/) for designing our grid, and sometimes [Kuler](https://kuler.adobe.com) for selecting colors but more often than not: Photoshop.</span>
