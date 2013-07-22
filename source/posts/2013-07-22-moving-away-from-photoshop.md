@@ -5,11 +5,10 @@ comments: true
 author: 'Steven Trevathan'
 twitter: 'strevat'
 github: kidfribble
-legacy_category: design
 social: true
 summary: 'Design process needs more design thinking, and less code.'
 published: false
-tags: design process
+tags: design, design process
 ---
 
 We’re not ready to make the shift from Photoshop, *yet*.
@@ -35,16 +34,16 @@ For all intents and purposes this is what we’ve found works best for us *today
 ###Design (80%)
 * Client & user interviews
 * Sketches & paper wireframes
-* Selecting typefaces, grids, and colors. [[1]](#footnote_1)
+* Selecting typefaces, grids, and colors [[1]](#footnote_1)
 * Layout 3 or 4 pages, not “pixel-perfect”
 * Rinse & repeat, focusing on the core of the product and spiral outward, sharing as rapidly as you can
 * Develop designs needed for user-testing & proving concepts
 
 ###Design During Development (20%)
 * Highlight the design patterns & commonalities between your designs and structure html and css accordingly
-* Get a sense of how your UI & navigation feels, improve and iterate as necessary.
+* Get a sense of how your UI & navigation feels, improve and iterate as necessary
 
-Using the pareto principle, we’ll take each step of our design process to 80%, collect feedback, iterate, test as necessary, and then move on to the next. We’ll come back later and spend the remaining 20% working on UI improvements and conduct any additional tests we think necessary.
+Using the Pareto principle, we’ll take each step of our design process to 80%, collect feedback, iterate, test as necessary, and then move on to the next. We’ll come back later and spend the remaining 20% working on UI improvements and conduct any additional tests we think necessary.
 
 Your process will very likely look different than our's, and that's OK. You'll need to formulate your process around your core talents and purpose. The truth is, of course, that design is never done and the times will always change. We believe the first step is focusomg on getting to 80%.
 
