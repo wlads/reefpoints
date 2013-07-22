@@ -45,6 +45,6 @@ For all intents and purposes this is what we’ve found works best for us *today
 
 Using the Pareto principle, we’ll take each step of our design process to 80%, collect feedback, iterate, test as necessary, and then move on to the next. We’ll come back later and spend the remaining 20% working on UI improvements and conduct any additional tests we think necessary.
 
-Your process will very likely look different than our's, and that's OK. You'll need to formulate your process around your core talents and purpose. The truth is, of course, that design is never done and the times will always change. We believe the first step is focusomg on getting to 80%.
+Your process will very likely look different than our's, and that's OK. You'll need to formulate your process around your core talents and purpose. The truth is, of course, that design is never done and the times will always change. We believe the first step is focusing on getting to 80%.
 
 <span class="italic"><a name="footnote_1"></a>*[1]* We use [Typecast](http://typecast.com/) for testing and discovering typography, [Gridset](https://gridsetapp.com/) for designing our grid, and sometimes [Kuler](https://kuler.adobe.com) for selecting colors but more often than not: Photoshop.</span>
