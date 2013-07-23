@@ -15,7 +15,7 @@ tags: software design patterns
 ## Walls are sooooo last week...
 
 In our last post, we discussed the *[Template
-Method](http://reefpoints.dockyard.com/ruby/2012/07/10/design-patterns-template-pattern.html)*
+Method](http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html)*
 pattern and its benefits, finding it most useful when we need to simply shape
 behavior of *subclasses*. However, due to the reliance on *inheritance*,
 there are a couple of limitations to this pattern:
