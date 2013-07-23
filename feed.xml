@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-029633d8.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-eb124df4.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,37 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-07-10T00:00:00Z</updated>
+  <updated>2013-07-23T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Announcing CTO To Go</title>
+    <link rel="alternate" href="/2013/07/23/announcing-cto-to-go.html"/>
+    <id>/2013/07/23/announcing-cto-to-go.html</id>
+    <published>2013-07-23T00:00:00Z</published>
+    <updated>2013-07-23T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Today&amp;#39;s political campaigns and non-profits have deep technology and data requirements, and yet still face the same resource challenges that have always been present. It is with this in mind that DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.&lt;/p&gt;
+
+&lt;p&gt;DockYard&amp;#39;s CTO to Go will allow Democratic campaigns and progressive nonprofits access to our experienced DC team for consulting in the following areas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Technology Infrastructure (Startup, vendor hiring, email/backup)&lt;/li&gt;
+&lt;li&gt;Data Management and Basic Targeting&lt;/li&gt;
+&lt;li&gt;Staff Recruitment&lt;/li&gt;
+&lt;li&gt;24 Hour On Call Emergency Assistance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Too often campaigns and non-profits have no idea where to begin with their technology program. Where do I get a website? Email? Voter File access? Data Management?&lt;/p&gt;
+
+&lt;p&gt;CTO to Go allows campaigns and non-profits immediate and affordable access to independent consultants who&amp;#39;ve been through the process on all levels of campaigns, and who understand the time and cost pressures. And most importantly, when something goes wrong CTO to Go means you have an expert who knows how to quickly troubleshoot and solve the problem.&lt;/p&gt;
+
+&lt;p&gt;CTO to Go is available in 5 hour blocks per month starting at $1250/month. For more details, contact Mike Sager - &lt;a href="mailto:mike@dockyard.com"&gt;mike@dockyard.com&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Design Patterns: The Template Method Pattern</title>
     <link rel="alternate" href="/ruby/2013/07/10/design-patterns-template-pattern.html"/>
@@ -589,24 +616,6 @@ actually need to move anywhere).&lt;/p&gt;
 Trevathan&lt;/a&gt;
 and the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"&gt;Logan
 Faerber&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Sean Hussey is a DockYarder</title>
-    <link rel="alternate" href="/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
-    <id>/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
-    <published>2013-07-01T00:00:00Z</published>
-    <updated>2013-07-01T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/hussey.png" alt="Sean Hussey"&gt;
-Today is the first day for Sean Hussey at DockYard. He has been
-contracting with us for the past few months and I was finally able to
-lock him down recently. Sean and I have known one another for years as
-he hired me for my first Ruby job at
-&lt;a href="http://global.rakuten.com/en/"&gt;RakutenUSA&lt;/a&gt;. He brings years of Sr.
-level Ruby experience to our team.&lt;/p&gt;
 </content>
   </entry>
 </feed>

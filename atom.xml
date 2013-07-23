@@ -4,10 +4,38 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-07-10T00:00:00Z</updated>
+  <updated>2013-07-23T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Announcing CTO To Go</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html"/>
+    <id>http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html</id>
+    <published>2013-07-23T00:00:00Z</published>
+    <updated>2013-07-23T10:47:06-04:00</updated>
+    <author>
+      <name>Mike Sager</name>
+    </author>
+    <summary>DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.</summary>
+    <content type="html">&lt;p&gt;Today&amp;#39;s political campaigns and non-profits have deep technology and data requirements, and yet still face the same resource challenges that have always been present. It is with this in mind that DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.&lt;/p&gt;
+
+&lt;p&gt;DockYard&amp;#39;s CTO to Go will allow Democratic campaigns and progressive nonprofits access to our experienced DC team for consulting in the following areas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Technology Infrastructure (Startup, vendor hiring, email/backup)&lt;/li&gt;
+&lt;li&gt;Data Management and Basic Targeting&lt;/li&gt;
+&lt;li&gt;Staff Recruitment&lt;/li&gt;
+&lt;li&gt;24 Hour On Call Emergency Assistance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Too often campaigns and non-profits have no idea where to begin with their technology program. Where do I get a website? Email? Voter File access? Data Management?&lt;/p&gt;
+
+&lt;p&gt;CTO to Go allows campaigns and non-profits immediate and affordable access to independent consultants who&amp;#39;ve been through the process on all levels of campaigns, and who understand the time and cost pressures. And most importantly, when something goes wrong CTO to Go means you have an expert who knows how to quickly troubleshoot and solve the problem.&lt;/p&gt;
+
+&lt;p&gt;CTO to Go is available in 5 hour blocks per month starting at $1250/month. For more details, contact Mike Sager - &lt;a href="mailto:mike@dockyard.com"&gt;mike@dockyard.com&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Design Patterns: The Template Method Pattern</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
