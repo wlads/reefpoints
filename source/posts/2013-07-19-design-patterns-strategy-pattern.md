@@ -100,24 +100,25 @@ grill.food = VeggiePatty.new
 grill.grilling # => "Grilling the veggie patties!"
 ```
 
-Wasn't that easy? We were able to switch out food types without
+Wasn't that easy? We were able to switch out items without
 creating a new class of `Grill`. 
 
 ## Discussion
 
 ### Strategies and Context
 
-The *Strategy* pattern employs *strategies*, a group of objects that do
-the same thing. Our grill party relies on *strategies* to tell us what
-`#type` of food they were. It's important that all strategy objects have
-the same responsiblity and support the same interface, which in our case
+The *Strategy* pattern employs *strategies*, objects of which
+possess identical behavior. Our grill party relies on *strategies* to
+tell us what `#type` of food they were. It's important that all strategy objects
+have the same responsiblity and support the same interface, which in our case
 was `grill.cook`.
 
-The `Grill` class is our *context* class, the employer of the
-*strategies*, which can use the `HotDog`, `Hamburger`, and `VeggiePatty`
-classes interchangeably.
+The `Grill` class is our *context* class, the operator of the
+*strategies*, which uses the `HotDog#type`, `Hamburger#type`, and
+`VeggiePatty#type` interchangeably.
 
-Through our contrived example, we earn immediate benefits:
+Through our contrived example, we see the immediate benefits of this
+design pattern:
 
 * *Separation of concerns*
 * *Strategies* at runtime
@@ -126,4 +127,46 @@ We've achieved *separation of concerns* by designating the `#type`
 method as our desired set of *strategies*. `HotDog`, `Hamburger` and
 `VeggiePatty`  are unaware of our implementation of `Grill#grilling`.
 
-### Special Patties
+### Special Patties: Lambdas
+
+As we're grilling our hamburger and veggies patties, a last minute guest
+arrives, and she has brought some bacon, jalapeños, and onions.
+Let's make some custom patties, but avoid creating more subclasses of
+`Food`. What could we do here?
+
+A quick and awesome solution would be to use *lambdas*!
+
+Since we expect our *strategies* to return `strings` for food `#type`,
+we can create a *lambda* which will behave just like the other strategy
+objects and return a `string`.
+
+```ruby
+CUSTOMPATTY = lambda { |type| "#{type}" }
+```
+
+Next, let's get back to our `Grill` class and alter the class a little
+bit.
+
+```ruby
+class Grill
+  attr_accessor :food
+
+  def initialize food
+    @food = food
+  end
+
+  def grilling
+    "Grilling the #{print_food}!"
+  end
+
+  private
+
+  def print_food
+    food_is_string? ? food : food.type
+  end
+
+  def food_is_string?
+    food.is_a? String
+  end
+end
+```
