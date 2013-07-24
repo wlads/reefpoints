@@ -110,7 +110,7 @@ The *Strategy* pattern employs *strategies*, objects of which
 possess identical behavior. Our grill party relies on *strategies* to
 tell us what `#type` of food they were. It's important that all strategy objects
 have the same responsiblity and support the same interface, which in our case
-was `grill.cook`.
+was `grill.grilling`.
 
 The `Grill` class is our *context* class, the operator of the
 *strategies*, which uses the `HotDog#type`, `Hamburger#type`, and
