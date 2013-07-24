@@ -5,11 +5,10 @@ comments: true
 author: 'Doug Yun'
 twitter: 'DougYun'
 github: duggiefresh
-legacy_category: ruby
 social: true
 summary: 'Exploring design patterns and their use cases'
 published: false
-tags: software design patterns
+tags: software design patterns, ruby
 ---
 
 ## Walls are sooooo last week...
