@@ -126,6 +126,9 @@ We've achieved *separation of concerns* by designating the `#type`
 method as our desired set of *strategies*. `HotDog`, `Hamburger` and
 `VeggiePatty`  are unaware of our implementation of `Grill#grilling`.
 
+As for runtime flexibility, we're able to switch out the items up on the
+grill.
+
 ### Special Patties: Lambdas
 
 As we're grilling our hamburger and veggies patties, a last minute guest
@@ -135,9 +138,9 @@ Let's make some custom patties, but avoid creating more subclasses of
 
 A quick and awesome solution would be to use *lambdas*!
 
-Since we expect our *strategies* to return `strings` for food `#type`,
+Since we expect our *strategies* to return `Strings` for food `#type`,
 we can create a *lambda* which will behave just like the other strategy
-objects and return a `string`.
+objects and return a `String`.
 
 ```ruby
 CUSTOMPATTY = lambda { |type| "#{type}" }
@@ -169,3 +172,39 @@ class Grill
   end
 end
 ```
+
+Since we know the *strategies* are `Strings`, we've created two
+`private` methods, `#print_food` and `#food_is_string`.
+`#food_is_string` will check if `Grill` has received a
+`String` or not, and `#print_food` will handle *lambdas* or *classes* of
+food.
+
+Now let's try grilling some hot dogs and custom patties!
+
+```ruby
+jalapeños = CUSTOMPATTY.call 'spicy jalapeños patties'
+bacon = CUSTOMPATTY.call 'greasy, yummy bacon patties'
+
+grill = Grill.new jalapeños
+grill.grilling # => "Grilling the spicy jalapeños patties!"
+
+grill.food = bacon
+grill.grilling # => "Grilling the greasy, yummy bacon patties!"
+
+grill.food = HotDog.new
+grill.grilling # => "Grilling the hot dogs!"
+```
+
+### Mmm-mmmm... That is a tasty burger.
+
+The *Strategy* pattern is a delagation-based design pattern, and shares
+some similarities with the *Template Method* pattern. However, instead
+of depending so heavily on inheiritance between a superclass and
+subclasses to use our target algorithm, we take our algorithm and
+consider it as a separate object. As long as we remember the
+relationship between the *strategies* and the *context*, we earn real
+advantages over the *Template Method*, as seen in our custom patty
+example.
+
+I hope you had fun at our day party, and we'll next explore the
+*Observer* pattern.
