@@ -6,7 +6,7 @@ author: 'Mike Sager'
 twitter: 'msager'
 social: true
 summary: 'DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.'
-published: false
+published: true
 tags: politics
 ---
 Today's political campaigns and non-profits have deep technology and data requirements, and yet still face the same resource challenges that have always been present. It is with this in mind that DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.
