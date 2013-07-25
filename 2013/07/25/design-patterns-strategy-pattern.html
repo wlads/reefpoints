@@ -1,0 +1,364 @@
+<!DOCTYPE html><html><head><title>Design Patterns: The Strategy Pattern</title><link href="/stylesheets/all-32d4059d.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Exploring design patterns and their use cases' name='description'><meta content='DougYun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html' name='twitter:url'><meta content='Design Patterns: The Strategy Pattern' name='twitter:title'><meta content='Exploring design patterns and their use cases' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O..
+                                                             OZ..O.
+                                                         ..OO..87.
+                                                        .O7O..O...
+                                                      .O...Z~O.
+                                                   .:Z~. ..Z..
+                                                  +O.O   .8..
+                                     ...       .OO.  O  O?.
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...
+          .....~OOOOOOOOOOOOOOOOO:........
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item current' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/doug-yun.html">Doug Yun</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/DougYun' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/duggiefresh' target='_blank'>g</a></span></li><li class='post-meta post-date'>25 Jul 2013</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/software-design-patterns.html">Software Design Patterns (3)</a>, <a class="tag-link" href="/categories/ruby.html">Ruby (29)</a></p><div class='post-title-wrap'><h1 class='post-title'>Design Patterns: The Strategy Pattern</h1></div><current_page class='post-content'><h2>Walls are sooooo last week...</h2>
+
+<p>In our last post, we discussed the <em><a href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html">Template
+Method</a></em>
+pattern and its benefits, finding it most useful when we need to simply shape
+behavior of <em>subclasses</em>. However, due to the reliance on <em>inheritance</em>,
+there are a couple of limitations to this pattern:</p>
+
+<ul>
+<li>Subclasses are tightly bound to a superclass or baseclass</li>
+<li>Runtime flexibility is hindered</li>
+<li>Only a portion of the desired alogrithm is varied</li>
+</ul>
+
+<p>Thankfully, there is another design pattern that resolves these
+problems: the <em>Strategy</em> pattern.</p>
+
+<h2>Summertime and the Livin&#39; is Easy</h2>
+
+<h3>Hot dogs, hamburgers, and veggie patties</h3>
+
+<p>It&#39;s the middle of July, and there&#39;s no better time to throw a day
+party. Our pals are bringing the tasty beverages, so we just need to prepare the food.</p>
+
+<p>We&#39;ll first create a superclass <code>Food</code> that will delagate <code>#type</code> to its
+subclasses: <code>HotDog</code>, <code>Hamburger</code>, and <code>VeggiePatty</code>. Notice that this
+is the <em><a href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html">Template
+Method</a></em>
+pattern in action.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">Food</span>
+  <span class="keyword">def</span> <span class="function">type</span>
+    raise <span class="constant">NotImplementedError</span>, <span class="string"><span class="delimiter">'</span><span class="content">Ask the subclass</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">HotDog</span> &lt; <span class="constant">Food</span>
+  <span class="keyword">def</span> <span class="function">type</span>
+    <span class="string"><span class="delimiter">'</span><span class="content">hot dogs</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">Hamburger</span> &lt; <span class="constant">Food</span>
+  <span class="keyword">def</span> <span class="function">type</span>
+    <span class="string"><span class="delimiter">'</span><span class="content">hamburgers</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">VeggiePatty</span> &lt; <span class="constant">Food</span>
+  <span class="keyword">def</span> <span class="function">type</span>
+    <span class="string"><span class="delimiter">'</span><span class="content">veggie patties</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now, let&#39;s get the grill ready.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">Grill</span>
+  attr_accessor <span class="symbol">:food</span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span> food
+    <span class="instance-variable">@food</span> = food
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">grilling</span>
+    <span class="string"><span class="delimiter">&quot;</span><span class="content">Grilling the </span><span class="inline"><span class="inline-delimiter">#{</span>food.type<span class="inline-delimiter">}</span></span><span class="content">!</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Nice. Now let&#39;s get grilling! We&#39;ll start with some hot dogs.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre>grill = <span class="constant">Grill</span>.new(<span class="constant">HotDog</span>.new)
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the hot dogs!&quot;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Oh watch out, these dogs are almost done... time to throw on the
+hamburger and veggie patties.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>grill.food = <span class="constant">Hamburger</span>.new
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the hamburgers!&quot;</span>
+
+grill.food = <span class="constant">VeggiePatty</span>.new
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the veggie patties!&quot;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Wasn&#39;t that easy? We were able to switch out items without
+creating a new class of <code>Grill</code>. </p>
+
+<h2>Discussion</h2>
+
+<h3>Strategies and Context</h3>
+
+<p>The <em>Strategy</em> pattern employs <em>strategies</em>, objects of which
+possess identical behavior. Our grill party relies on <em>strategies</em> to
+tell us what <code>#type</code> of food they were. It&#39;s important that all strategy objects
+have the same responsiblity and support the same interface, which in our case
+was <code>grill.grilling</code>.</p>
+
+<p>The <code>Grill</code> class is our <em>context</em> class, the operator of the
+<em>strategies</em>, which uses the <code>HotDog#type</code>, <code>Hamburger#type</code>, and
+<code>VeggiePatty#type</code> interchangeably.</p>
+
+<p>Through our contrived example, we see the immediate benefits of this
+design pattern:</p>
+
+<ul>
+<li><em>Separation of concerns</em></li>
+<li><em>Strategies</em> at runtime</li>
+</ul>
+
+<p>We&#39;ve achieved <em>separation of concerns</em> by designating the <code>#type</code>
+method as our desired set of <em>strategies</em>. <code>HotDog</code>, <code>Hamburger</code> and
+<code>VeggiePatty</code>  are unaware of our implementation of <code>Grill#grilling</code>.</p>
+
+<p>As for runtime flexibility, we&#39;re able to switch out the items up on the
+grill.</p>
+
+<h3>Special Patties: Lambdas</h3>
+
+<p>As we&#39;re grilling our hamburger and veggies patties, a last minute guest
+arrives, and she has brought some bacon, jalapeños, and onions.
+Let&#39;s make some custom patties, but avoid creating more subclasses of
+<code>Food</code>. What could we do here?</p>
+
+<p>A quick and awesome solution would be to use <em>lambdas</em>!</p>
+
+<p>Since we expect our <em>strategies</em> to return <code>Strings</code> for food <code>#type</code>,
+we can create a <em>lambda</em> which will behave just like the other strategy
+objects and return a <code>String</code>.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+</pre></td>
+  <td class="code"><pre><span class="constant">CUSTOMPATTY</span> = lambda { |type| <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>type<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> }
+</pre></td>
+</tr></table>
+</div></div>
+<p>Next, let&#39;s get back to our <code>Grill</code> class and alter the class a little
+bit.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">Grill</span>
+  attr_accessor <span class="symbol">:food</span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span> food
+    <span class="instance-variable">@food</span> = food
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">grilling</span>
+    <span class="string"><span class="delimiter">&quot;</span><span class="content">Grilling the </span><span class="inline"><span class="inline-delimiter">#{</span>print_food<span class="inline-delimiter">}</span></span><span class="content">!</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">end</span>
+
+  private
+
+  <span class="keyword">def</span> <span class="function">print_food</span>
+    food_is_string? ? food : food.type
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">food_is_string?</span>
+    food.is_a? <span class="constant">String</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Since we know the <em>strategies</em> are <code>Strings</code>, we&#39;ve created two
+<code>private</code> methods, <code>#print_food</code> and <code>#food_is_string</code>.
+<code>#food_is_string</code> will check if <code>Grill</code> has received a
+<code>String</code> or not, and <code>#print_food</code> will handle <em>lambdas</em> or <em>classes</em> of
+food.</p>
+
+<p>Now let&#39;s try grilling some hot dogs and custom patties!</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre>jalapeños = <span class="constant">CUSTOMPATTY</span>.call <span class="string"><span class="delimiter">'</span><span class="content">spicy jalapeños patties</span><span class="delimiter">'</span></span>
+bacon = <span class="constant">CUSTOMPATTY</span>.call <span class="string"><span class="delimiter">'</span><span class="content">greasy, yummy bacon patties</span><span class="delimiter">'</span></span>
+
+grill = <span class="constant">Grill</span>.new jalapeños
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the spicy jalapeños patties!&quot;</span>
+
+grill.food = bacon
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the greasy, yummy bacon patties!&quot;</span>
+
+grill.food = <span class="constant">HotDog</span>.new
+grill.grilling <span class="comment"># =&gt; &quot;Grilling the hot dogs!&quot;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<h3>Mmm-mmmm... That is a tasty burger.</h3>
+
+<p>The <em>Strategy</em> pattern is a delagation-based design pattern, and shares
+some similarities with the <em>Template Method</em> pattern. However, instead
+of depending so heavily on inheiritance between a superclass and
+subclasses to use our target algorithm, we take our algorithm and
+consider it as a separate object. As long as we remember the
+relationship between the <em>strategies</em> and the <em>context</em>, we earn real
+advantages over the <em>Template Method</em>, as seen in our custom patty
+example.</p>
+
+<p>I hope you had fun at our day party, and we&#39;ll next explore the
+<em>Observer</em> pattern.</p>
+</current_page><p class='issue'>See a problem with the current page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>
