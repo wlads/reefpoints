@@ -5,10 +5,10 @@ comments: true
 author: Angelo Simeoni
 github: cssboy
 twitter: cssboy
-legacy_category: design
 social: true
 summary: "The little grid framework that can"
 published: false
+tags: design
 ---
 
 I've often lamented that one of the most challenging things to do on the front end is to put things next to other things. Things on top of things? Easy. Things by themselves? Piece of cake. This thing next to that thing? Things just got complicated.
