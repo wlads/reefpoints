@@ -4,10 +4,105 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-07-25T00:00:00Z</updated>
+  <updated>2013-07-29T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Putting things next to things with Susy</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html"/>
+    <id>http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html</id>
+    <published>2013-07-29T00:00:00Z</published>
+    <updated>2013-07-31T13:54:54-04:00</updated>
+    <author>
+      <name>Angelo Simeoni</name>
+    </author>
+    <summary>The little grid framework that can</summary>
+    <content type="html">&lt;p&gt;I&amp;#39;ve often lamented that one of the most challenging things to do on the front end is to put things next to other things. Things on top of things? Easy. Things by themselves? Piece of cake. This thing next to that thing? Things just got complicated.&lt;/p&gt;
+
+&lt;p&gt;Should you roll your own layout, coming up with and refining conventions, browser testing to make sure everything still works? Do you rely on a front-end framework and all of the cluttered, confusing markup that comes going from that route? &lt;/p&gt;
+
+&lt;p&gt;What about something different? This is where Susy saves the day.&lt;/p&gt;
+
+&lt;h2&gt;The little framework that can&lt;/h2&gt;
+
+&lt;p&gt;Susy is a grid framework for Compass. With Susy, you simply define your grid settings and start laying things out. If you want to come back and adjust your grid later, that&amp;#39;s totally fine. Susy will recalculate all your layouts.&lt;/p&gt;
+&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;total-columns&lt;/span&gt;: &lt;span class="float"&gt;12&lt;/span&gt;
+&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;column-width&lt;/span&gt;: &lt;span class="float"&gt;4em&lt;/span&gt;
+&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;gutter-width&lt;/span&gt;: &lt;span class="float"&gt;1em&lt;/span&gt;
+&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;grid-padding&lt;/span&gt;: &lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;gutter-width&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Two main mixins do the bulk of the lifting. These are &amp;#39;container&amp;#39; and &amp;#39;span-columns&amp;#39;. Container is used to define the container of the grid. Span-columns is applied to elements within a container context. The syntax is easy.&lt;/p&gt;
+&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;.page&lt;/span&gt;
+  +&lt;span class="tag"&gt;container&lt;/span&gt;
+  &lt;span class="tag"&gt;article&lt;/span&gt;
+    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;8&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
+  &lt;span class="tag"&gt;aside&lt;/span&gt;
+    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;4&lt;/span&gt; &lt;span class="tag"&gt;omega&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This makes &amp;#39;.page&amp;#39; the grid container. The article takes up eight of twelve columns, the aside the final (omega) four of twelve columns.&lt;/p&gt;
+
+&lt;p&gt;Susy really shines at figuring stuff out on its own. Say I wanted to have two columns of different widths with different padding for each column, both nested within the article above?&lt;/p&gt;
+&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;article&lt;/span&gt;
+  +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;8&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
+  &lt;span class="class"&gt;.one&lt;/span&gt;
+    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;3&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="float"&gt;1em&lt;/span&gt;)
+  &lt;span class="class"&gt;.two&lt;/span&gt;
+    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;4&lt;/span&gt; &lt;span class="tag"&gt;omega&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="class"&gt;.5em&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Where did the seven columns come from? Susy doesn&amp;#39;t care. They are within the context of the article. Susy will figure out the math and make seven columns. The third option is the column padding. Susy will do the math there too. Thanks, Susy!&lt;/p&gt;
+
+&lt;h2&gt;Susy, breakpoints and you&lt;/h2&gt;
+
+&lt;p&gt;Susy is made to build responsive grids. The default layout is called &amp;#39;magic&amp;#39;. It&amp;#39;s a fixed width layout that fluidly scales if the viewport is smaller than the width of the grid. You can also opt for a fully fluid layout, or a static layout for pixel precision.&lt;/p&gt;
+
+&lt;p&gt;Any of these layouts can be further modified with the +at-breakpoint mixin. This mixin makes accessing media queries within the context of our grid simple and straightforward.&lt;/p&gt;
+&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;.one&lt;/span&gt;, &lt;span class="class"&gt;.two&lt;/span&gt;
+  +&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;t&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;b&lt;/span&gt;&lt;span class="error"&gt;r&lt;/span&gt;&lt;span class="error"&gt;e&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;k&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;i&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;t&lt;/span&gt;(&lt;span class="float"&gt;30em&lt;/span&gt;)
+    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="class"&gt;.5em&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;�The one true grid&lt;/h2&gt;
+
+&lt;p&gt;Everything Susy does is within context of a grid. You can  define multiple grids, and nest these grids inside one another. You can define abritrary values within any context. Many useful features, such as push, pull, and bleed are there to make life even easier.&lt;/p&gt;
+
+&lt;p&gt;With all of this power comes some responsiblity. As with any tool, Susy just does what you ask it to do. It cannot explain  why your layout isn&amp;#39;t working. If you try to put too many things inside a grid, your layout will break. I&amp;#39;d recommend taking Susy for a spin. It&amp;#39;s really easy to &lt;a href="http://susy.oddbird.net/guides/getting-started/"&gt;get started&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Design Patterns: The Strategy Pattern</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html"/>

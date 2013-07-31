@@ -487,6 +487,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2013/07/29/putting-things-next-to-things-with-susy.html</loc>
+    <lastmod>2013-07-31T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//2012/page/2.html</loc>
     <lastmod>2013-07-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -698,6 +704,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2013/07.html</loc>
+    <lastmod>2013-07-31T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2013/07/29.html</loc>
     <lastmod>2013-07-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1051,13 +1063,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2012/03/05.html</loc>
+    <loc>http://reefpoints.dockyard.com//2011/11/10.html</loc>
     <lastmod>2013-07-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2011/11/10.html</loc>
+    <loc>http://reefpoints.dockyard.com//2012/02.html</loc>
     <lastmod>2013-07-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1159,7 +1171,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2012/02.html</loc>
+    <loc>http://reefpoints.dockyard.com//2012/03/05.html</loc>
     <lastmod>2013-07-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
