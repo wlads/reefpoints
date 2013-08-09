@@ -1,8 +1,9 @@
-%h1.categories Categories
-%section#index
-  %ul.categories
-    - page_articles.map(&:tags).flatten.uniq.sort.each do |tag|
-      %li
-        = link_to tag_path(tag) do
-          #{tag_name(tag)}
-          %span.count (#{tag_count(tag)})
+.wrap
+  %h1.categories Categories
+  %section#index
+    %ul.categories
+      - page_articles.map(&:tags).flatten.uniq.sort.each do |tag|
+        %li
+          = link_to tag_path(tag) do
+            #{tag_name(tag)}
+            %span.count (#{tag_count(tag)})
