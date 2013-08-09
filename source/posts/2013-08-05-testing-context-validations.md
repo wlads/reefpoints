@@ -7,12 +7,12 @@ twitter: "\_danmcclain"
 github: danmcclain
 social: true
 summary: "We moved your model validations to your controller, now we're going to help you test them"
-published: false
+published: true
 tags: ruby on rails, gems, context validation, testing
 ---
 
 ## Quick Refresher on ContextValidation
-A few months ago, Brian released the [ContextValidations gem]().
+A few months ago, Brian released the [ContextValidations gem](http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html).
 ContextValidations moves your model validations to the controller,
 allowing you to vary your validations by context, rather than relying on
 conditional validations.
@@ -25,7 +25,7 @@ can leave the password blank when updating their account, it will retain
 the old password. Whenever they enter a password , it must be 9
 characters or greater. We're going to ignore the actual implementation
 of the password saving scheme and password confirmation in this example.
-Also, this example ignores setting up the test helper for valid\_attribute
+Also, this example ignores setting up the test helper for [valid\_attribute](https://github.com/bcardarella/valid_attribute)
 and MiniTest::Spec.
 
 ### Implementing the Tests and Validations in the Model
@@ -96,11 +96,12 @@ end
 ```
 
 Note the use of `validations_for`. It is a MiniTest
-helper method, which looks up the name of the controller from the
-describe block, creates an instance of it, and retrieves the validations
-for the context passed in. This prevents you from needing to create your
-own instance and calling `validations` on it. The resulting tests
-end up looking very similar to what your model tests would look like.
+helper method defined by ContextValidations, which looks up the name
+of the controller from the describe block, creates an instance of it,
+and retrieves the validations for the context passed in. This prevents
+you from needing to create your own instance and calling `validations`
+on it. The resulting tests end up looking very similar to what your
+model tests would look like.
 
 Our model implementation is very light:
 
@@ -130,6 +131,8 @@ class UsersController < ApplicationController
   end
 end
 ```
+
+All of the examples are part of [this repository](https://github.com/dockyard/testing_context_validations).
 
 ## Wrapping it up
 
