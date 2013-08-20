@@ -34,10 +34,10 @@ Go get 'em, tiger!
 ```
 Agent Smith
 Spook First Class
-[REDACTED]                                                    08-16-2006
-NSA
+[REDACTED]
+NSA                                                     08-20-[REDACTED]
 
-                       Operation Orange Observers
+                     Operation [REDACTED] Observers
 
 Welcome, Agent Smith:
 
@@ -58,7 +58,7 @@ Best of luck,
 
 
 Agent [REDACTED]
-Spook Boss
+[REDACTED]
 [REDACTED]
 NSA
 ```
@@ -235,7 +235,7 @@ patterns. Both patterns employ an object (the Observer's *subject* and
 the Strategy's *context*) that makes calls to another object (the
 Observer's *observer* or Strategy's *strategy*). The difference between
 the two patterns is the purpose and use case. The *Strategy* pattern
-relies the *strategy* to do the work, while the *Observer* pattern
+relies on the *strategy* to do the work, while the *Observer* pattern
 informs the *observers* of what is going on with the *subject*.
 
 Hope you enjoyed this short example, thanks for reading!
