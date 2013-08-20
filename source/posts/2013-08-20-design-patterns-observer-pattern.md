@@ -29,7 +29,7 @@ up from you later. Oh, and before I forget, here is your first assignment.
 
 Go get 'em, tiger!
 
-## Your First Assignment
+## The First Assignment
 
 ```
 Agent Smith
@@ -70,7 +70,7 @@ NSA
 module Email
   extend self
 
-  def create subject, sender, receiver
+  def create(subject, sender, receiver)
     puts %Q[
       Subject: #{subject}
       From:    #{sender}@example.com
@@ -89,12 +89,12 @@ class Person
   include Email
   attr_reader :name
 
-  def initialize name
+  def initialize(name)
     @name = name
   end
 
-  def send_email subject, receiver
-    Email.create subject, name, receiver
+  def send_email(subject, receiver)
+    Email.create(subject, name, receiver)
   end
 end
 ```
@@ -107,7 +107,7 @@ Gazing at the suspicious `Person` class, we see that it includes the
 `Email` module. `Person#send_email` takes two parameters: a subject
 and a receiver. `Person#name` will stand in as the sender of the email.
 
-Let's see how a hypothetical suspicious person would send an email:
+Hypothetically, let's see how a suspicious person would send an email:
 
 ```
 bill = Person.new 'Bill'
@@ -125,20 +125,20 @@ something to kick off a notification once an email has been sent.
 
 Volia! You realize you can use the *Observer* pattern!
 
-## Observers Observing the Observed
+## The Subject and its Observers
 
 First, let's start off by creating two *observer* classes,
 `Alert` and `Agent` classes.
 
 ```ruby
 class Alert
-  def gotcha person
+  def gotcha(person)
     puts "!!! ALERT: #{person.name.upcase} SENT AN EMAIL !!!"
   end
 end
 
 class Agent
-  def gotcha person
+  def gotcha(person)
     puts "!!! TIME TO DETAIN #{person.name.upcase} !!!"
   end
 end
@@ -154,42 +154,43 @@ module Subject
     @observers = []
   end
 
-  def add_observer *observers
+  def add_observer(*observers)
     observers.each { |observer| @observers << observer }
   end
 
-  def delete_observer *observers
-    observers.delete observer
+  def delete_observer(*observers)
+    observers.delete(observer)
   end
 
   private
 
   def notify_observers
-    observers.each { |observer| observer.gotcha self }
+    observers.each { |observer| observer.gotcha(self) }
   end
 end
 ```
 
 Here within the `Subject#initialize`, we create an empty array which
 will contain a list of *observers*. `Subject#add_observer` simply pushes
-our desired *observers* into the array. 
+our desired *observers* into the array.
 
-Finally, we can alter the suspicious `Person` class, which will act as the *subject* class.
+Finally, we can alter the suspicious `Person` class, which will act as
+the *subject* class. Let's include the `Subject` module now.
 
 ```ruby
 class Person
   include Email, Subject
   attr_reader :name
 
-  def initialize name
+  def initialize(name)
     # 'super' requires a parentheses because we're calling
     # super on the superclass, 'Subject'
     super()
     @name = name
   end
 
-  def send_email subject, receiver
-    Email.send subject, name, receiver
+  def send_email(subject, receiver)
+    Email.send(subject, name, receiver)
     notify_observers
   end
 end
@@ -218,7 +219,7 @@ bill.send_email 'Fishing Trip', 'Fred'
 !!! TIME TO DETAIN BILL !!!
 ```
 
-Perfect! It works!
+Perfect, it works! Now we can start protecting our freedom!
 
 ## Discussion
 
@@ -227,3 +228,14 @@ classes, and a *subject*, `Person`. By creating the `Subject` module,
 any instance of `Person` now informs and updates any *observer* through
 `#notify_observers`, ultimately removing any implicit coupling from `Alert` and
 `Agent`.
+
+There are a few similarities between the *Observer* and
+[*Strategy*](http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html)
+patterns. Both patterns employ an object (the Observer's *subject* and
+the Strategy's *context*) that makes calls to another object (the
+Observer's *observer* or Strategy's *strategy*). The difference between
+the two patterns is the purpose and use case. The *Strategy* pattern
+relies the *strategy* to do the work, while the *Observer* pattern
+informs the *observers* of what is going on with the *subject*.
+
+Hope you enjoyed this short example, thanks for reading!
