@@ -70,7 +70,7 @@ NSA
 module Email
   extend self
 
-  def create(subject, sender, receiver)
+  def send(subject, sender, receiver)
     puts %Q[
       Subject: #{subject}
       From:    #{sender}@example.com
@@ -94,7 +94,7 @@ class Person
   end
 
   def send_email(subject, receiver)
-    Email.create(subject, name, receiver)
+    Email.send(subject, name, receiver)
   end
 end
 ```
