@@ -301,7 +301,7 @@ something to kick off a notification once an email has been sent.</p>
   <span class="keyword">end</span>
 
   <span class="keyword">def</span> <span class="function">delete_observer</span>(*observers)
-    observers.delete(observer)
+    observers.each { |observer| <span class="instance-variable">@observers</span>.delete(observer) }
   <span class="keyword">end</span>
 
   private
