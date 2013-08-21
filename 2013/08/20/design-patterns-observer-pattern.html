@@ -154,7 +154,7 @@ NSA
 <span class="keyword">module</span> <span class="class">Email</span>
   extend <span class="predefined-constant">self</span>
 
-  <span class="keyword">def</span> <span class="function">create</span>(subject, sender, receiver)
+  <span class="keyword">def</span> <span class="function">send</span>(subject, sender, receiver)
     puts <span class="string"><span class="delimiter">%Q[</span><span class="content">
       Subject: </span><span class="inline"><span class="inline-delimiter">#{</span>subject<span class="inline-delimiter">}</span></span><span class="content">
       From:    </span><span class="inline"><span class="inline-delimiter">#{</span>sender<span class="inline-delimiter">}</span></span><span class="content">@example.com
@@ -194,7 +194,7 @@ NSA
   <span class="keyword">end</span>
 
   <span class="keyword">def</span> <span class="function">send_email</span>(subject, receiver)
-    <span class="constant">Email</span>.create(subject, name, receiver)
+    <span class="constant">Email</span>.send(subject, name, receiver)
   <span class="keyword">end</span>
 <span class="keyword">end</span>
 </pre></td>

@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-08-21T09:56:18-04:00</updated>
+    <updated>2013-08-21T14:06:45-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -122,7 +122,7 @@ NSA
 &lt;span class="keyword"&gt;module&lt;/span&gt; &lt;span class="class"&gt;Email&lt;/span&gt;
   extend &lt;span class="predefined-constant"&gt;self&lt;/span&gt;
 
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;create&lt;/span&gt;(subject, sender, receiver)
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;send&lt;/span&gt;(subject, sender, receiver)
     puts &lt;span class="string"&gt;&lt;span class="delimiter"&gt;%Q[&lt;/span&gt;&lt;span class="content"&gt;
       Subject: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;subject&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;
       From:    &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;sender&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;@example.com
@@ -162,7 +162,7 @@ NSA
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 
   &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;send_email&lt;/span&gt;(subject, receiver)
-    &lt;span class="constant"&gt;Email&lt;/span&gt;.create(subject, name, receiver)
+    &lt;span class="constant"&gt;Email&lt;/span&gt;.send(subject, name, receiver)
   &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
