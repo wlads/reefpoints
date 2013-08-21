@@ -159,7 +159,7 @@ module Subject
   end
 
   def delete_observer(*observers)
-    observers.delete(observer)
+    observers.each { |observer| @observers.delete(observer) }
   end
 
   private
