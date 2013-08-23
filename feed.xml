@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-5eb29058.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-bae35624.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,45 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-08-20T00:00:00Z</updated>
+  <updated>2013-08-23T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Announcing Postgres_ext version 1.0 and 2.0</title>
+    <link rel="alternate" href="/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
+    <id>/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
+    <published>2013-08-23T00:00:00Z</published>
+    <updated>2013-08-23T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Two versions of PostgresExt have been released today.&lt;/p&gt;
+
+&lt;h2&gt;1.0.0 (and the 1-0-stable branch)&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="https://github.com/dockyard/postgres_ext/tree/v1.0.0"&gt;1.0.0&lt;/a&gt;
+ version is the first production release of PostgresExt. It
+supports Rails 3.2.x, adding in both data type and advanced querying
+support for ActiveRecord and Arel.&lt;/p&gt;
+
+&lt;h2&gt;2.0.0&lt;/h2&gt;
+
+&lt;p&gt;I have also released version &lt;a href="https://github.com/dockyard/postgres_ext/tree/v2.0.0"&gt;2.0.0&lt;/a&gt;,
+which supports ActiveRecord and Arel 4.0.x. Most of the 1.0.0 code
+is gone from 2.0.0, since Rails 4.0.0 supports all the data types
+that PostgresExt added to Rails 3.2.x.&lt;/p&gt;
+
+&lt;h2&gt;The Future&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;m focusing on Rails 4.0.0 for all future features of PostgresExt. I
+will gladly pull in additional features for 1.0.0, but Rails 3.2.x is no
+longer the primary focus of PostgresExt. Maintenance on 1.0.0 will be
+minimal, since &lt;a href="http://weblog.rubyonrails.org/2013/2/24/maintenance-policy-for-ruby-on-rails/"&gt;Rails 3.2.x will no longer be receiving releases for bug
+fixes&lt;/a&gt;,
+but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Design Patterns: The Observer Pattern</title>
     <link rel="alternate" href="/2013/08/20/design-patterns-observer-pattern.html"/>
@@ -1062,421 +1097,6 @@ example.&lt;/p&gt;
 &lt;p&gt;CTO to Go allows campaigns and non-profits immediate and affordable access to independent consultants who&amp;#39;ve been through the process on all levels of campaigns, and who understand the time and cost pressures. And most importantly, when something goes wrong CTO to Go means you have an expert who knows how to quickly troubleshoot and solve the problem.&lt;/p&gt;
 
 &lt;p&gt;CTO to Go is available in 5 hour blocks per month starting at $1250/month. For more details, contact Mike Sager - &lt;a href="mailto:mike@dockyard.com"&gt;mike@dockyard.com&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Design Patterns: The Template Method Pattern</title>
-    <link rel="alternate" href="/ruby/2013/07/10/design-patterns-template-pattern.html"/>
-    <id>/ruby/2013/07/10/design-patterns-template-pattern.html</id>
-    <published>2013-07-10T00:00:00Z</published>
-    <updated>2013-07-10T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;As the field of software development grows, we developers are
-continuously trying to catch up with the latest technologies.
-Fortunately, the craft of writing maintainable code is language
-agnostic, and in this series of blogposts, we&amp;#39;ll focus on a powerful set of
-timeless tools: &lt;em&gt;Design Patterns&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;I highly recommend Russ Olsen&amp;#39;s book &lt;a href="http://designpatternsinruby.com/"&gt;Design
-Patterns in Ruby&lt;/a&gt;. Our series
-will draw inspiration from it and is brief in comparison. So if you
-enjoy these posts (and I hope you do!), the book will be a great
-investment.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ll explore various design patterns and learn
-when to apply them. Our topic for today will be the &lt;em&gt;Template Method&lt;/em&gt;
-pattern, the simplest design pattern.&lt;/p&gt;
-
-&lt;h2&gt;Our First Day in Construction&lt;/h2&gt;
-
-&lt;h3&gt;The Right Tools&lt;/h3&gt;
-
-&lt;p&gt;Quite simply, design patterns are just tools that help us construct software. However,
-just like tools, we need to use the correct and proper one for the task. We
-could use a hammer on screws, but we&amp;#39;d damage the wood planks and using a
-power drill will be much more efficient. Before using any one of the numerous design patterns, it is
-crucial to understand the problem we wish to solve.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;It is incorrect to use a particular design pattern on the wrong
-type of problem&lt;/em&gt;. In other words, it is in poor practice to use a
-particular design pattern on a problem that does not require the
-aforementioned design pattern.&lt;/p&gt;
-
-&lt;h3&gt;Let&amp;#39;s Build Some Walls&lt;/h3&gt;
-
-&lt;p&gt;Today, we&amp;#39;ve been asked by our foreman to build a couple of walls. All
-the walls will share the same dimensions and will be made from the same
-material (for this construction project, our foreman has given us an
-&amp;quot;easy&amp;quot; set of requirements).&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for Wall&lt;/span&gt;
-require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;minitest/autorun&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-
-describe &lt;span class="constant"&gt;Wall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  let(&lt;span class="symbol"&gt;:wall&lt;/span&gt;) { &lt;span class="constant"&gt;Wall&lt;/span&gt;.new }
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;What a nice boss, he&amp;#39;s handed us the blueprints!
-Now it&amp;#39;s just up to us to build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Nice! Our tests pass, everybody is happy, and we&amp;#39;re off to lunch!&lt;/p&gt;
-
-&lt;h3&gt;A Hammer or a Nailgun?&lt;/h3&gt;
-
-&lt;p&gt;Coming back to the site, our foreman has informed us that we need more
-walls. &amp;quot;That&amp;#39;s a piece of cake,&amp;quot; we reply, recalling how easy it was to
-build out the &lt;code&gt;Wall&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&amp;quot;Not so fast,&amp;quot; our foreman retorts. We&amp;#39;re given new blueprints with
-different wall requirements.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;strong&gt;30&lt;/strong&gt;
-31
-32
-33
-34
-35
-36
-37
-38
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Blueprints for a BrickWall&lt;/span&gt;
-describe &lt;span class="constant"&gt;BrickWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  let(&lt;span class="symbol"&gt;:brick_wall&lt;/span&gt;) { &lt;span class="constant"&gt;BrickWall&lt;/span&gt;.new }
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    brick_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    brick_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from brick!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="comment"&gt;# Blueprints for a ConcreteWall&lt;/span&gt;
-describe &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  let(&lt;span class="symbol"&gt;:concrete_wall&lt;/span&gt;) { &lt;span class="constant"&gt;ConcreteWall&lt;/span&gt;.new }
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    concrete_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 30ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    concrete_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from concrete!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="comment"&gt;# Blueprints for a WoodWall&lt;/span&gt;
-describe &lt;span class="constant"&gt;WoodWall&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  let(&lt;span class="symbol"&gt;:wood_wall&lt;/span&gt;) { &lt;span class="constant"&gt;WoodWall&lt;/span&gt;.new }
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should state its dimensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    wood_wall.dimensions.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am 10ft. long and 20ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  it &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;should be made from wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    wood_wall.made_from.must_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;I am made from wood!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Hmm... A couple of ideas run through our heads. We could follow the initial &lt;code&gt;Wall&lt;/code&gt; class and
-define each method, hardcoding each string output, for the &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and &lt;code&gt;WoodWall&lt;/code&gt;
-classes. That seems like an okay idea, but we&amp;#39;d have to hard code each
-instance method. What if our house requires a dozen different types of walls?&lt;/p&gt;
-
-&lt;h3&gt;Open That Toolbox!&lt;/h3&gt;
-
-&lt;p&gt;Sipping on our after-lunch coffee, we realize that we&amp;#39;ve got a tool right
-for the job, the &lt;em&gt;Template Method&lt;/em&gt; pattern.&lt;/p&gt;
-
-&lt;p&gt;In the &lt;em&gt;Template Method&lt;/em&gt; pattern, the creation of a &lt;em&gt;skeletal class&lt;/em&gt; will
-serve as the basis for various &lt;em&gt;subclasses&lt;/em&gt; or &lt;em&gt;concrete classes&lt;/em&gt;. Within the &lt;em&gt;skeletal class&lt;/em&gt;
-there are &lt;em&gt;abstract methods&lt;/em&gt;, which in turn, will be overridden by the
-methods of &lt;em&gt;subclasses&lt;/em&gt;. Essentially, we&amp;#39;ll define a &lt;code&gt;Wall&lt;/code&gt; class (our
-&lt;em&gt;skeletal class&lt;/em&gt;) and its &lt;em&gt;subclasses&lt;/em&gt;, &lt;code&gt;BrickWall&lt;/code&gt;, &lt;code&gt;ConcreteWall&lt;/code&gt;, and
-&lt;code&gt;WoodWall&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Going over the blueprints, we notice that the three different classes of
-walls each contain the methods &lt;code&gt;#dimensions&lt;/code&gt; and &lt;code&gt;#made_from&lt;/code&gt;, which
-result in slighty different strings. With this knowledge, let&amp;#39;s
-create our &lt;code&gt;Wall&lt;/code&gt; class and its subclasses.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;strong&gt;30&lt;/strong&gt;
-31
-32
-33
-34
-35
-36
-37
-38
-39
-&lt;strong&gt;40&lt;/strong&gt;
-41
-42
-43
-44
-45
-46
-47
-48
-49
-&lt;strong&gt;50&lt;/strong&gt;
-51
-52
-53
-54
-55
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;dimensions&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;length&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. long and &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;width&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;ft. wide!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;made_from&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;I am made from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;material&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
-    &lt;span class="integer"&gt;30&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
-    &lt;span class="integer"&gt;20&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;brick&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;ConcreteWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
-    &lt;span class="integer"&gt;20&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;concrete&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;WoodWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
-    &lt;span class="integer"&gt;10&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;width&lt;/span&gt;
-    &lt;span class="integer"&gt;20&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;material&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;wood&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Discussion&lt;/h2&gt;
-
-&lt;h3&gt;Hook Methods&lt;/h3&gt;
-
-&lt;p&gt;Within the &lt;code&gt;Wall&lt;/code&gt; class we have defined a private method called &lt;code&gt;#length&lt;/code&gt;
-because we see that &lt;code&gt;BrickWall&lt;/code&gt; and &lt;code&gt;ConcreteWall&lt;/code&gt; share the same
-length. As for the &lt;code&gt;WoodWall&lt;/code&gt; class, we simply overwrite the &lt;code&gt;#length&lt;/code&gt;
-and give it a value of &lt;code&gt;10&lt;/code&gt;. These are examples of &lt;em&gt;Hook Methods&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Hook Methods&lt;/em&gt; serve two purposes:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Override the skeletal implementation and define something new&lt;/li&gt;
-&lt;li&gt;Or, accept the default implementation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Please note that the default implemetation, within the skeletal class, does
-not necessarily need to define a method. For example, we could have had:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Wall&lt;/span&gt;
-
-  ...
-
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
-    raise &lt;span class="constant"&gt;NotImplementedError&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Sorry, you have to override length&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BrickWall&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Wall&lt;/span&gt;
-  private
-
-  ...
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;length&lt;/span&gt;
-    &lt;span class="integer"&gt;30&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In the example above, the &lt;code&gt;#length&lt;/code&gt; method within the &lt;code&gt;Wall&lt;/code&gt; class
-served as a placeholder for the &lt;code&gt;#length&lt;/code&gt; for the &lt;code&gt;BrickWall&lt;/code&gt;, it&amp;#39;s
-&lt;em&gt;concrete class&lt;/em&gt;. Essentially, &lt;em&gt;hook methods&lt;/em&gt; inform all &lt;em&gt;concrete
-classes&lt;/em&gt; that the method may require an override. If the base
-implementation is undefined the subclasses must define the &lt;em&gt;hook
-methods&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Those Are Some Nice Walls&lt;/h2&gt;
-
-&lt;p&gt;Our foreman is delighted with the results and we&amp;#39;re going to call it a
-day. As we can see, using the &lt;em&gt;Template Method&lt;/em&gt; pattern is not difficult
-at all. We first defined a base class, within which we defined necessary
-&lt;em&gt;hook methods&lt;/em&gt; to be overridden by our &lt;em&gt;subclasses&lt;/em&gt;. Of course, this
-particular design pattern does not solve every conceivable problem, but
-helps keep our code clean by the use of inheritance.&lt;/p&gt;
-
-&lt;p&gt;Next we&amp;#39;ll be discussing the &lt;em&gt;Strategy&lt;/em&gt; method pattern. Stay tuned!&lt;/p&gt;
 </content>
   </entry>
 </feed>
