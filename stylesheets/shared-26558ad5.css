@@ -1,126 +1,126 @@
-/* line 1, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 1, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .header-logo, .main-nav-item, .mobile-nav-icon, .menu-button {
   color: white; }
 
-/* line 4, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 4, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .main-nav-item {
   font-weight: bold;
   font-size: 0.8em; }
 
-/* line 8, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 8, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .header-logo {
   float: left;
   height: 35px;
   font-family: leaguegothic, sans-serif;
   font-size: 32px; }
 
-/* line 14, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 14, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .nav-blog {
   background-color: #f26364; }
 
 @media (min-width: 650px) {
-  /* line 18, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 18, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   #mobile-header {
     display: none; }
 
-  /* line 20, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 20, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   #site-header {
     height: 45px;
     background-color: #f05051; }
 
-  /* line 23, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 23, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .main-nav {
     float: right; }
 
-  /* line 25, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 25, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .nav-work, .nav-people, .nav-community, .nav-blog, .nav-contact {
     float: left; }
 
-  /* line 27, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 27, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .main-nav-item {
     padding: 20px 15px 6px;
     display: block; }
-    /* line 30, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+    /* line 30, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
     .main-nav-item:hover {
       background-color: #f17275; } }
 @media (max-width: 650px) {
-  /* line 34, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 34, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   #site-header {
     display: none; }
 
-  /* line 36, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 36, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   #mobile-header {
     overflow: auto;
     background-color: #f05051; }
 
-  /* line 39, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 39, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .menu-button {
     float: right;
     font-size: 1.5em;
     cursor: pointer;
     padding: 5px; }
 
-  /* line 44, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 44, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   #mobile-nav {
     clear: both;
     display: none; }
 
-  /* line 47, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 47, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .mobile-nav-link-wrap {
     float: left;
     width: 32%;
     margin-bottom: 1%;
     margin-left: 1%; }
 
-  /* line 52, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 52, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .mobile-nav-link {
     display: block;
     background-color: #f26364;
     padding-top: 1em;
     padding-bottom: 1em;
     text-align: center; }
-    /* line 58, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+    /* line 58, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
     .mobile-nav-link:active {
       background-color: #f17275; }
 
-  /* line 60, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 60, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .mobile-nav-icon {
     font-size: 2em; }
 
-  /* line 62, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 62, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .main-nav-item {
     margin-top: -8px; } }
-/* line 65, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 65, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 footer {
   padding-top: 3em;
   padding-bottom: 3em; }
 
-/* line 69, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 69, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-links {
   height: 50px;
   width: 200px;
   margin-left: auto;
   margin-right: auto; }
 
-/* line 75, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 75, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .link-in-footer {
   margin-left: 5px;
   background-color: #2a5567; }
-  /* line 78, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 78, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .link-in-footer:hover {
     background-color: #f05051; }
 
-/* line 81, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 81, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-form, .footer-number, .footer-copyright {
   text-align: center; }
 
-/* line 84, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 84, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-form {
   margin-top: 0.5em;
   margin-bottom: 1em;
   display: block; }
 
-/* line 89, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 89, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-form-label {
   display: block;
   font-family: georgia, serif;
@@ -128,7 +128,7 @@ footer {
   font-weight: bold;
   font-style: italic; }
 
-/* line 96, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 96, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-form-input {
   padding: 10px;
   width: 200px;
@@ -139,12 +139,12 @@ footer {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
   color: #2a5567; }
-  /* line 106, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 106, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .footer-form-input:focus {
     border: 1px solid #2a5567;
     outline: none; }
 
-/* line 110, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 110, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-form-submit {
   padding: 6px 14px 6px 16px;
   position: relative;
@@ -159,27 +159,27 @@ footer {
   -moz-transition-duration: 0.5s;
   -otransition-duration: 0.5s;
   transition-duration: 0.5s; }
-  /* line 124, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 124, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .footer-form-submit:hover {
     background-color: #38738b; }
 
-/* line 127, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 127, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-number {
   display: block; }
 
-/* line 130, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 130, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-copyright {
   margin-left: 5%;
   margin-right: 5%; }
 
-/* line 134, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 134, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .fontello {
   font-family: fontello; }
-  /* line 136, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 136, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .fontello:before {
     content: attr(data-icon); }
 
-/* line 139, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 139, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .link {
   float: left;
   margin-right: 5px;
@@ -199,7 +199,7 @@ footer {
   -otransition-duration: 0.5s;
   transition-duration: 0.5s; }
 
-/* line 158, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 158, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .link-in-post {
   display: inline-block;
   float: none;
@@ -208,11 +208,11 @@ footer {
   background-color: #777777;
   text-transform: none;
   line-height: 2; }
-  /* line 166, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+  /* line 166, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
   .link-in-post:hover {
     background-color: #f05051; }
 
-/* line 169, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
+/* line 169, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/shared.sass */
 .footer-mail-icon {
   font-size: 1.5em;
   line-height: 1.675; }

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-bae35624.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-2a590f9f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,43 +57,31 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-08-23T00:00:00Z</updated>
+  <updated>2013-09-04T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>Announcing Postgres_ext version 1.0 and 2.0</title>
-    <link rel="alternate" href="/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
-    <id>/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
-    <published>2013-08-23T00:00:00Z</published>
-    <updated>2013-08-23T00:00:00Z</updated>
+    <title>Alex Navasardyan is a DockYarder!</title>
+    <link rel="alternate" href="/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html"/>
+    <id>/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html</id>
+    <published>2013-09-04T00:00:00Z</published>
+    <updated>2013-09-04T00:00:00Z</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Two versions of PostgresExt have been released today.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/alex-navasardyan.png" alt="Alex"&gt;&lt;/p&gt;
 
-&lt;h2&gt;1.0.0 (and the 1-0-stable branch)&lt;/h2&gt;
+&lt;p&gt;Alex has been friend for a while now, I got to know him when I started
+attending the &lt;a href="www.meetup.com/Boston-Ember-js/"&gt;Boston Ember meetup&lt;/a&gt;.
+Alex has been a very active in the Ember.js community and helped with
+the 1.0 release last week as well as
+&lt;a href="http://emberjs.com/list-view/"&gt;Ember.ListView&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href="https://github.com/dockyard/postgres_ext/tree/v1.0.0"&gt;1.0.0&lt;/a&gt;
- version is the first production release of PostgresExt. It
-supports Rails 3.2.x, adding in both data type and advanced querying
-support for ActiveRecord and Arel.&lt;/p&gt;
+&lt;p&gt;We&amp;#39;re very dedicated to the future of Ember.js and with Alex on board
+we&amp;#39;re well on our way to building out one of the best teams around.&lt;/p&gt;
 
-&lt;h2&gt;2.0.0&lt;/h2&gt;
-
-&lt;p&gt;I have also released version &lt;a href="https://github.com/dockyard/postgres_ext/tree/v2.0.0"&gt;2.0.0&lt;/a&gt;,
-which supports ActiveRecord and Arel 4.0.x. Most of the 1.0.0 code
-is gone from 2.0.0, since Rails 4.0.0 supports all the data types
-that PostgresExt added to Rails 3.2.x.&lt;/p&gt;
-
-&lt;h2&gt;The Future&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;m focusing on Rails 4.0.0 for all future features of PostgresExt. I
-will gladly pull in additional features for 1.0.0, but Rails 3.2.x is no
-longer the primary focus of PostgresExt. Maintenance on 1.0.0 will be
-minimal, since &lt;a href="http://weblog.rubyonrails.org/2013/2/24/maintenance-policy-for-ruby-on-rails/"&gt;Rails 3.2.x will no longer be receiving releases for bug
-fixes&lt;/a&gt;,
-but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://twitter.com/twokul"&gt;Follow Alex on Twitter&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
