@@ -6,7 +6,7 @@ github: twokul
 author: 'Alex Navasardyan'
 tags: ember
 social: true
-published: false
+published: true
 summary: 'Computed Properties magic explained'
 ---
 
