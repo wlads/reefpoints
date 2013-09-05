@@ -1,0 +1,184 @@
+/* line 1, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+.wrap {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 5, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+.show-all-posts {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center; }
+
+/* line 11, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+.index-section {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #e6e7e8;
+  overflow: auto; }
+
+/* line 20, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+.expanding-the-yard .post-content {
+  padding: 0;
+  max-width: none; }
+/* line 23, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+.expanding-the-yard .content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 720px; }
+
+@media (min-width: 1220px) {
+  /* line 31, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    max-width: 680px; } }
+@media (min-width: 1100px) and (max-width: 1220px) {
+  /* line 35, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    max-width: 600px; } }
+@media (min-width: 1100px) {
+  /* line 39, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .wrap {
+    width: 980px; }
+
+  /* line 41, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .show-all-posts {
+    width: 480px; }
+
+  /* line 43, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    width: 100%; }
+
+  /* line 45, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-meta {
+    padding-left: 5%;
+    width: 170px; } }
+@media (max-width: 1100px) {
+  /* line 50, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .wrap {
+    width: 90%; }
+
+  /* line 52, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .show-all-posts {
+    width: 90%;
+    padding: 0.75em 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #abd4e7;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white; }
+
+  /* line 64, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .post-div {
+    top: 2em;
+    width: 90%;
+    max-width: 720px; }
+
+  /* line 68, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  #blog footer {
+    padding-top: 7em; } }
+@media (min-width: 780px) and (max-width: 1100px) {
+  /* line 72, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    width: 70%;
+    right: 20px; }
+
+  /* line 75, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-meta {
+    width: 20%;
+    padding: 0 20px 0 0; } }
+@media (min-width: 780px) {
+  /* line 80, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-section {
+    width: 80%;
+    max-width: 980px; }
+
+  /* line 83, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    float: right;
+    padding-right: 5%; }
+
+  /* line 86, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-meta {
+    float: left;
+    text-align: right; }
+
+  /* line 89, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .post-content img {
+    width: 50%; } }
+@media (max-width: 780px) {
+  /* line 93, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-post {
+    text-align: center;
+    float: none;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto; }
+
+  /* line 99, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .search {
+    width: 85%;
+    margin-bottom: 38px; }
+
+  /* line 102, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-section {
+    width: 90%; }
+
+  /* line 104, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-meta {
+    display: none; }
+
+  /* line 106, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-title {
+    font-size: 28px; }
+
+  /* line 108, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .index-summary {
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em; }
+
+  /* line 112, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .post-content img {
+    width: 100%; } }
+@media (min-width: 480px) {
+  /* line 116, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .expanding-the-yard .content {
+    padding-top: 40px;
+    padding-bottom: 40px; } }
+@media (max-width: 480px) {
+  /* line 121, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .link-in-post {
+    display: none; }
+
+  /* line 123, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .post-date {
+    display: block; }
+
+  /* line 125, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .expanding-the-yard .content {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+
+  /* line 128, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+  .design .issue {
+    width: 91.5%; } }
+/* line 131, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+table.CodeRay td.line-numbers {
+  min-width: 38px; }
+
+/* line 134, /Users/alex/code/dockyard/reefpoints/source/stylesheets/layout.sass */
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  padding: 0px 5px;
+  margin: 0 2px; }
