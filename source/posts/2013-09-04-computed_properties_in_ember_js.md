@@ -7,6 +7,7 @@ author: 'Alex Navasardyan'
 tags: ember
 social: true
 published: true
+comments: true
 summary: 'Computed Properties magic explained'
 ---
 
