@@ -30,6 +30,7 @@ task :new, :title do |t, args|
     post.puts "social: true"
     post.puts "published: false"
     post.puts "summary: ''"
+    post.puts "---"
   end
 end
 
