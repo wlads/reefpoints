@@ -130,10 +130,8 @@ resulting ActiveRecord::Relation</p>
 using <code>with</code></p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
-2
 </pre></td>
-  <td class="code"><pre><span class="constant">Score</span>.with(<span class="key">my_games</span>:
-  <span class="constant">Game</span>.where(<span class="key">id</span>: <span class="integer">1</span>)).joins(<span class="string"><span class="delimiter">'</span><span class="content">JOIN my_games ON scores.game_id = my_games.id</span><span class="delimiter">'</span></span>)
+  <td class="code"><pre><span class="constant">Score</span>.with(<span class="key">my_games</span>: <span class="constant">Game</span>.where(<span class="key">id</span>: <span class="integer">1</span>)).joins(<span class="string"><span class="delimiter">'</span><span class="content">JOIN my_games ON scores.game_id = my_games.id</span><span class="delimiter">'</span></span>)
 </pre></td>
 </tr></table>
 </div></div>
