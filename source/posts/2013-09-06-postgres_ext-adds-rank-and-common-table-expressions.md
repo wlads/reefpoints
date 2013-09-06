@@ -69,8 +69,7 @@ You can also include CTEs in your normal queries to join against by
 using `with`
 
 ```ruby
-Score.with(my_games:
-  Game.where(id: 1)).joins('JOIN my_games ON scores.game_id = my_games.id')
+Score.with(my_games: Game.where(id: 1)).joins('JOIN my_games ON scores.game_id = my_games.id')
 ```
 
 will generate the following SQL:
