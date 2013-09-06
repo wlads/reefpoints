@@ -7,7 +7,7 @@ twitter: "\_danmcclain"
 github: danmcclain
 social: true
 summary: "In postgres_ext 2.1, complex queries get much easier"
-published: false
+published: true
 tags: ruby on rails, gems, postgres_ext, PostgreSQL
 ---
 
@@ -117,9 +117,9 @@ One thing to watch out for if you use `ranked` without an explicit
 order and want to call `first` off your relation, if the results of the
 relation have yet to be retrieved, the first will use your table's
 primary key for an `ORDER BY` statement on the query. This has already
-bitten us before we discovered the behavior of first. To get around
+bitten us before we discovered the behavior of `first`. To get around
 this, explicitly set your `order` on the relation if you intend to use
-first.
+`first`.
 
 We've been using CTEs and rank on one of our client projects, and it's
 already cleaned up the `from_sql` queries we were previously
