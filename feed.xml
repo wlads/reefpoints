@@ -70,7 +70,7 @@
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;This week, I released postgres_ext 2.1.0, which includes
+    <content type="html">&lt;p&gt;This week, I released &lt;a href="https://github.com/dockyard/postgres_ext"&gt;postgres_ext&lt;/a&gt; 2.1.0, which includes
 ActiveRecord::Relation methods to simplify queries that require the use
 of &lt;a href="http://www.postgresql.org/docs/current/static/queries-with.html"&gt;Common Table
 Expressions&lt;/a&gt;
@@ -243,12 +243,14 @@ will reuse the order. &lt;/p&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;One thing to watch out for if you use &lt;code&gt;ranked&lt;/code&gt; without an explicit
-order and want to call &lt;code&gt;first&lt;/code&gt; off your relation, if the results of the
+order and want to call &lt;a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-first"&gt;&lt;code&gt;first&lt;/code&gt;&lt;/a&gt;
+off your relation, if the results of the
 relation have yet to be retrieved, the first will use your table&amp;#39;s
 primary key for an &lt;code&gt;ORDER BY&lt;/code&gt; statement on the query. This has already
-bitten us before we discovered the behavior of &lt;code&gt;first&lt;/code&gt;. To get around
-this, explicitly set your &lt;code&gt;order&lt;/code&gt; on the relation if you intend to use
-&lt;code&gt;first&lt;/code&gt;.&lt;/p&gt;
+bitten us before we discovered the behavior of &lt;code&gt;first&lt;/code&gt;. To avoid this
+behavior in &lt;code&gt;first&lt;/code&gt;, use
+&lt;a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-take"&gt;&lt;code&gt;take&lt;/code&gt;&lt;/a&gt;
+which does not use any implied order.&lt;/p&gt;
 
 &lt;p&gt;We&amp;#39;ve been using CTEs and rank on one of our client projects, and it&amp;#39;s
 already cleaned up the &lt;code&gt;from_sql&lt;/code&gt; queries we were previously
