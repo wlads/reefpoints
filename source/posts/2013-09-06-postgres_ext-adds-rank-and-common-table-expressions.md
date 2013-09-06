@@ -11,7 +11,7 @@ published: true
 tags: ruby on rails, gems, postgres_ext, PostgreSQL
 ---
 
-This week, I released postgres\_ext 2.1.0, which includes
+This week, I released [postgres\_ext](https://github.com/dockyard/postgres_ext) 2.1.0, which includes
 ActiveRecord::Relation methods to simplify queries that require the use
 of [Common Table
 Expressions](http://www.postgresql.org/docs/current/static/queries-with.html)
