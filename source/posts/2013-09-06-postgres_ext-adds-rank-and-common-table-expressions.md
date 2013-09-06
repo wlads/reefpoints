@@ -65,6 +65,28 @@ FROM scores_for_game
 WHERE scores_for_game.user_id = 1
 ```
 
+You can also include CTEs in your normal queries to join against by
+using `with`
+
+```ruby
+Score.with(my_games:
+  Game.where(id: 1)).joins('JOIN my_games ON scores.game_id = my_games.id')
+```
+
+will generate the following SQL:
+
+```SQL
+WITH my_games AS (
+SELECT games.*
+FROM games
+WHERE games.id = 1
+)
+SELECT *
+FROM scores
+JOIN my_games
+ON scores.games_id = my_games.id
+```
+
 ## Rank
 
 PostgreSQL provides a `rank` windowing function, which will take into
