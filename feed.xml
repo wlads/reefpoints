@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-ff0a0aef.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-bae35624.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,174 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-09-04T00:00:00Z</updated>
+  <updated>2013-09-06T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Postgres_ext adds rank and common table expressions</title>
+    <link rel="alternate" href="/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
+    <id>/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
+    <published>2013-09-06T00:00:00Z</published>
+    <updated>2013-09-06T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This week, I released postgres_ext 2.1.0, which includes
+ActiveRecord::Relation methods to simplify queries that require the use
+of &lt;a href="http://www.postgresql.org/docs/current/static/queries-with.html"&gt;Common Table
+Expressions&lt;/a&gt;
+(CTEs) and the &lt;a href="http://www.postgresql.org/docs/9.2/static/functions-window.html"&gt;&lt;code&gt;rank()&lt;/code&gt; windowing
+function&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Common Table Expressions&lt;/h2&gt;
+
+&lt;p&gt;In a sentence, CTEs allow you to define a temporary table to be used in
+a larger query. Let&amp;#39;s look at an example:&lt;/p&gt;
+&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;WITH scores_for_game &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+&lt;span class="class"&gt;SELECT&lt;/span&gt; *
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
+&lt;span class="keyword"&gt;WHERE&lt;/span&gt; game_id = &lt;span class="integer"&gt;1&lt;/span&gt;
+)
+&lt;span class="class"&gt;SELECT&lt;/span&gt; *
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores_for_game
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the above, somewhat arbitrary, example, we create a temporary table
+of &lt;code&gt;scores_for_game&lt;/code&gt; which we then select from. CTEs allow you to
+organize your more complex queries, and can be really helpful in certain
+cases.&lt;/p&gt;
+
+&lt;p&gt;We can make the same SQL call in ActiveRecord with postgres_ext.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.from_cte(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;scores_for_game&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="constant"&gt;Score&lt;/span&gt;.where(&lt;span class="key"&gt;game_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;))
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We can also query against the CTE expression by chaining off the
+resulting ActiveRecord::Relation&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.from_cte(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;scores_for_game&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="constant"&gt;Score&lt;/span&gt;.where(&lt;span class="key"&gt;game_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)).where(&lt;span class="key"&gt;user_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;would generate the following:&lt;/p&gt;
+&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;WITH scores_for_game &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+&lt;span class="class"&gt;SELECT&lt;/span&gt; *
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
+&lt;span class="keyword"&gt;WHERE&lt;/span&gt; game_id = &lt;span class="integer"&gt;1&lt;/span&gt;
+)
+&lt;span class="class"&gt;SELECT&lt;/span&gt; *
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores_for_game
+&lt;span class="keyword"&gt;WHERE&lt;/span&gt; scores_for_game.user_id = &lt;span class="integer"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Rank&lt;/h2&gt;
+
+&lt;p&gt;PostgreSQL provides a &lt;code&gt;rank&lt;/code&gt; windowing function, which will take into
+account ties when ranking results. You would add rank to your
+projection, like the following example:&lt;/p&gt;
+&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;SELECT&lt;/span&gt; scores.*, rank() &lt;span class="keyword"&gt;OVER&lt;/span&gt; (&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.points &lt;span class="directive"&gt;DESC&lt;/span&gt;)
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The results set will return ordered by the rank, which is determined the
+order passed into the &lt;code&gt;rank&lt;/code&gt;&amp;#39;s &lt;code&gt;OVER&lt;/code&gt;. In the above example, the scores
+would be ranked by their scores descending, so highest score first. If
+there was a tie at first place between two scores, they would both
+ranked 1, and the next result would be ranked &lt;code&gt;3&lt;/code&gt;. We can achieve the
+same in ActiveRecord with postgres_ext:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;)
+&lt;span class="comment"&gt;# or&lt;/span&gt;
+&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;points desc&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Rank will rank independently of any sort order applied to the query, so
+you could have your scores ranked by points, but then ordered by their
+creation time.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;).order(&lt;span class="symbol"&gt;:created_at&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;will generate the following query:&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;SELECT&lt;/span&gt; scores.*, rank() &lt;span class="keyword"&gt;OVER&lt;/span&gt; (&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.points &lt;span class="directive"&gt;DESC&lt;/span&gt;)
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
+&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.created_at &lt;span class="directive"&gt;ASC&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Also, if you apply a sort order to your relation, and want to sort by
+it, you do not have to tell ranked what order you&amp;#39;d like to use, as it
+will reuse the order. &lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked.order(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;One thing to watch out for if you use &lt;code&gt;ranked&lt;/code&gt; without an explicit
+order and want to call &lt;code&gt;first&lt;/code&gt; off your relation, if the results of the
+relation have yet to be retrieved, the first will use your table&amp;#39;s
+primary key for an &lt;code&gt;ORDER BY&lt;/code&gt; statement on the query. This has already
+bitten us before we discovered the behavior of &lt;code&gt;first&lt;/code&gt;. To get around
+this, explicitly set your &lt;code&gt;order&lt;/code&gt; on the relation if you intend to use
+&lt;code&gt;first&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ve been using CTEs and rank on one of our client projects, and it&amp;#39;s
+already cleaned up the &lt;code&gt;from_sql&lt;/code&gt; queries we were previously
+using. Let us know if you hit any snags, or have any suggestions on how
+else we can make complex SQL queries easier to call from ActiveRecord!
+We only implement the &lt;code&gt;rank&lt;/code&gt; windowing function right now, but plan to
+add the others shortly.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Computed Properties in Ember.Js</title>
     <link rel="alternate" href="/2013/09/04/computed_properties_in_ember_js.html"/>
@@ -336,6 +500,41 @@ the 1.0 release last week as well as
 we&amp;#39;re well on our way to building out one of the best teams around.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://twitter.com/twokul"&gt;Follow Alex on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Announcing Postgres_ext version 1.0 and 2.0</title>
+    <link rel="alternate" href="/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
+    <id>/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
+    <published>2013-08-23T00:00:00Z</published>
+    <updated>2013-08-23T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Two versions of PostgresExt have been released today.&lt;/p&gt;
+
+&lt;h2&gt;1.0.0 (and the 1-0-stable branch)&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="https://github.com/dockyard/postgres_ext/tree/v1.0.0"&gt;1.0.0&lt;/a&gt;
+ version is the first production release of PostgresExt. It
+supports Rails 3.2.x, adding in both data type and advanced querying
+support for ActiveRecord and Arel.&lt;/p&gt;
+
+&lt;h2&gt;2.0.0&lt;/h2&gt;
+
+&lt;p&gt;I have also released version &lt;a href="https://github.com/dockyard/postgres_ext/tree/v2.0.0"&gt;2.0.0&lt;/a&gt;,
+which supports ActiveRecord and Arel 4.0.x. Most of the 1.0.0 code
+is gone from 2.0.0, since Rails 4.0.0 supports all the data types
+that PostgresExt added to Rails 3.2.x.&lt;/p&gt;
+
+&lt;h2&gt;The Future&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;m focusing on Rails 4.0.0 for all future features of PostgresExt. I
+will gladly pull in additional features for 1.0.0, but Rails 3.2.x is no
+longer the primary focus of PostgresExt. Maintenance on 1.0.0 will be
+minimal, since &lt;a href="http://weblog.rubyonrails.org/2013/2/24/maintenance-policy-for-ruby-on-rails/"&gt;Rails 3.2.x will no longer be receiving releases for bug
+fixes&lt;/a&gt;,
+but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -925,393 +1124,6 @@ differences in setting up the subject for the tests, but the only major
 difference is that you are testing the controller instead of the model.
 If you have any feedback on the tests we came up with, feel free to let
 us know!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Putting things next to things with Susy</title>
-    <link rel="alternate" href="/2013/07/29/putting-things-next-to-things-with-susy.html"/>
-    <id>/2013/07/29/putting-things-next-to-things-with-susy.html</id>
-    <published>2013-07-29T00:00:00Z</published>
-    <updated>2013-07-29T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I&amp;#39;ve often lamented that one of the most challenging things to do on the front end is to put things next to other things. Things on top of things? Easy. Things by themselves? Piece of cake. This thing next to that thing? Things just got complicated.&lt;/p&gt;
-
-&lt;p&gt;Should you roll your own layout, coming up with and refining conventions, browser testing to make sure everything still works? Do you rely on a front-end framework and all of the cluttered, confusing markup that comes going from that route? &lt;/p&gt;
-
-&lt;p&gt;What about something different? This is where Susy saves the day.&lt;/p&gt;
-
-&lt;h2&gt;The little framework that can&lt;/h2&gt;
-
-&lt;p&gt;Susy is a grid framework for Compass. With Susy, you simply define your grid settings and start laying things out. If you want to come back and adjust your grid later, that&amp;#39;s totally fine. Susy will recalculate all your layouts.&lt;/p&gt;
-&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;total-columns&lt;/span&gt;: &lt;span class="float"&gt;12&lt;/span&gt;
-&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;column-width&lt;/span&gt;: &lt;span class="float"&gt;4em&lt;/span&gt;
-&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;gutter-width&lt;/span&gt;: &lt;span class="float"&gt;1em&lt;/span&gt;
-&lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;grid-padding&lt;/span&gt;: &lt;span class="error"&gt;$&lt;/span&gt;&lt;span class="tag"&gt;gutter-width&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Two main mixins do the bulk of the lifting. These are &amp;#39;container&amp;#39; and &amp;#39;span-columns&amp;#39;. Container is used to define the container of the grid. Span-columns is applied to elements within a container context. The syntax is easy.&lt;/p&gt;
-&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;.page&lt;/span&gt;
-  +&lt;span class="tag"&gt;container&lt;/span&gt;
-  &lt;span class="tag"&gt;article&lt;/span&gt;
-    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;8&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
-  &lt;span class="tag"&gt;aside&lt;/span&gt;
-    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;4&lt;/span&gt; &lt;span class="tag"&gt;omega&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This makes &amp;#39;.page&amp;#39; the grid container. The article takes up eight of twelve columns, the aside the final (omega) four of twelve columns.&lt;/p&gt;
-
-&lt;p&gt;Susy really shines at figuring stuff out on its own. Say I wanted to have two columns of different widths with different padding for each column, both nested within the article above?&lt;/p&gt;
-&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;article&lt;/span&gt;
-  +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;8&lt;/span&gt;, &lt;span class="float"&gt;12&lt;/span&gt;)
-  &lt;span class="class"&gt;.one&lt;/span&gt;
-    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;3&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="float"&gt;1em&lt;/span&gt;)
-  &lt;span class="class"&gt;.two&lt;/span&gt;
-    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;4&lt;/span&gt; &lt;span class="tag"&gt;omega&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="class"&gt;.5em&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Where did the seven columns come from? Susy doesn&amp;#39;t care. They are within the context of the article. Susy will figure out the math and make seven columns. The third option is the column padding. Susy will do the math there too. Thanks, Susy!&lt;/p&gt;
-
-&lt;h2&gt;Susy, breakpoints and you&lt;/h2&gt;
-
-&lt;p&gt;Susy is made to build responsive grids. The default layout is called &amp;#39;magic&amp;#39;. It&amp;#39;s a fixed width layout that fluidly scales if the viewport is smaller than the width of the grid. You can also opt for a fully fluid layout, or a static layout for pixel precision.&lt;/p&gt;
-
-&lt;p&gt;Any of these layouts can be further modified with the +at-breakpoint mixin. This mixin makes accessing media queries within the context of our grid simple and straightforward.&lt;/p&gt;
-&lt;div class="highlight css "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;.one&lt;/span&gt;, &lt;span class="class"&gt;.two&lt;/span&gt;
-  +&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;t&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;b&lt;/span&gt;&lt;span class="error"&gt;r&lt;/span&gt;&lt;span class="error"&gt;e&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;k&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;i&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;t&lt;/span&gt;(&lt;span class="float"&gt;30em&lt;/span&gt;)
-    +&lt;span class="error"&gt;s&lt;/span&gt;&lt;span class="error"&gt;p&lt;/span&gt;&lt;span class="error"&gt;a&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;-&lt;/span&gt;&lt;span class="error"&gt;c&lt;/span&gt;&lt;span class="error"&gt;o&lt;/span&gt;&lt;span class="error"&gt;l&lt;/span&gt;&lt;span class="error"&gt;u&lt;/span&gt;&lt;span class="error"&gt;m&lt;/span&gt;&lt;span class="error"&gt;n&lt;/span&gt;&lt;span class="error"&gt;s&lt;/span&gt;(&lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="float"&gt;7&lt;/span&gt;, &lt;span class="class"&gt;.5em&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;�The one true grid&lt;/h2&gt;
-
-&lt;p&gt;Everything Susy does is within context of a grid. You can  define multiple grids, and nest these grids inside one another. You can define abritrary values within any context. Many useful features, such as push, pull, and bleed are there to make life even easier.&lt;/p&gt;
-
-&lt;p&gt;With all of this power comes some responsiblity. As with any tool, Susy just does what you ask it to do. It cannot explain  why your layout isn&amp;#39;t working. If you try to put too many things inside a grid, your layout will break. I&amp;#39;d recommend taking Susy for a spin. It&amp;#39;s really easy to &lt;a href="http://susy.oddbird.net/guides/getting-started/"&gt;get started&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Design Patterns: The Strategy Pattern</title>
-    <link rel="alternate" href="/2013/07/25/design-patterns-strategy-pattern.html"/>
-    <id>/2013/07/25/design-patterns-strategy-pattern.html</id>
-    <published>2013-07-25T00:00:00Z</published>
-    <updated>2013-07-25T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Walls are sooooo last week...&lt;/h2&gt;
-
-&lt;p&gt;In our last post, we discussed the &lt;em&gt;&lt;a href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"&gt;Template
-Method&lt;/a&gt;&lt;/em&gt;
-pattern and its benefits, finding it most useful when we need to simply shape
-behavior of &lt;em&gt;subclasses&lt;/em&gt;. However, due to the reliance on &lt;em&gt;inheritance&lt;/em&gt;,
-there are a couple of limitations to this pattern:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Subclasses are tightly bound to a superclass or baseclass&lt;/li&gt;
-&lt;li&gt;Runtime flexibility is hindered&lt;/li&gt;
-&lt;li&gt;Only a portion of the desired alogrithm is varied&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Thankfully, there is another design pattern that resolves these
-problems: the &lt;em&gt;Strategy&lt;/em&gt; pattern.&lt;/p&gt;
-
-&lt;h2&gt;Summertime and the Livin&amp;#39; is Easy&lt;/h2&gt;
-
-&lt;h3&gt;Hot dogs, hamburgers, and veggie patties&lt;/h3&gt;
-
-&lt;p&gt;It&amp;#39;s the middle of July, and there&amp;#39;s no better time to throw a day
-party. Our pals are bringing the tasty beverages, so we just need to prepare the food.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ll first create a superclass &lt;code&gt;Food&lt;/code&gt; that will delagate &lt;code&gt;#type&lt;/code&gt; to its
-subclasses: &lt;code&gt;HotDog&lt;/code&gt;, &lt;code&gt;Hamburger&lt;/code&gt;, and &lt;code&gt;VeggiePatty&lt;/code&gt;. Notice that this
-is the &lt;em&gt;&lt;a href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"&gt;Template
-Method&lt;/a&gt;&lt;/em&gt;
-pattern in action.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Food&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;type&lt;/span&gt;
-    raise &lt;span class="constant"&gt;NotImplementedError&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Ask the subclass&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;HotDog&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Food&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;type&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;hot dogs&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Hamburger&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Food&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;type&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;hamburgers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;VeggiePatty&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;Food&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;type&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;veggie patties&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now, let&amp;#39;s get the grill ready.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Grill&lt;/span&gt;
-  attr_accessor &lt;span class="symbol"&gt;:food&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt; food
-    &lt;span class="instance-variable"&gt;@food&lt;/span&gt; = food
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;grilling&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Grilling the &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;food.type&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Nice. Now let&amp;#39;s get grilling! We&amp;#39;ll start with some hot dogs.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;grill = &lt;span class="constant"&gt;Grill&lt;/span&gt;.new(&lt;span class="constant"&gt;HotDog&lt;/span&gt;.new)
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the hot dogs!&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Oh watch out, these dogs are almost done... time to throw on the
-hamburger and veggie patties.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;grill.food = &lt;span class="constant"&gt;Hamburger&lt;/span&gt;.new
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the hamburgers!&amp;quot;&lt;/span&gt;
-
-grill.food = &lt;span class="constant"&gt;VeggiePatty&lt;/span&gt;.new
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the veggie patties!&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Wasn&amp;#39;t that easy? We were able to switch out items without
-creating a new class of &lt;code&gt;Grill&lt;/code&gt;. &lt;/p&gt;
-
-&lt;h2&gt;Discussion&lt;/h2&gt;
-
-&lt;h3&gt;Strategies and Context&lt;/h3&gt;
-
-&lt;p&gt;The &lt;em&gt;Strategy&lt;/em&gt; pattern employs &lt;em&gt;strategies&lt;/em&gt;, objects of which
-possess identical behavior. Our grill party relies on &lt;em&gt;strategies&lt;/em&gt; to
-tell us what &lt;code&gt;#type&lt;/code&gt; of food they were. It&amp;#39;s important that all strategy objects
-have the same responsiblity and support the same interface, which in our case
-was &lt;code&gt;grill.grilling&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;Grill&lt;/code&gt; class is our &lt;em&gt;context&lt;/em&gt; class, the operator of the
-&lt;em&gt;strategies&lt;/em&gt;, which uses the &lt;code&gt;HotDog#type&lt;/code&gt;, &lt;code&gt;Hamburger#type&lt;/code&gt;, and
-&lt;code&gt;VeggiePatty#type&lt;/code&gt; interchangeably.&lt;/p&gt;
-
-&lt;p&gt;Through our contrived example, we see the immediate benefits of this
-design pattern:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Separation of concerns&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Strategies&lt;/em&gt; at runtime&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We&amp;#39;ve achieved &lt;em&gt;separation of concerns&lt;/em&gt; by designating the &lt;code&gt;#type&lt;/code&gt;
-method as our desired set of &lt;em&gt;strategies&lt;/em&gt;. &lt;code&gt;HotDog&lt;/code&gt;, &lt;code&gt;Hamburger&lt;/code&gt; and
-&lt;code&gt;VeggiePatty&lt;/code&gt;  are unaware of our implementation of &lt;code&gt;Grill#grilling&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;As for runtime flexibility, we&amp;#39;re able to switch out the items up on the
-grill.&lt;/p&gt;
-
-&lt;h3&gt;Special Patties: Lambdas&lt;/h3&gt;
-
-&lt;p&gt;As we&amp;#39;re grilling our hamburger and veggies patties, a last minute guest
-arrives, and she has brought some bacon, jalapeños, and onions.
-Let&amp;#39;s make some custom patties, but avoid creating more subclasses of
-&lt;code&gt;Food&lt;/code&gt;. What could we do here?&lt;/p&gt;
-
-&lt;p&gt;A quick and awesome solution would be to use &lt;em&gt;lambdas&lt;/em&gt;!&lt;/p&gt;
-
-&lt;p&gt;Since we expect our &lt;em&gt;strategies&lt;/em&gt; to return &lt;code&gt;Strings&lt;/code&gt; for food &lt;code&gt;#type&lt;/code&gt;,
-we can create a &lt;em&gt;lambda&lt;/em&gt; which will behave just like the other strategy
-objects and return a &lt;code&gt;String&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;CUSTOMPATTY&lt;/span&gt; = lambda { |type| &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;type&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; }
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Next, let&amp;#39;s get back to our &lt;code&gt;Grill&lt;/code&gt; class and alter the class a little
-bit.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Grill&lt;/span&gt;
-  attr_accessor &lt;span class="symbol"&gt;:food&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt; food
-    &lt;span class="instance-variable"&gt;@food&lt;/span&gt; = food
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;grilling&lt;/span&gt;
-    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Grilling the &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;print_food&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;print_food&lt;/span&gt;
-    food_is_string? ? food : food.type
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;food_is_string?&lt;/span&gt;
-    food.is_a? &lt;span class="constant"&gt;String&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Since we know the &lt;em&gt;strategies&lt;/em&gt; are &lt;code&gt;Strings&lt;/code&gt;, we&amp;#39;ve created two
-&lt;code&gt;private&lt;/code&gt; methods, &lt;code&gt;#print_food&lt;/code&gt; and &lt;code&gt;#food_is_string&lt;/code&gt;.
-&lt;code&gt;#food_is_string&lt;/code&gt; will check if &lt;code&gt;Grill&lt;/code&gt; has received a
-&lt;code&gt;String&lt;/code&gt; or not, and &lt;code&gt;#print_food&lt;/code&gt; will handle &lt;em&gt;lambdas&lt;/em&gt; or &lt;em&gt;classes&lt;/em&gt; of
-food.&lt;/p&gt;
-
-&lt;p&gt;Now let&amp;#39;s try grilling some hot dogs and custom patties!&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;jalapeños = &lt;span class="constant"&gt;CUSTOMPATTY&lt;/span&gt;.call &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;spicy jalapeños patties&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-bacon = &lt;span class="constant"&gt;CUSTOMPATTY&lt;/span&gt;.call &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;greasy, yummy bacon patties&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-
-grill = &lt;span class="constant"&gt;Grill&lt;/span&gt;.new jalapeños
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the spicy jalapeños patties!&amp;quot;&lt;/span&gt;
-
-grill.food = bacon
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the greasy, yummy bacon patties!&amp;quot;&lt;/span&gt;
-
-grill.food = &lt;span class="constant"&gt;HotDog&lt;/span&gt;.new
-grill.grilling &lt;span class="comment"&gt;# =&amp;gt; &amp;quot;Grilling the hot dogs!&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h3&gt;Mmm-mmmm... That is a tasty burger.&lt;/h3&gt;
-
-&lt;p&gt;The &lt;em&gt;Strategy&lt;/em&gt; pattern is a delagation-based design pattern, and shares
-some similarities with the &lt;em&gt;Template Method&lt;/em&gt; pattern. However, instead
-of depending so heavily on inheiritance between a superclass and
-subclasses to use our target algorithm, we take our algorithm and
-consider it as a separate object. As long as we remember the
-relationship between the &lt;em&gt;strategies&lt;/em&gt; and the &lt;em&gt;context&lt;/em&gt;, we earn real
-advantages over the &lt;em&gt;Template Method&lt;/em&gt;, as seen in our custom patty
-example.&lt;/p&gt;
-
-&lt;p&gt;I hope you had fun at our day party, and we&amp;#39;ll next explore the
-&lt;em&gt;Observer&lt;/em&gt; pattern.&lt;/p&gt;
 </content>
   </entry>
 </feed>
