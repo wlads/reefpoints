@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
     <published>2013-09-06T00:00:00Z</published>
-    <updated>2013-09-06T10:58:50-04:00</updated>
+    <updated>2013-09-06T11:11:56-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -91,6 +91,41 @@ resulting ActiveRecord::Relation&lt;/p&gt;
 &lt;span class="class"&gt;SELECT&lt;/span&gt; *
 &lt;span class="keyword"&gt;FROM&lt;/span&gt; scores_for_game
 &lt;span class="keyword"&gt;WHERE&lt;/span&gt; scores_for_game.user_id = &lt;span class="integer"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You can also include CTEs in your normal queries to join against by
+using &lt;code&gt;with&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.with(&lt;span class="key"&gt;my_games&lt;/span&gt;:
+  &lt;span class="constant"&gt;Game&lt;/span&gt;.where(&lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)).joins(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;JOIN my_games ON scores.game_id = my_games.id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;will generate the following SQL:&lt;/p&gt;
+&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;WITH my_games &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+&lt;span class="class"&gt;SELECT&lt;/span&gt; games.*
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; games
+&lt;span class="keyword"&gt;WHERE&lt;/span&gt; games.id = &lt;span class="integer"&gt;1&lt;/span&gt;
+)
+&lt;span class="class"&gt;SELECT&lt;/span&gt; *
+&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
+&lt;span class="keyword"&gt;JOIN&lt;/span&gt; my_games
+&lt;span class="keyword"&gt;ON&lt;/span&gt; scores.games_id = my_games.id
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;

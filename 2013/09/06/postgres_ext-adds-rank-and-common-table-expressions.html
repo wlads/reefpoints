@@ -126,6 +126,41 @@ resulting ActiveRecord::Relation</p>
 </pre></td>
 </tr></table>
 </div></div>
+<p>You can also include CTEs in your normal queries to join against by
+using <code>with</code></p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre><span class="constant">Score</span>.with(<span class="key">my_games</span>:
+  <span class="constant">Game</span>.where(<span class="key">id</span>: <span class="integer">1</span>)).joins(<span class="string"><span class="delimiter">'</span><span class="content">JOIN my_games ON scores.game_id = my_games.id</span><span class="delimiter">'</span></span>)
+</pre></td>
+</tr></table>
+</div></div>
+<p>will generate the following SQL:</p>
+<div class="highlight SQL "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre>WITH my_games <span class="keyword">AS</span> (
+<span class="class">SELECT</span> games.*
+<span class="keyword">FROM</span> games
+<span class="keyword">WHERE</span> games.id = <span class="integer">1</span>
+)
+<span class="class">SELECT</span> *
+<span class="keyword">FROM</span> scores
+<span class="keyword">JOIN</span> my_games
+<span class="keyword">ON</span> scores.games_id = my_games.id
+</pre></td>
+</tr></table>
+</div></div>
 <h2>Rank</h2>
 
 <p>PostgreSQL provides a <code>rank</code> windowing function, which will take into
