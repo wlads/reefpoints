@@ -82,8 +82,9 @@ imap D wat
 Since `gg` is mapped to `G` within *Normal* mode, I'll be sent to the
 bottom of the file if I type `gg`, instead of to the top.
 Moreover, while in *Insert* mode, every character `n` that I type will turn into `N`.
-Lastly, because of the recursive map, typing `d` in *Insert* mode will return `D` which in turn will
-transform to `wat`.
+Lastly, because of the recursive mapping, typing `d` in *Insert* mode
+will return `wat`. You can think of it as something like: `d` => `D` =>
+`wat`.
 
 Thankfully, there's a *non-recursive* map.
 
