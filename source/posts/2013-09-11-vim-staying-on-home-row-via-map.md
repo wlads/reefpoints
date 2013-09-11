@@ -7,7 +7,7 @@ twitter: 'DougYun'
 github: duggiefresh
 social: true
 summary: 'Map commands for quick escapes and saves'
-published: false
+published: true
 tags: vim, workflow
 ---
 
