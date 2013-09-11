@@ -39,7 +39,7 @@ See where I'm getting at?
 Let's Talk About Map
 -------------------
 Before we review and
-[copy-pasta](http://thumbs.dreamstime.com/z/spaghetti-eating-mess-11376903.jpg)
+[copy-pasta](http://www.flickr.com/search/?q=pasta)
 the portion of my `.vimrc`, let's briefly go over the very basics of the
 pertinent map commands.
 You can find the entire [map documentation here](http://vimdoc.sourceforge.net/htmldoc/map.html)
@@ -72,15 +72,15 @@ For example, if I had this within my `.vimrc`:
 "
 " Note: double quotes signifies comments
 
-nmap gg G
+nmap 0 gg
 imap n N
 
 " Time for a little recursive map
 imap d D
 imap D wat
 ```
-Since `gg` is mapped to `G` within *Normal* mode, I'll be sent to the
-bottom of the file if I type `gg`, instead of to the top.
+Since `0` is mapped to `gg` within *Normal* mode, I'll be sent to the
+top of the file by pressing `0`.
 Moreover, while in *Insert* mode, every character `n` that I type will turn into `N`.
 Lastly, because of the recursive mapping, typing `d` in *Insert* mode
 will return `wat`. You can think of it as something like: `d` => `D` =>
