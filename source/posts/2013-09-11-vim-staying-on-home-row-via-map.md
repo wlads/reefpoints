@@ -116,18 +116,47 @@ Now that we got the basics out of the way, here is an example of my
 "
 " <Cr> signifies the "return" key
 
-" Escape to Normal mode from Insert mode
 inoremap ;a <Esc>
-
-" Escape and save the file from Insert mode
 inoremap ;d <Esc>:update<Cr>
-
-" Escape, save, and continue to work witin Insert mode
 inoremap ;f <Esc>:update<Cr>a
-
-" Save any unsaved changes from Normal mode
 nnoremap ;f :update<CR>
 ```
+I'm using `:update` here, which is "like `:write`, but only write when the buffer has been
+modified."
+
+Let's go over these mappings.
+
+The first one, `inoremap ;a <Esc>` maps the *semi-colon* and *a* key
+together when in *Insert* mode. By pressing `;` and then `a` immediately afterwards, we mimic
+the functionality of the *Escape* key.
+
+The second map, `inoremap ;d <Esc>:update<Cr>` maps the *semi-colon* and the *d* key.
+Pressing `;` and then `d` immediately afterwards returns the sequence of:
+
+* From *Insert* mode, escape to *Normal* mode
+* Type `:` to get inside the *Command* mode, and type the `update`
+  command
+* Complete the sequence by "hitting" *Return*, thus saving the file
+
+The third map command, `inoremap ;f <Esc>:update<Cr>a`, allows us to
+type `;` and then `f` to return:
+
+* From *Insert* mode, escape out to *Normal* mode
+* Type `:` to get inside *Command* mode, and then type `udpate`
+* "Hit" the *Return*, thus saving the file
+* Since we're still in *Normal* mode, type `a` which appends us to our
+  cursor location, ultimately placing us back into *Insert* mode
+
+Finally, the `nnoremap ;f :update<CR>` mapping means by typing `;` and
+then `f` in *Normal* mode, it will result in:
+
+* Since, we're already in *Normal* mode, we get into *Command* mode by
+  typing `:`
+* Type the `update` command
+* "Hit" the *Return* key, and save the file
+* We remain in *Normal* mode
+
+The snippet below restricts these commands to your right hand.
 
 ```
 " ~/.vimrc
@@ -138,9 +167,6 @@ inoremap ;k <Esc>:update<Cr>
 inoremap ;j <Esc>:update<Cr>a
 nnoremap ;j :update<CR>
 ```
-
-I'm using `:update` here, which is "like `:write`, but only write when the buffer has been
-modified."
 
 As you can see, I kept `;` as a prefix to my map commands. This
 conveniently keeps me at homerow. I've played with mapping everything
