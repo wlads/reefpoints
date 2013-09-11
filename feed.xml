@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-bae35624.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,240 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-09-06T00:00:00Z</updated>
+  <updated>2013-09-11T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Vim: Staying on Home Row via Map</title>
+    <link rel="alternate" href="/2013/09/11/vim-staying-on-home-row-via-map.html"/>
+    <id>/2013/09/11/vim-staying-on-home-row-via-map.html</id>
+    <published>2013-09-11T00:00:00Z</published>
+    <updated>2013-09-11T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Here at DockYard, the majority of us are using Vim. I don&amp;#39;t want to
+write about the benefits of using this sweet editor, as that would take too long,
+but instead, I&amp;#39;d like to share a couple of my favorite mappings for
+escaping and saving files.&lt;/p&gt;
+
+&lt;h2&gt;Vanilla Vim: Escaping and Saving&lt;/h2&gt;
+
+&lt;p&gt;Escaping out to &lt;em&gt;Normal&lt;/em&gt; mode from the other modes in Vim is straightforward:
+simply hit the &lt;code&gt;Esc&lt;/code&gt; key.
+Saving files is accomplished by, from &lt;code&gt;Normal&lt;/code&gt; mode, pressing &lt;code&gt;:w&lt;/code&gt; and then &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;So... What&amp;#39;s the Problem?&lt;/h2&gt;
+
+&lt;p&gt;During a session, especially when I&amp;#39;m writing large pieces of text,
+I&amp;#39;d find myself in a repetitive rut:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I just typed out a couple of sentences and want to save my progress&lt;/li&gt;
+&lt;li&gt;I&amp;#39;d remove my left hand from home row to hit the &lt;code&gt;Esc&lt;/code&gt; key&lt;/li&gt;
+&lt;li&gt;Saving the file required me, once again to leave home row, to hit &lt;code&gt;:w&lt;/code&gt;
+and then the &lt;code&gt;Enter&lt;/code&gt; or the &lt;code&gt;Return&lt;/code&gt; key&lt;/li&gt;
+&lt;li&gt;To continue on, I&amp;#39;d press &lt;code&gt;i&lt;/code&gt; and type along&lt;/li&gt;
+&lt;li&gt;Repeat, repeat, repeat...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See where I&amp;#39;m getting at?&lt;/p&gt;
+
+&lt;h2&gt;Let&amp;#39;s Talk About Map&lt;/h2&gt;
+
+&lt;p&gt;Before we review and
+&lt;a href="http://www.flickr.com/search/?q=pasta"&gt;copy-pasta&lt;/a&gt;
+the portion of my &lt;code&gt;.vimrc&lt;/code&gt;, let&amp;#39;s briefly go over the very basics of the
+pertinent map commands.
+You can find the entire &lt;a href="http://vimdoc.sourceforge.net/htmldoc/map.html"&gt;map documentation here&lt;/a&gt;
+or by typing &lt;code&gt;:help map&lt;/code&gt; within a Vim session.&lt;/p&gt;
+
+&lt;p&gt;Protip: To open help texts into a full buffer, &lt;code&gt;:h map | only&lt;/code&gt; or to open them in a separate tab &lt;code&gt;:tab h map&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Recursive Map&lt;/h3&gt;
+
+&lt;p&gt;First, we&amp;#39;re going to talk about &lt;em&gt;recursive&lt;/em&gt; map commands. A &lt;em&gt;recursive&lt;/em&gt;
+command will transform one result to another result, if there is another
+binding to that key. An example can be found at the &lt;code&gt;.vimrc&lt;/code&gt; below.&lt;/p&gt;
+
+&lt;p&gt;Here are the basic &lt;em&gt;recursive&lt;/em&gt; map commands.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;map&lt;/code&gt;  - command to transform the operation of typed keys within &lt;em&gt;ALL&lt;/em&gt; modes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can prepend the first letter of the desired mode to &lt;code&gt;map&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nmap&lt;/code&gt; - transform the operation of typed keys within &lt;em&gt;Normal&lt;/em&gt;
+mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;imap&lt;/code&gt; - transform the operations of typed keys within
+&lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vmap&lt;/code&gt; - transform the operations of typed keys within
+&lt;em&gt;Visual&lt;/em&gt; mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, if I had this within my &lt;code&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
+&amp;quot;
+&amp;quot; Note: double quotes signifies comments
+
+nmap 0 gg
+imap n N
+
+&amp;quot; Time for a little recursive map
+imap d D
+imap D wat
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Since &lt;code&gt;0&lt;/code&gt; is mapped to &lt;code&gt;gg&lt;/code&gt; within &lt;em&gt;Normal&lt;/em&gt; mode, I&amp;#39;ll be sent to the
+top of the file by pressing &lt;code&gt;0&lt;/code&gt;.
+Moreover, while in &lt;em&gt;Insert&lt;/em&gt; mode, every character &lt;code&gt;n&lt;/code&gt; that I type will turn into &lt;code&gt;N&lt;/code&gt;.
+Lastly, because of the recursive mapping, typing &lt;code&gt;d&lt;/code&gt; in &lt;em&gt;Insert&lt;/em&gt; mode
+will return &lt;code&gt;wat&lt;/code&gt;. You can think of it as something like: &lt;code&gt;d&lt;/code&gt; =&amp;gt; &lt;code&gt;D&lt;/code&gt; =&amp;gt;
+&lt;code&gt;wat&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, there&amp;#39;s a &lt;em&gt;non-recursive&lt;/em&gt; map.&lt;/p&gt;
+
+&lt;h3&gt;Non-recursive Map&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Non-recursive&lt;/em&gt; map commands are signified by adding &lt;code&gt;nore&lt;/code&gt; after the
+ mode modifier.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;inoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Visual&lt;/em&gt; mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
+
+inoremap c C
+inoremap C nope
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, in &lt;em&gt;Insert&lt;/em&gt; mode, if we type &lt;code&gt;c&lt;/code&gt;, we will return &lt;code&gt;C&lt;/code&gt;; the transformation of
+&lt;code&gt;c&lt;/code&gt; to &lt;code&gt;nope&lt;/code&gt; will not occur.&lt;/p&gt;
+
+&lt;h2&gt;Enter the .vimrc&lt;/h2&gt;
+
+&lt;p&gt;Now that we got the basics out of the way, here is an example of my
+&lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
+&amp;quot; *** The Two Hand system ***
+&amp;quot;
+&amp;quot; &amp;lt;Cr&amp;gt; signifies the &amp;quot;return&amp;quot; key
+
+inoremap ;a &amp;lt;Esc&amp;gt;
+inoremap ;d &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
+inoremap ;f &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a
+nnoremap ;f :update&amp;lt;CR&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;I&amp;#39;m using &lt;code&gt;:update&lt;/code&gt; here, which is &amp;quot;like &lt;code&gt;:write&lt;/code&gt;, but only write when the buffer has been
+modified.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s go over these mappings.&lt;/p&gt;
+
+&lt;p&gt;The first one, &lt;code&gt;inoremap ;a &amp;lt;Esc&amp;gt;&lt;/code&gt; maps the &lt;em&gt;semi-colon&lt;/em&gt; and &lt;em&gt;a&lt;/em&gt; key
+together when in &lt;em&gt;Insert&lt;/em&gt; mode. By pressing &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;a&lt;/code&gt; immediately afterwards, we mimic
+the functionality of the &lt;em&gt;Escape&lt;/em&gt; key.&lt;/p&gt;
+
+&lt;p&gt;The second map, &lt;code&gt;inoremap ;d &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;&lt;/code&gt; maps the &lt;em&gt;semi-colon&lt;/em&gt; and the &lt;em&gt;d&lt;/em&gt; key.
+Pressing &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;d&lt;/code&gt; immediately afterwards returns the sequence of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape to &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside the &lt;em&gt;Command&lt;/em&gt; mode, and type the &lt;code&gt;update&lt;/code&gt;
+command&lt;/li&gt;
+&lt;li&gt;Complete the sequence by &amp;quot;hitting&amp;quot; &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The third map command, &lt;code&gt;inoremap ;f &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a&lt;/code&gt;, allows us to
+type &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;f&lt;/code&gt; to return:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape out to &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside &lt;em&gt;Command&lt;/em&gt; mode, and then type &lt;code&gt;udpate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;quot;Hit&amp;quot; the &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
+&lt;li&gt;Since we&amp;#39;re still in &lt;em&gt;Normal&lt;/em&gt; mode, type &lt;code&gt;a&lt;/code&gt; which appends us to our
+cursor location, ultimately placing us back into &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, the &lt;code&gt;nnoremap ;f :update&amp;lt;CR&amp;gt;&lt;/code&gt; mapping means by typing &lt;code&gt;;&lt;/code&gt; and
+then &lt;code&gt;f&lt;/code&gt; in &lt;em&gt;Normal&lt;/em&gt; mode, it will result in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Since, we&amp;#39;re already in &lt;em&gt;Normal&lt;/em&gt; mode, we get into &lt;em&gt;Command&lt;/em&gt; mode by
+typing &lt;code&gt;:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Type the &lt;code&gt;update&lt;/code&gt; command&lt;/li&gt;
+&lt;li&gt;&amp;quot;Hit&amp;quot; the &lt;em&gt;Return&lt;/em&gt; key, and save the file&lt;/li&gt;
+&lt;li&gt;We remain in &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The snippet below restricts these commands to your right hand.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
+&amp;quot; *** The Right Hand system ***
+
+inoremap ;l &amp;lt;Esc&amp;gt;
+inoremap ;k &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
+inoremap ;j &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a
+nnoremap ;j :update&amp;lt;CR&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;As you can see, I kept &lt;code&gt;;&lt;/code&gt; as a prefix to my map commands. This
+conveniently keeps me at homerow. I&amp;#39;ve played with mapping everything
+with my right hand, but it just didn&amp;#39;t feel &amp;quot;right&amp;quot; (apologies for the
+bad pun).&lt;/p&gt;
+
+&lt;p&gt;Overall, this snippet makes me happy and I believe this will make your
+day as well. If there are some other tricks
+concerning escaping and saving files, please let me know in the
+comments! Thanks!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Postgres_ext adds rank and common table expressions</title>
     <link rel="alternate" href="/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
@@ -948,217 +1178,6 @@ relies on the &lt;em&gt;strategy&lt;/em&gt; to do the work, while the &lt;em&gt;
 informs the &lt;em&gt;observers&lt;/em&gt; of what is going on with the &lt;em&gt;subject&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hope you enjoyed this short example, thanks for reading!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Testing Context Validations</title>
-    <link rel="alternate" href="/2013/08/05/testing-context-validations.html"/>
-    <id>/2013/08/05/testing-context-validations.html</id>
-    <published>2013-08-05T00:00:00Z</published>
-    <updated>2013-08-05T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Quick Refresher on ContextValidation&lt;/h2&gt;
-
-&lt;p&gt;A few months ago, Brian released the &lt;a href="http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html"&gt;ContextValidations gem&lt;/a&gt;.
-ContextValidations moves your model validations to the controller,
-allowing you to vary your validations by context, rather than relying on
-conditional validations.&lt;/p&gt;
-
-&lt;h2&gt;Let&amp;#39;s validate our user&lt;/h2&gt;
-
-&lt;p&gt;We have a user model, that requires a password and a username when a
-user signs up. They can change their username and password, but if they
-can leave the password blank when updating their account, it will retain
-the old password. Whenever they enter a password , it must be 9
-characters or greater. We&amp;#39;re going to ignore the actual implementation
-of the password saving scheme and password confirmation in this example.
-Also, this example ignores setting up the test helper for &lt;a href="https://github.com/bcardarella/valid_attribute"&gt;valid_attribute&lt;/a&gt;
-and MiniTest::Spec.&lt;/p&gt;
-
-&lt;h3&gt;Implementing the Tests and Validations in the Model&lt;/h3&gt;
-
-&lt;p&gt;To test the above requirements model validations, we&amp;#39;d do the following:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;describe &lt;span class="constant"&gt;OldUser&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  describe &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;new user&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    subject { &lt;span class="constant"&gt;OldUser&lt;/span&gt;.new &lt;span class="key"&gt;password&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;password_to_confirm&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; }
-
-    it { must have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;) }
-    it { must have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;validpassword1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tooshort&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  describe &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;existing user&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    subject { old_users(&lt;span class="symbol"&gt;:example&lt;/span&gt;) }
-
-    it { must have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;) }
-    it { must have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;validpassword1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tooshort&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And here is the implementation of the model:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;OldUser&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="constant"&gt;Base&lt;/span&gt;
-  attr_accessor &lt;span class="symbol"&gt;:password&lt;/span&gt;
-  validates &lt;span class="symbol"&gt;:username&lt;/span&gt;, &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-  validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;, &lt;span class="key"&gt;if&lt;/span&gt;: &lt;span class="symbol"&gt;:new_record?&lt;/span&gt;
-  validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="key"&gt;length&lt;/span&gt;: { &lt;span class="key"&gt;minimum&lt;/span&gt;: &lt;span class="integer"&gt;9&lt;/span&gt; }, &lt;span class="key"&gt;allow_blank&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h3&gt;Implementing the Tests and Validations in the Controller with ContextValidations&lt;/h3&gt;
-
-&lt;p&gt;We&amp;#39;ve been using ContextValidations with our client work since its
-release and realized we could unit test the controller to test the
-validations.&lt;/p&gt;
-
-&lt;p&gt;Our unit tests for the controller are here:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;describe &lt;span class="constant"&gt;UsersController&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  describe &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;#create&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    subject { &lt;span class="constant"&gt;User&lt;/span&gt;.new(&lt;span class="key"&gt;validations&lt;/span&gt;: validations_for(&lt;span class="symbol"&gt;:create&lt;/span&gt;)) }
-
-    it { must have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;) }
-    it { must have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;validpassword1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tooshort&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  describe &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;#update&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-    subject { &lt;span class="constant"&gt;User&lt;/span&gt;.new(&lt;span class="key"&gt;validations&lt;/span&gt;: validations_for(&lt;span class="symbol"&gt;:update&lt;/span&gt;)) }
-
-    it { must have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:username&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;) }
-    it { must have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="predefined-constant"&gt;nil&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;validpassword1234&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-    it { wont have_valid(&lt;span class="symbol"&gt;:password&lt;/span&gt;).when(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tooshort&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Note the use of &lt;code&gt;validations_for&lt;/code&gt;. It is a MiniTest
-helper method defined by ContextValidations, which looks up the name
-of the controller from the describe block, creates an instance of it,
-and retrieves the validations for the context passed in. This prevents
-you from needing to create your own instance and calling &lt;code&gt;validations&lt;/code&gt;
-on it. The resulting tests end up looking very similar to what your
-model tests would look like.&lt;/p&gt;
-
-&lt;p&gt;Our model implementation is very light:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;User&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="constant"&gt;Base&lt;/span&gt;
-  include &lt;span class="constant"&gt;ContextValidations&lt;/span&gt;::&lt;span class="constant"&gt;Model&lt;/span&gt;
-
-  attr_accessor &lt;span class="symbol"&gt;:password&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And our validations are defined in the controller:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;UsersController&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ApplicationController&lt;/span&gt;
-  include &lt;span class="constant"&gt;ContextValidations&lt;/span&gt;::&lt;span class="constant"&gt;Controller&lt;/span&gt;
-
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;base_validations&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:username&lt;/span&gt;, &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="key"&gt;length&lt;/span&gt;: { &lt;span class="key"&gt;minimum&lt;/span&gt;: &lt;span class="integer"&gt;9&lt;/span&gt; }, &lt;span class="key"&gt;allow_blank&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;create_validations&lt;/span&gt;
-    validates &lt;span class="symbol"&gt;:password&lt;/span&gt;, &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;All of the examples are part of &lt;a href="https://github.com/dockyard/testing_context_validations"&gt;this repository&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Wrapping it up&lt;/h2&gt;
-
-&lt;p&gt;As you can see, writing the validation tests for the controller are
-almost identical to writing them for the model. There are a few
-differences in setting up the subject for the tests, but the only major
-difference is that you are testing the controller instead of the model.
-If you have any feedback on the tests we came up with, feel free to let
-us know!&lt;/p&gt;
 </content>
   </entry>
 </feed>
