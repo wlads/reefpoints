@@ -128,7 +128,7 @@ mode&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;imap&lt;/code&gt; - transform the operations of typed keys within
 &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;vmap&lt;/code&gt; - transform the operations of typed keys within
-&lt;em&gt;Visual&lt;/em&gt; mode&lt;/li&gt;
+&lt;em&gt;Visual&lt;/em&gt; and &lt;em&gt;Select&lt;/em&gt; mode&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;For example, if I had this within my &lt;code&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
@@ -174,7 +174,7 @@ will return &lt;code&gt;wat&lt;/code&gt;. You can think of it as something like:
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;nnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;inoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Visual&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Visual&lt;/em&gt; and &lt;em&gt;Select&lt;/em&gt; mode&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
