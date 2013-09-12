@@ -118,7 +118,7 @@ Now that we got the basics out of the way, here is an example of my
 
 inoremap ;a <Esc>
 inoremap ;d <Esc>:update<Cr>
-inoremap ;f <Esc>:update<Cr>a
+inoremap ;f <C-O>:update<Cr>
 nnoremap ;f :update<CR>
 ```
 I'm using `:update` here, which is "like `:write`, but only write when the buffer has been
@@ -138,14 +138,15 @@ Pressing `;` and then `d` immediately afterwards returns the sequence of:
   command
 * Complete the sequence by "hitting" *Return*, thus saving the file
 
-The third map command, `inoremap ;f <Esc>:update<Cr>a`, allows us to
+The third map command, `inoremap ;f <C-O>:update<Cr>`, allows us to
 type `;` and then `f` to return:
 
-* From *Insert* mode, escape out to *Normal* mode
-* Type `:` to get inside *Command* mode, and then type `udpate`
+* From *Insert* mode, escape out to *Normal* with `<C-O>`, which allows
+  us to escape out for *ONE* command.
+* Type `:` to get inside *Command* mode, and then type `udpate`. This is
+  our one command for `<C-O>`
 * "Hit" the *Return*, thus saving the file
-* Since we're still in *Normal* mode, type `a` which appends us to our
-  cursor location, ultimately placing us back into *Insert* mode
+* We're back in *Insert* mode, thanks to `<C-O>`
 
 Finally, the `nnoremap ;f :update<CR>` mapping means by typing `;` and
 then `f` in *Normal* mode, it will result in:
@@ -164,7 +165,7 @@ The snippet below restricts these commands to your right hand.
 
 inoremap ;l <Esc>
 inoremap ;k <Esc>:update<Cr>
-inoremap ;j <Esc>:update<Cr>a
+inoremap ;j <C-O>:update<Cr>
 nnoremap ;j :update<CR>
 ```
 
