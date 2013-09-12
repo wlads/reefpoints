@@ -63,7 +63,7 @@ You can prepend the first letter of the desired mode to `map`.
 * `imap` - transform the operations of typed keys within
   *Insert* mode
 * `vmap` - transform the operations of typed keys within
-  *Visual* mode
+  *Visual* and *Select* mode
 
 For example, if I had this within my `.vimrc`:
 
@@ -94,7 +94,7 @@ Thankfully, there's a *non-recursive* map.
 
 * `nnoremap` - non-recursive map for *Normal* mode
 * `inoremap` - non-recursive map for *Insert* mode
-* `vnoremap` - non-recursive map for *Visual* mode
+* `vnoremap` - non-recursive map for *Visual* and *Select* mode
 
 ```
 " ~/.vimrc
