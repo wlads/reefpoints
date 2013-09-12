@@ -1,16 +1,16 @@
-/* line 3, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 3, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 .wrap {
   margin-left: auto;
   margin-right: auto; }
 
-/* line 7, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 7, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 .show-all-posts {
   margin-left: auto;
   margin-right: auto;
   display: block;
   text-align: center; }
 
-/* line 13, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 13, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 .index-section {
   margin-left: auto;
   margin-right: auto;
@@ -19,11 +19,11 @@
   border-bottom: 1px solid #e6e7e8;
   overflow: auto; }
 
-/* line 22, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 22, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 .expanding-the-yard .post-content {
   padding: 0;
   max-width: none; }
-/* line 25, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 25, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 .expanding-the-yard .content {
   margin-left: auto;
   margin-right: auto;
@@ -32,36 +32,36 @@
   max-width: 720px; }
 
 @media (min-width: 1220px) {
-  /* line 33, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 33, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     max-width: 680px; } }
 @media (min-width: 1100px) and (max-width: 1220px) {
-  /* line 37, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 37, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     max-width: 600px; } }
 @media (min-width: 1100px) {
-  /* line 41, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 41, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .wrap {
     width: 980px; }
 
-  /* line 43, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 43, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .show-all-posts {
     width: 480px; }
 
-  /* line 45, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 45, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     width: 100%; }
 
-  /* line 47, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 47, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-meta {
     padding-left: 5%;
     width: 170px; } }
 @media (max-width: 1100px) {
-  /* line 52, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 52, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .wrap {
     width: 90%; }
 
-  /* line 54, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 54, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .show-all-posts {
     width: 90%;
     padding: 0.75em 0;
@@ -75,46 +75,46 @@
     font-weight: bold;
     color: white; }
 
-  /* line 66, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 66, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .post-div {
     top: 2em;
     width: 90%;
     max-width: 720px; }
 
-  /* line 70, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 70, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   #blog footer {
     padding-top: 7em; } }
 @media (min-width: 780px) and (max-width: 1100px) {
-  /* line 74, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 74, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     width: 70%;
     right: 20px; }
 
-  /* line 77, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 77, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-meta {
     width: 20%;
     padding: 0 20px 0 0; } }
 @media (min-width: 780px) {
-  /* line 82, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 82, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-section {
     width: 80%;
     max-width: 980px; }
 
-  /* line 85, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 85, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     float: right;
     padding-right: 5%; }
 
-  /* line 88, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 88, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-meta {
     float: left;
     text-align: right; }
 
-  /* line 91, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 91, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .post-content img {
     width: 50%; } }
 @media (max-width: 780px) {
-  /* line 95, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 95, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-post {
     text-align: center;
     float: none;
@@ -122,59 +122,59 @@
     margin-left: auto;
     margin-right: auto; }
 
-  /* line 101, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 101, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .search {
     width: 85%;
     margin-bottom: 38px; }
 
-  /* line 104, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 104, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-section {
     width: 90%; }
 
-  /* line 106, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 106, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-meta {
     display: none; }
 
-  /* line 108, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 108, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-title {
     font-size: 28px; }
 
-  /* line 110, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 110, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .index-summary {
     margin-top: 1em;
     margin-left: 2em;
     margin-right: 2em; }
 
-  /* line 114, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 114, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .post-content img {
     width: 100%; } }
 @media (min-width: 480px) {
-  /* line 118, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 118, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .expanding-the-yard .content {
     padding-top: 40px;
     padding-bottom: 40px; } }
 @media (max-width: 480px) {
-  /* line 123, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 123, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .link-in-post {
     display: none; }
 
-  /* line 125, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 125, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .post-date {
     display: block; }
 
-  /* line 127, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 127, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .expanding-the-yard .content {
     padding-top: 20px;
     padding-bottom: 20px; }
 
-  /* line 130, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+  /* line 130, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
   .design .issue {
     width: 91.5%; } }
-/* line 133, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 133, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 table.CodeRay td.line-numbers {
   min-width: 38px; }
 
-/* line 136, /Users/dug/DockYard/reefpoints/source/stylesheets/layout.sass */
+/* line 136, /Users/dyun/Stuff/reefpoints/source/stylesheets/layout.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   border-radius: 3px;

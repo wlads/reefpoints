@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Vim: Staying on Home Row via Map</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Map commands for quick escapes and saves' name='description'><meta content='DougYun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html' name='twitter:url'><meta content='Vim: Staying on Home Row via Map' name='twitter:title'><meta content='Map commands for quick escapes and saves' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Vim: Staying on Home Row via Map</title><link href="/stylesheets/all-f0f513e0.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Map commands for quick escapes and saves' name='description'><meta content='DougYun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html' name='twitter:url'><meta content='Vim: Staying on Home Row via Map' name='twitter:title'><meta content='Map commands for quick escapes and saves' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -194,7 +194,7 @@ inoremap C nope
 
 inoremap ;a &lt;Esc&gt;
 inoremap ;d &lt;Esc&gt;:update&lt;Cr&gt;
-inoremap ;f &lt;Esc&gt;:update&lt;Cr&gt;a
+inoremap ;f &lt;C-O&gt;:update&lt;Cr&gt;
 nnoremap ;f :update&lt;CR&gt;
 </pre></td>
 </tr></table>
@@ -218,15 +218,16 @@ command</li>
 <li>Complete the sequence by &quot;hitting&quot; <em>Return</em>, thus saving the file</li>
 </ul>
 
-<p>The third map command, <code>inoremap ;f &lt;Esc&gt;:update&lt;Cr&gt;a</code>, allows us to
+<p>The third map command, <code>inoremap ;f &lt;C-O&gt;:update&lt;Cr&gt;</code>, allows us to
 type <code>;</code> and then <code>f</code> to return:</p>
 
 <ul>
-<li>From <em>Insert</em> mode, escape out to <em>Normal</em> mode</li>
-<li>Type <code>:</code> to get inside <em>Command</em> mode, and then type <code>udpate</code></li>
+<li>From <em>Insert</em> mode, escape out to <em>Normal</em> with <code>&lt;C-O&gt;</code>, which allows
+us to escape out for <em>ONE</em> command.</li>
+<li>Type <code>:</code> to get inside <em>Command</em> mode, and then type <code>udpate</code>. This is
+our one command for <code>&lt;C-O&gt;</code></li>
 <li>&quot;Hit&quot; the <em>Return</em>, thus saving the file</li>
-<li>Since we&#39;re still in <em>Normal</em> mode, type <code>a</code> which appends us to our
-cursor location, ultimately placing us back into <em>Insert</em> mode</li>
+<li>We&#39;re back in <em>Insert</em> mode, thanks to <code>&lt;C-O&gt;</code></li>
 </ul>
 
 <p>Finally, the <code>nnoremap ;f :update&lt;CR&gt;</code> mapping means by typing <code>;</code> and
@@ -255,7 +256,7 @@ typing <code>:</code></li>
 
 inoremap ;l &lt;Esc&gt;
 inoremap ;k &lt;Esc&gt;:update&lt;Cr&gt;
-inoremap ;j &lt;Esc&gt;:update&lt;Cr&gt;a
+inoremap ;j &lt;C-O&gt;:update&lt;Cr&gt;
 nnoremap ;j :update&lt;CR&gt;
 </pre></td>
 </tr></table>

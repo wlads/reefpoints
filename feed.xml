@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-f0f513e0.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -214,7 +214,7 @@ inoremap C nope
 
 inoremap ;a &amp;lt;Esc&amp;gt;
 inoremap ;d &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
-inoremap ;f &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a
+inoremap ;f &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;
 nnoremap ;f :update&amp;lt;CR&amp;gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
@@ -238,15 +238,16 @@ command&lt;/li&gt;
 &lt;li&gt;Complete the sequence by &amp;quot;hitting&amp;quot; &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The third map command, &lt;code&gt;inoremap ;f &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a&lt;/code&gt;, allows us to
+&lt;p&gt;The third map command, &lt;code&gt;inoremap ;f &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;&lt;/code&gt;, allows us to
 type &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;f&lt;/code&gt; to return:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape out to &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside &lt;em&gt;Command&lt;/em&gt; mode, and then type &lt;code&gt;udpate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape out to &lt;em&gt;Normal&lt;/em&gt; with &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;, which allows
+us to escape out for &lt;em&gt;ONE&lt;/em&gt; command.&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside &lt;em&gt;Command&lt;/em&gt; mode, and then type &lt;code&gt;udpate&lt;/code&gt;. This is
+our one command for &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&amp;quot;Hit&amp;quot; the &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
-&lt;li&gt;Since we&amp;#39;re still in &lt;em&gt;Normal&lt;/em&gt; mode, type &lt;code&gt;a&lt;/code&gt; which appends us to our
-cursor location, ultimately placing us back into &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
+&lt;li&gt;We&amp;#39;re back in &lt;em&gt;Insert&lt;/em&gt; mode, thanks to &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Finally, the &lt;code&gt;nnoremap ;f :update&amp;lt;CR&amp;gt;&lt;/code&gt; mapping means by typing &lt;code&gt;;&lt;/code&gt; and
@@ -275,7 +276,7 @@ typing &lt;code&gt;:&lt;/code&gt;&lt;/li&gt;
 
 inoremap ;l &amp;lt;Esc&amp;gt;
 inoremap ;k &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
-inoremap ;j &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;a
+inoremap ;j &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;
 nnoremap ;j :update&amp;lt;CR&amp;gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
