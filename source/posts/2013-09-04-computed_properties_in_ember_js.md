@@ -17,7 +17,7 @@ Guides](http://emberjs.com/guides/object-model/computed-properties/).
 ## What Are Computed Properties?
 
 In a nutshell, it's a property whose value is computed the first time
-it's asked for. You can defined the computed property as a function and
+it's asked for. You can define the computed property as a function and
 when someone asks for it, Ember will automatically invoke the function
 and treat the return value like value of the property.
 
@@ -152,7 +152,7 @@ The concept of `observer` is pretty simple. You have something that you want to 
 
 There are two types of observers: `before` (observesBefore) and `after` (observes). When observer event (callback) is fired, it's called with two arguments: `obj` and `keyName`. It doesn't pass the value of the property to the event (callback). The reason for that is that property (or whatever you're watching) might be lazily computed.
 
-`Observers` are used by CP internally to invalidate CP's cache when its dependancy keys were changed. Observers (like CPs) don't use runloop magic (fired "right away").
+`Observers` are used by CP internally to invalidate CP's cache when its dependency keys were changed. Observers (like CPs) don't use runloop magic (fired "right away").
 
 `Observers` are not going to fire if the value was not change (changing existing `lastName` from `Stark` to `Stark` won't trigger the observer callback).
 
