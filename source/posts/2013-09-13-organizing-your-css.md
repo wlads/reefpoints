@@ -6,7 +6,7 @@ author: Amanda Cheung
 github: acacheung
 legacy_category: design
 social: true
-summary: ""
+summary: "Using SMACSS and BEM in your stylesheets"
 published: false
 ---
 
