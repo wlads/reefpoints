@@ -16,7 +16,7 @@ For maintainability! If anyone else has to read your code or if you have to read
 
 ## SMACSS file structure ##
 
-SMACSS by Jonathan Snook is a must-read for front-end devs and it classifies styles into five different categories:
+[SMACSS](https://smacss.com/) by Jonathan Snook is a must-read for front-end designers and it classifies styles into five different categories:
 
 1) Base styles, which includes the CSS reset and element defaults.
 2) Layout styles, which includes the grid system and major component layout / positioning.
@@ -30,9 +30,9 @@ I like to give each of these its own stylesheet and have a directory for modules
 
 SMACSS also gives us naming conventions to follow for layout (class names prefixed by "l-") and state styles (class names prefixed by "is-") so when we see certain class names, we know the purpose of the styles that they tie to.
 
-SMACSS does not give a special naming convention to modules, but depending on the situation, I use BEM to name certain module styles. I only use this when what I’m trying to style always has the same parent element throughout the website or application. BEM stands for "Block, Element, Modifier" and its class names look something like ``.footer__button--twitter``, which follows the syntax of ``.block__element--modifier``. Looks a little weird, right? It took me a minute to get used to it too. Basically, double underscore signifies a child element of the block and double dash signifies a modifier to the element within that block.
+SMACSS does not give a special naming convention to modules, but depending on the situation, I use [BEM](http://bem.info/method/) to name certain module styles. I only use this when what I’m trying to style always has the same parent element throughout the website or application. BEM stands for "Block, Element, Modifier" and its class names look something like ``.footer__button--twitter``, which follows the syntax of ``.block__element--modifier``. Looks a little weird, right? It took me a minute to get used to it too. Basically, double underscore signifies a child element of the block and double dash signifies a modifier to the element within that block.
 
-[picture of Wicked Good Ruby footer]
+<img src='/images/wicked-good-ruby.jpg' alt='Wicked Good Ruby' style='width: 100%;'>
 
 Here we have three buttons that belong in the footer and are unlike buttons on the rest of the page. So I would give each button a class of ``.footer__button``.  The twitter button has an icon specific to itself so it needs to be modified from ``.footer__button`` and take on additional styles from ``.footer__button—twitter``.
 
