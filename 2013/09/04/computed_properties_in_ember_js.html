@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Computed Properties in Ember.Js</title><link href="/stylesheets/all-f0f513e0.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Computed Properties magic explained' name='description'><meta content='twokul' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html' name='twitter:url'><meta content='Computed Properties in Ember.Js' name='twitter:title'><meta content='Computed Properties magic explained' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Computed Properties in Ember.Js</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Computed Properties magic explained' name='description'><meta content='twokul' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html' name='twitter:url'><meta content='Computed Properties in Ember.Js' name='twitter:title'><meta content='Computed Properties magic explained' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -56,7 +56,7 @@ Guides</a>.</p>
 <h2>What Are Computed Properties?</h2>
 
 <p>In a nutshell, it&#39;s a property whose value is computed the first time
-it&#39;s asked for. You can defined the computed property as a function and
+it&#39;s asked for. You can define the computed property as a function and
 when someone asks for it, Ember will automatically invoke the function
 and treat the return value like value of the property.</p>
 
@@ -156,7 +156,7 @@ captainAmerica.get(<span class="string"><span class="delimiter">'</span><span cl
 </pre></td>
 </tr></table>
 </div></div>
-<p>Notice that you can use existing computed property as a dependency for a
+<p>Notice that you can use an existing computed property as a dependency for a
 new one.</p>
 
 <h2>Caching</h2>
@@ -177,7 +177,7 @@ captainAmerica.get(<span class="string"><span class="delimiter">'</span><span cl
 </pre></td>
 </tr></table>
 </div></div>
-<p>Computed property gets recomputed when any of the properties it depends on changes:</p>
+<p>A computed property gets recomputed when any of the properties it depends on change:</p>
 <div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -236,7 +236,7 @@ captainAmerica.set(<span class="string"><span class="delimiter">'</span><span cl
 </pre></td>
 </tr></table>
 </div></div>
-<p>does exactly the same thing, as this one:</p>
+<p>does exactly the same thing as this code:</p>
 <div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -256,22 +256,22 @@ captainAmerica.set(<span class="string"><span class="delimiter">'</span><span cl
 </pre></td>
 </tr></table>
 </div></div>
-<p>with the difference the first example works if you disable <a href="http://emberjs.com/api/#property_EXTEND_PROTOTYPES">Ember&#39;s
+<p>with the difference that the first example works if you disable <a href="http://emberjs.com/api/#property_EXTEND_PROTOTYPES">Ember&#39;s
 prototype extension</a>.</p>
 
-<h2>How is CP different from Observers and Bindings?</h2>
+<h2>How are Computed Properties different from Observers and Bindings?</h2>
 
-<p>The concept of <code>observer</code> is pretty simple. You have something that you want to track the change of. You add an observer to it, so next time it changes, a certain event is going to be fired, notifying you that that something has been changed.</p>
+<p>The concept of <code>observer</code> is pretty simple. You have something that you want to track the change of. You add an observer to it, so next time it changes, a certain event is going to be fired notifying you that that something has changed.</p>
 
-<p>There are two types of observers: <code>before</code> (observesBefore) and <code>after</code> (observes). When observer event (callback) is fired, it&#39;s called with two arguments: <code>obj</code> and <code>keyName</code>. It doesn&#39;t pass the value of the property to the event (callback). The reason for that is that property (or whatever you&#39;re watching) might be lazily computed.</p>
+<p>There are two types of observers: <code>before</code> (observesBefore) and <code>after</code> (observes). When observer event (callback) is fired, it&#39;s called with two arguments: <code>obj</code> and <code>keyName</code>. It doesn&#39;t pass the value of the property to the event (callback). The reason is because the property you&#39;re watching might be lazily computed.</p>
 
-<p><code>Observers</code> are used by CP internally to invalidate CP&#39;s cache when its dependancy keys were changed. Observers (like CPs) don&#39;t use runloop magic (fired &quot;right away&quot;).</p>
+<p><code>Observers</code> are used by CP internally to invalidate CP&#39;s cache when its dependency keys were changed. Observers (like CPs) don&#39;t use runloop magic (fired &quot;right away&quot;).</p>
 
-<p><code>Observers</code> are not going to fire if the value was not change (changing existing <code>lastName</code> from <code>Stark</code> to <code>Stark</code> won&#39;t trigger the observer callback).</p>
+<p><code>Observers</code> are not going to fire if the value is unchanged from before (changing existing <code>lastName</code> from <code>Stark</code> to <code>Stark</code> won&#39;t trigger the observer callback).</p>
 
-<p><code>Bindings</code> is internal concept that is not meant to be used. I&#39;m not saying you can&#39;t, it&#39;s better not to. Typically, you don&#39;t even need to use it in your application, using CP is plenty enough.</p>
+<p><code>Bindings</code> is an internal concept that is not meant to be used. I&#39;m not saying you can&#39;t, it&#39;s better not to. Typically, you don&#39;t need to use it in your application, using CP is plenty enough.</p>
 
-<p><code>Bindings</code> are meant to keep a property of two objects in sync. Their update (sync) happens through run loop, so there might be a point of time when two objects have the same property with different value and only by the end of a <code>sync</code> queue those values are going to be the same.</p>
+<p><code>Bindings</code> are meant to keep a property of two objects in sync. Their update (sync) happens through run loop, so there might be a period of time when two objects have the same property with different values and only by the end of a <code>sync</code> queue those values are going to be the same.</p>
 
 <p>For example, in Ember those two objects are controller and view (any time a controller&#39;s property changes, view&#39;s property changes as well).</p>
 
