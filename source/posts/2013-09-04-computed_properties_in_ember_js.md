@@ -77,7 +77,7 @@ captainAmerica.get('description');
 // "Steve Rogers; Age: 80; Country: USA"
 ```
 
-Notice that you can use existing computed property as a dependency for a
+Notice that you can use an existing computed property as a dependency for a
 new one.
 
 ## Caching
@@ -93,7 +93,7 @@ captainAmerica.get('description');
 // returns cached "Steve Rogers; Age: 80; Country: USA"
 ```
 
-Computed property gets recomputed when any of the properties it depends on changes:
+A computed property gets recomputed when any of the properties it depends on change:
 
 ```javascript
 captainAmerica.set('country', 'United States of America');
@@ -131,7 +131,7 @@ App.Person = Ember.Object.extend({
 });
 ```
 
-does exactly the same thing, as this one:
+does exactly the same thing as this code:
 
 ```javascript
 App.Person = Ember.Object.extend({
@@ -143,22 +143,22 @@ App.Person = Ember.Object.extend({
 });
 ```
 
-with the difference the first example works if you disable [Ember's
+with the difference that the first example works if you disable [Ember's
 prototype extension](http://emberjs.com/api/#property_EXTEND_PROTOTYPES).
 
-## How is CP different from Observers and Bindings?
+## How are Computed Properties different from Observers and Bindings?
 
-The concept of `observer` is pretty simple. You have something that you want to track the change of. You add an observer to it, so next time it changes, a certain event is going to be fired, notifying you that that something has been changed.
+The concept of `observer` is pretty simple. You have something that you want to track the change of. You add an observer to it, so next time it changes, a certain event is going to be fired notifying you that that something has changed.
 
-There are two types of observers: `before` (observesBefore) and `after` (observes). When observer event (callback) is fired, it's called with two arguments: `obj` and `keyName`. It doesn't pass the value of the property to the event (callback). The reason for that is that property (or whatever you're watching) might be lazily computed.
+There are two types of observers: `before` (observesBefore) and `after` (observes). When observer event (callback) is fired, it's called with two arguments: `obj` and `keyName`. It doesn't pass the value of the property to the event (callback). The reason is because the property you're watching might be lazily computed.
 
 `Observers` are used by CP internally to invalidate CP's cache when its dependency keys were changed. Observers (like CPs) don't use runloop magic (fired "right away").
 
-`Observers` are not going to fire if the value was not change (changing existing `lastName` from `Stark` to `Stark` won't trigger the observer callback).
+`Observers` are not going to fire if the value is unchanged from before (changing existing `lastName` from `Stark` to `Stark` won't trigger the observer callback).
 
-`Bindings` is internal concept that is not meant to be used. I'm not saying you can't, it's better not to. Typically, you don't even need to use it in your application, using CP is plenty enough.
+`Bindings` is an internal concept that is not meant to be used. I'm not saying you can't, it's better not to. Typically, you don't need to use it in your application, using CP is plenty enough.
 
-`Bindings` are meant to keep a property of two objects in sync. Their update (sync) happens through run loop, so there might be a point of time when two objects have the same property with different value and only by the end of a `sync` queue those values are going to be the same.
+`Bindings` are meant to keep a property of two objects in sync. Their update (sync) happens through run loop, so there might be a period of time when two objects have the same property with different values and only by the end of a `sync` queue those values are going to be the same.
 
 For example, in Ember those two objects are controller and view (any time a controller's property changes, view's property changes as well).
 
