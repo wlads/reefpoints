@@ -48,7 +48,7 @@ App.Router.map ->
     @route 'new'
     @route 'edit',
       path: '/:user_id/edit'
-    @route 'show'
+    @route 'show',
       path: '/:user_id'
 ```
 
