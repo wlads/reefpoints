@@ -123,7 +123,7 @@ Now let's move a block of lines:
 # Select the "first line", "second line", and the "third line" with Visual mode.
 # Hit CTRL and move upwards twice.
 #
-# :3 --> <SHIFT> + V --> jj --> <CTRL> + kk
+# :3 -- <ENTER> --> <SHIFT> + V --> jj --> <CTRL> + kk
 ```
 
 Other Ways
