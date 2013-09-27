@@ -7,7 +7,7 @@ twitter: 'DougYun'
 github: duggiefresh
 social: true
 summary: 'Quick ways to move lines'
-published: false
+published: true
 tags: vim, workflow
 ---
 In the last post, we briefly discussed the power of the
