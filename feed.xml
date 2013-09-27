@@ -57,10 +57,207 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-09-11T00:00:00Z</updated>
+  <updated>2013-09-26T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Vim: Moving Lines Ain't Hard</title>
+    <link rel="alternate" href="/2013/09/26/vim-moving-lines-aint-hard.html"/>
+    <id>/2013/09/26/vim-moving-lines-aint-hard.html</id>
+    <published>2013-09-26T00:00:00Z</published>
+    <updated>2013-09-26T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;In the last post, we briefly discussed the power of the
+&lt;a href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"&gt;&lt;em&gt;map&lt;/em&gt; command&lt;/a&gt;.
+In today&amp;#39;s post, we&amp;#39;re going to use &lt;em&gt;map&lt;/em&gt; again in order to move
+lines and blocks around.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s use an example:
+Our goal is to move the &lt;em&gt;first line&lt;/em&gt; to its proper location. From this:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To this:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- first line ---
+--- second line ---
+--- third line ---
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Delete, Then Paste&lt;/h2&gt;
+
+&lt;p&gt;Here is one of the most common ways, it ain&amp;#39;t pretty but it gets the job done.
+We&amp;#39;ll delete the desired line and paste it to the target location.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Delete the &amp;quot;first line&amp;quot;, move to the &amp;quot;second line&amp;quot;, and paste the registered
+# &amp;quot;first line&amp;quot; above the &amp;quot;second line&amp;quot;.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; dd --&amp;gt; j --&amp;gt; P
+#
+# or...
+#
+# :3d --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :2P --&amp;gt; &amp;lt;ENTER&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;I Like the Way You Move&lt;/h2&gt;
+
+&lt;p&gt;The second way, use the &lt;em&gt;move&lt;/em&gt; command with &lt;code&gt;:m&lt;/code&gt;. I like this method a lot, as it
+requires fewer keystrokes. It does require line numbers though. Try using
+&lt;a href="http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/"&gt;hybrid mode&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Move your cursor on the &amp;quot;first line&amp;quot; (the third line), use the *move* command and
+# pass your desired line number as an argument. Hit enter.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :m1 --&amp;gt; &amp;lt;ENTER&amp;gt;
+#
+# or...
+#
+# :3m1 --&amp;gt; &amp;lt;ENTER&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Lazy Moving&lt;/h2&gt;
+
+&lt;p&gt;Now getting to the &lt;em&gt;map&lt;/em&gt; command, I&amp;#39;ve found this pretty handy when
+I need to move a line or block of lines a couple of lines upward or downward.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; In your ~/.vimrc
+&amp;quot;
+&amp;quot; Normal mode
+nnoremap &amp;lt;C-j&amp;gt; :m .+1&amp;lt;CR&amp;gt;==
+nnoremap &amp;lt;C-k&amp;gt; :m .-2&amp;lt;CR&amp;gt;==
+
+&amp;quot; Insert mode
+inoremap &amp;lt;C-j&amp;gt; &amp;lt;ESC&amp;gt;:m .+1&amp;lt;CR&amp;gt;==gi
+inoremap &amp;lt;C-k&amp;gt; &amp;lt;ESC&amp;gt;:m .-2&amp;lt;CR&amp;gt;==gi
+
+&amp;quot; Visual mode
+vnoremap &amp;lt;C-j&amp;gt; :m '&amp;gt;+1&amp;lt;CR&amp;gt;gv=gv
+vnoremap &amp;lt;C-k&amp;gt; :m '&amp;lt;-2&amp;lt;CR&amp;gt;gv=gv
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now you can move lines by holding &lt;em&gt;CTRL&lt;/em&gt; and &lt;em&gt;j&lt;/em&gt; (for up a line) or
+&lt;em&gt;k&lt;/em&gt; (for down a line).&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Move to the &amp;quot;first line&amp;quot;, hold &amp;lt;CTRL&amp;gt; and move up twice.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;CTRL&amp;gt; + jj
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now let&amp;#39;s move a block of lines:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- fourth line ---
+--- fifth line ---
+--- first line ---
+--- second line ---
+--- third line ---
+
+# Move to the &amp;quot;first line&amp;quot;.
+# Select the &amp;quot;first line&amp;quot;, &amp;quot;second line&amp;quot;, and the &amp;quot;third line&amp;quot; with Visual mode.
+# Hit CTRL and move upwards twice.
+#
+# :3 -- &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;SHIFT&amp;gt; + V --&amp;gt; jj --&amp;gt; &amp;lt;CTRL&amp;gt; + kk
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Other Ways&lt;/h2&gt;
+
+&lt;p&gt;There are plenty of other tricks that move around lines in Vim. The preceding
+examples were just a few that I employ everyday. If you&amp;#39;ve got something cool to
+share, please let me know!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Vim: Staying on Home Row via Map</title>
     <link rel="alternate" href="/2013/09/11/vim-staying-on-home-row-via-map.html"/>
@@ -801,384 +998,6 @@ longer the primary focus of PostgresExt. Maintenance on 1.0.0 will be
 minimal, since &lt;a href="http://weblog.rubyonrails.org/2013/2/24/maintenance-policy-for-ruby-on-rails/"&gt;Rails 3.2.x will no longer be receiving releases for bug
 fixes&lt;/a&gt;,
 but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Design Patterns: The Observer Pattern</title>
-    <link rel="alternate" href="/2013/08/20/design-patterns-observer-pattern.html"/>
-    <id>/2013/08/20/design-patterns-observer-pattern.html</id>
-    <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-08-20T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Note: We won&amp;#39;t be going over the Ruby
-module
-&lt;a href="http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html"&gt;&lt;em&gt;Observable&lt;/em&gt;&lt;/a&gt;.
-Instead, we&amp;#39;ll building out the pattern ourselves.&lt;/p&gt;
-
-&lt;h2&gt;Your First Day at the NSA&lt;/h2&gt;
-
-&lt;p&gt;Welcome to the National Security Agency, &lt;a href="http://www.forodecostarica.com/attachments/201136d1337091462-los-gringos-se-burlan-de-nuestro-pais-agent-smith.jpg"&gt;Agent
-Smith&lt;/a&gt;.
-You have quite an impressive background, and we believe your &amp;quot;go-getter&amp;quot;
-attitude will instill a new kind of vigor within the organization.&lt;/p&gt;
-
-&lt;p&gt;Your cubicle is down to the left... here are some NDAs for
-you to fill out. I&amp;#39;ll swing by your desk in the afternoon and pick them
-up from you later. Oh, and before I forget, here is your first assignment.&lt;/p&gt;
-
-&lt;p&gt;Go get &amp;#39;em, tiger!&lt;/p&gt;
-
-&lt;h2&gt;The First Assignment&lt;/h2&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;Agent Smith
-Spook First Class
-[REDACTED]
-NSA                                                     08-20-[REDACTED]
-
-                     Operation [REDACTED] Observers
-
-Welcome, Agent Smith:
-
-Bluntly, we'd like to track everyone's emails.
-
-Attached are two documents.
-
-The first document will show you the basic structure of a typical email,
-and the second document will provide you a basic profile of a suspicious
-person.
-
-If there are any questions, please reach me at [REDACTED].
-
-Best of luck,
-
-
-
-
-
-Agent [REDACTED]
-[REDACTED]
-[REDACTED]
-NSA
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Document 1:&lt;/span&gt;
-&lt;span class="comment"&gt;# Basic structure of an email&lt;/span&gt;
-
-&lt;span class="keyword"&gt;module&lt;/span&gt; &lt;span class="class"&gt;Email&lt;/span&gt;
-  extend &lt;span class="predefined-constant"&gt;self&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;send&lt;/span&gt;(subject, sender, receiver)
-    puts &lt;span class="string"&gt;&lt;span class="delimiter"&gt;%Q[&lt;/span&gt;&lt;span class="content"&gt;
-      Subject: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;subject&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;
-      From:    &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;sender&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;@example.com
-      To:      &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;receiver&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;@example.com
-      Date:    &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;&lt;span class="constant"&gt;Time&lt;/span&gt;.now.asctime&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;
-    &lt;/span&gt;&lt;span class="delimiter"&gt;]&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Document 2:&lt;/span&gt;
-&lt;span class="comment"&gt;# Characteristics of a suspicious person&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Person&lt;/span&gt;
-  include &lt;span class="constant"&gt;Email&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:name&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(name)
-    &lt;span class="instance-variable"&gt;@name&lt;/span&gt; = name
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;send_email&lt;/span&gt;(subject, receiver)
-    &lt;span class="constant"&gt;Email&lt;/span&gt;.send(subject, name, receiver)
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;As we look through the &lt;code&gt;Email&lt;/code&gt; module, we see that it contains
-&lt;code&gt;Email.send&lt;/code&gt; which takes three arguments: &lt;code&gt;subject&lt;/code&gt;, &lt;code&gt;sender&lt;/code&gt;, and
-&lt;code&gt;receiver&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Gazing at the suspicious &lt;code&gt;Person&lt;/code&gt; class, we see that it includes the
-&lt;code&gt;Email&lt;/code&gt; module. &lt;code&gt;Person#send_email&lt;/code&gt; takes two parameters: a subject
-and a receiver. &lt;code&gt;Person#name&lt;/code&gt; will stand in as the sender of the email.&lt;/p&gt;
-
-&lt;p&gt;Hypothetically, let&amp;#39;s see how a suspicious person would send an email:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;bill = Person.new 'Bill'
-bill.send_email 'Fishing Trip', 'Fred'
-  # =&amp;gt;
-      Subject: Fishing Trip
-      From:    Bill@example.com
-      To:      Fred@example.com
-      Date:    Wed Aug 16 20:35:09 2006
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Hmm... as you sit in your cubicle, you ponder the numerous possible ways of
-tracking emails. You won&amp;#39;t need anything too complicated, just
-something to kick off a notification once an email has been sent.&lt;/p&gt;
-
-&lt;p&gt;Volia! You realize you can use the &lt;em&gt;Observer&lt;/em&gt; pattern!&lt;/p&gt;
-
-&lt;h2&gt;The Subject and its Observers&lt;/h2&gt;
-
-&lt;p&gt;First, let&amp;#39;s start off by creating two &lt;em&gt;observer&lt;/em&gt; classes,
-&lt;code&gt;Alert&lt;/code&gt; and &lt;code&gt;Agent&lt;/code&gt; classes.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Alert&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;gotcha&lt;/span&gt;(person)
-    puts &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;!!! ALERT: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;person.name.upcase&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; SENT AN EMAIL !!!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Agent&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;gotcha&lt;/span&gt;(person)
-    puts &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;!!! TIME TO DETAIN &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;person.name.upcase&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; !!!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Next, let&amp;#39;s create a &lt;code&gt;Subject&lt;/code&gt; module.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;module&lt;/span&gt; &lt;span class="class"&gt;Subject&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:observers&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="instance-variable"&gt;@observers&lt;/span&gt; = []
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_observer&lt;/span&gt;(*observers)
-    observers.each { |observer| &lt;span class="instance-variable"&gt;@observers&lt;/span&gt; &amp;lt;&amp;lt; observer }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;delete_observer&lt;/span&gt;(*observers)
-    observers.each { |observer| &lt;span class="instance-variable"&gt;@observers&lt;/span&gt;.delete(observer) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  private
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;notify_observers&lt;/span&gt;
-    observers.each { |observer| observer.gotcha(&lt;span class="predefined-constant"&gt;self&lt;/span&gt;) }
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Here within the &lt;code&gt;Subject#initialize&lt;/code&gt;, we create an empty array which
-will contain a list of &lt;em&gt;observers&lt;/em&gt;. &lt;code&gt;Subject#add_observer&lt;/code&gt; simply pushes
-our desired &lt;em&gt;observers&lt;/em&gt; into the array.&lt;/p&gt;
-
-&lt;p&gt;Finally, we can alter the suspicious &lt;code&gt;Person&lt;/code&gt; class, which will act as
-the &lt;em&gt;subject&lt;/em&gt; class. Let&amp;#39;s include the &lt;code&gt;Subject&lt;/code&gt; module now.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Person&lt;/span&gt;
-  include &lt;span class="constant"&gt;Email&lt;/span&gt;, &lt;span class="constant"&gt;Subject&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:name&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(name)
-    &lt;span class="comment"&gt;# 'super' requires a parentheses because we're calling&lt;/span&gt;
-    &lt;span class="comment"&gt;# super on the superclass, 'Subject'&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt;()
-    &lt;span class="instance-variable"&gt;@name&lt;/span&gt; = name
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;send_email&lt;/span&gt;(subject, receiver)
-    &lt;span class="constant"&gt;Email&lt;/span&gt;.send(subject, name, receiver)
-    notify_observers
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Subject#notify_observers&lt;/code&gt; calls &lt;code&gt;#gotcha&lt;/code&gt; on each &lt;em&gt;observer&lt;/em&gt;, which
-informs each &lt;em&gt;observer&lt;/em&gt; that &lt;code&gt;Person#send_email&lt;/code&gt; has been kicked off.&lt;/p&gt;
-
-&lt;p&gt;Now let&amp;#39;s give it a whirl...&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;alert = Alert.new
-agent = Agent.new
-
-bill = Person.new 'Bill'
-
-bill.add_observer alert, agent   # Bill now has two observers watching him
-
-bill.send_email 'Fishing Trip', 'Fred'
-  # =&amp;gt;
-      Subject: Fishing Trip
-      From:    Bill@example.com
-      To:      Fred@example.com
-      Date:    Wed Aug 16 20:35:09 2006
-
-!!! ALERT: BILL SENT AN EMAIL !!!
-!!! TIME TO DETAIN BILL !!!
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Perfect, it works! Now we can start protecting our freedom!&lt;/p&gt;
-
-&lt;h2&gt;Discussion&lt;/h2&gt;
-
-&lt;p&gt;In our example above, we have two &lt;em&gt;observers&lt;/em&gt;, the &lt;code&gt;Alert&lt;/code&gt; and &lt;code&gt;Agent&lt;/code&gt;
-classes, and a &lt;em&gt;subject&lt;/em&gt;, &lt;code&gt;Person&lt;/code&gt;. By creating the &lt;code&gt;Subject&lt;/code&gt; module,
-any instance of &lt;code&gt;Person&lt;/code&gt; now informs and updates any &lt;em&gt;observer&lt;/em&gt; through
-&lt;code&gt;#notify_observers&lt;/code&gt;, ultimately removing any implicit coupling from &lt;code&gt;Alert&lt;/code&gt; and
-&lt;code&gt;Agent&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;There are a few similarities between the &lt;em&gt;Observer&lt;/em&gt; and
-&lt;a href="http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html"&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/a&gt;
-patterns. Both patterns employ an object (the Observer&amp;#39;s &lt;em&gt;subject&lt;/em&gt; and
-the Strategy&amp;#39;s &lt;em&gt;context&lt;/em&gt;) that makes calls to another object (the
-Observer&amp;#39;s &lt;em&gt;observer&lt;/em&gt; or Strategy&amp;#39;s &lt;em&gt;strategy&lt;/em&gt;). The difference between
-the two patterns is the purpose and use case. The &lt;em&gt;Strategy&lt;/em&gt; pattern
-relies on the &lt;em&gt;strategy&lt;/em&gt; to do the work, while the &lt;em&gt;Observer&lt;/em&gt; pattern
-informs the &lt;em&gt;observers&lt;/em&gt; of what is going on with the &lt;em&gt;subject&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Hope you enjoyed this short example, thanks for reading!&lt;/p&gt;
 </content>
   </entry>
 </feed>

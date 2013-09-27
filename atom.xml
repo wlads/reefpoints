@@ -4,10 +4,208 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-09-11T00:00:00Z</updated>
+  <updated>2013-09-26T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Vim: Moving Lines Ain't Hard</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html"/>
+    <id>http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html</id>
+    <published>2013-09-26T00:00:00Z</published>
+    <updated>2013-09-27T12:27:17-04:00</updated>
+    <author>
+      <name>Doug Yun</name>
+    </author>
+    <summary>Quick ways to move lines</summary>
+    <content type="html">&lt;p&gt;In the last post, we briefly discussed the power of the
+&lt;a href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"&gt;&lt;em&gt;map&lt;/em&gt; command&lt;/a&gt;.
+In today&amp;#39;s post, we&amp;#39;re going to use &lt;em&gt;map&lt;/em&gt; again in order to move
+lines and blocks around.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s use an example:
+Our goal is to move the &lt;em&gt;first line&lt;/em&gt; to its proper location. From this:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To this:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- first line ---
+--- second line ---
+--- third line ---
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Delete, Then Paste&lt;/h2&gt;
+
+&lt;p&gt;Here is one of the most common ways, it ain&amp;#39;t pretty but it gets the job done.
+We&amp;#39;ll delete the desired line and paste it to the target location.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Delete the &amp;quot;first line&amp;quot;, move to the &amp;quot;second line&amp;quot;, and paste the registered
+# &amp;quot;first line&amp;quot; above the &amp;quot;second line&amp;quot;.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; dd --&amp;gt; j --&amp;gt; P
+#
+# or...
+#
+# :3d --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :2P --&amp;gt; &amp;lt;ENTER&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;I Like the Way You Move&lt;/h2&gt;
+
+&lt;p&gt;The second way, use the &lt;em&gt;move&lt;/em&gt; command with &lt;code&gt;:m&lt;/code&gt;. I like this method a lot, as it
+requires fewer keystrokes. It does require line numbers though. Try using
+&lt;a href="http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/"&gt;hybrid mode&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Move your cursor on the &amp;quot;first line&amp;quot; (the third line), use the *move* command and
+# pass your desired line number as an argument. Hit enter.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :m1 --&amp;gt; &amp;lt;ENTER&amp;gt;
+#
+# or...
+#
+# :3m1 --&amp;gt; &amp;lt;ENTER&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Lazy Moving&lt;/h2&gt;
+
+&lt;p&gt;Now getting to the &lt;em&gt;map&lt;/em&gt; command, I&amp;#39;ve found this pretty handy when
+I need to move a line or block of lines a couple of lines upward or downward.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; In your ~/.vimrc
+&amp;quot;
+&amp;quot; Normal mode
+nnoremap &amp;lt;C-j&amp;gt; :m .+1&amp;lt;CR&amp;gt;==
+nnoremap &amp;lt;C-k&amp;gt; :m .-2&amp;lt;CR&amp;gt;==
+
+&amp;quot; Insert mode
+inoremap &amp;lt;C-j&amp;gt; &amp;lt;ESC&amp;gt;:m .+1&amp;lt;CR&amp;gt;==gi
+inoremap &amp;lt;C-k&amp;gt; &amp;lt;ESC&amp;gt;:m .-2&amp;lt;CR&amp;gt;==gi
+
+&amp;quot; Visual mode
+vnoremap &amp;lt;C-j&amp;gt; :m '&amp;gt;+1&amp;lt;CR&amp;gt;gv=gv
+vnoremap &amp;lt;C-k&amp;gt; :m '&amp;lt;-2&amp;lt;CR&amp;gt;gv=gv
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now you can move lines by holding &lt;em&gt;CTRL&lt;/em&gt; and &lt;em&gt;j&lt;/em&gt; (for up a line) or
+&lt;em&gt;k&lt;/em&gt; (for down a line).&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
+--- third line ---
+--- first line ---
+
+# Move to the &amp;quot;first line&amp;quot;, hold &amp;lt;CTRL&amp;gt; and move up twice.
+#
+# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;CTRL&amp;gt; + jj
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now let&amp;#39;s move a block of lines:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;--- fourth line ---
+--- fifth line ---
+--- first line ---
+--- second line ---
+--- third line ---
+
+# Move to the &amp;quot;first line&amp;quot;.
+# Select the &amp;quot;first line&amp;quot;, &amp;quot;second line&amp;quot;, and the &amp;quot;third line&amp;quot; with Visual mode.
+# Hit CTRL and move upwards twice.
+#
+# :3 -- &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;SHIFT&amp;gt; + V --&amp;gt; jj --&amp;gt; &amp;lt;CTRL&amp;gt; + kk
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Other Ways&lt;/h2&gt;
+
+&lt;p&gt;There are plenty of other tricks that move around lines in Vim. The preceding
+examples were just a few that I employ everyday. If you&amp;#39;ve got something cool to
+share, please let me know!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Vim: Staying on Home Row via Map</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"/>
@@ -760,7 +958,7 @@ but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-08-29T17:51:04-04:00</updated>
+    <updated>2013-09-20T14:36:56-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3358,7 +3556,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html</id>
     <published>2013-01-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-09-26T20:39:05-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3408,7 +3606,7 @@ that date.&lt;/strong&gt;&lt;/p&gt;
     @route 'new'
     @route 'edit',
       path: '/:user_id/edit'
-    @route 'show'
+    @route 'show',
       path: '/:user_id'
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
