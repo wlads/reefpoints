@@ -57,7 +57,7 @@ I Like the Way You Move
 --------
 
 The second way, use the *move* command with `:m`. I like this method a lot, as it
-requires less keystrokes. It does require line numbers though. Try using
+requires fewer keystrokes. It does require line numbers though. Try using
 [hybrid mode](http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/).
 
 ```
@@ -79,7 +79,7 @@ Lazy Moving
 -----------
 
 Now getting to the *map* command, I've found this pretty handy when
-I need to move a line or block a couple of lines upward or downward.
+I need to move a line or block of lines a couple of lines upward or downward.
 
 ```
 " In your ~/.vimrc
@@ -107,7 +107,23 @@ Now you can move lines by holding *CTRL* and *j* (for up a line) or
 
 # Move to the "first line", hold <CTRL> and move up twice.
 #
-# :3 --> <ENTER> --> CTRL + jj
+# :3 --> <ENTER> --> <CTRL> + jj
+```
+
+Now let's move a block of lines:
+
+```
+--- fourth line ---
+--- fifth line ---
+--- first line ---
+--- second line ---
+--- third line ---
+
+# Move to the "first line".
+# Select the "first line", "second line", and the "third line" with Visual mode.
+# Hit CTRL and move upwards twice.
+#
+# :3 --> <SHIFT> + V --> jj --> <CTRL> + kk
 ```
 
 Other Ways
