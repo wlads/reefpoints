@@ -57,7 +57,10 @@ I Like the Way You Move
 --------
 
 The second way, use the *move* command with `:m`. I like this method a lot, as it
-requires fewer keystrokes. It does require line numbers though. Try using
+requires fewer keystrokes. It does require line numbers though. When using
+absolute line numbers, the destination will be below the line number you specify,
+so use `:m0` to move to the top of the file.
+Try using
 [hybrid mode](http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/).
 
 ```
@@ -68,11 +71,11 @@ requires fewer keystrokes. It does require line numbers though. Try using
 # Move your cursor on the "first line" (the third line), use the *move* command and
 # pass your desired line number as an argument. Hit enter.
 #
-# :3 --> <ENTER> --> :m1 --> <ENTER>
+# :3 --> <ENTER> --> :m0 --> <ENTER>
 #
 # or...
 #
-# :3m1 --> <ENTER>
+# :3m0 --> <ENTER>
 ```
 
 Lazy Moving
