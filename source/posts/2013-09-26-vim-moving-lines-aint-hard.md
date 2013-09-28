@@ -110,7 +110,7 @@ Now you can move lines by holding *CTRL* and *j* (for up a line) or
 
 # Move to the "first line", hold <CTRL> and move up twice.
 #
-# :3 --> <ENTER> --> <CTRL> + jj
+# :3 --> <ENTER> --> <CTRL> + kk
 ```
 
 Now let's move a block of lines:
