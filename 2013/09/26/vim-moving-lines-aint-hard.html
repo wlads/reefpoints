@@ -116,7 +116,10 @@ We&#39;ll delete the desired line and paste it to the target location.</p>
 <h2>I Like the Way You Move</h2>
 
 <p>The second way, use the <em>move</em> command with <code>:m</code>. I like this method a lot, as it
-requires fewer keystrokes. It does require line numbers though. Try using
+requires fewer keystrokes. It does require line numbers though. When using
+absolute line numbers, the destination will be below the line number you specify,
+so use <code>:m0</code> to move to the top of the file.
+Try using
 <a href="http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/">hybrid mode</a>.</p>
 <div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
@@ -139,11 +142,11 @@ requires fewer keystrokes. It does require line numbers though. Try using
 # Move your cursor on the &quot;first line&quot; (the third line), use the *move* command and
 # pass your desired line number as an argument. Hit enter.
 #
-# :3 --&gt; &lt;ENTER&gt; --&gt; :m1 --&gt; &lt;ENTER&gt;
+# :3 --&gt; &lt;ENTER&gt; --&gt; :m0 --&gt; &lt;ENTER&gt;
 #
 # or...
 #
-# :3m1 --&gt; &lt;ENTER&gt;
+# :3m0 --&gt; &lt;ENTER&gt;
 </pre></td>
 </tr></table>
 </div></div>
@@ -199,7 +202,7 @@ vnoremap &lt;C-k&gt; :m '&lt;-2&lt;CR&gt;gv=gv
 
 # Move to the &quot;first line&quot;, hold &lt;CTRL&gt; and move up twice.
 #
-# :3 --&gt; &lt;ENTER&gt; --&gt; &lt;CTRL&gt; + jj
+# :3 --&gt; &lt;ENTER&gt; --&gt; &lt;CTRL&gt; + kk
 </pre></td>
 </tr></table>
 </div></div>
