@@ -77,7 +77,7 @@ class AddCoffee < CoffeeRoutine
     super 'Adding in the coffee!'
   end
 
-  def time_required
+  def time
     1.0
   end
 end
@@ -126,7 +126,7 @@ However, we can simplify the `FrenchPress` class by pulling out the
 class CompositeTasks < CoffeeRoutine
   attr_reader :tasks
 
-  def initialize
+  def initialize(name)
     @tasks = []
   end
 
@@ -151,7 +151,7 @@ something like this:
 
 ```ruby
 class FrenchPress < CompositeTasks
-  def initialize(name)
+  def initialize
     super 'Using the FrenchPress to make coffee!!!'
     add_sub_task GrindCoffee.new
     add_sub_task BoilWater.new
@@ -163,7 +163,7 @@ class FrenchPress < CompositeTasks
 end
 
 class DripMaker < CompositeTasks
-  def initialize(name)
+  def initialize
     super 'Using the DripMaker to make coffee!!!'
     add_sub_task GrindCoffee.new
     add_sub_task BoilWater
