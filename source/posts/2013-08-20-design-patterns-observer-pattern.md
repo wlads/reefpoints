@@ -200,7 +200,7 @@ informs each *observer* that `Person#send_email` has been kicked off.
 
 Now let's give it a whirl...
 
-```
+```ruby
 alert = Alert.new
 agent = Agent.new
 
