@@ -7,7 +7,7 @@ twitter: 'dougyun'
 github: duggiefresh
 social: true
 summary: 'Exploring design patterns and their use cases'
-published: false
+published: true
 tags: software design patterns, ruby
 ---
 
