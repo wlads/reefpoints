@@ -210,7 +210,7 @@ Now we can also check the time required for each coffee maker.
 
 ```
 frenchpress.time_required # => 12.4
-dripmaker.time_required # => 8.5
+dripmaker.time_required   # => 8.5
 ```
 
 ## Discussion
@@ -218,10 +218,11 @@ dripmaker.time_required # => 8.5
 Implementing the *Composite* pattern is pretty simple.
 
 We create a *component* class that ties the numerous simple and
-complex characteristics together. This can be seen as
-`CoffeeRoutine#time`.
+complex characteristics together. In our example, `CoffeeRoutine`
+defines an elementary method `#time` and each child class implements
+its own amount.
 
-Next, we create *leaf* classes
+Next, we create *leaf* classes, `AddCoffee`, `BoilWater`, and `GrindCoffee`,
 that share the same characteristics with one another. Remember that it's the nature
 of *leaf* classes to be simple. If you happen across a *leaf* class that
 could be broken up, it might potentially be a *composite* class in disguise.
@@ -229,7 +230,9 @@ Break up those actions into individual *leaf* classes and turn the original clas
 into a *composite*. All of our *leaf* classes had a `#time` method.
 
 The *composite* class handles all the subtasks, essentially using the child classes
-at its will. This can be found in our two *composite* classes and their methods,
-`FrenchPress#time_required` and `DripMaker#time_required`.
+at its will. We can see that our two *composite* classes and their methods, `FrenchPress#time_required`
+and `DripMaker#time_required`. manipulate the method `#time` from the *leaf* classes.
+Ultimately, our coffee makers are able to treat each step,
+`GrindCoffee`, `BoilWater` and `AddCoffee` uniformly.
 
-Hope this helps the next time you make coffee.
+Hope this helps you with your morning routine!
