@@ -22,8 +22,8 @@ Joke aside, each coffee contraption requires a specific procedure
 to be completed in order to brew a cup of joe; each having multiple parts,
 taking differing amounts of time, requiring various numbers of steps, etc.
 
-This coffee making process can described pretty well with the *Composite* method
-pattern.
+Our coffee making process can be described by a basic example
+of the *Composite* method pattern.
 
 ## The Best Part of Waking Up is a Composite Pattern in Your Cup
 
@@ -188,22 +188,22 @@ Swell... now we can call the `FrenchPress` and `DripMaker` coffee makers.
 frenchpress = FrenchPress.new
 
 # => #<FrenchPress:0x007f88fcf46410
-       @name="Using the FrenchPress to make coffee!!!",
+       @task="Using the FrenchPress to make coffee!!!",
        @steps=
-         [#<GrindCoffee:0x007f88fcf46370 @name="Grinding some coffee!">,
-         #<BoilWater:0x007f88fcf46320 @name="Boiling some water!">]>
-         #<AddCoffee:0x007f88fcf46329 @name="Adding in the coffee!">]>
-         #<PressPlunger:0x007f88fcf46098 @name="Pressing the plunger down!">]>
+         [#<GrindCoffee:0x007f88fcf46370 @step="Grinding some coffee!">,
+         #<BoilWater:0x007f88fcf46320 @step="Boiling some water!">]>
+         #<AddCoffee:0x007f88fcf46329 @step="Adding in the coffee!">]>
+         #<PressPlunger:0x007f88fcf46098 @step="Pressing the plunger down!">]>
 
 dripmaker = DripMaker.new
 
 # => #<DripMaker:0x137t88fcf57109
-       @name="Using the DripMaker to make coffee!!!",
+       @task="Using the DripMaker to make coffee!!!",
        @steps=
-         [#<GrindCoffee:0x007f88fcf46370 @name="Grinding some coffee!">,
-         #<BoilWater:0x007f88fcf52520 @name="Boiling some water!">]>
-         #<AddCoffee:0x007f88fcf46123 @name="Adding in the coffee!">]>
-         #<PressStartButton:0x007f88fcf46432 @name="Pushing the start button!">]>
+         [#<GrindCoffee:0x007f88fcf46370 @step="Grinding some coffee!">,
+         #<BoilWater:0x007f88fcf52520 @step="Boiling some water!">]>
+         #<AddCoffee:0x007f88fcf46123 @step="Adding in the coffee!">]>
+         #<PressStartButton:0x007f88fcf46432 @step="Pushing the start button!">]>
 ```
 
 Now we can also check the time required for each coffee maker.
@@ -215,19 +215,21 @@ dripmaker.time_required # => 8.5
 
 ## Discussion
 
-The *Composite* pattern is pretty simple.
+Implementing the *Composite* pattern is pretty simple.
 
 We create a *component* class that ties the numerous simple and
 complex characteristics together. This can be seen as
-`CoffeeRoutine#time_required`.
+`CoffeeRoutine#time`.
 
 Next, we create *leaf* classes
 that share the same characteristics with one another. Remember that it's the nature
 of *leaf* classes to be simple. If you happen across a *leaf* class that
-could be broken up, it could potentially be a *composite* class in disguise.
+could be broken up, it might potentially be a *composite* class in disguise.
 Break up those actions into individual *leaf* classes and turn the original class
-into a *composite*. All the *leaf* classes had a `#time` method.
+into a *composite*. All of our *leaf* classes had a `#time` method.
 
 The *composite* class handles all the subtasks, essentially using the child classes
-at its will. This can be seen in our two *composite* classes and their methods,
+at its will. This can be found in our two *composite* classes and their methods,
 `FrenchPress#time_required` and `DripMaker#time_required`.
+
+Hope this helps the next time you make coffee.
