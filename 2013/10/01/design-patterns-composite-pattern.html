@@ -1,0 +1,448 @@
+<!DOCTYPE html><html><head><title>Design Patterns: The Composite Pattern</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Exploring design patterns and their use cases' name='description'><meta content='dougyun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html' name='twitter:url'><meta content='Design Patterns: The Composite Pattern' name='twitter:title'><meta content='Exploring design patterns and their use cases' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                                                    ..
+                                                                 ,Z+O.
+                                                              .OO.O..
+                                                             OZ..O.
+                                                         ..OO..87.
+                                                        .O7O..O...
+                                                      .O...Z~O.
+                                                   .:Z~. ..Z..
+                                                  +O.O   .8..
+                                     ...       .OO.  O  O?.
+                             ..ZOOOOOOOOOZOOO.ZOZ.   .OO..
+                           .OOOOOOOOOOOOOOOOOO..Z.   $O.
+                         .ZOOOOOOOOOOOOOOOOOO.  .O..O.
+                        .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.
+                        OZOOOOOOOOOOO...OOOOOOOZ$ZO
+                      ..OOOOOOOOOOOOO  .OOOOOOOOOOO..
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                      .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                     OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.
+                     ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
+                     OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.
+                     ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.
+...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:
+.OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..
+.OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z
+ .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O
+  .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.
+   .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.
+   .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.
+   ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.
+    .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..
+     .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.
+     ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..
+      ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...
+          .....~OOOOOOOOOOOOOOOOO:........
+                ................
+--></head><body id='blog'><header id='mobile-header'><div class='wrap'><a class='header-logo' href='/'>DockYard</a><div class='menu-button'></div></div><ul class='flexnav' data-breakpoint='481' id='mobile-nav'><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com'><span class='mobile-nav-icon fontello'>h</span><p class='main-nav-item'>Home</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/work'><span class='mobile-nav-icon fontello'>w</span><p class='main-nav-item'>Work</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/team'><span class='mobile-nav-icon fontello'>p</span><p class='main-nav-item'>Team</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/community'><span class='mobile-nav-icon fontello'>c</span><p class='main-nav-item'>Community</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='/'><span class='mobile-nav-icon fontello'>b</span><p class='main-nav-item'>Blog</p></a></li><li class='mobile-nav-link-wrap'><a class='mobile-nav-link' href='http://dockyard.com/contact'><span class='mobile-nav-icon fontello'>m</span><p class='main-nav-item'>Contact</p></a></li></ul></header><header id='site-header'><div class='wrap'><h1><a class='header-logo' href='http://dockyard.com'>DockYard</a></h1><ul class='main-nav'><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/work'>Work</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/team'>Team</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/community'>Community</a></li><li class='nav-work'><a class='main-nav-item current' href='/'>Blog</a></li><li class='nav-work'><a class='main-nav-item' href='http://dockyard.com/contact'>Contact</a></li></ul></div></header><section id='content'><section id='post'><aside class='post-metas-wrap'><ul class='post-metas'><li class='post-meta'><a class="post-author" href="/authors/doug-yun.html">Doug Yun</a></li><li class='post-meta'><span><a class='link link-in-post fontello' href='http://twitter.com/dougyun' target='_blank'>t</a><a class='link link-in-post fontello' href='https://github.com/duggiefresh' target='_blank'>g</a></span></li><li class='post-meta post-date'>01 Oct 2013</li></ul></aside><div class='post-div'><p class='post-meta post-tags'><a class="tag-link" href="/categories/software-design-patterns.html">Software Design Patterns (5)</a>, <a class="tag-link" href="/categories/ruby.html">Ruby (31)</a></p><div class='post-title-wrap'><h1 class='post-title'>Design Patterns: The Composite Pattern</h1></div><current_page class='post-content'><h2>Coffee Coffee</h2>
+
+<p>If you&#39;re anything like me, you&#39;ll agree that every morning needs to start
+out with a cup of coffee. And, if you&#39;re anything like me, you&#39;ll have
+at least three different coffee making apparatuses. And, if you&#39;re
+anything like me... you&#39;ll soon realize you may have an addiction.</p>
+
+<p>Joke aside, each coffee contraption requires a specific procedure
+to be completed in order to brew a cup of joe; each having multiple parts,
+taking differing amounts of time, requiring various numbers of steps, etc.</p>
+
+<p>Our coffee making process can be described by a basic example
+of the <em>Composite</em> method pattern.</p>
+
+<h2>The Best Part of Waking Up is a Composite Pattern in Your Cup</h2>
+
+<p>We can start by thinking of each coffee maker and coffee related task as a <em>subclass</em> of
+our <code>CoffeeRoutine</code>. <code>CoffeeRoutine</code> will be known as the <em>component</em>, the base
+class or interface that possesses the commonalities of simple and complex
+objects. <code>CoffeeRoutine#time</code> is the common trait among all
+coffee related classes.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">CoffeeRoutine</span>
+  attr_reader <span class="symbol">:task</span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span>(task)
+    <span class="instance-variable">@task</span> = task
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time</span>
+    <span class="float">0.0</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Next, we&#39;ll create a couple of <em>leaf</em> classes, which represent
+indivisble portions of our pattern. Here are a couple of <em>leaf</em> classes
+that come to mind: <code>GrindCoffee</code> and <code>BoilWater</code>. These <em>leaf</em> classes are
+our most basic steps to making coffee.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">GrindCoffee</span> &lt; <span class="constant">CoffeeRoutine</span>
+  <span class="keyword">def</span> <span class="function">initialize</span>
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Grinding some coffee!</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time</span>
+    <span class="float">0.5</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">BoilWater</span> &lt; <span class="constant">CoffeeRoutine</span>
+  <span class="keyword">def</span> <span class="function">initialize</span>
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Boiling some water!</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time</span>
+    <span class="float">4.0</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">AddCoffee</span> &lt; <span class="constant">CoffeeRoutine</span>
+  <span class="keyword">def</span> <span class="function">initialize</span>
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Adding in the coffee!</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time</span>
+    <span class="float">1.0</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div><div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>g = GrindCoffee.new
+
+g.task    # =&gt; 'Grinding some coffee!'
+g.time    # =&gt; 0.5
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now, we can get to the namesake of the pattern: the <em>composite</em> class. A
+<em>composite</em> class is a <em>component</em> that also contain
+<em>subcomponents</em>. <em>Composite</em> classes can be made up of smaller
+<em>composite</em> classes or <em>leaf</em> classes.</p>
+
+<p>Our various coffee making apparatuses can be thought of as <em>composites</em>.
+Let&#39;s check out the <code>FrenchPress</code> class:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">FrenchPress</span> &lt; <span class="constant">CoffeeRoutine</span>
+  attr_reader <span class="symbol">:task</span>, <span class="symbol">:steps</span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span>(task)
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Using the French press to make coffee</span><span class="delimiter">'</span></span>
+    <span class="instance-variable">@steps</span> = []
+    add_step <span class="constant">BoilWater</span>.new
+    add_step <span class="constant">GrindCoffee</span>.new
+    add_step <span class="constant">AddCoffee</span>.new
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">add_step</span>(step)
+    steps &lt;&lt; step
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">remove_step</span>(step)
+    steps.delete step
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time_required</span>
+    total_time = <span class="float">0.0</span>
+    steps.each { |step| total_time += step.time }
+    total_time
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>However, we can simplify the <code>FrenchPress</code> class by pulling out the
+<em>composite</em> functionality into its own class.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">CompositeTasks</span> &lt; <span class="constant">CoffeeRoutine</span>
+  attr_reader <span class="symbol">:task</span>, <span class="symbol">:steps</span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span>(task)
+    <span class="instance-variable">@steps</span> = []
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">add_step</span>(step)
+    steps &lt;&lt; step
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">remove_step</span>(step)
+    steps.delete step
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">time_required</span>
+    total_time = <span class="float">0.0</span>
+    steps.each { |step| total_time += step.time }
+    total_time
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now we can create <em>composite</em> coffee makers easily... They&#39;ll look
+something like this:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td>
+  <td class="code"><pre><span class="keyword">class</span> <span class="class">FrenchPress</span> &lt; <span class="constant">CompositeTasks</span>
+  <span class="keyword">def</span> <span class="function">initialize</span>
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Using the FrenchPress to make coffee!!!</span><span class="delimiter">'</span></span>
+    add_step <span class="constant">GrindCoffee</span>.new
+    add_step <span class="constant">BoilWater</span>.new
+    add_step <span class="constant">AddCoffee</span>.new
+    <span class="comment"># ... Omitted actual steps to make coffee from a French press ...</span>
+    <span class="comment"># ... Imagine PressPlunger class has been defined already ...</span>
+    add_step <span class="constant">PressPlunger</span>.new
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">DripMaker</span> &lt; <span class="constant">CompositeTasks</span>
+  <span class="keyword">def</span> <span class="function">initialize</span>
+    <span class="keyword">super</span> <span class="string"><span class="delimiter">'</span><span class="content">Using the DripMaker to make coffee!!!</span><span class="delimiter">'</span></span>
+    add_step <span class="constant">GrindCoffee</span>.new
+    add_step <span class="constant">BoilWater</span>
+    add_step <span class="constant">AddCoffee</span>.new
+    <span class="comment"># ... Imagine PressStartButton class has been defined already ...</span>
+    add_step <span class="constant">PressStartButton</span>.new
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Swell... now we can call the <code>FrenchPress</code> and <code>DripMaker</code> coffee makers.</p>
+<div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td>
+  <td class="code"><pre>frenchpress = FrenchPress.new
+
+# =&gt; #&lt;FrenchPress:0x007f88fcf46410
+       @task=&quot;Using the FrenchPress to make coffee!!!&quot;,
+       @steps=
+         [#&lt;GrindCoffee:0x007f88fcf46370 @step=&quot;Grinding some coffee!&quot;&gt;,
+         #&lt;BoilWater:0x007f88fcf46320 @step=&quot;Boiling some water!&quot;&gt;]&gt;
+         #&lt;AddCoffee:0x007f88fcf46329 @step=&quot;Adding in the coffee!&quot;&gt;]&gt;
+         #&lt;PressPlunger:0x007f88fcf46098 @step=&quot;Pressing the plunger down!&quot;&gt;]&gt;
+
+dripmaker = DripMaker.new
+
+# =&gt; #&lt;DripMaker:0x137t88fcf57109
+       @task=&quot;Using the DripMaker to make coffee!!!&quot;,
+       @steps=
+         [#&lt;GrindCoffee:0x007f88fcf46370 @step=&quot;Grinding some coffee!&quot;&gt;,
+         #&lt;BoilWater:0x007f88fcf52520 @step=&quot;Boiling some water!&quot;&gt;]&gt;
+         #&lt;AddCoffee:0x007f88fcf46123 @step=&quot;Adding in the coffee!&quot;&gt;]&gt;
+         #&lt;PressStartButton:0x007f88fcf46432 @step=&quot;Pushing the start button!&quot;&gt;]&gt;
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now we can also check the time required for each coffee maker.</p>
+<div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+</pre></td>
+  <td class="code"><pre>frenchpress.time_required # =&gt; 12.4
+dripmaker.time_required   # =&gt; 8.5
+</pre></td>
+</tr></table>
+</div></div>
+<h2>Discussion</h2>
+
+<p>Implementing the <em>Composite</em> pattern is pretty simple.</p>
+
+<p>We create a <em>component</em> class that ties the numerous simple and
+complex characteristics together. In our example, <code>CoffeeRoutine</code>
+defines an elementary method <code>#time</code> and each child class implements
+its own amount.</p>
+
+<p>Next, we create <em>leaf</em> classes, <code>AddCoffee</code>, <code>BoilWater</code>, and <code>GrindCoffee</code>,
+that share the same characteristics with one another. Remember that it&#39;s the nature
+of <em>leaf</em> classes to be simple. If you happen across a <em>leaf</em> class that
+could be broken up, it might potentially be a <em>composite</em> class in disguise.
+Break up those actions into individual <em>leaf</em> classes and turn the original class
+into a <em>composite</em>. All of our <em>leaf</em> classes had a <code>#time</code> method.</p>
+
+<p>The <em>composite</em> class handles all the subtasks, essentially using the child classes
+at its will. We can see that our two <em>composite</em> classes and their methods, <code>FrenchPress#time_required</code>
+and <code>DripMaker#time_required</code>. manipulate the method <code>#time</code> from the <em>leaf</em> classes.
+Ultimately, our coffee makers are able to treat each step,
+<code>GrindCoffee</code>, <code>BoilWater</code> and <code>AddCoffee</code> uniformly.</p>
+
+<p>Hope this helps you with your morning routine!</p>
+</current_page><p class='issue'>See a problem with the current page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script></div></section><section id='post-comments'><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript></noscript></section></div></section><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.issue a').attr('href', newpath);
+</script>
+</section><footer><ul class='footer-links'><li><a class='link link-in-footer fontello' href='https://github.com/DockYard' target='_blank'>g</a></li><li><a class='link link-in-footer fontello' href='https://twitter.com/DockYard' target='_blank'>t</a></li><li><a class='link link-in-footer fontello' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'>r</a></li><li><a class='link link-in-footer fontello' href='http://dockyard.com/contact' target='_blank'>m</a></li></ul><form class='footer-form'><label class='footer-form-label'>Get in touch with us!</label><input class='footer-form-input' placeholder='Email' type='text'><button class='footer-form-submit fontello' href='http://dockyard.com/contact'>R</button></form><a class='footer-number' href='tel:855-362-5973'>(855) DOCK-YRD</a><p class='footer-copyright'>&copy; 2013 DockYard, LLC. All Rights Reserved.</p></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

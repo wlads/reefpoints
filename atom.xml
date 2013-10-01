@@ -4,10 +4,388 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-09-26T00:00:00Z</updated>
+  <updated>2013-10-01T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Design Patterns: The Composite Pattern</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"/>
+    <id>http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html</id>
+    <published>2013-10-01T00:00:00Z</published>
+    <updated>2013-10-01T08:36:50-04:00</updated>
+    <author>
+      <name>Doug Yun</name>
+    </author>
+    <summary>Exploring design patterns and their use cases</summary>
+    <content type="html">&lt;h2&gt;Coffee Coffee&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re anything like me, you&amp;#39;ll agree that every morning needs to start
+out with a cup of coffee. And, if you&amp;#39;re anything like me, you&amp;#39;ll have
+at least three different coffee making apparatuses. And, if you&amp;#39;re
+anything like me... you&amp;#39;ll soon realize you may have an addiction.&lt;/p&gt;
+
+&lt;p&gt;Joke aside, each coffee contraption requires a specific procedure
+to be completed in order to brew a cup of joe; each having multiple parts,
+taking differing amounts of time, requiring various numbers of steps, etc.&lt;/p&gt;
+
+&lt;p&gt;Our coffee making process can be described by a basic example
+of the &lt;em&gt;Composite&lt;/em&gt; method pattern.&lt;/p&gt;
+
+&lt;h2&gt;The Best Part of Waking Up is a Composite Pattern in Your Cup&lt;/h2&gt;
+
+&lt;p&gt;We can start by thinking of each coffee maker and coffee related task as a &lt;em&gt;subclass&lt;/em&gt; of
+our &lt;code&gt;CoffeeRoutine&lt;/code&gt;. &lt;code&gt;CoffeeRoutine&lt;/code&gt; will be known as the &lt;em&gt;component&lt;/em&gt;, the base
+class or interface that possesses the commonalities of simple and complex
+objects. &lt;code&gt;CoffeeRoutine#time&lt;/code&gt; is the common trait among all
+coffee related classes.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CoffeeRoutine&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
+    &lt;span class="instance-variable"&gt;@task&lt;/span&gt; = task
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
+    &lt;span class="float"&gt;0.0&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next, we&amp;#39;ll create a couple of &lt;em&gt;leaf&lt;/em&gt; classes, which represent
+indivisble portions of our pattern. Here are a couple of &lt;em&gt;leaf&lt;/em&gt; classes
+that come to mind: &lt;code&gt;GrindCoffee&lt;/code&gt; and &lt;code&gt;BoilWater&lt;/code&gt;. These &lt;em&gt;leaf&lt;/em&gt; classes are
+our most basic steps to making coffee.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;GrindCoffee&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Grinding some coffee!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
+    &lt;span class="float"&gt;0.5&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BoilWater&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Boiling some water!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
+    &lt;span class="float"&gt;4.0&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;AddCoffee&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Adding in the coffee!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
+    &lt;span class="float"&gt;1.0&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;g = GrindCoffee.new
+
+g.task    # =&amp;gt; 'Grinding some coffee!'
+g.time    # =&amp;gt; 0.5
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, we can get to the namesake of the pattern: the &lt;em&gt;composite&lt;/em&gt; class. A
+&lt;em&gt;composite&lt;/em&gt; class is a &lt;em&gt;component&lt;/em&gt; that also contain
+&lt;em&gt;subcomponents&lt;/em&gt;. &lt;em&gt;Composite&lt;/em&gt; classes can be made up of smaller
+&lt;em&gt;composite&lt;/em&gt; classes or &lt;em&gt;leaf&lt;/em&gt; classes.&lt;/p&gt;
+
+&lt;p&gt;Our various coffee making apparatuses can be thought of as &lt;em&gt;composites&lt;/em&gt;.
+Let&amp;#39;s check out the &lt;code&gt;FrenchPress&lt;/code&gt; class:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;FrenchPress&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;, &lt;span class="symbol"&gt;:steps&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the French press to make coffee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@steps&lt;/span&gt; = []
+    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;.new
+    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
+    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_step&lt;/span&gt;(step)
+    steps &amp;lt;&amp;lt; step
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;remove_step&lt;/span&gt;(step)
+    steps.delete step
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time_required&lt;/span&gt;
+    total_time = &lt;span class="float"&gt;0.0&lt;/span&gt;
+    steps.each { |step| total_time += step.time }
+    total_time
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;However, we can simplify the &lt;code&gt;FrenchPress&lt;/code&gt; class by pulling out the
+&lt;em&gt;composite&lt;/em&gt; functionality into its own class.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CompositeTasks&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;, &lt;span class="symbol"&gt;:steps&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
+    &lt;span class="instance-variable"&gt;@steps&lt;/span&gt; = []
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_step&lt;/span&gt;(step)
+    steps &amp;lt;&amp;lt; step
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;remove_step&lt;/span&gt;(step)
+    steps.delete step
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time_required&lt;/span&gt;
+    total_time = &lt;span class="float"&gt;0.0&lt;/span&gt;
+    steps.each { |step| total_time += step.time }
+    total_time
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now we can create &lt;em&gt;composite&lt;/em&gt; coffee makers easily... They&amp;#39;ll look
+something like this:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;FrenchPress&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CompositeTasks&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the FrenchPress to make coffee!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
+    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;.new
+    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
+    &lt;span class="comment"&gt;# ... Omitted actual steps to make coffee from a French press ...&lt;/span&gt;
+    &lt;span class="comment"&gt;# ... Imagine PressPlunger class has been defined already ...&lt;/span&gt;
+    add_step &lt;span class="constant"&gt;PressPlunger&lt;/span&gt;.new
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;DripMaker&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CompositeTasks&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the DripMaker to make coffee!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
+    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;
+    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
+    &lt;span class="comment"&gt;# ... Imagine PressStartButton class has been defined already ...&lt;/span&gt;
+    add_step &lt;span class="constant"&gt;PressStartButton&lt;/span&gt;.new
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Swell... now we can call the &lt;code&gt;FrenchPress&lt;/code&gt; and &lt;code&gt;DripMaker&lt;/code&gt; coffee makers.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;frenchpress = FrenchPress.new
+
+# =&amp;gt; #&amp;lt;FrenchPress:0x007f88fcf46410
+       @task=&amp;quot;Using the FrenchPress to make coffee!!!&amp;quot;,
+       @steps=
+         [#&amp;lt;GrindCoffee:0x007f88fcf46370 @step=&amp;quot;Grinding some coffee!&amp;quot;&amp;gt;,
+         #&amp;lt;BoilWater:0x007f88fcf46320 @step=&amp;quot;Boiling some water!&amp;quot;&amp;gt;]&amp;gt;
+         #&amp;lt;AddCoffee:0x007f88fcf46329 @step=&amp;quot;Adding in the coffee!&amp;quot;&amp;gt;]&amp;gt;
+         #&amp;lt;PressPlunger:0x007f88fcf46098 @step=&amp;quot;Pressing the plunger down!&amp;quot;&amp;gt;]&amp;gt;
+
+dripmaker = DripMaker.new
+
+# =&amp;gt; #&amp;lt;DripMaker:0x137t88fcf57109
+       @task=&amp;quot;Using the DripMaker to make coffee!!!&amp;quot;,
+       @steps=
+         [#&amp;lt;GrindCoffee:0x007f88fcf46370 @step=&amp;quot;Grinding some coffee!&amp;quot;&amp;gt;,
+         #&amp;lt;BoilWater:0x007f88fcf52520 @step=&amp;quot;Boiling some water!&amp;quot;&amp;gt;]&amp;gt;
+         #&amp;lt;AddCoffee:0x007f88fcf46123 @step=&amp;quot;Adding in the coffee!&amp;quot;&amp;gt;]&amp;gt;
+         #&amp;lt;PressStartButton:0x007f88fcf46432 @step=&amp;quot;Pushing the start button!&amp;quot;&amp;gt;]&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now we can also check the time required for each coffee maker.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;frenchpress.time_required # =&amp;gt; 12.4
+dripmaker.time_required   # =&amp;gt; 8.5
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;Implementing the &lt;em&gt;Composite&lt;/em&gt; pattern is pretty simple.&lt;/p&gt;
+
+&lt;p&gt;We create a &lt;em&gt;component&lt;/em&gt; class that ties the numerous simple and
+complex characteristics together. In our example, &lt;code&gt;CoffeeRoutine&lt;/code&gt;
+defines an elementary method &lt;code&gt;#time&lt;/code&gt; and each child class implements
+its own amount.&lt;/p&gt;
+
+&lt;p&gt;Next, we create &lt;em&gt;leaf&lt;/em&gt; classes, &lt;code&gt;AddCoffee&lt;/code&gt;, &lt;code&gt;BoilWater&lt;/code&gt;, and &lt;code&gt;GrindCoffee&lt;/code&gt;,
+that share the same characteristics with one another. Remember that it&amp;#39;s the nature
+of &lt;em&gt;leaf&lt;/em&gt; classes to be simple. If you happen across a &lt;em&gt;leaf&lt;/em&gt; class that
+could be broken up, it might potentially be a &lt;em&gt;composite&lt;/em&gt; class in disguise.
+Break up those actions into individual &lt;em&gt;leaf&lt;/em&gt; classes and turn the original class
+into a &lt;em&gt;composite&lt;/em&gt;. All of our &lt;em&gt;leaf&lt;/em&gt; classes had a &lt;code&gt;#time&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;composite&lt;/em&gt; class handles all the subtasks, essentially using the child classes
+at its will. We can see that our two &lt;em&gt;composite&lt;/em&gt; classes and their methods, &lt;code&gt;FrenchPress#time_required&lt;/code&gt;
+and &lt;code&gt;DripMaker#time_required&lt;/code&gt;. manipulate the method &lt;code&gt;#time&lt;/code&gt; from the &lt;em&gt;leaf&lt;/em&gt; classes.
+Ultimately, our coffee makers are able to treat each step,
+&lt;code&gt;GrindCoffee&lt;/code&gt;, &lt;code&gt;BoilWater&lt;/code&gt; and &lt;code&gt;AddCoffee&lt;/code&gt; uniformly.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps you with your morning routine!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Vim: Moving Lines Ain't Hard</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html"/>
@@ -961,7 +1339,7 @@ but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-09-20T14:36:56-04:00</updated>
+    <updated>2013-09-30T19:47:40-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1276,7 +1654,7 @@ the &lt;em&gt;subject&lt;/em&gt; class. Let&amp;#39;s include the &lt;code&gt;Su
 informs each &lt;em&gt;observer&lt;/em&gt; that &lt;code&gt;Person#send_email&lt;/code&gt; has been kicked off.&lt;/p&gt;
 
 &lt;p&gt;Now let&amp;#39;s give it a whirl...&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
 3
@@ -1294,22 +1672,22 @@ informs each &lt;em&gt;observer&lt;/em&gt; that &lt;code&gt;Person#send_email&lt
 15
 16
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;alert = Alert.new
-agent = Agent.new
+  &lt;td class="code"&gt;&lt;pre&gt;alert = &lt;span class="constant"&gt;Alert&lt;/span&gt;.new
+agent = &lt;span class="constant"&gt;Agent&lt;/span&gt;.new
 
-bill = Person.new 'Bill'
+bill = &lt;span class="constant"&gt;Person&lt;/span&gt;.new &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bill&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
 
-bill.add_observer alert, agent   # Bill now has two observers watching him
+bill.add_observer alert, agent   &lt;span class="comment"&gt;# Bill now has two observers watching him&lt;/span&gt;
 
-bill.send_email 'Fishing Trip', 'Fred'
-  # =&amp;gt;
-      Subject: Fishing Trip
-      From:    Bill@example.com
-      To:      Fred@example.com
-      Date:    Wed Aug 16 20:35:09 2006
+bill.send_email &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Fishing Trip&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Fred&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="comment"&gt;# =&amp;gt;&lt;/span&gt;
+      &lt;span class="key"&gt;Subject&lt;/span&gt;: &lt;span class="constant"&gt;Fishing&lt;/span&gt; &lt;span class="constant"&gt;Trip&lt;/span&gt;
+      &lt;span class="key"&gt;From&lt;/span&gt;:    &lt;span class="constant"&gt;Bill&lt;/span&gt;&lt;span class="instance-variable"&gt;@example&lt;/span&gt;.com
+      &lt;span class="key"&gt;To&lt;/span&gt;:      &lt;span class="constant"&gt;Fred&lt;/span&gt;&lt;span class="instance-variable"&gt;@example&lt;/span&gt;.com
+      &lt;span class="key"&gt;Date&lt;/span&gt;:    &lt;span class="constant"&gt;Wed&lt;/span&gt; &lt;span class="constant"&gt;Aug&lt;/span&gt; &lt;span class="integer"&gt;16&lt;/span&gt; &lt;span class="integer"&gt;20&lt;/span&gt;:&lt;span class="integer"&gt;35&lt;/span&gt;:&lt;span class="integer"&gt;09&lt;/span&gt; &lt;span class="integer"&gt;2006&lt;/span&gt;
 
-!!! ALERT: BILL SENT AN EMAIL !!!
-!!! TIME TO DETAIN BILL !!!
+!!! &lt;span class="key"&gt;ALERT&lt;/span&gt;: &lt;span class="constant"&gt;BILL&lt;/span&gt; &lt;span class="constant"&gt;SENT&lt;/span&gt; &lt;span class="constant"&gt;AN&lt;/span&gt; &lt;span class="constant"&gt;EMAIL&lt;/span&gt; !!!
+!!! &lt;span class="constant"&gt;TIME&lt;/span&gt; &lt;span class="constant"&gt;TO&lt;/span&gt; &lt;span class="constant"&gt;DETAIN&lt;/span&gt; &lt;span class="constant"&gt;BILL&lt;/span&gt; !!!
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
