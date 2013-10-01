@@ -29,16 +29,16 @@ pattern.
 
 We can start by thinking of each coffee maker and coffee related task as a *subclass* of
 our `CoffeeRoutine`. `CoffeeRoutine` will be known as the *component*, the base
-class or interface that possesses the commonalities of basic and complex
-objects. `CoffeeRoutine#time_required` is the common trait among all
-coffee related tasks.
+class or interface that possesses the commonalities of simple and complex
+objects. `CoffeeRoutine#time` is the common trait among all
+coffee related classes.
 
 ```ruby
 class CoffeeRoutine
-  attr_reader :name
+  attr_reader :task
 
-  def initialize(name)
-    @name = name
+  def initialize(task)
+    @task = task
   end
 
   def time
@@ -49,7 +49,8 @@ end
 
 Next, we'll create a couple of *leaf* classes, which represent
 indivisble portions of our pattern. Here are a couple of *leaf* classes
-that come to mind: `GrindCoffee` and `BoilWater`.
+that come to mind: `GrindCoffee` and `BoilWater`. These *leaf* classes are
+our most basic steps to making coffee.
 
 ```ruby
 class GrindCoffee < CoffeeRoutine
@@ -83,6 +84,13 @@ class AddCoffee < CoffeeRoutine
 end
 ```
 
+```
+g = GrindCoffee.new
+
+g.task    # => 'Grinding some coffee!'
+g.time    # => 0.5
+```
+
 Now, we can get to the namesake of the pattern: the *composite* class. A
 *composite* class is a *component* that also contain
 *subcomponents*. *Composite* classes can be made up of smaller
@@ -93,27 +101,27 @@ Let's check out the `FrenchPress` class:
 
 ```ruby
 class FrenchPress < CoffeeRoutine
-  attr_reader :tasks
+  attr_reader :task, :steps
 
-  def initialize(name)
+  def initialize(task)
     super 'Using the French press to make coffee'
-    @tasks = []
-    add_sub_task BoilWater.new
-    add_sub_task GrindCoffee.new
-    add_sub_task AddCoffee.new
+    @steps = []
+    add_step BoilWater.new
+    add_step GrindCoffee.new
+    add_step AddCoffee.new
   end
 
-  def add_sub_task(task)
-    tasks << task
+  def add_step(step)
+    steps << step
   end
 
-  def remove_sub_task(task)
-    tasks.delete task
+  def remove_step(step)
+    steps.delete step
   end
 
   def time_required
     total_time = 0.0
-    tasks.each { |task| total_time += task.time }
+    steps.each { |step| total_time += step.time }
     total_time
   end
 end
@@ -124,23 +132,23 @@ However, we can simplify the `FrenchPress` class by pulling out the
 
 ```ruby
 class CompositeTasks < CoffeeRoutine
-  attr_reader :tasks
+  attr_reader :task, :steps
 
-  def initialize(name)
-    @tasks = []
+  def initialize(task)
+    @steps = []
   end
 
-  def add_sub_task(task)
-    tasks << task
+  def add_step(step)
+    steps << step
   end
 
-  def remove_sub_task(task)
-    tasks.delete(task)
+  def remove_step(step)
+    steps.delete step
   end
 
   def time_required
     total_time = 0.0
-    tasks.each { |task| total_time += task.time }
+    steps.each { |step| total_time += step.time }
     total_time
   end
 end
@@ -153,23 +161,23 @@ something like this:
 class FrenchPress < CompositeTasks
   def initialize
     super 'Using the FrenchPress to make coffee!!!'
-    add_sub_task GrindCoffee.new
-    add_sub_task BoilWater.new
-    add_sub_task AddCoffee.new
+    add_step GrindCoffee.new
+    add_step BoilWater.new
+    add_step AddCoffee.new
     # ... Omitted actual steps to make coffee from a French press ...
     # ... Imagine PressPlunger class has been defined already ...
-    add_sub_task PressPlunger.new
+    add_step PressPlunger.new
   end
 end
 
 class DripMaker < CompositeTasks
   def initialize
     super 'Using the DripMaker to make coffee!!!'
-    add_sub_task GrindCoffee.new
-    add_sub_task BoilWater
-    add_sub_task AddCoffee.new
+    add_step GrindCoffee.new
+    add_step BoilWater
+    add_step AddCoffee.new
     # ... Imagine PressStartButton class has been defined already ...
-    add_sub_task PressStartButton.new
+    add_step PressStartButton.new
   end
 end
 ```
@@ -181,7 +189,7 @@ frenchpress = FrenchPress.new
 
 # => #<FrenchPress:0x007f88fcf46410
        @name="Using the FrenchPress to make coffee!!!",
-       @tasks=
+       @steps=
          [#<GrindCoffee:0x007f88fcf46370 @name="Grinding some coffee!">,
          #<BoilWater:0x007f88fcf46320 @name="Boiling some water!">]>
          #<AddCoffee:0x007f88fcf46329 @name="Adding in the coffee!">]>
@@ -191,7 +199,7 @@ dripmaker = DripMaker.new
 
 # => #<DripMaker:0x137t88fcf57109
        @name="Using the DripMaker to make coffee!!!",
-       @tasks=
+       @steps=
          [#<GrindCoffee:0x007f88fcf46370 @name="Grinding some coffee!">,
          #<BoilWater:0x007f88fcf52520 @name="Boiling some water!">]>
          #<AddCoffee:0x007f88fcf46123 @name="Adding in the coffee!">]>
