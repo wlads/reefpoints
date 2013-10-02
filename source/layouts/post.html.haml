@@ -16,6 +16,7 @@
     .post-div
       %p.post-meta.post-tags
         = tag_links(current_page.tags)
+        = link_to 'See all categories', '/categories.html', class: 'tag-link', style: 'float: right'
       .post-title-wrap
         %h1.post-title= current_page.title
 
