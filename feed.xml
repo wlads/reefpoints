@@ -72,7 +72,7 @@
     </author>
     <content type="html">&lt;h2&gt;Simple Namespacing&lt;/h2&gt;
 
-&lt;p&gt;We&amp;#39;ve been using our &lt;a href="https://github.com/dockyard/pages"&gt;Pages&lt;/a&gt; gem is
+&lt;p&gt;We&amp;#39;ve been using our &lt;a href="https://github.com/dockyard/pages"&gt;Pages&lt;/a&gt; gem in
 nearly all of our projects for over a year now. Its been great but could
 only support pages on the root. I just released &lt;code&gt;0.2.0&lt;/code&gt; of the gem that
 now supports namespacing:&lt;/p&gt;

@@ -13,14 +13,14 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html</id>
     <published>2013-10-06T00:00:00Z</published>
-    <updated>2013-10-06T03:05:22-04:00</updated>
+    <updated>2013-10-06T03:07:29-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
     <summary>New functionality for the gem</summary>
     <content type="html">&lt;h2&gt;Simple Namespacing&lt;/h2&gt;
 
-&lt;p&gt;We&amp;#39;ve been using our &lt;a href="https://github.com/dockyard/pages"&gt;Pages&lt;/a&gt; gem is
+&lt;p&gt;We&amp;#39;ve been using our &lt;a href="https://github.com/dockyard/pages"&gt;Pages&lt;/a&gt; gem in
 nearly all of our projects for over a year now. Its been great but could
 only support pages on the root. I just released &lt;code&gt;0.2.0&lt;/code&gt; of the gem that
 now supports namespacing:&lt;/p&gt;
