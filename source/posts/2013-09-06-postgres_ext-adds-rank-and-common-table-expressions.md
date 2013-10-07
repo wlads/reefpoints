@@ -8,7 +8,7 @@ github: danmcclain
 social: true
 summary: "In postgres_ext 2.1, complex queries get much easier"
 published: true
-tags: ruby on rails, gems, postgres_ext, PostgreSQL
+tags: ruby on rails, gems, postgres_ext, postgresql
 ---
 
 This week, I released [postgres\_ext](https://github.com/dockyard/postgres_ext) 2.1.0, which includes

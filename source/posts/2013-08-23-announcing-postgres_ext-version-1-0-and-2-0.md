@@ -8,7 +8,7 @@ github: danmcclain
 social: true
 summary: "Today, I released not 1 but 2 versions of PostgresExt"
 published: true
-tags: ruby on rails, gems, postgres_ext, PostgreSQL
+tags: ruby on rails, gems, postgres_ext, postgresql
 ---
 
 Two versions of PostgresExt have been released today.
