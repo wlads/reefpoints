@@ -7,7 +7,7 @@ twitter: 'DougYun'
 github: duggiefresh
 social: true
 summary: "A painless tutorial on Vim buffers"
-published: false
+published: true
 tags: vim, workflow
 ---
 First off, [GO SOX](http://boston.redsox.mlb.com)!!!11
