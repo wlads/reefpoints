@@ -259,13 +259,13 @@ This has allowed me to rapidly move between files that I actively open and edit.
   &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc (or wherever else you keep your .vimrc)
 
 &amp;quot; Move to the previous buffer with &amp;quot;gp&amp;quot;
-noremap gp :bp&amp;lt;CR&amp;gt;
+nnoremap gp :bp&amp;lt;CR&amp;gt;
 
 &amp;quot; Move to the next buffer with &amp;quot;gn&amp;quot;
-noremap gn :bn&amp;lt;CR&amp;gt;
+nnoremap gn :bn&amp;lt;CR&amp;gt;
 
 &amp;quot; List all possible buffers with &amp;quot;gl&amp;quot;
-noremap gl :ls&amp;lt;CR&amp;gt;
+nnoremap gl :ls&amp;lt;CR&amp;gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;

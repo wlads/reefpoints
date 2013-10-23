@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html</id>
     <published>2013-10-22T00:00:00Z</published>
-    <updated>2013-10-23T13:27:23-04:00</updated>
+    <updated>2013-10-23T13:30:55-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -207,13 +207,13 @@ This has allowed me to rapidly move between files that I actively open and edit.
   &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc (or wherever else you keep your .vimrc)
 
 &amp;quot; Move to the previous buffer with &amp;quot;gp&amp;quot;
-noremap gp :bp&amp;lt;CR&amp;gt;
+nnoremap gp :bp&amp;lt;CR&amp;gt;
 
 &amp;quot; Move to the next buffer with &amp;quot;gn&amp;quot;
-noremap gn :bn&amp;lt;CR&amp;gt;
+nnoremap gn :bn&amp;lt;CR&amp;gt;
 
 &amp;quot; List all possible buffers with &amp;quot;gl&amp;quot;
-noremap gl :ls&amp;lt;CR&amp;gt;
+nnoremap gl :ls&amp;lt;CR&amp;gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
