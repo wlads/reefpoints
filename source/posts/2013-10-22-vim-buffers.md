@@ -148,13 +148,13 @@ Here are some key remappings that speed up buffer movement:
 " ~/.vimrc (or wherever else you keep your .vimrc)
 
 " Move to the previous buffer with "gp"
-noremap gp :bp<CR>
+nnoremap gp :bp<CR>
 
 " Move to the next buffer with "gn"
-noremap gn :bn<CR>
+nnoremap gn :bn<CR>
 
 " List all possible buffers with "gl"
-noremap gl :ls<CR>
+nnoremap gl :ls<CR>
 ```
 
 *Note*: Remapping `gp` will remove the Vim default functionality of `gp`.
