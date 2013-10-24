@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-f0f513e0.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -255,6 +255,9 @@ This has allowed me to rapidly move between files that I actively open and edit.
 8
 9
 &lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc (or wherever else you keep your .vimrc)
 
@@ -266,6 +269,9 @@ nnoremap gn :bn&amp;lt;CR&amp;gt;
 
 &amp;quot; List all possible buffers with &amp;quot;gl&amp;quot;
 nnoremap gl :ls&amp;lt;CR&amp;gt;
+
+&amp;quot; List all possible buffers with &amp;quot;gb&amp;quot; and accept a new buffer argument [1]
+nnoremap gb :ls&amp;lt;CR&amp;gt;:b
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
@@ -275,6 +281,10 @@ Use &lt;code&gt;:h gp&lt;/code&gt; to read more about it.&lt;/p&gt;
 &lt;p&gt;Hope that provides some insight into the capabilities of Vim buffers!
 If there is anything you&amp;#39;d like to add, please feel free and
 comment in the discussion area. Thanks!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[1] Special thanks to &lt;a href="http://www.reddit.com/r/vim/comments/1p2a62/a_painless_tutorial_on_vim_buffers/ccxzq7e"&gt;romainl&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>

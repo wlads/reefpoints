@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers</title><link href="/stylesheets/all-f0f513e0.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - A painless tutorial on Vim buffers' name='description'><meta content='DougYun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html' name='twitter:url'><meta content='Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers' name='twitter:title'><meta content='A painless tutorial on Vim buffers' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - A painless tutorial on Vim buffers' name='description'><meta content='DougYun' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html' name='twitter:url'><meta content='Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers' name='twitter:title'><meta content='A painless tutorial on Vim buffers' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -235,6 +235,9 @@ This has allowed me to rapidly move between files that I actively open and edit.
 8
 9
 <strong>10</strong>
+11
+12
+13
 </pre></td>
   <td class="code"><pre>&quot; ~/.vimrc (or wherever else you keep your .vimrc)
 
@@ -246,6 +249,9 @@ nnoremap gn :bn&lt;CR&gt;
 
 &quot; List all possible buffers with &quot;gl&quot;
 nnoremap gl :ls&lt;CR&gt;
+
+&quot; List all possible buffers with &quot;gb&quot; and accept a new buffer argument [1]
+nnoremap gb :ls&lt;CR&gt;:b
 </pre></td>
 </tr></table>
 </div></div>
@@ -255,6 +261,10 @@ Use <code>:h gp</code> to read more about it.</p>
 <p>Hope that provides some insight into the capabilities of Vim buffers!
 If there is anything you&#39;d like to add, please feel free and
 comment in the discussion area. Thanks!</p>
+
+<ul>
+<li>[1] Special thanks to <a href="http://www.reddit.com/r/vim/comments/1p2a62/a_painless_tutorial_on_vim_buffers/ccxzq7e">romainl</a>.</li>
+</ul>
 </current_page><p class='issue'>See a problem with the current page? &nbsp;<a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/' target='_blank'>Send a pull request to contribute, we'll happily accept!</a></p><section class='post-share'><h1>Like the current page? Please share!</h1><div class='social-button'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a></div><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='social-button'><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
