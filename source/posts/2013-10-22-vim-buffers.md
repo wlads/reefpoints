@@ -155,6 +155,9 @@ nnoremap gn :bn<CR>
 
 " List all possible buffers with "gl"
 nnoremap gl :ls<CR>
+
+" List all possible buffers with "gb" and accept a new buffer argument [1]
+nnoremap gb :ls<CR>:b
 ```
 
 *Note*: Remapping `gp` will remove the Vim default functionality of `gp`.
@@ -164,3 +167,5 @@ Use `:h gp` to read more about it.
 Hope that provides some insight into the capabilities of Vim buffers!
 If there is anything you'd like to add, please feel free and
 comment in the discussion area. Thanks!
+
+* [1] Special thanks to [romainl](http://www.reddit.com/r/vim/comments/1p2a62/a_painless_tutorial_on_vim_buffers/ccxzq7e).
