@@ -34,6 +34,7 @@ task :new, :title do |t, args|
   end
 end
 
+desc 'Preview Reefpoints in your browser'
 task :preview do
   sh "bundle exec middleman"
 end
