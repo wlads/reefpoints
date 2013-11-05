@@ -14,20 +14,23 @@ tags: software design patterns, ruby
 ## Let's get ready for some football!
 
 One of my favorite sports is American football; it's strategic, physical,
-and overall wild! As a fan, and once player, of the sport, I've learned some
-valuable lessons. For example, I've learned that "persistence is key",
-"giving up is for losers", and "water sucks, Gatorade is better."
+and wild! As a fan - and once high school player - of the sport, I've gained some
+valuable lessons from my experiences. For example, I've learned that "persistence
+is key", "giving up is for losers", and that "water sucks, Gatorade is better."
 
 While those are fine gems of wisdom, today we'll be
-covering one of the most overlooked teachings in football: the **Command** pattern.
+covering one of the most overlooked teachings in football: the power
+of **Command** pattern.
 
-## Put me in, Coach
+## Put me in, Coach!
 
-Let's start by creating a football player, a `BostonNarwin`class from which our
+Let's start by creating a `BostonNarwin` class from which our
 football players will inherit from.
 
 ```ruby
-class BostonNarwinCommand
+# football.rb
+
+class BostonNarwin
   attr_reader :action
 
   def initialize(action)
@@ -40,10 +43,17 @@ class BostonNarwinCommand
 end
 ```
 
-Next, we'll need some key players; let's just focus on a `Quarterback` and a `Receiver`.
+Next, we'll need some key players; let's create `Quarterback` and `Receiver` classes.
+For fun, we're going to add a `TeamOwner` class too.
+All three of these classes are going to possess a method called `#execute`.
+
+Each of these classes can be considered as instances of separate
+**commands**.
 
 ```ruby
-class QuarterbackCommand < BostonNarwinCommand
+# football.rb
+
+class Quarterback < BostonNarwin
   attr_reader :path, :play
 
   def initialize(path, play)
@@ -59,7 +69,7 @@ class QuarterbackCommand < BostonNarwinCommand
   end
 end
 
-class ReceiverCommand < BostonNarwinCommand
+class Receiver < BostonNarwin
   attr_reader :path, :play
 
   def initialize(path, play)
@@ -75,11 +85,11 @@ class ReceiverCommand < BostonNarwinCommand
   end
 end
 
-class TeamOwnerCommand < BostonNarwinCommand
+class TeamOwner < BostonNarwin
   attr_reader :path, :target
 
   def initialize(path, target)
-    super "We are moving the team from #{path} to #{target}!"
+    super "We are moving the team from #{prettify path} to #{prettify target}!"
     @path = path
     @target = target
   end
@@ -87,20 +97,25 @@ class TeamOwnerCommand < BostonNarwinCommand
   def execute
     FileUtils.mv path, target
     file = File.open target, 'a'
-    file.write "#{name}: We moved from #{path} to #{target}!"
+    file.write "#{name}: We moved from #{prettify path} to #{prettify target}!"
     file.close
   end
 
-  def prettify(path)
-    (pathname.chomp(File.extname(pathname))).capitalize
+  def prettify(pathname)
+    (pathname.chomp File.extname(pathname)).capitalize
   end
 end
 ```
 
-Next, let's create a class that keeps track of every player's command.
+Next, let's create a class that keeps track of the `Quarterback`, `Receiver`, and
+`TeamOwner` commands. We can use the
+[**Composite** pattern](http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html)
+to create this new class.
 
 ```ruby
-class CompositeCommand < BostonNarwinCommand
+# football.rb
+
+class CompositeCommand < BostonNarwin
   attr_accessor :commands
 
   def initialize
@@ -120,8 +135,82 @@ end
 Now, we can kickoff some football commands!
 
 ```
-quarterback = QuarterbackCommand.new('boston.txt', 'I'm going to throw a perfect pass!')
-receiver = ReceiverCommand.new('boston.txt', 'I'm going to catch the ball!')
-team_owner = TeamOwnerCommand.new('boston.txt', 'somerville.txt')
+load 'football.rb'
+
+quarterback = Quarterback.new('boston.txt', 'I'm going to throw a perfect pass!')
+# => #<Quarterback:0x007ff6f5c5c148
+     @action="Hut! Hut! Red 19! Red 19! Hike!",
+     @path="boston.txt",
+     @play="I'm going to throw a perfect pass!">
+
+receiver = Receiver.new('boston.txt', 'I'm going to catch the ball!')
+# => #<Receiver:0x007ff6f5c949f8
+     @action="Run, run, run!!!",
+     @path="boston.txt",
+     @play="I'm going to catch the ball!">
+
+team_owner = TeamOwner.new('boston.txt', 'somerville.txt')
+# => #<TeamOwner:0x007ff6f5ccd028
+     @action="We are moving the team from Boston to Somerville!",
+     @path="boston.txt",
+     @target="somerville.txt">
+```
+
+Great! Now we'll create an instance of the `CompositeCommand`, add
+each sub-command with `#add_command`, and then execute each command
+with `#execute`.
 
 ```
+command = CompositeCommand.new
+# => #<CompositeCommand:0x007ff6f5b82948 @commands=[]>
+
+command.add_command quarterback, receiver, team_owner
+# => [#<Quarterback:0x007ff6f5c5c148
+     @action="Hut! Hut! Red 19! Red 19! Hike!",
+     @path="boston.txt",
+     @play="I'm going to throw a perfect pass!">,
+     #<Receiver:0x007ff6f5c949f8
+     @action="Run, run, run!!!",
+     @path="boston.txt",
+     @play="I'm going to catch the ball!">,
+     #<TeamOwner:0x007ff6f5ccd028
+     @action="We are moving the team from Boston to Somerville!",
+     @path="boston.txt",
+     @target="somerville.txt">]
+
+command.execute
+# ...  Omitted for brevity ...
+
+exit
+```
+
+Finally, let's list out the files in our current directory and view the contents
+of our recently created text file.
+
+```
+$ ls
+# => football.rb   somerville.txt
+
+$ less somerville.txt
+# => Quarterback: I'm going to throw a perfect pass!
+     Receiver: I'm going to catch the ball!
+     TeamOwner: We moved from Boston to Somerville!
+```
+
+Wow! The **Command** pattern in action!
+
+## Discussion
+
+The **Command** pattern suggests that we create objects that perform
+specific tasks and actions. For our example, the `Quarterback` object
+created a file, the `Receiver` appended to the file, and the `TeamOwner`
+object moved it. Each of the command objects completed their action
+through `CompositeCommand#execute`.
+
+Having one object, an instance of `CompositeCommand`, that executes all
+stored commands presents us with solutions ranging from simple file
+manipulation to user triggered interaction. The **Command** pattern
+also allows us to "store" and "remember" commands prior to and after
+execution.
+
+Hope you enjoyed our example and go Boston Narwins!
