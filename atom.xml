@@ -4,10 +4,368 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-10-22T00:00:00Z</updated>
+  <updated>2013-11-05T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Design Patterns: The Command Pattern</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html"/>
+    <id>http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html</id>
+    <published>2013-11-05T00:00:00Z</published>
+    <updated>2013-11-05T12:17:51-05:00</updated>
+    <author>
+      <name>Doug Yun</name>
+    </author>
+    <summary>Exploring design patterns and their use cases</summary>
+    <content type="html">&lt;h2&gt;Let&amp;#39;s get ready for some football!&lt;/h2&gt;
+
+&lt;p&gt;One of my favorite sports is American football; it&amp;#39;s strategic, physical,
+and wild! As a fan - and once high school player - of the sport, I&amp;#39;ve gained some
+valuable lessons from my experiences. For example, I&amp;#39;ve learned that &amp;quot;persistence
+is key&amp;quot;, &amp;quot;giving up is for losers&amp;quot;, and that &amp;quot;water sucks, Gatorade is better.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;While those are fine gems of wisdom, today we&amp;#39;ll be
+covering one of the most overlooked teachings in football: the power
+of &lt;strong&gt;Command&lt;/strong&gt; pattern.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Command&lt;/strong&gt; design pattern intends to separate and decouple an object of invocation
+from the object that receives the message of invocation. We will
+encapsulate all pertinent information of a method and execute the method
+at a later time. Essentially, the &lt;strong&gt;Command&lt;/strong&gt; pattern gives us the ability
+to queue a series of operations for a later time. Let&amp;#39;s dig in.&lt;/p&gt;
+
+&lt;h2&gt;Put me in, Coach!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s start by creating a &lt;code&gt;BostonNarwin&lt;/code&gt; class from which our
+football players will inherit from.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:action&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(action)
+    &lt;span class="instance-variable"&gt;@action&lt;/span&gt; = action
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;name&lt;/span&gt;
+    &lt;span class="predefined-constant"&gt;self&lt;/span&gt;.class
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next, we&amp;#39;ll need some key players; let&amp;#39;s create &lt;code&gt;Quarterback&lt;/code&gt; and &lt;code&gt;Receiver&lt;/code&gt; classes.
+For fun, we&amp;#39;re going to add a &lt;code&gt;TeamOwner&lt;/code&gt; class too.
+All three of these classes are going to possess a method called &lt;code&gt;#execute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each of these classes can be considered as instances of separate
+&lt;strong&gt;commands&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Quarterback&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:play&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, play)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Hut! Hut! Red 19! Red 19! Hike!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@play&lt;/span&gt; = play
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open path, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;w&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;play&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Receiver&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:play&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, play)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Run, run, run!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@play&lt;/span&gt; = play
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open path, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;play&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;TeamOwner&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:target&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, target)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;We are moving the team from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify path&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; to &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify target&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@target&lt;/span&gt; = target
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    &lt;span class="constant"&gt;FileUtils&lt;/span&gt;.mv path, target
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open target, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: We moved from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify path&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; to &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify target&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;prettify&lt;/span&gt;(pathname)
+    (pathname.chomp &lt;span class="constant"&gt;File&lt;/span&gt;.extname(pathname)).capitalize
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next, let&amp;#39;s create a class that keeps track of the &lt;code&gt;Quarterback&lt;/code&gt;, &lt;code&gt;Receiver&lt;/code&gt;, and
+&lt;code&gt;TeamOwner&lt;/code&gt; commands. We can use the
+&lt;a href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"&gt;&lt;strong&gt;Composite&lt;/strong&gt; pattern&lt;/a&gt;
+to create this new class.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CompositeCommand&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_accessor &lt;span class="symbol"&gt;:commands&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@commands&lt;/span&gt; = []
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_command&lt;/span&gt;(*args)
+    args.each { |arg| commands &amp;lt;&amp;lt; arg }
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    commands.each { |command| command.execute }
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, we can kickoff some football commands!&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;load 'football.rb'
+
+quarterback = Quarterback.new('boston.txt', 'I'm going to throw a perfect pass!')
+# =&amp;gt; #&amp;lt;Quarterback:0x007ff6f5c5c148
+     @action=&amp;quot;Hut! Hut! Red 19! Red 19! Hike!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to throw a perfect pass!&amp;quot;&amp;gt;
+
+receiver = Receiver.new('boston.txt', 'I'm going to catch the ball!')
+# =&amp;gt; #&amp;lt;Receiver:0x007ff6f5c949f8
+     @action=&amp;quot;Run, run, run!!!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to catch the ball!&amp;quot;&amp;gt;
+
+team_owner = TeamOwner.new('boston.txt', 'somerville.txt')
+# =&amp;gt; #&amp;lt;TeamOwner:0x007ff6f5ccd028
+     @action=&amp;quot;We are moving the team from Boston to Somerville!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @target=&amp;quot;somerville.txt&amp;quot;&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Great! Now we&amp;#39;ll create an instance of the &lt;code&gt;CompositeCommand&lt;/code&gt;, add
+each sub-command with &lt;code&gt;#add_command&lt;/code&gt;, and then execute each command
+with &lt;code&gt;#execute&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;command = CompositeCommand.new
+# =&amp;gt; #&amp;lt;CompositeCommand:0x007ff6f5b82948 @commands=[]&amp;gt;
+
+command.add_command quarterback, receiver, team_owner
+# =&amp;gt; [#&amp;lt;Quarterback:0x007ff6f5c5c148
+     @action=&amp;quot;Hut! Hut! Red 19! Red 19! Hike!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to throw a perfect pass!&amp;quot;&amp;gt;,
+     #&amp;lt;Receiver:0x007ff6f5c949f8
+     @action=&amp;quot;Run, run, run!!!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to catch the ball!&amp;quot;&amp;gt;,
+     #&amp;lt;TeamOwner:0x007ff6f5ccd028
+     @action=&amp;quot;We are moving the team from Boston to Somerville!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @target=&amp;quot;somerville.txt&amp;quot;&amp;gt;]
+
+command.execute
+# ...  Omitted for brevity ...
+
+exit
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finally, let&amp;#39;s list out the files in our current directory and view the contents
+of our recently created text file.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ ls
+# =&amp;gt; football.rb   somerville.txt
+
+$ less somerville.txt
+# =&amp;gt; Quarterback: I'm going to throw a perfect pass!
+     Receiver: I'm going to catch the ball!
+     TeamOwner: We moved from Boston to Somerville!
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Wow! The &lt;strong&gt;Command&lt;/strong&gt; pattern in action!&lt;/p&gt;
+
+&lt;h2&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;Command&lt;/strong&gt; pattern suggests that we create objects that perform
+specific tasks and actions. For our example, the &lt;code&gt;Quarterback&lt;/code&gt; object
+created a file, the &lt;code&gt;Receiver&lt;/code&gt; appended to the file, and the &lt;code&gt;TeamOwner&lt;/code&gt;
+object moved it. Each of the command objects completed their action
+through &lt;code&gt;CompositeCommand#execute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Having one object, an instance of &lt;code&gt;CompositeCommand&lt;/code&gt;, that executes all
+stored commands presents us with solutions ranging from simple file
+manipulation to user triggered interaction. The &lt;strong&gt;Command&lt;/strong&gt; pattern
+also allows us to &amp;quot;store&amp;quot; and &amp;quot;remember&amp;quot; commands prior to and after
+execution.&lt;/p&gt;
+
+&lt;p&gt;Hope you enjoyed our example and go Boston Narwins!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"/>
@@ -272,7 +630,7 @@ Your views will go into &lt;code&gt;app/views/work/pages&lt;/code&gt;. For more 
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html</id>
     <published>2013-10-01T00:00:00Z</published>
-    <updated>2013-10-02T14:46:31-04:00</updated>
+    <updated>2013-10-25T10:53:08-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-651b2e8b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-6a5d8a6b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,367 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-10-22T00:00:00Z</updated>
+  <updated>2013-11-05T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Design Patterns: The Command Pattern</title>
+    <link rel="alternate" href="/2013/11/05/design-patterns-command-pattern.html"/>
+    <id>/2013/11/05/design-patterns-command-pattern.html</id>
+    <published>2013-11-05T00:00:00Z</published>
+    <updated>2013-11-05T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2&gt;Let&amp;#39;s get ready for some football!&lt;/h2&gt;
+
+&lt;p&gt;One of my favorite sports is American football; it&amp;#39;s strategic, physical,
+and wild! As a fan - and once high school player - of the sport, I&amp;#39;ve gained some
+valuable lessons from my experiences. For example, I&amp;#39;ve learned that &amp;quot;persistence
+is key&amp;quot;, &amp;quot;giving up is for losers&amp;quot;, and that &amp;quot;water sucks, Gatorade is better.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;While those are fine gems of wisdom, today we&amp;#39;ll be
+covering one of the most overlooked teachings in football: the power
+of &lt;strong&gt;Command&lt;/strong&gt; pattern.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Command&lt;/strong&gt; design pattern intends to separate and decouple an object of invocation
+from the object that receives the message of invocation. We will
+encapsulate all pertinent information of a method and execute the method
+at a later time. Essentially, the &lt;strong&gt;Command&lt;/strong&gt; pattern gives us the ability
+to queue a series of operations for a later time. Let&amp;#39;s dig in.&lt;/p&gt;
+
+&lt;h2&gt;Put me in, Coach!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s start by creating a &lt;code&gt;BostonNarwin&lt;/code&gt; class from which our
+football players will inherit from.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:action&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(action)
+    &lt;span class="instance-variable"&gt;@action&lt;/span&gt; = action
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;name&lt;/span&gt;
+    &lt;span class="predefined-constant"&gt;self&lt;/span&gt;.class
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next, we&amp;#39;ll need some key players; let&amp;#39;s create &lt;code&gt;Quarterback&lt;/code&gt; and &lt;code&gt;Receiver&lt;/code&gt; classes.
+For fun, we&amp;#39;re going to add a &lt;code&gt;TeamOwner&lt;/code&gt; class too.
+All three of these classes are going to possess a method called &lt;code&gt;#execute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each of these classes can be considered as instances of separate
+&lt;strong&gt;commands&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Quarterback&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:play&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, play)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Hut! Hut! Red 19! Red 19! Hike!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@play&lt;/span&gt; = play
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open path, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;w&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;play&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Receiver&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:play&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, play)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Run, run, run!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@play&lt;/span&gt; = play
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open path, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;play&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;TeamOwner&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_reader &lt;span class="symbol"&gt;:path&lt;/span&gt;, &lt;span class="symbol"&gt;:target&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(path, target)
+    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;We are moving the team from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify path&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; to &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify target&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@path&lt;/span&gt; = path
+    &lt;span class="instance-variable"&gt;@target&lt;/span&gt; = target
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    &lt;span class="constant"&gt;FileUtils&lt;/span&gt;.mv path, target
+    file = &lt;span class="constant"&gt;File&lt;/span&gt;.open target, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    file.write &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;: We moved from &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify path&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt; to &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;prettify target&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="content"&gt;!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    file.close
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;prettify&lt;/span&gt;(pathname)
+    (pathname.chomp &lt;span class="constant"&gt;File&lt;/span&gt;.extname(pathname)).capitalize
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next, let&amp;#39;s create a class that keeps track of the &lt;code&gt;Quarterback&lt;/code&gt;, &lt;code&gt;Receiver&lt;/code&gt;, and
+&lt;code&gt;TeamOwner&lt;/code&gt; commands. We can use the
+&lt;a href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"&gt;&lt;strong&gt;Composite&lt;/strong&gt; pattern&lt;/a&gt;
+to create this new class.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# football.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CompositeCommand&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;BostonNarwin&lt;/span&gt;
+  attr_accessor &lt;span class="symbol"&gt;:commands&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
+    &lt;span class="instance-variable"&gt;@commands&lt;/span&gt; = []
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_command&lt;/span&gt;(*args)
+    args.each { |arg| commands &amp;lt;&amp;lt; arg }
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;execute&lt;/span&gt;
+    commands.each { |command| command.execute }
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, we can kickoff some football commands!&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;load 'football.rb'
+
+quarterback = Quarterback.new('boston.txt', 'I'm going to throw a perfect pass!')
+# =&amp;gt; #&amp;lt;Quarterback:0x007ff6f5c5c148
+     @action=&amp;quot;Hut! Hut! Red 19! Red 19! Hike!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to throw a perfect pass!&amp;quot;&amp;gt;
+
+receiver = Receiver.new('boston.txt', 'I'm going to catch the ball!')
+# =&amp;gt; #&amp;lt;Receiver:0x007ff6f5c949f8
+     @action=&amp;quot;Run, run, run!!!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to catch the ball!&amp;quot;&amp;gt;
+
+team_owner = TeamOwner.new('boston.txt', 'somerville.txt')
+# =&amp;gt; #&amp;lt;TeamOwner:0x007ff6f5ccd028
+     @action=&amp;quot;We are moving the team from Boston to Somerville!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @target=&amp;quot;somerville.txt&amp;quot;&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Great! Now we&amp;#39;ll create an instance of the &lt;code&gt;CompositeCommand&lt;/code&gt;, add
+each sub-command with &lt;code&gt;#add_command&lt;/code&gt;, and then execute each command
+with &lt;code&gt;#execute&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;command = CompositeCommand.new
+# =&amp;gt; #&amp;lt;CompositeCommand:0x007ff6f5b82948 @commands=[]&amp;gt;
+
+command.add_command quarterback, receiver, team_owner
+# =&amp;gt; [#&amp;lt;Quarterback:0x007ff6f5c5c148
+     @action=&amp;quot;Hut! Hut! Red 19! Red 19! Hike!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to throw a perfect pass!&amp;quot;&amp;gt;,
+     #&amp;lt;Receiver:0x007ff6f5c949f8
+     @action=&amp;quot;Run, run, run!!!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @play=&amp;quot;I'm going to catch the ball!&amp;quot;&amp;gt;,
+     #&amp;lt;TeamOwner:0x007ff6f5ccd028
+     @action=&amp;quot;We are moving the team from Boston to Somerville!&amp;quot;,
+     @path=&amp;quot;boston.txt&amp;quot;,
+     @target=&amp;quot;somerville.txt&amp;quot;&amp;gt;]
+
+command.execute
+# ...  Omitted for brevity ...
+
+exit
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finally, let&amp;#39;s list out the files in our current directory and view the contents
+of our recently created text file.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ ls
+# =&amp;gt; football.rb   somerville.txt
+
+$ less somerville.txt
+# =&amp;gt; Quarterback: I'm going to throw a perfect pass!
+     Receiver: I'm going to catch the ball!
+     TeamOwner: We moved from Boston to Somerville!
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Wow! The &lt;strong&gt;Command&lt;/strong&gt; pattern in action!&lt;/p&gt;
+
+&lt;h2&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;Command&lt;/strong&gt; pattern suggests that we create objects that perform
+specific tasks and actions. For our example, the &lt;code&gt;Quarterback&lt;/code&gt; object
+created a file, the &lt;code&gt;Receiver&lt;/code&gt; appended to the file, and the &lt;code&gt;TeamOwner&lt;/code&gt;
+object moved it. Each of the command objects completed their action
+through &lt;code&gt;CompositeCommand#execute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Having one object, an instance of &lt;code&gt;CompositeCommand&lt;/code&gt;, that executes all
+stored commands presents us with solutions ranging from simple file
+manipulation to user triggered interaction. The &lt;strong&gt;Command&lt;/strong&gt; pattern
+also allows us to &amp;quot;store&amp;quot; and &amp;quot;remember&amp;quot; commands prior to and after
+execution.&lt;/p&gt;
+
+&lt;p&gt;Hope you enjoyed our example and go Boston Narwins!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Buffers, Windows, Tabs... Oh My! Part 1: Vim Buffers</title>
     <link rel="alternate" href="/2013/10/22/vim-buffers.html"/>
@@ -1124,205 +1481,6 @@ bad pun).&lt;/p&gt;
 day as well. If there are some other tricks
 concerning escaping and saving files, please let me know in the
 comments! Thanks!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Postgres_ext adds rank and common table expressions</title>
-    <link rel="alternate" href="/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
-    <id>/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
-    <published>2013-09-06T00:00:00Z</published>
-    <updated>2013-09-06T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;This week, I released &lt;a href="https://github.com/dockyard/postgres_ext"&gt;postgres_ext&lt;/a&gt; 2.1.0, which includes
-ActiveRecord::Relation methods to simplify queries that require the use
-of &lt;a href="http://www.postgresql.org/docs/current/static/queries-with.html"&gt;Common Table
-Expressions&lt;/a&gt;
-(CTEs) and the &lt;a href="http://www.postgresql.org/docs/9.2/static/functions-window.html"&gt;&lt;code&gt;rank()&lt;/code&gt; windowing
-function&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Common Table Expressions&lt;/h2&gt;
-
-&lt;p&gt;In a sentence, CTEs allow you to define a temporary table to be used in
-a larger query. Let&amp;#39;s look at an example:&lt;/p&gt;
-&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;WITH scores_for_game &lt;span class="keyword"&gt;AS&lt;/span&gt; (
-&lt;span class="class"&gt;SELECT&lt;/span&gt; *
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
-&lt;span class="keyword"&gt;WHERE&lt;/span&gt; game_id = &lt;span class="integer"&gt;1&lt;/span&gt;
-)
-&lt;span class="class"&gt;SELECT&lt;/span&gt; *
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores_for_game
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In the above, somewhat arbitrary, example, we create a temporary table
-of &lt;code&gt;scores_for_game&lt;/code&gt; which we then select from. CTEs allow you to
-organize your more complex queries, and can be really helpful in certain
-cases.&lt;/p&gt;
-
-&lt;p&gt;We can make the same SQL call in ActiveRecord with postgres_ext.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.from_cte(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;scores_for_game&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="constant"&gt;Score&lt;/span&gt;.where(&lt;span class="key"&gt;game_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;))
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;We can also query against the CTE expression by chaining off the
-resulting ActiveRecord::Relation&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.from_cte(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;scores_for_game&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
-  &lt;span class="constant"&gt;Score&lt;/span&gt;.where(&lt;span class="key"&gt;game_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)).where(&lt;span class="key"&gt;user_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;would generate the following:&lt;/p&gt;
-&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;WITH scores_for_game &lt;span class="keyword"&gt;AS&lt;/span&gt; (
-&lt;span class="class"&gt;SELECT&lt;/span&gt; *
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
-&lt;span class="keyword"&gt;WHERE&lt;/span&gt; game_id = &lt;span class="integer"&gt;1&lt;/span&gt;
-)
-&lt;span class="class"&gt;SELECT&lt;/span&gt; *
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores_for_game
-&lt;span class="keyword"&gt;WHERE&lt;/span&gt; scores_for_game.user_id = &lt;span class="integer"&gt;1&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;You can also include CTEs in your normal queries to join against by
-using &lt;code&gt;with&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.with(&lt;span class="key"&gt;my_games&lt;/span&gt;: &lt;span class="constant"&gt;Game&lt;/span&gt;.where(&lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;)).joins(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;JOIN my_games ON scores.game_id = my_games.id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;will generate the following SQL:&lt;/p&gt;
-&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;WITH my_games &lt;span class="keyword"&gt;AS&lt;/span&gt; (
-&lt;span class="class"&gt;SELECT&lt;/span&gt; games.*
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; games
-&lt;span class="keyword"&gt;WHERE&lt;/span&gt; games.id = &lt;span class="integer"&gt;1&lt;/span&gt;
-)
-&lt;span class="class"&gt;SELECT&lt;/span&gt; *
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
-&lt;span class="keyword"&gt;JOIN&lt;/span&gt; my_games
-&lt;span class="keyword"&gt;ON&lt;/span&gt; scores.games_id = my_games.id
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Rank&lt;/h2&gt;
-
-&lt;p&gt;PostgreSQL provides a &lt;code&gt;rank&lt;/code&gt; windowing function, which will take into
-account ties when ranking results. You would add rank to your
-projection, like the following example:&lt;/p&gt;
-&lt;div class="highlight SQL "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;SELECT&lt;/span&gt; scores.*, rank() &lt;span class="keyword"&gt;OVER&lt;/span&gt; (&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.points &lt;span class="directive"&gt;DESC&lt;/span&gt;)
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The results set will return ordered by the rank, which is determined the
-order passed into the &lt;code&gt;rank&lt;/code&gt;&amp;#39;s &lt;code&gt;OVER&lt;/code&gt;. In the above example, the scores
-would be ranked by their scores descending, so highest score first. If
-there was a tie at first place between two scores, they would both
-ranked 1, and the next result would be ranked &lt;code&gt;3&lt;/code&gt;. We can achieve the
-same in ActiveRecord with postgres_ext:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;)
-&lt;span class="comment"&gt;# or&lt;/span&gt;
-&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;points desc&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Rank will rank independently of any sort order applied to the query, so
-you could have your scores ranked by points, but then ordered by their
-creation time.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;).order(&lt;span class="symbol"&gt;:created_at&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;will generate the following query:&lt;/p&gt;
-&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="class"&gt;SELECT&lt;/span&gt; scores.*, rank() &lt;span class="keyword"&gt;OVER&lt;/span&gt; (&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.points &lt;span class="directive"&gt;DESC&lt;/span&gt;)
-&lt;span class="keyword"&gt;FROM&lt;/span&gt; scores
-&lt;span class="keyword"&gt;ORDER&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; scores.created_at &lt;span class="directive"&gt;ASC&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Also, if you apply a sort order to your relation, and want to sort by
-it, you do not have to tell ranked what order you&amp;#39;d like to use, as it
-will reuse the order. &lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;Score&lt;/span&gt;.ranked.order(&lt;span class="key"&gt;points&lt;/span&gt;: &lt;span class="symbol"&gt;:desc&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;One thing to watch out for if you use &lt;code&gt;ranked&lt;/code&gt; without an explicit
-order and want to call &lt;a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-first"&gt;&lt;code&gt;first&lt;/code&gt;&lt;/a&gt;
-off your relation, if the results of the
-relation have yet to be retrieved, the first will use your table&amp;#39;s
-primary key for an &lt;code&gt;ORDER BY&lt;/code&gt; statement on the query. This has already
-bitten us before we discovered the behavior of &lt;code&gt;first&lt;/code&gt;. To avoid this
-behavior in &lt;code&gt;first&lt;/code&gt;, use
-&lt;a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-take"&gt;&lt;code&gt;take&lt;/code&gt;&lt;/a&gt;
-which does not use any implied order.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ve been using CTEs and rank on one of our client projects, and it&amp;#39;s
-already cleaned up the &lt;code&gt;from_sql&lt;/code&gt; queries we were previously
-using. Let us know if you hit any snags, or have any suggestions on how
-else we can make complex SQL queries easier to call from ActiveRecord!
-We only implement the &lt;code&gt;rank&lt;/code&gt; windowing function right now, but plan to
-add the others shortly.&lt;/p&gt;
 </content>
   </entry>
 </feed>
