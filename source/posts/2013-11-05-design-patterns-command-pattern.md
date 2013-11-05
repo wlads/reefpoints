@@ -7,7 +7,7 @@ twitter: 'dougyun'
 github: duggiefresh
 social: true
 summary: 'Exploring design patterns and their use cases'
-published: false
+published: true
 tags: software design patterns, ruby
 ---
 
@@ -21,6 +21,12 @@ is key", "giving up is for losers", and that "water sucks, Gatorade is better."
 While those are fine gems of wisdom, today we'll be
 covering one of the most overlooked teachings in football: the power
 of **Command** pattern.
+
+The **Command** design pattern intends to separate and decouple an object of invocation
+from the object that receives the message of invocation. We will
+encapsulate all pertinent information of a method and execute the method
+at a later time. Essentially, the **Command** pattern gives us the ability
+to queue a series of operations for a later time. Let's dig in.
 
 ## Put me in, Coach!
 
