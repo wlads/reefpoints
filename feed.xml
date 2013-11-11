@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-6a5d8a6b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-bd81847b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,293 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-11-05T00:00:00Z</updated>
+  <updated>2013-11-11T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Introducing Capybara-Extensions</title>
+    <link rel="alternate" href="/2013/11/11/capybara-extensions.html"/>
+    <id>/2013/11/11/capybara-extensions.html</id>
+    <published>2013-11-11T00:00:00Z</published>
+    <updated>2013-11-11T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2&gt;Testing with Capybara&lt;/h2&gt;
+
+&lt;p&gt;We love Capybara at DockYard. We use it for virtually all of our integration tests and
+rely on it for writing tests that not only replicate how users flow
+through an application, but also for how they interact with page
+elements.&lt;/p&gt;
+
+&lt;p&gt;Briefly, let&amp;#39;s take a look at a Rails application with and without
+Capybara. Without Capybara, inheriting from &lt;code&gt;ActionDispatch::IntegrationTest&lt;/code&gt; provides
+some helpful &lt;code&gt;RequestHelpers&lt;/code&gt; like &lt;code&gt;get&lt;/code&gt;, which takes a path, some
+parameters, and headers (via &lt;a href="http://guides.rubyonrails.org/testing.html#integration-testing-examples"&gt;RailsGuides&lt;/a&gt;):&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test_helper&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;UserFlowsTest&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActionDispatch&lt;/span&gt;::&lt;span class="constant"&gt;IntegrationTest&lt;/span&gt;
+  fixtures &lt;span class="symbol"&gt;:users&lt;/span&gt;
+
+  test &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;login and browse site&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    &lt;span class="comment"&gt;# login via https&lt;/span&gt;
+    https!
+    get &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;/login&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    assert_response &lt;span class="symbol"&gt;:success&lt;/span&gt;
+
+    post_via_redirect &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;/login&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;username&lt;/span&gt;: users(&lt;span class="symbol"&gt;:david&lt;/span&gt;).username, &lt;span class="key"&gt;password&lt;/span&gt;: users(&lt;span class="symbol"&gt;:david&lt;/span&gt;).password
+    assert_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/welcome&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, path
+    assert_equal &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Welcome david!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, flash[&lt;span class="symbol"&gt;:notice&lt;/span&gt;]
+
+    https!(&lt;span class="predefined-constant"&gt;false&lt;/span&gt;)
+    get &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;/posts/all&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    assert_response &lt;span class="symbol"&gt;:success&lt;/span&gt;
+    assert assigns(&lt;span class="symbol"&gt;:products&lt;/span&gt;)
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Capybara adds some syntactic sugar with its
+&lt;code&gt;Capybara::Session#visit&lt;/code&gt; method, and produces code that reads a lot cleaner and mimics
+how a user engages with the application:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;test_helper&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;capybara&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+require &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;capybara_minitest_spec&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="comment"&gt;# MiniTest::Spec expectations for Capybara&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;PostsTest&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActionDispatch&lt;/span&gt;::&lt;span class="constant"&gt;IntegrationTest&lt;/span&gt;
+  fixtures &lt;span class="symbol"&gt;:users&lt;/span&gt;
+
+  test &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;login and browse site&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    visit login_path
+
+    within find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;form#session-new&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;do&lt;/span&gt;
+      fill_in &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;username&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;with&lt;/span&gt;: users(&lt;span class="symbol"&gt;:david&lt;/span&gt;).username
+      fill_in &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;password&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;with&lt;/span&gt;: users(&lt;span class="symbol"&gt;:david&lt;/span&gt;).password
+      click_button &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Submit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt; 
+
+    current_path.must_equal welcome_path
+    page.must_have_content &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Welcome david!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+    visit posts_path
+    page.must_have_content &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Welcome to ReefPoints!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jonas Nicklas, who maintains Capybara, writes how the library leads to &lt;a href="http://www.elabs.se/blog/51-simple-tricks-to-clean-up-your-capybara-tests"&gt;cleaner tests and clearer intent&lt;/a&gt;. This is exactly what we
+want from our tests, which not only test our code, but also
+document our application&amp;#39;s behavior. A lot more could be written about
+this idea, but I&amp;#39;m going to assume I&amp;#39;m preaching to the choir here and
+jump into DockYard&amp;#39;s newest gem:
+&lt;a href="https://rubygems.org/gems/capybara-extensions"&gt;CapybaraExtensions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;CapybaraExtensions extends Capybara&amp;#39;s finders and matchers. Our goal is
+to cull many of the &lt;code&gt;find&lt;/code&gt; statements from our tests and remove the
+verbose CSS and
+xpath locators that come along with them. &lt;/p&gt;
+
+&lt;h2&gt;Finders&lt;/h2&gt;
+
+&lt;h3&gt;find_&amp;lt;element&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;The library contains helper
+methods for finding elements like &lt;code&gt;form&lt;/code&gt;, &lt;code&gt;table&lt;/code&gt;, and lists, as well as
+many HTML5 elements like &lt;code&gt;article&lt;/code&gt;, &lt;code&gt;aside&lt;/code&gt;, &lt;code&gt;footer&lt;/code&gt;, and &lt;code&gt;header&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;So the above code in which we pass a CSS selector&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;within find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;form#session-new&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;do&lt;/span&gt;
+  ...
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;becomes the following:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;within form(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Login&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;do&lt;/span&gt;
+  ...
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this example, &amp;quot;Login&amp;quot; is text found in the form. Passing the text contained within the element we&amp;#39;re looking for better reflects what a user is thinking when she sees a form that
+says &amp;quot;Login.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;Finder methods are also aliased so that you can call &lt;code&gt;#form&lt;/code&gt;
+instead of &lt;code&gt;#find_form&lt;/code&gt; (which you might expect from a finder method).
+This makes for better readability with the oft-used &lt;code&gt;Capybara::Session#within&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3&gt;first_&amp;lt;element&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;Each &amp;quot;find&amp;quot; method also has a corresponding &amp;quot;first&amp;quot; method. So when you
+have multiple &lt;code&gt;article&lt;/code&gt; elements on a page with the text &amp;#39;Lorem ipsum,&amp;#39; you can call
+&lt;code&gt;first_article(&amp;#39;Lorem ipsum&amp;#39;)&lt;/code&gt; without returning an ambiguous match in
+Capybara.&lt;/p&gt;
+
+&lt;h3&gt;&amp;lt;element&amp;gt;_number&lt;/h3&gt;
+
+&lt;p&gt;In instances when you have lists or tables and you&amp;#39;d like to verify the
+content of a specific &lt;code&gt;li&lt;/code&gt; or &lt;code&gt;tr&lt;/code&gt;, CapybaraExtensions allows
+you to target the nth occurence of the element via
+&lt;code&gt;#list_item_number&lt;/code&gt; and &lt;code&gt;#row_number&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So given the following HTML:&lt;/p&gt;
+&lt;div class="highlight html "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;John Doe&lt;span class="tag"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Jane Doe&lt;span class="tag"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Juan Doe&lt;span class="tag"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You can find the second &lt;code&gt;li&lt;/code&gt; with:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;list_item_number(&lt;span class="integer"&gt;2&lt;/span&gt;) &lt;span class="comment"&gt;# =&amp;gt; 'Jane Doe'&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Use these methods for testing how elements are being ordered.&lt;/p&gt;
+
+&lt;h2&gt;Matchers&lt;/h2&gt;
+
+&lt;p&gt;CapybaraExtensions extends Capybara&amp;#39;s matchers with methods for
+verifying the presence of images, the value of input fields, and the
+presence of meta tags. All of these methods return a boolean.&lt;/p&gt;
+
+&lt;h3&gt;field_values&lt;/h3&gt;
+
+&lt;p&gt;CapybaraExtensions comes with a &lt;code&gt;#has_field_value?&lt;/code&gt; method which checks
+the value of a form field. Ensuring that your records save and update
+correctly should be the domain of your unit tests, however this method
+can come in handy when you&amp;#39;re not persisting data to the back-end. For
+example, after performing a search, you may want to ensure that the
+query persists in the search field after redirect.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;within form(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Search&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;do&lt;/span&gt;
+  has_field_value?(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;search&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;capybara images&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="comment"&gt;# =&amp;gt; true&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;images&lt;/h3&gt;
+
+&lt;p&gt;Asserting that text appears on the page is easy with Capybara&amp;#39;s
+&lt;code&gt;#must_have_content&lt;/code&gt; method; asserting
+that a particular image appears has always been a little tougher.
+&lt;code&gt;#must_have_image&lt;/code&gt; takes a hash with the &lt;code&gt;src&lt;/code&gt; and/or &lt;code&gt;alt&lt;/code&gt; attributes
+you&amp;#39;re looking for.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;page.has_image?(&lt;span class="key"&gt;src&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;http://gallery.photo.net/photo/8385754-md.jpg&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+&lt;span class="key"&gt;alt&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Capybara&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;span class="comment"&gt;# =&amp;gt; true&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;meta_tags&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;#has_meta_tag&lt;/code&gt; checks the &lt;code&gt;head&lt;/code&gt; for meta tags. Just pass in the &lt;code&gt;name&lt;/code&gt;
+and &lt;code&gt;content&lt;/code&gt; you&amp;#39;re expecting to find. We use this method quite a bit to ensure that our pages are looking good
+from a search engine optimization standpoint.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;page.has_meta_tag?(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;title&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Introducing CapybaraExtensions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) 
+&lt;span class="comment"&gt;# =&amp;gt; true&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We hope this gem makes your tests a little more descriptive and your &lt;code&gt;test_helper.rb&lt;/code&gt; a little lighter. As always, we welcome pull requests and issues via Github. Thanks!&lt;/p&gt;
+
+&lt;h2&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CapybaraExtensions on &lt;a href="http://rubygems.org/gems/capybara-extensions"&gt;Rubygems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CapybaraExtensions on &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CapybaraExtensions on
+&lt;a href="http://rubydoc.info/gems/capybara-extensions/frames"&gt;RubyDoc.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Design Patterns: The Command Pattern</title>
     <link rel="alternate" href="/2013/11/05/design-patterns-command-pattern.html"/>
@@ -1250,237 +1533,6 @@ vnoremap &amp;lt;C-k&amp;gt; :m '&amp;lt;-2&amp;lt;CR&amp;gt;gv=gv
 &lt;p&gt;There are plenty of other tricks that move around lines in Vim. The preceding
 examples were just a few that I employ everyday. If you&amp;#39;ve got something cool to
 share, please let me know!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Vim: Staying on Home Row via Map</title>
-    <link rel="alternate" href="/2013/09/11/vim-staying-on-home-row-via-map.html"/>
-    <id>/2013/09/11/vim-staying-on-home-row-via-map.html</id>
-    <published>2013-09-11T00:00:00Z</published>
-    <updated>2013-09-11T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Here at DockYard, the majority of us are using Vim. I don&amp;#39;t want to
-write about the benefits of using this sweet editor, as that would take too long,
-but instead, I&amp;#39;d like to share a couple of my favorite mappings for
-escaping and saving files.&lt;/p&gt;
-
-&lt;h2&gt;Vanilla Vim: Escaping and Saving&lt;/h2&gt;
-
-&lt;p&gt;Escaping out to &lt;em&gt;Normal&lt;/em&gt; mode from the other modes in Vim is straightforward:
-simply hit the &lt;code&gt;Esc&lt;/code&gt; key.
-Saving files is accomplished by, from &lt;code&gt;Normal&lt;/code&gt; mode, pressing &lt;code&gt;:w&lt;/code&gt; and then &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2&gt;So... What&amp;#39;s the Problem?&lt;/h2&gt;
-
-&lt;p&gt;During a session, especially when I&amp;#39;m writing large pieces of text,
-I&amp;#39;d find myself in a repetitive rut:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I just typed out a couple of sentences and want to save my progress&lt;/li&gt;
-&lt;li&gt;I&amp;#39;d remove my left hand from home row to hit the &lt;code&gt;Esc&lt;/code&gt; key&lt;/li&gt;
-&lt;li&gt;Saving the file required me, once again to leave home row, to hit &lt;code&gt;:w&lt;/code&gt;
-and then the &lt;code&gt;Enter&lt;/code&gt; or the &lt;code&gt;Return&lt;/code&gt; key&lt;/li&gt;
-&lt;li&gt;To continue on, I&amp;#39;d press &lt;code&gt;i&lt;/code&gt; and type along&lt;/li&gt;
-&lt;li&gt;Repeat, repeat, repeat...&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;See where I&amp;#39;m getting at?&lt;/p&gt;
-
-&lt;h2&gt;Let&amp;#39;s Talk About Map&lt;/h2&gt;
-
-&lt;p&gt;Before we review and
-&lt;a href="http://www.flickr.com/search/?q=pasta"&gt;copy-pasta&lt;/a&gt;
-the portion of my &lt;code&gt;.vimrc&lt;/code&gt;, let&amp;#39;s briefly go over the very basics of the
-pertinent map commands.
-You can find the entire &lt;a href="http://vimdoc.sourceforge.net/htmldoc/map.html"&gt;map documentation here&lt;/a&gt;
-or by typing &lt;code&gt;:help map&lt;/code&gt; within a Vim session.&lt;/p&gt;
-
-&lt;p&gt;Protip: To open help texts into a full buffer, &lt;code&gt;:h map | only&lt;/code&gt; or to open them in a separate tab &lt;code&gt;:tab h map&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3&gt;Recursive Map&lt;/h3&gt;
-
-&lt;p&gt;First, we&amp;#39;re going to talk about &lt;em&gt;recursive&lt;/em&gt; map commands. A &lt;em&gt;recursive&lt;/em&gt;
-command will transform one result to another result, if there is another
-binding to that key. An example can be found at the &lt;code&gt;.vimrc&lt;/code&gt; below.&lt;/p&gt;
-
-&lt;p&gt;Here are the basic &lt;em&gt;recursive&lt;/em&gt; map commands.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;map&lt;/code&gt;  - command to transform the operation of typed keys within &lt;em&gt;ALL&lt;/em&gt; modes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can prepend the first letter of the desired mode to &lt;code&gt;map&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nmap&lt;/code&gt; - transform the operation of typed keys within &lt;em&gt;Normal&lt;/em&gt;
-mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;imap&lt;/code&gt; - transform the operations of typed keys within
-&lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vmap&lt;/code&gt; - transform the operations of typed keys within
-&lt;em&gt;Visual&lt;/em&gt; and &lt;em&gt;Select&lt;/em&gt; mode&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For example, if I had this within my &lt;code&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
-&amp;quot;
-&amp;quot; Note: double quotes signifies comments
-
-nmap 0 gg
-imap n N
-
-&amp;quot; Time for a little recursive map
-imap d D
-imap D wat
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Since &lt;code&gt;0&lt;/code&gt; is mapped to &lt;code&gt;gg&lt;/code&gt; within &lt;em&gt;Normal&lt;/em&gt; mode, I&amp;#39;ll be sent to the
-top of the file by pressing &lt;code&gt;0&lt;/code&gt;.
-Moreover, while in &lt;em&gt;Insert&lt;/em&gt; mode, every character &lt;code&gt;n&lt;/code&gt; that I type will turn into &lt;code&gt;N&lt;/code&gt;.
-Lastly, because of the recursive mapping, typing &lt;code&gt;d&lt;/code&gt; in &lt;em&gt;Insert&lt;/em&gt; mode
-will return &lt;code&gt;wat&lt;/code&gt;. You can think of it as something like: &lt;code&gt;d&lt;/code&gt; =&amp;gt; &lt;code&gt;D&lt;/code&gt; =&amp;gt;
-&lt;code&gt;wat&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thankfully, there&amp;#39;s a &lt;em&gt;non-recursive&lt;/em&gt; map.&lt;/p&gt;
-
-&lt;h3&gt;Non-recursive Map&lt;/h3&gt;
-
-&lt;p&gt;&lt;em&gt;Non-recursive&lt;/em&gt; map commands are signified by adding &lt;code&gt;nore&lt;/code&gt; after the
- mode modifier.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;inoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Insert&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vnoremap&lt;/code&gt; - non-recursive map for &lt;em&gt;Visual&lt;/em&gt; and &lt;em&gt;Select&lt;/em&gt; mode&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
-
-inoremap c C
-inoremap C nope
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now, in &lt;em&gt;Insert&lt;/em&gt; mode, if we type &lt;code&gt;c&lt;/code&gt;, we will return &lt;code&gt;C&lt;/code&gt;; the transformation of
-&lt;code&gt;c&lt;/code&gt; to &lt;code&gt;nope&lt;/code&gt; will not occur.&lt;/p&gt;
-
-&lt;h2&gt;Enter the .vimrc&lt;/h2&gt;
-
-&lt;p&gt;Now that we got the basics out of the way, here is an example of my
-&lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
-&amp;quot; *** The Two Hand system ***
-&amp;quot;
-&amp;quot; &amp;lt;Cr&amp;gt; signifies the &amp;quot;return&amp;quot; key
-
-inoremap ;a &amp;lt;Esc&amp;gt;
-inoremap ;d &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
-inoremap ;f &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;
-nnoremap ;f :update&amp;lt;CR&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;I&amp;#39;m using &lt;code&gt;:update&lt;/code&gt; here, which is &amp;quot;like &lt;code&gt;:write&lt;/code&gt;, but only write when the buffer has been
-modified.&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s go over these mappings.&lt;/p&gt;
-
-&lt;p&gt;The first one, &lt;code&gt;inoremap ;a &amp;lt;Esc&amp;gt;&lt;/code&gt; maps the &lt;em&gt;semi-colon&lt;/em&gt; and &lt;em&gt;a&lt;/em&gt; key
-together when in &lt;em&gt;Insert&lt;/em&gt; mode. By pressing &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;a&lt;/code&gt; immediately afterwards, we mimic
-the functionality of the &lt;em&gt;Escape&lt;/em&gt; key.&lt;/p&gt;
-
-&lt;p&gt;The second map, &lt;code&gt;inoremap ;d &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;&lt;/code&gt; maps the &lt;em&gt;semi-colon&lt;/em&gt; and the &lt;em&gt;d&lt;/em&gt; key.
-Pressing &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;d&lt;/code&gt; immediately afterwards returns the sequence of:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape to &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
-&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside the &lt;em&gt;Command&lt;/em&gt; mode, and type the &lt;code&gt;update&lt;/code&gt;
-command&lt;/li&gt;
-&lt;li&gt;Complete the sequence by &amp;quot;hitting&amp;quot; &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The third map command, &lt;code&gt;inoremap ;f &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;&lt;/code&gt;, allows us to
-type &lt;code&gt;;&lt;/code&gt; and then &lt;code&gt;f&lt;/code&gt; to return:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;From &lt;em&gt;Insert&lt;/em&gt; mode, escape out to &lt;em&gt;Normal&lt;/em&gt; with &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;, which allows
-us to escape out for &lt;em&gt;ONE&lt;/em&gt; command.&lt;/li&gt;
-&lt;li&gt;Type &lt;code&gt;:&lt;/code&gt; to get inside &lt;em&gt;Command&lt;/em&gt; mode, and then type &lt;code&gt;udpate&lt;/code&gt;. This is
-our one command for &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&amp;quot;Hit&amp;quot; the &lt;em&gt;Return&lt;/em&gt;, thus saving the file&lt;/li&gt;
-&lt;li&gt;We&amp;#39;re back in &lt;em&gt;Insert&lt;/em&gt; mode, thanks to &lt;code&gt;&amp;lt;C-O&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finally, the &lt;code&gt;nnoremap ;f :update&amp;lt;CR&amp;gt;&lt;/code&gt; mapping means by typing &lt;code&gt;;&lt;/code&gt; and
-then &lt;code&gt;f&lt;/code&gt; in &lt;em&gt;Normal&lt;/em&gt; mode, it will result in:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Since, we&amp;#39;re already in &lt;em&gt;Normal&lt;/em&gt; mode, we get into &lt;em&gt;Command&lt;/em&gt; mode by
-typing &lt;code&gt;:&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Type the &lt;code&gt;update&lt;/code&gt; command&lt;/li&gt;
-&lt;li&gt;&amp;quot;Hit&amp;quot; the &lt;em&gt;Return&lt;/em&gt; key, and save the file&lt;/li&gt;
-&lt;li&gt;We remain in &lt;em&gt;Normal&lt;/em&gt; mode&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The snippet below restricts these commands to your right hand.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; ~/.vimrc
-&amp;quot; *** The Right Hand system ***
-
-inoremap ;l &amp;lt;Esc&amp;gt;
-inoremap ;k &amp;lt;Esc&amp;gt;:update&amp;lt;Cr&amp;gt;
-inoremap ;j &amp;lt;C-O&amp;gt;:update&amp;lt;Cr&amp;gt;
-nnoremap ;j :update&amp;lt;CR&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;As you can see, I kept &lt;code&gt;;&lt;/code&gt; as a prefix to my map commands. This
-conveniently keeps me at homerow. I&amp;#39;ve played with mapping everything
-with my right hand, but it just didn&amp;#39;t feel &amp;quot;right&amp;quot; (apologies for the
-bad pun).&lt;/p&gt;
-
-&lt;p&gt;Overall, this snippet makes me happy and I believe this will make your
-day as well. If there are some other tricks
-concerning escaping and saving files, please let me know in the
-comments! Thanks!&lt;/p&gt;
 </content>
   </entry>
 </feed>
