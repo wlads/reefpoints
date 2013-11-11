@@ -13,12 +13,14 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2013-11-11T11:09:30-05:00</updated>
+    <updated>2013-11-11T15:07:55-05:00</updated>
     <author>
       <name>Michael Dupuis Jr.</name>
     </author>
     <summary>Write more descriptive tests with additional finders and matchers for Capybara.</summary>
-    <content type="html">&lt;h2&gt;Testing with Capybara&lt;/h2&gt;
+    <content type="html">&lt;p&gt;Today we&amp;#39;re happy to announce &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;CapybaraExtensions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Testing with Capybara&lt;/h2&gt;
 
 &lt;p&gt;We love Capybara at DockYard. We use it for virtually all of our integration tests and
 rely on it for writing tests that not only replicate how users flow
@@ -285,9 +287,9 @@ from a search engine optimization standpoint.&lt;/p&gt;
 &lt;h2&gt;Resources&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;CapybaraExtensions on &lt;a href="http://rubygems.org/gems/capybara-extensions"&gt;Rubygems&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CapybaraExtensions on &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CapybaraExtensions on
+&lt;li&gt;Install CapybaraExtensions from &lt;a href="http://rubygems.org/gems/capybara-extensions"&gt;Rubygems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow CapybaraExtensions on &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Read up on CapybaraExtensions on
 &lt;a href="http://rubydoc.info/gems/capybara-extensions/frames"&gt;RubyDoc.info&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
