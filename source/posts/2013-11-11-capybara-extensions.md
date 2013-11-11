@@ -12,7 +12,7 @@ published: true
 tags: testing, ruby
 ---
 
-Today we're happy to announce [CapybaraExtensions](https://github.com/dockyard/capybara-extensions)
+Today we're happy to announce [CapybaraExtensions](https://github.com/dockyard/capybara-extensions).
 
 ## Testing with Capybara
 We love Capybara at DockYard. We use it for virtually all of our integration tests and
