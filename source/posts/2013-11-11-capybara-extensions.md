@@ -12,6 +12,8 @@ published: true
 tags: testing, ruby
 ---
 
+Today we're happy to announce [CapybaraExtensions](https://github.com/dockyard/capybara-extensions)
+
 ## Testing with Capybara
 We love Capybara at DockYard. We use it for virtually all of our integration tests and
 rely on it for writing tests that not only replicate how users flow
@@ -192,8 +194,8 @@ page.has_meta_tag?('title', 'Introducing CapybaraExtensions')
 We hope this gem makes your tests a little more descriptive and your `test_helper.rb` a little lighter. As always, we welcome pull requests and issues via Github. Thanks!
 
 ## Resources
-* CapybaraExtensions on [Rubygems](http://rubygems.org/gems/capybara-extensions)
-* CapybaraExtensions on [Github](https://github.com/dockyard/capybara-extensions)
-* CapybaraExtensions on
+* Install CapybaraExtensions from [Rubygems](http://rubygems.org/gems/capybara-extensions)
+* Follow CapybaraExtensions on [Github](https://github.com/dockyard/capybara-extensions)
+* Read up on CapybaraExtensions on
 [RubyDoc.info](http://rubydoc.info/gems/capybara-extensions/frames)
 
