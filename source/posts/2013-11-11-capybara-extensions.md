@@ -9,7 +9,7 @@ social: true
 summary: "Write more descriptive tests with additional finders and
 matchers for Capybara."
 published: true
-tags: Testing, Ruby
+tags: testing, ruby
 ---
 
 ## Testing with Capybara
