@@ -13,12 +13,12 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2013-11-11T15:07:55-05:00</updated>
+    <updated>2013-11-11T15:14:06-05:00</updated>
     <author>
       <name>Michael Dupuis Jr.</name>
     </author>
     <summary>Write more descriptive tests with additional finders and matchers for Capybara.</summary>
-    <content type="html">&lt;p&gt;Today we&amp;#39;re happy to announce &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;CapybaraExtensions&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;Today we&amp;#39;re happy to announce &lt;a href="https://github.com/dockyard/capybara-extensions"&gt;CapybaraExtensions&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Testing with Capybara&lt;/h2&gt;
 
