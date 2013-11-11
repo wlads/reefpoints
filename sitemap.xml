@@ -349,7 +349,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//ember/2013/02/21/ember-easy-form.html</loc>
+    <loc>http://reefpoints.dockyard.com//2011/08/24.html</loc>
     <lastmod>2013-11-11T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -367,7 +367,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2011/08/24.html</loc>
+    <loc>http://reefpoints.dockyard.com//ruby/2013/03/25/igata.html</loc>
     <lastmod>2013-11-11T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -800,18 +800,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/vim.html</loc>
-    <lastmod>2013-11-11T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/testing.html</loc>
-    <lastmod>2013-11-11T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/ruby.html</loc>
     <lastmod>2013-11-11T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1399,7 +1387,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//ruby/2013/03/25/igata.html</loc>
+    <loc>http://reefpoints.dockyard.com//ember/2013/02/21/ember-easy-form.html</loc>
     <lastmod>2013-11-11T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
