@@ -27,20 +27,20 @@ parameters, and headers (via [RailsGuides](http://guides.rubyonrails.org/testing
 
 ```ruby
 require 'test_helper'
- 
+
 class UserFlowsTest < ActionDispatch::IntegrationTest
   fixtures :users
- 
+
   test "login and browse site" do
     # login via https
     https!
     get "/login"
     assert_response :success
- 
+
     post_via_redirect "/login", username: users(:david).username, password: users(:david).password
     assert_equal '/welcome', path
     assert_equal 'Welcome david!', flash[:notice]
- 
+
     https!(false)
     get "/posts/all"
     assert_response :success
@@ -68,7 +68,7 @@ class PostsTest < ActionDispatch::IntegrationTest
       fill_in 'username', with: users(:david).username
       fill_in 'password', with: users(:david).password
       click_button 'Submit'
-    end 
+    end
 
     current_path.must_equal welcome_path
     page.must_have_content 'Welcome david!'
@@ -89,13 +89,13 @@ jump into DockYard's newest gem:
 CapybaraExtensions extends Capybara's finders and matchers. Our goal is
 to cull many of the `find` statements from our tests and remove the
 verbose CSS and
-xpath locators that come along with them. 
+xpath locators that come along with them.
 
 ## Finders
 ### find_\<element\>
 The library contains helper
 methods for finding elements like `form`, `table`, and lists, as well as
-many HTML5 elements like `article`, `aside`, `footer`, and `header`. 
+many HTML5 elements like `article`, `aside`, `footer`, and `header`.
 
 So the above code in which we pass a CSS selector
 
@@ -187,7 +187,7 @@ and `content` you're expecting to find. We use this method quite a bit to ensure
 from a search engine optimization standpoint.
 
 ```ruby
-page.has_meta_tag?('title', 'Introducing CapybaraExtensions') 
+page.has_meta_tag?('title', 'Introducing CapybaraExtensions')
 # => true
 ```
 

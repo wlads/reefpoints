@@ -2,7 +2,7 @@
 layout: post
 title: 'Introducing destroyed_at'
 comments: true
-author: 'Michael Dupuis'
+author: 'Michael Dupuis Jr.'
 twitter: 'michaeldupuisjr'
 github: michaeldupuisjr
 legacy_category: ruby
@@ -17,7 +17,7 @@ tags: ruby on rails, gems
 We've found that more and more clients are requesting "undestroy"
 functionality in their apps. We recently extracted this common pattern into a gem
 we're calling [DestroyedAt](https://github.com/dockyard/destroyed_at), an ActiveRecord mixin that makes un-destroying records
-simple. 
+simple.
 
 By
 setting the datetime of the `#destroyed_at` field of your record, you can
