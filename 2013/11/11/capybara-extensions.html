@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Introducing Capybara-Extensions</title><link href="/stylesheets/all-bd81847b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Write more descriptive tests with additional finders and matchers for Capybara.' name='description'><meta content='michaeldupuisjr' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html' name='twitter:url'><meta content='Introducing Capybara-Extensions' name='twitter:title'><meta content='Write more descriptive tests with additional finders and matchers for Capybara.' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Introducing Capybara-Extensions</title><link href="/stylesheets/all-2fe3bae3.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - Write more descriptive tests with additional finders and matchers for Capybara.' name='description'><meta content='michaeldupuisjr' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html' name='twitter:url'><meta content='Introducing Capybara-Extensions' name='twitter:title'><meta content='Write more descriptive tests with additional finders and matchers for Capybara.' name='twitter:description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -152,7 +152,7 @@ require <span class="string"><span class="delimiter">'</span><span class="conten
       fill_in <span class="string"><span class="delimiter">'</span><span class="content">username</span><span class="delimiter">'</span></span>, <span class="key">with</span>: users(<span class="symbol">:david</span>).username
       fill_in <span class="string"><span class="delimiter">'</span><span class="content">password</span><span class="delimiter">'</span></span>, <span class="key">with</span>: users(<span class="symbol">:david</span>).password
       click_button <span class="string"><span class="delimiter">'</span><span class="content">Submit</span><span class="delimiter">'</span></span>
-    <span class="keyword">end</span> 
+    <span class="keyword">end</span>
 
     current_path.must_equal welcome_path
     page.must_have_content <span class="string"><span class="delimiter">'</span><span class="content">Welcome david!</span><span class="delimiter">'</span></span>
@@ -174,7 +174,7 @@ jump into DockYard&#39;s newest gem:
 <p>CapybaraExtensions extends Capybara&#39;s finders and matchers. Our goal is
 to cull many of the <code>find</code> statements from our tests and remove the
 verbose CSS and
-xpath locators that come along with them. </p>
+xpath locators that come along with them.</p>
 
 <h2>Finders</h2>
 
@@ -182,7 +182,7 @@ xpath locators that come along with them. </p>
 
 <p>The library contains helper
 methods for finding elements like <code>form</code>, <code>table</code>, and lists, as well as
-many HTML5 elements like <code>article</code>, <code>aside</code>, <code>footer</code>, and <code>header</code>. </p>
+many HTML5 elements like <code>article</code>, <code>aside</code>, <code>footer</code>, and <code>header</code>.</p>
 
 <p>So the above code in which we pass a CSS selector</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -309,7 +309,7 @@ from a search engine optimization standpoint.</p>
   <td class="line-numbers"><pre>1
 2
 </pre></td>
-  <td class="code"><pre>page.has_meta_tag?(<span class="string"><span class="delimiter">'</span><span class="content">title</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Introducing CapybaraExtensions</span><span class="delimiter">'</span></span>) 
+  <td class="code"><pre>page.has_meta_tag?(<span class="string"><span class="delimiter">'</span><span class="content">title</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Introducing CapybaraExtensions</span><span class="delimiter">'</span></span>)
 <span class="comment"># =&gt; true</span>
 </pre></td>
 </tr></table>
