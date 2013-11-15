@@ -3,7 +3,7 @@ layout: post
 title: "Postgres_ext adds rank and common table expressions"
 comments: true
 author: Dan McClain
-twitter: "\_danmcclain"
+twitter: "_danmcclain"
 github: danmcclain
 social: true
 summary: "In postgres_ext 2.1, complex queries get much easier"
