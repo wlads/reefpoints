@@ -1,4 +1,4 @@
-/* line 9, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+/* line 9, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
 #content .highlight {
   border: 1px solid #d1d1d1;
   -webkit-border-radius: 5px;
@@ -15,34 +15,34 @@
   -webkit-box-shadow: 0 1px white, inset -1px 1px 4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px white, inset -1px 1px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px white, inset -1px 1px 4px rgba(0, 0, 0, 0.1); }
-  /* line 20, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 20, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight .scroller {
     overflow: auto; }
-  /* line 23, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 23, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight table {
     margin: 0; }
-  /* line 26, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 26, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight .ribbon {
     position: absolute;
     right: 0;
     bottom: 6px;
     width: 52px;
     height: 20px; }
-  /* line 33, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 33, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight.javascript .ribbon, #content .highlight.js .ribbon {
     background-image: url("/images/js-ribbon.png"); }
-  /* line 35, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 35, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight.html .ribbon {
     background-image: url("/images/html-ribbon.png"); }
-  /* line 37, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 37, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   #content .highlight.handlebars .ribbon {
     background-image: url("/images/handlebars-ribbon.png"); }
 
-/* line 40, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+/* line 40, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
 .CodeRay {
   width: 100%;
   /* HTML */ }
-  /* line 42, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 42, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay td.line-numbers {
     width: 38px;
     text-align: center;
@@ -55,41 +55,41 @@
     -moz-border-radius-bottomleft: 5px;
     -webkit-border-bottom-left-radius: 5px;
     border-bottom-left-radius: 5px; }
-  /* line 51, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 51, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay td.code {
     padding: 8px 0 8px 13px; }
-  /* line 56, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 56, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .tag {
     color: #1f58ce; }
-  /* line 59, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 59, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .comment {
     color: #777777; }
-  /* line 62, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 62, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .attribute-name {
     color: #1f58ce; }
-  /* line 65, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 65, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .content {
     color: #153c8c; }
-  /* line 68, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 68, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .string {
     color: #1f58ce; }
-  /* line 71, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 71, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .keyword {
     color: #ce791f; }
-  /* line 74, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 74, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .key, .CodeRay .function {
     color: #2b1fce; }
-  /* line 77, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+  /* line 77, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
   .CodeRay .local-variable {
     color: #1f58ce; }
 
-/* line 83, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+/* line 83, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
 .handlebars .CodeRay .inline,
 .handlebars .CodeRay .inline .inline-delimiter, .handlebars .CodeRay .inline .delimiter {
   color: #00aa00; }
-/* line 87, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+/* line 87, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
 .handlebars .CodeRay .inline .attribute-name {
   color: #007700; }
-/* line 90, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/highlight.sass */
+/* line 90, /Users/dug/DockYard/reefpoints/source/stylesheets/highlight.sass */
 .handlebars .CodeRay .inline .attribute-value, .handlebars .CodeRay .inline .content {
   color: #004400; }
