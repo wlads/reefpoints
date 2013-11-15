@@ -4,16 +4,140 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2013-11-11T00:00:00Z</updated>
+  <updated>2013-11-15T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Think</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/15/think.html"/>
+    <id>http://reefpoints.dockyard.com/2013/11/15/think.html</id>
+    <published>2013-11-15T00:00:00Z</published>
+    <updated>2013-11-15T13:13:52-05:00</updated>
+    <author>
+      <name>Dan McClain</name>
+    </author>
+    <summary>Don't do what others tell you to do without thinking about it</summary>
+    <content type="html">&lt;p&gt;Ever since &lt;a href="http://wickedgoodruby.com/2013/speakers/matt_aimonetti"&gt;Matt Aimonetti&amp;#39;s talk at
+Wicked Good Ruby&lt;/a&gt;
+on there being such thing as bad code, I&amp;#39;ve felt I&amp;#39;ve
+needed to write a blog post about the &lt;a href="https://en.wikipedia.org/wiki/Cargo_cult"&gt;cargo
+culting&lt;/a&gt; that happens in
+the development world. &lt;/p&gt;
+
+&lt;h2&gt;Sandi Metz&amp;#39;s Rules&lt;/h2&gt;
+
+&lt;p&gt;Back in January, &lt;a href="ihttp://rubyrogues.com/087-rr-book-clubpractical-object-oriented-design-in-ruby-with-sandi-metz/"&gt;Sandi Metz was on Ruby
+Rogues&lt;/a&gt;
+to discuss her book, &lt;strong&gt;&lt;a href="http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/"&gt;Practical Object-Oriented Design in Ruby&lt;/a&gt;&lt;/strong&gt;.
+Out of this conversation came &amp;quot;&lt;a href="https://gist.github.com/henrik/4509394"&gt;Sandi Metz&amp;#39;s
+rules&lt;/a&gt;&amp;quot;. Many
+in the Ruby community took these rules as gospel, without knowing the
+context in which these rules were created.&lt;/p&gt;
+
+&lt;p&gt;The rules, for those unfamilar:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Your class can be no longer than 100 lines of code&lt;/li&gt;
+&lt;li&gt;Your methods can be no longer than five lines of code&lt;/li&gt;
+&lt;li&gt;You can pass no more than four parameters and you can’t just make it one big hash&lt;/li&gt;
+&lt;li&gt;When a call comes into your Rails controller, you can only instantiate one object to do whatever it is that needs to be done&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sandi joined Matt during his talk at Wicked Good Ruby and &lt;a href="http://www.youtube.com/watch?feature=player_embedded&amp;amp;v=VO-NvnZfMA4#t=1380"&gt;gave some background to the
+story of her rules&lt;/a&gt;.
+To paraphase Sandi, at the time she was working with a group that had multi-thousand line controllers with
+multi-hundred line methods. These controllers and methods represented
+one end of a spectrum, which made code incredibly hard to read and maintain.
+They were begging Sandi for guidelines with which they could try to
+correct this problem. What she did was create a set of rules that
+lived on the opposite side of the extreme, to force them to meet
+somewhere in the middle.&lt;/p&gt;
+
+&lt;p&gt;In reality, these rules are a different way of looking at rules many of
+us strive for in the first place. An example: The 100 lines per class
+rule is really forcing you to create classes with the &lt;a href="https://en.wikipedia.org/wiki/Single_responsibility_principle"&gt;Single
+Responsibility Principle&lt;/a&gt; in mind.&lt;/p&gt;
+
+&lt;p&gt;My issue is not with these rules as they exist, but with the
+community&amp;#39;s cargo culting of these rules and treating them as The Four
+Commandments. I don&amp;#39;t have an issue with you following them, as long as
+you understand why they exist, and you feel as though they are
+principles you believe in. Don&amp;#39;t just make five line methods because
+Sandi said so, and if you follow these rules, you feel like you&amp;#39;ll be a
+great developer. Adhering to Sandi&amp;#39;s rules does not make one great, it&amp;#39;s
+understanding where these, or any rules, should and shouldn&amp;#39;t apply.
+Sometimes a method that spans more than five lines will be more readable
+and maintainable than the same method spread across five or six 5-line
+methods. Striking that balance is where the power lies.&lt;/p&gt;
+
+&lt;h2&gt;REMOTE&lt;/h2&gt;
+
+&lt;p&gt;37signals just published
+&lt;a href="http://www.amazon.com/Remote-Office-Required-Jason-Fried/dp/0804137501/"&gt;REMOTE&lt;/a&gt;, a book about
+the benefits of allowing remote workers. I don&amp;#39;t disagree that
+working remote has many benefits. At DockYard, we work from home from time
+to time. We also strive to have people in the office more often than
+not, not because Brian doesn&amp;#39;t think we aren&amp;#39;t working when we aren&amp;#39;t in
+the office, but because it enables greater collaboration.&lt;/p&gt;
+
+&lt;p&gt;DockYard is a consultancy; we have client work with deadlines we have to
+meet. With having our developers and designers in the office together more
+often than not, it removes the latency from discussing issues. I can
+walk over to Steve and we can hash out an issue in a few minutes. If we
+were all remote, I&amp;#39;d have to ping him on HipChat, hope he&amp;#39;s at his desk,
+try to go over the issue text-only until we realize we need to have a
+Google Hangout, etc. It makes more sense for us to be in the same place.&lt;/p&gt;
+
+&lt;p&gt;The other benefit of DockYard working from the office is that our junior
+developers enjoy the same face-to-face benefits. Also, body language
+makes a huge difference when teaching or learning topic. When someone pauses,
+has a slightly puzzled look on their face and says &amp;quot;....Ok&amp;quot;, it easy to
+realize that a bit more background on the topic will really let them
+grasp the topic, but an &amp;quot;ok&amp;quot; in HipChat removes all the body language we
+could leverage.&lt;/p&gt;
+
+&lt;p&gt;Removing the latency between a junior developer having a
+question and getting the answer is crucial. If a junior developer has a
+question that&amp;#39;s a show stopper, they can feel helpless while they wait
+for someone to be around to answer that question. That helplessness is
+killer; it makes someone feel like they aren&amp;#39;t helping, and can
+potentially prevent them from asking other questions. If the that delay
+is interpreted as the senior developer blowing them off, they will be
+less inclined to ask questions in the future, hurting both themselves
+and the team.&lt;/p&gt;
+
+&lt;p&gt;A product company that employs experts (or creators) of a framework has
+a much different situation, where working remote makes a lot more sense.
+The conversations they have will be at a different level. They&amp;#39;ll all
+have intimate knowledge of the code base, and so a few questions back
+and forth or a quick Google Hangout achieves a great deal. The
+conclusion was a result of the context they exist in. Remote workers
+work great for them because they have the perfect mix of experts in
+their domain; are working on products, which have very different
+requirements and issues of client work; and have a customer support
+group, which don&amp;#39;t necessarily need to collaborate while working a
+customer through issues.&lt;/p&gt;
+
+&lt;h2&gt;Figure Out What Works for YOU&lt;/h2&gt;
+
+&lt;p&gt;In no way am I saying you should all work in the same office and
+disregard Sandi&amp;#39;s rules. What I&amp;#39;m asking of the community is a bit of
+critical thought. Just because someone smart said one thing, it doesn&amp;#39;t
+mean it&amp;#39;s gospel. Realize that experience has led that person to that
+conclusion, weigh your experience against it, and apply it if you can.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s just not hope that the gods give us food because we made bamboo
+airplanes. Let&amp;#39;s realize that moving to XYZ comes with both drawbacks and
+benefits, not just the benefits that everyone is touting.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Introducing Capybara-Extensions</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2013-11-11T22:46:15-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Michael Dupuis Jr.</name>
     </author>
@@ -299,7 +423,7 @@ from a search engine optimization standpoint.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html</id>
     <published>2013-11-05T00:00:00Z</published>
-    <updated>2013-11-11T11:09:31-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -657,7 +781,7 @@ execution.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html</id>
     <published>2013-10-22T00:00:00Z</published>
-    <updated>2013-10-23T20:12:58-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -884,7 +1008,7 @@ comment in the discussion area. Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html</id>
     <published>2013-10-06T00:00:00Z</published>
-    <updated>2013-10-10T23:15:45-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -916,7 +1040,7 @@ Your views will go into &lt;code&gt;app/views/work/pages&lt;/code&gt;. For more 
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html</id>
     <published>2013-10-01T00:00:00Z</published>
-    <updated>2013-10-25T10:53:08-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1294,7 +1418,7 @@ Ultimately, our coffee makers are able to treat each step,
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html</id>
     <published>2013-09-26T00:00:00Z</published>
-    <updated>2013-09-28T11:41:13-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1495,7 +1619,7 @@ share, please let me know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html</id>
     <published>2013-09-11T00:00:00Z</published>
-    <updated>2013-09-13T15:23:41-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1727,7 +1851,7 @@ comments! Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
     <published>2013-09-06T00:00:00Z</published>
-    <updated>2013-10-10T23:15:45-04:00</updated>
+    <updated>2013-11-15T13:13:52-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -1927,7 +2051,7 @@ add the others shortly.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html</id>
     <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-09-14T11:18:34-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -2182,7 +2306,7 @@ Happy Coding!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html</id>
     <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-09-06T10:49:01-04:00</updated>
+    <updated>2013-09-06T10:26:07-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2206,7 +2330,7 @@ we&amp;#39;re well on our way to building out one of the best teams around.&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
     <published>2013-08-23T00:00:00Z</published>
-    <updated>2013-10-10T23:15:45-04:00</updated>
+    <updated>2013-11-15T13:13:52-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2242,7 +2366,7 @@ but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-09-30T19:47:40-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -2621,7 +2745,7 @@ informs the &lt;em&gt;observers&lt;/em&gt; of what is going on with the &lt;em&g
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html</id>
     <published>2013-08-05T00:00:00Z</published>
-    <updated>2013-08-16T15:21:42-04:00</updated>
+    <updated>2013-11-15T13:13:52-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2833,7 +2957,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html</id>
     <published>2013-07-29T00:00:00Z</published>
-    <updated>2013-08-02T10:51:22-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -2928,7 +3052,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html</id>
     <published>2013-07-25T00:00:00Z</published>
-    <updated>2013-08-16T13:49:41-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3222,7 +3346,7 @@ example.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html</id>
     <published>2013-07-23T00:00:00Z</published>
-    <updated>2013-07-25T10:49:38-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Mike Sager</name>
     </author>
@@ -3250,7 +3374,7 @@ example.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html</id>
     <published>2013-07-10T00:00:00Z</published>
-    <updated>2013-07-16T22:09:10-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3666,7 +3790,7 @@ helps keep our code clean by the use of inheritance.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html</id>
     <published>2013-07-09T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Marin Abernethy</name>
     </author>
@@ -3712,7 +3836,7 @@ thoroughly look forward to the rest of the summer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3738,7 +3862,7 @@ together a formal concept design process for us.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3763,7 +3887,7 @@ are excited to have his unique talents at DockYard.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3785,7 +3909,7 @@ Faerber&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
     <published>2013-07-01T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3804,7 +3928,7 @@ level Ruby experience to our team.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html</id>
     <published>2013-06-28T00:00:00Z</published>
-    <updated>2013-11-11T22:46:15-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Michael Dupuis Jr.</name>
     </author>
@@ -3838,7 +3962,7 @@ GitHub page&lt;/a&gt; .&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3855,7 +3979,7 @@ some design chops. Welcome Mike!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3872,7 +3996,7 @@ remainder of the summer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -3947,7 +4071,7 @@ any upcoming side projects, to really explore it further. &lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4182,7 +4306,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html"/>
     <id>http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html</id>
     <published>2013-04-26T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -4209,7 +4333,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html"/>
     <id>http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html</id>
     <published>2013-04-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Tyler Loch</name>
     </author>
@@ -4245,7 +4369,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html</id>
     <published>2013-04-04T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4292,7 +4416,7 @@ fulltime Ember.js developer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html</id>
     <published>2013-03-29T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4418,7 +4542,7 @@ to postgres_ext, which was added in 9.2. You should be able use this
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html</id>
     <published>2013-03-27T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4469,7 +4593,7 @@ building an Ember app and this is how I got it working:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html</id>
     <published>2013-03-26T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4514,7 +4638,7 @@ issues, &lt;a href="https://github.com/dockyard/postgres_ext/issue"&gt;open an i
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html</id>
     <published>2013-03-25T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4593,7 +4717,7 @@ well.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html</id>
     <published>2013-03-21T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4666,7 +4790,7 @@ following code into your &lt;code&gt;test_helper.rb&lt;/code&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html</id>
     <published>2013-03-19T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4694,7 +4818,7 @@ in politics. &lt;a href="mailto:contact@dockyard.com"&gt;Join us!&lt;/a&gt;&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html</id>
     <published>2013-02-21T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4840,7 +4964,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html</id>
     <published>2013-01-10T00:00:00Z</published>
-    <updated>2013-09-26T20:39:05-04:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5347,7 +5471,7 @@ buttonTitle: 'Update'
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html</id>
     <published>2013-01-09T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5774,7 +5898,7 @@ App.UsersRoute = Ember.Route.extend
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html</id>
     <published>2013-01-07T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6157,7 +6281,7 @@ rails-api g serializer User
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html</id>
     <published>2013-01-04T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6349,7 +6473,7 @@ to your model:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html"/>
     <id>http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html</id>
     <published>2013-01-03T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Chris Gill</name>
     </author>
@@ -6444,7 +6568,7 @@ easy&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html"/>
     <id>http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html</id>
     <published>2012-10-26T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6475,7 +6599,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html</id>
     <published>2012-10-11T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -6518,7 +6642,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html</id>
     <published>2012-10-09T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6657,7 +6781,7 @@ removed. Please add &lt;code&gt;ClientSideValidations::Config.disabled_validator
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html</id>
     <published>2012-09-21T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6835,7 +6959,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html</id>
     <published>2012-09-20T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -6854,7 +6978,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html</id>
     <published>2012-09-18T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -7040,7 +7164,7 @@ postgres_ext and Rails 4.0. Go forth and use arrays in Rails 4.0!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html</id>
     <published>2012-09-05T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7061,7 +7185,7 @@ released him from his cage on the nearest client app. He&amp;#39;s running wild!
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html</id>
     <published>2012-08-30T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7227,7 +7351,7 @@ perspective, or any general advice I&amp;#39;d love to hear it.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html</id>
     <published>2012-06-26T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7330,7 +7454,7 @@ Plante&lt;/a&gt;&amp;#39;s
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html</id>
     <published>2012-06-25T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7597,7 +7721,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
     <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -7612,7 +7736,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7896,7 +8020,7 @@ always looking to improve.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html</id>
     <published>2012-06-18T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8085,7 +8209,7 @@ INET and CIDR comparisons.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html</id>
     <published>2012-06-14T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8104,7 +8228,7 @@ skills and much needed illustration skills.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html</id>
     <published>2012-06-11T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8156,7 +8280,7 @@ option.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html</id>
     <published>2012-06-01T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8181,7 +8305,7 @@ located in DC and we hope to soon build out a team in that area.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html</id>
     <published>2012-05-18T00:00:00Z</published>
-    <updated>2013-07-13T14:14:30-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8218,7 +8342,7 @@ while MACADDR will continue to be converted to a string.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html</id>
     <published>2012-05-01T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8258,7 +8382,7 @@ much time was remaining. So I whipped up the following:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html"/>
     <id>http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html</id>
     <published>2012-04-16T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -8411,7 +8535,7 @@ Here&amp;#39;s a quick example of how Backbone views can listen for jquery-ujs c
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html</id>
     <published>2012-04-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8493,7 +8617,7 @@ an issue.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html</id>
     <published>2012-04-03T00:00:00Z</published>
-    <updated>2013-07-15T19:56:28-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -8772,7 +8896,7 @@ role assignment of &amp;#39;admin&amp;#39;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html</id>
     <published>2012-03-05T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8866,7 +8990,7 @@ have jenkins notify us of builds in a way that makes more sense.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html</id>
     <published>2012-02-27T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8895,7 +9019,7 @@ of Jenkins and keeping us honest with our test suites.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html</id>
     <published>2012-02-20T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9174,7 +9298,7 @@ defeat the purpose of using the engine in the first place.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html</id>
     <published>2012-02-16T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9313,7 +9437,7 @@ you may want to consider other options.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html</id>
     <published>2012-02-15T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9378,7 +9502,7 @@ variables in my specs as a smell and you should too.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html</id>
     <published>2012-02-14T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9623,7 +9747,7 @@ concerning the &lt;code&gt;lib/&lt;/code&gt; directory please feel free to comme
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html</id>
     <published>2012-02-13T00:00:00Z</published>
-    <updated>2013-11-11T11:09:16-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9814,7 +9938,7 @@ But we&amp;#39;ll cross that road when we get there.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9839,7 +9963,7 @@ partner.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9863,7 +9987,7 @@ how I approach web design.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html</id>
     <published>2012-01-22T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9966,7 +10090,7 @@ JavaScript MVC frameworks.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html"/>
     <id>http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html</id>
     <published>2012-01-04T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10018,7 +10142,7 @@ in the future.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html"/>
     <id>http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html</id>
     <published>2011-12-04T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10052,7 +10176,7 @@ of the week on how things went.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html</id>
     <published>2011-11-18T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10097,7 +10221,7 @@ them in the comments.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html</id>
     <published>2011-11-14T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10128,7 +10252,7 @@ flag&lt;/a&gt;)&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html</id>
     <published>2011-11-10T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10307,7 +10431,7 @@ future we all know is just a matter of time.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/08/24/launch.html"/>
     <id>http://reefpoints.dockyard.com/2011/08/24/launch.html</id>
     <published>2011-08-24T00:00:00Z</published>
-    <updated>2013-07-13T13:23:52-04:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>

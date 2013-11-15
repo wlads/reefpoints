@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-6a5d8a6b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy</title><link href="/stylesheets/all-2eea9150.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-d0af4672.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta content='DockYard.com - ' name='description'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -57,10 +57,133 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-11-11T00:00:00Z</updated>
+  <updated>2013-11-15T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Think</title>
+    <link rel="alternate" href="/2013/11/15/think.html"/>
+    <id>/2013/11/15/think.html</id>
+    <published>2013-11-15T00:00:00Z</published>
+    <updated>2013-11-15T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Ever since &lt;a href="http://wickedgoodruby.com/2013/speakers/matt_aimonetti"&gt;Matt Aimonetti&amp;#39;s talk at
+Wicked Good Ruby&lt;/a&gt;
+on there being such thing as bad code, I&amp;#39;ve felt I&amp;#39;ve
+needed to write a blog post about the &lt;a href="https://en.wikipedia.org/wiki/Cargo_cult"&gt;cargo
+culting&lt;/a&gt; that happens in
+the development world. &lt;/p&gt;
+
+&lt;h2&gt;Sandi Metz&amp;#39;s Rules&lt;/h2&gt;
+
+&lt;p&gt;Back in January, &lt;a href="ihttp://rubyrogues.com/087-rr-book-clubpractical-object-oriented-design-in-ruby-with-sandi-metz/"&gt;Sandi Metz was on Ruby
+Rogues&lt;/a&gt;
+to discuss her book, &lt;strong&gt;&lt;a href="http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/"&gt;Practical Object-Oriented Design in Ruby&lt;/a&gt;&lt;/strong&gt;.
+Out of this conversation came &amp;quot;&lt;a href="https://gist.github.com/henrik/4509394"&gt;Sandi Metz&amp;#39;s
+rules&lt;/a&gt;&amp;quot;. Many
+in the Ruby community took these rules as gospel, without knowing the
+context in which these rules were created.&lt;/p&gt;
+
+&lt;p&gt;The rules, for those unfamilar:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Your class can be no longer than 100 lines of code&lt;/li&gt;
+&lt;li&gt;Your methods can be no longer than five lines of code&lt;/li&gt;
+&lt;li&gt;You can pass no more than four parameters and you can’t just make it one big hash&lt;/li&gt;
+&lt;li&gt;When a call comes into your Rails controller, you can only instantiate one object to do whatever it is that needs to be done&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sandi joined Matt during his talk at Wicked Good Ruby and &lt;a href="http://www.youtube.com/watch?feature=player_embedded&amp;amp;v=VO-NvnZfMA4#t=1380"&gt;gave some background to the
+story of her rules&lt;/a&gt;.
+To paraphase Sandi, at the time she was working with a group that had multi-thousand line controllers with
+multi-hundred line methods. These controllers and methods represented
+one end of a spectrum, which made code incredibly hard to read and maintain.
+They were begging Sandi for guidelines with which they could try to
+correct this problem. What she did was create a set of rules that
+lived on the opposite side of the extreme, to force them to meet
+somewhere in the middle.&lt;/p&gt;
+
+&lt;p&gt;In reality, these rules are a different way of looking at rules many of
+us strive for in the first place. An example: The 100 lines per class
+rule is really forcing you to create classes with the &lt;a href="https://en.wikipedia.org/wiki/Single_responsibility_principle"&gt;Single
+Responsibility Principle&lt;/a&gt; in mind.&lt;/p&gt;
+
+&lt;p&gt;My issue is not with these rules as they exist, but with the
+community&amp;#39;s cargo culting of these rules and treating them as The Four
+Commandments. I don&amp;#39;t have an issue with you following them, as long as
+you understand why they exist, and you feel as though they are
+principles you believe in. Don&amp;#39;t just make five line methods because
+Sandi said so, and if you follow these rules, you feel like you&amp;#39;ll be a
+great developer. Adhering to Sandi&amp;#39;s rules does not make one great, it&amp;#39;s
+understanding where these, or any rules, should and shouldn&amp;#39;t apply.
+Sometimes a method that spans more than five lines will be more readable
+and maintainable than the same method spread across five or six 5-line
+methods. Striking that balance is where the power lies.&lt;/p&gt;
+
+&lt;h2&gt;REMOTE&lt;/h2&gt;
+
+&lt;p&gt;37signals just published
+&lt;a href="http://www.amazon.com/Remote-Office-Required-Jason-Fried/dp/0804137501/"&gt;REMOTE&lt;/a&gt;, a book about
+the benefits of allowing remote workers. I don&amp;#39;t disagree that
+working remote has many benefits. At DockYard, we work from home from time
+to time. We also strive to have people in the office more often than
+not, not because Brian doesn&amp;#39;t think we aren&amp;#39;t working when we aren&amp;#39;t in
+the office, but because it enables greater collaboration.&lt;/p&gt;
+
+&lt;p&gt;DockYard is a consultancy; we have client work with deadlines we have to
+meet. With having our developers and designers in the office together more
+often than not, it removes the latency from discussing issues. I can
+walk over to Steve and we can hash out an issue in a few minutes. If we
+were all remote, I&amp;#39;d have to ping him on HipChat, hope he&amp;#39;s at his desk,
+try to go over the issue text-only until we realize we need to have a
+Google Hangout, etc. It makes more sense for us to be in the same place.&lt;/p&gt;
+
+&lt;p&gt;The other benefit of DockYard working from the office is that our junior
+developers enjoy the same face-to-face benefits. Also, body language
+makes a huge difference when teaching or learning topic. When someone pauses,
+has a slightly puzzled look on their face and says &amp;quot;....Ok&amp;quot;, it easy to
+realize that a bit more background on the topic will really let them
+grasp the topic, but an &amp;quot;ok&amp;quot; in HipChat removes all the body language we
+could leverage.&lt;/p&gt;
+
+&lt;p&gt;Removing the latency between a junior developer having a
+question and getting the answer is crucial. If a junior developer has a
+question that&amp;#39;s a show stopper, they can feel helpless while they wait
+for someone to be around to answer that question. That helplessness is
+killer; it makes someone feel like they aren&amp;#39;t helping, and can
+potentially prevent them from asking other questions. If the that delay
+is interpreted as the senior developer blowing them off, they will be
+less inclined to ask questions in the future, hurting both themselves
+and the team.&lt;/p&gt;
+
+&lt;p&gt;A product company that employs experts (or creators) of a framework has
+a much different situation, where working remote makes a lot more sense.
+The conversations they have will be at a different level. They&amp;#39;ll all
+have intimate knowledge of the code base, and so a few questions back
+and forth or a quick Google Hangout achieves a great deal. The
+conclusion was a result of the context they exist in. Remote workers
+work great for them because they have the perfect mix of experts in
+their domain; are working on products, which have very different
+requirements and issues of client work; and have a customer support
+group, which don&amp;#39;t necessarily need to collaborate while working a
+customer through issues.&lt;/p&gt;
+
+&lt;h2&gt;Figure Out What Works for YOU&lt;/h2&gt;
+
+&lt;p&gt;In no way am I saying you should all work in the same office and
+disregard Sandi&amp;#39;s rules. What I&amp;#39;m asking of the community is a bit of
+critical thought. Just because someone smart said one thing, it doesn&amp;#39;t
+mean it&amp;#39;s gospel. Realize that experience has led that person to that
+conclusion, weigh your experience against it, and apply it if you can.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s just not hope that the gods give us food because we made bamboo
+airplanes. Let&amp;#39;s realize that moving to XYZ comes with both drawbacks and
+benefits, not just the benefits that everyone is touting.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Introducing Capybara-Extensions</title>
     <link rel="alternate" href="/2013/11/11/capybara-extensions.html"/>
@@ -1335,206 +1458,6 @@ Ultimately, our coffee makers are able to treat each step,
 &lt;code&gt;GrindCoffee&lt;/code&gt;, &lt;code&gt;BoilWater&lt;/code&gt; and &lt;code&gt;AddCoffee&lt;/code&gt; uniformly.&lt;/p&gt;
 
 &lt;p&gt;Hope this helps you with your morning routine!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Vim: Moving Lines Ain't Hard</title>
-    <link rel="alternate" href="/2013/09/26/vim-moving-lines-aint-hard.html"/>
-    <id>/2013/09/26/vim-moving-lines-aint-hard.html</id>
-    <published>2013-09-26T00:00:00Z</published>
-    <updated>2013-09-26T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;In the last post, we briefly discussed the power of the
-&lt;a href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"&gt;&lt;em&gt;map&lt;/em&gt; command&lt;/a&gt;.
-In today&amp;#39;s post, we&amp;#39;re going to use &lt;em&gt;map&lt;/em&gt; again in order to move
-lines and blocks around.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s use an example:
-Our goal is to move the &lt;em&gt;first line&lt;/em&gt; to its proper location. From this:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
---- third line ---
---- first line ---
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;To this:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- first line ---
---- second line ---
---- third line ---
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Delete, Then Paste&lt;/h2&gt;
-
-&lt;p&gt;Here is one of the most common ways, it ain&amp;#39;t pretty but it gets the job done.
-We&amp;#39;ll delete the desired line and paste it to the target location.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
---- third line ---
---- first line ---
-
-# Delete the &amp;quot;first line&amp;quot;, move to the &amp;quot;second line&amp;quot;, and paste the registered
-# &amp;quot;first line&amp;quot; above the &amp;quot;second line&amp;quot;.
-#
-# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; dd --&amp;gt; j --&amp;gt; P
-#
-# or...
-#
-# :3d --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :2P --&amp;gt; &amp;lt;ENTER&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;I Like the Way You Move&lt;/h2&gt;
-
-&lt;p&gt;The second way, use the &lt;em&gt;move&lt;/em&gt; command with &lt;code&gt;:m&lt;/code&gt;. I like this method a lot, as it
-requires fewer keystrokes. It does require line numbers though. When using
-absolute line numbers, the destination will be below the line number you specify,
-so use &lt;code&gt;:m0&lt;/code&gt; to move to the top of the file.
-Try using
-&lt;a href="http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/"&gt;hybrid mode&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
---- third line ---
---- first line ---
-
-# Move your cursor on the &amp;quot;first line&amp;quot; (the third line), use the *move* command and
-# pass your desired line number as an argument. Hit enter.
-#
-# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; :m0 --&amp;gt; &amp;lt;ENTER&amp;gt;
-#
-# or...
-#
-# :3m0 --&amp;gt; &amp;lt;ENTER&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Lazy Moving&lt;/h2&gt;
-
-&lt;p&gt;Now getting to the &lt;em&gt;map&lt;/em&gt; command, I&amp;#39;ve found this pretty handy when
-I need to move a line or block of lines a couple of lines upward or downward.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;quot; In your ~/.vimrc
-&amp;quot;
-&amp;quot; Normal mode
-nnoremap &amp;lt;C-j&amp;gt; :m .+1&amp;lt;CR&amp;gt;==
-nnoremap &amp;lt;C-k&amp;gt; :m .-2&amp;lt;CR&amp;gt;==
-
-&amp;quot; Insert mode
-inoremap &amp;lt;C-j&amp;gt; &amp;lt;ESC&amp;gt;:m .+1&amp;lt;CR&amp;gt;==gi
-inoremap &amp;lt;C-k&amp;gt; &amp;lt;ESC&amp;gt;:m .-2&amp;lt;CR&amp;gt;==gi
-
-&amp;quot; Visual mode
-vnoremap &amp;lt;C-j&amp;gt; :m '&amp;gt;+1&amp;lt;CR&amp;gt;gv=gv
-vnoremap &amp;lt;C-k&amp;gt; :m '&amp;lt;-2&amp;lt;CR&amp;gt;gv=gv
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now you can move lines by holding &lt;em&gt;CTRL&lt;/em&gt; and &lt;em&gt;j&lt;/em&gt; (for up a line) or
-&lt;em&gt;k&lt;/em&gt; (for down a line).&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- second line ---
---- third line ---
---- first line ---
-
-# Move to the &amp;quot;first line&amp;quot;, hold &amp;lt;CTRL&amp;gt; and move up twice.
-#
-# :3 --&amp;gt; &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;CTRL&amp;gt; + kk
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now let&amp;#39;s move a block of lines:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;--- fourth line ---
---- fifth line ---
---- first line ---
---- second line ---
---- third line ---
-
-# Move to the &amp;quot;first line&amp;quot;.
-# Select the &amp;quot;first line&amp;quot;, &amp;quot;second line&amp;quot;, and the &amp;quot;third line&amp;quot; with Visual mode.
-# Hit CTRL and move upwards twice.
-#
-# :3 -- &amp;lt;ENTER&amp;gt; --&amp;gt; &amp;lt;SHIFT&amp;gt; + V --&amp;gt; jj --&amp;gt; &amp;lt;CTRL&amp;gt; + kk
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Other Ways&lt;/h2&gt;
-
-&lt;p&gt;There are plenty of other tricks that move around lines in Vim. The preceding
-examples were just a few that I employ everyday. If you&amp;#39;ve got something cool to
-share, please let me know!&lt;/p&gt;
 </content>
   </entry>
 </feed>
