@@ -5,7 +5,7 @@
       - if current_page.title
         = current_page.title
       - else
-        DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy
+        DockYard
 
     = stylesheet_link_tag :all
     = javascript_include_tag :all
@@ -27,9 +27,12 @@
     - else
       %meta{content: 'DockYard is a web and mobile software development consultancy for hire based in Boston, MA', name: 'description'}
 
+    %link{href: '//cloud.typography.com/6496052/702882/css/fonts.css', rel: 'stylesheet', type: 'text/css'}
     %link{href: 'http://dockyard.com/humans.txt', rel: 'author'}
-    %link{href: '/apple-touch-icon.png', rel: 'apple-touch-icon'}
-    %link{href: '/apple-touch-icon-precomposed.png', rel: 'apple-touch-icon-precomposed'}
+    %link{href: '/favicon.png', rel: 'shortcut icon', type: 'image/x-icon'}
+    %link{href: '/favicon.png', rel: 'icon', type: 'image/x-icon'}
+    %link{rel: 'apple-touch-icon', :href => '/apple-touch-icon.png'}
+    %link{rel: 'apple-touch-icon-precomposed', :href => '/apple-touch-icon-precomposed.png'}
 
     :javascript
         var _gaq = _gaq || [];
@@ -44,114 +47,125 @@
 
     :plain
       <!--
-                                                                          ..
-                                                                       ,Z+O.
-                                                                    .OO.O..
-                                                                   OZ..O.
-                                                               ..OO..87.
-                                                              .O7O..O...
-                                                            .O...Z~O.
-                                                         .:Z~. ..Z..
-                                                        +O.O   .8..
-                                           ...       .OO.  O  O?.
-                                   ..ZOOOOOOOOOZOOO.ZOZ.   .OO..
-                                 .OOOOOOOOOOOOOOOOOO..Z.   $O.
-                               .ZOOOOOOOOOOOOOOOOOO.  .O..O.
-                              .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.
-                              OZOOOOOOOOOOO...OOOOOOOZ$ZO
-                            ..OOOOOOOOOOOOO  .OOOOOOOOOOO..
-                            .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                            .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                            OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                           OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.
-                           ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                           OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.
-                           ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.
-      ...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:
-      .OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..
-      .OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z
-       .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O
-        .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.
-         .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.
-         .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.
-         ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.
-          .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..
-           .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.
-           ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..
-            ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...
-                .....~OOOOOOOOOOOOOOOOO:........
-                      ................
+                                                   ..
+                                                 .O.
+                                             .:OO.
+                                            :OOO.
+                                          :OOO:.
+                               ...      :OOOO:
+                         ..ZOOOOOOOOO..OZ.O.
+                         OOOOOOOOOOOOOOOOI
+                        OOOOOOOOOOOOOOOOI,
+                       OOOOOOOO. .OOOOOOOO:
+                       OOOOOOOO   OOOOOOOOO:
+                      OOOOOOOOOOOOOOOOOOOOO.
+                      OOOOOOOOOOOOOOOOOOOOO:
+                     .OOOOOOOOOOOOOOOOOOOOO:
+                     .OOOOOOOOOOOOOOOOOOOOO.
+                      OOOOOOOOOOOOOOOOOOOOO
+                      OOOOOO?:   .OOOOOOOOO
+                     .OOOOO      OOOOOOOOOO
+      ,OO ZO~        OOOOO,     OOOOOOOOOO+
+       OOOOO.        OOOOO     OOOOOOOOOOO+
+        OOO?        OOOOO     .OOOOOOOOOOO:
+         OOO,      OOOOO.    .OOOOOOOOOOOO
+          OOOOOOOOOOOOO.    .OOOOOOOOOOOO.
+           OOOOOOOOOOOO.  .OOOOOOOOOOOOO.
+            8OOOOOOOOOOOOOOOOOOOOOOOODO:
+               :OOOOOOOOOOOOOOOOOOOO::
+
       -->
-  %body#blog{class: current_page.category}
-    %header#mobile-header
-      .wrap
-        %a.header-logo{href: '/'} DockYard
-        .menu-button
-      %ul#mobile-nav.flexnav{data: { breakpoint: 481 } }
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello h
-            %p.main-nav-item Home
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello w
-            %p.main-nav-item Work
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello p
-            %p.main-nav-item Team
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello c
-            %p.main-nav-item Community
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: '/'}
-            %span.mobile-nav-icon.fontello b
-            %p.main-nav-item Blog
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com/hire-us'}
-            %span.mobile-nav-icon.fontello m
-            %p.main-nav-item Contact
 
-    %header#site-header
-      .wrap
-        %h1
-          %a.header-logo{href: 'http://dockyard.com'} DockYard
-        %ul.main-nav
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/work'} Work
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/team'} Team
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/community'} Community
-          %li.nav-work
-            %a.main-nav-item.current{href: '/'} Blog
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/contact'} Contact
+  %body{class: page_classes}
+    %header
+      .extended-header-wrap.has-border--bottom
+        .l-wrap--wide
+          %nav.extended-nav.has-border--bottom
+            %a.extended-nav--logo{href: 'http://www.dockyard.com/', 'data-icon' => '⌂'}
+              %span.is-hidden Home
+            %a.extended-nav--close{'data-icon' => 'X'}
+              %span.is-hidden Close
+            .extended-nav__items-wrap
+              .extended-nav__items
+                %a.extended-nav__item{href: 'http://www.dockyard.com/team'} Our Team
+                %a.extended-nav__item{href: 'http://www.dockyard.com/community'} Community
+                %a.extended-nav__item{href: 'http://www.dockyard.com/hire-us'} Hire Us
+          %nav.work-nav
+            %p Selected Work
+            %a.work-nav-item{href: 'http://www.dockyard.com/work/credit-card-reviews'}
+              %h4.work-nav-item__title{'data-icon' => '✔'} Credit Card Reviews
+              %p Credit card advice from real people.
+            %a.work-nav-item{href: 'http://www.dockyard.com/work/coachup'}
+              %h4.work-nav-item__title{'data-icon' => '✔'} CoachUp
+              %p You should be training. Right now.
+            %a.work-nav-item{href: 'http://www.dockyard.com/work/askthem'}
+              %h4.work-nav-item__title{'data-icon' => '✔'} AskThem
+              %p Ask officials questions on city, state, and federal levels.
+            %a.work-nav-item{href: 'http://www.dockyard.com/work/beacon-hill-blitz'}
+              %h4.work-nav-item__title{'data-icon' => '✔'} Beacon Hill Blitz
+              %p How technology helped repeal the #TechTax.
+      %nav.main-nav-wrap.has-border--bottom
+        .main-nav.l-wrap--wide
+          %a.logo{href: 'http://www.dockyard.com/'} DockYard
+          %a.club-sandwich{'data-icon' => '☰'}
+            %span.is-hidden Navigation
 
-    %section#content
+    .push--header
+    .l-wrap
+      %a.logo--reefpoints{href: '/'} ReefPoints
+      .search-wrap
+        %form.search_reefpoints
+          %input#search.search{name: 'search', type: 'text', value: ''}
+      -#%nav.blog-nav--header
+        -#= link_to 'Posts', '/', class: "blog-nav__item #{active_state_for('/')}"
+        -#= link_to 'Categories', '/categories.html', class: "blog-nav__item #{active_state_for('/categories.html')}"
+        -#= link_to 'Authors', '/authors.html', class: "blog-nav__item #{active_state_for('/authors.html')}"
       = yield
+    .push--big
 
     %footer
-      %ul.footer-links
-        %li
-          %a.link.link-in-footer.fontello{href: 'https://github.com/DockYard', target: '_blank'} g
-        %li
-          %a.link.link-in-footer.fontello{href: 'https://twitter.com/DockYard', target: '_blank'} t
-        %li
-          %a.link.link-in-footer.fontello{href: 'http://reefpoints.dockyard.com/atom.xml', target: '_blank'} r
-        %li
-          %a.link.link-in-footer.fontello{href: 'http://dockyard.com/hire-us', target: '_blank'} m
+      .l-wrap
+        .footer-group
+          %h3.footer-group__title EVENTS
+          %nav
+            %a.footer__event{href: 'http://wickedgoodruby.com/', target: '_blank'}
+              .footer__event--wgr
+              %h4.footer-title Wicked Good Ruby Conf
+            %a.footer__event{href: 'http://www.meetup.com/Boston-Ember-js/', target: '_blank'}
+              .footer__event--ember
+              %h4.footer-title Boston Ember.js Meetup
+            %a.footer__event{href: 'http://www.meetup.com/uxboston/', target: '_blank'}
+              .footer__event--ux
+              %h4.footer-title UX Boston Meetup
+            %a.footer__event{href: 'http://openhack.github.io/boston/', target: '_blank'}
+              .footer__event--openhack
+              %h4.footer-title OpenHack Boston
+        .footer-group
+          %a{href: '/'}
+            %h3.footer-group__title BLOG
+          %nav.blog-nav
+            - page_articles[0..2].each do |article|
+              %a.blog-nav-item{href: "#{article.url}"}
+                %h4.footer-title= article.title
+                %p.footer-desc= article.summary
+        .footer-group
+          %a{href: '/hire-us'}
+            %h3.footer-group__title CONTACT
+          %p.footer-desc DockYard HQ is located in Boston. Stop in sometime and meet our team!
+          %a.footer-address.has-border--top{href: 'https://www.google.com/maps/preview#!q=DockYard%2C+Tremont+Street+%23200%2C+Boston%2C+MA&data=!4m15!2m14!1m13!1s0x89e37083512ceab3%3A0x1e657c639844318d!3m8!1m3!1d197180!2d-70.970284!3d42.31435!3m2!1i400!2i802!4f13.1!4m2!3d42.357236!4d-71.061077', target: '_blank'}
+            %p.footer-desc DockYard Inc.
+            %p.footer-desc 101 Tremont Street
+            %p.footer-desc Suite 200
+            %p.footer-desc Boston, MA 02108
+          = link_to 'Get in touch.', 'http://www.dockyard.com/hire-us', class: 'text-link'
+          .footer-social.has-border--top
+            %a.social-nav-item{href: 'https://twitter.com/dockyard', target: '_blank', 'data-icon' => '#'}
+              %span.is-hidden Twitter
+            %a.social-nav-item{href: 'https://github.com/dockyard', target: '_blank', 'data-icon' => '★'}
+              %span.is-hidden GitHub
+            %a.social-nav-item{href: 'http://reefpoints.dockyard.com/atom.xml', target: '_blank', 'data-icon' => '✒'}
+              %span.is-hidden RSS
 
-      %form.footer-form
-        %label.footer-form-label Get in touch with us!
-        %input.footer-form-input{type: 'text', placeholder: 'Email'}
-        %button.footer-form-submit.fontello{href: 'http://dockyard.com/contact'} R
-      %a.footer-number{href: 'tel:855-362-5973'} (855) DOCK-YRD
-      %p.footer-copyright &copy; 2013 DockYard, LLC. All Rights Reserved.
 
     %audio.foghorn{preload: 'auto', src: '/sound/foghorn.mp3'}
     :javascript

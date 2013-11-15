@@ -1,0 +1,73 @@
+@import load
+
+.extended-nav--close
+  &:before
+    +transition-duration(.25s)
+    +transition-property(color)
+  &:hover
+    &:before
+      color: $gray
+
+.extended-header-wrap
+  +transition-duration(.35s)
+  +transition-property(margin-top)
+  @include transition-timing-function(ease)
+  height: 800px
+  margin-top: -800px
+  @media (min-width: 650px) and (min-height: 650px)
+    background-color: rgba($white, .98)
+
+.extended-nav
+  position: relative
+  overflow: hidden
+
+.extended-nav__items-wrap
+  @media (max-width: 550px)
+    margin-top: 67px
+    width: 100%
+    border-top: 1px solid $light-gray
+
+.extended-nav__items
+  margin:
+    right: auto
+    left: auto
+  overflow: auto
+  @media (max-width: 550px)
+    width: 315px
+  @media (min-width: 550px)
+    width: 330px
+
+.extended-nav__item
+  border-top:
+    width: 6px
+    style: solid
+    color: $white
+  padding:
+    right: 6px
+    left: 6px
+  float: left
+  font-family: 'LatoLight', sans-serif
+  text-transform: uppercase
+  color: $black
+  +transition-duration(.25s)
+  +transition-property(border-color, color)
+  &:hover, &.active
+    border-color: $red
+    color: $red
+  &:not(:first-child)
+    margin-left: 24px
+  @media (max-width: 550px)
+    font-size: 13px
+    padding:
+      top: 26px
+      bottom: 32px
+  @media (min-width: 550px)
+    padding:
+      top: 20px
+      bottom: 22px
+
+.extended-nav--logo
+  margin-left: -6px
+  padding: 16px
+  position: absolute
+  font-size: 2em

@@ -2,11 +2,9 @@
 layout: layout
 title: DockYard Blog
 ---
-%h1.logo Reef Points
 
-%form.search_reefpoints
-  %label{for: 'search'} Search ReefPoints
-  %input#search.search{name: 'search', type: 'text', value: ''}
+-#%form.search_reefpoints
+  -#%input#search.search{name: 'search', type: 'text', value: ''}
 
 = partial 'articles', :locals => { :articles => blog.articles }
 

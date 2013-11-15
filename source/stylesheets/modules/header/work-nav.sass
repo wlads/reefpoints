@@ -1,0 +1,37 @@
+@import load
+
+.work-nav
+  padding-top: 3em
+  text-align: center
+  line-height: 1.5
+
+.work-nav-item
+  margin:
+    right: auto
+    left: auto
+  padding:
+    top: 2em
+    bottom: 2em
+  display: block
+  max-width: 480px
+  @include hover($gray)
+  &:not(:last-child)
+    border-bottom: 1px dashed $light-gray
+  @media (max-width: 450px)
+    &.active
+      color: $blue
+  @media (min-width: 450px)
+    &.active
+      .work-nav-item__title
+        position: relative
+        &:before
+          margin-left: -40px
+          position: absolute
+          top: -2px
+          font-family: 'icomoon'
+          content: attr(data-icon)
+          color: $red
+
+.work-nav-item__title
+  font-size: 1.875em
+  line-height: 1.2

@@ -1,0 +1,15 @@
+@import load
+
+.social-nav
+  text-align: center
+
+.social-nav-item
+  display: inline-block
+  width: 40px
+  font-size: 2.5em
+  color: $gray
+  @include hover(lighten($gray, 10%))
+  &:before
+    font-family: 'icomoon'
+    +font-smoothing
+    content: attr(data-icon)

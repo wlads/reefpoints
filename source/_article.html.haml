@@ -1,11 +1,11 @@
-%article.index-section
-  %header.index-meta
-    %time.index-date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
-    %p.index-author= link_to article.author, author_path(article.author)
+%article.post-wrap
+  .post__metas
+    = link_to article.author, author_path(article.author), class:'post__meta--author'
+    %time.post__meta--date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
     - if article.comments
-      %h4
-        %a.index-comments{href: "#{article.url}#disqus_thread"}.
-  .index-post
-    %h2= link_to article.title, article, class: 'index-title'
+      %a.post__meta--tag{href: "#{article.url}#disqus_thread"} &nbsp;
+  .post
+    %h1= link_to article.title, article, class: 'post__title--index'
     - if article.summary
-      %p.index-summary= article.summary
+      .post__content
+        %p= article.summary

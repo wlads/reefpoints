@@ -4,7 +4,7 @@ jQuery.fn.liveUpdate = function(list){
   if ( list.length ) {
     var rows = list.children('article'),
       cache = rows.map(function(){
-        var $blogDetails = $(this).find('.index-post');
+        var $blogDetails = $(this).find('.post');
         var title = $blogDetails.find('h2 a').text().toLowerCase();
         var summary = $blogDetails.find('p').text().toLowerCase();
         return title + " " + summary;

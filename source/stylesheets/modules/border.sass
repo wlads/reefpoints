@@ -1,0 +1,15 @@
+@import load
+
+.has-border
+  @include has-border(top, right, bottom, left)
+
+.has-border--bottom
+  @include has-border(bottom)
+
+.has-border--top
+  @include has-border(top)
+
+.border--half
+  height: 2.25em
+  width: 50%
+  @include has-border(right)

@@ -9,7 +9,6 @@ activate :blog do |blog|
   blog.paginate = true
   blog.tag_template = 'tag.html'
   blog.taglink = 'categories/:tag.html'
-  blog.calendar_template = 'calendar.html'
   blog.author_template = 'author.html'
   blog.authorlink = 'authors/:author.html'
 end
@@ -34,10 +33,10 @@ end
 helpers do
   def tag_links(tags)
     tags.map do |tag|
-      link_to tag_path(tag), class: 'tag-link' do
+      link_to tag_path(tag), class: 'post__meta--tag' do
         "#{tag_name(tag)} (#{tag_count(tag)})"
       end
-    end.join(', ')
+    end.join(' ')
   end
 
   def tag_count(tag)
@@ -46,6 +45,10 @@ helpers do
 
   def tag_name(tag)
     Middleman::Blog::TagPages.tag_name(tag)
+  end
+
+  def active_state_for(path)
+    current_page.url == (path) ? 'active' : nil
   end
 end
 

@@ -1,0 +1,76 @@
+@import load
+
+header
+  width: 100%
+  z-index: 5
+  overflow: hidden
+  @media (min-width: 650px) and (min-height: 650px)
+    position: fixed
+
+.main-nav-wrap
+  height: 65px
+  width: 100%
+  background-color: rgba($white, .5)
+  text-align: center
+  +transition-duration(.25s)
+  +transition-property(background-color)
+
+.main-nav
+  position: relative
+
+.logo
+  padding: 17px
+  display: inline-block
+  font:
+    size: 1.875em
+    family: 'Tungsten A', 'Tungsten B'
+
+.club-sandwich, .extended-nav--logo, .extended-nav--close
+  &:before
+    font-family: 'icomoon'
+    content: attr(data-icon)
+
+.club-sandwich, .extended-nav--close
+  padding: 12px
+  position: absolute
+  right: -12px
+  font-size: 40px
+
+.club-sandwich
+  @include hover($gray)
+
+.logo--reefpoints
+  margin-bottom: 18px
+  display: block
+  font:
+    size: 30px
+    family: 'NiveauGroteskBold', sans-serif
+  @include hover($gray)
+
+.blog-nav--header
+  margin-bottom: 54px
+  overflow: auto
+
+.blog-nav__item
+  padding:
+    top: 8px
+    bottom: 8px
+  float: left
+  text-transform: uppercase
+  @include hover($gray)
+  &:not(:last-child)
+    margin-right: 32px
+
+.blog-nav__item.active
+  color: $red
+
+.blog-nav
+  width: 270px
+  overflow: auto
+
+.blog-nav__count
+  padding:
+    top: 8px
+    bottom: 8px
+  float: right
+  color: darken($light-gray, 10%)
