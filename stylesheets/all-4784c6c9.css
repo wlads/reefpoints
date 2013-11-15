@@ -361,13 +361,14 @@ strong {
   margin-bottom: 1em; }
   /* line 214, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
   .post-content ol li {
-    margin-left: 2em; }
-/* line 216, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+    margin-left: 1.5em;
+    list-style-type: decimal !important; }
+/* line 217, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
 .post-content img {
   display: block;
   margin: 0 auto 2em; }
 
-/* line 221, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+/* line 222, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
 h1.author-name, h1.tag-name, h1.categories, h1.authors {
   font-family: cubano, sans-serif;
   text-align: center;
@@ -376,30 +377,30 @@ h1.author-name, h1.tag-name, h1.categories, h1.authors {
   margin-bottom: 0.75em;
   margin-top: 0.75em; }
 
-/* line 229, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+/* line 230, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
 ul.categories, ul.authors {
   list-style-type: disc;
   width: 500px;
   margin: 0 auto; }
-  /* line 233, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+  /* line 234, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
   ul.categories a, ul.authors a {
     font-weight: bold; }
-    /* line 235, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+    /* line 236, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
     ul.categories a span.count, ul.authors a span.count {
       font-weight: normal;
       margin-left: 10px; }
-    /* line 238, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+    /* line 239, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
     ul.categories a:hover, ul.authors a:hover {
       text-decoration: underline; }
-      /* line 240, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+      /* line 241, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
       ul.categories a:hover span.count, ul.authors a:hover span.count {
         text-decoration: none; }
 
-/* line 243, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+/* line 244, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
 .current {
   background-color: #f17275 !important; }
 
-/* line 247, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
+/* line 248, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/reefpoints.sass */
 .authors ul, .categories ul {
   list-style-type: none; }
 /* line 3, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/shared.sass */
