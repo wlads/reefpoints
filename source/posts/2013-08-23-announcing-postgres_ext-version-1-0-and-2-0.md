@@ -3,7 +3,7 @@ layout: post
 title: "Announcing Postgres_ext version 1.0 and 2.0"
 comments: true
 author: Dan McClain
-twitter: "\_danmcclain"
+twitter: "_danmcclain"
 github: danmcclain
 social: true
 summary: "Today, I released not 1 but 2 versions of PostgresExt"

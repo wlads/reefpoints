@@ -3,7 +3,7 @@ layout: post
 title: "Testing Context Validations"
 comments: true
 author: Dan McClain
-twitter: "\_danmcclain"
+twitter: "_danmcclain"
 github: danmcclain
 social: true
 summary: "We moved your model validations to your controller, now we're going to help you test them"
