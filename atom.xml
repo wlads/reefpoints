@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/15/think.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/15/think.html</id>
     <published>2013-11-15T00:00:00Z</published>
-    <updated>2013-11-15T13:13:52-05:00</updated>
+    <updated>2013-11-15T13:22:45-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -40,7 +40,7 @@ context in which these rules were created.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Your class can be no longer than 100 lines of code&lt;/li&gt;
 &lt;li&gt;Your methods can be no longer than five lines of code&lt;/li&gt;
-&lt;li&gt;You can pass no more than four parameters and you can’t just make it one big hash&lt;/li&gt;
+&lt;li&gt;You can pass no more than four parameters and you can&amp;#39;t just make it one big hash&lt;/li&gt;
 &lt;li&gt;When a call comes into your Rails controller, you can only instantiate one object to do whatever it is that needs to be done&lt;/li&gt;
 &lt;/ol&gt;
 
