@@ -2,7 +2,12 @@
 title: DockYard ReefPoints - Authors
 ---
 
-- page_articles.map(&:author).flatten.uniq.sort.each do |author|
-  .blog-nav
-    %a.blog-nav__item{href: author_path(author)} #{author}
-    %p.blog-nav__count #{page_articles.select { |article| article.author == author }.size }
+= partial 'internal-search'
+
+.blog-subnav
+  - page_articles.map(&:author).flatten.uniq.sort.each do |author|
+    %a.blog-subnav__item{href: author_path(author)}
+      <span class='blog-subnav__count'>#{page_articles.select { |article| article.author == author }.size }</span>
+      #{author}
+
+= partial 'articles', :locals => { :articles => blog.articles }

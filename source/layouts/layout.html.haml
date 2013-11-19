@@ -77,95 +77,15 @@
       -->
 
   %body{class: page_classes}
-    %header
-      .extended-header-wrap.has-border--bottom
-        .l-wrap--wide
-          %nav.extended-nav.has-border--bottom
-            %a.extended-nav--logo{href: 'http://www.dockyard.com/', 'data-icon' => '⌂'}
-              %span.is-hidden Home
-            %a.extended-nav--close{'data-icon' => 'X'}
-              %span.is-hidden Close
-            .extended-nav__items-wrap
-              .extended-nav__items
-                %a.extended-nav__item{href: 'http://www.dockyard.com/team'} Our Team
-                %a.extended-nav__item{href: 'http://www.dockyard.com/community'} Community
-                %a.extended-nav__item{href: 'http://www.dockyard.com/hire-us'} Hire Us
-          %nav.work-nav
-            %p Selected Work
-            %a.work-nav-item{href: 'http://www.dockyard.com/work/credit-card-reviews'}
-              %h4.work-nav-item__title{'data-icon' => '✔'} Credit Card Reviews
-              %p Credit card advice from real people.
-            %a.work-nav-item{href: 'http://www.dockyard.com/work/coachup'}
-              %h4.work-nav-item__title{'data-icon' => '✔'} CoachUp
-              %p You should be training. Right now.
-            %a.work-nav-item{href: 'http://www.dockyard.com/work/askthem'}
-              %h4.work-nav-item__title{'data-icon' => '✔'} AskThem
-              %p Ask officials questions on city, state, and federal levels.
-            %a.work-nav-item{href: 'http://www.dockyard.com/work/beacon-hill-blitz'}
-              %h4.work-nav-item__title{'data-icon' => '✔'} Beacon Hill Blitz
-              %p How technology helped repeal the #TechTax.
-      %nav.main-nav-wrap.has-border--bottom
-        .main-nav.l-wrap--wide
-          %a.logo{href: 'http://www.dockyard.com/'} DockYard
-          %a.club-sandwich{'data-icon' => '☰'}
-            %span.is-hidden Navigation
 
-    .push--header
+    = partial 'header'
+
     .l-wrap
       %a.logo--reefpoints{href: '/'} ReefPoints
-      .search-wrap
-        %form.search_reefpoints
-          %input#search.search{name: 'search', type: 'text', value: ''}
-      -#%nav.blog-nav--header
-        -#= link_to 'Posts', '/', class: "blog-nav__item #{active_state_for('/')}"
-        -#= link_to 'Categories', '/categories.html', class: "blog-nav__item #{active_state_for('/categories.html')}"
-        -#= link_to 'Authors', '/authors.html', class: "blog-nav__item #{active_state_for('/authors.html')}"
       = yield
-    .push--big
+      %h2.nothin Your search returned no results. Perhaps you should try again.
 
-    %footer
-      .l-wrap
-        .footer-group
-          %h3.footer-group__title EVENTS
-          %nav
-            %a.footer__event{href: 'http://wickedgoodruby.com/', target: '_blank'}
-              .footer__event--wgr
-              %h4.footer-title Wicked Good Ruby Conf
-            %a.footer__event{href: 'http://www.meetup.com/Boston-Ember-js/', target: '_blank'}
-              .footer__event--ember
-              %h4.footer-title Boston Ember.js Meetup
-            %a.footer__event{href: 'http://www.meetup.com/uxboston/', target: '_blank'}
-              .footer__event--ux
-              %h4.footer-title UX Boston Meetup
-            %a.footer__event{href: 'http://openhack.github.io/boston/', target: '_blank'}
-              .footer__event--openhack
-              %h4.footer-title OpenHack Boston
-        .footer-group
-          %a{href: '/'}
-            %h3.footer-group__title BLOG
-          %nav.blog-nav
-            - page_articles[0..2].each do |article|
-              %a.blog-nav-item{href: "#{article.url}"}
-                %h4.footer-title= article.title
-                %p.footer-desc= article.summary
-        .footer-group
-          %a{href: '/hire-us'}
-            %h3.footer-group__title CONTACT
-          %p.footer-desc DockYard HQ is located in Boston. Stop in sometime and meet our team!
-          %a.footer-address.has-border--top{href: 'https://www.google.com/maps/preview#!q=DockYard%2C+Tremont+Street+%23200%2C+Boston%2C+MA&data=!4m15!2m14!1m13!1s0x89e37083512ceab3%3A0x1e657c639844318d!3m8!1m3!1d197180!2d-70.970284!3d42.31435!3m2!1i400!2i802!4f13.1!4m2!3d42.357236!4d-71.061077', target: '_blank'}
-            %p.footer-desc DockYard Inc.
-            %p.footer-desc 101 Tremont Street
-            %p.footer-desc Suite 200
-            %p.footer-desc Boston, MA 02108
-          = link_to 'Get in touch.', 'http://www.dockyard.com/hire-us', class: 'text-link'
-          .footer-social.has-border--top
-            %a.social-nav-item{href: 'https://twitter.com/dockyard', target: '_blank', 'data-icon' => '#'}
-              %span.is-hidden Twitter
-            %a.social-nav-item{href: 'https://github.com/dockyard', target: '_blank', 'data-icon' => '★'}
-              %span.is-hidden GitHub
-            %a.social-nav-item{href: 'http://reefpoints.dockyard.com/atom.xml', target: '_blank', 'data-icon' => '✒'}
-              %span.is-hidden RSS
-
+    = partial 'footer'
 
     %audio.foghorn{preload: 'auto', src: '/sound/foghorn.mp3'}
     :javascript

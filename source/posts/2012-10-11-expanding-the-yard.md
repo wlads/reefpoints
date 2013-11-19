@@ -39,6 +39,5 @@ published: true
     <h2>Well done</h2>
     <p>It was a lot of fun to reimagine our site and we are all proud of the result. It is designed to grow and evolve along with us.</p>
     <p>There are plenty of hidden surprises in the new site. See if you can find an easter egg or two.</p>
-    <img src="/images/narwin-post.gif" alt="The Narwin" />
   </div>
 </div>

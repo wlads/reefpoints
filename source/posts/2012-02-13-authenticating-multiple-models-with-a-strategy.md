@@ -8,7 +8,7 @@ github: bcardarella
 summary: Using the Strategy Pattern to clean up multiple login paths
 legacy_category: ruby
 social: true
-tags: ruby on rails, software design patterns
+tags: ruby on rails, design patterns
 ---
 
 A current project requires that there be multiple models that can sign
@@ -118,6 +118,6 @@ end
 In the end this may appear to be more work than is necessary. Keep in
 mind that app requirements will expand to support more models. The wins should be obvious
 considering that context. If the requirements grow to 5 or 6 models perhaps at that point it makes sense to
-actually break the authentication up into [Identities](http://en.wikipedia.org/wiki/Identity_management) with a [polymorphic 
+actually break the authentication up into [Identities](http://en.wikipedia.org/wiki/Identity_management) with a [polymorphic
 association](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations) to the different models.
 But we'll cross that road when we get there.

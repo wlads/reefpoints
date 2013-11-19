@@ -8,7 +8,7 @@ activate :blog do |blog|
   blog.sources = "posts/:year-:month-:day-:title.html"
   blog.paginate = true
   blog.tag_template = 'tag.html'
-  blog.taglink = 'categories/:tag.html'
+  blog.taglink = 'tags/:tag.html'
   blog.author_template = 'author.html'
   blog.authorlink = 'authors/:author.html'
 end
@@ -40,7 +40,7 @@ helpers do
   end
 
   def tag_count(tag)
-    page_articles.select { |article| article.tags.include?(tag) }.size
+    blog.articles.select { |article| article.tags.include?(tag) }.size
   end
 
   def tag_name(tag)
@@ -48,7 +48,15 @@ helpers do
   end
 
   def active_state_for(path)
-    current_page.url == (path) ? 'active' : nil
+    page_classes.split.first == (path) ? 'active' : nil
+  end
+
+  def active_state_for_sub(path)
+    current_path[0..-6].split('/')[1] == (path.downcase.gsub(/[ ]/, '-')) ? 'active' : nil
+  end
+
+  def if_inside_category(path)
+    (path.split(" ")[1]) != nil ? 'blog-subnav--nested' : nil
   end
 end
 

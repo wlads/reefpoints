@@ -2,7 +2,7 @@
 layout: post
 title: 'Introducing destroyed_at'
 comments: true
-author: 'Michael Dupuis Jr.'
+author: 'Michael Dupuis'
 twitter: 'michaeldupuisjr'
 github: michaeldupuisjr
 legacy_category: ruby

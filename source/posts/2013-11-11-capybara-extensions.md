@@ -2,7 +2,7 @@
 layout: post
 title: 'Introducing Capybara-Extensions'
 comments: true
-author: 'Michael Dupuis Jr.'
+author: 'Michael Dupuis'
 twitter: 'michaeldupuisjr'
 github: michaeldupuisjr
 social: true

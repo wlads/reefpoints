@@ -1,11 +1,10 @@
-%article.post-wrap
+%article.post-wrap--index
+  .post
+    = link_to article.title, article, class: 'post__title--index'
+    - if article.summary
+      %p.post__meta--desc= article.summary
   .post__metas
     = link_to article.author, author_path(article.author), class:'post__meta--author'
     %time.post__meta--date{datetime: article.date.to_s(:short)}= article.date.to_s(:short)
     - if article.comments
       %a.post__meta--tag{href: "#{article.url}#disqus_thread"} &nbsp;
-  .post
-    %h1= link_to article.title, article, class: 'post__title--index'
-    - if article.summary
-      .post__content
-        %p= article.summary

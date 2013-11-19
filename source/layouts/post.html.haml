@@ -1,6 +1,15 @@
 - wrap_layout :layout do
+  .search-wrap
+    %form.search{data: {url: '/'}}
+      %input#search.search__input{name: 'search', type: 'text', value: '', placeholder: 'Search all posts'}
+      %button.search__submit{href: '/'}
+  %nav.blog-topnav
+    = link_to 'Posts', '/', class: "blog-topnav__item #{active_state_for('index')}"
+    = link_to 'Tags', '/tags.html', class: "blog-topnav__item #{active_state_for('tags')}"
+    = link_to 'Authors', '/authors.html', class: "blog-topnav__item #{active_state_for('authors')}"
+
   .post-wrap--no-comments
-    %aside.post__metas
+    %aside.post__metas--post.l-post__metas
       - if current_page.author
         - if current_page.twitter
           %a.icon{href: "http://twitter.com/#{current_page.twitter}", target: '_blank', 'data-icon' => '#'}
@@ -12,12 +21,11 @@
       %p.post__meta--date= current_page.date.to_s(:short)
       %p.post__meta--tags= tag_links(current_page.tags)
 
-    .post
+    .post.l-post
       %h1.post__title= current_page.title
 
       %current_page.post__content
         = yield
-
         .post__share
           .post__share__links
             %a.twitter-share-button{href: 'https://twitter.com/share', data: { url: "http://reefpoints.dockyard.com#{current_page.url}", via: 'DockYard' }} Tweet
@@ -39,7 +47,7 @@
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
       %noscript
-        Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
+        Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus</a>.</noscript>
 
   :javascript
     var path = window.location.pathname.split('/').reverse();
@@ -47,3 +55,8 @@
     var change = postname[0] + '.md';
     var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
     $('.post__issue').attr('href', newpath);
+
+    $('.search').submit(function(event) {
+      event.preventDefault();
+      window.location = $(this).data('url') + '#q=' + $('.search__input').val();
+    });

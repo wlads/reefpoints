@@ -26,4 +26,4 @@ end
 
 This will give you the routes of `/work/client_1` and `/work/client_2`.
 Your views will go into `app/views/work/pages`. For more details see the
-[README](https://github.com/dockyard/pages#namespacing)
+[README](https://github.com/dockyard/pages#namespacing).

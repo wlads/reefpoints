@@ -1,0 +1,13 @@
+---
+title: DockYard ReefPoints - Tags
+---
+
+= partial 'internal-search'
+
+.blog-subnav
+  - page_articles.map(&:tags).flatten.uniq.sort.each do |tag|
+    %a.blog-subnav__item{href: tag_path(tag)}
+      <span class='blog-subnav__count'>#{tag_count(tag)}</span>
+      #{tag_name(tag)}
+
+= partial 'articles', :locals => { :articles => blog.articles }

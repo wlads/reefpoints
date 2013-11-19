@@ -1,0 +1,57 @@
+@import load
+
+#index
+  @media (max-width: 600px)
+    margin-top: -2em
+  @media (min-width: 600px)
+    margin-top: -3em
+
+  .tags &, .authors &
+    @media (min-width: 680px)
+      width: 68%
+      float: right
+    @media (min-width: 780px)
+      margin-right: 7.07%
+    @media (min-width: 1000px)
+      width: 540px
+
+.post-wrap
+  overflow: auto
+  @media (max-width: 600px)
+    padding:
+      top: 2em
+      bottom: 2em
+  @media (min-width: 600px)
+    padding:
+      top: 3em
+      bottom: 3em
+
+.post-wrap--index
+  @extend .post-wrap
+  @media (max-width: 600px)
+    &:not(:last-child)
+      border-bottom: 1px dashed $light-gray
+
+.post-wrap--no-comments
+  position: relative
+  overflow: auto
+  @media (min-width: 900px)
+    margin-bottom: 54px
+
+.post
+  float: right
+  @media (max-width: 600px)
+    width: 100%
+  @media (min-width: 600px) and (max-width: 1000px)
+    width: 58%
+  @media (min-width: 780px)
+    padding-right: 7.05%
+  @media (min-width: 1000px)
+    width: 100%
+    max-width: 540px
+
+  .tags &, .authors &
+    @media (min-width: 680px)
+      width: 100%
+      max-width: 540px
+      padding-right: 0

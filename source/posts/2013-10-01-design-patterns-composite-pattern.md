@@ -8,7 +8,7 @@ github: duggiefresh
 social: true
 summary: 'Exploring design patterns and their use cases'
 published: true
-tags: software design patterns, ruby
+tags: design patterns, ruby
 ---
 
 ## Coffee Coffee

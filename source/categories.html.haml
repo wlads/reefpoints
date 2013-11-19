@@ -1,8 +1,0 @@
----
-title: DockYard ReefPoints - Categories
----
-
-- page_articles.map(&:tags).flatten.uniq.sort.each do |tag|
-  .blog-nav
-    %a.blog-nav__item{href: tag_path(tag)} #{tag_name(tag)}
-    %p.blog-nav__count #{tag_count(tag)}
