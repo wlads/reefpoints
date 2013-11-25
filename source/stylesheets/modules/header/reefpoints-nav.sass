@@ -1,12 +1,14 @@
 @import load
 
+.logo--reefpoints, .blog-nav__item
+  @include hover($blue)
+
 .logo--reefpoints
   margin-bottom: 8px
   display: inline-block
   font:
     size: 30px
     family: 'NiveauGroteskBold', sans-serif
-  @include hover($blue)
 
 .blog-topnav
   overflow: auto
@@ -20,7 +22,6 @@
   padding-bottom: 8px
   float: left
   text-transform: uppercase
-  @include hover($blue)
 
 .blog-topnav__item
   padding-top: 8px
@@ -34,9 +35,6 @@
   &:not(:first-child)
     padding-top: 8px
 
-.blog-nav__item.active
-  color: $red
-
 .blog-subnav
   margin-bottom: 36px
   width: 200px
@@ -45,20 +43,12 @@
   @media (min-width: 600px)
     float: left
 
-.blog-subnav.may-hide
-  @media (max-width: 680px)
-    display: none
-
-.blog-subnav--nested
+.blog-subnav.may-hide, .blog-subnav--nested
   @media (max-width: 680px)
     display: none
 
 .blog-subnav__item.active, .blog-topnav__item.active
-  @extend .blog-nav__item.active
-
-.blog-nav
-  width: 250px
-  overflow: auto
+  color: $red
 
 .blog-subnav__count
   padding-left: 20px
