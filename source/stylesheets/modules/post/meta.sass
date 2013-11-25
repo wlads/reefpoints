@@ -1,5 +1,8 @@
 @import load
 
+.post__title--index, .post__meta--author
+  @include hover($blue)
+
 .post__title
   margin-bottom: 18px
   display: block
@@ -8,7 +11,6 @@
 .post__title--index
   @extend .post__title
   @extend .h1
-  @include hover($blue)
 
 .post__metas
   text-transform: uppercase
@@ -32,9 +34,6 @@
 .post__meta--author, .post__meta--data
   display: block
   font-size: 18px
-
-.post__meta--author
-  @include hover($blue)
 
 .post__meta--date
   margin-bottom: 18px
