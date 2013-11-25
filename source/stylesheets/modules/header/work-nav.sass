@@ -19,15 +19,15 @@
   @include hover($gray)
   &:not(:last-child)
     border-bottom: 1px dashed $light-gray
-  @media (max-width: 450px)
+  @media (max-width: 550px)
     &.active
       color: $blue
-  @media (min-width: 450px)
+  @media (min-width: 550px)
     &.active
       .work-nav-item__title
         position: relative
         &:before
-          margin-left: -40px
+          margin-left: -50px
           position: absolute
           top: -2px
           font-family: 'icomoon'
@@ -35,5 +35,8 @@
           color: $red
 
 .work-nav-item__title
-  font-size: 1.875em
   line-height: 1.2
+  @media (max-width: 550px)
+    font-size: 30px
+  @media (min-width: 550px)
+    font-size: 42px
