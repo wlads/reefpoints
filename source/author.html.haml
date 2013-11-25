@@ -3,7 +3,7 @@
 .blog-subnav{class: "#{if_inside_category(page_classes)}"}
   - blog.articles.map(&:author).flatten.uniq.sort.each do |author|
     %a.blog-subnav__item{href: author_path(author), class: "#{active_state_for_sub(author)}"}
-      <span class='blog-subnav__count'>#{blog.articles.select { |article| article.author == author }.size }</span>
       #{author}
+      <span class='blog-subnav__count'>#{blog.articles.select { |article| article.author == author }.size }</span>
 
 = partial 'articles', :locals => { :articles => page_articles }

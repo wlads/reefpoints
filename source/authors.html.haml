@@ -7,7 +7,7 @@ title: DockYard ReefPoints - Authors
 .blog-subnav
   - page_articles.map(&:author).flatten.uniq.sort.each do |author|
     %a.blog-subnav__item{href: author_path(author)}
-      <span class='blog-subnav__count'>#{page_articles.select { |article| article.author == author }.size }</span>
       #{author}
+      <span class='blog-subnav__count'>#{page_articles.select { |article| article.author == author }.size }</span>
 
 = partial 'articles', :locals => { :articles => blog.articles }

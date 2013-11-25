@@ -3,7 +3,7 @@
 .blog-subnav{class: "#{if_inside_category(page_classes)}"}
   - blog.articles.map(&:tags).flatten.uniq.sort.each do |tag|
     %a.blog-subnav__item{href: tag_path(tag), class: "#{active_state_for_sub(tag)}"}
-      <span class='blog-subnav__count'>#{tag_count(tag)}</span>
       #{tag_name(tag)}
+      <span class='blog-subnav__count'>#{tag_count(tag)}</span>
 
 = partial 'articles', :locals => { :articles => page_articles }
