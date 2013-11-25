@@ -34,19 +34,19 @@
     right: auto
     left: auto
   overflow: auto
-  @media (max-width: 550px)
-    width: 315px
-  @media (min-width: 550px)
-    width: 330px
+  @media (max-width: 480px)
+    width: 285px
+  @media (min-width: 480px)
+    width: 325px
+  @media (min-width: 680px)
+    width: 410px
 
 .extended-nav__item
   border-top:
     width: 6px
     style: solid
     color: $white
-  padding:
-    right: 6px
-    left: 6px
+  padding: 20px 6px 22px 6px
   float: left
   font-family: 'LatoLight', sans-serif
   text-transform: uppercase
@@ -57,16 +57,12 @@
     border-color: $red
     color: $red
   &:not(:first-child)
-    margin-left: 24px
-  @media (max-width: 550px)
-    font-size: 13px
-    padding:
-      top: 26px
-      bottom: 32px
-  @media (min-width: 550px)
-    padding:
-      top: 20px
-      bottom: 22px
+    @media (max-width: 480px)
+      margin-left: 2%
+    @media (min-width: 480px)
+      margin-left: 6%
+  @media (max-width: 680px)
+    font-size: 12px
 
 .extended-nav--logo
   margin-left: -6px
