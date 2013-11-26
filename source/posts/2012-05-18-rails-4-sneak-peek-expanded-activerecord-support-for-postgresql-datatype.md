@@ -3,6 +3,7 @@ layout: post
 title: "Rails 4.0 Sneak Peek: Expanded ActiveRecord Support for PostgreSQL Datatypes"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: _danmcclain
 github: danmcclain
 legacy_category: ruby

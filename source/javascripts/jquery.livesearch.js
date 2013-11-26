@@ -7,7 +7,6 @@ jQuery.fn.liveUpdate = function(list){
         var $blogDetails = $(this).find('.post');
         var title = $blogDetails.find('.post__title--index').text().toLowerCase();
         var summary = $blogDetails.find('p').text().toLowerCase();
-        debugger
         return title + " " + summary;
       });
 

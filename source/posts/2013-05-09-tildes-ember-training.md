@@ -3,6 +3,7 @@ layout: post
 title: "Tilde's Ember Training"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: "_danmcclain"
 github: danmcclain
 legacy_category: ember

@@ -3,6 +3,7 @@ layout: post
 title: "Announcing Postgres_ext version 1.0 and 2.0"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: "_danmcclain"
 github: danmcclain
 social: true

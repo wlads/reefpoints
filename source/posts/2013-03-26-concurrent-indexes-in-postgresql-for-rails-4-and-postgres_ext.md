@@ -3,6 +3,7 @@ layout: post
 title: "Concurrent Indexes in PostgreSQL for Rails 4 and Postgres_ext"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: "_danmcclain"
 github: danmcclain
 legacy_category: ruby

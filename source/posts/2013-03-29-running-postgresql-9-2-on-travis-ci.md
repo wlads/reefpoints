@@ -3,6 +3,7 @@ layout: post
 title: "Running PostgreSQL 9.2 on Travis-CI"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: "_danmcclain"
 github: danmcclain
 legacy_category: ruby

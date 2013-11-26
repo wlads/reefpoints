@@ -17,6 +17,8 @@
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'}
     - if current_page
       %meta{content: "DockYard.com - #{current_page.summary}", name: 'description'}
+      - if current_page.data.googleplus
+        %link{href: "https://plus.google.com/#{current_page.data.googleplus}", rel: 'author' }
       - if current_page.twitter
         %meta{name: 'twitter:creator', content: current_page.twitter}
         %meta{name: 'twitter:card', content: 'summary'}

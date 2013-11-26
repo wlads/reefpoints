@@ -3,6 +3,7 @@ layout: post
 title: "Querying PostgreSQL datatypes in ActiveRecord with postgres_ext"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: "_danmcclain"
 github: danmcclain
 legacy_category: ruby
