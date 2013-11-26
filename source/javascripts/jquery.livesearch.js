@@ -5,8 +5,9 @@ jQuery.fn.liveUpdate = function(list){
     var rows = list.children('article'),
       cache = rows.map(function(){
         var $blogDetails = $(this).find('.post');
-        var title = $blogDetails.find('h1 a').text().toLowerCase();
+        var title = $blogDetails.find('.post__title--index').text().toLowerCase();
         var summary = $blogDetails.find('p').text().toLowerCase();
+        debugger
         return title + " " + summary;
       });
 
