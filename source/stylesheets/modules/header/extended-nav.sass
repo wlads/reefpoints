@@ -1,0 +1,72 @@
+// File copied over from dockyard.com
+
+@import load
+
+.extended-nav--close
+  &:before
+    +transition-duration(.25s)
+    +transition-property(color)
+  &:hover
+    &:before
+      color: $gray
+
+.extended-header-wrap
+  +transition-duration(.35s)
+  +transition-property(margin-top)
+  @include transition-timing-function(ease)
+  height: 800px
+  margin-top: -800px
+  overflow: scroll
+  @media (min-width: 650px) and (min-height: 650px)
+    background-color: rgba($white, .98)
+
+.extended-nav
+  position: relative
+  overflow: hidden
+
+.extended-nav__items-wrap
+  @media (max-width: 550px)
+    margin-top: 67px
+    width: 100%
+    border-top: 1px solid $light-gray
+
+.extended-nav__items
+  margin:
+    right: auto
+    left: auto
+  overflow: auto
+  @media (max-width: 480px)
+    width: 285px
+  @media (min-width: 480px) and (max-width: 680px)
+    width: 325px
+  @media (min-width: 680px)
+    width: 410px
+
+.extended-nav__item
+  border-top:
+    width: 6px
+    style: solid
+    color: $white
+  padding: 20px 6px 22px 6px
+  float: left
+  font-family: 'LatoLight', sans-serif
+  text-transform: uppercase
+  color: $black
+  +transition-duration(.25s)
+  +transition-property(border-color, color)
+  &:hover, &.active
+    border-color: $red
+    color: $red
+  &:not(:first-child)
+    @media (max-width: 480px)
+      margin-left: 2%
+    @media (min-width: 480px)
+      margin-left: 6%
+  @media (max-width: 680px)
+    font-size: 12px
+
+.extended-nav--logo
+  margin-left: -6px
+  padding: 16px
+  position: absolute
+  font-size: 2em

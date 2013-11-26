@@ -5,7 +5,7 @@
       - if current_page.title
         = current_page.title
       - else
-        DockYard ~ Ruby on Rails and Ember.js Development | Boston-based Web &amp; Mobile Software Consultancy
+        DockYard
 
     = stylesheet_link_tag :all
     = javascript_include_tag :all
@@ -17,6 +17,8 @@
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'}
     - if current_page
       %meta{content: "DockYard.com - #{current_page.summary}", name: 'description'}
+      - if current_page.data.googleplus
+        %link{href: "https://plus.google.com/#{current_page.data.googleplus}", rel: 'author' }
       - if current_page.twitter
         %meta{name: 'twitter:creator', content: current_page.twitter}
         %meta{name: 'twitter:card', content: 'summary'}
@@ -27,9 +29,12 @@
     - else
       %meta{content: 'DockYard is a web and mobile software development consultancy for hire based in Boston, MA', name: 'description'}
 
+    %link{href: '//cloud.typography.com/6496052/702882/css/fonts.css', rel: 'stylesheet', type: 'text/css'}
     %link{href: 'http://dockyard.com/humans.txt', rel: 'author'}
-    %link{href: '/apple-touch-icon.png', rel: 'apple-touch-icon'}
-    %link{href: '/apple-touch-icon-precomposed.png', rel: 'apple-touch-icon-precomposed'}
+    %link{href: '/favicon.png', rel: 'shortcut icon', type: 'image/x-icon'}
+    %link{href: '/favicon.png', rel: 'icon', type: 'image/x-icon'}
+    %link{rel: 'apple-touch-icon', :href => '/apple-touch-icon.png'}
+    %link{rel: 'apple-touch-icon-precomposed', :href => '/apple-touch-icon-precomposed.png'}
 
     :javascript
         var _gaq = _gaq || [];
@@ -44,114 +49,45 @@
 
     :plain
       <!--
-                                                                          ..
-                                                                       ,Z+O.
-                                                                    .OO.O..
-                                                                   OZ..O.
-                                                               ..OO..87.
-                                                              .O7O..O...
-                                                            .O...Z~O.
-                                                         .:Z~. ..Z..
-                                                        +O.O   .8..
-                                           ...       .OO.  O  O?.
-                                   ..ZOOOOOOOOOZOOO.ZOZ.   .OO..
-                                 .OOOOOOOOOOOOOOOOOO..Z.   $O.
-                               .ZOOOOOOOOOOOOOOOOOO.  .O..O.
-                              .ZOOOOOOOOOOOOOOOOOOOZ  .:O$.
-                              OZOOOOOOOOOOO...OOOOOOOZ$ZO
-                            ..OOOOOOOOOOOOO  .OOOOOOOOOOO..
-                            .OOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                            .OOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                            OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           :OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-                           ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                           OOOOOOOOOOOOOOOOOOOOOOOOOOOO7OO.
-                           ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ.
-                           OOOOOOZOOOOOOOO.ZOOOOOOOOOOO7OO.
-                           ZOOOOO.OOOOOOOO.OOOOOOOOOO.  OO.
-      ...     ..           OOOOO.OOOOOOOO.OOOOOOOOO.   .O:
-      .OOZ...OOO.        ..OOOOO.OOOOOOO.OOOOOOOOZ.    .Z..
-      .OOOOOOOOO         .ZOOOOO.OOOOO..OOOOOOOO~      .Z
-       .OOOOOOO.         .OOOOOO.OZZ..OOOOOOOOO.      .?O
-        .OOOOOI.        .OOOOOOO..,ZOOOOOOOOOO..      .O.
-         .OOOOZ.      ..ZOOOOOOOOOOOOOOOOOOOO~        .O.
-         .OOOOO= .....ZOOOOOOOOOOOOOOOOOOOOOO.      ..O.
-         ..OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOZ       .,OO.
-          .ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.     ...OO..
-           .OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.   ...OO.
-           ..ZOOOOOOOOOOOOOOOOOOOOOOOOOOOO.... OZO..
-            ...OOOOOOOOOOOOOOOOOOOOOOOOOOZOOOZO...
-                .....~OOOOOOOOOOOOOOOOO:........
-                      ................
+                                                   ..
+                                                 .O.
+                                             .:OO.
+                                            :OOO.
+                                          :OOO:.
+                               ...      :OOOO:
+                         ..ZOOOOOOOOO..OZ.O.
+                         OOOOOOOOOOOOOOOOI
+                        OOOOOOOOOOOOOOOOI,
+                       OOOOOOOO. .OOOOOOOO:
+                       OOOOOOOO   OOOOOOOOO:
+                      OOOOOOOOOOOOOOOOOOOOO.
+                      OOOOOOOOOOOOOOOOOOOOO:
+                     .OOOOOOOOOOOOOOOOOOOOO:
+                     .OOOOOOOOOOOOOOOOOOOOO.
+                      OOOOOOOOOOOOOOOOOOOOO
+                      OOOOOO?:   .OOOOOOOOO
+                     .OOOOO      OOOOOOOOOO
+      ,OO ZO~        OOOOO,     OOOOOOOOOO+
+       OOOOO.        OOOOO     OOOOOOOOOOO+
+        OOO?        OOOOO     .OOOOOOOOOOO:
+         OOO,      OOOOO.    .OOOOOOOOOOOO
+          OOOOOOOOOOOOO.    .OOOOOOOOOOOO.
+           OOOOOOOOOOOO.  .OOOOOOOOOOOOO.
+            8OOOOOOOOOOOOOOOOOOOOOOOODO:
+               :OOOOOOOOOOOOOOOOOOOO::
+
       -->
-  %body#blog{class: current_page.category}
-    %header#mobile-header
-      .wrap
-        %a.header-logo{href: '/'} DockYard
-        .menu-button
-      %ul#mobile-nav.flexnav{data: { breakpoint: 481 } }
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello h
-            %p.main-nav-item Home
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello w
-            %p.main-nav-item Work
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello p
-            %p.main-nav-item Team
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com'}
-            %span.mobile-nav-icon.fontello c
-            %p.main-nav-item Community
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: '/'}
-            %span.mobile-nav-icon.fontello b
-            %p.main-nav-item Blog
-        %li.mobile-nav-link-wrap
-          %a.mobile-nav-link{href: 'http://dockyard.com/hire-us'}
-            %span.mobile-nav-icon.fontello m
-            %p.main-nav-item Contact
 
-    %header#site-header
-      .wrap
-        %h1
-          %a.header-logo{href: 'http://dockyard.com'} DockYard
-        %ul.main-nav
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/work'} Work
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/team'} Team
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/community'} Community
-          %li.nav-work
-            %a.main-nav-item.current{href: '/'} Blog
-          %li.nav-work
-            %a.main-nav-item{href: 'http://dockyard.com/contact'} Contact
+  %body{class: page_classes}
 
-    %section#content
+    = partial 'header'
+
+    .l-wrap
+      %a.logo--reefpoints{href: '/'} ReefPoints
       = yield
+      %h2.nothin Your search returned no results. Perhaps you should try again.
 
-    %footer
-      %ul.footer-links
-        %li
-          %a.link.link-in-footer.fontello{href: 'https://github.com/DockYard', target: '_blank'} g
-        %li
-          %a.link.link-in-footer.fontello{href: 'https://twitter.com/DockYard', target: '_blank'} t
-        %li
-          %a.link.link-in-footer.fontello{href: 'http://reefpoints.dockyard.com/atom.xml', target: '_blank'} r
-        %li
-          %a.link.link-in-footer.fontello{href: 'http://dockyard.com/hire-us', target: '_blank'} m
-
-      %form.footer-form
-        %label.footer-form-label Get in touch with us!
-        %input.footer-form-input{type: 'text', placeholder: 'Email'}
-        %button.footer-form-submit.fontello{href: 'http://dockyard.com/contact'} R
-      %a.footer-number{href: 'tel:855-362-5973'} (855) DOCK-YRD
-      %p.footer-copyright &copy; 2013 DockYard, LLC. All Rights Reserved.
+    = partial 'footer'
 
     %audio.foghorn{preload: 'auto', src: '/sound/foghorn.mp3'}
     :javascript

@@ -1,4 +1,4 @@
-@import compass/css3
+@import load
 
 $border-radius: 5px
 
@@ -6,16 +6,29 @@ $blue: #1f58ce
 $gray: #777777
 $green: #007700
 
-#content .highlight
+code
+  font:
+    family: Menlo, monospace
+    size: 13px
+  +border-radius(3px)
+  background-color: #f6f6f6
+  border: 1px solid #d1d1d1
+  padding: 5px
+  margin:
+    right: 2px
+    left: 2px
+
+.highlight
+  margin: 2em 0
+  position: relative
   border: 1px solid #d1d1d1
   @include border-radius($border-radius)
-  font-size: 12px
-  font-family: Menlo, monospace
+  @include box-shadow(0 1px $white, inset -1px 1px 4px rgba($black, 0.1))
+  font:
+    size: 12px
+    family: Menlo, monospace
   line-height: 16px
   overflow: hidden
-  position: relative
-  margin: 2em 0
-  @include box-shadow(0 1px #ffffff, inset -1px 1px 4px rgba(0, 0, 0, 0.1))
 
   .scroller
     overflow: auto
@@ -29,6 +42,7 @@ $green: #007700
     bottom: 6px
     width: 52px
     height: 20px
+    background-size: 100%
 
   &.javascript .ribbon, &.js .ribbon
     background-image: url('/images/js-ribbon.png')
@@ -39,8 +53,11 @@ $green: #007700
 
 .CodeRay
   width: 100%
+  @include font-smoothing
+  color: #2a5567
   td.line-numbers
     width: 38px
+    min-width: 38px
     text-align: center
     border-right: 1px solid #d1d1d1
     background-color: #f6f6f6
@@ -49,9 +66,7 @@ $green: #007700
     @include border-bottom-left-radius($border-radius)
 
   td.code
-    padding: 8px 0 8px 13px
-
-  /* HTML */
+    padding: 8px 13px
 
   .tag
     color: $blue

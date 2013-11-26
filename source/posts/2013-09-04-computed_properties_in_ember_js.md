@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 'Computed Properties in Ember.Js'
-twitter: twokul 
-github: twokul 
-author: 'Alex Navasardyan'
+twitter: twokul
+github: twokul
+author: Alex Navasardyan
+googleplus: 102932077691986053176
 tags: ember
 social: true
 published: true
@@ -47,7 +48,7 @@ The code above defines a computed property `fullName` by calling
 
 ## Inception
 
-Let's take a look at another example. Say we want to add a description 
+Let's take a look at another example. Say we want to add a description
 computed property to `App.Person`. It will aggregate other properties like
 `fullName`, `age`, `country`:
 
@@ -62,7 +63,7 @@ App.Person = Ember.Object.extend({
   }.property('firstName', 'lastName'),
   description: function() {
     return this.get('fullName') + '; Age: ' +
-           this.get('age') + '; Country: ' + 
+           this.get('age') + '; Country: ' +
            this.get('country');
   }.property('fullName', 'age', 'country')
 });

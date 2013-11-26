@@ -3,6 +3,7 @@ layout: post
 title: "Making of the DockYard Narwin"
 comments: true
 author: Amanda Cheung
+googleplus: 108345108155845063298
 github: acacheung
 legacy_category: design
 social: true

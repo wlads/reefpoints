@@ -1,59 +1,63 @@
 - wrap_layout :layout do
-  %section#post
-    %aside.post-metas-wrap
-      %ul.post-metas
-        %li.post-meta
-          - if current_page.author
-            = link_to current_page.author, author_path(current_page.author), class: 'post-author'
-        %li.post-meta
-          %span
-            - if current_page.twitter
-              %a.link.link-in-post.fontello{href: "http://twitter.com/#{current_page.twitter}", target: '_blank'} t
-            - if current_page.github
-              %a.link.link-in-post.fontello{href: "https://github.com/#{current_page.github}", target: '_blank'} g
-        %li.post-meta.post-date= current_page.date.to_s(:short)
+  .search-wrap
+    %form.search{data: {url: '/'}}
+      %input#search.search__input{name: 'search', type: 'text', value: '', placeholder: 'Search all posts'}
+      %button.search__submit{href: '/'}
+  %nav.blog-topnav
+    = link_to 'Posts', '/', class: "blog-topnav__item #{active_state_for('index')}"
+    = link_to 'Tags', '/tags.html', class: "blog-topnav__item #{active_state_for('tags')}"
+    = link_to 'Authors', '/authors.html', class: "blog-topnav__item #{active_state_for('authors')}"
 
-    .post-div
-      %p.post-meta.post-tags
-        = tag_links(current_page.tags)
-        = link_to 'See all categories', '/categories.html', class: 'tag-link', style: 'float: right'
-      .post-title-wrap
-        %h1.post-title= current_page.title
+  .post-wrap--no-comments
+    %aside.post__metas--post.l-post__metas
+      - if current_page.author
+        - if current_page.twitter
+          %a.icon{href: "http://twitter.com/#{current_page.twitter}", target: '_blank', 'data-icon' => '#'}
+            %span.is-hidden Twitter
+        - if current_page.github
+          %a.icon{href: "https://github.com/#{current_page.github}", target: '_blank', 'data-icon' => '★'}
+            %span.is-hidden GitHub
+        = link_to current_page.author, author_path(current_page.author), class: 'post__meta--author'
+      %p.post__meta--date= current_page.date.to_s(:short)
+      %p.post__meta--tags= tag_links(current_page.tags)
 
-      %current_page.post-content
+    .post.l-post
+      %h1.post__title= current_page.title
+
+      %current_page.post__content
         = yield
+        .post__share
+          .post__share__links
+            %a.twitter-share-button{href: 'https://twitter.com/share', data: { url: "http://reefpoints.dockyard.com#{current_page.url}", via: 'DockYard' }} Tweet
+            :javascript
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+            .g-plusone{data: {size: 'medium', width: '100', href: '#'}}
+            :javascript
+              (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+          %p This article is brought to you by <a class='text-link' href='http://www.dockyard.com/'>DockYard</a>. If you see an issue, please send a <a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/', class='text-link post__issue', target: '_blank'>pull request</a> to contribute.
+          %a.button--post{href: 'http://www.dockyard.com/hire-us'} Hire Us
 
-      %p.issue
-        See a problem with the current page? &nbsp;
-        %a{href: 'https://github.com/dockyard/reefpoints/blob/master/source/posts/', target: '_blank'} Send a pull request to contribute, we'll happily accept!
-
-      %section.post-share
-        %h1 Like the current page? Please share!
-        .social-button
-          %a.twitter-share-button{href: 'https://twitter.com/share', data: { url: "http://reefpoints.dockyard.com#{current_page.url}", via: 'DockYard' }} Tweet
-        :javascript
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
-        .social-button
-          .g-plusone{data: {size: 'medium', width: '100', href: '#'}}
-          :javascript
-            (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
-
-      %section#post-comments
-        - if current_page.comments
-          #disqus_thread
-          :javascript
-            var disqus_shortname = 'reefpoints';
-            (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-          %noscript
-            Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
+  .post__comments
+    - if current_page.comments
+      #disqus_thread
+      :javascript
+        var disqus_shortname = 'reefpoints';
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      %noscript
+        Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus</a>.</noscript>
 
   :javascript
     var path = window.location.pathname.split('/').reverse();
     var postname = path[0].split('.');
     var change = postname[0] + '.md';
     var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
-    $('.issue a').attr('href', newpath);
+    $('.post__issue').attr('href', newpath);
+
+    $('.search').submit(function(event) {
+      event.preventDefault();
+      window.location = $(this).data('url') + '#q=' + $('.search__input').val();
+    });

@@ -1,0 +1,56 @@
+@import load
+
+.post__title--index, .post__meta--author
+  @include hover($blue)
+
+.post__title
+  margin-bottom: 18px
+  display: block
+  line-height: 1.185
+  @media (max-width: 680px)
+    font-size: 2.5em
+  @media (min-width: 680px)
+    font-size: 54px
+
+.post__title--index
+  @extend .post__title
+  @extend .header--thin
+
+.post__metas
+  text-transform: uppercase
+  line-height: 1.5
+  @media (min-width: 600px)
+    padding-top: 1em
+    float: left
+    width: 130px
+    border-top: 4px solid $red
+
+.tags, .authors
+  .post__metas
+    @media (min-width: 680px)
+      display: none
+
+.post__metas--post
+  @extend .post__metas
+  @media (max-width: 600px)
+    margin-bottom: 28px
+
+.post__meta--author, .post__meta--data
+  display: block
+  font-size: 18px
+
+.post__meta--date
+  margin-bottom: 18px
+  display: block
+  color: $gray
+
+.post__meta--tag
+  display: block
+  font-size: 15px
+  color: $blue
+  @include hover(lighten($blue, 10%))
+
+.post__meta--desc
+  margin-bottom: 18px
+  font-size: 18px
+  line-height: 1.8

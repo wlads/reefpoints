@@ -3,6 +3,7 @@ layout: post
 title: "Our Continuous Integration Setup"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: _danmcclain
 github: danmcclain
 legacy_category: ruby

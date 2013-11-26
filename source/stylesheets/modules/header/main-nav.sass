@@ -1,0 +1,39 @@
+// File copied over from dockyard.com
+
+@import load
+
+header
+  width: 100%
+  z-index: 5
+  overflow: hidden
+  @media (min-width: 650px) and (min-height: 650px)
+    position: fixed
+
+.main-nav-wrap
+  height: 65px
+  width: 100%
+  background-color: rgba($white, .5)
+  text-align: center
+  +transition-duration(.25s)
+  +transition-property(background-color)
+
+.logo
+  padding: 17px
+  display: inline-block
+  font:
+    size: 1.875em
+    family: 'Tungsten A', 'Tungsten B'
+
+.club-sandwich, .extended-nav--logo, .extended-nav--close
+  &:before
+    font-family: 'icomoon'
+    content: attr(data-icon)
+
+.club-sandwich, .extended-nav--close
+  padding: 12px
+  position: absolute
+  right: -12px
+  font-size: 40px
+
+.club-sandwich
+  @include hover($gray)

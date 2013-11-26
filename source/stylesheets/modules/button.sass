@@ -1,0 +1,41 @@
+@import load
+
+@mixin button
+  padding: 20px 40px 18px
+  border: none
+  +border-radius(0)
+  background-color: $red
+  font:
+    size: 18px
+    family: NiveauGroteskBold
+  @include font-smoothing
+  color: $white !important
+  letter-spacing: 2px
+  cursor: pointer
+  -webkit-appearance: none
+  +transition-duration(.25s)
+  +transition-property(background-color)
+  &:hover
+    background-color: lighten($red, 5%)
+
+.button--center
+  margin:
+    top: 3em
+    bottom: 3em
+  @include button
+
+.button
+  margin:
+    top: 1em
+    bottom: 1em
+  display: inline-block
+  @include button
+
+.button--post
+  @include button
+  padding:
+    left: 0
+    right: 0
+  display: inline-block
+  width: 130px
+  text-align: center

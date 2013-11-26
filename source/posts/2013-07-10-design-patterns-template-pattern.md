@@ -9,7 +9,7 @@ legacy_category: ruby
 social: true
 summary: 'Exploring design patterns and their use cases'
 published: true
-tags: software design patterns
+tags: design patterns
 ---
 
 ## Introduction

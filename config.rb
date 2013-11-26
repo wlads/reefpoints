@@ -8,8 +8,7 @@ activate :blog do |blog|
   blog.sources = "posts/:year-:month-:day-:title.html"
   blog.paginate = true
   blog.tag_template = 'tag.html'
-  blog.taglink = 'categories/:tag.html'
-  blog.calendar_template = 'calendar.html'
+  blog.taglink = 'tags/:tag.html'
   blog.author_template = 'author.html'
   blog.authorlink = 'authors/:author.html'
 end
@@ -34,18 +33,30 @@ end
 helpers do
   def tag_links(tags)
     tags.map do |tag|
-      link_to tag_path(tag), class: 'tag-link' do
+      link_to tag_path(tag), class: 'post__meta--tag' do
         "#{tag_name(tag)} (#{tag_count(tag)})"
       end
-    end.join(', ')
+    end.join(' ')
   end
 
   def tag_count(tag)
-    page_articles.select { |article| article.tags.include?(tag) }.size
+    blog.articles.select { |article| article.tags.include?(tag) }.size
   end
 
   def tag_name(tag)
     Middleman::Blog::TagPages.tag_name(tag)
+  end
+
+  def active_state_for(path)
+    page_classes.split.first == (path) ? 'active' : nil
+  end
+
+  def active_state_for_sub(path)
+    current_path[0..-6].split('/')[1] == (path.downcase.gsub(/[ ]/, '-')) ? 'active' : nil
+  end
+
+  def if_inside_category(path)
+    (path.split(" ")[1]) != nil ? 'blog-subnav--nested' : nil
   end
 end
 

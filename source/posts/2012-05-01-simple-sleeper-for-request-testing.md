@@ -15,7 +15,9 @@ tags: testing
 We have been using [capybara-webkit](http://github.com/thoughtbot/capybara-webkit) quite a bit.
 Because of the async nature of JavaScript you sometimes have to use
 [sleeps](http://rubydoc.org/stdlib/core/1.9.2/Kernel#sleep-instance_method) in your tests if the action is taking longer than the default
-Capybara 2 second timeout. Lately I have had the need to sleep for up to 30
+Capybara 2 second timeout.
+
+Lately I have had the need to sleep for up to 30
 seconds for certain actions and I wanted a clean visual indicator of how
 much time was remaining. So I whipped up the following:
 

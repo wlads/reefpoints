@@ -3,6 +3,7 @@ layout: post
 title: "Tmux, for fun and profit"
 comments: true
 author: Dan McClain
+googleplus: 102648938707671188640
 twitter: _danmcclain
 github: danmcclain
 legacy_category: ruby

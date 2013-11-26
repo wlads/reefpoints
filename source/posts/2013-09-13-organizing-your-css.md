@@ -3,6 +3,7 @@ layout: post
 title: "Organizing Your CSS"
 comments: true
 author: Amanda Cheung
+googleplus: 108345108155845063298
 github: acacheung
 legacy_category: design
 social: true
@@ -40,12 +41,12 @@ For more information on BEM naming conventions, check out <http://bem.info/metho
 
 ## Modular Principles ##
 
-The most important concept from SMACSS is to decouple CSS from the HTML layout structure. Even though we can cast our styles using something like ``aside ul li a``, we shouldn’t because it is heavily reliant on the nesting of our HTML. If we take that list out of the aside, our styles will break. We want to be able to make edits in our HTML and not have to remember to go into our CSS to change our selectors.  We should only be going into our CSS if we need to make style changes. 
+The most important concept from SMACSS is to decouple CSS from the HTML layout structure. Even though we can cast our styles using something like ``aside ul li a``, we shouldn’t because it is heavily reliant on the nesting of our HTML. If we take that list out of the aside, our styles will break. We want to be able to make edits in our HTML and not have to remember to go into our CSS to change our selectors.  We should only be going into our CSS if we need to make style changes.
 
-Rather than ``aside ul li a``, we should give it a class so it isn’t tied to our HTML and so we can use that set of styles wherever else it should apply. Modularize! I’m always on the lookout for patterns that I can pull into reusable modules. 
+Rather than ``aside ul li a``, we should give it a class so it isn’t tied to our HTML and so we can use that set of styles wherever else it should apply. Modularize! I’m always on the lookout for patterns that I can pull into reusable modules.
 
 ## Where to go from here? ##
 
 If you aren’t sure where a certain style belongs in SMACSS, the most important thing is to be consistent. So give it your best guess and stick with that style throughout the project.
 
-To get more granular, Harry Roberts does a great job pointing out several more ways to clean up your CSS in this blog post: <http://csswizardry.com/2012/11/code-smells-in-css/>. 
+To get more granular, Harry Roberts does a great job pointing out several more ways to clean up your CSS in this blog post: <http://csswizardry.com/2012/11/code-smells-in-css/>.

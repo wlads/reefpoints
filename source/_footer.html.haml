@@ -1,0 +1,44 @@
+.push--big
+
+%footer
+  .l-wrap
+    .footer-group
+      %h3.footer-group__title EVENTS
+      %nav
+        %a.footer__event{href: 'http://wickedgoodruby.com/', target: '_blank'}
+          .footer__event--wgr
+          %h4.footer-title Wicked Good Ruby Conf
+        %a.footer__event{href: 'http://www.meetup.com/Boston-Ember-js/', target: '_blank'}
+          .footer__event--ember
+          %h4.footer-title Boston Ember.js Meetup
+        %a.footer__event{href: 'http://www.meetup.com/uxboston/', target: '_blank'}
+          .footer__event--ux
+          %h4.footer-title UX Boston Meetup
+        %a.footer__event{href: 'http://openhack.github.io/boston/', target: '_blank'}
+          .footer__event--openhack
+          %h4.footer-title OpenHack Boston
+    .footer-group
+      %a{href: '/'}
+        %h3.footer-group__title BLOG
+      %nav.blog-nav--footer
+        - blog.articles[0..2].each do |article|
+          %a.blog-nav-item--footer{href: "#{article.url}"}
+            %h4.footer-title= article.title
+            %p.footer-desc= article.summary
+    .footer-group
+      %a{href: '/hire-us'}
+        %h3.footer-group__title CONTACT
+      %p.footer-desc DockYard HQ is located in Boston. Stop in sometime and meet our team!
+      %a.footer-address.has-border--top{href: 'https://www.google.com/maps/preview#!q=DockYard%2C+Tremont+Street+%23200%2C+Boston%2C+MA&data=!4m15!2m14!1m13!1s0x89e37083512ceab3%3A0x1e657c639844318d!3m8!1m3!1d197180!2d-70.970284!3d42.31435!3m2!1i400!2i802!4f13.1!4m2!3d42.357236!4d-71.061077', target: '_blank'}
+        %p.footer-desc DockYard Inc.
+        %p.footer-desc 101 Tremont Street
+        %p.footer-desc Suite 200
+        %p.footer-desc Boston, MA 02108
+      = link_to 'Get in touch.', 'http://www.dockyard.com/hire-us', class: 'text-link'
+      .footer-social.has-border--top
+        %a.social-nav-item{href: 'https://twitter.com/dockyard', target: '_blank', 'data-icon' => '#'}
+          %span.is-hidden Twitter
+        %a.social-nav-item{href: 'https://github.com/dockyard', target: '_blank', 'data-icon' => '★'}
+          %span.is-hidden GitHub
+        %a.social-nav-item{href: 'http://reefpoints.dockyard.com/atom.xml', target: '_blank', 'data-icon' => '✒'}
+          %span.is-hidden RSS

@@ -8,7 +8,7 @@ github: duggiefresh
 social: true
 summary: 'Exploring design patterns and their use cases'
 published: true
-tags: software design patterns, ruby
+tags: design patterns, ruby
 ---
 
 ## Walls are sooooo last week...
@@ -81,7 +81,7 @@ end
 ```
 Nice. Now let's get grilling! We'll start with some hot dogs.
 
-### 
+###
 
 ```ruby
 grill = Grill.new(HotDog.new)
@@ -100,7 +100,7 @@ grill.grilling # => "Grilling the veggie patties!"
 ```
 
 Wasn't that easy? We were able to switch out items without
-creating a new class of `Grill`. 
+creating a new class of `Grill`.
 
 ## Discussion
 

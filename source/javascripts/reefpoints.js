@@ -11,19 +11,4 @@ $(function(){
     window.playedSound = false;
     $('.show-all-posts').hide();
   });
-
-  // Art directed posts
-  $('.design .post-title-wrap').bigtext({
-    childSelector: '> h1',
-    minfontsize: 40
-  });
-
-  $('.footer-form').submit(function(event) {
-    event.preventDefault();
-    window.location = 'http://dockyard.com/contact#' + $('.footer-form-input').val();
-  });
-
-  $("[id='mobile-nav']").flexNav({
-    animationspeed: 'fast',
-  });
 });

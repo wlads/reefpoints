@@ -1,0 +1,58 @@
+@import load
+
+.logo--reefpoints, .blog-nav__item
+  @include hover($blue)
+
+.logo--reefpoints
+  margin-bottom: 8px
+  display: inline-block
+  font:
+    size: 30px
+    family: 'NiveauGroteskBold', sans-serif
+
+.blog-topnav
+  overflow: auto
+  font-size: 15px
+  @media (max-width: 600px)
+    margin-bottom: 36px
+  @media (min-width: 600px)
+    margin-bottom: 54px
+
+.blog-nav__item
+  padding-bottom: 8px
+  float: left
+  text-transform: uppercase
+
+.blog-topnav__item
+  padding-top: 8px
+  @extend .blog-nav__item
+  &:not(:first-child)
+    margin-left: 26px
+
+.blog-subnav__item
+  width: 100%
+  @extend .blog-nav__item
+  &:not(:first-child)
+    padding-top: 8px
+
+.blog-subnav
+  margin-bottom: 36px
+  width: 200px
+  font-size: 15px
+  overflow: auto
+  @media (min-width: 600px)
+    float: left
+
+.blog-subnav.may-hide, .blog-subnav--nested
+  @media (max-width: 680px)
+    display: none
+
+.blog-subnav__item.active, .blog-topnav__item.active
+  color: $red
+
+.blog-subnav__count
+  padding-left: 20px
+  display: inline-block
+  width: 30px
+  float: right
+  color: darken($light-gray, 10%)

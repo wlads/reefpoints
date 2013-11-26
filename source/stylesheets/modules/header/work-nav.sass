@@ -1,0 +1,48 @@
+// File copied over from dockyard.com
+
+@import load
+
+.work-nav
+  padding:
+    top: 3em
+    bottom: 3em
+  text-align: center
+  line-height: 1.5
+
+.work-nav-item
+  margin:
+    right: auto
+    left: auto
+  padding:
+    top: 2em
+    bottom: 2em
+  display: block
+  max-width: 480px
+  @include hover($gray)
+  &:not(:last-child)
+    border-bottom: 1px dashed $light-gray
+  @media (max-width: 550px)
+    &.active
+      color: $blue
+  @media (min-width: 550px)
+    &.active
+      .work-nav-item__title
+        position: relative
+        &:before
+          margin-left: -50px
+          position: absolute
+          top: -2px
+          font-family: 'icomoon'
+          content: attr(data-icon)
+          color: $red
+
+.work-nav-item__title
+  line-height: 1.2
+  @media (max-width: 550px)
+    font-size: 30px
+  @media (min-width: 550px)
+    font-size: 42px
+
+.work-nav-item__desc
+  @media (min-width: 550px)
+    font-size: 18px
