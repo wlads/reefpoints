@@ -1,0 +1,130 @@
+/* line 65, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+.header--thin, .h1 {
+  font-family: "LatoLight", sans-serif; }
+
+@media (max-width: 600px) {
+  /* line 68, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+  .h1 {
+    font-size: 2.5em; } }
+@media (min-width: 600px) {
+  /* line 68, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+  .h1 {
+    font-size: 72px; } }
+
+/* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+.h2 {
+  line-height: 1.25; }
+  @media (max-width: 860px) {
+    /* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    .h2 {
+      font-size: 1.5em; } }
+  @media (min-width: 860px) {
+    /* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    .h2 {
+      font-size: 2.625em; } }
+
+/* line 21, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+.button--center {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 20px 40px 18px;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background-color: #fb755a;
+  font-size: 18px;
+  font-family: NiveauGroteskBold;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  color: white !important;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color; }
+  /* line 18, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+  .button--center:hover {
+    background-color: #fc8a73; }
+
+/* line 27, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+.button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
+  padding: 20px 40px 18px;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background-color: #fb755a;
+  font-size: 18px;
+  font-family: NiveauGroteskBold;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  color: white !important;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color; }
+  /* line 18, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+  .button:hover {
+    background-color: #fc8a73; }
+
+/* line 34, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+.button--post {
+  padding: 20px 40px 18px;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background-color: #fb755a;
+  font-size: 18px;
+  font-family: NiveauGroteskBold;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  color: white !important;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  padding-left: 0;
+  padding-right: 0;
+  display: inline-block;
+  width: 130px;
+  text-align: center; }
+  /* line 18, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+  .button--post:hover {
+    background-color: #fc8a73; }
