@@ -1,59 +1,59 @@
 @charset "UTF-8";
-/* line 65, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+/* line 65, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
 .header--thin, .h1 {
   font-family: "LatoLight", sans-serif; }
 
 @media (max-width: 600px) {
-  /* line 68, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+  /* line 68, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
   .h1 {
     font-size: 2.5em; } }
 @media (min-width: 600px) {
-  /* line 68, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+  /* line 68, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
   .h1 {
     font-size: 72px; } }
 
-/* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+/* line 75, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
 .h2 {
   line-height: 1.25; }
   @media (max-width: 860px) {
-    /* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    /* line 75, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
     .h2 {
       font-size: 1.5em; } }
   @media (min-width: 860px) {
-    /* line 75, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    /* line 75, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/load.sass */
     .h2 {
       font-size: 2.625em; } }
 
-/* line 3, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+/* line 3, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
 .search__submit {
   display: none; }
 
 @media (max-width: 960px) {
-  /* line 6, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 6, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search-wrap {
     position: relative;
     width: 208px; } }
 @media (min-width: 960px) {
-  /* line 6, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 6, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search-wrap {
     position: absolute;
     top: 0;
     right: 7.05%; } }
 @media (min-width: 960px) and (max-width: 1000px) {
-  /* line 6, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 6, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search-wrap {
     width: 58%; } }
 @media (min-width: 1000px) {
-  /* line 6, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 6, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search-wrap {
     width: 100%;
     max-width: 540px; } }
 
-/* line 20, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+/* line 20, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
 .search {
   margin-right: 50px;
   margin-bottom: 18px; }
-  /* line 24, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 24, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search:after {
     margin-left: 18px;
     position: absolute;
@@ -66,12 +66,12 @@
     -o-font-smoothing: antialiased;
     color: #fb755a; }
     @media (max-width: 600px) {
-      /* line 24, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+      /* line 24, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
       .search:after {
         top: 0;
         right: 0; } }
 
-/* line 37, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+/* line 37, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
 .search__input {
   padding-bottom: 6px;
   border-top: none;
@@ -100,32 +100,32 @@
   -moz-transition-property: border-bottom-color;
   -o-transition-property: border-bottom-color;
   transition-property: border-bottom-color; }
-  /* line 55, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 55, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .search__input:hover, .search__input:active, .search__input:focus {
     border-bottom-color: #2c9dc5; }
 
-/* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+/* line 58, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
 .nothin {
   margin-left: auto;
   display: none;
   text-align: center;
   max-width: 680px; }
   @media (max-width: 860px) {
-    /* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+    /* line 58, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
     .nothin {
       margin-top: 80px; } }
   @media (min-width: 860px) {
-    /* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+    /* line 58, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
     .nothin {
       margin-top: 116px; } }
-  /* line 68, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 68, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .index .nothin {
     margin-right: auto;
     width: 80%; }
-  /* line 72, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+  /* line 72, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
   .tags .nothin, .authors .nothin {
     width: 60%; }
     @media (max-width: 680px) {
-      /* line 72, /Users/acheung/work/reefpoints/source/stylesheets/modules/search.sass */
+      /* line 72, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/search.sass */
       .tags .nothin, .authors .nothin {
         margin-right: auto; } }
