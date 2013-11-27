@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-509d6afb.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c96a81f7.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-55ff872b.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c96a81f7.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -44,10 +44,251 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-11-15T00:00:00Z</updated>
+  <updated>2013-11-27T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Buffers, Windows, Tabs... Oh My! Part 2: Vim Windows</title>
+    <link rel="alternate" href="/2013/11/27/vim-windows.html"/>
+    <id>/2013/11/27/vim-windows.html</id>
+    <published>2013-11-27T00:00:00Z</published>
+    <updated>2013-11-27T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;In the second part of this series, we&amp;#39;ll be covering Vim windows. Windows are simply
+the &lt;strong&gt;viewports&lt;/strong&gt; into &lt;a href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"&gt;buffers&lt;/a&gt;
+and I&amp;#39;m 110% sure that they are a huge part of your daily workflow.&lt;/p&gt;
+
+&lt;p&gt;Yes, there are numerous plugins that make our lives a lot easier, but let&amp;#39;s
+dive into a powerful defaults that Vim offers us.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ll first cover the basics, and then learn some neat window management commands.&lt;/p&gt;
+
+&lt;h2&gt;Starting a Vim Session&lt;/h2&gt;
+
+&lt;h3&gt;One File&lt;/h3&gt;
+
+&lt;p&gt;Vim windows are not complicated to use; if you want to open a file, &lt;code&gt;file_one.txt&lt;/code&gt;, simply:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ vim file_one.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Multiple Files&lt;/h3&gt;
+
+&lt;p&gt;If you want to open multiple files, &lt;code&gt;file_one.txt&lt;/code&gt;, &lt;code&gt;file_two.txt&lt;/code&gt;, and &lt;code&gt;file_three.txt&lt;/code&gt;, you can
+do the following:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ vim file_one.txt file_two.txt file_three.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This opens the first file, &lt;code&gt;file_one.txt&lt;/code&gt;, into a window.
+Files &lt;code&gt;file_two.txt&lt;/code&gt; and &lt;code&gt;file_three.txt&lt;/code&gt; are opened as inactive buffers.&lt;/p&gt;
+
+&lt;h3&gt;Multiple Horizontal Splits&lt;/h3&gt;
+
+&lt;p&gt;Say you want to view multiple files at once. Good news! You can
+open all files and place them into &lt;strong&gt;horizontal splits&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ vim -o file_one.txt file_two.txt file_three.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Multiple Vertical Splits&lt;/h3&gt;
+
+&lt;p&gt;Don&amp;#39;t like horizontal splits? Better news! You can open them all as &lt;strong&gt;vertical splits&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ vim -O file_one.txt file_two.txt file_three.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Within a Vim Session&lt;/h2&gt;
+
+&lt;p&gt;There are two main arrangements for splitting windows, vertical and horizontal. Let&amp;#39;s say
+we&amp;#39;re editing a file and want to open up another file. We can do the following:&lt;/p&gt;
+
+&lt;h3&gt;Horizontal Splits&lt;/h3&gt;
+
+&lt;p&gt;This will open &lt;code&gt;another_file.txt&lt;/code&gt; as &lt;strong&gt;horizontal split&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:split another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You can use this abbreviation:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:sp another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In addition, you can specify how large the new split will be by passing
+in a numerical value. This value will represent the line numbers shown within the
+split.&lt;/p&gt;
+
+&lt;p&gt;For example, this will reveal 25 lines of &lt;code&gt;another_file.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:25sp another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lastly, you can open a &lt;strong&gt;split&lt;/strong&gt; window with &lt;code&gt;CTRL-W s&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Vertical Splits&lt;/h3&gt;
+
+&lt;p&gt;You can open files as &lt;strong&gt;vertical splits&lt;/strong&gt; as well.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:vsplit another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Which is abbreviated as:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:vsp another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Vertical splits&lt;/strong&gt; can also take in a numerical value, which corresponds to the
+character width of the column.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:30vsp another_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finally, you can open a &lt;strong&gt;vertical split&lt;/strong&gt; with &lt;code&gt;CTRL-W v&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;New Files&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s create a new file.&lt;/p&gt;
+
+&lt;p&gt;Use, &lt;code&gt;:new&lt;/code&gt; to create a new file inside the current window.
+After you save the file, it will be created within your current directory.
+You can also use the abbreviation &lt;code&gt;:n&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:n new_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If we specify the path, we can also create files inside existing directories.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:n ../existing_dir/new_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Use &lt;code&gt;:vnew&lt;/code&gt; or &lt;code&gt;:vne&lt;/code&gt; to create a new file inside a new &lt;strong&gt;vertical split&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;:vne new_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lastly, we can use &lt;code&gt;CTRL-w n&lt;/code&gt; to create a new file inside a &lt;strong&gt;horizontal split&lt;/strong&gt;.
+Note that we have not specified a file name. Upon saving the file with &lt;code&gt;:w&lt;/code&gt;, we
+can give the file a name. Such that:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;# CTRL-w n
+
+:w this_is_a_new_file.txt
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Switching Windows&lt;/h3&gt;
+
+&lt;p&gt;Switching windows ain&amp;#39;t hard either!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w h&lt;/code&gt; = Switch to the window to the left&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w j&lt;/code&gt; = Switch to the window below&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w k&lt;/code&gt; = Switch to the window above&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w l&lt;/code&gt; = Switch to the window to the right&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Moving Windows&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;ve realized that window placement is incredibly useful
+when pairing with another person. Here&amp;#39;s are a some ways to adjust
+the windows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w T&lt;/code&gt; = Move current window to a new tab&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w r&lt;/code&gt; = &lt;em&gt;Rotates&lt;/em&gt; the windows from left to right - only if the windows
+are split vertically&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w R&lt;/code&gt; = &lt;em&gt;Rotates&lt;/em&gt; the windows from right to left - only if the windows
+are split vertically&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w H&lt;/code&gt; = Move current window the far left and use the full height of the screen&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w J&lt;/code&gt; = Move current window the far bottom and use the full width of the screen&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w K&lt;/code&gt; = Move current window the far top and full width of the screen&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w L&lt;/code&gt; = Move current window the far right and full height of the screen&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Resizing Windows&lt;/h3&gt;
+
+&lt;p&gt;Sometimes windows open up funny or are rendered incorrectly after separating from
+an external monitor. Or maybe you want to make more room for an important file.&lt;/p&gt;
+
+&lt;p&gt;We can easily solve those problems with the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w =&lt;/code&gt; = Resize the windows &lt;em&gt;equally&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w &amp;gt;&lt;/code&gt; = Incrementally increase the window to the right
+
+&lt;ul&gt;
+&lt;li&gt;Takes a parameter, e.g. &lt;code&gt;CTRL-w 20 &amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w &amp;lt;&lt;/code&gt; = Incrementally increase the window to the left
+
+&lt;ul&gt;
+&lt;li&gt;Takes a parameter, e.g. &lt;code&gt;CTRL-w 20 &amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w -&lt;/code&gt; = Incrementally decrease the window&amp;#39;s height
+
+&lt;ul&gt;
+&lt;li&gt;Takes a parameter, e.g. &lt;code&gt;CTRL-w 10 -&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL-w +&lt;/code&gt; = Incrementally increase the window&amp;#39;s height
+
+&lt;ul&gt;
+&lt;li&gt;Takes a parameter, e.g. &lt;code&gt;CTRL-w 10 +&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;That was a lot to cover, but I do believe incorporating these commands into
+your workflow will prove pretty helpful. Thanks for reading!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Think</title>
     <link rel="alternate" href="/2013/11/15/think.html"/>
@@ -1078,385 +1319,8 @@ namespaces, or accessible from certain authentication state. All in the
 name of serving up static page goodness!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Design Patterns: The Composite Pattern</title>
-    <link rel="alternate" href="/2013/10/01/design-patterns-composite-pattern.html"/>
-    <id>/2013/10/01/design-patterns-composite-pattern.html</id>
-    <published>2013-10-01T00:00:00Z</published>
-    <updated>2013-10-01T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Coffee Coffee&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re anything like me, you&amp;#39;ll agree that every morning needs to start
-out with a cup of coffee. And, if you&amp;#39;re anything like me, you&amp;#39;ll have
-at least three different coffee making apparatuses. And, if you&amp;#39;re
-anything like me... you&amp;#39;ll soon realize you may have an addiction.&lt;/p&gt;
-
-&lt;p&gt;Joke aside, each coffee contraption requires a specific procedure
-to be completed in order to brew a cup of joe; each having multiple parts,
-taking differing amounts of time, requiring various numbers of steps, etc.&lt;/p&gt;
-
-&lt;p&gt;Our coffee making process can be described by a basic example
-of the &lt;em&gt;Composite&lt;/em&gt; method pattern.&lt;/p&gt;
-
-&lt;h2&gt;The Best Part of Waking Up is a Composite Pattern in Your Cup&lt;/h2&gt;
-
-&lt;p&gt;We can start by thinking of each coffee maker and coffee related task as a &lt;em&gt;subclass&lt;/em&gt; of
-our &lt;code&gt;CoffeeRoutine&lt;/code&gt;. &lt;code&gt;CoffeeRoutine&lt;/code&gt; will be known as the &lt;em&gt;component&lt;/em&gt;, the base
-class or interface that possesses the commonalities of simple and complex
-objects. &lt;code&gt;CoffeeRoutine#time&lt;/code&gt; is the common trait among all
-coffee related classes.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CoffeeRoutine&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
-    &lt;span class="instance-variable"&gt;@task&lt;/span&gt; = task
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
-    &lt;span class="float"&gt;0.0&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Next, we&amp;#39;ll create a couple of &lt;em&gt;leaf&lt;/em&gt; classes, which represent
-indivisble portions of our pattern. Here are a couple of &lt;em&gt;leaf&lt;/em&gt; classes
-that come to mind: &lt;code&gt;GrindCoffee&lt;/code&gt; and &lt;code&gt;BoilWater&lt;/code&gt;. These &lt;em&gt;leaf&lt;/em&gt; classes are
-our most basic steps to making coffee.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;GrindCoffee&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Grinding some coffee!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
-    &lt;span class="float"&gt;0.5&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;BoilWater&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Boiling some water!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
-    &lt;span class="float"&gt;4.0&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;AddCoffee&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Adding in the coffee!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time&lt;/span&gt;
-    &lt;span class="float"&gt;1.0&lt;/span&gt;
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;g = GrindCoffee.new
-
-g.task    # =&amp;gt; 'Grinding some coffee!'
-g.time    # =&amp;gt; 0.5
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now, we can get to the namesake of the pattern: the &lt;em&gt;composite&lt;/em&gt; class. A
-&lt;em&gt;composite&lt;/em&gt; class is a &lt;em&gt;component&lt;/em&gt; that also contain
-&lt;em&gt;subcomponents&lt;/em&gt;. &lt;em&gt;Composite&lt;/em&gt; classes can be made up of smaller
-&lt;em&gt;composite&lt;/em&gt; classes or &lt;em&gt;leaf&lt;/em&gt; classes.&lt;/p&gt;
-
-&lt;p&gt;Our various coffee making apparatuses can be thought of as &lt;em&gt;composites&lt;/em&gt;.
-Let&amp;#39;s check out the &lt;code&gt;FrenchPress&lt;/code&gt; class:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;FrenchPress&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;, &lt;span class="symbol"&gt;:steps&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the French press to make coffee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="instance-variable"&gt;@steps&lt;/span&gt; = []
-    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;.new
-    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
-    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_step&lt;/span&gt;(step)
-    steps &amp;lt;&amp;lt; step
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;remove_step&lt;/span&gt;(step)
-    steps.delete step
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time_required&lt;/span&gt;
-    total_time = &lt;span class="float"&gt;0.0&lt;/span&gt;
-    steps.each { |step| total_time += step.time }
-    total_time
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;However, we can simplify the &lt;code&gt;FrenchPress&lt;/code&gt; class by pulling out the
-&lt;em&gt;composite&lt;/em&gt; functionality into its own class.&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;CompositeTasks&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CoffeeRoutine&lt;/span&gt;
-  attr_reader &lt;span class="symbol"&gt;:task&lt;/span&gt;, &lt;span class="symbol"&gt;:steps&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;(task)
-    &lt;span class="instance-variable"&gt;@steps&lt;/span&gt; = []
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;add_step&lt;/span&gt;(step)
-    steps &amp;lt;&amp;lt; step
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;remove_step&lt;/span&gt;(step)
-    steps.delete step
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;time_required&lt;/span&gt;
-    total_time = &lt;span class="float"&gt;0.0&lt;/span&gt;
-    steps.each { |step| total_time += step.time }
-    total_time
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now we can create &lt;em&gt;composite&lt;/em&gt; coffee makers easily... They&amp;#39;ll look
-something like this:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;FrenchPress&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CompositeTasks&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the FrenchPress to make coffee!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
-    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;.new
-    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
-    &lt;span class="comment"&gt;# ... Omitted actual steps to make coffee from a French press ...&lt;/span&gt;
-    &lt;span class="comment"&gt;# ... Imagine PressPlunger class has been defined already ...&lt;/span&gt;
-    add_step &lt;span class="constant"&gt;PressPlunger&lt;/span&gt;.new
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;DripMaker&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;CompositeTasks&lt;/span&gt;
-  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;initialize&lt;/span&gt;
-    &lt;span class="keyword"&gt;super&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Using the DripMaker to make coffee!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-    add_step &lt;span class="constant"&gt;GrindCoffee&lt;/span&gt;.new
-    add_step &lt;span class="constant"&gt;BoilWater&lt;/span&gt;
-    add_step &lt;span class="constant"&gt;AddCoffee&lt;/span&gt;.new
-    &lt;span class="comment"&gt;# ... Imagine PressStartButton class has been defined already ...&lt;/span&gt;
-    add_step &lt;span class="constant"&gt;PressStartButton&lt;/span&gt;.new
-  &lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Swell... now we can call the &lt;code&gt;FrenchPress&lt;/code&gt; and &lt;code&gt;DripMaker&lt;/code&gt; coffee makers.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;frenchpress = FrenchPress.new
-
-# =&amp;gt; #&amp;lt;FrenchPress:0x007f88fcf46410
-       @task=&amp;quot;Using the FrenchPress to make coffee!!!&amp;quot;,
-       @steps=
-         [#&amp;lt;GrindCoffee:0x007f88fcf46370 @step=&amp;quot;Grinding some coffee!&amp;quot;&amp;gt;,
-         #&amp;lt;BoilWater:0x007f88fcf46320 @step=&amp;quot;Boiling some water!&amp;quot;&amp;gt;]&amp;gt;
-         #&amp;lt;AddCoffee:0x007f88fcf46329 @step=&amp;quot;Adding in the coffee!&amp;quot;&amp;gt;]&amp;gt;
-         #&amp;lt;PressPlunger:0x007f88fcf46098 @step=&amp;quot;Pressing the plunger down!&amp;quot;&amp;gt;]&amp;gt;
-
-dripmaker = DripMaker.new
-
-# =&amp;gt; #&amp;lt;DripMaker:0x137t88fcf57109
-       @task=&amp;quot;Using the DripMaker to make coffee!!!&amp;quot;,
-       @steps=
-         [#&amp;lt;GrindCoffee:0x007f88fcf46370 @step=&amp;quot;Grinding some coffee!&amp;quot;&amp;gt;,
-         #&amp;lt;BoilWater:0x007f88fcf52520 @step=&amp;quot;Boiling some water!&amp;quot;&amp;gt;]&amp;gt;
-         #&amp;lt;AddCoffee:0x007f88fcf46123 @step=&amp;quot;Adding in the coffee!&amp;quot;&amp;gt;]&amp;gt;
-         #&amp;lt;PressStartButton:0x007f88fcf46432 @step=&amp;quot;Pushing the start button!&amp;quot;&amp;gt;]&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now we can also check the time required for each coffee maker.&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;frenchpress.time_required # =&amp;gt; 12.4
-dripmaker.time_required   # =&amp;gt; 8.5
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Discussion&lt;/h2&gt;
-
-&lt;p&gt;Implementing the &lt;em&gt;Composite&lt;/em&gt; pattern is pretty simple.&lt;/p&gt;
-
-&lt;p&gt;We create a &lt;em&gt;component&lt;/em&gt; class that ties the numerous simple and
-complex characteristics together. In our example, &lt;code&gt;CoffeeRoutine&lt;/code&gt;
-defines an elementary method &lt;code&gt;#time&lt;/code&gt; and each child class implements
-its own amount.&lt;/p&gt;
-
-&lt;p&gt;Next, we create &lt;em&gt;leaf&lt;/em&gt; classes, &lt;code&gt;AddCoffee&lt;/code&gt;, &lt;code&gt;BoilWater&lt;/code&gt;, and &lt;code&gt;GrindCoffee&lt;/code&gt;,
-that share the same characteristics with one another. Remember that it&amp;#39;s the nature
-of &lt;em&gt;leaf&lt;/em&gt; classes to be simple. If you happen across a &lt;em&gt;leaf&lt;/em&gt; class that
-could be broken up, it might potentially be a &lt;em&gt;composite&lt;/em&gt; class in disguise.
-Break up those actions into individual &lt;em&gt;leaf&lt;/em&gt; classes and turn the original class
-into a &lt;em&gt;composite&lt;/em&gt;. All of our &lt;em&gt;leaf&lt;/em&gt; classes had a &lt;code&gt;#time&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;composite&lt;/em&gt; class handles all the subtasks, essentially using the child classes
-at its will. We can see that our two &lt;em&gt;composite&lt;/em&gt; classes and their methods, &lt;code&gt;FrenchPress#time_required&lt;/code&gt;
-and &lt;code&gt;DripMaker#time_required&lt;/code&gt;. manipulate the method &lt;code&gt;#time&lt;/code&gt; from the &lt;em&gt;leaf&lt;/em&gt; classes.
-Ultimately, our coffee makers are able to treat each step,
-&lt;code&gt;GrindCoffee&lt;/code&gt;, &lt;code&gt;BoilWater&lt;/code&gt; and &lt;code&gt;AddCoffee&lt;/code&gt; uniformly.&lt;/p&gt;
-
-&lt;p&gt;Hope this helps you with your morning routine!&lt;/p&gt;
-</content>
-  </entry>
 </feed>
-<h2 class='nothin'>Your search returned no results. Perhaps you should try again.</h2></div><div class='push--big'></div><footer><div class='l-wrap'><div class='footer-group'><h3 class='footer-group__title'>EVENTS</h3><nav><a class='footer__event' href='http://wickedgoodruby.com/' target='_blank'><div class='footer__event--wgr'></div><h4 class='footer-title'>Wicked Good Ruby Conf</h4></a><a class='footer__event' href='http://www.meetup.com/Boston-Ember-js/' target='_blank'><div class='footer__event--ember'></div><h4 class='footer-title'>Boston Ember.js Meetup</h4></a><a class='footer__event' href='http://www.meetup.com/uxboston/' target='_blank'><div class='footer__event--ux'></div><h4 class='footer-title'>UX Boston Meetup</h4></a><a class='footer__event' href='http://openhack.github.io/boston/' target='_blank'><div class='footer__event--openhack'></div><h4 class='footer-title'>OpenHack Boston</h4></a></nav></div><div class='footer-group'><a href='/'><h3 class='footer-group__title'>BLOG</h3></a><nav class='blog-nav--footer'><a class='blog-nav-item--footer' href='/2013/11/15/think.html'><h4 class='footer-title'>Think</h4><p class='footer-desc'>Don't do what others tell you to do without thinking about it</p></a><a class='blog-nav-item--footer' href='/2013/11/11/capybara-extensions.html'><h4 class='footer-title'>Introducing Capybara-Extensions</h4><p class='footer-desc'>Write more descriptive tests with additional finders and matchers for Capybara.</p></a><a class='blog-nav-item--footer' href='/2013/11/05/design-patterns-command-pattern.html'><h4 class='footer-title'>Design Patterns: The Command Pattern</h4><p class='footer-desc'>Exploring design patterns and their use cases</p></a></nav></div><div class='footer-group'><a href='/hire-us'><h3 class='footer-group__title'>CONTACT</h3></a><p class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</p><a class='footer-address has-border--top' href='https://www.google.com/maps/preview#!q=DockYard%2C+Tremont+Street+%23200%2C+Boston%2C+MA&amp;data=!4m15!2m14!1m13!1s0x89e37083512ceab3%3A0x1e657c639844318d!3m8!1m3!1d197180!2d-70.970284!3d42.31435!3m2!1i400!2i802!4f13.1!4m2!3d42.357236!4d-71.061077' target='_blank'><p class='footer-desc'>DockYard Inc.</p><p class='footer-desc'>101 Tremont Street</p><p class='footer-desc'>Suite 200</p><p class='footer-desc'>Boston, MA 02108</p></a><a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='footer-social has-border--top'><a class='social-nav-item' data-icon='#' href='https://twitter.com/dockyard' target='_blank'><span class='is-hidden'>Twitter</span></a><a class='social-nav-item' data-icon='★' href='https://github.com/dockyard' target='_blank'><span class='is-hidden'>GitHub</span></a><a class='social-nav-item' data-icon='✒' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'><span class='is-hidden'>RSS</span></a></div></div></div></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>
+<h2 class='nothin'>Your search returned no results. Perhaps you should try again.</h2></div><div class='push--big'></div><footer><div class='l-wrap'><div class='footer-group'><h3 class='footer-group__title'>EVENTS</h3><nav><a class='footer__event' href='http://wickedgoodruby.com/' target='_blank'><div class='footer__event--wgr'></div><h4 class='footer-title'>Wicked Good Ruby Conf</h4></a><a class='footer__event' href='http://www.meetup.com/Boston-Ember-js/' target='_blank'><div class='footer__event--ember'></div><h4 class='footer-title'>Boston Ember.js Meetup</h4></a><a class='footer__event' href='http://www.meetup.com/uxboston/' target='_blank'><div class='footer__event--ux'></div><h4 class='footer-title'>UX Boston Meetup</h4></a><a class='footer__event' href='http://openhack.github.io/boston/' target='_blank'><div class='footer__event--openhack'></div><h4 class='footer-title'>OpenHack Boston</h4></a></nav></div><div class='footer-group'><a href='/'><h3 class='footer-group__title'>BLOG</h3></a><nav class='blog-nav--footer'><a class='blog-nav-item--footer' href='/2013/11/27/vim-windows.html'><h4 class='footer-title'>Buffers, Windows, Tabs... Oh My! Part 2: Vim Windows</h4><p class='footer-desc'>A painless tutorial on Vim windows</p></a><a class='blog-nav-item--footer' href='/2013/11/15/think.html'><h4 class='footer-title'>Think</h4><p class='footer-desc'>Don't do what others tell you to do without thinking about it</p></a><a class='blog-nav-item--footer' href='/2013/11/11/capybara-extensions.html'><h4 class='footer-title'>Introducing Capybara-Extensions</h4><p class='footer-desc'>Write more descriptive tests with additional finders and matchers for Capybara.</p></a></nav></div><div class='footer-group'><a href='/hire-us'><h3 class='footer-group__title'>CONTACT</h3></a><p class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</p><a class='footer-address has-border--top' href='https://www.google.com/maps/preview#!q=DockYard%2C+Tremont+Street+%23200%2C+Boston%2C+MA&amp;data=!4m15!2m14!1m13!1s0x89e37083512ceab3%3A0x1e657c639844318d!3m8!1m3!1d197180!2d-70.970284!3d42.31435!3m2!1i400!2i802!4f13.1!4m2!3d42.357236!4d-71.061077' target='_blank'><p class='footer-desc'>DockYard Inc.</p><p class='footer-desc'>101 Tremont Street</p><p class='footer-desc'>Suite 200</p><p class='footer-desc'>Boston, MA 02108</p></a><a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='footer-social has-border--top'><a class='social-nav-item' data-icon='#' href='https://twitter.com/dockyard' target='_blank'><span class='is-hidden'>Twitter</span></a><a class='social-nav-item' data-icon='★' href='https://github.com/dockyard' target='_blank'><span class='is-hidden'>GitHub</span></a><a class='social-nav-item' data-icon='✒' href='http://reefpoints.dockyard.com/atom.xml' target='_blank'><span class='is-hidden'>RSS</span></a></div></div></div></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
   
