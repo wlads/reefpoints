@@ -22,7 +22,7 @@ class Middleman::Blog::TagPages
 
   def manipulate_resource_list(resources)
     resources + @app.blog.tags.map do |tag, articles|
-      path = self.class.link(@app, tag)
+      path = self.class.link(@app.blog.options, tag)
 
       p = ::Middleman::Sitemap::Resource.new(
         @app.sitemap,

@@ -1,3 +1,8 @@
+class ::Middleman::Configuration::ConfigurationManager
+  attr_accessor :authorlink
+  attr_accessor :author_template
+end
+
 class ::Middleman::Blog::Options
   attr_accessor :authorlink
   attr_accessor :author_template

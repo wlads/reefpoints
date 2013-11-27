@@ -1,4 +1,5 @@
 require 'builder'
+require 'byebug'
 require 'middleman-blog/tag_pages'
 
 Dir['./lib/*'].each { |f| require f }
