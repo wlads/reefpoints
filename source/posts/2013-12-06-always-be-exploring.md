@@ -6,7 +6,7 @@ author: 'Logan Faerber'
 twitter: 'LoganFaerber'
 social: true
 summary: 'Being true to yourself and creating passionate work.'
-published: false
+published: true
 tags: illustration, art, design
 ---
 
