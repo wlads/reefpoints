@@ -14,7 +14,7 @@ tags: vim, workflow
 One of the things that I wish Vim had by default is the ability to create
 directories and files at the same time. Last month at our local
 [OpenHack meetup](http://openhack.github.io/), I had a conversation about
-it with a fellow developer and we both concluded that it wouldn't be *too*
+it with a fellow developer and we both concluded that it wouldn't be too
 difficult to write something up.
 
 Well, I'm happy to introduce [easydir.vim](https://github.com/dockyard/vim-easydir)!
