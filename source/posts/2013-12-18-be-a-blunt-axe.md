@@ -6,7 +6,7 @@ author: 'Logan Faerber'
 twitter: 'LoganFaerber'
 social: true
 summary: 'Giving good feedback without being too aggressive.'
-published: false
+published: true
 tags: illustration, art, design
 ---
 
