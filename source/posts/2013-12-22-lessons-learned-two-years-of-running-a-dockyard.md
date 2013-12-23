@@ -487,6 +487,21 @@ of thinking how we were going to make the next few payrolls. Every time
 we got lucky, someone came along at the right moment and bailed us out.
 I would like to think we are out of those woods, we'll see.
 
+One was I have changed how DockYard operates is moving away from always
+new clients to retaining clients. I had lunch with [Andy
+Singleton](https://www.assembla.com/spaces/andy/wiki) and he stressed
+that we convinced me that we were throwing away money by always looking
+for new clients. The really successful consultancies had several large
+contracts that would span multiple years. It was obvious but I had not
+seen it until it was spelled out for me. So we are going to look to
+retain and provide on going services for out existing clients. If
+someone is reading this and looking to get started that was probably
+one of our biggest mistakes over the past two years; find a client that
+you might even need to take a financial hit on but is always there to
+help you keep the lights on. Looking back it seem crazy that we were
+able to not just survive but thrive given out direction of always
+looking for greenfield projects.
+
 In the next few years I don't want to see the same rate of growth we've
 previously had. I've said several times to my team I don't want to grow
 to more than 20. Any more than that and we'll have to consider some
