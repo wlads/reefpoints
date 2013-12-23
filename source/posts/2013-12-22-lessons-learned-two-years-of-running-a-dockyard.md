@@ -28,7 +28,6 @@ of December. I'm happy with that, we doubled revenue. I have set a
 revenue goal of $2,500,000 for 2014. Assuming there are no major screw ups
 next year we should exceed that goal.
 
-
 Revenue is great and all but kind of useless information without our
 profit margin. We have averaged around 20% profit margin over the past
 two years. This year we were averaging in the mid to high 20s before we
