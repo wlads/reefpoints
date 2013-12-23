@@ -29,6 +29,11 @@ revenue goal of $2,500,000 for 2014. Assuming there are no major screw ups
 next year we should exceed that goal.
 
 
+Revenue is great and all but kind of useless information without are
+profit margin. We have averaged around 20% profit margin over the past
+two years. This year we were averaging in the mid to high 20s before we
+hit a lull at the end of Novemeber.
+
 ### The Negative Stuff
 
 Let's get the negative stuff out of the way first so we can focus on positives
