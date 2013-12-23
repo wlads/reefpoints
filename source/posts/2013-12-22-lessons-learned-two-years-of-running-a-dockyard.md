@@ -25,7 +25,7 @@ officially began in January of 2012  so we had a full calendar year to
 earn. From what I've been told this is pretty good for the first year as
 a consultancy. In our second year we broke $1,500,000 at the beginning
 of December. I'm happy with that, we doubled revenue. I have set a
-revenue goal of $2,500,000 for 2013. Assuming there is no major screwups
+revenue goal of $2,500,000 for 2013. Assuming there are no major screw ups
 next year we should exceed that goal.
 
 
@@ -33,7 +33,7 @@ next year we should exceed that goal.
 
 Let's get the negative stuff out of the way first the focus on positives
 for the remainder of the post. We could have done better the previous year, we could have done better
-this year. We lost money due to decisions that I made throghout the
+this year. We lost money due to decisions that I made throughout the
 past two years. Those choices include two bad clients, a mistake in the
 direction of our growth, and a lack of experience of running a
 conference.
@@ -49,11 +49,11 @@ lawyer on your side. We didn't have someone that was willing to fight
 for us, it cost us big time. We have since retained the law firm of
 [Gesmer Updegrove](http://gesmer.com). They're pricey but it worth it.
 
-However, before we ever engaged with our current laywer we unfortunately
+However, before we ever engaged with our current lawyer we unfortunately
 had another run with a bad client. This time to the tune of $20,000.
 That hit came this year. What is really strange is that I knew walking
 into this deal it was going to end badly, and I voiced my concerns
-internally to my people at the time but I still OK'd the deal and it
+internally to my people at the time but I still OKed the deal and it
 unfolded just as I thought it would. It was a dumb move and we paid the
 price of it. 
 
@@ -77,13 +77,13 @@ little groups with any budget at the time.
 
 My time at the DNC I worked with some awesome people. Nathan Woodhull,
 Chris Gill, Brent Kimmel, Leo Zhadanovsky, and Nicole Aro to name a few.
-I've been lucky enough to work with a few of them since. Unfotunately I
+I've been lucky enough to work with a few of them since. Unfortunately I
 also got to work with some really shitty people too. I don't think its
 their fault, the political tech space is a real drag. It doesn't 
 attract a lot of talented people because the money to work on the inside
 is very bad compared with any other job out there. The tone you get is
-that it is a privillage that you should be thankful for, and perhaps
-that is the case. But that leaves a vaccuum that gets filled with people
+that it is a privilege that you should be thankful for, and perhaps
+that is the case. But that leaves a vacuum that gets filled with people
 that frankly don't know the ass from a hole in the ground. Many of these
 people are now in charge of making technology decisions in many
 organizations. I have no interest in working with those types of people
@@ -92,17 +92,17 @@ again, nor do I want to subject my employees to work with them.
 #### Politics
 
 I've always considered myself "on the Blue team" but the past year has
-really pissed me off. NSA, Healcare.gov, drone strikes, and the
+really pissed me off. NSA, Healthcare.gov, drone strikes, and the
 President trying everything he can muster to go to war with Syria. I
 walked into our Biz Developer's office one day and I said enough was
-enough. I could not in good consceince do work for the Democratic Party
+enough. I could not in good conscience do work for the Democratic Party
 because of these issues.
 
 ### Just Dumb Wasted Money
 
 [We ran a conference this year](http://wickedgoodruby.com) and due to my
 lack of experience running an event like this (and to be honest, being
-taken advantage of by the venue we held the conf at) we lost $15,000.
+taken advantage of by the venue we held the conference at) we lost $15,000.
 
 There were also downtimes when we didn't have enough money coming in,
 but I will get into detail about this later in this post. (and the
@@ -110,7 +110,7 @@ changes we've made to hopefully avoid this in the future)
 
 Overall I am pretty proud with our revenue over the past two years.
 We didn't start with an "industry superstar" on our team or with a
-significant OSS project in our pocket, nor were we on the "inside" of
+significant open source project in our pocket, nor were we on the "inside" of
 the Boston tech scene. We've built a very strong brand for ourselves
 very quickly.
 
@@ -124,12 +124,12 @@ Ember open source world. We have a good number of projects that people
 are actively using. I encourage all of our developers to contribute back
 to not just our projects but projects we use on a regular basis.
 
-### Personel
+### Personnel
 
 I've made missteps on hirings, that is also costly. I'll get into this
 later in the article.
 
-Ok, enough with the negative stuff. Let's get into what we did right.
+OK, enough with the negative stuff. Let's get into what we did right.
 
 ## Great Clients
 
@@ -143,7 +143,7 @@ This is how I have boiled it down to the clients we want to work with:
    first thing we look for then you are probably not someone we want to
 work with. We are running a business and there are plenty of great ideas
 out there and plenty of great people. But the sad fact is many of them
-cannot afford to build the applicaitons they dream of, at least not
+cannot afford to build the applications they dream of, at least not
 through us. Financially vetting clients is very important. It makes no
 sense to waste our time in contract negotiations with someone that
 cannot afford our services. We try to discover this as soon as possible
@@ -220,32 +220,32 @@ first post but I didn't want to reflect on it yet. In retrospect it was a
 long-term mistake but perhaps the correct short-term decision. We were
 not at the size when I was really thinking too long-term. I was not
 getting from him what I needed and it was weighing me down mentally, but
-this was my fault. I was not communicating to Russ proparly what my
+this was my fault. I was not communicating to Russ properly what my
 expectations were. Thankfully we're still friends and grab drinks every
-now and then. If the roles were reveresed I don't think I would be as
+now and then. If the roles were reversed I don't think I would be as
 magnanimous.
 
 I've since fired two others. One was my fault, the other was not. It is
 a strange thing to fire someone. People try to make it nice by saying
 "let them go", but in reality you've shit-canned them. When you are
-employing someone, especailly at a small company, you feel a sense of
+employing someone, especially at a small company, you feel a sense of
 responsibility for them. You are paying them money and provide them with
 health care they use to take care of their family. I wish we could
 magically double the salaries of all of our employees but of course we
 cannot afford that. When it came time to firing someone it weighed on me
 and I considered the implications. I never did it lightly, but
-considering the alterative they have turned out the be the correct move.
+considering the alternative they have turned out the be the correct move.
 Even with Russ, he's done much better without DockYard than he was doing
 with DockYard.
 
 ### Losing People
 
 We have so far lost just one employee, one of our DC partners Chris
-Gill. He got a job with the Deptartment of Revenue that paid well beyond
+Gill. He got a job with the Department of Revenue that paid well beyond
 what we could afford. I was actually pretty proud of him that we landed
 it. I have left enough jobs in my career to know that I never want to be angry
 at someone that has decided to leave DockYard. If it is time to go, it
-is time to go. Considering the number of Jr. devs we have been training
+is time to go. Considering the number of junior developers we have been training
 up I would like to think of it as an accomplishment of ours to see
 people "graduate" from DockYard and go on to do great things in the
 industry. (but don't leave us too quick!)
@@ -291,21 +291,21 @@ has gone a long way to help sell our brand.
 ## Design
 
 Since our first "real" contract with [Openbay](http://openbay.com) we
-worked with an outside designer, Steven Trevethan. He was recommended to
-me by two seperate people. Steve along with his partner Logan Faerberer
-were starting their own consultancy Dobot. Steve and I got along prety
+worked with an outside designer, Steven Trevathan. He was recommended to
+me by two separate people. Steve along with his partner Logan Faerber
+were starting their own consultancy Dobot. Steve and I got along 
 well and I brought them back for a few more contracts. We bonded over
-our mutaul disdain for many of the people in the [C3 space at
+our mutual disdain for many of the people in the [C3 space at
 CIC](http://www.cambridgecoworking.com/aboutc3.html) and so when we
 finally got our own office last year I invited Steven and Logan to work
 from there. We even brought them along to check out the office spaces
-we were interested in. This past Spring it became obvioud that we needed
-someone fulltime at DockYard to take ownership of our design. Likewise
-Dobot was also looking for a lead engineer. It would be funny it is
-wasn't so stupid that we were literally sharing the same office, workd
+we were interested in. This past Spring it became obvious that we needed
+someone full-time at DockYard to take ownership of our design. Likewise
+Dobot was also looking for a lead engineer. It would be funny if it
+wasn't so stupid that we were literally sharing the same office, worked
 on several projects, and were still looking for one another. Steve and I
-grabbed drinks and I laid it out: let's do this. He agreed and we brough
-Steve on as our Creative Director and a partner. Logan came on as a lead illustrator. It
+grabbed drinks and I laid it out: let's do this. He agreed and we
+brought Steve on as our Creative Director and a partner. Logan came on as a lead illustrator. It
 is the best move we've made to date. Steve and Logan quickly took
 ownership of the design direction of DockYard and have along with Amanda
 and Angelo put out a [website that really represents who we
@@ -329,7 +329,7 @@ After hiring Crowther I knew the next non-technical hire I wanted was an
 office manager. What I did might be considered overboard.
 
 I put an ad on Craigslist. We got over 200 responses. I brought the list
-down to around 100 and sent out invites and asked peoiple to schedule
+down to around 100 and sent out invites and asked people to schedule
 themselves for an interview through
 [YouCanBook.me](https://gb.youcanbook.me/) I blocked out over two weeks
 of time, and broke the interviews into 20 minute blocks. Over 60
@@ -340,7 +340,7 @@ person was to see a ton of candidates and waited to see what stuck. The
 person we hired was the 2nd person to walk through the door, Mariel
 Ebrahimi. We got real lucky, and I think I even came out of that
 interview and told everyone that we were probably going to hire her.
-However, considering she was only the 2nd candiate I still went through
+However, considering she was only the 2nd candidate I still went through
 the next two weeks of interviews. It became obvious that she was well
 beyond anybody else coming in and over the past few months she has kept
 DockYard running smoothly. Being able to let go of these small things in
@@ -370,17 +370,17 @@ space to grow into. We decided upon a 2,200 square foot 2nd floor space
 in Downtown Crossing. I always wanted an office there because of how
 centrally located it was. Thankfully Downtown Crossing ends up being
 much cheaper real-estate than many of the other places around Boston.
-(although this is arleady changing)
+(although this is already changing)
 
-We had some difficulty moving in. We were supposed to start the buildout
+We had some difficulty moving in. We were supposed to start the build-out
 in July of 2012. I was getting married in late August. The owner kept
 deflecting us, and deflecting. I went on my honeymoon and when I got
-back I asked him what the deal was. He said, "Ok, it's no longer an
+back I asked him what the deal was. He said, "OK, it's no longer an
 active crime scene so I can tell you what happened."
 
 It turns out that our office is a floor above a jewelery store. The
 floor in our office is concrete. Two guys broke down a side door to the
-vacant space, brough some mini-jackhammers and drilled a man-size hole
+vacant space, brought some mini-jackhammers and drilled a man-size hole
 into the store below. They then repelled down with ropes and started to
 clean the place out. There were some silent alarms that were set off and
 they got busted. Exactly why it took them 2 months to clear the place to
@@ -389,8 +389,8 @@ was OK with it.
 
 Anyway, we finally got into the space in October of 2012. Thankfully no
 more jewelery heists have happened. We host a lot of community events at
-our office and I'm really happy with that. Currenty we organize [Boston
-Ember](http://www.meetup.com/Boston-Ember-js/), [Boston Openhack](http://openhack.github.io/boston/), [UX Boston](http://www.meetup.com/uxboston/), run classes for [Girls Develop It Boston](http://www.girldevelopit.com/chapters/boston), and
+our office and I'm really happy with that. Currently we organize [Boston
+Ember](http://www.meetup.com/Boston-Ember-js/), [Boston OpenHack](http://openhack.github.io/boston/), [UX Boston](http://www.meetup.com/uxboston/), run classes for [Girls Develop It Boston](http://www.girldevelopit.com/chapters/boston), and
 host [Boston
 Postgres](http://www.meetup.com/Boston-PostgreSQL-Users-Group-BPUG/).
 
