@@ -41,13 +41,13 @@ conference.
 ### Bad Clients
 
 In the previous post I mentioned how DockYard nearly folded from the
-start due to a bad client. That nightmare lasted of a year and half and
+start due to a bad client. That nightmare lasted for a year and half and
 was finally settled in June of this year. It ended up being nearly a
 $50,000 loss for us. I am convinced this is due entirely to poor legal
-counsel, I cannot stress enough how important it is to have a competent
+counsel; I cannot stress enough how important it is to have a competent
 lawyer on your side. We didn't have someone that was willing to fight
 for us, it cost us big time. We have since retained the law firm of
-[Gesmer Updegrove](http://gesmer.com). They're pricey but it worth it.
+[Gesmer Updegrove](http://gesmer.com). They're pricey, but it's worth it.
 
 However, before we ever engaged with our current lawyer we unfortunately
 had another run with a bad client. This time to the tune of $20,000.
@@ -59,7 +59,7 @@ price of it.
 
 One of the plans for DockYard was to quickly grow into the political
 tech space in Washington, DC. I have experience working in political
-tech, I brought on a guy who I worked with at the DNC, we hired another
+tech, I brought on a guy who I worked with at the DNC, and we hired another
 guy I worked with on a political campaign. We started making
 connections. It didn't work out. Three reasons:
 
@@ -84,7 +84,7 @@ attract a lot of talented people because the money to work on the inside
 is very bad compared with any other job out there. The tone you get is
 that it is a privilege that you should be thankful for, and perhaps
 that is the case. But that leaves a vacuum that gets filled with people
-that frankly don't know the ass from a hole in the ground. Many of these
+that frankly don't know their ass from a hole in the ground. Many of these
 people are now in charge of making technology decisions in many
 organizations. I have no interest in working with those types of people
 again, nor do I want to subject my employees to work with them.
@@ -94,7 +94,7 @@ again, nor do I want to subject my employees to work with them.
 I've always considered myself "on the Blue team" but the past year has
 really pissed me off. NSA, Healthcare.gov, drone strikes, and the
 President trying everything he can muster to go to war with Syria. I
-walked into our Biz Developer's office one day and I said enough was
+walked into our Business Developer's office one day and I said enough was
 enough. I could not in good conscience do work for the Democratic Party
 because of these issues.
 
@@ -135,12 +135,12 @@ OK, enough with the negative stuff. Let's get into what we did right.
 
 We have had some awesome clients over the past year and a half. I am
 pretty much happy with everyone we've had with the exception of the two
-clients I alluded to above. We have kept a balance of Startups and
+clients I mentioned above. We have kept a balance of Startups and
 Enterprise, but we have been very careful about the people we work with.
 This is how I have boiled it down to the clients we want to work with:
 
 1. Can they afford us? If you think it is callous to put this as the
-   first thing we look for then you are probably not someone we want to
+   first thing we look for, then you are probably not someone we want to
 work with. We are running a business and there are plenty of great ideas
 out there and plenty of great people. But the sad fact is many of them
 cannot afford to build the applications they dream of, at least not
@@ -155,14 +155,14 @@ equity.
    No. 1 if I could. While it is very important to make sure we have
 clients that can pay us so we can pay our employees it is equally
 important to make sure we have projects that our employees actually want
-to work on. This is something that I butt heads with our Biz Developer
-early on. He was not coming form a developer background and at the start
+to work on. This is something that I butt heads with our Business Developer
+early on. He was not coming from a developer background and at the start
 did not know what projects good and which were shit, from an engineering
-perspective. Consultancies are feeding ground for other companies to
-poach from. We try an retain our employees by paying well and by keeping
+perspective. Consultancies are a feeding ground for other companies to
+poach from. We try to retain our employees by paying well and by keeping
 them on interesting and challenging projects.
 
-3. Does this client help us get to a bigger client? This is something we
+3. Is this a project that helps us grow? This is something we
    have, over the past six months, started to think about when speaking
 with clients. Is this a project we would be proud to put in our
 portfolio? Is this a project we can write a case-study on? Is this a
@@ -209,7 +209,7 @@ wrong I was. We'll see.
 For the most part I've been very lucky with the team I've hired.
 Recently we just had our holiday party and I thought on my way to the
 dinner that this is the team I've always wanted. I can't imagine that is
-a very common thing for people to think. And that's not the saw we
+a very common thing for people to think. And that's not to say we
 haven't had missteps.
 
 ### Firing People
@@ -234,15 +234,17 @@ health care they use to take care of their family. I wish we could
 magically double the salaries of all of our employees but of course we
 cannot afford that. When it came time to firing someone it weighed on me
 and I considered the implications. I never did it lightly, but
-considering the alternative they have turned out the be the correct move.
+considering the alternative, each firing has turned out to be the correct move.
 Even with Russ, he's done much better without DockYard than he was doing
-with DockYard.
+with DockYard. Sometimes its not a good fit, I am guilty of letting
+things sit too long. I have learned to be quicker about acting upon
+this.
 
 ### Losing People
 
 We have so far lost just one employee, one of our DC partners Chris
 Gill. He got a job with the Department of Revenue that paid well beyond
-what we could afford. I was actually pretty proud of him that we landed
+what we could afford. I was actually pretty proud of him that he landed
 it. I have left enough jobs in my career to know that I never want to be angry
 at someone that has decided to leave DockYard. If it is time to go, it
 is time to go. Considering the number of junior developers we have been training
@@ -261,7 +263,7 @@ started a search for a Business Developer. At first I hatched a plan to
 leverage the recruiters of Boston. It made sense: they already were
 talking to companies but it was difficult for those companies to hire.
 Why not just partner with DockYard and rent our services to those
-companies? At 8% the math actually worked out in their favor, none of
+companies? At 8% the math actually worked out in their favor, however none of
 them bit. I'm still struggling with this one and I think it speaks to
 the state of recruitment. It was a good business opportunity but they
 could not think outside the box.
@@ -274,8 +276,8 @@ position. So I put an ad out for a someone in sales looking to take on a
 larger role, a key role for the growth of a young company. I got about
 50 resumes and brought in two people for interview. I liked them both
 and settled on the one with the better references. It was a great
-decision. Our Biz Developer Dan Crowther has been huge for us. We butt
-heads on a few things, he's right sometimes and I'm right sometimes. But
+decision. Our Business Developer Dan Crowther has been huge for us. We butt
+heads on a few things; he's right sometimes and I'm right sometimes. But
 the fact is we would not be where we are today without him.
 
 It took him about six months to really get comfortable with the
@@ -303,7 +305,7 @@ we were interested in. This past Spring it became obvious that we needed
 someone full-time at DockYard to take ownership of our design. Likewise
 Dobot was also looking for a lead engineer. It would be funny if it
 wasn't so stupid that we were literally sharing the same office, worked
-on several projects, and were still looking for one another. Steve and I
+together on several projects, and were still looking for one another. Steve and I
 grabbed drinks and I laid it out: let's do this. He agreed and we
 brought Steve on as our Creative Director and a partner. Logan came on as a lead illustrator. It
 is the best move we've made to date. Steve and Logan quickly took
@@ -324,7 +326,7 @@ could get. It has worked, very well.
 
 This is one that I was told multiple times that I should do sooner than
 later. I am very bad with context switching, I have to either do all
-business stuff one day or all engineering. I cannot do both effectively.
+business stuff one day or all of the engineering. I cannot do both effectively.
 After hiring Crowther I knew the next non-technical hire I wanted was an
 office manager. What I did might be considered overboard.
 
@@ -363,14 +365,14 @@ going on in the CIC in Cambridge. It is a terrible working environment,
 especially if you are a consultancy. You get bugged all the time by the
 worst people. The space is **incredibly** loud. If you go there to work
 on the weekends its fantastic. But it became obvious very quickly that
-we needed an office. We worked with [Jon
+we needed our own office. We worked with [Jon
 Frisch](https://twitter.com/jfrisch21) at [T3
-Advisors](http://www.t3advisors.com/). We were growing and so we need
-space to grow into. We decided upon a 2,200 square foot 2nd floor space
+Advisors](http://www.t3advisors.com/). We were growing and we need
+space to grow *into*. We decided upon a 2,200 square foot 2nd floor space
 in Downtown Crossing. I always wanted an office there because of how
-centrally located it was. Thankfully Downtown Crossing ends up being
-much cheaper real-estate than many of the other places around Boston.
-(although this is already changing)
+centrally located it was. Thankfully, Downtown Crossing ends up being
+much cheaper real-estate than many of the other places around Boston 
+(although this is already changing).
 
 We had some difficulty moving in. We were supposed to start the build-out
 in July of 2012. I was getting married in late August. The owner kept
@@ -399,8 +401,9 @@ Postgres](http://www.meetup.com/Boston-PostgreSQL-Users-Group-BPUG/).
 If I had to start DockYard from scratch today I would do it differently.
 The number one thing I would do different is not agree to a partnership
 until 6 months out. I would have awarded co-founder status to those
-that started but I think when you first get going you don't really
-understand what the roles will really be. Assigning roles on day zero
+that started, but I would have held off on awarding partnerships
+until everyone settled into their roles. I think when you first get going you don't really
+understand what those roles are. Assigning roles on day zero
 and expecting everyone to just stick to these roles is not realistic if
 this is everyone's first rodeo. Trial by fire is the best way to define
 the roles. Once that is done then the partnership can be established.
