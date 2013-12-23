@@ -481,7 +481,7 @@ got a wife that makes a good living and we've been able to lean on that
 when I've needed to take myself off of payroll. If our situation were
 different I am not confident that DockYard would be around today, at
 least not in its currently form. I've been able to take risks that
-others might night be able to.
+others might not be able to.
 
 ## Conclusion
 
