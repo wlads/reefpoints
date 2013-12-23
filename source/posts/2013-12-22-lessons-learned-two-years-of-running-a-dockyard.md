@@ -28,10 +28,11 @@ of December. I'm happy with that, we doubled revenue. I have set a
 revenue goal of $2,500,000 for 2014. Assuming there are no major screw ups
 next year we should exceed that goal.
 
-Revenue is great and all but kind of useless information without are
+
+Revenue is great and all but kind of useless information without our
 profit margin. We have averaged around 20% profit margin over the past
 two years. This year we were averaging in the mid to high 20s before we
-hit a lull at the end of Novemeber.
+hit a lull at the end of November.
 
 ### The Negative Stuff
 
@@ -57,9 +58,9 @@ However, before we ever engaged with our current lawyer we unfortunately
 had another run with a bad client. This time to the tune of $20,000.
 That hit came this year. What is really strange is that I knew walking
 into this deal it was going to end badly, and I voiced my concerns
-internally to my people at the time but I still OKed the deal and it
+internally to my people at the time but I still OK'd the deal and it
 unfolded just as I thought it would. It was a dumb move and we paid the
-price of it. 
+price of it.
 
 One of the plans for DockYard was to quickly grow into the political
 tech space in Washington, DC. I have experience working in political
@@ -79,7 +80,7 @@ little groups without any budget at the time.
 
 #### The People
 
-My time at the DNC I worked with some awesome people. Nathan Woodhull,
+During my time at the DNC I worked with some awesome people. Nathan Woodhull,
 Chris Gill, Brent Kimmel, Leo Zhadanovsky, and Nicole Aro to name a few.
 I've been lucky enough to work with a few of them since. Unfortunately I
 also got to work with some really shitty people too. I don't think its
@@ -159,7 +160,7 @@ equity.
    No. 1 if I could. While it is very important to make sure we have
 clients that can pay us so we can pay our employees it is equally
 important to make sure we have projects that our employees actually want
-to work on. This is something that I butt heads with our Business Developer
+to work on. This is something that I butted heads over with our Business Developer
 early on. He was not coming from a developer background and at the start
 did not know what projects were good and which were shit, from an engineering
 perspective. Consultancies are a feeding ground for other companies to
@@ -174,7 +175,7 @@ project that helps us make a sales pitch to an even larger client?
 
 If we can stick to these three items when choosing clients I think we'll
 be fine. That is not always the case and from time to time we have had
-to sacrifice up the chain. So The first to go is #3, then #2, and
+to sacrifice up the chain. So the first to go is #3, then #2, and
 finally #1 if we are desperate.
 
 ## Our Tech Stack
@@ -345,7 +346,7 @@ designs for our clients.
 While earlier I mentioned how it was very difficult to differentiate
 ourselves from other Rails shops, the one place we can totally do that
 is with design. Ultimately design sells much better than engineering.
-The engineering part of our contracts bring in more money, so we have
+The engineering part of our contracts bring in more money, so we have to
 make certain that the design contracts we pick up will convert to
 engineering contracts. We look at design as the best Lead Generator we
 could get. It has worked, very well.
@@ -424,7 +425,7 @@ I was pretty annoyed with all of the entrepreneurial bullshit that was
 going on in the CIC in Cambridge. It is a terrible working environment,
 especially if you are a consultancy. You get bugged all the time by the
 worst people. The space is **incredibly** loud. If you go there to work
-on the weekends its fantastic. But it became obvious very quickly that
+on the weekends it's fantastic. But it became obvious very quickly that
 we needed our own office. We worked with [Jon
 Frisch](https://twitter.com/jfrisch21) at [T3
 Advisors](http://www.t3advisors.com/). We were growing and we need
@@ -491,14 +492,14 @@ of thinking how we were going to make the next few payrolls. Every time
 we got lucky, someone came along at the right moment and bailed us out.
 I would like to think we are out of those woods, we'll see.
 
-One was I have changed how DockYard operates is moving away from always
+One way I have changed how DockYard operates is moving away from always
 new clients to retaining clients. I had lunch with [Andy
 Singleton](https://www.assembla.com/spaces/andy/wiki) and he stressed
-that we convinced me that we were throwing away money by always looking
+and convinced me that we were throwing away money by always looking
 for new clients. The really successful consultancies had several large
 contracts that would span multiple years. It was obvious but I had not
 seen it until it was spelled out for me. So we are going to look to
-retain and provide on going services for out existing clients. If
+retain and provide ongoing services for out existing clients. If
 someone is reading this and looking to get started that was probably
 one of our biggest mistakes over the past two years; find a client that
 you might even need to take a financial hit on but is always there to
