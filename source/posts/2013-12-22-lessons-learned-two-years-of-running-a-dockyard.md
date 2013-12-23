@@ -76,7 +76,7 @@ rightly so. There is no reason for campaigns or political groups to
 spend money on development efforts when the next election cycle is two
 years away. While we spoke with a lot of people that were interested in
 what we could do from a technical perspective there simply were very
-little groups with any budget at the time.
+little groups without any budget at the time.
 
 #### The People
 
@@ -316,7 +316,7 @@ wouldn't have known about otherwise. And most important I can focus on
 other things.
 
 We sell DockYard on the quality of our work. While we started as a
-technology company design has become a large part of who DockYard is and
+technology company, design has become a large part of who DockYard is and
 has gone a long way to help sell our brand.
 
 ## Design
@@ -453,7 +453,7 @@ was OK with it.
 Anyway, we finally got into the space in October of 2012. Thankfully no
 more jewelery heists have happened. We host a lot of community events at
 our office and I'm really happy with that. Currently we organize [Boston
-Ember](http://www.meetup.com/Boston-Ember-js/), [Boston OpenHack](http://openhack.github.io/boston/), [UX Boston](http://www.meetup.com/uxboston/), run classes for [Girls Develop It Boston](http://www.girldevelopit.com/chapters/boston), and
+Ember](http://www.meetup.com/Boston-Ember-js/), [Boston OpenHack](http://openhack.github.io/boston/), [UX Boston](http://www.meetup.com/uxboston/), run classes for [Girl Develop It Boston](http://www.girldevelopit.com/chapters/boston), and
 host [Boston
 Postgres](http://www.meetup.com/Boston-PostgreSQL-Users-Group-BPUG/).
 
