@@ -212,6 +212,30 @@ dinner that this is the team I've always wanted. I can't imagine that is
 a very common thing for people to think. And that's not to say we
 haven't had missteps.
 
+### Finding The Right People
+
+For us I hire for cultural fit. We have a good mix of senior and junior
+talent. If we hire a junior developer I only hire people that show an
+ability to learn fast. I really dislike white-board interviews so the
+face-to-face interview is for me to get a sense of their personality.
+Then I will ask some general knowledge questions to get a sense of where
+they are at skill-wise. I will then send the candidate away for a week
+and give them a project to create. I try to pick criteria that puts them
+outside of their comfort zone. Have they done TDD before, have they done
+Ember? I will ask them to challenge themselves and I will ask for access
+to the GitHub repository. One indicator I use is how soon did the
+candidate start this project? If it was started right away that shows an
+eagerness to complete the work. Was is started and finished the night
+before? This might show a tendency to procrastinate and get things in at
+the last minute. While these may be outside factors I do ask about them
+if they are extreme during the follow-up interview.
+
+Recently we have been able to build enough of a name for ourselves in
+the development community where we have started to attract some good
+senior development talent. We are putting a pause on hiring junior
+developers and will likely focus on more senior developers for the next
+year.
+
 ### Firing People
 
 I've gotten permission to talk about this from Russ. Russ was a
@@ -358,6 +382,38 @@ DockYard look to me for what they should be doing next. It's time
 consuming and only gets worse as we grow. We'll see what happens in the
 next few months.
 
+## Building Our Own Products
+
+We've tried it once and we failed. That simple. We failed for several
+reasons:
+
+1. We could not work on the product consistently. This killed us. We
+   were putting in days here and there in between client work. I was
+putting in hours on the weekend and this was burning me out for the rest
+of the week.
+
+2. It was not an idea that was very good beyond concept. We built out a
+   marketplace for Heroku called
+[Igata](https://github.com/dockyard/igata) It would allow developers to
+sell pre-baked applications for deployment on Heroku. I liked the
+challenge of building the initial technology. But when I began to think
+about the long term implications of maintaining a marketplace
+application I lost all interest.
+
+3. Heroku was too much of an obstacle. I actually went out to Heroku and
+   met with some of their people to pitch them on the idea. They liked
+it but it became clear that if we really wanted to make money we should
+just make our own Heroku and not lose the money on hosting. Then it was
+an easy mental jump to "let's forget about this marketplace and just
+compete with Heroku" which of course is a dumb idea.
+
+So we bailed on the application and open sourced it. We are going to
+attempt another product built, this time we are going to save up a
+financial war chest so we can dedicate the proper amount of time to the project.
+I don't mind losing money on projects like this. They are fun to build
+and I think we come out the other end as a better shop once we dog food
+our own process.
+
 ## Getting Our First Office
 
 I was pretty annoyed with all of the entrepreneurial bullshit that was
@@ -421,3 +477,26 @@ when I've needed to take myself off of payroll. If our situation were
 different I am not confident that DockYard would be around today, at
 least not in its currently form. I've been able to take risks that
 others might night be able to.
+
+## Conclusion
+
+Any success we have had is due in part to not just the great team we
+have but honestly sometimes just luck. There have been several times in
+the past two years where I have not been able to sleep due to the stress
+of thinking how we were going to make the next few payrolls. Every time
+we got lucky, someone came along at the right moment and bailed us out.
+I would like to think we are out of those woods, we'll see.
+
+In the next few years I don't want to see the same rate of growth we've
+previously had. I've said several times to my team I don't want to grow
+to more than 20. Any more than that and we'll have to consider some
+serious restructuring of the company. I also feel at that number the
+small team we have starts to feel more like a "real company". We just
+recently made an offer to a new member of our team that will be joining
+in January. I have not met her yet and that is strange to me, but is
+also an indicator that we have grown to that point that these things
+will happen.
+
+I look forward to hearing the feedback from this article. I'm sure there
+will be people that disagree with some of the things I've said and the
+decisions we've made.
