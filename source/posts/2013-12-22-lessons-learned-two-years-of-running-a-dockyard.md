@@ -31,7 +31,7 @@ next year we should exceed that goal.
 
 ### The Negative Stuff
 
-Let's get the negative stuff out of the way first the focus on positives
+Let's get the negative stuff out of the way first so we can focus on positives
 for the remainder of the post. We could have done better the previous year, we could have done better
 this year. We lost money due to decisions that I made throughout the
 past two years. Those choices include two bad clients, a mistake in the
