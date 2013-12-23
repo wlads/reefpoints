@@ -7,7 +7,7 @@ twitter: 'bcardarella'
 github: bcardarella
 social: true
 summary: 'Brian talks about what has worked, what has not worked, and the changes that have been made at DockYard during its first two years'
-published: false
+published: true
 tags: opinion, business, consulting
 ---
 
