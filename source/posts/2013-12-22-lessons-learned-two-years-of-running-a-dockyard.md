@@ -25,7 +25,7 @@ officially began in January of 2012  so we had a full calendar year to
 earn. From what I've been told this is pretty good for the first year as
 a consultancy. In our second year we broke $1,500,000 at the beginning
 of December. I'm happy with that, we doubled revenue. I have set a
-revenue goal of $2,500,000 for 2013. Assuming there are no major screw ups
+revenue goal of $2,500,000 for 2014. Assuming there are no major screw ups
 next year we should exceed that goal.
 
 
