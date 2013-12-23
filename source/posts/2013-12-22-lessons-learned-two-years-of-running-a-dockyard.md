@@ -157,7 +157,7 @@ clients that can pay us so we can pay our employees it is equally
 important to make sure we have projects that our employees actually want
 to work on. This is something that I butt heads with our Business Developer
 early on. He was not coming from a developer background and at the start
-did not know what projects good and which were shit, from an engineering
+did not know what projects were good and which were shit, from an engineering
 perspective. Consultancies are a feeding ground for other companies to
 poach from. We try to retain our employees by paying well and by keeping
 them on interesting and challenging projects.
