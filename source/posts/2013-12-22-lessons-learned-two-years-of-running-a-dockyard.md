@@ -498,7 +498,7 @@ and convinced me that we were throwing away money by always looking
 for new clients. The really successful consultancies had several large
 contracts that would span multiple years. It was obvious but I had not
 seen it until it was spelled out for me. So we are going to look to
-retain and provide ongoing services for out existing clients. If
+retain and provide ongoing services for our existing clients. If
 someone is reading this and looking to get started that was probably
 one of our biggest mistakes over the past two years; find a client that
 you might even need to take a financial hit on but is always there to
