@@ -7,7 +7,7 @@ twitter: bcardarella
 github: bcardarella
 social: true
 published: true
-tags: office, accouncement
+tags: office, announcement
 ---
 
 ![Romina Vargas](/images/rvargas.jpg)
