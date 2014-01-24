@@ -81,14 +81,18 @@
 
   %body{class: page_classes}
 
-    = partial 'header'
+    %header
+      = partial 'header'
+    .push--header
 
-    .l-wrap
+    .l-wrap.reefpoints-wrap
       %a.logo--reefpoints{href: '/'} ReefPoints
       = yield
       %h2.nothin Your search returned no results. Perhaps you should try again.
 
-    = partial 'footer'
+    .push--footer
+    %footer
+      = partial 'footer'
 
     %audio.foghorn{preload: 'auto', src: '/sound/foghorn.mp3'}
     :javascript

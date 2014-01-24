@@ -7,6 +7,7 @@ $light-gray: #e5e5e5
 $gray: #8d8d8d
 $black: #000000
 $blue: #2c9dc5
+$l-blue: #58c2e9
 $red: #fb755a
 
 @mixin wrap($max-width)
@@ -15,13 +16,6 @@ $red: #fb755a
     left: auto
   width: 90%
   max-width: $max-width
-  position: relative
-
-@mixin font-smoothing($val: antialiased)
-  -webkit-font-smoothing: $val
-  -moz-font-smoothing: $val
-  -ms-font-smoothing: $val
-  -o-font-smoothing: $val
 
 @mixin circle-border($diameter, $color)
   margin:
@@ -62,19 +56,17 @@ $red: #fb755a
   &:hover
     color: $color
 
-.header--thin
-  font-family: 'LatoLight', sans-serif
+%font-smoothing
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  -ms-font-smoothing: antialiased
+  -o-font-smoothing: antialiased
 
-.h1
-  @extend .header--thin
-  @media (max-width: 600px)
-    font-size: 2.5em
-  @media (min-width: 600px)
-    font-size: 72px
+%kern
+  letter-spacing: 3px
+  text-transform: uppercase
 
-.h2
-  line-height: 1.25
-  @media (max-width: 860px)
-    font-size: 1.5em
-  @media (min-width: 860px)
-    font-size: 2.625em
+%strong
+  display: block
+  font-family: 'NiveauGroteskBold', sans-serif
+  line-height: 1.5

@@ -2,10 +2,16 @@
 
 @import load
 
-.social-nav
+.social-links
   text-align: center
 
-.social-nav-item
+.social-links--footer
+  margin-top: 1.5em
+  padding-top: .75em
+  @include has-border(top)
+  text-indent: -3px
+
+.social-link
   display: inline-block
   width: 40px
   font-size: 2.5em
@@ -13,5 +19,5 @@
   @include hover(lighten($gray, 10%))
   &:before
     font-family: 'icomoon'
-    +font-smoothing
+    @extend %font-smoothing
     content: attr(data-icon)
