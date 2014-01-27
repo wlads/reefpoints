@@ -14,15 +14,33 @@
 .l-wrap--x-narrow
   @include wrap(250px)
 
-.l-left
-  display: inline-block
+.l-col-wrap
+  @media (min-width: 900px)
+    overflow: auto
 
-.l-center
-  margin:
-    right: auto
-    left: auto
-  display: block
+.l-colspan
+  max-width: 680px
+  @media (min-width: 900px)
+    margin-right: 10%
+    float: left
+    width: 60%
 
-.l-desktop
-  @media (max-width: 480px)
-    display: none
+  h4
+    padding:
+      top: 65px
+      bottom: .75em
+
+%has-col3
+  @media (min-width: 900px)
+    float: left
+
+.l-col3--narrow
+  @extend %has-col3
+  width: 185px
+  @media (max-width: 899px)
+    margin-top: 80px
+
+.l-col3--wide
+  @extend %has-col3
+  @media (min-width: 900px)
+    width: 30%

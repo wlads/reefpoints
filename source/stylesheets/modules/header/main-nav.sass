@@ -5,17 +5,18 @@
 header
   width: 100%
   z-index: 5
-  overflow: hidden
   @media (min-width: 650px) and (min-height: 650px)
     position: fixed
 
 .main-nav-wrap
-  height: 65px
-  width: 100%
+  @include has-border(bottom)
   background-color: rgba($white, .5)
-  text-align: center
   +transition-duration(.25s)
   +transition-property(background-color)
+
+.main-nav
+  position: relative
+  text-align: center
 
 .logo
   padding: 17px
@@ -33,7 +34,10 @@ header
   padding: 12px
   position: absolute
   right: -12px
-  font-size: 40px
-
-.club-sandwich
-  @include hover($gray)
+  font-size: 41px
+  &:before
+    +transition-duration(.25s)
+    +transition-property(color)
+  &:hover
+    &:before
+      color: $gray

@@ -2,19 +2,20 @@
 
 @import load
 
-@mixin button
+.button, .button--center
   padding:
     top: 20px
     bottom: 18px
+  width: 180px
   border: none
   +border-radius(0)
   background-color: $red
   font:
     size: 18px
     family: NiveauGroteskBold
-  @include font-smoothing
+  @extend %font-smoothing
   text-align: center
-  color: $white !important
+  color: $white
   letter-spacing: 2px
   cursor: pointer
   -webkit-appearance: none
@@ -24,21 +25,11 @@
     background-color: lighten($red, 5%)
 
 .button--center
-  margin:
-    top: 3em
-    bottom: 3em
-  width: 180px
-  @include button
+  margin: 1em auto 6em
+  display: block
 
 .button
   margin:
     top: 1em
     bottom: 1em
   display: inline-block
-  width: 180px
-  @include button
-
-.button--post
-  @include button
-  display: inline-block
-  width: 130px

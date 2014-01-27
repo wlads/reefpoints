@@ -5,13 +5,13 @@
 .has-border
   @include has-border(top, right, bottom, left)
 
-.has-border--bottom
-  @include has-border(bottom)
-
-.has-border--top
-  @include has-border(top)
-
 .border--half
-  height: 2.25em
+  height: 36px
   width: 50%
   @include has-border(right)
+
+.case-study__testimonial, .case-study__image__desc__text, .dockyarder__header, .person__header--case-study, .headline--icon
+  padding:
+    top: 1em
+    bottom: 1em
+  @include has-border(top, bottom)

@@ -7,90 +7,57 @@
     family: 'icomoon'
     weight: normal
     style: normal
-  src: url('/fonts/icomoon.eot')
-  src: url('/fonts/icomoon.eot?#iefix') format('eot'), url('/fonts/icomoon.woff') format('woff'), url('/fonts/icomoon.ttf') format('truetype')
+  src: font-url('icomoon.eot')
+  src: font-url('icomoon.eot?#iefix') format('eot'), font-url('icomoon.woff') format('woff'), font-url('icomoon.ttf') format('truetype')
 
 @font-face
   font-family: 'NiveauGroteskRegular'
-  src: url('/fonts/NiveauGroteskRegular.eot')
-  src: url('/fonts/NiveauGroteskRegular.eot?#iefix') format('embedded-opentype'), url('/fonts/NiveauGroteskRegular.woff') format('woff'), url('/fonts/NiveauGroteskRegular.ttf') format('truetype')
+  src: font-url('NiveauGroteskRegular.eot')
+  src: font-url('NiveauGroteskRegular.eot?#iefix') format('embedded-opentype'), font-url('NiveauGroteskRegular.woff') format('woff'), font-url('NiveauGroteskRegular.ttf') format('truetype')
   font:
     weight: normal
     style: normal
 
 @font-face
   font-family: 'NiveauGroteskBold'
-  src: url('/fonts/NiveauGroteskBold.eot')
-  src: url('/fonts/NiveauGroteskBold.eot?#iefix') format('embedded-opentype'), url('/fonts/NiveauGroteskBold.woff') format('woff'), url('/fonts/NiveauGroteskBold.ttf') format('truetype')
+  src: font-url('NiveauGroteskBold.eot')
+  src: font-url('NiveauGroteskBold.eot?#iefix') format('embedded-opentype'), font-url('NiveauGroteskBold.woff') format('woff'), font-url('NiveauGroteskBold.ttf') format('truetype')
   font:
     weight: normal
     style: normal
 
 @font-face
   font-family: 'NiveauGroteskLight-Italic'
-  src: url('/fonts/NiveauGroteskLight-Italic.eot')
-  src: url('/fonts/NiveauGroteskLight-Italic.eot?#iefix') format('embedded-opentype'), url('/fonts/NiveauGroteskLight-Italic.woff') format('woff'), url('/fonts/NiveauGroteskLight-Italic.ttf') format('truetype')
+  src: font-url('NiveauGroteskLight-Italic.eot')
+  src: font-url('NiveauGroteskLight-Italic.eot?#iefix') format('embedded-opentype'), font-url('NiveauGroteskLight-Italic.woff') format('woff'), font-url('NiveauGroteskLight-Italic.ttf') format('truetype')
   font:
     weight: normal
     style: normal
 
 @font-face
   font-family: 'LatoRegular'
-  src: url('/fonts/LatoRegular.eot')
-  src: url('/fonts/LatoRegular.eot?#iefix') format('embedded-opentype'), url('/fonts/LatoRegular.woff') format('woff'), url('/fonts/LatoRegular.ttf') format('truetype')
+  src: font-url('LatoRegular.eot')
+  src: font-url('LatoRegular.eot?#iefix') format('embedded-opentype'), font-url('LatoRegular.woff') format('woff'), font-url('LatoRegular.ttf') format('truetype')
   font:
     weight: normal
     style: normal
 
 @font-face
   font-family: 'LatoLight'
-  src: url('/fonts/LatoLight.eot')
-  src: url('/fonts/LatoLight.eot?#iefix') format('embedded-opentype'), url('/fonts/LatoLight.woff') format('woff'), url('/fonts/LatoLight.ttf') format('truetype')
+  src: font-url('LatoLight.eot')
+  src: font-url('LatoLight.eot?#iefix') format('embedded-opentype'), font-url('LatoLight.woff') format('woff'), font-url('LatoLight.ttf') format('truetype')
   font:
     weight: normal
     style: normal
 
 html
   display: block
-  background: $white
+  font-family: 'NiveauGroteskRegular', sans-serif
 
 body
   height: 100%
-  font:
-    size: 16px
-    family: 'NiveauGroteskRegular', sans-serif
 
 a
   color: $black
   text-decoration: none
   cursor: pointer
-
-h1, h2
-  @extend .header--thin
-
-h1
-  @extend .h1
-
-h2
-  @extend .h2
-
-h3
-  font-family: 'LatoRegular', sans-serif
-
-h4
-  font-family: 'NiveauGroteskBold', sans-serif
-
-h5
-  padding-bottom: .75em
-  font:
-    size: 18px
-    family: 'NiveauGroteskLight-Italic', sans-serif
-  line-height: 1.5
-
-h6
-  text-transform: uppercase
-  letter-spacing: 3px
-  line-height: 1.5
-
-p, [data-icon]
-  @include font-smoothing

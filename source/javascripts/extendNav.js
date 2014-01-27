@@ -6,7 +6,7 @@ $('.club-sandwich').click(function(e) {
       e.preventDefault();
       $('body').addClass('has-no-scroll')
       $('header').addClass('header-is-extended')
-      $('.extended-header-wrap').addClass('takes-full-height')
+      $('.extended-nav-wrap').addClass('takes-full-height')
     }
   });
 
@@ -14,6 +14,6 @@ $('.club-sandwich').click(function(e) {
     e.preventDefault();
     $('body').removeClass('has-no-scroll')
     $('header').removeClass('header-is-extended')
-    $('.extended-header-wrap').removeClass('takes-full-height')
+    $('.extended-nav-wrap').removeClass('takes-full-height')
   });
 });
