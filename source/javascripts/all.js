@@ -4,4 +4,5 @@
 //= require jquery.livesearch
 //= require reefpoints
 //= require extendNav
+//= require extendMobileNav
 //= require headerBackground
