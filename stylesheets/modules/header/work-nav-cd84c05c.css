@@ -1,0 +1,107 @@
+@media (max-width: 529px) {
+  /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+  .work-nav--mobile {
+    text-align: center; } }
+
+/* line 9, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+.work-nav--mobile {
+  height: 0;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: height;
+  -moz-transition-property: height;
+  -o-transition-property: height;
+  transition-property: height; }
+
+/* line 14, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+.work-nav--mobile-is-extended {
+  height: 232px; }
+
+@media (max-width: 529px) {
+  /* line 19, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+  .work-nav {
+    display: none; } }
+@media (min-width: 530px) {
+  /* line 19, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+  .work-nav {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    text-align: center; } }
+
+/* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+.work-nav-item {
+  display: block;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color; }
+  /* line 56, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+  .work-nav-item:hover {
+    color: #8d8d8d; }
+  @media (max-width: 529px) {
+    /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item {
+      padding-bottom: 22px;
+      opacity: 0;
+      -webkit-transition: opacity 1s, color 0.25s;
+      -moz-transition: opacity 1s, color 0.25s;
+      -o-transition: opacity 1s, color 0.25s;
+      transition: opacity 1s, color 0.25s; }
+      /* line 36, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+      .work-nav--mobile-is-extended .work-nav-item {
+        opacity: 1; } }
+  @media (min-width: 530px) {
+    /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item {
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 2em;
+      padding-bottom: 1em;
+      max-width: 480px; }
+      /* line 47, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+      .work-nav-item:not(:last-child) {
+        border-bottom: 1px dashed #e5e5e5; } }
+  @media (max-width: 419px) {
+    /* line 50, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item.active {
+      color: #2c9dc5; } }
+  @media (min-width: 420px) {
+    /* line 54, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item.active .work-nav-item__title {
+      position: relative; } }
+  @media (min-width: 420px) {
+    /* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item.active .work-nav-item__title:before {
+      position: absolute;
+      font-size: 35px;
+      font-family: "icomoon";
+      content: attr(data-icon);
+      color: #fb755a; } }
+  @media (min-width: 420px) and (max-width: 650px) {
+    /* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item.active .work-nav-item__title:before {
+      margin-left: -42px;
+      top: -5px; } }
+  @media (min-width: 650px) {
+    /* line 58, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item.active .work-nav-item__title:before {
+      margin-left: -50px;
+      top: 8px; } }
+
+/* line 73, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+.work-nav-item__title {
+  line-height: 1.2; }
+  @media (max-width: 650px) {
+    /* line 73, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item__title {
+      font-size: 30px; } }
+  @media (min-width: 650px) {
+    /* line 73, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/work-nav.sass */
+    .work-nav-item__title {
+      font-size: 54px; } }
