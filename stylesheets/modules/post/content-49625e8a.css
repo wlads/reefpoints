@@ -58,4 +58,5 @@
     font-family: "NiveauGroteskBold", sans-serif; }
   /* line 42, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/content.sass */
   .post__content em {
+    display: inline;
     font-family: "NiveauGroteskLight-Italic"; }
