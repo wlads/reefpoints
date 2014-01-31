@@ -44,7 +44,7 @@ a more advanced desktop-quality style applicaiton.
 [Seats are limited, be sure to get your ticket before they sell
 out!](http://emberconf.com/)
 
-### About The Instructors
+## About The Instructors
 
 #### Brian Cardarella
 

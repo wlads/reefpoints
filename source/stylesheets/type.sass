@@ -12,8 +12,10 @@ p, label, h4, em
   font-size: 18px
 
 strong
-  display: block
   font-family: 'NiveauGroteskBold', sans-serif
+
+em
+  font-family: 'NiveauGroteskLight-Italic', sans-serif
 
 p
   margin-bottom: 1em
@@ -48,16 +50,21 @@ h5
 h6
   font-size: 16px
 
-em
-  display: block
-  font-family: 'NiveauGroteskLight-Italic', sans-serif
-
 p, [data-icon]
   @extend %font-smoothing
+
+sup
+  position: relative
+  top: -5px
+  left: 1px
+  font-size: 70%
 
 .text-link
   color: $blue
   @include hover(lighten($blue, 10%))
+
+.text--center
+  text-align: center
 
 .headline--big
   font-size: 24px

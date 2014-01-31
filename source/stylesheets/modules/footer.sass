@@ -39,10 +39,11 @@ footer
   text-indent: 4em
   @extend %strong
   @include hover($blue)
-  &:not(:first-of-type)
+  &:nth-child(n+3)
     @include has-border(top)
-  &:first-of-type
-    margin-top: -20px
+
+.footer__event--wgr
+  margin-top: -20px
 
 .footer__event--ember
   background-position: left -64px
@@ -59,10 +60,11 @@ footer
   @include hover($blue)
 
 .footer__address
-  margin-top: 1.5em
-  padding:
+  margin:
     top: 1.5em
     bottom: 1.5em
+  padding-top: 1.5em
   display: block
   @include has-border(top)
   color: $gray
+

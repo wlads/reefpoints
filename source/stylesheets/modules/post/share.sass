@@ -1,32 +1,20 @@
 @import load
 
 .post__share
-  @media (max-width: 600px)
-    margin:
-      top: 54px
-      bottom: 54px
-  @media (min-width: 600px)
-    position: absolute
-    bottom: 30px
-    left: 0
-    width: 130px
-
-.post__share__links
-  margin-bottom: 18px
-  padding-bottom: 18px
-  border-bottom: 4px solid $red
+  margin-bottom: 50px
 
 .twitter-share-button
-  padding-bottom: .5em
-  display: block
+  @media (max-width: 699px)
+    margin-bottom: .5em
+    display: block
 
-.post__comments
-  @media (min-width: 600px)
-    margin-top: 54px
-    float: right
-  @media (min-width: 600px) and (max-width: 1000px)
-    width: 58%
-  @media (min-width: 780px)
-    margin-right: 7.05%
-  @media (min-width: 1000px)
-    width: 540px
+.post__share--github
+  font-size: 16px
+  line-height: 1.35
+  color: $gray
+  @media (max-width: 699px)
+    margin-top: 1em
+    display: block
+  @media (min-width: 700px)
+    position: relative
+    top: -6px

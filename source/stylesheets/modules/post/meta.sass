@@ -1,56 +1,50 @@
 @import load
 
-.post__title--index, .post__meta--author
-  @include hover($blue)
-
-.post__title
-  margin-bottom: 18px
+.posts__title, .post__title
   display: block
   font-family: 'LatoLight', sans-serif
-  line-height: 1.185
-  @media (max-width: 680px)
-    font-size: 2.5em
-  @media (min-width: 680px)
-    font-size: 54px
+  line-height: 1.25
 
-.post__title--index
-  @extend .post__title
+.posts__title, .post__author
+  @include hover($blue)
 
-.post__metas
-  text-transform: uppercase
-  line-height: 1.5
+.posts__title
+  margin-bottom: 15px
+  font-size: 40px
+
+.post__title
+  margin-bottom: 24px
   @media (min-width: 600px)
-    padding-top: 1em
-    float: left
-    width: 160px
-    border-top: 4px solid $red
+    font-size: 52px
 
-.tags, .authors
-  .post__metas
-    @media (min-width: 680px)
-      display: none
+.post__author, .posts__date, .post__comments-count
+  @media (max-width: 599px)
+    line-height: 1.5
 
-.post__metas--post
-  @extend .post__metas
-  @media (max-width: 600px)
-    margin-bottom: 28px
+.post__author, .posts__date
+  @media (max-width: 599px)
+    display: block
+  @media (min-width: 600px)
+    margin-right: 10px
 
-.post__meta--author, .post__meta--data
-  display: block
-  font-size: 18px
+.post__author
+  font-family: 'NiveauGroteskBold', sans-serif
 
-.post__meta--date
-  margin-bottom: 18px
-  display: block
-  color: $gray
+.post__date
+  @extend .posts__date
+  margin-bottom: 36px
+  @media (min-width: 600px)
+    display: inline-block
 
-.post__meta--tag
-  display: block
-  font-size: 15px
-  color: $blue
-  @include hover(lighten($blue, 10%))
+.post__comments-count
+  @include hover(lighten($gray, 16%))
+  color: lighten($gray, 9%)
+  @media (max-width: 599px)
+    display: block
 
-.post__meta--desc
-  margin-bottom: 18px
-  font-size: 18px
-  line-height: 1.8
+.post__desc
+  margin:
+    top: 15px
+    bottom: 0
+  @media (min-width: 680px)
+    font-size: 20px
