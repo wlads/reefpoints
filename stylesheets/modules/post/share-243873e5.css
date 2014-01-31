@@ -22,25 +22,20 @@
   padding-bottom: 0.5em;
   display: block; }
 
-/* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
-.button--post {
-  margin-bottom: 0;
-  width: 130px; }
-
 @media (min-width: 600px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     margin-top: 54px;
     float: right; } }
 @media (min-width: 600px) and (max-width: 1000px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     width: 58%; } }
 @media (min-width: 780px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     margin-right: 7.05%; } }
 @media (min-width: 1000px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     width: 540px; } }

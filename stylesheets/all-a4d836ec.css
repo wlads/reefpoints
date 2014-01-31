@@ -842,14 +842,14 @@ footer {
   border-top-style: solid;
   border-bottom-style: solid; }
 /* line 59, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
-.button, .button--center {
+.button, .button--post, .button--center {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased; }
 
 /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-.button, .button--center {
+.button, .button--post, .button--center {
   padding-top: 20px;
   padding-bottom: 18px;
   width: 180px;
@@ -876,7 +876,7 @@ footer {
   -o-transition-property: background-color;
   transition-property: background-color; }
   /* line 24, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-  .button:hover, .button--center:hover {
+  .button:hover, .button--post:hover, .button--center:hover {
     background-color: #fc8a73; }
 
 /* line 27, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
@@ -885,10 +885,16 @@ footer {
   display: block; }
 
 /* line 31, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-.button {
+.button, .button--post {
   margin-top: 1em;
   margin-bottom: 1em;
   display: inline-block; }
+
+/* line 39, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+.button--post {
+  margin-bottom: 0;
+  width: 130px;
+  color: white !important; }
 /* line 59, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
 .social-link:before {
   -webkit-font-smoothing: antialiased;
@@ -1313,26 +1319,21 @@ footer {
   padding-bottom: 0.5em;
   display: block; }
 
-/* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
-.button--post {
-  margin-bottom: 0;
-  width: 130px; }
-
 @media (min-width: 600px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     margin-top: 54px;
     float: right; } }
 @media (min-width: 600px) and (max-width: 1000px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     width: 58%; } }
 @media (min-width: 780px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     margin-right: 7.05%; } }
 @media (min-width: 1000px) {
-  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/post/share.sass */
   .post__comments {
     width: 540px; } }
 /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/state.sass */

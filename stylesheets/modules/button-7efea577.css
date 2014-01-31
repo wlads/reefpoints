@@ -1,12 +1,12 @@
 /* line 59, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
-.button, .button--center {
+.button, .button--post, .button--center {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased; }
 
 /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-.button, .button--center {
+.button, .button--post, .button--center {
   padding-top: 20px;
   padding-bottom: 18px;
   width: 180px;
@@ -33,7 +33,7 @@
   -o-transition-property: background-color;
   transition-property: background-color; }
   /* line 24, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-  .button:hover, .button--center:hover {
+  .button:hover, .button--post:hover, .button--center:hover {
     background-color: #fc8a73; }
 
 /* line 27, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
@@ -42,7 +42,13 @@
   display: block; }
 
 /* line 31, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
-.button {
+.button, .button--post {
   margin-top: 1em;
   margin-bottom: 1em;
   display: inline-block; }
+
+/* line 39, /Users/acheung/work/reefpoints/source/stylesheets/modules/button.sass */
+.button--post {
+  margin-bottom: 0;
+  width: 130px;
+  color: white !important; }
