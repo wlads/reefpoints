@@ -13,15 +13,16 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-02-03T20:24:31-05:00</updated>
+    <updated>2014-02-03T21:47:21-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
     <summary>Join our one day training session prior to Ember Conf in Portland, Oregon</summary>
     <content type="html">&lt;p&gt;&lt;a href="http://emberconf.com/"&gt;&lt;img src="http://emberconf.com/images/header.png" alt="EmberConf"&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;We invite you to join us for a day of learing in the day before Ember
-Conf in Portland, Oregon. We will be offering a one day training session for Rails Developers interested in
+&lt;p&gt;We invite you to DockYard for a day of learning before Ember
+&lt;a href="http://emberconf.com"&gt;
+Conf&lt;/a&gt; in Portland, Oregon. We will be offering a one day training session for Ruby on Rails developers interested in
 learning how to build Ember Applications. Over the course of the day we
 will teach you the following:&lt;/p&gt;
 
@@ -39,7 +40,7 @@ will teach you the following:&lt;/p&gt;
 &lt;li&gt;Ember.Object&lt;/li&gt;
 &lt;li&gt;All the stuff under the hood of Router, Routes, Models, Controllers,
 Components, Templates, and the Runloop&lt;/li&gt;
-&lt;li&gt;Embrer Data&lt;/li&gt;
+&lt;li&gt;Ember Data&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4&gt;Introduction to Ember Appkit Rails&lt;/h4&gt;
@@ -56,6 +57,24 @@ a more advanced desktop-quality style applicaiton.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://emberconf.com/"&gt;Seats are limited, be sure to get your ticket before they sell
 out!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;About The Instructors&lt;/h3&gt;
+
+&lt;h4&gt;Brian Cardarella&lt;/h4&gt;
+
+&lt;p&gt;Brian is the CEO of DockYard and has been developing in Ember since late
+2012. He was a &lt;a href="https://www.youtube.com/watch?v=wmQovdFoMm0"&gt;speaker at the &amp;quot;first&amp;quot; Ember conference, Ember Camp, in
+      2013&lt;/a&gt;.
+      Brian the author of some popular Ember libraries such as
+&lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt; and &lt;a href="https://github.com/dockyard/ember-easyForm"&gt;ember-easyForm&lt;/a&gt;. Recently he has been focusing most
+of his open source time on building &lt;a href="https://github.com/dockyard/ember-appkit-rails"&gt;Ember Appkit
+Rails&lt;/a&gt;, which is a
+re-implementation of &lt;a href="https://github.com/stefanpenner/ember-app-kit"&gt;Ember App
+Kit&lt;/a&gt; for the Rails Asset Pipeline.&lt;/p&gt;
+
+&lt;h4&gt;Robert Jackson&lt;/h4&gt;
+
+&lt;p&gt;Robert is a Sr. Developer at DockYard. He is a member of the Ember Release Management Team and a significant contributor to Ember. He spends much of his free time helping maintain a number of Ember related open-source projects including: &lt;a href="https://github.com/emberjs/data"&gt;Ember Data&lt;/a&gt;, &lt;a href="https://github.com/dockyard/ember-appkit-rails"&gt;Ember Appkit Rails&lt;/a&gt;, &lt;a href="https://github.com/stefanpenner/ember-app-kit"&gt;Ember App Kit&lt;/a&gt;, the &lt;a href="https://github.com/stefanpenner/ember-jj-abrams-resolver"&gt;EAK/EAKR resolver&lt;/a&gt;, &lt;a href="https://github.com/emberjs/ember-rails"&gt;ember-rails&lt;/a&gt;, &lt;a href="https://github.com/dockyard/ember-easyForm"&gt;ember-easyForm&lt;/a&gt;, and &lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   <entry>
