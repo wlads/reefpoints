@@ -13,16 +13,14 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-02-03T21:47:21-05:00</updated>
+    <updated>2014-02-03T21:49:30-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
     <summary>Join our one day training session prior to Ember Conf in Portland, Oregon</summary>
     <content type="html">&lt;p&gt;&lt;a href="http://emberconf.com/"&gt;&lt;img src="http://emberconf.com/images/header.png" alt="EmberConf"&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;We invite you to DockYard for a day of learning before Ember
-&lt;a href="http://emberconf.com"&gt;
-Conf&lt;/a&gt; in Portland, Oregon. We will be offering a one day training session for Ruby on Rails developers interested in
+&lt;p&gt;We invite you to DockYard for a day of learning before &lt;a href="http://emberconf.com"&gt;Ember Conf&lt;/a&gt; in Portland, Oregon. We will be offering a one day training session for Ruby on Rails developers interested in
 learning how to build Ember Applications. Over the course of the day we
 will teach you the following:&lt;/p&gt;
 
