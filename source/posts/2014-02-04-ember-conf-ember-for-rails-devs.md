@@ -62,4 +62,4 @@ Kit](https://github.com/stefanpenner/ember-app-kit) for the Rails Asset Pipeline
 
 #### Robert Jackson
 
-Robert is a Sr. Developer at DockYard.
+Robert is a Sr. Developer at DockYard. He is a member of the Ember Release Management Team and a significant contributor to Ember. He spends much of his free time helping maintain a number of Ember related open-source projects including: [Ember Data](https://github.com/emberjs/data), [Ember Appkit Rails](https://github.com/dockyard/ember-appkit-rails), [Ember App Kit](https://github.com/stefanpenner/ember-app-kit), the [EAK/EAKR resolver](https://github.com/stefanpenner/ember-jj-abrams-resolver), [ember-rails](https://github.com/emberjs/ember-rails), [ember-easyForm](https://github.com/dockyard/ember-easyForm), and [ember-validations](https://github.com/dockyard/ember-validations).
