@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-a4d836ec.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c78bd1ed.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-b8b987fc.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c78bd1ed.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,59 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-01-02T00:00:00Z</updated>
+  <updated>2014-02-04T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ember Conf: Ember for Rails Devs</title>
+    <link rel="alternate" href="/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
+    <id>/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
+    <published>2014-02-04T00:00:00Z</published>
+    <updated>2014-02-04T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="http://emberconf.com/"&gt;&lt;img src="http://emberconf.com/images/header.png" alt="EmberConf"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We invite you to join us for a day of learing in the day before Ember
+Conf in Portland, Oregon. We will be offering a one day training session for Rails Developers interested in
+learning how to build Ember Applications. Over the course of the day we
+will teach you the following:&lt;/p&gt;
+
+&lt;h4&gt;Introduction to Higher Level JavaScript Concepts&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ES6 Modules&lt;/li&gt;
+&lt;li&gt;Promises&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Introduction to Ember Concepts&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Client side MVC&lt;/li&gt;
+&lt;li&gt;Ember.Object&lt;/li&gt;
+&lt;li&gt;All the stuff under the hood of Router, Routes, Models, Controllers,
+Components, Templates, and the Runloop&lt;/li&gt;
+&lt;li&gt;Embrer Data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Introduction to Ember Appkit Rails&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to build a new Ember project with Rails&lt;/li&gt;
+&lt;li&gt;Generators&lt;/li&gt;
+&lt;li&gt;Testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Together we wil build two applications before the day is over. The first
+will be a simple CRUD &amp;quot;blog&amp;quot; style application. Time permitting the second will be 
+a more advanced desktop-quality style applicaiton.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://emberconf.com/"&gt;Seats are limited, be sure to get your ticket before they sell
+out!&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Romina Vargas is a DockYarder!</title>
     <link rel="alternate" href="/2014/01/02/romina-vargas-is-a-dockyarder.html"/>
@@ -662,29 +711,11 @@ Starter Kit&lt;/a&gt;&lt;script
 src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Be A Blunt Axe</title>
-    <link rel="alternate" href="/2013/12/18/be-a-blunt-axe.html"/>
-    <id>/2013/12/18/be-a-blunt-axe.html</id>
-    <published>2013-12-18T00:00:00Z</published>
-    <updated>2013-12-18T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Be A Blunt Axe&lt;/h2&gt;
-
-&lt;p&gt;Something that was taught to us early on in College was how to make a &amp;quot;compliment sandwich.&amp;quot; I’m sure many of you have heard this term before, but for those of you who haven’t, it&amp;#39;s a communication tool that can keep yourself humble when confronted with the daunting task of giving others critical feedback on their work. &lt;/p&gt;
-
-&lt;p&gt;The idea is that you as the critic would point out a positive aspect about their work or concept, the top layer of bread if you will. Then you’d follow this by mentioning something they could improve upon, which is the meaty and true substance of the discussion. At the end you’d conclude by providing another positive aspect, a la the last bit of bread. The reason we had to come up with this step-by-step process when approaching a critique environment was to avoid hurting anyone’s feelings. Rather than declaring an idea as stupid or bad, which honestly helps to accomplish nothing aside from increase the size of a critic’s ego, we had now formulated a way of give important and in-depth feedback that would actually help to improve an idea by simply being kind and genuinely interested in helping. Keeping to this method, people were much more adept to make the suggested improvements rather than declare themselves a failure, giving up before they’ve even begun to start. &lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s important to remember that your feedback can and should be honest and frequent, but kindness prevails over being an asshole (every time). By being empathetic to the person receiving the critique, you get a better sense of what&amp;#39;ll help them improve, rather than just tearing them down. With this, your critiques become genuine and no longer appear as a means to stroke an inflated ego. Without this, the whole world would be filled with broken hearts and ego-powered douche-bags. As they say, &amp;quot;an eye for an eye makes the whole world blind&amp;quot;. Let&amp;#39;s keep our eyes and hearts intact.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <h2 class='nothin'>Your search returned no results. Perhaps you should try again.</h2></div><div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/02/04/ember-conf-ember-for-rails-devs.html"><strong>Ember Conf: Ember for Rails Devs</strong><h6 class='footer-desc'>Join our one day training session prior to Ember Conf in Portland, Oregon</h6></a>
 <a class="footer__post" href="/2014/01/02/romina-vargas-is-a-dockyarder.html"><strong>Romina Vargas is a DockYarder!</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/01/02/robert-jackson-is-a-dockyarder.html"><strong>Robert Jackson is a DockYarder</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/01/02/lin-reid-is-a-dockyarder.html"><strong>Lin Reid is a DockYarder!</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/01/02/robert-jackson-is-a-dockyarder.html"><strong>Robert Jackson is a DockYarder</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>
