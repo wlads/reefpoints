@@ -14,7 +14,7 @@ tags: ember, rails, ruby, announcement
 
 [![EmberConf](http://emberconf.com/images/header.png)](http://emberconf.com/)
 
-We invite you to join us for a day of learing in the day before Ember
+We invite you to DockYard for a day of learning before Ember
 Conf in Portland, Oregon. We will be offering a one day training session for Rails Developers interested in
 learning how to build Ember Applications. Over the course of the day we
 will teach you the following:
