@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-02-03T21:52:52-05:00</updated>
+    <updated>2014-02-03T21:57:20-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -63,7 +63,7 @@ out!&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Brian is the CEO of DockYard and has been developing in Ember since late
 2012. He was a &lt;a href="https://www.youtube.com/watch?v=wmQovdFoMm0"&gt;speaker at the &amp;quot;first&amp;quot; Ember conference, Ember Camp, in
       2013&lt;/a&gt;.
-      Brian the author of some popular Ember libraries such as
+      Brian is the author of some popular Ember libraries such as
 &lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt; and &lt;a href="https://github.com/dockyard/ember-easyForm"&gt;ember-easyForm&lt;/a&gt;. Recently he has been focusing most
 of his open source time on building &lt;a href="https://github.com/dockyard/ember-appkit-rails"&gt;Ember Appkit
 Rails&lt;/a&gt;, which is a
