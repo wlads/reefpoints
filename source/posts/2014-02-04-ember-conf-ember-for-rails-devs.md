@@ -54,7 +54,7 @@ Brian is the CEO of DockYard and has been developing in Ember since last
       Brian the author of some popular Ember libraries such at
 Ember-Validations and Ember-EasyForm. Recently he has been focusing most
 of his open source time on building Ember Appkit Rails, which is a
-re-implication of Ember App Kit for the Rails Asset Pipeline.
+re-implementation of Ember App Kit for the Rails Asset Pipeline.
 
 
 #### Robert Jackson
