@@ -30,7 +30,7 @@ will teach you the following:
 * Ember.Object
 * All the stuff under the hood of Router, Routes, Models, Controllers,
   Components, Templates, and the Runloop
-* Embrer Data
+* Ember Data
 
 #### Introduction to Ember Appkit Rails
 
@@ -50,7 +50,7 @@ out!](http://emberconf.com/)
 #### Brian Cardarella
 
 Brian is the CEO of DockYard and has been developing in Ember since last
-2012. He was a speaker at the "first" Embrer Conf, Ember Camp in 2013.
+2012. He was a speaker at the "first" Ember Conf, Ember Camp in 2013.
       Brian the author of some popular Ember libraries such at
 Ember-Validations and Ember-EasyForm. Recently he has been focusing most
 of his open source time on building Ember Appkit Rails, which is a
