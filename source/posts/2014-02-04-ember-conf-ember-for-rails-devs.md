@@ -51,7 +51,7 @@ out!](http://emberconf.com/)
 #### Brian Cardarella
 
 Brian is the CEO of DockYard and has been developing in Ember since late
-2012. He was a [speaker at the "first" Ember Conf, Ember Camp in
+2012. He was a [speaker at the "first" Ember conference, Ember Camp, in
       2013](https://www.youtube.com/watch?v=wmQovdFoMm0).
       Brian the author of some popular Ember libraries such as
 [Ember-Validations](https://github.com/dockyard/ember-validations) and [Ember-EasyForm](https://github.com/dockyard/ember-easyForm). Recently he has been focusing most
