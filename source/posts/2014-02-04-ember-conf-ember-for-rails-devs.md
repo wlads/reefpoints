@@ -15,7 +15,7 @@ tags: ember, rails, ruby, announcement
 [![EmberConf](http://emberconf.com/images/header.png)](http://emberconf.com/)
 
 We invite you to DockYard for a day of learning before Ember
-Conf in Portland, Oregon. We will be offering a one day training session for Rails Developers interested in
+Conf in Portland, Oregon. We will be offering a one day training session for Ruby on Rails developers interested in
 learning how to build Ember Applications. Over the course of the day we
 will teach you the following:
 
@@ -44,3 +44,19 @@ a more advanced desktop-quality style applicaiton.
 
 [Seats are limited, be sure to get your ticket before they sell
 out!](http://emberconf.com/)
+
+### About The Instructors
+
+#### Brian Cardarella
+
+Brian is the CEO of DockYard and has been developing in Ember since last
+2012. He was a speaker at the "first" Embrer Conf, Ember Camp in 2013.
+      Brian the author of some popular Ember libraries such at
+Ember-Validations and Ember-EasyForm. Recently he has been focusing most
+of his open source time on building Ember Appkit Rails, which is a
+re-implication of Ember App Kit for the Rails Asset Pipeline.
+
+
+#### Robert Jackson
+
+Robert is a Sr. Developer at DockYard.
