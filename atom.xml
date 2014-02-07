@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html</id>
     <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-02-07T12:29:29-05:00</updated>
+    <updated>2014-02-07T14:55:30-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -39,6 +39,81 @@ design and build a site that really shows off your application.&lt;/p&gt;
 
 &lt;p&gt;If any of these sound like you, you should &lt;a href="http://dockyard.com/hire-us"&gt;get in touch with
 us&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Announcing PostgresExt-PostGIS</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html"/>
+    <id>http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html</id>
+    <published>2014-02-07T00:00:00Z</published>
+    <updated>2014-02-07T14:55:30-05:00</updated>
+    <author>
+      <name>Dan McClain</name>
+    </author>
+    <summary>PostgresExt-PostGIS adds PostGIS support to ActiveRecord</summary>
+    <content type="html">&lt;p&gt;Today I released the first release of postgres_ext-postgis, which
+extends ActiveRecord to support PostGIS data types and some querying.
+This is definitely a beta release, but ready to the point where people
+can play around with it.&lt;/p&gt;
+
+&lt;h2&gt;Migrations&lt;/h2&gt;
+
+&lt;p&gt;With postgres_ext-postgis, you can easily add geometry columns:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;create_table &lt;span class="symbol"&gt;:districts&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; |t|
+  t.geometry &lt;span class="symbol"&gt;:district_boundries&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you&amp;#39;d like to include your projection or geometry type, just include
+them as options to your column:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;create_table &lt;span class="symbol"&gt;:districts&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; |t|
+  t.geometry &lt;span class="symbol"&gt;:district_boundries&lt;/span&gt;, &lt;span class="key"&gt;spatial_type&lt;/span&gt;: &lt;span class="symbol"&gt;:multipolygon&lt;/span&gt;, &lt;span class="key"&gt;srid&lt;/span&gt;: &lt;span class="integer"&gt;4326&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Type Casting&lt;/h2&gt;
+
+&lt;p&gt;Your geometry columns will be types will be typecasted into
+&lt;a href="http://dazuma.github.io/rgeo/"&gt;RGeo&lt;/a&gt; objects. You can set your
+attributes with RGeo objects or EWKT/EWKB strings. EWKT/EWKB strings
+will be converted to RGeo objects:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;user.location = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;SRID=4623;POINT(1 1)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Querying&lt;/h2&gt;
+
+&lt;p&gt;For now, the only added querying method for ActiveRecord is contains:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;District&lt;/span&gt;.where.contains(&lt;span class="key"&gt;district_boundries&lt;/span&gt;: user.location)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above query will utilize PostGIS&amp;#39;s &lt;code&gt;ST_CONTAINS&lt;/code&gt; to see if the
+&lt;code&gt;district_boundries&lt;/code&gt; column contains the &lt;code&gt;user.location&lt;/code&gt;. I plan to add
+a convience method to convert EWKT strings to RGeo object, something
+like &lt;code&gt;PostgreExt.geom(&amp;#39;SRID=4623;POINT(1 1)&amp;#39;)&lt;/code&gt;, to make generating
+queries from, say, a mobile user&amp;#39;s current location a bit easier.&lt;/p&gt;
+
+&lt;p&gt;As I get feedback and use postgres_ext-postgis, more features will get
+added. Stay tuned!&lt;/p&gt;
 </content>
   </entry>
   <entry>

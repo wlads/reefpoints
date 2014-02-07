@@ -511,13 +511,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//tags/community.html</loc>
+    <loc>http://reefpoints.dockyard.com//2013/09/11/vim-staying-on-home-row-via-map.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2013/09/26/vim-moving-lines-aint-hard.html</loc>
+    <loc>http://reefpoints.dockyard.com//tags/consulting.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -619,6 +619,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2014/02/07/announcing-postgres_ext-postgis.html</loc>
+    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//2014/02/07/native-app-developers-we-can-help-you.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -644,6 +650,18 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//tags/business-development.html</loc>
+    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//tags/postgres_ext-postgis.html</loc>
+    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//tags/postgis.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -734,18 +752,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//tags/training.html</loc>
-    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//tags/consulting.html</loc>
-    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//tags/business.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -859,7 +865,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2013/09/11/vim-staying-on-home-row-via-map.html</loc>
+    <loc>http://reefpoints.dockyard.com//tags/community.html</loc>
+    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//tags/business.html</loc>
+    <lastmod>2014-02-07T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2013/09/26/vim-moving-lines-aint-hard.html</loc>
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
