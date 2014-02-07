@@ -12,7 +12,7 @@ published: true
 tags: ruby, ruby on rails, postgresql, postgis, postgres_ext, postgres_ext-postgis
 ---
 
-Today I released the first release of postgres\_ext-postgis, which
+Today I released the first version of postgres\_ext-postgis, which
 extends ActiveRecord to support PostGIS data types and some querying.
 This is definitely a beta release, but ready to the point where people
 can play around with it.
@@ -38,7 +38,7 @@ end
 
 ## Type Casting
 
-Your geometry columns will be types will be typecasted into
+Your geometry columns will be typecasted into
 [RGeo](http://dazuma.github.io/rgeo/) objects. You can set your
 attributes with RGeo objects or EWKT/EWKB strings. EWKT/EWKB strings
 will be converted to RGeo objects:
@@ -49,7 +49,7 @@ user.location = 'SRID=4623;POINT(1 1)'
 
 ## Querying
 
-For now, the only added querying method for ActiveRecord is contains:
+For now, the only added querying method for ActiveRecord is `contains`:
 
 ```ruby
 District.where.contains(district_boundries: user.location)
@@ -60,7 +60,6 @@ The above query will utilize PostGIS's `ST_CONTAINS` to see if the
 a convience method to convert EWKT strings to RGeo object, something
 like `PostgreExt.geom('SRID=4623;POINT(1 1)')`, to make generating
 queries from, say, a mobile user's current location a bit easier.
-
 
 As I get feedback and use postgres\_ext-postgis, more features will get
 added. Stay tuned!
