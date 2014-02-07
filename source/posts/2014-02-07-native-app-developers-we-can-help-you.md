@@ -34,4 +34,3 @@ design and build a site that really shows off your application.
 
 If any of these sound like you, you should [get in touch with
 us](http://dockyard.com/hire-us).
-
