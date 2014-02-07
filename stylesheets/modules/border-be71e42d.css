@@ -1,4 +1,4 @@
-/* line 5, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/modules/border.sass */
+/* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/border.sass */
 .has-border {
   border-width: 1px;
   border-color: #e5e5e5;
@@ -7,7 +7,7 @@
   border-bottom-style: solid;
   border-left-style: solid; }
 
-/* line 8, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/modules/border.sass */
+/* line 8, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/border.sass */
 .border--half {
   height: 36px;
   width: 50%;
@@ -15,7 +15,7 @@
   border-color: #e5e5e5;
   border-right-style: solid; }
 
-/* line 13, /Users/dan/Projects/dockyard/reefpoints/source/stylesheets/modules/border.sass */
+/* line 13, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/border.sass */
 .case-study__testimonial, .case-study__image__desc__text, .dockyarder__header, .person__header--case-study, .headline--icon {
   padding-top: 1em;
   padding-bottom: 1em;
