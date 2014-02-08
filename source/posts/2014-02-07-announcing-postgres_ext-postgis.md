@@ -12,7 +12,8 @@ published: true
 tags: ruby, ruby on rails, postgresql, postgis, postgres_ext, postgres_ext-postgis
 ---
 
-Today I released the first version of postgres\_ext-postgis, which
+Today I released the first version of
+[postgres\_ext-postgis](https://github.com/dockyard/postgres_ext-postgis), which
 extends ActiveRecord to support PostGIS data types and some querying.
 This is definitely a beta release, but ready to the point where people
 can play around with it.
