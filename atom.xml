@@ -46,12 +46,13 @@ us&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html</id>
     <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-02-07T15:03:57-05:00</updated>
+    <updated>2014-02-08T03:22:57-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
     <summary>PostgresExt-PostGIS adds PostGIS support to ActiveRecord</summary>
-    <content type="html">&lt;p&gt;Today I released the first version of postgres_ext-postgis, which
+    <content type="html">&lt;p&gt;Today I released the first version of
+&lt;a href="postgres_ext-postgis"&gt;https://github.com/dockyard/postgres_ext-postgis&lt;/a&gt;, which
 extends ActiveRecord to support PostGIS data types and some querying.
 This is definitely a beta release, but ready to the point where people
 can play around with it.&lt;/p&gt;
