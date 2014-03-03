@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Announcing PostgresExt-PostGIS</title><link href="/stylesheets/all-b8b987fc.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c78bd1ed.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - PostgresExt-PostGIS adds PostGIS support to ActiveRecord' name='description'><link href='https://plus.google.com/102648938707671188640' rel='author'><meta content='_danmcclain' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html' name='twitter:url'><meta content='Announcing PostgresExt-PostGIS' name='twitter:title'><meta content='PostgresExt-PostGIS adds PostGIS support to ActiveRecord' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>A Simple Ember Data Route</title><link href="/stylesheets/all-b8b987fc.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-c78bd1ed.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - A basic pattern for routes with Ember Data content' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-controller.html' name='twitter:url'><meta content='A Simple Ember Data Route' name='twitter:title'><meta content='A basic pattern for routes with Ember Data content' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -37,78 +37,61 @@
       8OOOOOOOOOOOOOOOOOOOOOOOODO:
          :OOOOOOOOOOOOOOOOOOOO::
 
---></head><body class='x2014 x2014_02 x2014_02_07 x2014_02_07_announcing-postgres_ext-postgis'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
+--></head><body class='x2014 x2014_03 x2014_03_03 x2014_03_03_a-simple-ember-data-controller'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
 <a class="extended-nav--close" data-icon="X" href="#"><span class='is-hidden'>Close</span></a><div class='extended-nav__items'><div class='extended-nav__items--mobile'><a class="extended-nav__item--work extended-nav__item" href="#">Work</a><nav class='work-nav--mobile'><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong></a>
 <a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong></a></nav></div><a class="extended-nav__item" href="http://dockyard.com/team">Our Team</a><a class="extended-nav__item" href="http://dockyard.com/process">Process</a><a class="extended-nav__item" href="http://dockyard.com/community">Community</a><a class="extended-nav__item active" href="/">Blog</a><a class="extended-nav__item" href="http://dockyard.com/hire-us">Hire Us</a></div></nav><nav class='work-nav'><h6>Selected Work</h6><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong><p>Credit card advice from real people.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap reefpoints-wrap'><a class='logo--reefpoints' href='/'>ReefPoints</a><div class='search-wrap'><form class='search' data-url='/'><input class='search__input' id='search' name='search' placeholder='Search all posts' type='text' value=''><button class='search__submit' href='/'></button></form></div><nav class='blog-topnav'><a class="blog-topnav__item " href="/">Posts</a><a class="blog-topnav__item " href="/tags.html">Tags</a><a class="blog-topnav__item " href="/authors.html">Authors</a></nav><div class='post-wrap--no-comments'><aside class='post__metas--post l-post__metas'><a class='icon' data-icon='#' href='http://twitter.com/_danmcclain' target='_blank'><span class='is-hidden'>Twitter</span></a><a class='icon' data-icon='★' href='https://github.com/danmcclain' target='_blank'><span class='is-hidden'>GitHub</span></a><a class="post__meta--author" href="/authors/dan-mcclain.html">Dan McClain</a><p class='post__meta--date'>07 Feb 2014</p><p class='post__meta--tags'><a class="post__meta--tag" href="/tags/ruby.html">Ruby (37)</a> <a class="post__meta--tag" href="/tags/ruby-on-rails.html">Ruby on Rails (26)</a> <a class="post__meta--tag" href="/tags/postgresql.html">PostgreSQL (10)</a> <a class="post__meta--tag" href="/tags/postgis.html">Postgis (1)</a> <a class="post__meta--tag" href="/tags/postgres_ext.html">Postgres_ext (3)</a> <a class="post__meta--tag" href="/tags/postgres_ext-postgis.html">Postgres_ext-postgis (1)</a></p></aside><div class='post l-post'><h1 class='post__title'>Announcing PostgresExt-PostGIS</h1><current_page class='post__content'><p>Today I released the first version of
-<a href="https://github.com/dockyard/postgres_ext-postgis">postgres_ext-postgis</a>, which
-extends ActiveRecord to support PostGIS data types and some querying.
-This is definitely a beta release, but ready to the point where people
-can play around with it.</p>
-
-<h2>Migrations</h2>
-
-<p>With postgres_ext-postgis, you can easily add geometry columns:</p>
-<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap reefpoints-wrap'><a class='logo--reefpoints' href='/'>ReefPoints</a><div class='search-wrap'><form class='search' data-url='/'><input class='search__input' id='search' name='search' placeholder='Search all posts' type='text' value=''><button class='search__submit' href='/'></button></form></div><nav class='blog-topnav'><a class="blog-topnav__item " href="/">Posts</a><a class="blog-topnav__item " href="/tags.html">Tags</a><a class="blog-topnav__item " href="/authors.html">Authors</a></nav><div class='post-wrap--no-comments'><aside class='post__metas--post l-post__metas'><a class='icon' data-icon='#' href='http://twitter.com/bcardarella' target='_blank'><span class='is-hidden'>Twitter</span></a><a class='icon' data-icon='★' href='https://github.com/bcardarella' target='_blank'><span class='is-hidden'>GitHub</span></a><a class="post__meta--author" href="/authors/brian-cardarella.html">Brian Cardarella</a><p class='post__meta--date'>03 Mar 2014</p><p class='post__meta--tags'><a class="post__meta--tag" href="/tags/ember-js.html">Ember.js (1)</a></p></aside><div class='post l-post'><h1 class='post__title'>A Simple Ember Data Route</h1><current_page class='post__content'><p>When working with an Ember Data model it is easy to forget to properly
+handle the teardown of that model. For example, if you are creating a
+new model and the user hits the backbutton that model is still in the
+local <code>store</code>. Or if a user edits a model and decides to click the
+<code>Cancel</code> button or clicks a link that transitions out of this route
+without saving the model. A basic approach can be as simple as:</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
 3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
 </pre></td>
-  <td class="code"><pre>create_table <span class="symbol">:districts</span> <span class="keyword">do</span> |t|
-  t.geometry <span class="symbol">:district_boundries</span>
-<span class="keyword">end</span>
-</pre></td>
-</tr></table>
-</div></div>
-<p>If you&#39;d like to include your projection or geometry type, just include
-them as options to your column:</p>
-<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre>1
-2
-3
-</pre></td>
-  <td class="code"><pre>create_table <span class="symbol">:districts</span> <span class="keyword">do</span> |t|
-  t.geometry <span class="symbol">:district_boundries</span>, <span class="key">spatial_type</span>: <span class="symbol">:multipolygon</span>, <span class="key">srid</span>: <span class="integer">4326</span>
-<span class="keyword">end</span>
-</pre></td>
-</tr></table>
-</div></div>
-<h2>Type Casting</h2>
-
-<p>Your geometry columns will be typecasted into
-<a href="http://dazuma.github.io/rgeo/">RGeo</a> objects. You can set your
-attributes with RGeo objects or EWKT/EWKB strings. EWKT/EWKB strings
-will be converted to RGeo objects:</p>
-<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre>1
-</pre></td>
-  <td class="code"><pre>user.location = <span class="string"><span class="delimiter">'</span><span class="content">SRID=4623;POINT(1 1)</span><span class="delimiter">'</span></span>
-</pre></td>
-</tr></table>
-</div></div>
-<h2>Querying</h2>
-
-<p>For now, the only added querying method for ActiveRecord is <code>contains</code>:</p>
-<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre>1
-</pre></td>
-  <td class="code"><pre><span class="constant">District</span>.where.contains(<span class="key">district_boundries</span>: user.location)
+  <td class="code"><pre>Ember.DSModelRoute = Ember.Route.extend({
+  <span class="function">deactivate</span>: <span class="keyword">function</span>() {
+    <span class="keyword">var</span> model = <span class="local-variable">this</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">controller.model</span><span class="delimiter">'</span></span>);
+    model.rollback();
+    <span class="keyword">if</span> (model.get(<span class="string"><span class="delimiter">'</span><span class="content">isNew</span><span class="delimiter">'</span></span>)) {
+      model.deleteRecord();
+    }
+  },
+  <span class="key">actions</span>: {
+    <span class="function">willTransition</span>: <span class="keyword">function</span>(transition) {
+      <span class="keyword">var</span> model = <span class="local-variable">this</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">controller.model</span><span class="delimiter">'</span></span>);
+      <span class="keyword">if</span> (model.get(<span class="string"><span class="delimiter">'</span><span class="content">isDirty</span><span class="delimiter">'</span></span>) &amp;&amp; !confirm(<span class="string"><span class="delimiter">'</span><span class="content">You have unsaved changes. They will be lost if you continue!</span><span class="delimiter">'</span></span>)) {
+        transition.abort();
+      }
+    }
+  }
+});
 </pre></td>
 </tr></table>
 </div></div>
-<p>The above query will utilize PostGIS&#39;s <code>ST_CONTAINS</code> to see if the
-<code>district_boundries</code> column contains the <code>user.location</code>. I plan to add
-a convience method to convert EWKT strings to RGeo object, something
-like <code>PostgreExt.geom(&#39;SRID=4623;POINT(1 1)&#39;)</code>, to make generating
-queries from, say, a mobile user&#39;s current location a bit easier.</p>
-
-<p>As I get feedback and use postgres_ext-postgis, more features will get
-added. Stay tuned!</p>
-<div class='post__share'><div class='post__share__links'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
+<p>Routes inherited from <code>Ember.DSModelRoute</code> will always clean up after themselves. If the user has unsaved changes and attempts to leave the current route 
+the app will guard against the transition and allow the user to confirm with a notice that changes will be lost.</p>
+<div class='post__share'><div class='post__share__links'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-controller.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
   (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
