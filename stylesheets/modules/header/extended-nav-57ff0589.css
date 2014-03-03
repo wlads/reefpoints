@@ -1,4 +1,4 @@
-/* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+/* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
 .extended-nav-wrap {
   border-width: 1px;
   border-color: #e5e5e5;
@@ -16,48 +16,48 @@
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
   @media (min-width: 650px) and (min-height: 650px) {
-    /* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav-wrap {
       background-color: rgba(255, 255, 255, 0.98); } }
   @media (max-width: 529px) {
-    /* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav-wrap {
       margin-top: -440px;
       height: 440px; } }
   @media (min-width: 530px) and (max-width: 650px) {
-    /* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav-wrap {
       margin-top: -780px;
       height: 780px; } }
   @media (min-width: 650px) {
-    /* line 5, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 5, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav-wrap {
       margin-top: -896px;
       height: 896px; } }
 
 @media (max-width: 529px) {
-  /* line 28, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 28, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav-wrap-is-extended {
     margin-top: -672px;
     height: 672px; } }
 
-/* line 36, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+/* line 36, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
 .extended-nav {
   position: relative;
   overflow: hidden; }
   @media (min-width: 530px) {
-    /* line 36, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 36, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav {
       border-bottom: 1px solid #e5e5e5; } }
 
-/* line 42, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+/* line 42, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
 .extended-nav--logo {
   margin-left: -6px;
   padding: 16px;
   position: absolute;
   font-size: 2em; }
   @media (min-width: 530px) and (max-width: 819px) {
-    /* line 42, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 42, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav--logo {
       width: 100%;
       border-width: 1px;
@@ -65,36 +65,36 @@
       border-bottom-style: solid; } }
 
 @media (max-width: 529px) {
-  /* line 51, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 51, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items {
     border-width: 1px;
     border-color: #e5e5e5;
     border-top-style: solid; } }
 @media (max-width: 679px) {
-  /* line 51, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 51, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items {
     margin-top: 71px; } }
 @media (min-width: 530px) {
-  /* line 51, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 51, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items {
     margin-right: auto;
     margin-left: auto; } }
 @media (min-width: 530px) and (max-width: 819px) {
-  /* line 51, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 51, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items {
     width: 465px;
     position: relative; } }
 @media (min-width: 820px) {
-  /* line 51, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 51, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items {
     width: 600px; } }
 
 @media (min-width: 530px) {
-  /* line 66, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 66, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__items--mobile {
     display: none; } }
 
-/* line 70, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+/* line 70, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
 .extended-nav__item {
   padding: 20px 6px;
   border-top-style: solid;
@@ -109,7 +109,7 @@
   -o-transition-property: border-color, color;
   transition-property: border-color, color; }
   @media (max-width: 529px) {
-    /* line 70, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 70, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav__item {
       display: block;
       position: relative;
@@ -118,28 +118,28 @@
       border-top-width: 1px;
       border-top-color: #f4f4f4;
       background-color: white; }
-      /* line 86, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+      /* line 86, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
       .extended-nav__items--mobile .extended-nav__item {
         border-top: none; } }
   @media (min-width: 530px) {
-    /* line 70, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 70, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav__item {
       float: left;
       border-top-width: 6px;
       border-top-color: white; }
-      /* line 93, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+      /* line 93, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
       .extended-nav__item:hover, .extended-nav__item.active {
         border-top-color: #fb755a; } }
   @media (min-width: 530px) and (max-width: 819px) {
-    /* line 70, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 70, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav__item {
       margin-left: 1%;
       margin-right: 1%; } }
   @media (min-width: 820px) {
-    /* line 70, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+    /* line 70, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
     .extended-nav__item {
       margin-left: 3%;
       margin-right: 3%; } }
-  /* line 103, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
+  /* line 103, /Users/acheung/work/reefpoints/source/stylesheets/modules/header/extended-nav.sass */
   .extended-nav__item:hover, .extended-nav__item.active {
     color: #fb755a; }
