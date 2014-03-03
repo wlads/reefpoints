@@ -6,7 +6,7 @@ author: 'Romina Vargas'
 github: rsocci
 social: true
 summary: Discover a helpful Postgres config option
-published: false
+published: true
 tags: ruby on rails, postgresql
 ---
 
