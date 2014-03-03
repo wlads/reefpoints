@@ -68,6 +68,65 @@ the app will guard against the transition and allow the user to confirm with a n
 </content>
   </entry>
   <entry>
+    <title>A Simple Ember Data Route</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-controller.html"/>
+    <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-controller.html</id>
+    <published>2014-03-03T00:00:00Z</published>
+    <updated>2014-03-02T23:19:51-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>A basic pattern for routes with Ember Data content</summary>
+    <content type="html">&lt;p&gt;When working with an Ember Data model it is easy to forget to properly
+handle the teardown of that model. For example, if you are creating a
+new model and the user hits the back button that model is still in the
+local &lt;code&gt;store&lt;/code&gt;. Or if a user edits a model and decides to click the
+&lt;code&gt;Cancel&lt;/code&gt; button or clicks a link that transitions out of this route
+without saving the model. A basic approach can be as simple as:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Ember.DSModelRoute = Ember.Route.extend({
+  &lt;span class="function"&gt;deactivate&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    model.rollback();
+    &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isNew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
+      model.deleteRecord();
+    }
+  },
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;willTransition&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(transition) {
+      &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+      &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isDirty&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &amp;amp;&amp;amp; !confirm(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You have unsaved changes. They will be lost if you continue!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
+        transition.abort();
+      }
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Routes inherited from &lt;code&gt;Ember.DSModelRoute&lt;/code&gt; will always clean up after themselves. If the user has unsaved changes and attempts to leave the current route 
+the app will guard against the transition and allow the user to confirm with a notice that changes will be lost.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Native App Developers: We Can Help You</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html</id>
