@@ -9,6 +9,108 @@
     <name>DockYard</name>
   </author>
   <entry>
+    <title>Using Database Templates in Rails</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html"/>
+    <id>http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html</id>
+    <published>2014-03-03T00:00:00Z</published>
+    <updated>2014-03-03T10:29:37-05:00</updated>
+    <author>
+      <name>Romina Vargas</name>
+    </author>
+    <summary>Discover a helpful Postgres config option</summary>
+    <content type="html">&lt;p&gt;Using Postgres as your application&amp;#39;s database? If so, there is a handy
+configuration option that you may not be aware about. The &lt;code&gt;pg&lt;/code&gt; gem provides a &lt;code&gt;template&lt;/code&gt; option that
+allows for copying already existing data into an application as
+long as you have matching schema. &lt;/p&gt;
+
+&lt;p&gt;To add this functionality, simply add the &lt;code&gt;template&lt;/code&gt; option inside &lt;code&gt;config/database.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight yaml "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="key"&gt;development&lt;/span&gt;:
+  &lt;span class="key"&gt;adapter&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;postgresql&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;encoding&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;unicode&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;database&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;myapp_development&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;template&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;my_template&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s go through a quick example. Suppose we have an existing database, &lt;code&gt;food&lt;/code&gt;, and it contains an abundant amount of data with the
+following schema:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;foods: name (string), category_id (integer)
+categories: category (string)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To use the &lt;code&gt;food&lt;/code&gt; database for our application, we are going to
+create a template by specifying our database with the following command: &lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;createdb -T food my_food_template
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We must now set up our Rails application and make sure that our schema matches
+that of our new template. Our Rails models will mimick &lt;code&gt;food&lt;/code&gt;. Having done
+that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight yaml "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="key"&gt;database&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;myapp_development&lt;/span&gt;&lt;/span&gt;
+&lt;span class="key"&gt;template&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;my_food_template&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Run migrations and violà! Our database has been populated and is ready to be used.&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;gt; psql myapp_development
+
+&amp;gt; select * from foods;
+  id |  name  | category_id
+  --------------------------
+  1   apple       1
+  2   banana      1
+  3   spinach     2
+  4   ice cream   3
+
+&amp;gt; select * from categories;
+  id |  category
+  --------------
+  1   fruit
+  2   vegetable
+  3   other
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <title>A Simple Ember Data Route</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html</id>

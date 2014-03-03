@@ -56,6 +56,107 @@
     <name>Blog Author</name>
   </author>
   <entry>
+    <title>Using Database Templates in Rails</title>
+    <link rel="alternate" href="/2014/03/03/using-database-templates.html"/>
+    <id>/2014/03/03/using-database-templates.html</id>
+    <published>2014-03-03T00:00:00Z</published>
+    <updated>2014-03-03T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Using Postgres as your application&amp;#39;s database? If so, there is a handy
+configuration option that you may not be aware about. The &lt;code&gt;pg&lt;/code&gt; gem provides a &lt;code&gt;template&lt;/code&gt; option that
+allows for copying already existing data into an application as
+long as you have matching schema. &lt;/p&gt;
+
+&lt;p&gt;To add this functionality, simply add the &lt;code&gt;template&lt;/code&gt; option inside &lt;code&gt;config/database.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight yaml "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="key"&gt;development&lt;/span&gt;:
+  &lt;span class="key"&gt;adapter&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;postgresql&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;encoding&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;unicode&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;database&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;myapp_development&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="key"&gt;template&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;my_template&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s go through a quick example. Suppose we have an existing database, &lt;code&gt;food&lt;/code&gt;, and it contains an abundant amount of data with the
+following schema:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;foods: name (string), category_id (integer)
+categories: category (string)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To use the &lt;code&gt;food&lt;/code&gt; database for our application, we are going to
+create a template by specifying our database with the following command: &lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;createdb -T food my_food_template
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We must now set up our Rails application and make sure that our schema matches
+that of our new template. Our Rails models will mimick &lt;code&gt;food&lt;/code&gt;. Having done
+that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight yaml "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="key"&gt;database&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;myapp_development&lt;/span&gt;&lt;/span&gt;
+&lt;span class="key"&gt;template&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;my_food_template&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Run migrations and violà! Our database has been populated and is ready to be used.&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;gt; psql myapp_development
+
+&amp;gt; select * from foods;
+  id |  name  | category_id
+  --------------------------
+  1   apple       1
+  2   banana      1
+  3   spinach     2
+  4   ice cream   3
+
+&amp;gt; select * from categories;
+  id |  category
+  --------------
+  1   fruit
+  2   vegetable
+  3   other
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <title>A Simple Ember Data Route</title>
     <link rel="alternate" href="/2014/03/03/a-simple-ember-data-route.html"/>
     <id>/2014/03/03/a-simple-ember-data-route.html</id>
@@ -307,31 +408,11 @@ Time&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/rsocci"&gt;Follow Romina on GitHub&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Robert Jackson is a DockYarder</title>
-    <link rel="alternate" href="/2014/01/02/robert-jackson-is-a-dockyarder.html"/>
-    <id>/2014/01/02/robert-jackson-is-a-dockyarder.html</id>
-    <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-01-02T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/rjackson.jpg" alt="Robert Jackson"&gt;
-Today is Robert Jackson&amp;#39;s first day at DockYard. Robert is joining our
-team as a Sr. Rails and Sr. Ember developer by way of Florida (but he&amp;#39;ll
-soon be joining us in the Northeast). Robert is a member of the Ember
-Release Management Team and has been saving my ass with several of our
-open source Ember projects over the past few months.&lt;/p&gt;
-
-&lt;p&gt;Follow Robert on &lt;a href="http://twitter.com/rwjblue"&gt;Twitter&lt;/a&gt; and
-&lt;a href="https://github.com/rjackson"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <h2 class='nothin'>Your search returned no results. Perhaps you should try again.</h2></div><div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/03/03/using-database-templates.html"><strong>Using Database Templates in Rails</strong><h6 class='footer-desc'>Discover a helpful Postgres config option</h6></a>
 <a class="footer__post" href="/2014/03/03/a-simple-ember-data-route.html"><strong>A Simple Ember Data Route</strong><h6 class='footer-desc'>A basic pattern for routes with Ember Data content</h6></a>
-<a class="footer__post" href="/2014/02/07/native-app-developers-we-can-help-you.html"><strong>Native App Developers: We Can Help You</strong><h6 class='footer-desc'>Have an existing application? We can help you out!</h6></a>
-<a class="footer__post" href="/2014/02/07/announcing-postgres_ext-postgis.html"><strong>Announcing PostgresExt-PostGIS</strong><h6 class='footer-desc'>PostgresExt-PostGIS adds PostGIS support to ActiveRecord</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/02/07/native-app-developers-we-can-help-you.html"><strong>Native App Developers: We Can Help You</strong><h6 class='footer-desc'>Have an existing application? We can help you out!</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><audio class='foghorn' preload='auto' src='/sound/foghorn.mp3'></audio><script>

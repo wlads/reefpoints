@@ -7,19 +7,25 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//authors/romina-vargas.html</loc>
+    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//authors/logan-faerber.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//authors/alex-navasardyan.html</loc>
+    <loc>http://reefpoints.dockyard.com//</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//</loc>
+    <loc>http://reefpoints.dockyard.com//authors/alex-navasardyan.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -68,12 +74,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/amanda-cheung.html</loc>
-    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//authors/russ-jones.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -523,7 +523,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//tags/consulting.html</loc>
+    <loc>http://reefpoints.dockyard.com//2013/10/01/design-patterns-composite-pattern.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -535,7 +535,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2013/10/22/vim-buffers.html</loc>
+    <loc>http://reefpoints.dockyard.com//tags/training.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -632,6 +632,18 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2014/03/03/a-simple-ember-data-route.html</loc>
+    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/03/03/using-database-templates.html</loc>
+    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//authors/russ-jones.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -757,12 +769,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//tags/training.html</loc>
-    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://reefpoints.dockyard.com//tags.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -883,7 +889,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2013/10/01/design-patterns-composite-pattern.html</loc>
+    <loc>http://reefpoints.dockyard.com//tags/consulting.html</loc>
+    <lastmod>2014-03-03T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2013/10/22/vim-buffers.html</loc>
     <lastmod>2014-03-03T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
