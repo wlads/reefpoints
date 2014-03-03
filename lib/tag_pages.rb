@@ -1,6 +1,6 @@
 class Middleman::Blog::TagPages
   def self.tag_name(tag)
-    case tag
+    case tag.downcase
     when 'ruby on rails'
       'Ruby on Rails'
     when 'jquery'
@@ -11,7 +11,7 @@ class Middleman::Blog::TagPages
       'jQuery'
     when 'javascript'
       'JavaScript'
-    when 'ember'
+    when 'ember', 'emberjs', 'ember.js'
       'Ember.js'
     when 'backbone'
       'Backbone.js'
