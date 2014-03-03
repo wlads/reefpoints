@@ -8,7 +8,7 @@ github: bcardarella
 social: true
 summary: "A basic pattern for routes with Ember Data content"
 published: true
-tags: ember.js
+tags: ember
 ---
 
 When working with an Ember Data model it is easy to forget to properly
