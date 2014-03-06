@@ -49,7 +49,7 @@ database: myapp_development
 template: my_food_template
 ```
 
-Run migrations and violà! Our database has been populated and is ready to be used.
+Run migrations and voilà! Our database has been populated and is ready to be used.
 
 ```bash
 > psql myapp_development
