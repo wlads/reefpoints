@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html</id>
     <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-03-03T11:55:09-05:00</updated>
+    <updated>2014-03-07T13:14:25-05:00</updated>
     <author>
       <name>Romina Vargas</name>
     </author>
@@ -71,7 +71,7 @@ that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Run migrations and violà! Our database has been populated and is ready to be used.&lt;/p&gt;
+&lt;p&gt;Run migrations and voilà! Our database has been populated and is ready to be used.&lt;/p&gt;
 &lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
@@ -115,7 +115,7 @@ that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html</id>
     <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-03-03T11:55:09-05:00</updated>
+    <updated>2014-03-07T13:14:25-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -283,7 +283,7 @@ added. Stay tuned!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-02-10T14:03:43-05:00</updated>
+    <updated>2014-03-21T16:14:31-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -326,7 +326,7 @@ a more advanced desktop-quality style applicaiton.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://emberconf.com/"&gt;Seats are limited, be sure to get your ticket before they sell
 out!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;About The Instructors&lt;/h3&gt;
+&lt;h2&gt;About The Instructors&lt;/h2&gt;
 
 &lt;h4&gt;Brian Cardarella&lt;/h4&gt;
 
@@ -4676,34 +4676,6 @@ example.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Announcing CTO To Go</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html"/>
-    <id>http://reefpoints.dockyard.com/2013/07/23/announcing-cto-to-go.html</id>
-    <published>2013-07-23T00:00:00Z</published>
-    <updated>2014-03-03T11:55:05-05:00</updated>
-    <author>
-      <name>Mike Sager</name>
-    </author>
-    <summary>DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.</summary>
-    <content type="html">&lt;p&gt;Today&amp;#39;s political campaigns and non-profits have deep technology and data requirements, and yet still face the same resource challenges that have always been present. It is with this in mind that DockYard is excited to announce a new consulting product geared to affordably support progressives and their allies with their data and technology needs.&lt;/p&gt;
-
-&lt;p&gt;DockYard&amp;#39;s CTO to Go will allow Democratic campaigns and progressive nonprofits access to our experienced DC team for consulting in the following areas:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Technology Infrastructure (Startup, vendor hiring, email/backup)&lt;/li&gt;
-&lt;li&gt;Data Management and Basic Targeting&lt;/li&gt;
-&lt;li&gt;Staff Recruitment&lt;/li&gt;
-&lt;li&gt;24 Hour On Call Emergency Assistance&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Too often campaigns and non-profits have no idea where to begin with their technology program. Where do I get a website? Email? Voter File access? Data Management?&lt;/p&gt;
-
-&lt;p&gt;CTO to Go allows campaigns and non-profits immediate and affordable access to independent consultants who&amp;#39;ve been through the process on all levels of campaigns, and who understand the time and cost pressures. And most importantly, when something goes wrong CTO to Go means you have an expert who knows how to quickly troubleshoot and solve the problem.&lt;/p&gt;
-
-&lt;p&gt;CTO to Go is available in 5 hour blocks per month starting at $1250/month. For more details, contact Mike Sager - &lt;a href="mailto:mike@dockyard.com"&gt;mike@dockyard.com&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Design Patterns: The Template Method Pattern</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html</id>
@@ -5662,42 +5634,6 @@ now I am happy with the direction.&lt;/p&gt;
 &lt;p&gt;After laying out a few basic wireframes, I like to jump right into HTML and CSS (or really, &lt;a href="http://haml.info/"&gt;HAML&lt;/a&gt; and &lt;a href="http://sass-lang.com/"&gt;SASS&lt;/a&gt;). Whether you start on paper, Illustrator, or Photoshop, the design won&amp;#39;t look like how it&amp;#39;s really going to look until it&amp;#39;s in the browser. It makes more sense for me to get right in to iterations while seeing how layouts are behaving at different screen sizes. I find myself doing a lot of trial and error because I can never be sure of what may or may not work. If I think of a possible solution, I try it out. If it doesn&amp;#39;t work better than what I had, I&amp;#39;ll revert it and try something else. The majority of my designing and problem-solving happens in the browser now where I can shrink and expand the width of the window to see how everything is coming together. For me, getting right into this &lt;a href="http://en.wikipedia.org/wiki/Iterative_design"&gt;iterative design&lt;/a&gt; process beats out creating thorough mockups that will only represent so little of the &amp;quot;final product&amp;quot;.&lt;/p&gt;
 
 &lt;p&gt;There&amp;#39;s a lot of stuff to know so the best way to learn is to dive right in!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Writing User Stories</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html"/>
-    <id>http://reefpoints.dockyard.com/process/2013/04/10/writing-user-stories.html</id>
-    <published>2013-04-10T00:00:00Z</published>
-    <updated>2013-07-15T10:28:26-04:00</updated>
-    <author>
-      <name>Tyler Loch</name>
-    </author>
-    <summary>The basics of collecting and writing user stories.</summary>
-    <content type="html">&lt;h2&gt;User Story Writing Basics&lt;/h2&gt;
-
-&lt;p&gt;The goal in writing user stories is to establish a human voice at every step of the development process. This can be a difficult picture for technically minded developers to imagine, who base a majority of their decisions on logic and efficiency. Each story must determine one of the functions that a finalized product will perform while also acknowledging the social and cultural context surrounding that function.&lt;/p&gt;
-
-&lt;p&gt;Language can be deceptive in conveying story goals. In the story-carding phase, take measures to eliminate technical jargon that could confuse non-developers. Story cards are only prompts that need to be expanded on through ongoing conversation between users, developers, and other individuals within a carefully selected customer team.&lt;/p&gt;
-
-&lt;p&gt;The customer team should reflect the unique functions of the product under development. It operates as the central hub in maintaining the balance between business and tech interests. It should combine thinkers who represent general and targeted user interests with developers and other skilled individuals. This will help direct the development of the product by prioritizing stories based on what users are most interested in seeing in the final product. Additional stories can be prioritized in interactions following initial release based on the extent of desired development.&lt;/p&gt;
-
-&lt;h2&gt;6 Parameters For User Stories&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Each story should be Independent so that product development can be easily broken down and reorganized. Avoid unnecessary entanglement with other stories to maintain flexibility and freedom in the design process.&lt;/li&gt;
-&lt;li&gt;The customer team should make changes and negotiate stories to ensure that all relevant perspectives are acknowledged. This is essential to maintaining an agile development process through multiple iterations.&lt;/li&gt;
-&lt;li&gt;Let the concept behind the technology shine brightest. Use careful phrasing to ensure that users are able to look at the stories and acknowledge how each is valuable to the product experience.&lt;/li&gt;
-&lt;li&gt;Write stories that can be easily calculated. While abstract language may be necessary to communicate technical concepts with users, every story should be rooted in a logical and quantifiable plan for development.&lt;/li&gt;
-&lt;li&gt;Each story is just a unit in a much greater epic. Keep them small to maintain maximum control over the design process and reduce miscalculations in time and cost estimation.&lt;/li&gt;
-&lt;li&gt;Finally, all stories must be testable. There must be a logical set of criteria to designate whether or not a story has achieved its purpose. A rigorous testing plan will reduce long-term costs in maintenance and development.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Some suggested methods for gathering user stories are interviews, questionnaires, observations and story-writing workshops. It is important to note that the best data collection methods should be as diverse as the range of users themselves, encompassing a wide range of information gathering tactics. This will give the customer team a wealth of knowledge to analyze and story-card. Some users might be more assertive about their opinion in an interview with developers while others may prefer story-writing workshops. Take into account the nature of the project itself and what implications it might have for response rate. Users may prefer to respond to some more sensitive subject material through an anonymous questionnaire or survey.&lt;/p&gt;
-
-&lt;p&gt;In some circumstances, especially for developers working within limited resources or without a well-organized customer team, user role modeling could help generate a clearer picture for user story formation. Create hypothetical users who reflect real-world populations that are inclined to use the product. It might help to draw up a couple user profiles to address multiple lifestyle-types that the product could be used within. This could be especially helpful in designing products for foreign markets or third world countries where the adoption of technology does not follow the western standard.&lt;/p&gt;
-
-&lt;p&gt;For a more in-depth description see Mike Cohn&amp;#39;s book &lt;a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685"&gt;User Stories Applied&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   <entry>
