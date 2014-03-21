@@ -3,11 +3,10 @@
 @import compass/css3
 
 $white: #ffffff
-$light-gray: #e5e5e5
+$l-gray: #e5e5e5
 $gray: #8d8d8d
 $black: #000000
-$blue: #2c9dc5
-$l-blue: #58c2e9
+$blue: #43c0ef
 $red: #fb755a
 
 @mixin wrap($max-width)
@@ -45,7 +44,7 @@ $red: #fb755a
 @mixin has-border($sides...)
   border:
     width: 1px
-    color: $light-gray
+    color: $l-gray
   @each $side in $sides
     @if ($side == 'top' or $side == 'right' or $side == 'bottom' or $side == 'left')
       border-#{$side}-style: solid

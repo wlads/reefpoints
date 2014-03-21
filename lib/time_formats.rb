@@ -1,2 +1,2 @@
-Time::DATE_FORMATS[:short] = '%d %h %Y'
-Date::DATE_FORMATS[:short] = '%d %h %Y'
+Time::DATE_FORMATS[:short] = "%B %e, %Y"
+Date::DATE_FORMATS[:short] = "%B %e, %Y"

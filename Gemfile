@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activesupport', '~> 3.2'
 gem 'middleman'
 gem 'middleman-blog'
 gem 'middleman-gh-pages'

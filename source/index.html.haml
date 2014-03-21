@@ -3,8 +3,5 @@ layout: layout
 title: DockYard Blog
 ---
 
-= partial 'internal-search'
-= partial 'articles', :locals => { :articles => blog.articles }
-
-:javascript
-  $('.search__input').val(window.location.hash.substring(3));
+.l-wrap--blog__filter
+  = partial 'articles', :locals => { :articles => blog.articles }

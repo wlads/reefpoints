@@ -1,7 +1,0 @@
-.search-wrap
-  %form.search
-    %input#search.search__input{name: 'search', type: 'text', value: '', placeholder: 'Search all posts'}
-%nav.blog-topnav
-  = link_to 'Posts', '/', class: "blog-topnav__item #{active_state_for('index')}"
-  = link_to 'Tags', '/tags.html', class: "blog-topnav__item #{active_state_for('tags')}"
-  = link_to 'Authors', '/authors.html', class: "blog-topnav__item #{active_state_for('authors')}"

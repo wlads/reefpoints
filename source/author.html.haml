@@ -1,9 +1,10 @@
-= partial 'internal-search'
+.l-wrap--blog__filter
+  %strong.filter__header= "#{pluralize(blog.articles.select { |article| article.author == authorname }.size, 'post')} by #{authorname}"
 
-.blog-subnav{class: "#{if_inside_category(page_classes)}"}
-  - blog.articles.map(&:author).flatten.uniq.sort.each do |author|
-    %a.blog-subnav__item{href: author_path(author), class: "#{active_state_for_sub(author)}"}
-      #{author}
-      <span class='blog-subnav__count'>#{blog.articles.select { |article| article.author == author }.size }</span>
+  .author__avatar-wrap
+    %img{src: "/images/team/#{authorname.parameterize}.jpg", class: 'author__avatar'}
+    %p.author__bio= partial 'shared/' + authorname.parameterize<<'-bio'
+    - unless current_path == 'authors/marin-abernethy.html' || current_path == 'authors/chris-gill.html' || current_path == 'authors/russ-jones.html'
+      = link_to 'Read the full bio →', "http://dockyard.com/team##{authorname.parameterize}", class: 'author__link'
 
-= partial 'articles', :locals => { :articles => page_articles }
+  = partial 'articles', :locals => { :articles => page_articles }

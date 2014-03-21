@@ -2,10 +2,16 @@
 
 @import load
 
-.push--header
+.push--header, .push--header--short
   height: 3em
+
+.push--header
   @media (min-width: 650px) and (min-height: 650px)
     height: 12em
+
+.push--header--short
+  @media (min-width: 650px) and (min-height: 650px)
+    height: 8em
 
 .push--header--index
   @extend .push--header
