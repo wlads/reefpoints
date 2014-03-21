@@ -127,7 +127,7 @@ a {
 
 /* line 10, /Users/acheung/work/reefpoints/source/stylesheets/blog-layout.sass */
 .l-wrap--blog__posts {
-  overflow: scroll; }
+  overflow: auto; }
   @media (max-width: 639px) {
     /* line 10, /Users/acheung/work/reefpoints/source/stylesheets/blog-layout.sass */
     .l-wrap--blog__posts {
