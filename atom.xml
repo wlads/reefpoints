@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</id>
     <published>2014-03-17T00:00:00Z</published>
-    <updated>2014-03-27T10:54:41-07:00</updated>
+    <updated>2014-03-27T11:17:40-07:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -46,7 +46,7 @@ began its very first conference with Yehuda Katz and Tom Dale addressing
 the entire crowd with their desire for Ember to be an open and diverse
 community.&lt;/p&gt;
 
-&lt;p&gt;The confernece was very well organized, big shoutout to Leah Silber at Tilde. She
+&lt;p&gt;The conference was very well organized, big shoutout to Leah Silber at Tilde. She
 put on a great conference, I&amp;#39;m proud that my company had the opportunity
 to make it happen.&lt;/p&gt;
 
@@ -57,7 +57,7 @@ in Ember nearly all of the pain-points that have existed will be
 addressed in the next 6 months. Testing as a first class citizen,
 fastest template rendering of any JavaScript framework/tool out there,
 animation support, query params, a standardized project structure and
-built tool, and there was even talk of how we&amp;#39;re going to package and
+build tool, and there was even talk of how we&amp;#39;re going to package and
 distribute dependencies. Ember Conf was a continuous roll of one great
 talk after another loaded with the best tech on the web. I&amp;#39;ve already
 really enjoyed writing Ember apps for the past year, the next year will
