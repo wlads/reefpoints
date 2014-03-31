@@ -4,10 +4,184 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-03-17T00:00:00Z</updated>
+  <updated>2014-03-30T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Magic behind ES6 Generators</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html"/>
+    <id>http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html</id>
+    <published>2014-03-30T00:00:00Z</published>
+    <updated>2014-03-31T13:29:10-04:00</updated>
+    <author>
+      <name>Alex Navasardyan</name>
+    </author>
+    <summary>Overview of ES6 generators</summary>
+    <content type="html">&lt;h2&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;The next version of JavaScript (ES6 or ES.next) is going to have a lot of
+great features built in that are going to make developer&amp;#39;s life much easier.
+&lt;a href="http://wiki.ecmascript.org/doku.php?id=strawman:promises"&gt;Promises&lt;/a&gt;,
+&lt;a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules"&gt;Modules&lt;/a&gt;,
+&lt;a href="http://wiki.ecmascript.org/doku.php?id=harmony:weak_maps"&gt;WeakMaps&lt;/a&gt;,
+&lt;a href="http://wiki.ecmascript.org/doku.php?id=harmony:generators"&gt;Generators&lt;/a&gt; to name a few. In this
+post I want to talk about generators.&lt;/p&gt;
+
+&lt;p&gt;Generators are objects that encapsulate suspended execution context. What the heck does it mean?
+In other words, generators allow you to pause execution of your code and return a value.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s say you need to write a &lt;code&gt;cubic&lt;/code&gt; function (for any given number, calculate a cubic number)
+and then print it out.&lt;/p&gt;
+
+&lt;p&gt;Code without generators for 10 numbers:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;out&lt;/span&gt;(n) {
+  console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Cubic number:&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, n);
+}
+
+&lt;span class="keyword"&gt;function&lt;/span&gt; *cube(n) {
+  n = n * &lt;span class="integer"&gt;3&lt;/span&gt;;
+  out(n);
+}
+
+&lt;span class="keyword"&gt;for&lt;/span&gt; (&lt;span class="keyword"&gt;var&lt;/span&gt; i = &lt;span class="integer"&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class="integer"&gt;10&lt;/span&gt;; i++) {
+  cube(i);
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Code with ES6 generators for 10 numbers:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;function&lt;/span&gt; *cube(n) {
+  &lt;span class="keyword"&gt;var&lt;/span&gt; i = &lt;span class="integer"&gt;0&lt;/span&gt;, j = n;
+  &lt;span class="keyword"&gt;while&lt;/span&gt; (i &amp;lt; n) {
+    i++;
+    j = j * &lt;span class="integer"&gt;3&lt;/span&gt;;
+    yield j;
+  }
+}
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; c = cube(&lt;span class="integer"&gt;10&lt;/span&gt;);
+&lt;span class="keyword"&gt;for&lt;/span&gt; (&lt;span class="keyword"&gt;var&lt;/span&gt; i = &lt;span class="integer"&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class="integer"&gt;10&lt;/span&gt;; i++) {
+  console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Cubic number:&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, c.next().value);
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Can you spot the difference? Generator represents a sequence of numbers and every time you call
+&lt;code&gt;next()&lt;/code&gt; it gives you the next number in the sequence (it actually gives you an object back
+with two properties: &lt;code&gt;value&lt;/code&gt; and &lt;code&gt;done&lt;/code&gt;):&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;c.next(); &lt;span class="comment"&gt;// =&amp;gt; { value: 3, done: false }&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Once the limit is reached, generator will return:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;c.next(); &lt;span class="comment"&gt;// =&amp;gt; { value: undefined, done: true }&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pretty cool, eh?&lt;/p&gt;
+
+&lt;p&gt;Note, that generators look &lt;em&gt;just&lt;/em&gt; like functions, but with &lt;code&gt;*&lt;/code&gt;s:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// regular function&lt;/span&gt;
+&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;cube&lt;/span&gt;()  {}
+
+&lt;span class="comment"&gt;// es6 generator&lt;/span&gt;
+&lt;span class="keyword"&gt;function&lt;/span&gt; *cube() {}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you&amp;#39;re a Python developer, generators and &lt;code&gt;yield&lt;/code&gt; are not new to you. But it&amp;#39;s a big step forward
+for JavaScript.&lt;/p&gt;
+
+&lt;h2&gt;For-Of&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;for of&lt;/code&gt; loop is a new iteration construct in ES6 which supports generators. This is really for
+performance purposes. Instead of returning a full array, you can just return a generator which
+lazily gives values back on each iteration. That decreases memory allocation and you can express
+infinite data structures (since no array allocation is needed).&lt;/p&gt;
+
+&lt;p&gt;A really interesting use case for generators is async operations:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;spawn(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="keyword"&gt;var&lt;/span&gt; users = yield db.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;users&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; posts = yield db.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;posts&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;spawn&lt;/code&gt; is a function in &lt;a href="http://nodejs.org"&gt;node.js&lt;/a&gt; that allows you to create child processes.
+You can read about it &lt;a href="http://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;spawn&lt;/code&gt; hands control over the function to the scheduler, which knows that the function will &lt;code&gt;yield&lt;/code&gt;
+promises and will send the values back as soon as the promises are going to be resolved (fulfilled).&lt;/p&gt;
+
+&lt;p&gt;This is really powerful.&lt;/p&gt;
+
+&lt;h2&gt;Availability&lt;/h2&gt;
+
+&lt;p&gt;If you really want to use this feature, you&amp;#39;re going to have to use transpilers, such as &lt;a href="https://github.com/google/traceur-compiler"&gt;Traceur&lt;/a&gt;
+or &lt;a href="https://github.com/facebook/regenerator"&gt;Regenerator&lt;/a&gt;. The reason for that is two new language keywords
+introduced by ES6 generators: &lt;code&gt;yield&lt;/code&gt; and &lt;code&gt;function *&lt;/code&gt;. There&amp;#39;s a really good blog post about &lt;a href="http://gu.illau.me/posts/polyfilling-generators/"&gt;polyfilling generators&lt;/a&gt;
+that goes in depth about how transpilers deal with the new syntax.&lt;/p&gt;
+
+&lt;p&gt;Native implementations of generators are available in Firefox and Chrome Canary
+(you will need to enable &lt;a href="chrome://flags/#enable-javascript-harmony"&gt;harmony experimental flag&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I encourage you to play around with the generators and get familiar with the syntax because in couple of
+years from now, we all will be writing code using generators (hopefully).&lt;/p&gt;
+
+&lt;p&gt;P.S.&lt;/p&gt;
+
+&lt;p&gt;Great article about &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.7#Generators"&gt;ES6 generators&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ember Conf picks up where the Rails community left off</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html"/>
