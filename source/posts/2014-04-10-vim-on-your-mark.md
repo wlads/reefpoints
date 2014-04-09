@@ -1,0 +1,101 @@
+---
+layout: post
+title: 'Vim: On Your Mark...'
+comments: true
+author: 'Doug Yun'
+twitter: dougyun
+github: duggiefresh
+social: true
+summary: 'An introduction to the mark motion'
+published: true
+tags: vim, workflow
+---
+
+The strength of Vim's basic **movement** commands are immediately apparent.
+We can jump four words over with `4w` or move to the beginning
+of a sentence with `(`. Once engrained to muscle memory, we can move within
+files with ease.
+
+Today, we're going to briefly cover another poweful motion strategy:
+**mark** motion.
+
+## What is a Mark? ##
+
+Marks are essentially *hidden* positions, when set, allow us to
+jump back to that specific location or line. What I mean by *hidden* is that these marks
+are not visible by default; marks are simply invisible points within a file.
+
+The mark motion command starts with hitting `m` - `m` for mark - and then setting
+a **destination marker** - either a lowercase letter, uppercase letter or number.
+We'll introduce the differences among the destination markers soon.
+
+Let's start by covering a simple example of setting a **lowercase mark**.
+
+#### Example: Moving With A Lowercase Mark ####
+
+```bash
+# ~/example1.txt
+
+Here is Line 3
+Here is Line 4
+Here is Line 5
+
+# On Line #3, use `mn` to set a mark on the letter `n` within the word `Line`.
+# Move around the file.
+# Go back to the previous mark by hitting: `n
+```
+
+1. First, in `Normal` mode, move to Line #3. Place your cursor on the letter `n`
+within the word `Line`.
+
+2. Next, set a mark by hitting `m` and then the lowercase letter
+`n`. `n` is our lowercase **destination marker**.
+Congratulations, we've just set a **lowercase mark**!
+
+3. Now move to Line #5. We're going to move to our mark now.
+Hit `` `n `` - *backtick* and `n`, our previous destination marker.
+
+4. Notice where our cursor is (*hint*: it should be located on the letter `n`).
+Huzzah, we are now back to our previous position within the file!
+
+5. Go back to Line #5.
+
+6. Now, hit `'n` - *single quote* and `n`.
+
+7. We are now at the beginning of Line #3!
+
+## Two Types of Mark Movements ##
+
+### Backtick ###
+
+`` ` `` - The *backtick* places our cursor directly on the mark.
+
+### Single Quote ###
+
+`'` - The *single quote* takes us to the first non-blank character of the mark's line.
+
+## Different Types of Marks ##
+
+As stated earlier, there are different types of marks.
+
+### Lowercase Marks ###
+
+**a - z** - These marks preserve locations within a *single* file. Each individual file
+possesses 26 settable lowercase marks. Lowercase marks are valid as long as the file remains in
+the buffer list. Furthermore, lowercase marks can be combined with other operators.
+For example, ``c`n``, will change everything between the cursor to the mark, `n`.
+
+### Uppercase Marks ###
+
+**A - Z** - These marks preserve locations within *multiple* files. Also known
+as **file marks**. These marks, which are shared among all files within the buffer list,
+can be used to jump from file to file. File marks can only be used in combination with
+operators if the mark is in the current file.
+
+### Numbered Marks ###
+
+**0 - 9** - Numbered marks cannot be set directly, instead they are created
+automagically and used by the **viminfo-file** (`:help viminfo-file`).
+Essentially, the numbered marks store the location of your cursor after closing Vim.
+For example, mark `0` returns the position of the cursor during your last Vim session,
+while mark `1` returns the next to last Vim session, and so forth.
