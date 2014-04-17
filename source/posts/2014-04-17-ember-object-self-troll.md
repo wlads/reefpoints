@@ -102,14 +102,26 @@ Using `init`:
 var Month = Ember.Object.extend({
   weeks: null,
 
+  init: function() {
+    this.super();
+    this.set('weeks', Em.A());
+  }
+});
+```
+
+This is very clear and nice technique if you're not familiar with computed properties.
+Overriding `init` and calling `super` allows to run code upon the object's creation.
+You can set the value for `weeks` there.
+
+You can also use `on('init')` but it's discouraged because a subclass can provide
+its own implementation of `setWeeks`:
+
+```javascript
+var Month = Ember.Object.extend({
   setWeeks: function() {
     this.set('weeks', Em.A());
   }.on('init')
 });
 ```
-
-This is very clear and nice technique if you're not familiar with computed properties.
-`on('init')` allows to run code upon the object's creation. You can set the value for
-`weeks` there.
 
 Happy coding!
