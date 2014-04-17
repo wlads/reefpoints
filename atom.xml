@@ -4,16 +4,188 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-04-10T00:00:00Z</updated>
+  <updated>2014-04-17T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Ember Object Self Troll</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html"/>
+    <id>http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html</id>
+    <published>2014-04-17T00:00:00Z</published>
+    <updated>2014-04-17T16:17:35-04:00</updated>
+    <author>
+      <name>Alex Navasardyan</name>
+    </author>
+    <summary>Ember.Object.create explained</summary>
+    <content type="html">&lt;p&gt;Let&amp;#39;s say we have a &lt;code&gt;Month&lt;/code&gt; object. A &lt;code&gt;Month&lt;/code&gt; has &lt;code&gt;weeks&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
+  &lt;span class="key"&gt;weeks&lt;/span&gt;: Em.A()
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; a = Month.create();
+&lt;span class="keyword"&gt;var&lt;/span&gt; b = Month.create();
+
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;before a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, a.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; []&lt;/span&gt;
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;before b&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, b.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; []&lt;/span&gt;
+
+a.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).pushObject(&lt;span class="integer"&gt;1&lt;/span&gt;);
+a.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).pushObject(&lt;span class="integer"&gt;2&lt;/span&gt;);
+
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;after a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, a.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; [1, 2], as you expect&lt;/span&gt;
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;after b&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, b.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; [1, 2], and you're like O_o&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And another one:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
+  &lt;span class="key"&gt;weeks&lt;/span&gt;: Em.A()
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; a = Month.create({ &lt;span class="key"&gt;weeks&lt;/span&gt;: Em.A([&lt;span class="integer"&gt;1&lt;/span&gt;, &lt;span class="integer"&gt;2&lt;/span&gt;]) });
+&lt;span class="keyword"&gt;var&lt;/span&gt; b = Month.create();
+
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, a.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; [1, 2]&lt;/span&gt;
+console.log(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;b&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, b.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)); &lt;span class="comment"&gt;// =&amp;gt; []&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The results of the first example are quite surprising, if you are not used
+to the prototypical inheritance.&lt;/p&gt;
+
+&lt;p&gt;So what&amp;#39;s going on there? Let&amp;#39;s take a look at the &amp;quot;very scary&amp;quot; Ember.js &lt;code&gt;create&lt;/code&gt; &lt;a href="https://github.com/emberjs/ember.js/blob/master/packages_es6/ember-metal/lib/platform.js#L39-L52"&gt;function&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="function"&gt;create&lt;/span&gt; = &lt;span class="keyword"&gt;function&lt;/span&gt;(obj, props) {
+  K.prototype = obj;
+  obj = &lt;span class="keyword"&gt;new&lt;/span&gt; K();
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (props) {
+    K.prototype = obj;
+    &lt;span class="keyword"&gt;for&lt;/span&gt; (&lt;span class="keyword"&gt;var&lt;/span&gt; prop &lt;span class="keyword"&gt;in&lt;/span&gt; props) {
+      K.prototype[prop] = props[prop].value;
+    }
+    obj = &lt;span class="keyword"&gt;new&lt;/span&gt; K();
+  }
+  K.prototype = &lt;span class="predefined-constant"&gt;null&lt;/span&gt;;
+
+  &lt;span class="keyword"&gt;return&lt;/span&gt; obj;
+};
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;When you don&amp;#39;t pass any properties to create (&lt;code&gt;props&lt;/code&gt;), all instances of
+the &lt;code&gt;Object&lt;/code&gt; will share the same prototype. That&amp;#39;s pretty much the gist
+of the prototypical inheritance. It means that any changes on one object will
+reflect on the others. That explains the behaviour in the first example.&lt;/p&gt;
+
+&lt;p&gt;If you pass the properties (that ones that you specified at &lt;code&gt;extend&lt;/code&gt; time) to &lt;code&gt;create&lt;/code&gt;,
+they are going to be replaced on the instance&amp;#39;s prototype.&lt;/p&gt;
+
+&lt;p&gt;There are two ways of changing the default behavior:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;turn &lt;code&gt;weeks&lt;/code&gt; into a &lt;a href="http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html"&gt;Computed Property&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;set &lt;code&gt;weeks&lt;/code&gt; on &lt;code&gt;init&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using computed property:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
+  &lt;span class="key"&gt;weeks&lt;/span&gt;: Ember.computed(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; Em.A();
+  })
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this case, &lt;code&gt;weeks&lt;/code&gt; is going to return a new &lt;code&gt;Ember.Array&lt;/code&gt; on &lt;code&gt;get&lt;/code&gt;.
+The code will run as you expect, &lt;code&gt;weeks&lt;/code&gt; are not going to be shared.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;init&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
+  &lt;span class="key"&gt;weeks&lt;/span&gt;: &lt;span class="predefined-constant"&gt;null&lt;/span&gt;,
+
+  &lt;span class="function"&gt;setWeeks&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.set(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, Em.A());
+  }.on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;init&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is very clear and nice technique if you&amp;#39;re not familiar with computed properties.
+&lt;code&gt;on(&amp;#39;init&amp;#39;)&lt;/code&gt; allows to run code upon the object&amp;#39;s creation. You can set the value for
+&lt;code&gt;weeks&lt;/code&gt; there.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Vim: On Your Mark...</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html</id>
     <published>2014-04-10T00:00:00Z</published>
-    <updated>2014-04-11T09:11:07-04:00</updated>
+    <updated>2014-04-17T16:17:35-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -236,7 +408,7 @@ you&amp;#39;d like to learn more check the docs.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/04/design-within-the-browser.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/04/design-within-the-browser.html</id>
     <published>2014-04-04T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-04-17T16:17:35-04:00</updated>
     <author>
       <name>Steven Trevathan</name>
     </author>
@@ -287,7 +459,7 @@ you&amp;#39;d like to learn more check the docs.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html</id>
     <published>2014-03-30T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-03-31T13:29:10-04:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -461,7 +633,7 @@ years from now, we all will be writing code using generators (hopefully).&lt;/p&
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</id>
     <published>2014-03-17T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-03-27T14:33:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -606,70 +778,11 @@ charset="utf-8"&gt;&lt;/script&gt;
 </content>
   </entry>
   <entry>
-    <title>A Simple Ember Data Route</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html"/>
-    <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html</id>
-    <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary>A basic pattern for routes with Ember Data content</summary>
-    <content type="html">&lt;p&gt;When working with an Ember Data model it is easy to forget to properly
-handle the teardown of that model. For example, if you are creating a
-new model and the user hits the backbutton that model is still in the
-local &lt;code&gt;store&lt;/code&gt;. Or if a user edits a model and decides to click the
-&lt;code&gt;Cancel&lt;/code&gt; button or clicks a link that transitions out of this route
-without saving the model. A basic approach can be as simple as:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;Ember.DSModelRoute = Ember.Route.extend({
-  &lt;span class="function"&gt;deactivate&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-    model.rollback();
-    &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isNew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
-      model.deleteRecord();
-    }
-  },
-  &lt;span class="key"&gt;actions&lt;/span&gt;: {
-    &lt;span class="function"&gt;willTransition&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(transition) {
-      &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-      &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isDirty&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &amp;amp;&amp;amp; !confirm(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You have unsaved changes. They will be lost if you continue!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
-        transition.abort();
-      }
-    }
-  }
-});
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Routes inherited from &lt;code&gt;Ember.DSModelRoute&lt;/code&gt; will always clean up after themselves. If the user has unsaved changes and attempts to leave the current route 
-the app will guard against the transition and allow the user to confirm with a notice that changes will be lost.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Using Database Templates in Rails</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html</id>
     <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-03-15T16:02:38-04:00</updated>
     <author>
       <name>Romina Vargas</name>
     </author>
@@ -767,11 +880,103 @@ that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
+    <title>A Simple Ember Data Route</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html"/>
+    <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html</id>
+    <published>2014-03-03T00:00:00Z</published>
+    <updated>2014-03-02T23:31:31-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>A basic pattern for routes with Ember Data content</summary>
+    <content type="html">&lt;p&gt;When working with an Ember Data model it is easy to forget to properly
+handle the teardown of that model. For example, if you are creating a
+new model and the user hits the backbutton that model is still in the
+local &lt;code&gt;store&lt;/code&gt;. Or if a user edits a model and decides to click the
+&lt;code&gt;Cancel&lt;/code&gt; button or clicks a link that transitions out of this route
+without saving the model. A basic approach can be as simple as:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Ember.DSModelRoute = Ember.Route.extend({
+  &lt;span class="function"&gt;deactivate&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    model.rollback();
+    &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isNew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
+      model.deleteRecord();
+    }
+  },
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;willTransition&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(transition) {
+      &lt;span class="keyword"&gt;var&lt;/span&gt; model = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller.model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+      &lt;span class="keyword"&gt;if&lt;/span&gt; (model.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;isDirty&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &amp;amp;&amp;amp; !confirm(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You have unsaved changes. They will be lost if you continue!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)) {
+        transition.abort();
+      }
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Routes inherited from &lt;code&gt;Ember.DSModelRoute&lt;/code&gt; will always clean up after themselves. If the user has unsaved changes and attempts to leave the current route 
+the app will guard against the transition and allow the user to confirm with a notice that changes will be lost.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Native App Developers: We Can Help You</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html"/>
+    <id>http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html</id>
+    <published>2014-02-07T00:00:00Z</published>
+    <updated>2014-02-07T15:02:14-05:00</updated>
+    <author>
+      <name>Dan McClain</name>
+    </author>
+    <summary>Have an existing application? We can help you out!</summary>
+    <content type="html">&lt;p&gt;If you have an existing app, and are looking for a server component,
+whether it be adding a syncing service to your app, building out a web
+version to extend your user experience, or need a site to showcase your
+app, we have both the design and development resources to make that
+happen.&lt;/p&gt;
+
+&lt;p&gt;You might have realized that iCloud doesn&amp;#39;t fit your needs, or you want
+a web application that interacts with your app. We can build your API to
+fit your exact needs, so you don&amp;#39;t need to fight iCloud to fit your
+needs. You may be looking to build out a new RSS service that needs to
+parse and cache RSS feeds. We have the experience and resources that
+will help you bring a server heavy component to your app.&lt;/p&gt;
+
+&lt;p&gt;You may have users looking to use your application when they aren&amp;#39;t on
+their phone. We can design and build a rich web application that brings your
+app to the browser without losing the spirit of your app. You might need
+a marketing site with video demos and screenshots of your app. We can
+design and build a site that really shows off your application.&lt;/p&gt;
+
+&lt;p&gt;If any of these sound like you, you should &lt;a href="http://dockyard.com/hire-us"&gt;get in touch with
+us&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Announcing PostgresExt-PostGIS</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html</id>
     <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-02-08T05:22:34-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -843,44 +1048,11 @@ added. Stay tuned!&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Native App Developers: We Can Help You</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html"/>
-    <id>http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html</id>
-    <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
-    <author>
-      <name>Dan McClain</name>
-    </author>
-    <summary>Have an existing application? We can help you out!</summary>
-    <content type="html">&lt;p&gt;If you have an existing app, and are looking for a server component,
-whether it be adding a syncing service to your app, building out a web
-version to extend your user experience, or need a site to showcase your
-app, we have both the design and development resources to make that
-happen.&lt;/p&gt;
-
-&lt;p&gt;You might have realized that iCloud doesn&amp;#39;t fit your needs, or you want
-a web application that interacts with your app. We can build your API to
-fit your exact needs, so you don&amp;#39;t need to fight iCloud to fit your
-needs. You may be looking to build out a new RSS service that needs to
-parse and cache RSS feeds. We have the experience and resources that
-will help you bring a server heavy component to your app.&lt;/p&gt;
-
-&lt;p&gt;You may have users looking to use your application when they aren&amp;#39;t on
-their phone. We can design and build a rich web application that brings your
-app to the browser without losing the spirit of your app. You might need
-a marketing site with video demos and screenshots of your app. We can
-design and build a site that really shows off your application.&lt;/p&gt;
-
-&lt;p&gt;If any of these sound like you, you should &lt;a href="http://dockyard.com/hire-us"&gt;get in touch with
-us&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Ember Conf: Ember for Rails Devs</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-03-27T12:56:05-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -943,34 +1115,11 @@ Kit&lt;/a&gt; for the Rails Asset Pipeline.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Lin Reid is a DockYarder!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html"/>
-    <id>http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html</id>
-    <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary/>
-    <content type="html">&lt;p&gt;&lt;img src="/images/lreid.jpg" alt="Lin Reid"&gt;&lt;/p&gt;
-
-&lt;p&gt;Lin comes to us from Alaska. Normally that is all that you need to say
-but Lin also brought us jerked-bear (actual Alaskan black bear) on his first day with us as an
-intern. From there it was easy street. Lin&amp;#39;s published his own
-&lt;a href="https://github.com/dockyard/stashable_params"&gt;gem&lt;/a&gt;,
-contributed back to several of our projects, and has been expanding his
-developer horizons with Ember over the past few months. He is also the
-&lt;em&gt;co-founder&lt;/em&gt; of &lt;a href="http://pizza-time.herokuapp.com"&gt;Pizza Time&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Follow Lin on &lt;a href="https://twitter.com/linstula"&gt;Twitter&lt;/a&gt; and on &lt;a href="https://github.com/linstula"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Romina Vargas is a DockYarder!</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/romina-vargas-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/2014/01/02/romina-vargas-is-a-dockyarder.html</id>
     <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-02-03T20:12:13-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -992,7 +1141,7 @@ Time&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/robert-jackson-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/2014/01/02/robert-jackson-is-a-dockyarder.html</id>
     <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2014-01-02T14:00:32-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1009,11 +1158,34 @@ open source Ember projects over the past few months.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Lin Reid is a DockYarder!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html</id>
+    <published>2014-01-02T00:00:00Z</published>
+    <updated>2014-02-03T20:12:13-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;&lt;img src="/images/lreid.jpg" alt="Lin Reid"&gt;&lt;/p&gt;
+
+&lt;p&gt;Lin comes to us from Alaska. Normally that is all that you need to say
+but Lin also brought us jerked-bear (actual Alaskan black bear) on his first day with us as an
+intern. From there it was easy street. Lin&amp;#39;s published his own
+&lt;a href="https://github.com/dockyard/stashable_params"&gt;gem&lt;/a&gt;,
+contributed back to several of our projects, and has been expanding his
+developer horizons with Ember over the past few months. He is also the
+&lt;em&gt;co-founder&lt;/em&gt; of &lt;a href="http://pizza-time.herokuapp.com"&gt;Pizza Time&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow Lin on &lt;a href="https://twitter.com/linstula"&gt;Twitter&lt;/a&gt; and on &lt;a href="https://github.com/linstula"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Lessons Learned: The First Two Years of Running a Software Consultancy</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/22/lessons-learned-two-years-of-running-a-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/22/lessons-learned-two-years-of-running-a-dockyard.html</id>
     <published>2013-12-22T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2013-12-28T20:21:24-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1533,7 +1705,7 @@ decisions we&amp;#39;ve made.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/19/ember-enum-property-cycler.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/19/ember-enum-property-cycler.html</id>
     <published>2013-12-19T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2013-12-19T11:42:34-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1559,7 +1731,7 @@ src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/18/be-a-blunt-axe.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/18/be-a-blunt-axe.html</id>
     <published>2013-12-18T00:00:00Z</published>
-    <updated>2014-04-09T22:22:58-04:00</updated>
+    <updated>2013-12-19T11:36:17-05:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -1578,7 +1750,7 @@ src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/08/introducing-easydir-vim.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/08/introducing-easydir-vim.html</id>
     <published>2013-12-08T00:00:00Z</published>
-    <updated>2013-12-09T19:33:29-05:00</updated>
+    <updated>2013-12-19T11:36:17-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1669,7 +1841,7 @@ difficult to write something up.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/06/always-be-exploring.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/06/always-be-exploring.html</id>
     <published>2013-12-06T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-12-19T11:36:17-05:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -1694,7 +1866,7 @@ difficult to write something up.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/27/vim-windows.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/27/vim-windows.html</id>
     <published>2013-11-27T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-12-19T11:36:17-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -1936,7 +2108,7 @@ your workflow will prove pretty helpful. Thanks for reading!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/15/think.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/15/think.html</id>
     <published>2013-11-15T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2060,7 +2232,7 @@ benefits, not just the benefits that everyone is touting.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>
@@ -2346,7 +2518,7 @@ from a search engine optimization standpoint.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html</id>
     <published>2013-11-05T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -2704,7 +2876,7 @@ execution.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html</id>
     <published>2013-10-22T00:00:00Z</published>
-    <updated>2013-11-12T21:33:53-05:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -2931,7 +3103,7 @@ comment in the discussion area. Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html</id>
     <published>2013-10-06T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2971,7 +3143,7 @@ name of serving up static page goodness!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html</id>
     <published>2013-10-01T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3349,7 +3521,7 @@ Ultimately, our coffee makers are able to treat each step,
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html</id>
     <published>2013-09-26T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3550,7 +3722,7 @@ share, please let me know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html</id>
     <published>2013-09-11T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3782,7 +3954,7 @@ comments! Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
     <published>2013-09-06T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -3978,35 +4150,11 @@ add the others shortly.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Alex Navasardyan is a DockYarder!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html"/>
-    <id>http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html</id>
-    <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary>Our first fulltime Ember.js dev</summary>
-    <content type="html">&lt;p&gt;&lt;img src="/images/alex-navasardyan.png" alt="Alex"&gt;&lt;/p&gt;
-
-&lt;p&gt;Alex has been friend for a while now, I got to know him when I started
-attending the &lt;a href="www.meetup.com/Boston-Ember-js/"&gt;Boston Ember meetup&lt;/a&gt;.
-Alex has been a very active in the Ember.js community and helped with
-the 1.0 release last week as well as
-&lt;a href="http://emberjs.com/list-view/"&gt;Ember.ListView&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;re very dedicated to the future of Ember.js and with Alex on board
-we&amp;#39;re well on our way to building out one of the best teams around.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://twitter.com/twokul"&gt;Follow Alex on Twitter&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Computed Properties in Ember.Js</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html</id>
     <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -4257,11 +4405,35 @@ Happy Coding!&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Alex Navasardyan is a DockYarder!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html</id>
+    <published>2013-09-04T00:00:00Z</published>
+    <updated>2013-11-25T10:20:31-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Our first fulltime Ember.js dev</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/alex-navasardyan.png" alt="Alex"&gt;&lt;/p&gt;
+
+&lt;p&gt;Alex has been friend for a while now, I got to know him when I started
+attending the &lt;a href="www.meetup.com/Boston-Ember-js/"&gt;Boston Ember meetup&lt;/a&gt;.
+Alex has been a very active in the Ember.js community and helped with
+the 1.0 release last week as well as
+&lt;a href="http://emberjs.com/list-view/"&gt;Ember.ListView&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re very dedicated to the future of Ember.js and with Alex on board
+we&amp;#39;re well on our way to building out one of the best teams around.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://twitter.com/twokul"&gt;Follow Alex on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Announcing Postgres_ext version 1.0 and 2.0</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
     <published>2013-08-23T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4297,7 +4469,7 @@ but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -4676,7 +4848,7 @@ informs the &lt;em&gt;observers&lt;/em&gt; of what is going on with the &lt;em&g
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html</id>
     <published>2013-08-05T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4888,7 +5060,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html</id>
     <published>2013-07-29T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -4983,7 +5155,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html</id>
     <published>2013-07-25T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -5277,7 +5449,7 @@ example.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html</id>
     <published>2013-07-10T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -5693,7 +5865,7 @@ helps keep our code clean by the use of inheritance.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html</id>
     <published>2013-07-09T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Marin Abernethy</name>
     </author>
@@ -5735,35 +5907,11 @@ thoroughly look forward to the rest of the summer.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>DockYard Acquires Dobot</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
-    <id>http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
-    <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary>Joining forces</summary>
-    <content type="html">&lt;p&gt;Today I&amp;#39;m very happy to announce that we have acquired local design firm
-&lt;a href="http://dobotdo.com"&gt;Dobot&lt;/a&gt;, its two partners Steven &amp;amp; Logan have joined us full-time.
-This is a huge move for DockYard, and a simple one for Dobot (they have
-been working out of our office for the past few months so they don&amp;#39;t
-actually need to move anywhere).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/acquire.gif" alt="DockYard acquires Dobot"&gt;&lt;/p&gt;
-
-&lt;p&gt;Please see the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"&gt;Steven
-Trevathan&lt;/a&gt;
-and the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"&gt;Logan
-Faerber&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Steven Trevathan is a DockYarder</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5789,7 +5937,7 @@ together a formal concept design process for us.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5810,11 +5958,35 @@ are excited to have his unique talents at DockYard.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>DockYard Acquires Dobot</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
+    <published>2013-07-08T00:00:00Z</published>
+    <updated>2013-11-26T22:10:12-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Joining forces</summary>
+    <content type="html">&lt;p&gt;Today I&amp;#39;m very happy to announce that we have acquired local design firm
+&lt;a href="http://dobotdo.com"&gt;Dobot&lt;/a&gt;, its two partners Steven &amp;amp; Logan have joined us full-time.
+This is a huge move for DockYard, and a simple one for Dobot (they have
+been working out of our office for the past few months so they don&amp;#39;t
+actually need to move anywhere).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/acquire.gif" alt="DockYard acquires Dobot"&gt;&lt;/p&gt;
+
+&lt;p&gt;Please see the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"&gt;Steven
+Trevathan&lt;/a&gt;
+and the announcement for &lt;a href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"&gt;Logan
+Faerber&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Sean Hussey is a DockYarder</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
     <published>2013-07-01T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5833,7 +6005,7 @@ level Ruby experience to our team.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html</id>
     <published>2013-06-28T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>
@@ -5863,28 +6035,11 @@ GitHub page&lt;/a&gt; .&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Marin Abernethy is a DockYarder</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
-    <id>http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
-    <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary>Our first developer intern</summary>
-    <content type="html">&lt;p&gt;&lt;img src="/images/abernethy.jpg" alt="Marin"&gt;
-Marin comes to us as from Trinity College for the summer. We&amp;#39;ve been
-overwhelming her with Ruby, Linux, SQL, JavaScript, and VIM. She&amp;#39;s
-excelled and we&amp;#39;re excited to see what she can accomplish over the
-remainder of the summer.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Michael Dupuis is a DockYarder</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -5897,11 +6052,28 @@ some design chops. Welcome Mike!&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Marin Abernethy is a DockYarder</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
+    <published>2013-06-19T00:00:00Z</published>
+    <updated>2013-11-25T10:20:31-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Our first developer intern</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/abernethy.jpg" alt="Marin"&gt;
+Marin comes to us as from Trinity College for the summer. We&amp;#39;ve been
+overwhelming her with Ruby, Linux, SQL, JavaScript, and VIM. She&amp;#39;s
+excelled and we&amp;#39;re excited to see what she can accomplish over the
+remainder of the summer.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Tilde's Ember Training</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -5976,7 +6148,7 @@ any upcoming side projects, to really explore it further. &lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6211,7 +6383,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html"/>
     <id>http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html</id>
     <published>2013-04-26T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -6238,7 +6410,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html</id>
     <published>2013-04-04T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6285,7 +6457,7 @@ fulltime Ember.js developer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html</id>
     <published>2013-03-29T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6411,7 +6583,7 @@ to postgres&lt;em&gt;ext, which was added in 9.2. You should be able use this
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html</id>
     <published>2013-03-27T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6462,7 +6634,7 @@ building an Ember app and this is how I got it working:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html</id>
     <published>2013-03-26T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6507,7 +6679,7 @@ issues, &lt;a href="https://github.com/dockyard/postgres_ext/issue"&gt;open an i
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html</id>
     <published>2013-03-25T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6586,7 +6758,7 @@ well.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html</id>
     <published>2013-03-21T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6659,7 +6831,7 @@ following code into your &lt;code&gt;test_helper.rb&lt;/code&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html</id>
     <published>2013-03-19T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6687,7 +6859,7 @@ in politics. &lt;a href="mailto:contact@dockyard.com"&gt;Join us!&lt;/a&gt;&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html</id>
     <published>2013-02-21T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6833,7 +7005,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html</id>
     <published>2013-01-10T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7340,7 +7512,7 @@ buttonTitle: 'Update'
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html</id>
     <published>2013-01-09T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7767,7 +7939,7 @@ App.UsersRoute = Ember.Route.extend
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html</id>
     <published>2013-01-07T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8150,7 +8322,7 @@ rails-api g serializer User
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html</id>
     <published>2013-01-04T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8342,7 +8514,7 @@ to your model:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html"/>
     <id>http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html</id>
     <published>2013-01-03T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Chris Gill</name>
     </author>
@@ -8437,7 +8609,7 @@ easy&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html"/>
     <id>http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html</id>
     <published>2012-10-26T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8468,7 +8640,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html</id>
     <published>2012-10-11T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -8510,7 +8682,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html</id>
     <published>2012-10-09T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8649,7 +8821,7 @@ removed. Please add &lt;code&gt;ClientSideValidations::Config.disabled_validator
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html</id>
     <published>2012-09-21T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8827,7 +8999,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html</id>
     <published>2012-09-20T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -8846,7 +9018,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html</id>
     <published>2012-09-18T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -9032,7 +9204,7 @@ postgres_ext and Rails 4.0. Go forth and use arrays in Rails 4.0!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html</id>
     <published>2012-09-05T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9053,7 +9225,7 @@ released him from his cage on the nearest client app. He&amp;#39;s running wild!
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html</id>
     <published>2012-08-30T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9219,7 +9391,7 @@ perspective, or any general advice I&amp;#39;d love to hear it.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html</id>
     <published>2012-06-26T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9322,7 +9494,7 @@ Plante&lt;/a&gt;&amp;#39;s
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html</id>
     <published>2012-06-25T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9585,11 +9757,26 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Models, Views, and Controllers, Oh My!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
+    <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
+    <published>2012-06-21T00:00:00Z</published>
+    <updated>2013-11-26T22:10:12-05:00</updated>
+    <author>
+      <name>Amanda Cheung</name>
+    </author>
+    <summary>Getting started in Ruby on Rails</summary>
+    <content type="html">&lt;p&gt;Eight days ago, I hardly had an idea of what &amp;quot;object-oriented&amp;quot; meant. The MVC framework was beyond me, and the thought of having to go in to the Command Line? Yikes. Since joining DockYard, I have been reading &amp;quot;Agile Web Development with Rails&amp;quot; to get a grasp on both Ruby and Rails. Having only coded in HTML, CSS and a bit of JavaScript prior to starting, my bearings were a bit shaken. But since stressing out is not for me, I said to myself, &amp;quot;Everyone was a beginner at one point,&amp;quot; and chugged along. Even though I didn&amp;#39;t fully understand the lines of code as I followed along with the book, I made sure I typed out the edits so I could at least get used to the syntax. With the help of my fellow DockYarders, it is all starting to come together. Needless to say, there were several hiccups. To name a couple, install and setting up my machine wasn&amp;#39;t a breeze. There was also an update to Rails that wasn&amp;#39;t included in the book (the mass-assignment feature) where an extra line of code was needed to make the app work.&lt;/p&gt;
+
+&lt;p&gt;For those Ruby-beginners like me, don&amp;#39;t get discouraged! Getting stuck? A great place to come for help is at &lt;a href="http://bostonrb.org/"&gt;Boston Ruby Group&amp;#39;s Project Nights&lt;/a&gt; if you are in the Boston area.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Lessons Learned: The First Six Months of Running a Software Consultancy</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9869,26 +10056,11 @@ always looking to improve.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Models, Views, and Controllers, Oh My!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
-    <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
-    <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
-    <author>
-      <name>Amanda Cheung</name>
-    </author>
-    <summary>Getting started in Ruby on Rails</summary>
-    <content type="html">&lt;p&gt;Eight days ago, I hardly had an idea of what &amp;quot;object-oriented&amp;quot; meant. The MVC framework was beyond me, and the thought of having to go in to the Command Line? Yikes. Since joining DockYard, I have been reading &amp;quot;Agile Web Development with Rails&amp;quot; to get a grasp on both Ruby and Rails. Having only coded in HTML, CSS and a bit of JavaScript prior to starting, my bearings were a bit shaken. But since stressing out is not for me, I said to myself, &amp;quot;Everyone was a beginner at one point,&amp;quot; and chugged along. Even though I didn&amp;#39;t fully understand the lines of code as I followed along with the book, I made sure I typed out the edits so I could at least get used to the syntax. With the help of my fellow DockYarders, it is all starting to come together. Needless to say, there were several hiccups. To name a couple, install and setting up my machine wasn&amp;#39;t a breeze. There was also an update to Rails that wasn&amp;#39;t included in the book (the mass-assignment feature) where an extra line of code was needed to make the app work.&lt;/p&gt;
-
-&lt;p&gt;For those Ruby-beginners like me, don&amp;#39;t get discouraged! Getting stuck? A great place to come for help is at &lt;a href="http://bostonrb.org/"&gt;Boston Ruby Group&amp;#39;s Project Nights&lt;/a&gt; if you are in the Boston area.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>postgres_ext: Adding Postgres data types to Rails</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html</id>
     <published>2012-06-18T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10077,7 +10249,7 @@ INET and CIDR comparisons.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html</id>
     <published>2012-06-14T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10096,7 +10268,7 @@ skills and much needed illustration skills.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html</id>
     <published>2012-06-11T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10148,7 +10320,7 @@ option.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html</id>
     <published>2012-06-01T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10173,7 +10345,7 @@ located in DC and we hope to soon build out a team in that area.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html</id>
     <published>2012-05-18T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10210,7 +10382,7 @@ while MACADDR will continue to be converted to a string.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html</id>
     <published>2012-05-01T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10252,7 +10424,7 @@ much time was remaining. So I whipped up the following:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html"/>
     <id>http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html</id>
     <published>2012-04-16T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -10405,7 +10577,7 @@ Here&amp;#39;s a quick example of how Backbone views can listen for jquery-ujs c
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html</id>
     <published>2012-04-10T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10487,7 +10659,7 @@ an issue.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html</id>
     <published>2012-04-03T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -10766,7 +10938,7 @@ role assignment of &amp;#39;admin&amp;#39;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html</id>
     <published>2012-03-05T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10860,7 +11032,7 @@ have jenkins notify us of builds in a way that makes more sense.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html</id>
     <published>2012-02-27T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10889,7 +11061,7 @@ of Jenkins and keeping us honest with our test suites.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html</id>
     <published>2012-02-20T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11168,7 +11340,7 @@ defeat the purpose of using the engine in the first place.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html</id>
     <published>2012-02-16T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11307,7 +11479,7 @@ you may want to consider other options.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html</id>
     <published>2012-02-15T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11372,7 +11544,7 @@ variables in my specs as a smell and you should too.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html</id>
     <published>2012-02-14T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11617,7 +11789,7 @@ concerning the &lt;code&gt;lib/&lt;/code&gt; directory please feel free to comme
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html</id>
     <published>2012-02-13T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11804,35 +11976,11 @@ But we&amp;#39;ll cross that road when we get there.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Angelo Simeoni is a DockYarder!</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
-    <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
-    <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
-    <author>
-      <name>Brian Cardarella</name>
-    </author>
-    <summary>DockYard welcomes Angelo Simeoni as a partner</summary>
-    <content type="html">&lt;p&gt;&lt;img src="/images/angelo-simeoni.png" alt="Angelo Simeoni"&gt;&lt;/p&gt;
-
-&lt;p&gt;I first met Angelo when we both worked at &lt;a href="http://zendesk.com"&gt;zendesk&lt;/a&gt; two years ago. I had heard about him before this as he had done some redesigns for &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt; website. Over the few months that zendesk was in Boston we got to be friends, and when we both left zendesk I knew this was someone I wanted to work with again in the future. That opportunity came when I moved back to Boston in the summer of 2010. For the past year Angelo and I have been collaborating on several projects and I&amp;#39;m happy to announce that he has agreed to come on as a partner for DockYard.&lt;/p&gt;
-
-&lt;p&gt;Angelo has been working in Rails for a few years now, and is a master of
-all things CSS. His love for typefaces has influenced me quite a bit in
-how I approach web design.&lt;/p&gt;
-
-&lt;p&gt;You can view a lot of Angelo&amp;#39;s work over at his personal site:
-&lt;a href="http://cssboy.com"&gt;CSSBoy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://twitter.com/cssboy"&gt;Follow Angelo on Twitter&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Russ Jones is a DockYarder!</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11853,11 +12001,35 @@ partner.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Angelo Simeoni is a DockYarder!</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
+    <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
+    <published>2012-02-10T00:00:00Z</published>
+    <updated>2013-11-25T10:20:31-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>DockYard welcomes Angelo Simeoni as a partner</summary>
+    <content type="html">&lt;p&gt;&lt;img src="/images/angelo-simeoni.png" alt="Angelo Simeoni"&gt;&lt;/p&gt;
+
+&lt;p&gt;I first met Angelo when we both worked at &lt;a href="http://zendesk.com"&gt;zendesk&lt;/a&gt; two years ago. I had heard about him before this as he had done some redesigns for &lt;a href="http://bostonrb.org"&gt;The Boston Ruby Group&lt;/a&gt; website. Over the few months that zendesk was in Boston we got to be friends, and when we both left zendesk I knew this was someone I wanted to work with again in the future. That opportunity came when I moved back to Boston in the summer of 2010. For the past year Angelo and I have been collaborating on several projects and I&amp;#39;m happy to announce that he has agreed to come on as a partner for DockYard.&lt;/p&gt;
+
+&lt;p&gt;Angelo has been working in Rails for a few years now, and is a master of
+all things CSS. His love for typefaces has influenced me quite a bit in
+how I approach web design.&lt;/p&gt;
+
+&lt;p&gt;You can view a lot of Angelo&amp;#39;s work over at his personal site:
+&lt;a href="http://cssboy.com"&gt;CSSBoy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://twitter.com/cssboy"&gt;Follow Angelo on Twitter&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>ClientSideValidations goes modular</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html</id>
     <published>2012-01-22T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11960,7 +12132,7 @@ JavaScript MVC frameworks.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html"/>
     <id>http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html</id>
     <published>2012-01-04T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12012,7 +12184,7 @@ in the future.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html"/>
     <id>http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html</id>
     <published>2011-12-04T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12046,7 +12218,7 @@ of the week on how things went.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html</id>
     <published>2011-11-18T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12091,7 +12263,7 @@ them in the comments.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html</id>
     <published>2011-11-14T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12122,7 +12294,7 @@ flag&lt;/a&gt;)&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html</id>
     <published>2011-11-10T00:00:00Z</published>
-    <updated>2013-10-19T15:28:40-04:00</updated>
+    <updated>2013-11-25T10:20:31-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12301,7 +12473,7 @@ future we all know is just a matter of time.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/08/24/launch.html"/>
     <id>http://reefpoints.dockyard.com/2011/08/24/launch.html</id>
     <published>2011-08-24T00:00:00Z</published>
-    <updated>2013-12-09T19:08:00-05:00</updated>
+    <updated>2013-11-26T22:10:12-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
