@@ -7,6 +7,7 @@ author: 'Alex Navasardyan'
 tags: ember
 social: true
 published: true
+comments: true
 summary: 'Ember.Object.create explained'
 ---
 
@@ -103,7 +104,7 @@ var Month = Ember.Object.extend({
   weeks: null,
 
   init: function() {
-    this.super();
+    this._super();
     this.set('weeks', Em.A());
   }
 });
