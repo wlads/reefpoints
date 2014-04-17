@@ -208,10 +208,33 @@ The code will run as you expect, &lt;code&gt;weeks&lt;/code&gt; are not going to
 5
 6
 7
+8
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
   &lt;span class="key"&gt;weeks&lt;/span&gt;: &lt;span class="predefined-constant"&gt;null&lt;/span&gt;,
 
+  &lt;span class="function"&gt;init&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.&lt;span class="reserved"&gt;super&lt;/span&gt;();
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.set(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, Em.A());
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is very clear and nice technique if you&amp;#39;re not familiar with computed properties.
+Overriding &lt;code&gt;init&lt;/code&gt; and calling &lt;code&gt;super&lt;/code&gt; allows to run code upon the object&amp;#39;s creation.
+You can set the value for &lt;code&gt;weeks&lt;/code&gt; there.&lt;/p&gt;
+
+&lt;p&gt;You can also use &lt;code&gt;on(&amp;#39;init&amp;#39;)&lt;/code&gt; but it&amp;#39;s discouraged because a subclass can provide
+its own implementation of &lt;code&gt;setWeeks&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Month = Ember.Object.extend({
   &lt;span class="function"&gt;setWeeks&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
     &lt;span class="local-variable"&gt;this&lt;/span&gt;.set(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;weeks&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, Em.A());
   }.on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;init&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
@@ -219,10 +242,6 @@ The code will run as you expect, &lt;code&gt;weeks&lt;/code&gt; are not going to
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This is very clear and nice technique if you&amp;#39;re not familiar with computed properties.
-&lt;code&gt;on(&amp;#39;init&amp;#39;)&lt;/code&gt; allows to run code upon the object&amp;#39;s creation. You can set the value for
-&lt;code&gt;weeks&lt;/code&gt; there.&lt;/p&gt;
-
 &lt;p&gt;Happy coding!&lt;/p&gt;
 </content>
   </entry>

@@ -188,10 +188,33 @@ The code will run as you expect, <code>weeks</code> are not going to be shared.<
 5
 6
 7
+8
 </pre></td>
   <td class="code"><pre><span class="keyword">var</span> Month = Ember.Object.extend({
   <span class="key">weeks</span>: <span class="predefined-constant">null</span>,
 
+  <span class="function">init</span>: <span class="keyword">function</span>() {
+    <span class="local-variable">this</span>.<span class="reserved">super</span>();
+    <span class="local-variable">this</span>.set(<span class="string"><span class="delimiter">'</span><span class="content">weeks</span><span class="delimiter">'</span></span>, Em.A());
+  }
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>This is very clear and nice technique if you&#39;re not familiar with computed properties.
+Overriding <code>init</code> and calling <code>super</code> allows to run code upon the object&#39;s creation.
+You can set the value for <code>weeks</code> there.</p>
+
+<p>You can also use <code>on(&#39;init&#39;)</code> but it&#39;s discouraged because a subclass can provide
+its own implementation of <code>setWeeks</code>:</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> Month = Ember.Object.extend({
   <span class="function">setWeeks</span>: <span class="keyword">function</span>() {
     <span class="local-variable">this</span>.set(<span class="string"><span class="delimiter">'</span><span class="content">weeks</span><span class="delimiter">'</span></span>, Em.A());
   }.on(<span class="string"><span class="delimiter">'</span><span class="content">init</span><span class="delimiter">'</span></span>)
@@ -199,10 +222,6 @@ The code will run as you expect, <code>weeks</code> are not going to be shared.<
 </pre></td>
 </tr></table>
 </div></div>
-<p>This is very clear and nice technique if you&#39;re not familiar with computed properties.
-<code>on(&#39;init&#39;)</code> allows to run code upon the object&#39;s creation. You can set the value for
-<code>weeks</code> there.</p>
-
 <p>Happy coding!</p>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
