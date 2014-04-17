@@ -104,7 +104,7 @@ var Month = Ember.Object.extend({
   weeks: null,
 
   init: function() {
-    this.super();
+    this._super();
     this.set('weeks', Em.A());
   }
 });
