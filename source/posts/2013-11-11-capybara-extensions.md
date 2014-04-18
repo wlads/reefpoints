@@ -15,7 +15,7 @@ tags: testing, ruby
 Today we're happy to announce [CapybaraExtensions](https://github.com/dockyard/capybara-extensions).
 
 ## Testing with Capybara
-We love Capybara at DockYard. We use it for virtually all of our integration tests and
+We love [Capybara](https://github.com/jnicklas/capybara) at DockYard. We use it for virtually all of our integration tests and
 rely on it for writing tests that not only replicate how users flow
 through an application, but also for how they interact with page
 elements.
@@ -173,7 +173,10 @@ Asserting that text appears on the page is easy with Capybara's
 `#must_have_content` method; asserting
 that a particular image appears has always been a little tougher.
 `#must_have_image` takes a hash with the `src` and/or `alt` attributes
-you're looking for.
+you're looking for. You can pass a string for either of these keys, and
+an instance of `Regexp` to the `src` attribute when you want to hone in
+on a portion of the `src` attribute without worrying about the rest of
+the URL.
 
 ```ruby
 page.has_image?(src: 'http://gallery.photo.net/photo/8385754-md.jpg',
