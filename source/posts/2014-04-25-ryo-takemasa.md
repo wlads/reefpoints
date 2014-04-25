@@ -3,16 +3,16 @@ layout: post
 title: 'Artist: Ryo Takemasa'
 twitter: LoganFaerber
 author: 'Logan Faerber'
-tags: ember
+tags: design, illustration, inspiration
 social: true
-published: false
+published: true
 comments: true
-summary: 'A highlight of an inspiring artist'
+summary: 'Highlighting an inspiring artist'
 ---
 
 # Artist: Ryo Takemasa
 
-If you’re not using Pinterest yet to collect various reference material and inspirational artists, may I suggest doing so immediately? I typically like to keep a huge assortment of “mood boards” on various topics, ranging from product designs to comic books to grandiose natural landscape photography. It serves as an endless source of knowledge, much like collecting magazine clippings and organizing them in various folders. Not only is it great for collecting all of the art you love in one place, it’s also a great platform for discovering new artists. A list of suggestions titled, “other pins like...” is displayed below the piece you’re currently viewing. This often times leads me down an endless tunnel of discovery - one that typically keeps me digging a hole into the wee hours of the morning. 
+If you’re not using Pinterest yet to collect various reference material and inspirational artists, may I suggest doing so immediately? I typically like to keep a huge assortment of “mood boards” on various topics, ranging from product designs to comic books to grandiose natural landscape photography. It serves as an endless source of reference material, much like collecting magazine clippings and organizing them in various folders. Not only is it great for collecting all of the art you love in one place, it’s also a great platform for discovering new artists. A list of suggestions titled, “other pins like...” is displayed below the piece you’re currently viewing. This often times leads me down an endless tunnel of discovery - one that typically keeps me digging a hole into the wee hours of the morning. 
 
 ![“Cucumbers” by Ryo Takemasa](http://24.media.tumblr.com/tumblr_mbi1kuOUHp1rfdswao1_500.jpg)
 
