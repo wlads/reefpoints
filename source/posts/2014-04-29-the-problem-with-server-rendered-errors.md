@@ -52,13 +52,13 @@ and consider the ultimate goal of client side validations. In my mind
 this is puropse: *to help the user submit valid data to the server*.
 
 Client side validations are just UI sugar. They are there to guide your
-users. ember-validations only has model-layer concerns. Which means you
+users. ember-validations only has model-layer concerns, which means you
 have to provide how the validation errors are displayed on your UI. This
 is why I also wrote
 [ember-easyForm](https://github.com/dockyard/ember-easyForm) which
 handles the complexity of what I consider to be best practices of how
 validation messages should be displayed and cleared. To fix this problem
-would hanve to tackle it from both sides:
+would have to tackle it from both sides:
 
 1. How will server-rendered errors be stored in the validation graph?
    (ember-validations)
