@@ -110,6 +110,11 @@ Notice `profile: true` in the graph. As long as `profile` is the path to
 the object to validate against ember-validations will work its magic.
 
 However, the above only really works if the validations exist on the
-`Profile` **model** and not the controller. I have been putting some
-time into thinking how best to do this. I welcome suggestions and
-thoughts on this API as well as the validation graph in general.
+`Profile` **model** and not the controller.
+
+A visualization of a complex validation graph might look like this. We
+can see the `isValid` states bubbling up to the original root node:
+
+<img style="width: auto" src="http://i.imgur.com/QP2sYWT.gif"/>
+
+ I welcome suggestions and thoughts on this API as well as the validation graph in general.
