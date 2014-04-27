@@ -16,7 +16,7 @@ If you have heard me speak about
 you may have heard me mention the term **validation graph**. What is
 this? Why is it important?
 
-If you come form a Rails background then you are used to the validations
+If you come from a Rails background then you are used to the validations
 being stored in an array on the instance of the model. When you validate
 your model all of those validations will be run and an errors object is
 produced. If you make a change to a property you have to run the
@@ -85,7 +85,7 @@ can have its own set of validations as well as its own `isValid` flag.
 If the `Profile` is mixed into the `Users`'s validation graph then the
 `User` will be invalid when the `Profile` is invalid. We can use this
 pattern to buld an incredibly deep and complex graph where the validation
-state bubbles up to the root whenver a property change takes place
+state bubbles up to the root whenever a property change takes place
 anywhere in the graph.
 
 We can do this simply with:
