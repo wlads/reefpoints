@@ -24,9 +24,9 @@ validations again to determine the validity of the model.
 
 I would refer to the style of
 validations described above as *lazy validations*. Meaning the
-validity of the model may not be truly representitive of its
+validity of the model may not be truly representative of its
 current state. We have to opt-into running the validations again to
-determine this. Fortunately in most cases the validations are run for us
+determine this. Fortunately in most cases, the validations will run for us
 before we save. On the server this all happens within a request/response
 cycle so we don't really care too much about the validations
 being lazy because we care about the final result, not the state of the
@@ -34,12 +34,12 @@ model at any given point during that cycle.
 
 ember-validations has *eager validations*. This means when the property
 that is associated with any number of validations changes those
-validations are run again to determine the state of the model. This is
+validations will run again to determine the state of the model. This is
 great for client side apps that need to show the current state of the
 entire model any time you make a change, say during a user sign up. I
 might want to disable the Submit button if there are any failing
 validations. If I make a correction I want the error message to go away
-once the correction is made. I should not have to wait on form
+once the correction is made. I should not have to wait upon form
 submission to see my errors.
 
 How does ember-validations do this? Let's say you have the following
@@ -62,8 +62,8 @@ Ember.ObjectController.extend(Ember.Validations.Mixin, {
 
 There are 3 validations on 2 properties. Each validation is an
 instantiated class that can observe the one or more properties. In the
-case of `firstName` there is the `Presence` and `Length` validators
-observing `firstName`. The `Confirmation` validator is actually
+case of the `firstName` property the `Presence` and `Length` validators
+are observing it. The `Confirmation` validator is actually
 observing `password` **and** `passwordConfirmation` for changes. Each
 validator has a `isValid` flag that is set to `true` or `false`
 depending upon the result. Each of these validators are pushed onto a
