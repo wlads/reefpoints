@@ -26,7 +26,7 @@ directory... I'll cover the 2nd Q in an upcoming blog post. As far as
 Here is the problem. When you are dealing with a client-side model and a
 server-rendered model there won't always be a 1-to-1 representation of the
 model. In those cases you can rely on ember-data's serializer to
-transform the properties on server-rendered error object to ones that
+transform the properties on a server-rendered error object to ones that
 exist on the client data model. How about properties that don't exist at
 all in any form on the client? You could have a validation error on
 something only meant for server-rendered purposes. How do we best handle
@@ -34,10 +34,10 @@ this?
 
 Let's imagine for a moment that we can properly map all the properties
 back to their client-side equivalents. Now what? How do you resolve
-these validation errors? How do you know in the UI when the valdiation
-error has been resolved to clear the message? Are you preventing data
+these validation errors? How do you know in the UI when the validation
+error has been resolved to clear the error message? Are you preventing data
 submission until your client model is valid? If the errors are happening
-server-rendered the odds are high that these are not validations that can be
+server-side the odds are high that these are not validations that can be
 known to be resolved on the client unless you do another data
 submission and wait to see how the server responds.
 
