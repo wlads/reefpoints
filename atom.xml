@@ -4,10 +4,124 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-04-25T00:00:00Z</updated>
+  <updated>2014-04-28T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>The first two months at DockYard</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/first-few-months.html"/>
+    <id>http://reefpoints.dockyard.com/2014/04/28/first-few-months.html</id>
+    <published>2014-04-28T00:00:00Z</published>
+    <updated>2014-04-28T09:36:09-04:00</updated>
+    <author>
+      <name>Maria Matveeva</name>
+    </author>
+    <summary>Recurring themes, and principles I learned in breaking into user experience design.</summary>
+    <content type="html">&lt;h1&gt;The first two months at DockYard.&lt;/h1&gt;
+
+&lt;p&gt;Recurring themes, and principles I learned in breaking into user experience design.&lt;/p&gt;
+
+&lt;h2&gt;Invisible&lt;/h2&gt;
+
+&lt;p&gt;The way I see websites has changed after a month and a half of paying attention to website UI. One thing that stands out: good design can support the message and content in a quiet, almost invisible way. This principle applies in all areas of design, but I am particularly focusing on elegant solutions in web interfaces. It is a pleasure to observe, and sometimes find myself, effective use of subtle visual changes. &lt;/p&gt;
+
+&lt;p&gt;The principle of quiet, effective solutions comes up most often when my work-in-progress is reviewed by the whole team. In most cases, I find that I start a design with many elements in a very “loud” state, then evaluate the entire layout. Once I can prioritize things on the page, most elements can become more “quiet”.&lt;/p&gt;
+
+&lt;h2&gt;Design for a typical case, not the worst case.&lt;/h2&gt;
+
+&lt;p&gt;Before DockYard, my process relied heavily on finding out what the worst-case scenario could be, and designing for that. For example, I would consider a very long, but still plausible, title for an article, and then design the header to accommodate that comfortably. I’d always consider extreme cases early on, and design heavily around those. &lt;/p&gt;
+
+&lt;p&gt;At DockYard, I learned to design for the typical use case, and then consider how an extreme case would be accommodated. Looking back, I realize that this approach is less limiting and can result in better graphical solutions.&lt;/p&gt;
+
+&lt;h2&gt;Information density&lt;/h2&gt;
+
+&lt;p&gt;Different uses call for different densities of information. &lt;/p&gt;
+
+&lt;p&gt;When you are scanning through many search results, it is sometimes appropriate to show a lot of detail at once.  Search results are basically many repetitions of one type of item. Users may want to compare what they see according to different criteria, and it is useful to neatly show many details about each result. If I’ve done a good job prioritizing the detailed information, many details do not cause clutter.&lt;/p&gt;
+
+&lt;p&gt;In other cases, it is more important to convey the atmosphere around a brand, or to highlight one or two primary actions. Showing fewer items and fewer details can work better.  In these cases, the density of information may appear low, but each element has more prominence.&lt;/p&gt;
+
+&lt;p&gt;I can make good progress towards solving the layout of a page by deciding whether it is a detailed type of page (like search results) or a page focused on emotional impact, but not details (like some landing pages).&lt;/p&gt;
+
+&lt;h2&gt;Does it look “real”?&lt;/h2&gt;
+
+&lt;p&gt;Design is often about deciding what kind of animal a chunk of information will be. Through visual design, we have to clearly answer questions like “how important is this thing, relative to others?”, “what can I do with this?” and even “what kind of thing is it?” When I show a draft in a design review, I can see how the suggested changes “snap” to something that looks more real and interactive. I believe that the ability to make things look real quickly comes from experience, and also from paying attention to how user interface elements are crafted in products I use every day.&lt;/p&gt;
+
+&lt;p&gt;Through regular design reviews, close observation of UI design and occasional experiments, I hope to continue improving my ability to judge my own work. This will allow for more efficient work, more refined design, and more awesomeness in the future.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Don't override init</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html"/>
+    <id>http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html</id>
+    <published>2014-04-28T00:00:00Z</published>
+    <updated>2014-04-28T09:36:09-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Use events instead</summary>
+    <content type="html">&lt;p&gt;Too frequently I see the following problem. Someone creates a new
+class and overrides &lt;code&gt;init&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController = Ember.ArrayController.extend({
+  &lt;span class="function"&gt;init&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="comment"&gt;// some custom stuff&lt;/span&gt;
+  }
+})
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; UsersController;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;init&lt;/code&gt; is a popular function to override because it is automatically run
+after the object is instantiated. It is the only lifecycle hook for
+&lt;code&gt;Ember.Object&lt;/code&gt;, subclases of &lt;code&gt;Ember.Object&lt;/code&gt; add their own hooks to the
+lifecycle but the only one that is guaranteed to be there is &lt;code&gt;init&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem is with the above example
+the controller is broken. I forgot to make a call to &lt;code&gt;this._super()&lt;/code&gt;
+which will call the original &lt;code&gt;init&lt;/code&gt; from &lt;code&gt;Ember.ArrayController&lt;/code&gt;. That
+&lt;code&gt;init&lt;/code&gt; assigns the proper value to &lt;code&gt;content&lt;/code&gt;. (via &lt;code&gt;ArrayProxy&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;Instead of overriding &lt;code&gt;init&lt;/code&gt; I have been writing functions that are
+specific to the logic I want to kick off on object instantiation and
+have that function trigger &lt;code&gt;on(&amp;#39;init&amp;#39;)&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController = Ember.ArrayController.extend({
+  &lt;span class="function"&gt;doSomething&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="comment"&gt;// some custom stuff&lt;/span&gt;
+  }.on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;init&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+})
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; UsersController;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now I don&amp;#39;t risk messing with the original behavior of the parent class.&lt;/p&gt;
+
+&lt;p&gt;Calling up the &lt;code&gt;super&lt;/code&gt; chain is a powerful and important feature in
+Ember but too often I was forgetting to call it. Now the only time I find
+myself overriding &lt;code&gt;init&lt;/code&gt; is if I want to &lt;strong&gt;disrupt&lt;/strong&gt; the default instantiating
+behavior of the object.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Artist: Ryo Takemasa</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/25/ryo-takemasa.html"/>
