@@ -26,7 +26,7 @@ export default UsersController;
 
 `init` is a popular function to override because it is automatically run
 after the object is instantiated. It is the only lifecycle hook for
-`Ember.Object`, subclases of `Ember.Object` add their own hooks to the
+`Ember.Object`, subclasses of `Ember.Object` add their own hooks to the
 lifecycle but the only one that is guaranteed to be there is `init`.
 
 The problem is with the above example
