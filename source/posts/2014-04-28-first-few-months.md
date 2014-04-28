@@ -5,7 +5,7 @@ twitter: rgbcolor
 author: 'Maria Matveeva'
 tags: design thinking, design, user experience
 social: true
-published: false
+published: true
 comments: true
 summary: 'Recurring themes, and principles I learned in breaking into user experience design.'
 ---
