@@ -51,10 +51,137 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-04-28T00:00:00Z</updated>
+  <updated>2014-04-29T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>The problem with server-rendered errors</title>
+    <link rel="alternate" href="/2014/04/29/the-problem-with-server-rendered-errors.html"/>
+    <id>/2014/04/29/the-problem-with-server-rendered-errors.html</id>
+    <published>2014-04-29T00:00:00Z</published>
+    <updated>2014-04-29T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;The 3rd most popular question with
+&lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt; is
+how can the library work with server-rendered validation errors, such as
+the ones returned with &lt;a href="https://github.com/emberjs/data"&gt;ember-data&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The short answer for now: it can&amp;#39;t.&lt;/p&gt;
+
+&lt;p&gt;(btw, 2nd most popular question is about &lt;code&gt;uniqueness&lt;/code&gt;/remote validations
+and the 1st most popular question is when will I provide a &lt;code&gt;dist/&lt;/code&gt;
+directory... I&amp;#39;ll cover the 2nd Q in an upcoming blog post. As far as
+&lt;code&gt;dist/&lt;/code&gt; its never going to happen, ever)&lt;/p&gt;
+
+&lt;p&gt;Here is the problem. When you are dealing with a client-side model and a
+server-rendered model there won&amp;#39;t always be a 1-to-1 representation of the
+model. In those cases you can rely on ember-data&amp;#39;s serializer to
+transform the properties on a server-rendered error object to ones that
+exist on the client data model. How about properties that don&amp;#39;t exist at
+all in any form on the client? You could have a validation error on
+something only meant for server-rendered purposes. How do we best handle
+this?&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s imagine for a moment that we can properly map all the properties
+back to their client-side equivalents. Now what? How do you resolve
+these validation errors? How do you know in the UI when the validation
+error has been resolved to clear the error message? Are you preventing data
+submission until your client model is valid? If the errors are happening
+server-side the odds are high that these are not validations that can be
+known to be resolved on the client unless you do another data
+submission and wait to see how the server responds.&lt;/p&gt;
+
+&lt;p&gt;So to re-cap the two isses are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Potential lack of context on which properties errors can map back to&lt;/li&gt;
+&lt;li&gt;Inability to know when server-rendered validation errors are
+satisfied on the client&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To start to consider a possible solution I think we need to step back
+and consider the ultimate goal of client side validations. In my mind
+this is puropse: &lt;em&gt;to help the user submit valid data to the server&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Client side validations are just UI sugar. They are there to guide your
+users. ember-validations only has model-layer concerns, which means you
+have to provide how the validation errors are displayed on your UI. This
+is why I also wrote
+&lt;a href="https://github.com/dockyard/ember-easyForm"&gt;ember-easyForm&lt;/a&gt; which
+handles the complexity of what I consider to be best practices of how
+validation messages should be displayed and cleared. To fix this problem
+would have to tackle it from both sides:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How will server-rendered errors be stored in the validation graph?
+(ember-validations)&lt;/li&gt;
+&lt;li&gt;How will server-rendered errors be displayed and resolved in the client?
+(ember-easyForm)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Storing server-rendered errors&lt;/h3&gt;
+
+&lt;p&gt;If you are already using ember-data then your data model is handling
+this for you already. IMO you should never mix your validations into
+your data model, they should be mixed into your controller:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UserController =
+Ember.ObjectController.extend(Ember.Validations.Mixin, {
+  &lt;span class="key"&gt;validations&lt;/span&gt;: {
+    &lt;span class="key"&gt;firstName&lt;/span&gt;: {
+      &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This way the controller has its own &lt;code&gt;errors&lt;/code&gt; object which will not clash
+with the &lt;code&gt;errors&lt;/code&gt; object on your data model. One possiblity of
+referencing the model&amp;#39;s server-rendered errors is to have a &lt;code&gt;base&lt;/code&gt;
+validator that is not part of the validaiton graph but who&amp;#39;s errors can
+be used for presentation purposes.&lt;/p&gt;
+
+&lt;h3&gt;Displaying server-rendered errors&lt;/h3&gt;
+
+&lt;p&gt;So how do you properly display these error messages? Do you try to
+associate them with a property? What if that property is not represented
+by a form input? What if you aren&amp;#39;t even using a form? How do you know
+when to clear the errors?&lt;/p&gt;
+
+&lt;p&gt;I believe this is a complex issue. My first pass at handling this in
+EasyForm will be to display all of the server-rendered errors in a
+single place. An upcoming version of EasyForm will simply group all
+errors in &lt;code&gt;base&lt;/code&gt; and display them. These errors will not clear out due
+to any corrections made by the client. They will only clear when some
+other action clears out those errors, for example when ember-data itself
+clears out or changes the content of its &lt;code&gt;errors&lt;/code&gt; object.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;This is far from ideal. This moves us away from the &amp;quot;best practices&amp;quot; for
+&lt;a href="http://alistapart.com/article/inline-validation-in-web-forms"&gt;high conversion forms outlined by Luke
+Wroblewski&lt;/a&gt;.
+But it is better than not guiding your users. If the server errors for
+any given reason we don&amp;#39;t want our users sitting there without any
+feedback.&lt;/p&gt;
+
+&lt;p&gt;I am very interested in other approaches and brainstorming on the best
+direction for this. Please feel free to comment below.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The first two months at DockYard</title>
     <link rel="alternate" href="/2014/04/28/first-few-months.html"/>
@@ -605,61 +732,11 @@ Pretty sweet, huh?&lt;/li&gt;
 you&amp;#39;d like to learn more check the docs.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Designing Within The Browser</title>
-    <link rel="alternate" href="/2014/04/04/design-within-the-browser.html"/>
-    <id>/2014/04/04/design-within-the-browser.html</id>
-    <published>2014-04-04T00:00:00Z</published>
-    <updated>2014-04-04T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I employ a solid range of design tools and although I’m spending some of my time designing in the browser, the ideal of designing &lt;em&gt;entirely&lt;/em&gt; in that context is often unrealistic and stifling.&lt;/p&gt;
-
-&lt;h2&gt;Save time for discovery&lt;/h2&gt;
-
-&lt;p&gt;Sometimes an accident leads to an interesting and useful discovery. In art and design this is especially true. In a browser, unfortunately, accidents don’t pleasantly surprise you in the way &lt;em&gt;”static”&lt;/em&gt; designs may. In development an accident means broken code – plain and simple. You may stumble on a solution, but you’re not going to be surprised by a random glimpse of order and possibility in the muck of your own broken HTML. It’s broken until it’s fixed.&lt;/p&gt;
-
-&lt;p&gt;Such a quality of the web is necessary, but I don’t find it very helpful for discovering new solutions to visual or experience problems. In the early stages you become very focused on minute details when you should be thinking in broad strokes. In later stages you find yourself seeing larger visual problems and with less power to change it. In many ways, I find designing in the browser akin to designing in the dark.&lt;/p&gt;
-
-&lt;p&gt;There are plenty of browser based design tools attempting to free designers of heavy weights such as Photoshop and allow designers to work without learning advanced HTML and CSS. This is a positive direction, but I still haven’t seen the problem solved without losing the element of discovery. Instead of happy accidents, you may experience a gross misunderstanding between your intent, the front end code of the tool you’ve chosen, and the DOM. Maybe the tools will get better, and I’m sure they will, but I’m not optimistic they’ll be architected to facilitate discovery within the next few years.&lt;/p&gt;
-
-&lt;p&gt;For the time being my opinion is that, in terms of process, improvements in web standards and web technology aren’t going to change anything save for ensuring work may be completed in shorter order. We create tools (or products) and advance technology in order to &lt;em&gt;increase&lt;/em&gt; efficiency and &lt;em&gt;improve&lt;/em&gt; human capability. The computer added efficiency for designers by - among many, many other things - being faster and more forgiving than pen and ink, but we still use these older technologies today in tandem with computers.&lt;/p&gt;
-
-&lt;h2&gt;The right tool at the right time&lt;/h2&gt;
-
-&lt;p&gt;We can still integrate designing in the browser as a component of the design process. I don’t view this as an all–or–nothing deal and our process should be malleable enough to better facilitate reaching the goals of each and every project. Imagine, as an extreme example, that you were told to integrate sketching into your design process. You would absolutely not render your designs “pixel-perfect” in a sketch book. It beats the whole point of the sketch book and the whole experience would be tremendously debilitating. Instead, you’d probably do at least a little bit of preliminary sketching before opening Photoshop, and return when you need to massage another idea out of your head.&lt;/p&gt;
-
-&lt;p&gt;The benefit of designing in the web, or at least getting a product in the browser sooner, is that you can experience it and identify major problems before you’re past the point of no return. This is a pretty well established idea (that I believe in), but just like using the sketchbook we need to identify when it’s appropriate to pop open a text editor and start punching in markup and styles. I’ll kick this off with two cases where I think designing in the browser is appropriate: prototyping unique interactions and defining visual state changes.&lt;/p&gt;
-
-&lt;h3&gt;Prototyping unique interactions&lt;/h3&gt;
-
-&lt;p&gt;We should prototype and test core product interactions when they are unorthodox. Design patterns should be used where possible, but if we are knowingly going against the grain we need to test that experience in the browser and with users (as available) before making it permanent. This is sometimes after the static design has been completed, but in many cases can be done before anything static has been created.&lt;/p&gt;
-
-&lt;h3&gt;Visual state changes&lt;/h3&gt;
-
-&lt;p&gt;When following design patterns there are still standard things to be fleshed out in the browser: hovers, presses, clicks, fades, sliding interactions, and so on. Generally, if you don’t know how an interaction will truly feel and it involves a state change: design it in the browser. At DockYard, we often propose a solution first in Photoshop and then weigh our options again in the browser. &lt;/p&gt;
-
-&lt;h2&gt;An example&lt;/h2&gt;
-
-&lt;p&gt;We completed a project last year with the ambition of the design stage being completely browser based, skipping the use of Photoshop altogether. The benefits of having a usable front end in place of static mockups are great: you can use your app as it is being designed and get a sense of the failure points before they become too ingrained in the experience. User testing can begin earlier. This is awesome. From the outside, designing solely in the browser seemed perfect.&lt;/p&gt;
-
-&lt;p&gt;You guessed it: I was wrong. It wasn&amp;#39;t right for us then, nor for that project. We were less focused on the user’s experience and more focused on the organization and creation of markup, styles, and script. We began (and ended) by worrying about and writing lines of HTML, CSS, and JavaScript. We were worried about front end patterns, but the design patterns we were aiming to support weren’t fully identified yet. We introduced somewhat of a chicken and the egg problem, making our thinking more difficult and more sporadic than it should have been.&lt;/p&gt;
-
-&lt;p&gt;For us this meant spending hours and hours tweaking markup, all in the name of being able to feel and test the product as it was created. In some cases, for sure, this can be worth it. In our case we even had plenty of existing design assets to base our web interface off of, but that project had called for too many largely different iterations (and mixed opinions) of the same few designs.&lt;/p&gt;
-
-&lt;p&gt;Designing in the browser does not mean your project will turn out poorly. Ultimately, and fortunately, that project turned out well in the end, but we did spend a lot more time getting a complete idea of what we were actually designing and building. Our clients got to use the product before they bought into the concept, which was great for them. For us, however, it was as if we started designing a house by laying the concrete foundation before knowing what we were building.&lt;/p&gt;
-
-&lt;h2&gt;Weigh your options&lt;/h2&gt;
-
-&lt;p&gt;A successful product depends on its content, design, engineering, market fit, team, tools, and infinitely more. When consulting, those elements are wildly varied from client to client, including the toolset. So we must be mindful of what is necessary, be malleable in our processes, and most important of all: make room for discovery.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/04/29/the-problem-with-server-rendered-errors.html"><strong>The problem with server-rendered errors</strong><h6 class='footer-desc'>Handling validation errors returned from the server is no easy task</h6></a>
 <a class="footer__post" href="/2014/04/28/first-few-months.html"><strong>The first two months at DockYard</strong><h6 class='footer-desc'>Recurring themes, and principles I learned in breaking into user experience design.</h6></a>
-<a class="footer__post" href="/2014/04/28/dont-override-init.html"><strong>Don't override init</strong><h6 class='footer-desc'>Use events instead</h6></a>
-<a class="footer__post" href="/2014/04/25/ryo-takemasa.html"><strong>Artist: Ryo Takemasa</strong><h6 class='footer-desc'>Highlighting an inspiring artist</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/04/28/dont-override-init.html"><strong>Don't override init</strong><h6 class='footer-desc'>Use events instead</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
