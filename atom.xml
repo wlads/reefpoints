@@ -4,10 +4,156 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-04-29T00:00:00Z</updated>
+  <updated>2014-04-30T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Understanding validation graphs</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html"/>
+    <id>http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html</id>
+    <published>2014-04-30T00:00:00Z</published>
+    <updated>2014-04-30T00:41:41-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>The power behind ember-validations</summary>
+    <content type="html">&lt;p&gt;If you have heard me speak about
+&lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt; then
+you may have heard me mention the term &lt;strong&gt;validation graph&lt;/strong&gt;. What is
+this? Why is it important?&lt;/p&gt;
+
+&lt;p&gt;If you come from a Rails background then you are used to the validations
+being stored in an array on the instance of the model. When you validate
+your model all of those validations will be run and an errors object is
+produced. If you make a change to a property you have to run the
+validations again to determine the validity of the model.&lt;/p&gt;
+
+&lt;p&gt;I would refer to the style of
+validations described above as &lt;em&gt;lazy validations&lt;/em&gt;. Meaning the
+validity of the model may not be truly representative of its
+current state. We have to opt-into running the validations again to
+determine this. Fortunately in most cases, the validations will run for us
+before we save. On the server this all happens within a request/response
+cycle so we don&amp;#39;t really care too much about the validations
+being lazy because we care about the final result, not the state of the
+model at any given point during that cycle.&lt;/p&gt;
+
+&lt;p&gt;ember-validations has &lt;em&gt;eager validations&lt;/em&gt;. This means when the property
+that is associated with any number of validations changes those
+validations will run again to determine the state of the model. This is
+great for client side apps that need to show the current state of the
+entire model any time you make a change, say during a user sign up. I
+might want to disable the Submit button if there are any failing
+validations. If I make a correction I want the error message to go away
+once the correction is made. I should not have to wait upon form
+submission to see my errors.&lt;/p&gt;
+
+&lt;p&gt;How does ember-validations do this? Let&amp;#39;s say you have the following
+validations:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController =
+Ember.ObjectController.extend(Ember.Validations.Mixin, {
+  &lt;span class="key"&gt;validations&lt;/span&gt;: {
+    &lt;span class="key"&gt;firstName&lt;/span&gt;: {
+      &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;,
+      &lt;span class="key"&gt;length&lt;/span&gt;: &lt;span class="integer"&gt;5&lt;/span&gt;
+    },
+    &lt;span class="key"&gt;password&lt;/span&gt;: {
+      &lt;span class="key"&gt;confirmation&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;There are 3 validations on 2 properties. Each validation is an
+instantiated class that can observe the one or more properties. In the
+case of the &lt;code&gt;firstName&lt;/code&gt; property the &lt;code&gt;Presence&lt;/code&gt; and &lt;code&gt;Length&lt;/code&gt; validators
+are observing it. The &lt;code&gt;Confirmation&lt;/code&gt; validator is actually
+observing &lt;code&gt;password&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; &lt;code&gt;passwordConfirmation&lt;/code&gt; for changes. Each
+validator has a &lt;code&gt;isValid&lt;/code&gt; flag that is set to &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;
+depending upon the result. Each of these validators are pushed onto a
+&lt;code&gt;_validators&lt;/code&gt; array and the parent object is observing
+&lt;code&gt;_validators.@each.isValid&lt;/code&gt; for any changes. If any of the validators
+are &lt;code&gt;false&lt;/code&gt; the parent&amp;#39;s &lt;code&gt;isValid&lt;/code&gt; state is now &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Please take a moment to re-read the above paragraph because it is very
+important to have a good handle on this before we move forward. &lt;strong&gt;The
+validating object&amp;#39;s &lt;code&gt;isValid&lt;/code&gt; flag is the result of its validator&amp;#39;s
+&lt;code&gt;isValid&lt;/code&gt; flags&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Because we are in quack-quack duck-typed JavaScript we don&amp;#39;t &lt;strong&gt;have&lt;/strong&gt; to
+pass validator instances into the &lt;code&gt;_validators&lt;/code&gt; array. &lt;em&gt;What if we pass
+another validatable object?&lt;/em&gt; Now things get interesting.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s say we have a &lt;code&gt;Profile&lt;/code&gt; that belongs to a &lt;code&gt;User&lt;/code&gt;. The &lt;code&gt;Profile&lt;/code&gt;
+can have its own set of validations as well as its own &lt;code&gt;isValid&lt;/code&gt; flag.
+If the &lt;code&gt;Profile&lt;/code&gt; is mixed into the &lt;code&gt;Users&lt;/code&gt;&amp;#39;s validation graph then the
+&lt;code&gt;User&lt;/code&gt; will be invalid when the &lt;code&gt;Profile&lt;/code&gt; is invalid. We can use this
+pattern to buld an incredibly deep and complex graph where the validation
+state bubbles up to the root whenever a property change takes place
+anywhere in the graph.&lt;/p&gt;
+
+&lt;p&gt;We can do this simply with:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController =
+Ember.ObjectController.extend(Ember.Validations.Mixin, {
+  &lt;span class="key"&gt;validations&lt;/span&gt;: {
+    &lt;span class="key"&gt;firstName&lt;/span&gt;: {
+      &lt;span class="key"&gt;presence&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;,
+      &lt;span class="key"&gt;length&lt;/span&gt;: &lt;span class="integer"&gt;5&lt;/span&gt;
+    },
+    &lt;span class="key"&gt;password&lt;/span&gt;: {
+      &lt;span class="key"&gt;confirmation&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+    },
+    &lt;span class="key"&gt;profile&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice &lt;code&gt;profile: true&lt;/code&gt; in the graph. As long as &lt;code&gt;profile&lt;/code&gt; is the path to
+the object to validate against ember-validations will work its magic.&lt;/p&gt;
+
+&lt;p&gt;However, the above only really works if the validations exist on the
+&lt;code&gt;Profile&lt;/code&gt; &lt;strong&gt;model&lt;/strong&gt; and not the controller.&lt;/p&gt;
+
+&lt;p&gt;A visualization of a complex validation graph might look like this. We
+can see the &lt;code&gt;isValid&lt;/code&gt; states bubbling up to the original root node:&lt;/p&gt;
+
+&lt;p&gt;&lt;img style="width: auto" src="http://i.imgur.com/QP2sYWT.gif"/&gt;&lt;/p&gt;
+
+&lt;p&gt;I welcome suggestions and thoughts on this API as well as the validation graph in general.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The problem with server-rendered errors</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html"/>
