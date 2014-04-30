@@ -15,12 +15,12 @@ Something that feels missing from Ember is a way to send, from anywhere
 in my app, a general alert message. Something that would pop up in my
 app, display for a few seconds and disappear.
 
-Clearly, this is somethingthat should not be part of Ember itself but it
+Clearly, this is something that should not be part of Ember itself but it
 is a common enough feature that someone should build it.
 
 I call it `Woof`.
 
-<iframe width="420" height="315"
+<iframe width="620" height="465"
 src="//www.youtube.com/embed/8wfG8ngFvPk" frameborder="0"
 allowfullscreen></iframe> 
 
@@ -30,7 +30,7 @@ It currently only exists on [jsbin](http://jsbin.com)
 href="http://jsbin.com/luhoquxi/7/embed?output">WoofWoof! Notifier for
 Ember</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
-So for the time being you'll need to copy/paste. We'll be extracting
+So for the time being you'll need to copy/paste. We'll be extracting it
 into a plugin soon enough.
 
 Basically Woof will inject itself into your routes, controllers, and
