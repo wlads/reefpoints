@@ -33,7 +33,7 @@ Ember</a><script src="http://static.jsbin.com/js/embed.js"></script>
 So for the time being you'll need to copy/paste. We'll be extracting it
 into a plugin soon enough.
 
-Basically Woof will inject itself into your routes, controllers, and
+Basically, Woof will inject itself into your routes, controllers, and
 components. You will need to embed the Woof component somewhere in your
 templates:
 
@@ -62,6 +62,6 @@ The `x-woof` component will loop through all woofs in the array and
 print out a div with the type as the class for specific styling
 purposes.
 
-The code in the jsbin is setup for Twitter Bootstrap and styled for it
-as well. The event handling is setup for removing the woof when it the
+The code in the JSBin is setup and styled for Twitter Bootstrap.
+The event handling is setup for removing the woof when the
 css opacity transition completes. Browser support may vary.
