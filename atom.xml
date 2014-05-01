@@ -4,10 +4,84 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-04-30T00:00:00Z</updated>
+  <updated>2014-05-01T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Alert messages in Ember Apps</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html</id>
+    <published>2014-05-01T00:00:00Z</published>
+    <updated>2014-05-01T12:03:34-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>The wonder of Woof!</summary>
+    <content type="html">&lt;p&gt;Something that feels missing from Ember is a way to send, from anywhere
+in my app, a general alert message. Something that would pop up in my
+app, display for a few seconds and disappear.&lt;/p&gt;
+
+&lt;p&gt;Clearly, this is something that should not be part of Ember itself but it
+is a common enough feature that someone should build it.&lt;/p&gt;
+
+&lt;p&gt;I call it &lt;code&gt;Woof&lt;/code&gt;.&lt;/p&gt;
+
+&lt;iframe width="620" height="465"
+src="//www.youtube.com/embed/8wfG8ngFvPk" frameborder="0"
+allowfullscreen&gt;&lt;/iframe&gt; 
+
+&lt;p&gt;It currently only exists on &lt;a href="http://jsbin.com"&gt;jsbin&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class="jsbin-embed"
+href="http://jsbin.com/luhoquxi/7/embed?output"&gt;WoofWoof! Notifier for
+Ember&lt;/a&gt;&lt;script src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;So for the time being you&amp;#39;ll need to copy/paste. We&amp;#39;ll be extracting it
+into a plugin soon enough.&lt;/p&gt;
+
+&lt;p&gt;Basically, Woof will inject itself into your routes, controllers, and
+components. You will need to embed the Woof component somewhere in your
+templates:&lt;/p&gt;
+&lt;div class="highlight handlebars "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;x-woof&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Woof injects a &lt;code&gt;woof&lt;/code&gt; object similar to how &lt;code&gt;ember-data&lt;/code&gt; injects a
+&lt;code&gt;store&lt;/code&gt; object. You can push a message onto Woof using some of the
+pre-defined types or create your own:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="local-variable"&gt;this&lt;/span&gt;.woof.info(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;This is an info message&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="local-variable"&gt;this&lt;/span&gt;.woof.pushObject({&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;customType&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;message&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Woof! Woof!
+Woof!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This code comes with Twitter Bootstrap types setup:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;danger&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;info&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;success&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;warning&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;code&gt;x-woof&lt;/code&gt; component will loop through all woofs in the array and
+print out a div with the type as the class for specific styling
+purposes.&lt;/p&gt;
+
+&lt;p&gt;The code in the JSBin is setup and styled for Twitter Bootstrap.
+The event handling is setup for removing the woof when the
+css opacity transition completes. Browser support may vary.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Understanding validation graphs</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html"/>
