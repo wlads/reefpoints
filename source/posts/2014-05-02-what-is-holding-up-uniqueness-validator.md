@@ -18,7 +18,7 @@ One glarring omission is the `Uniqueness` validator.
 
 ### Not as straight forward as one would think
 
-Before we never talk about the complication with implementing the remote
+Before we even talk about the complication with implementing the remote
 validator, we should talk about if `uniqueness` should be both a remote 
 **and** local validator.
 
@@ -41,11 +41,11 @@ complex to implement properly.
 
 ### No standard yet
 
-If the local validator is too complex an animal to tackle perhaps the
+If the local validator is too complex of an animal to tackle perhaps the
 remote validator implementation will be easier. It is, in part at least.
 We can rely on `Ember.run.debounce` to ensure the the remote validator
 doesn't fire too frequenly when many changes are happening to the value
-of property. (i.e. entering text into a field)
+of a property. (i.e. entering text into a field)
 
 But where do we send this request for uniqueness? This is where I am
 currently hung up. I really don't want to implement a backend api
@@ -61,6 +61,6 @@ introducing remote uniqueness to ember-validations. It is lacking tests
 direction](https://github.com/dockyard/ember-validations/pull/117).
 
 To summarize, uniqueness is not forgotten. It is just a pain in the ass
-to do properly. Personally I would prefer not to implement an API have
+to do properly. Personally, I would prefer not to implement an API have
 people buy into it now and have to change it (or be locked into it) a
 few months from now.
