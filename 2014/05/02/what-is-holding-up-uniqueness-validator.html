@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>OpenHack Boston 1.0</title><link href="/stylesheets/all-6e6b059f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - Come one, come all!' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html' name='twitter:url'><meta content='OpenHack Boston 1.0' name='twitter:title'><meta content='Come one, come all!' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>What is holding up the uniqueness validator?</title><link href="/stylesheets/all-6e6b059f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - One of the more requested features of ember-validations' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html' name='twitter:url'><meta content='What is holding up the uniqueness validator?' name='twitter:title'><meta content='One of the more requested features of ember-validations' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -37,40 +37,74 @@
       8OOOOOOOOOOOOOOOOOOOOOOOODO:
          :OOOOOOOOOOOOOOOOOOOO::
 
---></head><body class='community community_2012 community_2012_10 community_2012_10_26 community_2012_10_26_openhack-boston'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
+--></head><body class='x2014 x2014_05 x2014_05_02 x2014_05_02_what-is-holding-up-uniqueness-validator'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
 <a class="extended-nav--close" data-icon="X" href="#"><span class='is-hidden'>Close</span></a><div class='extended-nav__items'><div class='extended-nav__items--mobile'><a class="extended-nav__item--work extended-nav__item" href="#">Work</a><nav class='work-nav--mobile'><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong></a>
 <a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong></a></nav></div><a class="extended-nav__item" href="http://dockyard.com/team">Our Team</a><a class="extended-nav__item" href="http://dockyard.com/process">Process</a><a class="extended-nav__item" href="http://dockyard.com/community">Community</a><a class="extended-nav__item active" href="/">Blog</a><a class="extended-nav__item" href="http://dockyard.com/hire-us">Hire Us</a></div></nav><nav class='work-nav'><h6>Selected Work</h6><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong><p>Credit card advice from real people.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>OpenHack Boston 1.0</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>October 26<sup>th</sup>, 2012</time><div class='post__content'><p><img src="/images/openhack.png" alt="OpenHack">
-Last night we hosted Boston&#39;s first
-<a href="http://openhack.github.com/">OpenHack</a>
-event.</p>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>What is holding up the uniqueness validator?</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 2<sup>nd</sup>, 2014</time><div class='post__content'><p><a href="https://github.com/dockyard/ember-validations">ember-validations</a> has
+nearly all of the <a href="https://github.com/dockyard/ember-validations#validators">validator
+rules</a> one needs.
+One glarring omission is the <code>Uniqueness</code> validator.</p>
 
-<p><a href="http://twitter.com/qrush">Nick Quaranto</a> started OpenHack at his <a href="http://coworkbuffalo.com/">CoWorkBuffalo</a> office space,
-based upon <a href="http://bostonrb.org">BostonRB</a>&#39;s former (don&#39;t get me
-started) Hackfests. The idea is pretty simple: a quiet space with food,
-drinks, and wifi is provided. Developers show up and hack on some
-software for a few hours.</p>
+<h3>Not as straight forward as one would think</h3>
 
-<p>On 2-day notice we had 11 in attendance and all around everyone had a
-very productive night. Currently our office maxes out at 20 chairs so until we buy more
-we cannot accept over 20, but next month we will open the
-event to a wider audience. We want to welcome more than just Ruby devs
-(with the exception of 2 all were Ruby devs) to the event.</p>
+<p>Before we even talk about the complication with implementing the remote
+validator, we should talk about if <code>uniqueness</code> should be both a remote 
+<strong>and</strong> local validator.</p>
 
-<p>Follow <a href="http://twitter.com/dockyard">@DockYard</a> for all Boston OpenHack
-announcements.</p>
-</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
+<p>Imagine you are working with
+<a href="https://github.com/emberjs/data">ember-data</a>, you attempt to create a
+new record with an email <code>test@example.com</code>. If you already have a
+record with that value for email in ember-data&#39;s store should
+<code>uniqueness</code> first defer here before we hit remote? This ends up being a
+strange thing because what if you have not persisted that first record
+yet. Do we only run uniqueness checks against local records that have
+been persisted? And how exactly would this fit in if you are mixing your
+validations into the controller instead of the model?</p>
+
+<p>If the <code>email</code> example isn&#39;t working for you, imagine you are adding a
+bunch of line items to a parent record. None of these line items have
+been persisted yet. And you don&#39;t want to allow your users to add
+another until the current one they are working on is &quot;valid&quot;. Validating
+uniqueness locally is all of a sudden very valuable. But also very
+complex to implement properly.</p>
+
+<h3>No standard yet</h3>
+
+<p>If the local validator is too complex of an animal to tackle perhaps the
+remote validator implementation will be easier. It is, in part at least.
+We can rely on <code>Ember.run.debounce</code> to ensure the the remote validator
+doesn&#39;t fire too frequenly when many changes are happening to the value
+of a property. (i.e. entering text into a field)</p>
+
+<p>But where do we send this request for uniqueness? This is where I am
+currently hung up. I really don&#39;t want to implement a backend api
+expectation into ember-validations. I was hoping that something like
+[json-api][http:/jsonapi.org) would define this for me then I could rely upon that as a
+starting expected endpoint. But I don&#39;t think this is anywhere on their
+radar.</p>
+
+<p>This being said, there is a possible solution. One of my co-workers <a href="https://twitter.com/linstula">Lin
+Reid</a> has put together a PR for
+introducing remote uniqueness to ember-validations. It is lacking tests
+(hint hint, Lin!) but I think <a href="https://github.com/dockyard/ember-validations/pull/117">this is moving in the right
+direction</a>.</p>
+
+<p>To summarize, uniqueness is not forgotten. It is just a pain in the ass
+to do properly. Personally, I would prefer not to implement an API have
+people buy into it now and have to change it (or be locked into it) a
+few months from now.</p>
+</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
   (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
 </script><span class='post__share--github'>If you see an issue, please send a <a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/', class='text-link post__issue', target: '_blank'>pull request</a> to contribute.</span></div><div class='related-posts-wrap'><div class='post__avatar-wrap'><img class='post__avatar' src='/images/team/brian-cardarella.jpg'><h5 class='post__avatar__name'>Brian Cardarella</h5><h5 class='post__avatar__position headline--sub'>Partner &amp; Lead Developer<br>At DockYard
-</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Brian</h3><a class="related-post" href="/2014/05/02/what-is-holding-up-uniqueness-validator.html"><h2 class='related-post__title'>What is holding up the uniqueness validator?</h2><p>May 2<sup>nd</sup>, 2014</p></a>
-<a class="related-post" href="/2014/05/01/alert-messages-in-ember-apps.html"><h2 class='related-post__title'>Alert messages in Ember Apps</h2><p>May 1<sup>st</sup>, 2014</p></a>
-<a class="related-posts-link text-link" href="/authors/brian-cardarella.html">See all 57 posts by Brian</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/community.html">Community&nbsp;<span class='post__tag__count'>(3)</span></a></p><div id='disqus_thread'></div><script>
+</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Brian</h3><a class="related-post" href="/2014/05/01/alert-messages-in-ember-apps.html"><h2 class='related-post__title'>Alert messages in Ember Apps</h2><p>May 1<sup>st</sup>, 2014</p></a>
+<a class="related-post" href="/2014/04/30/understanding-validation-graphs.html"><h2 class='related-post__title'>Understanding validation graphs</h2><p>April 30<sup>th</sup>, 2014</p></a>
+<a class="related-posts-link text-link" href="/authors/brian-cardarella.html">See all 57 posts by Brian</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/ember.html">Ember.js&nbsp;<span class='post__tag__count'>(19)</span></a></p><div id='disqus_thread'></div><script>
   var disqus_shortname = 'reefpoints';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

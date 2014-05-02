@@ -4,10 +4,75 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-01T00:00:00Z</updated>
+  <updated>2014-05-02T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>What is holding up the uniqueness validator?</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html</id>
+    <published>2014-05-02T00:00:00Z</published>
+    <updated>2014-05-02T12:37:45-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>One of the more requested features of ember-validations</summary>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt; has
+nearly all of the &lt;a href="https://github.com/dockyard/ember-validations#validators"&gt;validator
+rules&lt;/a&gt; one needs.
+One glarring omission is the &lt;code&gt;Uniqueness&lt;/code&gt; validator.&lt;/p&gt;
+
+&lt;h3&gt;Not as straight forward as one would think&lt;/h3&gt;
+
+&lt;p&gt;Before we even talk about the complication with implementing the remote
+validator, we should talk about if &lt;code&gt;uniqueness&lt;/code&gt; should be both a remote 
+&lt;strong&gt;and&lt;/strong&gt; local validator.&lt;/p&gt;
+
+&lt;p&gt;Imagine you are working with
+&lt;a href="https://github.com/emberjs/data"&gt;ember-data&lt;/a&gt;, you attempt to create a
+new record with an email &lt;code&gt;test@example.com&lt;/code&gt;. If you already have a
+record with that value for email in ember-data&amp;#39;s store should
+&lt;code&gt;uniqueness&lt;/code&gt; first defer here before we hit remote? This ends up being a
+strange thing because what if you have not persisted that first record
+yet. Do we only run uniqueness checks against local records that have
+been persisted? And how exactly would this fit in if you are mixing your
+validations into the controller instead of the model?&lt;/p&gt;
+
+&lt;p&gt;If the &lt;code&gt;email&lt;/code&gt; example isn&amp;#39;t working for you, imagine you are adding a
+bunch of line items to a parent record. None of these line items have
+been persisted yet. And you don&amp;#39;t want to allow your users to add
+another until the current one they are working on is &amp;quot;valid&amp;quot;. Validating
+uniqueness locally is all of a sudden very valuable. But also very
+complex to implement properly.&lt;/p&gt;
+
+&lt;h3&gt;No standard yet&lt;/h3&gt;
+
+&lt;p&gt;If the local validator is too complex of an animal to tackle perhaps the
+remote validator implementation will be easier. It is, in part at least.
+We can rely on &lt;code&gt;Ember.run.debounce&lt;/code&gt; to ensure the the remote validator
+doesn&amp;#39;t fire too frequenly when many changes are happening to the value
+of a property. (i.e. entering text into a field)&lt;/p&gt;
+
+&lt;p&gt;But where do we send this request for uniqueness? This is where I am
+currently hung up. I really don&amp;#39;t want to implement a backend api
+expectation into ember-validations. I was hoping that something like
+[json-api][http:/jsonapi.org) would define this for me then I could rely upon that as a
+starting expected endpoint. But I don&amp;#39;t think this is anywhere on their
+radar.&lt;/p&gt;
+
+&lt;p&gt;This being said, there is a possible solution. One of my co-workers &lt;a href="https://twitter.com/linstula"&gt;Lin
+Reid&lt;/a&gt; has put together a PR for
+introducing remote uniqueness to ember-validations. It is lacking tests
+(hint hint, Lin!) but I think &lt;a href="https://github.com/dockyard/ember-validations/pull/117"&gt;this is moving in the right
+direction&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To summarize, uniqueness is not forgotten. It is just a pain in the ass
+to do properly. Personally, I would prefer not to implement an API have
+people buy into it now and have to change it (or be locked into it) a
+few months from now.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Alert messages in Ember Apps</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html"/>
