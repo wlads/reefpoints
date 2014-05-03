@@ -11,12 +11,12 @@ published: true
 tags: ruby, ruby on rails
 ---
 
-This week I ran I applied a pattern I've been using for years to two
+This week I applied a pattern I've been using for years to two
 separate pull requests from our devs. (I like to review almost all of the
 code that DockYard devs write)
 
 In both cases I was able to help them refactor their code to use an
-iterator as code guard instead of conditional statements. Let's take a
+enumerator as code guards instead of conditional statements. Let's take a
 look at each example:
 
 ```ruby
@@ -29,9 +29,9 @@ if users.any?
 end
 ```
 
-In this first example the `each` loop is avoided if the `users`
-collection is empty. However, with arrays the iterator only acts on each
-member of the collection so we don't need the avoid if the collection is
+In this first example the `each` is avoided if the `users`
+collection is empty. However, with arrays the enumerator only acts on each
+member of the collection so we don't need to avoid if the collection is
 empty. We can refactor the above code into something like this:
 
 ```ruby
@@ -65,7 +65,7 @@ Array(nil)
 # => []
 ```
 
-Notice in the second example that when we passed `nil` it created an
+Notice in the second example that when we pass `nil` it creates an
 **empty array**. Knowing this we can refactor our code:
 
 ```ruby
