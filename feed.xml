@@ -51,10 +51,117 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-05-02T00:00:00Z</updated>
+  <updated>2014-05-03T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Guarding with arrays</title>
+    <link rel="alternate" href="/2014/05/03/guarding-with-arrays.html"/>
+    <id>/2014/05/03/guarding-with-arrays.html</id>
+    <published>2014-05-03T00:00:00Z</published>
+    <updated>2014-05-03T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This week I applied a pattern I&amp;#39;ve been using for years to two
+separate pull requests from our devs. (I like to review almost all of the
+code that DockYard devs write)&lt;/p&gt;
+
+&lt;p&gt;In both cases I was able to help them refactor their code to use an
+enumerator as code guards instead of conditional statements. Let&amp;#39;s take a
+look at each example:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;users = &lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+
+&lt;span class="keyword"&gt;if&lt;/span&gt; users.any?
+  users.each &lt;span class="keyword"&gt;do&lt;/span&gt; |user|
+    &lt;span class="comment"&gt;# ...&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this first example the &lt;code&gt;each&lt;/code&gt; is avoided if the &lt;code&gt;users&lt;/code&gt;
+collection is empty. However, with arrays the enumerator only acts on each
+member of the collection so we don&amp;#39;t need to avoid if the collection is
+empty. We can refactor the above code into something like this:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).each &lt;span class="keyword"&gt;do&lt;/span&gt; |user)
+   &lt;span class="comment"&gt;# ...&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Much cleaner!&lt;/p&gt;
+
+&lt;p&gt;The next example may not be as straight forward but as we&amp;#39;ll see with
+Ruby we can clean this up nicely.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;if&lt;/span&gt; params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;]
+  params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;].each &lt;span class="keyword"&gt;do&lt;/span&gt; |id|
+    &lt;span class="comment"&gt;# ...&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here we have a situation where &lt;code&gt;params[:ids]&lt;/code&gt; could contain a collection
+of data. Or it could be &lt;code&gt;nil&lt;/code&gt;. Because of this we cannot just assume we
+can always iterate over that value. In Ruby we can create a new &lt;code&gt;Array&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Array([&lt;span class="integer"&gt;1&lt;/span&gt;,&lt;span class="integer"&gt;2&lt;/span&gt;,&lt;span class="integer"&gt;3&lt;/span&gt;])
+&lt;span class="comment"&gt;# =&amp;gt; [1,2,3]&lt;/span&gt;
+
+Array(&lt;span class="predefined-constant"&gt;nil&lt;/span&gt;)
+&lt;span class="comment"&gt;# =&amp;gt; []&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice in the second example that when we pass &lt;code&gt;nil&lt;/code&gt; it creates an
+&lt;strong&gt;empty array&lt;/strong&gt;. Knowing this we can refactor our code:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Array(params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;]).each &lt;span class="keyword"&gt;do&lt;/span&gt; |id|
+  &lt;span class="comment"&gt;# ...&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you find yourself putting guards around enumerators odds are you can
+refactor in a similar manner as I&amp;#39;ve shown above.&lt;/p&gt;
+
+&lt;p&gt;BTW, I&amp;#39;ve been using this pattern for years but I don&amp;#39;t know if there is
+an actual name for this. If you do please share!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What is holding up the uniqueness validator?</title>
     <link rel="alternate" href="/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
@@ -506,81 +613,11 @@ direction for this. Please feel free to comment below.&lt;/p&gt;
 &lt;p&gt;Through regular design reviews, close observation of UI design, and occasional experiments, I hope to continue improving my ability to judge my own work. This will allow for more efficient work, more refined design, and more awesomeness in the future.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Don't override init</title>
-    <link rel="alternate" href="/2014/04/28/dont-override-init.html"/>
-    <id>/2014/04/28/dont-override-init.html</id>
-    <published>2014-04-28T00:00:00Z</published>
-    <updated>2014-04-28T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Too frequently I see the following problem. Someone creates a new
-class and overrides &lt;code&gt;init&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController = Ember.ArrayController.extend({
-  &lt;span class="function"&gt;init&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    &lt;span class="comment"&gt;// some custom stuff&lt;/span&gt;
-  }
-})
-
-&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; UsersController;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;init&lt;/code&gt; is a popular function to override because it is automatically run
-after the object is instantiated. It is the only lifecycle hook for
-&lt;code&gt;Ember.Object&lt;/code&gt;, subclasses of &lt;code&gt;Ember.Object&lt;/code&gt; add their own hooks to the
-lifecycle but the only one that is guaranteed to be there is &lt;code&gt;init&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The problem is with the above example
-the controller is broken. I forgot to make a call to &lt;code&gt;this._super()&lt;/code&gt;
-which will call the original &lt;code&gt;init&lt;/code&gt; from &lt;code&gt;Ember.ArrayController&lt;/code&gt;. That
-&lt;code&gt;init&lt;/code&gt; assigns the proper value to &lt;code&gt;content&lt;/code&gt;. (via &lt;code&gt;ArrayProxy&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;Instead of overriding &lt;code&gt;init&lt;/code&gt; I have been writing functions that are
-specific to the logic I want to kick off on object instantiation and
-have that function trigger &lt;code&gt;on(&amp;#39;init&amp;#39;)&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; UsersController = Ember.ArrayController.extend({
-  &lt;span class="function"&gt;doSomething&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    &lt;span class="comment"&gt;// some custom stuff&lt;/span&gt;
-  }.on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;init&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
-})
-
-&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; UsersController;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now I don&amp;#39;t risk messing with the original behavior of the parent class.&lt;/p&gt;
-
-&lt;p&gt;Calling up the &lt;code&gt;super&lt;/code&gt; chain is a powerful and important feature in
-Ember but too often I was forgetting to call it. Now the only time I find
-myself overriding &lt;code&gt;init&lt;/code&gt; is if I want to &lt;strong&gt;disrupt&lt;/strong&gt; the default instantiating
-behavior of the object.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/05/03/guarding-with-arrays.html"><strong>Guarding with arrays</strong><h6 class='footer-desc'>A common pattern we use</h6></a>
 <a class="footer__post" href="/2014/05/02/what-is-holding-up-uniqueness-validator.html"><strong>What is holding up the uniqueness validator?</strong><h6 class='footer-desc'>One of the more requested features of ember-validations</h6></a>
-<a class="footer__post" href="/2014/05/01/alert-messages-in-ember-apps.html"><strong>Alert messages in Ember Apps</strong><h6 class='footer-desc'>The wonder of Woof!</h6></a>
-<a class="footer__post" href="/2014/04/30/understanding-validation-graphs.html"><strong>Understanding validation graphs</strong><h6 class='footer-desc'>The power behind ember-validations</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/05/01/alert-messages-in-ember-apps.html"><strong>Alert messages in Ember Apps</strong><h6 class='footer-desc'>The wonder of Woof!</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>

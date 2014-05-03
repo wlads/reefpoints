@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Get those instance variables out of my specs!</title><link href="/stylesheets/all-6e6b059f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - Clean up your specs with let and subject' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html' name='twitter:url'><meta content='Get those instance variables out of my specs!' name='twitter:title'><meta content='Clean up your specs with let and subject' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Guarding with arrays</title><link href="/stylesheets/all-6e6b059f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - A common pattern we use' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html' name='twitter:url'><meta content='Guarding with arrays' name='twitter:title'><meta content='A common pattern we use' name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -37,45 +37,20 @@
       8OOOOOOOOOOOOOOOOOOOOOOOODO:
          :OOOOOOOOOOOOOOOOOOOO::
 
---></head><body class='ruby ruby_2012 ruby_2012_02 ruby_2012_02_15 ruby_2012_02_15_get-those-instance-variables-out-of-my-specs'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
+--></head><body class='x2014 x2014_05 x2014_05_03 x2014_05_03_guarding-with-arrays'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
 <a class="extended-nav--close" data-icon="X" href="#"><span class='is-hidden'>Close</span></a><div class='extended-nav__items'><div class='extended-nav__items--mobile'><a class="extended-nav__item--work extended-nav__item" href="#">Work</a><nav class='work-nav--mobile'><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong></a>
 <a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong></a></nav></div><a class="extended-nav__item" href="http://dockyard.com/team">Our Team</a><a class="extended-nav__item" href="http://dockyard.com/process">Process</a><a class="extended-nav__item" href="http://dockyard.com/community">Community</a><a class="extended-nav__item active" href="/">Blog</a><a class="extended-nav__item" href="http://dockyard.com/hire-us">Hire Us</a></div></nav><nav class='work-nav'><h6>Selected Work</h6><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong><p>Credit card advice from real people.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Get those instance variables out of my specs!</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>February 15<sup>th</sup>, 2012</time><div class='post__content'><p>If you&#39;ve been writing <a href="https://www.relishapp.com/rspec">RSpec</a> for any
-period of time I&#39;m sure you&#39;ve come across <a href="https://www.relishapp.com/rspec/rspec-core/v/2-8/docs/helper-methods/let-and-let">let</a> and <a href="https://www.relishapp.com/rspec/rspec-core/v/2-8/docs/subject/explicit-subject">subject</a>. (please take a moment to check out the links if you have no idea what I&#39;m talking about) In most cases you can write the same specs with instance variables. For example:</p>
-<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-</pre></td>
-  <td class="code"><pre>describe <span class="string"><span class="delimiter">'</span><span class="content">.find_good_cars</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
-  before <span class="keyword">do</span>
-    <span class="instance-variable">@car_1</span> = Factory(<span class="symbol">:good_car</span>)
-    <span class="instance-variable">@car_2</span> = Factory(<span class="symbol">:good_car</span>)
-    <span class="instance-variable">@car_3</span> = Factory(<span class="symbol">:bad_car</span>)
-    <span class="instance-variable">@good_cars</span> = <span class="constant">Car</span>.find_good_cars
-  <span class="keyword">end</span>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Guarding with arrays</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 3<sup>rd</sup>, 2014</time><div class='post__content'><p>This week I applied a pattern I&#39;ve been using for years to two
+separate pull requests from our devs. (I like to review almost all of the
+code that DockYard devs write)</p>
 
-  it <span class="string"><span class="delimiter">'</span><span class="content">only finds good cars</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
-    <span class="instance-variable">@good_cars</span>.should eq [<span class="instance-variable">@car_1</span>, <span class="instance-variable">@car_2</span>]
-  <span class="keyword">end</span>
-<span class="keyword">end</span>
-</pre></td>
-</tr></table>
-</div></div>
-<p>Here is what it looks like when using <code>let</code> and <code>subject</code></p>
+<p>In both cases I was able to help them refactor their code to use an
+enumerator as code guards instead of conditional statements. Let&#39;s take a
+look at each example:</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -85,26 +60,94 @@ period of time I&#39;m sure you&#39;ve come across <a href="https://www.relishap
 6
 7
 </pre></td>
-  <td class="code"><pre>describe <span class="string"><span class="delimiter">'</span><span class="content">.find_good_cars</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
-  let!(<span class="symbol">:car_1</span>) { Factory(<span class="symbol">:good_car</span>) }
-  let!(<span class="symbol">:car_2</span>) { Factory(<span class="symbol">:good_car</span>) }
-  let!(<span class="symbol">:car_3</span>) { Factory(<span class="symbol">:bad_car</span>)  }
-  subject      { <span class="constant">Car</span> }
-  its(<span class="symbol">:find_good_cars</span>) { should eq [car_1, car_2] }
+  <td class="code"><pre>users = <span class="constant">User</span>.where(<span class="key">type</span>: <span class="string"><span class="delimiter">'</span><span class="content">employee</span><span class="delimiter">'</span></span>)
+
+<span class="keyword">if</span> users.any?
+  users.each <span class="keyword">do</span> |user|
+    <span class="comment"># ...</span>
+  <span class="keyword">end</span>
 <span class="keyword">end</span>
 </pre></td>
 </tr></table>
 </div></div>
-<p>Maybe it is just me but this <em>feels</em> cleaner. I treat instance
-variables in my specs as a smell and you should too.</p>
-</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
+<p>In this first example the <code>each</code> is avoided if the <code>users</code>
+collection is empty. However, with arrays the enumerator only acts on each
+member of the collection so we don&#39;t need to avoid if the collection is
+empty. We can refactor the above code into something like this:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre><span class="constant">User</span>.where(<span class="key">type</span>: <span class="string"><span class="delimiter">'</span><span class="content">employee</span><span class="delimiter">'</span></span>).each <span class="keyword">do</span> |user)
+   <span class="comment"># ...</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Much cleaner!</p>
+
+<p>The next example may not be as straight forward but as we&#39;ll see with
+Ruby we can clean this up nicely.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span> params[<span class="symbol">:ids</span>]
+  params[<span class="symbol">:ids</span>].each <span class="keyword">do</span> |id|
+    <span class="comment"># ...</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Here we have a situation where <code>params[:ids]</code> could contain a collection
+of data. Or it could be <code>nil</code>. Because of this we cannot just assume we
+can always iterate over that value. In Ruby we can create a new <code>Array</code>:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>Array([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>])
+<span class="comment"># =&gt; [1,2,3]</span>
+
+Array(<span class="predefined-constant">nil</span>)
+<span class="comment"># =&gt; []</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Notice in the second example that when we pass <code>nil</code> it creates an
+<strong>empty array</strong>. Knowing this we can refactor our code:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>Array(params[<span class="symbol">:ids</span>]).each <span class="keyword">do</span> |id|
+  <span class="comment"># ...</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>If you find yourself putting guards around enumerators odds are you can
+refactor in a similar manner as I&#39;ve shown above.</p>
+
+<p>BTW, I&#39;ve been using this pattern for years but I don&#39;t know if there is
+an actual name for this. If you do please share!</p>
+</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
   (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
 </script><span class='post__share--github'>If you see an issue, please send a <a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/', class='text-link post__issue', target: '_blank'>pull request</a> to contribute.</span></div><div class='related-posts-wrap'><div class='post__avatar-wrap'><img class='post__avatar' src='/images/team/brian-cardarella.jpg'><h5 class='post__avatar__name'>Brian Cardarella</h5><h5 class='post__avatar__position headline--sub'>Partner &amp; Lead Developer<br>At DockYard
-</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Brian</h3><a class="related-post" href="/2014/05/03/guarding-with-arrays.html"><h2 class='related-post__title'>Guarding with arrays</h2><p>May 3<sup>rd</sup>, 2014</p></a>
-<a class="related-post" href="/2014/05/02/what-is-holding-up-uniqueness-validator.html"><h2 class='related-post__title'>What is holding up the uniqueness validator?</h2><p>May 2<sup>nd</sup>, 2014</p></a>
-<a class="related-posts-link text-link" href="/authors/brian-cardarella.html">See all 58 posts by Brian</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/ruby.html">Ruby&nbsp;<span class='post__tag__count'>(38)</span></a> <a class="post__tag" href="/categories/testing.html">Testing&nbsp;<span class='post__tag__count'>(6)</span></a></p><div id='disqus_thread'></div><script>
+</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Brian</h3><a class="related-post" href="/2014/05/02/what-is-holding-up-uniqueness-validator.html"><h2 class='related-post__title'>What is holding up the uniqueness validator?</h2><p>May 2<sup>nd</sup>, 2014</p></a>
+<a class="related-post" href="/2014/05/01/alert-messages-in-ember-apps.html"><h2 class='related-post__title'>Alert messages in Ember Apps</h2><p>May 1<sup>st</sup>, 2014</p></a>
+<a class="related-posts-link text-link" href="/authors/brian-cardarella.html">See all 58 posts by Brian</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/ruby.html">Ruby&nbsp;<span class='post__tag__count'>(38)</span></a> <a class="post__tag" href="/categories/ruby-on-rails.html">Ruby on Rails&nbsp;<span class='post__tag__count'>(29)</span></a></p><div id='disqus_thread'></div><script>
   var disqus_shortname = 'reefpoints';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

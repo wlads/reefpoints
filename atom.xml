@@ -4,10 +4,118 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-02T00:00:00Z</updated>
+  <updated>2014-05-03T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Guarding with arrays</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html</id>
+    <published>2014-05-03T00:00:00Z</published>
+    <updated>2014-05-03T09:52:26-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>A common pattern we use</summary>
+    <content type="html">&lt;p&gt;This week I applied a pattern I&amp;#39;ve been using for years to two
+separate pull requests from our devs. (I like to review almost all of the
+code that DockYard devs write)&lt;/p&gt;
+
+&lt;p&gt;In both cases I was able to help them refactor their code to use an
+enumerator as code guards instead of conditional statements. Let&amp;#39;s take a
+look at each example:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;users = &lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+
+&lt;span class="keyword"&gt;if&lt;/span&gt; users.any?
+  users.each &lt;span class="keyword"&gt;do&lt;/span&gt; |user|
+    &lt;span class="comment"&gt;# ...&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this first example the &lt;code&gt;each&lt;/code&gt; is avoided if the &lt;code&gt;users&lt;/code&gt;
+collection is empty. However, with arrays the enumerator only acts on each
+member of the collection so we don&amp;#39;t need to avoid if the collection is
+empty. We can refactor the above code into something like this:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).each &lt;span class="keyword"&gt;do&lt;/span&gt; |user)
+   &lt;span class="comment"&gt;# ...&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Much cleaner!&lt;/p&gt;
+
+&lt;p&gt;The next example may not be as straight forward but as we&amp;#39;ll see with
+Ruby we can clean this up nicely.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;if&lt;/span&gt; params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;]
+  params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;].each &lt;span class="keyword"&gt;do&lt;/span&gt; |id|
+    &lt;span class="comment"&gt;# ...&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here we have a situation where &lt;code&gt;params[:ids]&lt;/code&gt; could contain a collection
+of data. Or it could be &lt;code&gt;nil&lt;/code&gt;. Because of this we cannot just assume we
+can always iterate over that value. In Ruby we can create a new &lt;code&gt;Array&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Array([&lt;span class="integer"&gt;1&lt;/span&gt;,&lt;span class="integer"&gt;2&lt;/span&gt;,&lt;span class="integer"&gt;3&lt;/span&gt;])
+&lt;span class="comment"&gt;# =&amp;gt; [1,2,3]&lt;/span&gt;
+
+Array(&lt;span class="predefined-constant"&gt;nil&lt;/span&gt;)
+&lt;span class="comment"&gt;# =&amp;gt; []&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice in the second example that when we pass &lt;code&gt;nil&lt;/code&gt; it creates an
+&lt;strong&gt;empty array&lt;/strong&gt;. Knowing this we can refactor our code:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Array(params[&lt;span class="symbol"&gt;:ids&lt;/span&gt;]).each &lt;span class="keyword"&gt;do&lt;/span&gt; |id|
+  &lt;span class="comment"&gt;# ...&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you find yourself putting guards around enumerators odds are you can
+refactor in a similar manner as I&amp;#39;ve shown above.&lt;/p&gt;
+
+&lt;p&gt;BTW, I&amp;#39;ve been using this pattern for years but I don&amp;#39;t know if there is
+an actual name for this. If you do please share!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What is holding up the uniqueness validator?</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
