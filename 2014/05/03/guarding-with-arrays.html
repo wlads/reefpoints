@@ -79,7 +79,7 @@ empty. We can refactor the above code into something like this:</p>
 2
 3
 </pre></td>
-  <td class="code"><pre><span class="constant">User</span>.where(<span class="key">type</span>: <span class="string"><span class="delimiter">'</span><span class="content">employee</span><span class="delimiter">'</span></span>).each <span class="keyword">do</span> |user)
+  <td class="code"><pre><span class="constant">User</span>.where(<span class="key">type</span>: <span class="string"><span class="delimiter">'</span><span class="content">employee</span><span class="delimiter">'</span></span>).each <span class="keyword">do</span> |user|
    <span class="comment"># ...</span>
 <span class="keyword">end</span>
 </pre></td>

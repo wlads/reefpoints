@@ -99,7 +99,7 @@ empty. We can refactor the above code into something like this:&lt;/p&gt;
 2
 3
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).each &lt;span class="keyword"&gt;do&lt;/span&gt; |user)
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="constant"&gt;User&lt;/span&gt;.where(&lt;span class="key"&gt;type&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;employee&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).each &lt;span class="keyword"&gt;do&lt;/span&gt; |user|
    &lt;span class="comment"&gt;# ...&lt;/span&gt;
 &lt;span class="keyword"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
