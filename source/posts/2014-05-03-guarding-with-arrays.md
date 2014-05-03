@@ -35,7 +35,7 @@ member of the collection so we don't need to avoid if the collection is
 empty. We can refactor the above code into something like this:
 
 ```ruby
-User.where(type: 'employee').each do |user)
+User.where(type: 'employee').each do |user|
    # ...
 end
 ```
