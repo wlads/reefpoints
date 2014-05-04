@@ -1,6 +1,10 @@
 - wrap_layout :layout do
 
   .l-wrap--blog__post
+    - if has_ad?
+      .ad
+        = partial "shared/ads/#{ad_partial}"
+
     %h1.post__title= current_page.title
 
     = link_to current_page.author, author_path(current_page.author), class: 'post__author'

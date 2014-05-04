@@ -59,6 +59,18 @@ helpers do
   def active_state_for(path)
     page_classes.split.first == (path) ? 'active' : nil
   end
+
+  def all_ads
+    { 'ember.js' => 'wicked-good-ember', 'ember' => 'wicked-good-ember', 'ruby' => 'wicked-good-ruby', 'rails' => 'wicked-good-ruby', 'ruby on rails' => 'wicked-good-ruby' }
+  end
+
+  def ad_partial
+    all_ads[(all_ads.keys & current_page.tags).first]
+  end
+
+  def has_ad?
+    (all_ads.keys & current_page.tags).any?
+  end
 end
 
 set :markdown_engine, :redcarpet
