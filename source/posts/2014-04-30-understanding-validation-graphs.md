@@ -84,7 +84,7 @@ Let's say we have a `Profile` that belongs to a `User`. The `Profile`
 can have its own set of validations as well as its own `isValid` flag.
 If the `Profile` is mixed into the `Users`'s validation graph then the
 `User` will be invalid when the `Profile` is invalid. We can use this
-pattern to buld an incredibly deep and complex graph where the validation
+pattern to build an incredibly deep and complex graph where the validation
 state bubbles up to the root whenever a property change takes place
 anywhere in the graph.
 

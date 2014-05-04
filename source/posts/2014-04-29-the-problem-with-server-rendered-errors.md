@@ -85,7 +85,7 @@ Ember.ObjectController.extend(Ember.Validations.Mixin, {
 This way the controller has its own `errors` object which will not clash
 with the `errors` object on your data model. One possiblity of
 referencing the model's server-rendered errors is to have a `base`
-validator that is not part of the validaiton graph but who's errors can
+validator that is not part of the validation graph but who's errors can
 be used for presentation purposes.
 
 ### Displaying server-rendered errors
