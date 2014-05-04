@@ -29,12 +29,12 @@ application increased eak-rails did not scale well. Having your Ember
 and Rails files mixed into the same directories created more problems
 than it solved.
 
-So, this week I will be focusing on how we are building Ember apps
+This week I will be focusing on how we are building Ember apps
 backed with Rails at DockYard. Part of that will be in-line with what
 fellow DockYarder [Dan McClain presented at Boston Ember last
 month](https://www.youtube.com/watch?v=ceFNLdswFxs&t=1h8m20s).
 
-So for eak-rails users, we have not abandoned you. Anybody refusing to
+For eak-rails users, we have not abandoned you. Anybody refusing to
 migrate we'll continue any **critical** bug fixes but no new features.
 We actually sunset the gem about 2 months ago.
 
