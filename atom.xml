@@ -4,10 +4,50 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-03T00:00:00Z</updated>
+  <updated>2014-05-04T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Stop using Ember Appkit Rails</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
+    <published>2014-05-04T00:00:00Z</published>
+    <updated>2014-05-04T17:42:47-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Just stop</summary>
+    <content type="html">&lt;p&gt;A few months ago I released a gem called &lt;a href="https://github.com/dockyard/ember-appkit-rails"&gt;Ember Appkit
+Rails&lt;/a&gt;. Let me start by
+apologizing for its existance. For those that began projects around
+eak-rails it started with good intentions and felt right at first but we
+have abandoned the gem at DockYard.&lt;/p&gt;
+
+&lt;p&gt;eak-rails was/is a merging of &lt;a href="https://github.com/stefanpenner/ember-app-kit"&gt;Ember App
+Kit&lt;/a&gt; and Rails. It does
+some heavy monkey patching to Rails&amp;#39; Asset Pipeline to give as much
+project hieracrchical power to your Ember code as your Rails code
+enjoys.&lt;/p&gt;
+
+&lt;p&gt;We used eak-rails in smaller projects, and intro to Ember courses. In
+small doses eak-rails felt right. However, when the surface area of an
+application increased eak-rails did not scale well. Having your Ember
+and Rails files mixed into the same directories created more problems
+than it solved.&lt;/p&gt;
+
+&lt;p&gt;So, this week I will be focusing on how we are building Ember apps
+backed with Rails at DockYard. Part of that will be in-line with what
+fellow DockYarder &lt;a href="https://www.youtube.com/watch?v=ceFNLdswFxs&amp;amp;t=1h8m20s"&gt;Dan McClain presented at Boston Ember last
+month&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So for eak-rails users, we have not abandoned you. Anybody refusing to
+migrate we&amp;#39;ll continue any &lt;strong&gt;critical&lt;/strong&gt; bug fixes but no new features.
+We actually sunset the gem about 2 months ago.&lt;/p&gt;
+
+&lt;p&gt;ember-cli is the future.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Guarding with arrays</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html"/>
