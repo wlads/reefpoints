@@ -334,6 +334,21 @@ code {
   /* line 43, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/layout.sass */
   .l-col3--wide {
     width: 30%; } }
+/* line 3, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+.ad {
+  min-height: 60px;
+  line-height: 60px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px; }
+  /* line 11, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad a {
+    color: white; }
+    /* line 13, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+    .ad a:hover {
+      text-decoration: underline; }
 /* line 3, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
 .authors__avatar, .author__avatar, .post__avatar {
   -webkit-border-radius: 50%;
