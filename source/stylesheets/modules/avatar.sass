@@ -71,7 +71,23 @@
   margin-bottom: 12px
 
 .post__avatar__position
+  margin-bottom: 20px
   line-height: 1.33
+
+.post__avatar__social-link--twitter, .post__avatar__social-link--github
+  +transition-duration(.25s)
+  +transition-property(color)
+  display: block
+  color: lighten($gray, 25%)
+  &:hover
+    color: $blue
+  &:before
+    margin:
+      right: 3px
+      left: -28px
+    position: relative
+    top: 5px
+    font-size: 24px
 
 .post__avatar-wrap-is-centered
   margin:

@@ -28,6 +28,8 @@
           %h5.post__avatar__name= current_page.author
           %h5.post__avatar__position.headline--sub
             = partial 'shared/' + current_page.author.parameterize<<'-position'
+          - if current_page.social
+            = partial 'shared/social'
         .related-posts
           %h3.related-posts__header.headline--sub= "Other posts by #{current_page.author.split[0...1].join(' ')}"
           - blog.articles.select { |article| article.author == current_page.author && article.path != current_page.path }[0..1].each do |post|
@@ -41,6 +43,8 @@
           %h5.post__avatar__name= current_page.author
           %h5.post__avatar__position.headline--sub
             = partial 'shared/' + current_page.author.parameterize<<'-position'
+          - if current_page.social
+            = partial 'shared/social'
 
     %p.post__tags= tag_links(current_page.tags)
 

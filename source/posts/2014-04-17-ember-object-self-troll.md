@@ -2,7 +2,7 @@
 layout: post
 title: 'Ember Object Self Troll'
 twitter: twokul
-github: twoul
+github: twokul
 author: 'Alex Navasardyan'
 tags: ember
 social: true
