@@ -260,7 +260,7 @@ css opacity transition completes. Browser support may vary.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html</id>
     <published>2014-04-30T00:00:00Z</published>
-    <updated>2014-04-30T00:41:41-04:00</updated>
+    <updated>2014-05-04T04:17:57-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -351,7 +351,7 @@ another validatable object?&lt;/em&gt; Now things get interesting.&lt;/p&gt;
 can have its own set of validations as well as its own &lt;code&gt;isValid&lt;/code&gt; flag.
 If the &lt;code&gt;Profile&lt;/code&gt; is mixed into the &lt;code&gt;Users&lt;/code&gt;&amp;#39;s validation graph then the
 &lt;code&gt;User&lt;/code&gt; will be invalid when the &lt;code&gt;Profile&lt;/code&gt; is invalid. We can use this
-pattern to buld an incredibly deep and complex graph where the validation
+pattern to build an incredibly deep and complex graph where the validation
 state bubbles up to the root whenever a property change takes place
 anywhere in the graph.&lt;/p&gt;
 
@@ -406,7 +406,7 @@ can see the &lt;code&gt;isValid&lt;/code&gt; states bubbling up to the original 
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html</id>
     <published>2014-04-29T00:00:00Z</published>
-    <updated>2014-04-29T10:46:35-04:00</updated>
+    <updated>2014-05-04T04:17:57-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -498,7 +498,7 @@ Ember.ObjectController.extend(Ember.Validations.Mixin, {
 &lt;p&gt;This way the controller has its own &lt;code&gt;errors&lt;/code&gt; object which will not clash
 with the &lt;code&gt;errors&lt;/code&gt; object on your data model. One possiblity of
 referencing the model&amp;#39;s server-rendered errors is to have a &lt;code&gt;base&lt;/code&gt;
-validator that is not part of the validaiton graph but who&amp;#39;s errors can
+validator that is not part of the validation graph but who&amp;#39;s errors can
 be used for presentation purposes.&lt;/p&gt;
 
 &lt;h3&gt;Displaying server-rendered errors&lt;/h3&gt;
