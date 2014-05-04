@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
     <published>2014-05-04T00:00:00Z</published>
-    <updated>2014-05-04T17:42:47-04:00</updated>
+    <updated>2014-05-04T17:49:25-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -36,12 +36,12 @@ application increased eak-rails did not scale well. Having your Ember
 and Rails files mixed into the same directories created more problems
 than it solved.&lt;/p&gt;
 
-&lt;p&gt;So, this week I will be focusing on how we are building Ember apps
+&lt;p&gt;This week I will be focusing on how we are building Ember apps
 backed with Rails at DockYard. Part of that will be in-line with what
 fellow DockYarder &lt;a href="https://www.youtube.com/watch?v=ceFNLdswFxs&amp;amp;t=1h8m20s"&gt;Dan McClain presented at Boston Ember last
 month&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;So for eak-rails users, we have not abandoned you. Anybody refusing to
+&lt;p&gt;For eak-rails users, we have not abandoned you. Anybody refusing to
 migrate we&amp;#39;ll continue any &lt;strong&gt;critical&lt;/strong&gt; bug fixes but no new features.
 We actually sunset the gem about 2 months ago.&lt;/p&gt;
 
