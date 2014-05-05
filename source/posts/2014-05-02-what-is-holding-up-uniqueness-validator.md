@@ -50,7 +50,7 @@ of a property. (i.e. entering text into a field)
 But where do we send this request for uniqueness? This is where I am
 currently hung up. I really don't want to implement a backend api
 expectation into ember-validations. I was hoping that something like
-[json-api][http:/jsonapi.org) would define this for me then I could rely upon that as a
+[json-api](http:/jsonapi.org) would define this for me then I could rely upon that as a
 starting expected endpoint. But I don't think this is anywhere on their
 radar.
 
