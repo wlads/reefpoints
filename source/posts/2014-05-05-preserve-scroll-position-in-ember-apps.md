@@ -12,7 +12,7 @@ tags: ember
 ---
 
 If you have a long list of items on a page and a user follows a link
-then goes back to that list Ember will re-render the list and the user
+then goes back to that list Ember, will re-render the list and the user
 loses their place. This can be annoying if there is a very long list of
 items and the user is expected to be switching back and forth between
 the list and the item.
@@ -36,7 +36,7 @@ the following mixin:
 ```javascript
 var ScrollableMixin = Ember.Mixin.create({
   scrollingTimeout: 100,
-  bindScrolling: function(opts) {
+  bindScrolling: function() {
     var self = this,
     onScroll = function() {
       Ember.run.debounce(self, self.runScrolled, self.scrollingTimeout);
