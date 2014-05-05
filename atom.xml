@@ -13,21 +13,21 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
     <published>2014-05-04T00:00:00Z</published>
-    <updated>2014-05-04T17:49:25-04:00</updated>
+    <updated>2014-05-05T10:16:12-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
     <summary>Just stop</summary>
     <content type="html">&lt;p&gt;A few months ago I released a gem called &lt;a href="https://github.com/dockyard/ember-appkit-rails"&gt;Ember Appkit
 Rails&lt;/a&gt;. Let me start by
-apologizing for its existance. For those that began projects around
+apologizing for its existence. For those that began projects around
 eak-rails it started with good intentions and felt right at first but we
 have abandoned the gem at DockYard.&lt;/p&gt;
 
 &lt;p&gt;eak-rails was/is a merging of &lt;a href="https://github.com/stefanpenner/ember-app-kit"&gt;Ember App
 Kit&lt;/a&gt; and Rails. It does
 some heavy monkey patching to Rails&amp;#39; Asset Pipeline to give as much
-project hieracrchical power to your Ember code as your Rails code
+project hierarchical power to your Ember code as your Rails code
 enjoys.&lt;/p&gt;
 
 &lt;p&gt;We used eak-rails in smaller projects, and intro to Ember courses. In
