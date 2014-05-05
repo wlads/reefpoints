@@ -13,14 +13,14 @@ tags: ember, ruby, ruby on rails
 
 A few months ago I released a gem called [Ember Appkit
 Rails](https://github.com/dockyard/ember-appkit-rails). Let me start by
-apologizing for its existance. For those that began projects around
+apologizing for its existence. For those that began projects around
 eak-rails it started with good intentions and felt right at first but we
 have abandoned the gem at DockYard.
 
 eak-rails was/is a merging of [Ember App
 Kit](https://github.com/stefanpenner/ember-app-kit) and Rails. It does
 some heavy monkey patching to Rails' Asset Pipeline to give as much
-project hieracrchical power to your Ember code as your Rails code
+project hierarchical power to your Ember code as your Rails code
 enjoys.
 
 We used eak-rails in smaller projects, and intro to Ember courses. In
