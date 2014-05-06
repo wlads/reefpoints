@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html</id>
     <published>2014-05-06T00:00:00Z</published>
-    <updated>2014-05-06T12:49:11-04:00</updated>
+    <updated>2014-05-06T12:50:16-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -29,7 +29,7 @@ rely on integration tests quite a bit, and I don&amp;#39;t mind hitting the data
 during unit tests. Slow tests that actually test how clients
 use your app are much better than fast tests that actually test nothing.&lt;/p&gt;
 
-&lt;p&gt;On a side-note, I would be interested to know what DHH thinkgs about BDD
+&lt;p&gt;On a side-note, I would be interested to know what DHH thinks about BDD
 as opposed to TDD, if he even thinks there is a difference. For me I
 feel there is a distinct difference and I would characterize my style of
 development as BDD.&lt;/p&gt;
