@@ -4,10 +4,72 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-05T00:00:00Z</updated>
+  <updated>2014-05-06T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>The other thing DHH mentioned</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html</id>
+    <published>2014-05-06T00:00:00Z</published>
+    <updated>2014-05-06T12:49:11-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>The Design Pattern Cargo Culting of the Ruby Community</summary>
+    <content type="html">&lt;p&gt;By now &lt;a href="http://www.confreaks.com/videos/3315-railsconf-keynote"&gt;you&amp;#39;ve probably seen DHH&amp;#39;s Rails Conf 2014 Keynote&lt;/a&gt;. 
+Love it or hate it, the one thing you can&amp;#39;t do is deny it got people&amp;#39;s attention. I wasn&amp;#39;t there, and I admit I reacted to Twitter
+before actually viewing it. If you only listened on Twitter your
+perception of the keynote is most likely that DHH is anti-testing. That
+is very far from the truth. Go and watch the video, a lot of what he
+talks about resonated with me. I still believe in &amp;quot;testing first&amp;quot; and
+&amp;quot;red-green-refactor&amp;quot; but my style is not as dogmatic as some other&amp;#39;s. I
+rely on integration tests quite a bit, and I don&amp;#39;t mind hitting the database
+during unit tests. Slow tests that actually test how clients
+use your app are much better than fast tests that actually test nothing.&lt;/p&gt;
+
+&lt;p&gt;On a side-note, I would be interested to know what DHH thinkgs about BDD
+as opposed to TDD, if he even thinks there is a difference. For me I
+feel there is a distinct difference and I would characterize my style of
+development as BDD.&lt;/p&gt;
+
+&lt;p&gt;But I don&amp;#39;t want to talk about testing. I want to talk about the other
+thing DHH came down on during his keynote: Design Patterns.&lt;/p&gt;
+
+&lt;p&gt;Now before I get raked over the coals let me start by saying that
+overall design patterns are great. It was the MVC(ish) and ActiveRecord
+patterns that made Rails itself possible. When we speak in patterns it
+becomes the lingua franca for programmers. I can jump from language to
+language and can, with relative ease, recognize the patterns.&lt;/p&gt;
+
+&lt;p&gt;However, in the Ruby/Rails communities we have gone overboard. Design
+Patterns are the new Holy Grail of software development. A few
+years ago people were very excited about TDD, as DHH said it was sold to
+us as a necessary tool for &amp;quot;professional software development&amp;quot;. Now that
+everybody just assumes TDD is happening the thought leaders went in
+search of the next intellectually challenging concept to hold everyone
+accountable for. This began to spring up maybe 2 years ago, at least
+that&amp;#39;s when I started to notice it. Design pattern talks at conferences, books
+dedicated to design patterns, podcasts talking about patterns, blog
+posts (of which we have written a few), code schools teaching design
+patterns - developers ate them up. The Ruby community was hungry for
+patterns.&lt;/p&gt;
+
+&lt;p&gt;There feels to me a loss of pragmatism in the ruby community. I think
+this is due to there being no major problems to solve in Rails anymore.
+Developers are always looking for problems to solve, and in this case
+the hive mind has decided to hyper optimize on patterns.&lt;/p&gt;
+
+&lt;p&gt;I get it, they are intellectually stimulating. Implementing a pattern to
+&amp;quot;perfection&amp;quot; will give a developer that sense of self-satisfaction. &amp;quot;My
+code is clean&amp;quot;. Until the next feature comes in and you have to blow up
+what you&amp;#39;ve been perfecting.&lt;/p&gt;
+
+&lt;p&gt;Be pragmatic. Don&amp;#39;t follow the trends just because some guys behind a
+microphone say you should.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Preserve scrolling position in Ember Apps</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html"/>
