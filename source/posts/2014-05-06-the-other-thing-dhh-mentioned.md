@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The other thing DHH mentioned"
-comments: true
+comments: false
 author: 'Brian Cardarella'
 github: bcardarella
 twitter: bcardarella
