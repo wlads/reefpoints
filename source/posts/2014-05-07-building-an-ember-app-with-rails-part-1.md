@@ -13,12 +13,12 @@ tags: ember, ruby, ruby on rails
 
 This series will take us through building and structuring an application
 with an Ember front-end built with
-[https://github.com/stefanpenner/ember-cli](ember-cli) and a Ruby on
+[ember-cli](https://github.com/stefanpenner/ember-cli) and a Ruby on
 Rails backend. We'll discuss project structure, testing, and deployment
 to Heroku.
 
 During the course of this series I am going to re-build the
-[http://bostonember.com](Boston Ember) website. (if it looks terrible
+[Boston Ember](http://bostonember.com) website. (if it looks terrible
 that means I'm not done yet)
 
 ## Getting setup with our tools
