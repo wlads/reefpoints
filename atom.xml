@@ -4,10 +4,213 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-06T00:00:00Z</updated>
+  <updated>2014-05-07T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Building an Ember App with Rails Part 1</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
+    <published>2014-05-07T00:00:00Z</published>
+    <updated>2014-05-07T12:30:53-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>ember-cli &amp; Rails</summary>
+    <content type="html">&lt;p&gt;This series will take us through building and structuring an application
+with an Ember front-end built with
+&lt;a href="ember-cli"&gt;https://github.com/stefanpenner/ember-cli&lt;/a&gt; and a Ruby on
+Rails backend. We&amp;#39;ll discuss project structure, testing, and deployment
+to Heroku.&lt;/p&gt;
+
+&lt;p&gt;During the course of this series I am going to re-build the
+&lt;a href="Boston%20Ember"&gt;http://bostonember.com&lt;/a&gt; website. (if it looks terrible
+that means I&amp;#39;m not done yet)&lt;/p&gt;
+
+&lt;h2&gt;Getting setup with our tools&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s start by making sure all relevant dev tools are installed on our
+machine. I am using the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby 2.1.1&lt;/li&gt;
+&lt;li&gt;Rails 4.1.1&lt;/li&gt;
+&lt;li&gt;Node 0.10.26&lt;/li&gt;
+&lt;li&gt;npm 1.4.7&lt;/li&gt;
+&lt;li&gt;Postgres (only necessary because we are deploying to Heroku)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Versions at or above these versions should be OK for following along. Please refer elsewhere on how to install these tools on your development
+machine.&lt;/p&gt;
+
+&lt;p&gt;Next I will install ember-cli&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;npm install -g ember-cli
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Confirm that you have &lt;code&gt;ember-cli&lt;/code&gt; installed:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;ember --version
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You should see:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;version: 0.0.27
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Or a greater version.&lt;/p&gt;
+
+&lt;h2&gt;Setting up our project&lt;/h2&gt;
+
+&lt;p&gt;For this project we will keep our Rails and our Ember apps in separate
+directories with a top-level directory containing the two. We&amp;#39;ll have to
+do some project generating and renaming. &lt;/p&gt;
+
+&lt;p&gt;I first create a new top-level directory:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;mkdir bostonember
+cd bostonember
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now we&amp;#39;re going to generate our Rails project:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;rails new bostonember -B -S -d postgresql
+mv bostonember rails
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note how we renamed the directory the Rails project is in to &lt;code&gt;rails&lt;/code&gt;. This
+does not affect anything in that directory. If you do not have Postgres
+on your machine omit &lt;code&gt;-d postgresql&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the ember project:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;ember new bostonember
+mv bostonember ember
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now it should be obvious why we moved the Rails project. We should now have
+a structure like:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;bostonember
+|- ember
+|- rails
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s confirm that our ember app runs:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;cd ember
+ember server
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In your browser visit &lt;code&gt;http://localhost:4200&lt;/code&gt; and you should see &amp;quot;Welcome to Ember.js&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;At this point you can put everything in your top level directory under
+version control:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;git init
+git add .
+gc -m &amp;quot;Initial commit&amp;quot;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s make some modifications to our Rails app.&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;rm -rf rails/app/assets
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In &lt;code&gt;rails/Gemfile&lt;/code&gt; remove the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;coffee-rails&lt;/li&gt;
+&lt;li&gt;jquery-rails&lt;/li&gt;
+&lt;li&gt;turbolinks&lt;/li&gt;
+&lt;li&gt;jbuilder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now everything related to the Asset Pipeline is completely removed.&lt;/p&gt;
+
+&lt;p&gt;Add the following to the &lt;code&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;active_model_serializers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you don&amp;#39;t have Postgres on your machine you can set this for
+Production only:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;group &lt;span class="symbol"&gt;:development&lt;/span&gt;, &lt;span class="symbol"&gt;:test&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;sqlite3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+
+group &lt;span class="symbol"&gt;:production&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;pg&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Run &lt;code&gt;bundle install&lt;/code&gt; in your &lt;code&gt;rails&lt;/code&gt; directory. Let&amp;#39;s commit our
+changes:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;git add .
+gc -m &amp;quot;Removed asset pipeline and added active_model_serializers in Rails&amp;quot;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;That wraps up Part 1. In Part 2 will focus on Ember and creating
+some functionality in our app.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The other thing DHH mentioned</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
