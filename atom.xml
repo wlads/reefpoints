@@ -13,19 +13,19 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
     <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-05-07T13:03:30-04:00</updated>
+    <updated>2014-05-07T15:17:11-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
     <summary>ember-cli &amp; Rails</summary>
     <content type="html">&lt;p&gt;This series will take us through building and structuring an application
 with an Ember front-end built with
-&lt;a href="ember-cli"&gt;https://github.com/stefanpenner/ember-cli&lt;/a&gt; and a Ruby on
+&lt;a href="https://github.com/stefanpenner/ember-cli"&gt;ember-cli&lt;/a&gt; and a Ruby on
 Rails backend. We&amp;#39;ll discuss project structure, testing, and deployment
 to Heroku.&lt;/p&gt;
 
 &lt;p&gt;During the course of this series I am going to re-build the
-&lt;a href="Boston%20Ember"&gt;http://bostonember.com&lt;/a&gt; website. (if it looks terrible
+&lt;a href="http://bostonember.com"&gt;Boston Ember&lt;/a&gt; website. (if it looks terrible
 that means I&amp;#39;m not done yet)&lt;/p&gt;
 
 &lt;h2&gt;Getting setup with our tools&lt;/h2&gt;
