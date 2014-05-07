@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building an Ember App with Rails Part 1"
-comments: false
+comments: true
 author: 'Brian Cardarella'
 github: bcardarella
 twitter: bcardarella
