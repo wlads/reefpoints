@@ -43,7 +43,7 @@ npm install -g ember-cli
 
 Confirm that you have `ember-cli` installed:
 
-```base
+```bash
 ember --version
 ```
 
@@ -89,6 +89,12 @@ mv bostonember ember
 Now it should be obvious why we moved the Rails project. We should now have
 a structure like:
 
+```
+bostonember
+|- ember
+|- rails
+```
+
 Let's confirm that our ember app runs:
 
 ```bash
@@ -97,12 +103,6 @@ ember server
 ```
 
 In your browser visit `http://localhost:4200` and you should see "Welcome to Ember.js"
-
-```
-bostonember
-|- ember
-|- rails
-```
 
 At this point you can put everything in your top level directory under
 version control:
@@ -131,7 +131,7 @@ Now everything related to the Asset Pipeline is completely removed.
 Add the following to the `Gemfile`:
 
 ```ruby
-gem 'active_model_serializers
+gem 'active_model_serializers'
 ```
 
 If you don't have Postgres on your machine you can set this for
