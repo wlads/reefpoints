@@ -112,7 +112,7 @@ integration tests will execute. This is an IFRAME so we can see our
 applications interacted with in real-time (albeit very fast real-time).&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#39;s build out a landing page for our app. We will TDD this entire
-application. Create a new directory and file
+application over this multi-part series. Create a new directory and file
 &lt;code&gt;ember/tests/integration/landing-page-test.js&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;All of our files will be in

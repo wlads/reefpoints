@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-08T18:44:01-04:00</updated>
+    <updated>2014-05-08T18:46:02-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -66,7 +66,7 @@ integration tests will execute. This is an IFRAME so we can see our
 applications interacted with in real-time (albeit very fast real-time).&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#39;s build out a landing page for our app. We will TDD this entire
-application. Create a new directory and file
+application over this multi-part series. Create a new directory and file
 &lt;code&gt;ember/tests/integration/landing-page-test.js&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;All of our files will be in
