@@ -49,7 +49,7 @@ applications interacted with in real-time (albeit very fast real-time).
 
 Let's build out a landing page for our app. We will TDD this entire
 application. Create a new directory and file
-`ember/tests/integration/landing-page-test.js`
+`ember/tests/integration/landing-page-test.js`.
 
 All of our files will be in
 [ES6 module](http://wiki.ecmascript.org/doku.php?id=harmony:modules)
@@ -78,11 +78,11 @@ test('Should welcome me to Boston Ember', function() {
 ```
 
 Once you save this file go back to your browser. You should not need to reload anything, ember-cli has a live reload feature on file
-change. Now you should see the following:
+change. Now you should see your failing test:
 
 ![Screen2](http://i.imgur.com/l7y146I.png)
 
-You should not have needed to reload the page to see this failing test. Let's make the test pass:
+Let's make the test pass:
 
 In `ember/app/templates/application.hbs`
 
@@ -91,7 +91,7 @@ In `ember/app/templates/application.hbs`
 {{outlet}}
 ```
 
-Check your test suite and it should be all green
+Check your test suite and it should be all green.
 
 ![Screen3](http://i.imgur.com/242RLGf.png)
 
