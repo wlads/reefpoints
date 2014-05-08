@@ -4,10 +4,143 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-07T00:00:00Z</updated>
+  <updated>2014-05-08T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Building an Ember App with Rails Part 2</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
+    <published>2014-05-08T00:00:00Z</published>
+    <updated>2014-05-08T16:55:51-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary>Writing our first ember test</summary>
+    <content type="html">&lt;p&gt;We need to start this part with a bug fix. There is a bug for the live reload. In &lt;code&gt;ember/tests/helpers/start-app.js&lt;/code&gt; 
+insert the 2nd line:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; Router = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bostonember/router&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)[&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;default&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;];
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now on line 16 add:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;Router.reopen({
+  &lt;span class="key"&gt;location&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;none&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This bug exists in &lt;code&gt;0.0.27&lt;/code&gt; of ember-cli and will hopefully be fixed in a future verision.&lt;/p&gt;
+
+&lt;p&gt;(&lt;a href="stefanpenner/ember-cli#667"&gt;there is a pending PR to fix this&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Now start your server:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;cd ember
+ember server
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Open your browser and go to: &lt;code&gt;http://localhost:4200/test&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You should see something like the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/bufKV2c.png" alt="Screen 1"&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a typical &lt;a href="http://qunitjs.com/"&gt;Qunit&lt;/a&gt; test suite with some
+simple tests already in our app. What you&amp;#39;ll notice in the lower
+right-hand corder is a blank white box. This box is where our
+integration tests will execute. This is an IFRAME so we can see our
+applications interacted with in real-time (albeit very fast real-time).&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s build out a landing page for our app. We will TDD this entire
+application. Create a new directory and file
+&lt;code&gt;ember/tests/integration/landing-page-test.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of our files will be in
+&lt;a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules"&gt;ES6 module&lt;/a&gt;
+format. If you are unfamiliar with ES6 modules I suggest you go and read
+up.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; startApp from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bostonember/tests/helpers/start-app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; App;
+
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Integration - Landing Page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    App = startApp();
+  },
+  &lt;span class="function"&gt;teardown&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    Ember.run(App, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;destroy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should welcome me to Boston Ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h2#title&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Welcome to Boston Ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Once you save this file go back to your browser. You should not need to reload anything, ember-cli has a live reload feature on file
+change. Now you should see your failing test:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/l7y146I.png" alt="Screen2"&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s make the test pass:&lt;/p&gt;
+
+&lt;p&gt;In &lt;code&gt;ember/app/templates/application.hbs&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;h1 class=&amp;quot;welcome&amp;quot;&amp;gt;Welcome to Boston Ember&amp;quot;&amp;lt;/h1&amp;gt;
+{{outlet}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Check your test suite and it should be all green.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/242RLGf.png" alt="Screen3"&gt;&lt;/p&gt;
+
+&lt;p&gt;Congratulations on your first ember test!&lt;/p&gt;
+
+&lt;p&gt;Next time we&amp;#39;ll build out some pages and write tests to interact with
+these pages.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Building an Ember App with Rails Part 1</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
