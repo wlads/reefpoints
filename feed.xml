@@ -106,8 +106,8 @@ ember server
 &lt;p&gt;&lt;img src="http://i.imgur.com/bufKV2c.png" alt="Screen 1"&gt;&lt;/p&gt;
 
 &lt;p&gt;This is a typical &lt;a href="http://qunitjs.com/"&gt;Qunit&lt;/a&gt; test suite with some
-simple tests already in our app. What you&amp;#39;ll notice in the lower
-right-hand corder is a blank white box. This box is where our
+&lt;a href="http://www.jshint.com/"&gt;JSHint&lt;/a&gt; tests already in our app. What you&amp;#39;ll notice in the lower
+right-hand corner is a blank white box. This box is where our
 integration tests will execute. This is an IFRAME so we can see our
 applications interacted with in real-time (albeit very fast real-time).&lt;/p&gt;
 
