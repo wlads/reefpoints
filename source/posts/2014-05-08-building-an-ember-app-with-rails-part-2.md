@@ -50,7 +50,7 @@ integration tests will execute. This is an IFRAME so we can see our
 applications interacted with in real-time (albeit very fast real-time).
 
 Let's build out a landing page for our app. We will TDD this entire
-application. Create a new directory and file
+application over this multi-part series. Create a new directory and file
 `ember/tests/integration/landing-page-test.js`.
 
 All of our files will be in
