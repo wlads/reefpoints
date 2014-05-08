@@ -44,8 +44,8 @@ You should see something like the following:
 ![Screen 1](http://i.imgur.com/bufKV2c.png)
 
 This is a typical [Qunit](http://qunitjs.com/) test suite with some
-simple tests already in our app. What you'll notice in the lower
-right-hand corder is a blank white box. This box is where our
+[JSHint](http://www.jshint.com/) tests already in our app. What you'll notice in the lower
+right-hand corner is a blank white box. This box is where our
 integration tests will execute. This is an IFRAME so we can see our
 applications interacted with in real-time (albeit very fast real-time).
 
