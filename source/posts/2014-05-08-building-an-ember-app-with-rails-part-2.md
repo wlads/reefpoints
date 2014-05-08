@@ -89,7 +89,7 @@ Let's make the test pass:
 In `ember/app/templates/application.hbs`
 
 ```hbs
-<h1 class="welcome">Welcome to Boston Ember"</h1>
+<h1 class="welcome">Welcome to Boston Ember</h1>
 {{outlet}}
 ```
 
