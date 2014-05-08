@@ -172,7 +172,7 @@ change. Now you should see your failing test:&lt;/p&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;h1 class=&amp;quot;welcome&amp;quot;&amp;gt;Welcome to Boston Ember&amp;quot;&amp;lt;/h1&amp;gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;h1 class=&amp;quot;welcome&amp;quot;&amp;gt;Welcome to Boston Ember&amp;lt;/h1&amp;gt;
 {{outlet}}
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
