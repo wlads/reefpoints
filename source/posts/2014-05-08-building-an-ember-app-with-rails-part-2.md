@@ -28,6 +28,8 @@ Router.reopen({
 
 This bug exists in `0.0.27` of ember-cli and will hopefully be fixed in a future verision.
 
+([there is a pending PR to fix this](stefanpenner/ember-cli#667))
+
 Now start your server:
 
 ```bash
