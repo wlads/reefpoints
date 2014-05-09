@@ -99,7 +99,7 @@ ember server
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Open your browser and go to: &lt;code&gt;http://localhost:4200/test&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Open your browser and go to: &lt;code&gt;http://localhost:4200/tests&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;You should see something like the following:&lt;/p&gt;
 

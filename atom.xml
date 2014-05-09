@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-08T18:52:53-04:00</updated>
+    <updated>2014-05-08T23:23:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -53,7 +53,7 @@ ember server
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Open your browser and go to: &lt;code&gt;http://localhost:4200/test&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Open your browser and go to: &lt;code&gt;http://localhost:4200/tests&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;You should see something like the following:&lt;/p&gt;
 
