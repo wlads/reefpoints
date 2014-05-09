@@ -660,7 +660,7 @@ insert the 2nd line:&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;This bug exists in &lt;code&gt;0.0.27&lt;/code&gt; of ember-cli and will hopefully be fixed in a future verision.&lt;/p&gt;
 
-&lt;p&gt;(&lt;a href="stefanpenner/ember-cli#667"&gt;there is a pending PR to fix this&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(&lt;a href="https://github.com/stefanpenner/ember-cli/issues/667"&gt;there is a pending PR to fix this&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;Now start your server:&lt;/p&gt;
 &lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
