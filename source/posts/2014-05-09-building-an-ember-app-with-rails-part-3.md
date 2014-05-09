@@ -51,7 +51,7 @@ a link from the landing page to the `About` route, and a template for the
 `About` route.
 
 ```js
-// eber/app/router.js
+// ember/app/router.js
 Router.map(function() {
   this.route('about');
 });
@@ -98,7 +98,7 @@ test('Should allow navigating back to root from another page', function() {
 
 Great! A very simple navigation is setup and fully tested. How about something more complex. Let's allow our visitors
 to see the people that have spoken at Boston Ember. Before we do that we
-need to add new new dependencies to our app for mocking out remote
+need to add new dependencies to our app for mocking out remote
 requests.
 
 We will be using
@@ -329,7 +329,7 @@ end
 Now add the controller
 
 ```ruby
-# rails/app/controllers/api/speakers\_controller.rb
+# rails/app/controllers/api/speakers_controller.rb
 class Api::SpeakersController < ApplicationController
   def index
     render json: Speaker.all
