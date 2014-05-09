@@ -37,7 +37,7 @@ cd ember
 ember server
 ```
 
-Open your browser and go to: `http://localhost:4200/test`
+Open your browser and go to: `http://localhost:4200/tests`
 
 You should see something like the following:
 
