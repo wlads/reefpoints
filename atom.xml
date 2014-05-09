@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-08T23:23:23-04:00</updated>
+    <updated>2014-05-09T12:58:24-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -126,7 +126,7 @@ change. Now you should see your failing test:&lt;/p&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;h1 class=&amp;quot;welcome&amp;quot;&amp;gt;Welcome to Boston Ember&amp;lt;/h1&amp;gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;Welcome to Boston Ember&amp;lt;/h1&amp;gt;
 {{outlet}}
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
