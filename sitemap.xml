@@ -571,13 +571,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/ember-libraries.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/01/02/robert-jackson-is-a-dockyarder.html</loc>
     <lastmod>2014-05-09T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/01/02/romina-vargas-is-a-dockyarder.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/ember-libraries.html</loc>
     <lastmod>2014-05-09T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -716,6 +716,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2014/05/08/building-an-ember-app-with-rails-part-2.html</loc>
+    <lastmod>2014-05-09T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/05/09/building-an-ember-app-with-rails-part-3.html</loc>
     <lastmod>2014-05-09T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1033,7 +1039,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/01/02/robert-jackson-is-a-dockyarder.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/01/02/romina-vargas-is-a-dockyarder.html</loc>
     <lastmod>2014-05-09T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
