@@ -378,9 +378,9 @@ test(<span class="string"><span class="delimiter">'</span><span class="content">
 
 test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all speakers</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    ok(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>));
-    ok(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote&quot;)</span><span class="delimiter">'</span></span>));
-    ok(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam&quot;)</span><span class="delimiter">'</span></span>));
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
   });
 });
 

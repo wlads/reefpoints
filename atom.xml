@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
     <published>2014-05-09T00:00:00Z</published>
-    <updated>2014-05-10T11:33:33-04:00</updated>
+    <updated>2014-05-10T12:13:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -352,9 +352,9 @@ test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;
 
 test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should list all speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
   visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    ok(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Bugs Bunny&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;));
-    ok(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Wile E. Coyote&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;));
-    ok(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Yosemite Sam&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;));
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Bugs Bunny&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Wile E. Coyote&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Yosemite Sam&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
   });
 });
 
