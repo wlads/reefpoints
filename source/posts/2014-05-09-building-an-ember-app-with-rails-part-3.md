@@ -151,7 +151,7 @@ import startApp from 'bostonember/tests/helpers/start-app';
 
 var App, server;
 
-module('Integration - Landing Page', {
+module('Integration - Speaker Page', {
   setup: function() {
     App = startApp();
     var speakers = [
