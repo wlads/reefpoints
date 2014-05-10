@@ -322,7 +322,7 @@ our server:</p>
 74
 75
 </pre></td>
-  <td class="code"><pre><span class="comment">// ember/tests/integration/speakers-page.test.js</span>
+  <td class="code"><pre><span class="comment">// ember/tests/integration/speakers-page-test.js</span>
 <span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
 
 <span class="keyword">var</span> App, server;
@@ -464,7 +464,7 @@ Router.map(<span class="keyword">function</span>() {
   <span class="local-variable">this</span>.route(<span class="string"><span class="delimiter">'</span><span class="content">about</span><span class="delimiter">'</span></span>);
   <span class="local-variable">this</span>.resource(<span class="string"><span class="delimiter">'</span><span class="content">speakers</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
     <span class="local-variable">this</span>.route(<span class="string"><span class="delimiter">'</span><span class="content">show</span><span class="delimiter">'</span></span>, {<span class="key">path</span>: <span class="string"><span class="delimiter">'</span><span class="content">:speaker_id</span><span class="delimiter">'</span></span>});
-  );
+  });
 });
 </pre></td>
 </tr></table>
