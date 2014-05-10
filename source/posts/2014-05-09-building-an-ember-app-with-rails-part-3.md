@@ -202,9 +202,9 @@ test('Should allow navigation to the speakers page from the landing page', funct
 
 test('Should list all speakers', function() {
   visit('/speakers').then(function() {
-    ok(find('a:contains("Bugs Bunny")'));
-    ok(find('a:contains("Wile E. Coyote")'));
-    ok(find('a:contains("Yosemite Sam")'));
+    equal(find('a:contains("Bugs Bunny")').length, 1);
+    equal(find('a:contains("Wile E. Coyote")').length, 1);
+    equal(find('a:contains("Yosemite Sam")').length, 1);
   });
 });
 
