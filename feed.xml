@@ -347,7 +347,7 @@ our server:&lt;/p&gt;
 
 &lt;span class="keyword"&gt;var&lt;/span&gt; App, server;
 
-module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Integration - Landing Page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Integration - Speaker Page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
   &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
     App = startApp();
     &lt;span class="keyword"&gt;var&lt;/span&gt; speakers = [
