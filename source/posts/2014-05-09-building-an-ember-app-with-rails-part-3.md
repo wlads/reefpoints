@@ -146,7 +146,7 @@ export default DS.ActiveModelAdapter.extend({
 We should be in a good place to write our tests.
 
 ```js
-// ember/tests/integration/speakers-page.test.js
+// ember/tests/integration/speakers-page-test.js
 import startApp from 'bostonember/tests/helpers/start-app';
 
 var App, server;
@@ -265,7 +265,7 @@ Router.map(function() {
   this.route('about');
   this.resource('speakers', function() {
     this.route('show', {path: ':speaker_id'});
-  );
+  });
 });
 ```
 
