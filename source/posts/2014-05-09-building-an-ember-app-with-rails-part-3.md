@@ -270,14 +270,14 @@ Router.map(function() {
 ```
 
 ```js
-// ember/model/speaker.js
+// ember/app/models/speaker.js
 export default DS.Model.extend({
   name: DS.attr('string')
 });
 ```
 
 ```js
-// ember/routes/speakers/index.js
+// ember/app/routes/speakers/index.js
 export default Ember.Route.extend({
   model: function() {
     return this.store.find('speaker');
