@@ -1,14 +1,41 @@
 @import load
 
 .ad
-  min-height: 60px
-  line-height: 60px
-  background: red
-  color: white
-  font-weight: bold
-  text-align: center
-  margin-bottom: 15px
-  a
-    color: white
-    &:hover
-      text-decoration: underline
+	border:
+		width: 2px
+		style: solid
+		color: $red
+	color: white
+	line-height: 1.5
+	padding: 1rem 9rem
+	font-weight: 700
+	margin-bottom: 15px
+	position: relative
+	text-align: center
+	text-transform: uppercase
+
+	&:before, &:after
+		color: $red
+		content: "\00b7"
+		font-size: 3rem
+		position: absolute
+		// vertically align with CSS
+		top: 50%
+		transform: translateY(-50%)
+
+		-o-transform: translateY(-50%)
+		-ms-transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-webkit-transform: translateY(-50%)
+
+	&:before
+		left: 6rem
+
+	&:after
+		right: 6rem
+
+	a
+		color: $red
+
+		&:hover
+			text-decoration: underline
