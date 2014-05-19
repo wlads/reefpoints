@@ -1,0 +1,37 @@
+/* line 3, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+.ad {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fb755a;
+  color: white;
+  line-height: 1.5;
+  padding: 1rem 9rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase; }
+  /* line 17, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad:before, .ad:after {
+    color: #fb755a;
+    content: "\00b7";
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%); }
+  /* line 31, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad:before {
+    left: 6rem; }
+  /* line 34, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad:after {
+    right: 6rem; }
+  /* line 37, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad a {
+    color: #fb755a; }
+    /* line 40, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/ad.sass */
+    .ad a:hover {
+      text-decoration: underline; }
