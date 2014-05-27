@@ -601,12 +601,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/02/15/avoid-rails-when-generating-json-repsonses-with-postgresql.html</loc>
-    <lastmod>2014-05-27T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://reefpoints.dockyard.com//2014/03/03/a-simple-ember-data-route.html</loc>
     <lastmod>2014-05-27T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -728,6 +722,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2014/05/09/building-an-ember-app-with-rails-part-3.html</loc>
+    <lastmod>2014-05-27T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html</loc>
     <lastmod>2014-05-27T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
