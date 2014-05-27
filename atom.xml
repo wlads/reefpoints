@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
     <published>2014-05-09T00:00:00Z</published>
-    <updated>2014-05-19T01:40:34-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -587,7 +587,7 @@ should see:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-09T16:07:24-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -720,7 +720,7 @@ these pages.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
     <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-05-07T15:17:11-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -923,7 +923,7 @@ some functionality in our app.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html</id>
     <published>2014-05-06T00:00:00Z</published>
-    <updated>2014-05-06T12:50:16-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -985,7 +985,7 @@ microphone say you should.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html</id>
     <published>2014-05-05T00:00:00Z</published>
-    <updated>2014-05-05T12:56:46-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1086,7 +1086,7 @@ the following mixin:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
     <published>2014-05-04T00:00:00Z</published>
-    <updated>2014-05-05T10:16:12-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1126,7 +1126,7 @@ We actually sunset the gem about 2 months ago.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html</id>
     <published>2014-05-03T00:00:00Z</published>
-    <updated>2014-05-03T10:08:00-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1234,7 +1234,7 @@ an actual name for this. If you do please share!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html</id>
     <published>2014-05-02T00:00:00Z</published>
-    <updated>2014-05-05T12:56:44-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1299,7 +1299,7 @@ few months from now.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html</id>
     <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-05-01T12:03:34-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1373,7 +1373,7 @@ css opacity transition completes. Browser support may vary.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html</id>
     <published>2014-04-30T00:00:00Z</published>
-    <updated>2014-05-04T04:17:57-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1519,7 +1519,7 @@ can see the &lt;code&gt;isValid&lt;/code&gt; states bubbling up to the original 
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html</id>
     <published>2014-04-29T00:00:00Z</published>
-    <updated>2014-05-04T04:17:57-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1647,7 +1647,7 @@ direction for this. Please feel free to comment below.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/first-few-months.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/28/first-few-months.html</id>
     <published>2014-04-28T00:00:00Z</published>
-    <updated>2014-04-28T13:07:33-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -1690,7 +1690,7 @@ direction for this. Please feel free to comment below.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html</id>
     <published>2014-04-28T00:00:00Z</published>
-    <updated>2014-04-28T13:07:33-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1761,7 +1761,7 @@ behavior of the object.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/25/ryo-takemasa.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/25/ryo-takemasa.html</id>
     <published>2014-04-25T00:00:00Z</published>
-    <updated>2014-04-26T00:29:20-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -1788,7 +1788,7 @@ behavior of the object.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-26T00:29:20-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -1979,7 +1979,7 @@ its own implementation of &lt;code&gt;setWeeks&lt;/code&gt;:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html</id>
     <published>2014-04-10T00:00:00Z</published>
-    <updated>2014-04-17T16:17:35-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -2202,7 +2202,7 @@ you&amp;#39;d like to learn more check the docs.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/04/design-within-the-browser.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/04/design-within-the-browser.html</id>
     <published>2014-04-04T00:00:00Z</published>
-    <updated>2014-04-17T16:17:35-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Steven Trevathan</name>
     </author>
@@ -2253,7 +2253,7 @@ you&amp;#39;d like to learn more check the docs.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/30/magic_behind_es6_generators.html</id>
     <published>2014-03-30T00:00:00Z</published>
-    <updated>2014-03-31T13:29:10-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -2427,7 +2427,7 @@ years from now, we all will be writing code using generators (hopefully).&lt;/p&
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</id>
     <published>2014-03-17T00:00:00Z</published>
-    <updated>2014-03-27T14:33:01-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2576,7 +2576,7 @@ charset="utf-8"&gt;&lt;/script&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/using-database-templates.html</id>
     <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-03-15T16:02:38-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Romina Vargas</name>
     </author>
@@ -2678,7 +2678,7 @@ that, we can now modify our &lt;code&gt;config/database.yml&lt;/code&gt;.&lt;/p&
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html"/>
     <id>http://reefpoints.dockyard.com/2014/03/03/a-simple-ember-data-route.html</id>
     <published>2014-03-03T00:00:00Z</published>
-    <updated>2014-03-02T23:31:31-05:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2733,11 +2733,590 @@ the app will guard against the transition and allow the user to confirm with a n
 </content>
   </entry>
   <entry>
+    <title>Avoid Rails When Generating JSON responses with PostgreSQL</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/15/avoid-rails-when-generating-json-repsonses-with-postgresql.html"/>
+    <id>http://reefpoints.dockyard.com/2014/02/15/avoid-rails-when-generating-json-repsonses-with-postgresql.html</id>
+    <published>2014-02-15T00:00:00Z</published>
+    <updated>2014-05-27T12:54:36-04:00</updated>
+    <author>
+      <name>Dan McClain</name>
+    </author>
+    <summary>Let's use PostgreSQL instead of Ruby to generate JSON responses</summary>
+    <content type="html">&lt;p&gt;What if I told you that you could generate the following JSON response
+in PostgreSQL?&lt;/p&gt;
+&lt;div class="highlight json "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{
+  &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:[
+    {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Tag #0&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1&lt;/span&gt;},
+    {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1001&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Tag #1000&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1&lt;/span&gt;},
+    {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;2001&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Tag #2000&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1&lt;/span&gt;},
+    &lt;span class="error"&gt;.&lt;/span&gt;&lt;span class="error"&gt;.&lt;/span&gt;&lt;span class="error"&gt;.&lt;/span&gt;
+  ],
+  &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:[
+    {
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;1&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;title&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Note #0&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;content&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Lorem ipsum...&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:[&lt;span class="integer"&gt;9001&lt;/span&gt;,&lt;span class="integer"&gt;8001&lt;/span&gt;,&lt;span class="integer"&gt;7001&lt;/span&gt;,&lt;span class="integer"&gt;6001&lt;/span&gt;,&lt;span class="integer"&gt;5001&lt;/span&gt;,&lt;span class="integer"&gt;4001&lt;/span&gt;,&lt;span class="integer"&gt;3001&lt;/span&gt;,&lt;span class="integer"&gt;2001&lt;/span&gt;,&lt;span class="integer"&gt;1001&lt;/span&gt;,&lt;span class="integer"&gt;1&lt;/span&gt;]
+    },
+    {
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="integer"&gt;2&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;title&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Note #1&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;content&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Lorem ipsum...&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;:[&lt;span class="integer"&gt;9002&lt;/span&gt;,&lt;span class="integer"&gt;8002&lt;/span&gt;,&lt;span class="integer"&gt;7002&lt;/span&gt;,&lt;span class="integer"&gt;6002&lt;/span&gt;,&lt;span class="integer"&gt;5002&lt;/span&gt;,&lt;span class="integer"&gt;4002&lt;/span&gt;,&lt;span class="integer"&gt;3002&lt;/span&gt;,&lt;span class="integer"&gt;2002&lt;/span&gt;,&lt;span class="integer"&gt;1002&lt;/span&gt;,&lt;span class="integer"&gt;2&lt;/span&gt;]
+    }
+  ]
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;What if I told you that it is over 10X faster than plain &lt;a href=""&gt;ActiveModel::Serializers&lt;/a&gt;
+for small data sets, and 160X faster for larger data sets?&lt;/p&gt;
+
+&lt;p&gt;Typically when you have an API serving up JSON responses, your web
+framework serializes your data after retrieving it with its ORM. We&amp;#39;ll
+talk about Rails specifically in this article, but this will generally
+apply to most frameworks. So the typical Rails request will roughly
+follow this flow (I am purposely brushing over some parts of the request
+response cycle):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rails receives the JSON request from the browser/client&lt;/li&gt;
+&lt;li&gt;Rails will apply some business logic and craft a query via
+ ActiveRecord&lt;/li&gt;
+&lt;li&gt;ActiveRecord serializes its query and sends the query to PostgreSQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL will compile the result set and serializes the records
+ in its protocol format&lt;/li&gt;
+&lt;li&gt;ActiveRecord deserializes the records into a set of rows object&lt;/li&gt;
+&lt;li&gt;ActiveRecord will convert the set of rows into a set of model
+ object instances&lt;/li&gt;
+&lt;li&gt;Rails will convert the set of models objects into a JSON string&lt;/li&gt;
+&lt;li&gt;Rails will send the JSON string down to the browser&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Most of the time in this response cycle is spent in steps 6 and 7. Rails
+has to deserialize one format, then store that deserialized content in
+memory just to serialize it in a different format. Since &lt;a href=""&gt;PostgreSQL
+supports JSON responses&lt;/a&gt;, we can use its &lt;a href=""&gt;JSON functions&lt;/a&gt; to
+serialized our result set. That JSON response will still be serialized
+in PostgreSQL&amp;#39;s protocol format, but ActiveRecord can deserialize it as
+a single string object, instead of a set of objects which it then
+converts and reserializes. We end up having this response cycle instead:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rails receives the JSON request from the browser/client&lt;/li&gt;
+&lt;li&gt;Rails will apply some business logic and craft a query via
+ ActiveRecord&lt;/li&gt;
+&lt;li&gt;ActiveRecord serializes its query and sends the query to PostgreSQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL will compile the result set, serializes it as JSON then 
+ serializes the JSON in its protocol format&lt;/li&gt;
+&lt;li&gt;ActiveRecord deserializes the protocal format into a single JSON
+ string&lt;/li&gt;
+&lt;li&gt;Rails will send the JSON string down to the browser&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We are only removing 2 steps, but it is the bulk of the time spent
+generating the response. We are also limiting the number of ruby objects
+created, so this reduces memory usage and time spent garbage collecting
+short lived Ruby objects used only for JSONification.&lt;/p&gt;
+
+&lt;h1&gt;What Do We Gain by Generating Massive Queries for PostgreSQL&lt;/h1&gt;
+
+&lt;p&gt;It takes a lot of work to tell PostgreSQL to generate a specific
+JSON object; what exactly does that buy us?
+By doing all this in PostgreSQL, we avoid using CPU cycles
+and memory on our web server. I&amp;#39;ve done some very naive and basic
+testing with a new, unoptimized Rails project, and a database of 1000
+notes, each have 10 unique tags, totalling 10000 tags. When retrieving
+all 11000 records with Rails and &lt;a href="https://github.com/rails-api/active_model_serializers"&gt;ActiveModel::Serializers&lt;/a&gt;, it took
+roughly 9 seconds to generate the request. Most of the time was spent
+in the View generating the JSON object in memory, with 657 milliseconds
+in ActiveRecord, which (I think until someone tells me otherwise)
+includes creating all the model intances.&lt;/p&gt;
+
+&lt;p&gt;When we apply the PostgreSQL technique outlined later in this article to the
+same result set, the response only takes 72 milliseconds for the first
+request. If we rerun this same request, PostgreSQL caching kicks in and
+the response time is 54 milliseconds. That is a &lt;strong&gt;~160X&lt;/strong&gt; throughput
+increase when we use PostgreSQL to generate JSON payloads.&lt;/p&gt;
+
+&lt;p&gt;The above numbers are a bit skewed by the size of this test payload.
+11000 objects would be completely crazy to present to an end user. If we
+pare back our result set 10 notes and 100 tags, the first and second
+response times for Ruby side JSONification  are 187 and 118 milliseconds.
+When using PostgreSQL to generate our JSON payload, the response times
+are 92 and 12 milliseconds. That is a &lt;strong&gt;2X/10X&lt;/strong&gt; increase. By utilizing
+PostgreSQL, we can increase our applications&amp;#39; response times and
+throughput.&lt;/p&gt;
+
+&lt;h1&gt;Announce PostgresExt-Serializers&lt;/h1&gt;
+
+&lt;p&gt;To utilize PostgreSQL, we have to generate a fairly complex query
+manually. That is, until you include the &lt;a href="https://github.com/dockyard/postgres_ext-serializers"&gt;PostgresExt-Serializers&lt;/a&gt;
+gem into the project. PostgresExt-Serializers (PES) monkey
+patches ActiveModel::Serializers (AMS),
+and anywhere an ActiveRecord::Relation is serialized by AMS, PES will
+take over and push the work to PostgreSQL. I wanted to use the awesome
+work of AMS&amp;#39;s DSL for generating JSON schemas without having to duplicate
+that work. I am finding some pain points in terms of extracting the
+information I need to generate the SQL query from AMS, but right now the
+code for PES is very immature, hence the 0.0.1 release.&lt;/p&gt;
+
+&lt;h1&gt;Nitty-Gritty Details About How it All Works: Massive PostgreSQL Queries&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;#39;s say we have an Ember application that we are generating the JSON
+request for. The Ember app wants the list of notes, along with the tags
+associated with the notes, and we will side load the tags. Side loading
+allows you to specify the ids of the tags on the note, and then include
+a list of tags, which will be used to instantiate the tags on the note.
+The benefit of side loading is that it allows you to save bandwidth by
+use tag ids and an array of de-duplicated tags, instead of embedding the
+duplicate tags objects under the notes, where you would have to duplicate
+the tag objects. We only want notes with &lt;code&gt;id &amp;lt; 40&lt;/code&gt;, which is arbitrary
+in this example, but, as we will see, has implications on the query we
+need to execute.&lt;/p&gt;
+
+&lt;p&gt;Here is the whole query we need to generate the JSON required, which is
+also the example JSON at the beginning of this article:&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;-- Note Ids&lt;/span&gt;
+WITH notes_ids &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; id
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &amp;lt; &lt;span class="integer"&gt;40&lt;/span&gt;
+),
+&lt;span class="comment"&gt;-- Tag Ids grouped by note id&lt;/span&gt;
+tag_ids_by_notes &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, array_agg(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;AS&lt;/span&gt; tag_ids
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;GROUP&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;HAVING&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;IN&lt;/span&gt; (
+    &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  )
+),
+&lt;span class="comment"&gt;-- Tag records&lt;/span&gt;
+tags_attributes_filter &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;IN&lt;/span&gt; (
+    &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  )
+),
+&lt;span class="comment"&gt;-- Tag records as a JSON array&lt;/span&gt;
+tags_as_json_array &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; array_to_json(array_agg(row_to_json(tags_attributes_filter)))
+&lt;span class="keyword"&gt;AS&lt;/span&gt; tags, &lt;span class="integer"&gt;1&lt;/span&gt; &lt;span class="keyword"&gt;AS&lt;/span&gt; match
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_attributes_filter&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+),
+&lt;span class="comment"&gt;-- Note records&lt;/span&gt;
+notes_attributes_filter &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;content&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+coalesce(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;{}&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;::&lt;span class="predefined-type"&gt;int&lt;/span&gt;[]) &lt;span class="keyword"&gt;AS&lt;/span&gt; tag_ids
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;LEFT&lt;/span&gt; &lt;span class="keyword"&gt;OUTER&lt;/span&gt; &lt;span class="keyword"&gt;JOIN&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;ON&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &amp;lt; &lt;span class="integer"&gt;40&lt;/span&gt;
+),
+&lt;span class="comment"&gt;-- Note records as a JSON array&lt;/span&gt;
+notes_as_json_array &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; array_to_json(array_agg(row_to_json(notes_attributes_filter)))
+&lt;span class="keyword"&gt;AS&lt;/span&gt; notes, &lt;span class="integer"&gt;1&lt;/span&gt; &lt;span class="keyword"&gt;AS&lt;/span&gt; match
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_attributes_filter&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+),
+&lt;span class="comment"&gt;-- Notes and tags together as one JSON object&lt;/span&gt;
+jsons &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;INNER&lt;/span&gt; &lt;span class="keyword"&gt;JOIN&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;ON&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;match&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;match&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+)
+&lt;span class="class"&gt;SELECT&lt;/span&gt; row_to_json(jsons) &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;jsons&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s break it down. You&amp;#39;ll notice that I am making use of &lt;a href=""&gt;Common Table
+Expressions (CTEs)&lt;/a&gt;. CTEs allow you to use temporary table defininitions
+in queries instead of embedding the subqueries directly in your query.&lt;/p&gt;
+
+&lt;h2&gt;Gathering our Note Ids&lt;/h2&gt;
+
+&lt;p&gt;The first important step is getting the note ids of our final result
+set, which we do with:&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;WITH notes_ids &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; id
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &amp;lt; &lt;span class="integer"&gt;40&lt;/span&gt;
+),
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We are creating a CTE that represents the ids for our notes, we&amp;#39;ll be
+using this extensively to generate our tag related records.&lt;/p&gt;
+
+&lt;h2&gt;Getting Tag Ids Grouped by Note Ids&lt;/h2&gt;
+
+&lt;p&gt;From our &lt;code&gt;note_ids&lt;/code&gt;, we can assemble a list of tag ids grouped by notes.
+This will be used to create the &lt;code&gt;tag_ids&lt;/code&gt; attribute on the notes later
+on.&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;tag_ids_by_notes &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, array_agg(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) &lt;span class="keyword"&gt;AS&lt;/span&gt; tag_ids
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;GROUP&lt;/span&gt; &lt;span class="keyword"&gt;BY&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;HAVING&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;IN&lt;/span&gt; (
+    &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  )
+),
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Our projection is the &lt;code&gt;note_id&lt;/code&gt;, plus an &lt;a href=""&gt;&lt;code&gt;array_agg&lt;/code&gt;&lt;/a&gt; of the id of the
+tags in our grouping. &lt;code&gt;array_agg&lt;/code&gt; aggregates the group into an array.
+This projection will return the following:&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;note_id | tag_ids
+=================
+      1 | [1,2]
+      2 | [1,3]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this example, the tags &lt;code&gt;belong_to&lt;/code&gt; a note, so we are retrieving this
+data from the &lt;code&gt;tags&lt;/code&gt; table. If this was a many-to-many relation, this
+query would execute against the join table (ie &lt;code&gt;notes_tags&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;We group our tags by the &lt;code&gt;note_id&lt;/code&gt;, and we use the &lt;code&gt;HAVING&lt;/code&gt; clause to
+only group tags which have a &lt;code&gt;note_id&lt;/code&gt; contained in the &lt;code&gt;note_ids&lt;/code&gt; CTE
+that we created at the beginning.&lt;/p&gt;
+
+&lt;h2&gt;Generating Our Note Records&lt;/h2&gt;
+
+&lt;p&gt;Most of the time, we don&amp;#39;t want to expose all of our record data to
+Ember, since whatever we send to the client will be accessible by the
+user, whether we intend it to be or not. We filter down the attributes
+sent to Ember by limiting the columns in our projection.&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;notes_attributes_filter &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;content&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+coalesce(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;{}&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;::&lt;span class="predefined-type"&gt;int&lt;/span&gt;[]) &lt;span class="keyword"&gt;AS&lt;/span&gt; tag_ids
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;LEFT&lt;/span&gt; &lt;span class="keyword"&gt;OUTER&lt;/span&gt; &lt;span class="keyword"&gt;JOIN&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;ON&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tag_ids_by_notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &amp;lt; &lt;span class="integer"&gt;40&lt;/span&gt;
+),
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Also note that in the projection, we are using &lt;a href=""&gt;&lt;code&gt;coalesce&lt;/code&gt;&lt;/a&gt; to ensure
+that we return an empty array if a specific note has no &lt;code&gt;tag_ids&lt;/code&gt;. 
+We are using a &lt;a href=""&gt;&lt;code&gt;LEFT OUTER JOIN&lt;/code&gt;&lt;/a&gt; to combine our previously generated
+tag id groupings with our notes. We use an &lt;code&gt;OUTER JOIN&lt;/code&gt; instead of an
+&lt;a href=""&gt;&lt;code&gt;INNER JOIN&lt;/code&gt;&lt;/a&gt; so that all our notes are returned, even if no tags are
+associated with it. An &lt;code&gt;INNER JOIN&lt;/code&gt; would only return notes that have
+tags associated with it. We also use the same &lt;code&gt;WHERE&lt;/code&gt; predicate in this
+query as we did in the &lt;code&gt;note_ids&lt;/code&gt; CTE, to ensure our query only returns
+the desired records.&lt;/p&gt;
+
+&lt;h2&gt;Turning Our Note Records into a Single JSON Array&lt;/h2&gt;
+
+&lt;p&gt;So now that we have our notes records filtered down, we need to create a
+JSON array of these records to use in our final query. At this point, we
+will use two of PostgreSQL&amp;#39;s &lt;a href=""&gt;JSON functions&lt;/a&gt; and the &lt;code&gt;array_agg&lt;/code&gt;
+function that we used earlier. &lt;code&gt;row_to_json&lt;/code&gt; takes a PostgreSQL row and
+converts it to a JSON object, where the columns of the row converted
+into JSON properties.&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;foo | bar
+=========
+  1 |   2
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Will be converted to&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;     json
+================
+{ foo: 1, bar: 2 }
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So at this point, our result set is a series of rows with a single
+column of JSON representing the original PostgreSQL row from our
+&lt;code&gt;notes_attribute_filter&lt;/code&gt; CTE. We then use &lt;code&gt;array_agg&lt;/code&gt; to turn the
+rows of JSON objects into a single row with a single PostgreSQL
+Array of JSON objects.&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;     json
+================
+{ foo: 1, bar: 2 }
+{ foo: 1, bar: 2 }
+{ foo: 1, bar: 2 }
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;will be converted to&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;                    Array
+=======================================================
+{{ foo: 1, bar: 2 },{ foo: 1, bar: 2 },{ foo: 1, bar: 2 }}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lastly, we use &lt;code&gt;array_to_json&lt;/code&gt; to convert the PostgreSQL array of JSON to a JSON array.&lt;/p&gt;
+
+&lt;p&gt;After  combining these pieces, we get the following query:&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;notes_as_json_array &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; array_to_json(array_agg(row_to_json(notes_attributes_filter)))
+&lt;span class="keyword"&gt;AS&lt;/span&gt; notes, &lt;span class="integer"&gt;1&lt;/span&gt; &lt;span class="keyword"&gt;AS&lt;/span&gt; match
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_attributes_filter&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+),
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;which yields&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;    notes    | match
+====================
+[{},{},{},{}]|     1
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We are using the &lt;code&gt;notes_attributes_filter&lt;/code&gt; as our source for all the
+JSON functions, and adding a column &lt;code&gt;match&lt;/code&gt; with a value of &lt;code&gt;1&lt;/code&gt;, which
+we will need later.&lt;/p&gt;
+
+&lt;h2&gt;Aggregating Our Tag Records&lt;/h2&gt;
+
+&lt;p&gt;We apply the attribute filtering and the aggregation techniques to our
+&lt;code&gt;tags&lt;/code&gt; table to generate our JSON array of tags. Note that when we
+filter the tags attributes, we only include tags that have a &lt;code&gt;note_id&lt;/code&gt;
+of a note we are returning.&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;tags_attributes_filter &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;WHERE&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;note_id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="keyword"&gt;IN&lt;/span&gt; (
+    &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;id&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_ids&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  )
+),
+
+tags_as_json_array &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; array_to_json(array_agg(row_to_json(tags_attributes_filter)))
+&lt;span class="keyword"&gt;AS&lt;/span&gt; tags, &lt;span class="integer"&gt;1&lt;/span&gt; &lt;span class="keyword"&gt;AS&lt;/span&gt; match
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_attributes_filter&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+),
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;which yields&lt;/p&gt;
+&lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;    tags     | match
+====================
+[{},{},{},{}]|     1
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Combining Our Notes and Tags&lt;/h2&gt;
+
+&lt;p&gt;So at this point, we have 2 CTEs that represent our notes and tags. We
+need to combine these two tables into a single row, so that we can convert
+that row to a JSON object with a &lt;code&gt;notes&lt;/code&gt; and &lt;code&gt;tags&lt;/code&gt; property. This is
+the reason we added a &lt;code&gt;match&lt;/code&gt; column onto both CTEs; we join those two
+table into our final table, which we then call &lt;code&gt;row_to_json&lt;/code&gt; on to get
+our final JSON object, which mirrors the example at the beginning of
+this article.&lt;/p&gt;
+&lt;div class="highlight sql "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;jsons &lt;span class="keyword"&gt;AS&lt;/span&gt; (
+  &lt;span class="class"&gt;SELECT&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;INNER&lt;/span&gt; &lt;span class="keyword"&gt;JOIN&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="keyword"&gt;ON&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;tags_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;match&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;notes_as_json_array&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;.&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;match&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+)
+&lt;span class="class"&gt;SELECT&lt;/span&gt; row_to_json(jsons) &lt;span class="keyword"&gt;FROM&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;jsons&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So there you have it, you could generate this giant query by hand every
+time you need to create an API endpoint, or you could use ActiveModel::Serializers
+and utilize the PostgresExt-Seriliazers optimizations to avoid Ruby and
+Rails when generating API responses.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Native App Developers: We Can Help You</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/native-app-developers-we-can-help-you.html</id>
     <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-02-07T15:02:14-05:00</updated>
+    <updated>2014-02-07T14:55:30-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2770,7 +3349,7 @@ us&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/07/announcing-postgres_ext-postgis.html</id>
     <published>2014-02-07T00:00:00Z</published>
-    <updated>2014-02-08T05:22:34-05:00</updated>
+    <updated>2014-02-15T15:59:59-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2846,7 +3425,7 @@ added. Stay tuned!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html"/>
     <id>http://reefpoints.dockyard.com/2014/02/04/ember-conf-ember-for-rails-devs.html</id>
     <published>2014-02-04T00:00:00Z</published>
-    <updated>2014-03-27T12:56:05-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2913,7 +3492,7 @@ Kit&lt;/a&gt; for the Rails Asset Pipeline.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/romina-vargas-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/2014/01/02/romina-vargas-is-a-dockyarder.html</id>
     <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-02-03T20:12:13-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2935,7 +3514,7 @@ Time&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/robert-jackson-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/2014/01/02/robert-jackson-is-a-dockyarder.html</id>
     <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-01-02T14:00:32-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2956,7 +3535,7 @@ open source Ember projects over the past few months.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/2014/01/02/lin-reid-is-a-dockyarder.html</id>
     <published>2014-01-02T00:00:00Z</published>
-    <updated>2014-02-03T20:12:13-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -2979,7 +3558,7 @@ developer horizons with Ember over the past few months. He is also the
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/22/lessons-learned-two-years-of-running-a-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/22/lessons-learned-two-years-of-running-a-dockyard.html</id>
     <published>2013-12-22T00:00:00Z</published>
-    <updated>2013-12-28T20:21:24-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3499,7 +4078,7 @@ decisions we&amp;#39;ve made.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/19/ember-enum-property-cycler.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/19/ember-enum-property-cycler.html</id>
     <published>2013-12-19T00:00:00Z</published>
-    <updated>2013-12-19T11:42:34-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3525,7 +4104,7 @@ src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/18/be-a-blunt-axe.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/18/be-a-blunt-axe.html</id>
     <published>2013-12-18T00:00:00Z</published>
-    <updated>2013-12-19T11:36:17-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -3544,7 +4123,7 @@ src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/08/introducing-easydir-vim.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/08/introducing-easydir-vim.html</id>
     <published>2013-12-08T00:00:00Z</published>
-    <updated>2013-12-19T11:36:17-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3635,7 +4214,7 @@ difficult to write something up.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/12/06/always-be-exploring.html"/>
     <id>http://reefpoints.dockyard.com/2013/12/06/always-be-exploring.html</id>
     <published>2013-12-06T00:00:00Z</published>
-    <updated>2013-12-19T11:36:17-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -3660,7 +4239,7 @@ difficult to write something up.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/27/vim-windows.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/27/vim-windows.html</id>
     <published>2013-11-27T00:00:00Z</published>
-    <updated>2013-12-19T11:36:17-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -3902,7 +4481,7 @@ your workflow will prove pretty helpful. Thanks for reading!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/15/think.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/15/think.html</id>
     <published>2013-11-15T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -4026,7 +4605,7 @@ benefits, not just the benefits that everyone is touting.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2014-04-26T00:29:20-04:00</updated>
+    <updated>2014-05-26T20:00:23-04:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>
@@ -4315,7 +4894,7 @@ from a search engine optimization standpoint.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/05/design-patterns-command-pattern.html</id>
     <published>2013-11-05T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -4673,7 +5252,7 @@ execution.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html</id>
     <published>2013-10-22T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -4900,7 +5479,7 @@ comment in the discussion area. Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/06/namespaced-pages.html</id>
     <published>2013-10-06T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4940,7 +5519,7 @@ name of serving up static page goodness!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/10/01/design-patterns-composite-pattern.html</id>
     <published>2013-10-01T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -5318,7 +5897,7 @@ Ultimately, our coffee makers are able to treat each step,
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html</id>
     <published>2013-09-26T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -5519,7 +6098,7 @@ share, please let me know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/11/vim-staying-on-home-row-via-map.html</id>
     <published>2013-09-11T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -5751,7 +6330,7 @@ comments! Thanks!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/06/postgres_ext-adds-rank-and-common-table-expressions.html</id>
     <published>2013-09-06T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -5951,7 +6530,7 @@ add the others shortly.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html"/>
     <id>http://reefpoints.dockyard.com/2013/09/04/computed_properties_in_ember_js.html</id>
     <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -6206,7 +6785,7 @@ Happy Coding!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/09/04/alex-navasardyan-is-a-dockyarder.html</id>
     <published>2013-09-04T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-09-06T10:26:07-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -6230,7 +6809,7 @@ we&amp;#39;re well on our way to building out one of the best teams around.&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/23/announcing-postgres_ext-version-1-0-and-2-0.html</id>
     <published>2013-08-23T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6266,7 +6845,7 @@ but pull requests for bug fixes would be graciously accepted.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/20/design-patterns-observer-pattern.html</id>
     <published>2013-08-20T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -6645,7 +7224,7 @@ informs the &lt;em&gt;observers&lt;/em&gt; of what is going on with the &lt;em&g
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html"/>
     <id>http://reefpoints.dockyard.com/2013/08/05/testing-context-validations.html</id>
     <published>2013-08-05T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -6857,7 +7436,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/29/putting-things-next-to-things-with-susy.html</id>
     <published>2013-07-29T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -6952,7 +7531,7 @@ us know!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html"/>
     <id>http://reefpoints.dockyard.com/2013/07/25/design-patterns-strategy-pattern.html</id>
     <published>2013-07-25T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -7246,7 +7825,7 @@ example.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/07/10/design-patterns-template-pattern.html</id>
     <published>2013-07-10T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -7662,7 +8241,7 @@ helps keep our code clean by the use of inheritance.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/office/2013/07/09/first-month-at-dockyard.html</id>
     <published>2013-07-09T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Marin Abernethy</name>
     </author>
@@ -7708,7 +8287,7 @@ thoroughly look forward to the rest of the summer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/steven-trevathan-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7734,7 +8313,7 @@ together a formal concept design process for us.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/logan-faerber-is-a-dockyarder.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7759,7 +8338,7 @@ are excited to have his unique talents at DockYard.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/08/dockyard-acquires-dobot.html</id>
     <published>2013-07-08T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7783,7 +8362,7 @@ Faerber&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/07/01/sean-hussey-is-a-dockyarder.html</id>
     <published>2013-07-01T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7802,7 +8381,7 @@ level Ruby experience to our team.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/06/28/introducing-destroyed_at.html</id>
     <published>2013-06-28T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>
@@ -7836,7 +8415,7 @@ GitHub page&lt;/a&gt; .&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/michael-dupuis-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7853,7 +8432,7 @@ some design chops. Welcome Mike!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/06/19/marin-abernethy-is-a-dockyarder.html</id>
     <published>2013-06-19T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -7870,7 +8449,7 @@ remainder of the summer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/05/09/tildes-ember-training.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -7945,7 +8524,7 @@ any upcoming side projects, to really explore it further. &lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/05/09/context-validations.html</id>
     <published>2013-05-09T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8180,7 +8759,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html"/>
     <id>http://reefpoints.dockyard.com/design/2013/04/26/thoughts-on-designing-responsive-websites.html</id>
     <published>2013-04-26T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -8207,7 +8786,7 @@ now I am happy with the direction.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/04/04/we-are-hiring-for-an-emberjs-dev.html</id>
     <published>2013-04-04T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8254,7 +8833,7 @@ fulltime Ember.js developer.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/29/running-postgresql-9-2-on-travis-ci.html</id>
     <published>2013-03-29T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8380,7 +8959,7 @@ to postgres&lt;em&gt;ext, which was added in 9.2. You should be able use this
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/27/body-class-tags-in-ember.html</id>
     <published>2013-03-27T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8431,7 +9010,7 @@ building an Ember app and this is how I got it working:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/26/concurrent-indexes-in-postgresql-for-rails-4-and-postgres_ext.html</id>
     <published>2013-03-26T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -8476,7 +9055,7 @@ issues, &lt;a href="https://github.com/dockyard/postgres_ext/issue"&gt;open an i
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/03/25/igata.html</id>
     <published>2013-03-25T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8555,7 +9134,7 @@ well.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/03/21/capybara-and-unique-labels.html</id>
     <published>2013-03-21T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8628,7 +9207,7 @@ following code into your &lt;code&gt;test_helper.rb&lt;/code&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2013/03/19/mike-sager-joins-dockyard.html</id>
     <published>2013-03-19T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8656,7 +9235,7 @@ in politics. &lt;a href="mailto:contact@dockyard.com"&gt;Join us!&lt;/a&gt;&lt;/
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/02/21/ember-easy-form.html</id>
     <published>2013-02-21T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -8802,7 +9381,7 @@ idea in the issues for this project on GitHub&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/10/building-an-ember-app-with-rails-api-part-3.html</id>
     <published>2013-01-10T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-11-15T07:14:36-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9309,7 +9888,7 @@ buttonTitle: 'Update'
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/09/building-an-ember-app-with-rails-api-part-2.html</id>
     <published>2013-01-09T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -9736,7 +10315,7 @@ App.UsersRoute = Ember.Route.extend
     <link rel="alternate" href="http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html"/>
     <id>http://reefpoints.dockyard.com/ember/2013/01/07/building-an-ember-app-with-rails-api-part-1.html</id>
     <published>2013-01-07T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10119,7 +10698,7 @@ rails-api g serializer User
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2013/01/04/dismissible_helpers-released.html</id>
     <published>2013-01-04T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10311,7 +10890,7 @@ to your model:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html"/>
     <id>http://reefpoints.dockyard.com/politics/2013/01/03/integration-is-hard.html</id>
     <published>2013-01-03T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Chris Gill</name>
     </author>
@@ -10406,7 +10985,7 @@ easy&lt;/a&gt;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html"/>
     <id>http://reefpoints.dockyard.com/community/2012/10/26/openhack-boston.html</id>
     <published>2012-10-26T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10437,7 +11016,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/10/11/expanding-the-yard.html</id>
     <published>2012-10-11T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Angelo Simeoni</name>
     </author>
@@ -10479,7 +11058,7 @@ announcements.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/10/09/client-side-validations-3-2-released.html</id>
     <published>2012-10-09T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -10618,7 +11197,7 @@ removed. Please add &lt;code&gt;ClientSideValidations::Config.disabled_validator
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/21/querying-postgresql-datatypes-in-active-record-with-postgres_ext.html</id>
     <published>2012-09-21T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -10796,7 +11375,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html"/>
     <id>http://reefpoints.dockyard.com/design/2012/09/20/making-of-the-dockyard-narwin.html</id>
     <published>2012-09-20T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -10815,7 +11394,7 @@ Github&lt;/a&gt;!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/09/18/rails-4-sneak-peek-postgresql-array-support.html</id>
     <published>2012-09-18T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -11001,7 +11580,7 @@ postgres_ext and Rails 4.0. Go forth and use arrays in Rails 4.0!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/09/05/doug-yun-is-a-dockyarder.html</id>
     <published>2012-09-05T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11022,7 +11601,7 @@ released him from his cage on the nearest client app. He&amp;#39;s running wild!
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/08/30/lessons-learned-the-first-hire.html</id>
     <published>2012-08-30T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11188,7 +11767,7 @@ perspective, or any general advice I&amp;#39;d love to hear it.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/26/rails-4-sneak-peek-async-actionmailer.html</id>
     <published>2012-06-26T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11291,7 +11870,7 @@ Plante&lt;/a&gt;&amp;#39;s
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/25/rails-4-sneak-peek-queueing.html</id>
     <published>2012-06-25T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11558,7 +12137,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html"/>
     <id>http://reefpoints.dockyard.com/training/2012/06/21/models-views-and-controllers-oh-my.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Amanda Cheung</name>
     </author>
@@ -11573,7 +12152,7 @@ versioned as &amp;#39;beta&amp;#39;. This API could change.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html"/>
     <id>http://reefpoints.dockyard.com/opinion/2012/06/21/lessons-learned-six-month-of-running-dockyard.html</id>
     <published>2012-06-21T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -11857,7 +12436,7 @@ always looking to improve.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/18/postgres_ext-adding-postgres-data-types-to-active-record.html</id>
     <published>2012-06-18T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -12046,7 +12625,7 @@ INET and CIDR comparisons.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/14/amanda-cheung-is-a-dockyarder.html</id>
     <published>2012-06-14T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12065,7 +12644,7 @@ skills and much needed illustration skills.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/06/11/bostonrb-goes-live.html</id>
     <published>2012-06-11T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12117,7 +12696,7 @@ option.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/06/01/chris-gill-is-a-dockyarder.html</id>
     <published>2012-06-01T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12142,7 +12721,7 @@ located in DC and we hope to soon build out a team in that area.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/18/rails-4-sneak-peek-expanded-activerecord-support-for-postgresql-datatype.html</id>
     <published>2012-05-18T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -12179,7 +12758,7 @@ while MACADDR will continue to be converted to a string.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/05/01/simple-sleeper-for-request-testing.html</id>
     <published>2012-05-01T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12221,7 +12800,7 @@ much time was remaining. So I whipped up the following:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html"/>
     <id>http://reefpoints.dockyard.com/javascript/2012/04/16/using-backbone-views-with-rails-jquery-ujs.html</id>
     <published>2012-04-16T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -12374,7 +12953,7 @@ Here&amp;#39;s a quick example of how Backbone views can listen for jquery-ujs c
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/10/tmux-for-fun-and-profit.html</id>
     <published>2012-04-10T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -12456,7 +13035,7 @@ an issue.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/04/03/use-association-extensions-to-build-join-attributes-on-a-hmt.html</id>
     <published>2012-04-03T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Russ Jones</name>
     </author>
@@ -12735,7 +13314,7 @@ role assignment of &amp;#39;admin&amp;#39;.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/03/05/our-ci-setup.html</id>
     <published>2012-03-05T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -12829,7 +13408,7 @@ have jenkins notify us of builds in a way that makes more sense.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/27/dan-mcclain-is-a-dockyarder.html</id>
     <published>2012-02-27T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -12858,7 +13437,7 @@ of Jenkins and keeping us honest with our test suites.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/20/rails-engines-and-monkey-patching.html</id>
     <published>2012-02-20T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13137,7 +13716,7 @@ defeat the purpose of using the engine in the first place.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/16/single-quotes-or-double-quotes.html</id>
     <published>2012-02-16T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13276,7 +13855,7 @@ you may want to consider other options.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/15/get-those-instance-variables-out-of-my-specs.html</id>
     <published>2012-02-15T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13341,7 +13920,7 @@ variables in my specs as a smell and you should too.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/14/love-your-lib-directory.html</id>
     <published>2012-02-14T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13586,7 +14165,7 @@ concerning the &lt;code&gt;lib/&lt;/code&gt; directory please feel free to comme
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/02/13/authenticating-multiple-models-with-a-strategy.html</id>
     <published>2012-02-13T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13777,7 +14356,7 @@ But we&amp;#39;ll cross that road when we get there.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/russ-jones-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13802,7 +14381,7 @@ partner.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html"/>
     <id>http://reefpoints.dockyard.com/announcement/2012/02/10/angelo-simeoni-is-a-dockyarder.html</id>
     <published>2012-02-10T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13826,7 +14405,7 @@ how I approach web design.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2012/01/22/client-side-validations-goes-modular.html</id>
     <published>2012-01-22T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13929,7 +14508,7 @@ JavaScript MVC frameworks.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html"/>
     <id>http://reefpoints.dockyard.com/2012/01/04/its-not-a-vacation-follow-up.html</id>
     <published>2012-01-04T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -13981,7 +14560,7 @@ in the future.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html"/>
     <id>http://reefpoints.dockyard.com/2011/12/04/its-not-a-vacation.html</id>
     <published>2011-12-04T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -14015,7 +14594,7 @@ of the week on how things went.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html"/>
     <id>http://reefpoints.dockyard.com/ruby/2011/11/18/convert-ruby-regexp-to-javascript-regex.html</id>
     <published>2011-11-18T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -14060,7 +14639,7 @@ them in the comments.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/14/github-is-one-commit-away-from-being-the-ultimate-blog-engine.html</id>
     <published>2011-11-14T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -14091,7 +14670,7 @@ flag&lt;/a&gt;)&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html"/>
     <id>http://reefpoints.dockyard.com/2011/11/10/mobile-web-apps.html</id>
     <published>2011-11-10T00:00:00Z</published>
-    <updated>2013-11-25T10:20:31-05:00</updated>
+    <updated>2013-08-05T07:26:01-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -14270,7 +14849,7 @@ future we all know is just a matter of time.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2011/08/24/launch.html"/>
     <id>http://reefpoints.dockyard.com/2011/08/24/launch.html</id>
     <published>2011-08-24T00:00:00Z</published>
-    <updated>2013-11-26T22:10:12-05:00</updated>
+    <updated>2014-02-07T08:51:19-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>

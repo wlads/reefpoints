@@ -1,0 +1,651 @@
+<!DOCTYPE html><html><head><title>Avoid Rails When Generating JSON responses with PostgreSQL</title><link href="/stylesheets/all-07083118.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content="DockYard.com - Let's use PostgreSQL instead of Ruby to generate JSON responses" name='description'><link href='https://plus.google.com/102648938707671188640' rel='author'><meta content='_danmcclain' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/02/15/avoid-rails-when-generating-json-repsonses-with-postgresql.html' name='twitter:url'><meta content='Avoid Rails When Generating JSON responses with PostgreSQL' name='twitter:title'><meta content="Let's use PostgreSQL instead of Ruby to generate JSON responses" name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                             ..
+                                           .O.
+                                       .:OO.
+                                      :OOO.
+                                    :OOO:.
+                         ...      :OOOO:
+                   ..ZOOOOOOOOO..OZ.O.
+                   OOOOOOOOOOOOOOOOI
+                  OOOOOOOOOOOOOOOOI,
+                 OOOOOOOO. .OOOOOOOO:
+                 OOOOOOOO   OOOOOOOOO:
+                OOOOOOOOOOOOOOOOOOOOO.
+                OOOOOOOOOOOOOOOOOOOOO:
+               .OOOOOOOOOOOOOOOOOOOOO:
+               .OOOOOOOOOOOOOOOOOOOOO.
+                OOOOOOOOOOOOOOOOOOOOO
+                OOOOOO?:   .OOOOOOOOO
+               .OOOOO      OOOOOOOOOO
+,OO ZO,        OOOOO,     OOOOOOOOOO+
+ OOOOO.        OOOOO     OOOOOOOOOOO+
+  OOO?        OOOOO     .OOOOOOOOOOO:
+   OOO,      OOOOO.    .OOOOOOOOOOOO
+    OOOOOOOOOOOOO.    .OOOOOOOOOOOO.
+     OOOOOOOOOOOO.  .OOOOOOOOOOOOO.
+      8OOOOOOOOOOOOOOOOOOOOOOOODO:
+         :OOOOOOOOOOOOOOOOOOOO::
+
+--></head><body class='x2014 x2014_02 x2014_02_15 x2014_02_15_avoid-rails-when-generating-json-repsonses-with-postgresql'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
+<a class="extended-nav--close" data-icon="X" href="#"><span class='is-hidden'>Close</span></a><div class='extended-nav__items'><div class='extended-nav__items--mobile'><a class="extended-nav__item--work extended-nav__item" href="#">Work</a><nav class='work-nav--mobile'><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong></a>
+<a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong></a>
+<a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong></a>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong></a></nav></div><a class="extended-nav__item" href="http://dockyard.com/team">Our Team</a><a class="extended-nav__item" href="http://dockyard.com/process">Process</a><a class="extended-nav__item" href="http://dockyard.com/community">Community</a><a class="extended-nav__item active" href="/">Blog</a><a class="extended-nav__item" href="http://dockyard.com/hire-us">Hire Us</a></div></nav><nav class='work-nav'><h6>Selected Work</h6><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong><p>Credit card advice from real people.</p></a>
+<a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
+<a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><div class='ad'><a href='http://wickedgoodruby.com' target='_blank'>Don't miss Wicked Good Ruby Conf in Boston this October 11 - 12, 2014!</a></div><h1 class='post__title'>Avoid Rails When Generating JSON responses with PostgreSQL</h1><a class="post__author" href="/authors/dan-mcclain.html">Dan McClain</a><time class='post__date'>February 15<sup>th</sup>, 2014</time><div class='post__content'><p>What if I told you that you could generate the following JSON response
+in PostgreSQL?</p>
+<div class="highlight json "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td>
+  <td class="code"><pre>{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>:[
+    {<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Tag #0</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},
+    {<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1001</span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Tag #1000</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},
+    {<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2001</span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Tag #2000</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},
+    <span class="error">.</span><span class="error">.</span><span class="error">.</span>
+  ],
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>:[
+    {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Note #0</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Lorem ipsum...</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">tag_ids</span><span class="delimiter">&quot;</span></span>:[<span class="integer">9001</span>,<span class="integer">8001</span>,<span class="integer">7001</span>,<span class="integer">6001</span>,<span class="integer">5001</span>,<span class="integer">4001</span>,<span class="integer">3001</span>,<span class="integer">2001</span>,<span class="integer">1001</span>,<span class="integer">1</span>]
+    },
+    {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Note #1</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Lorem ipsum...</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">tag_ids</span><span class="delimiter">&quot;</span></span>:[<span class="integer">9002</span>,<span class="integer">8002</span>,<span class="integer">7002</span>,<span class="integer">6002</span>,<span class="integer">5002</span>,<span class="integer">4002</span>,<span class="integer">3002</span>,<span class="integer">2002</span>,<span class="integer">1002</span>,<span class="integer">2</span>]
+    }
+  ]
+}
+</pre></td>
+</tr></table>
+</div></div>
+<p>What if I told you that it is over 10X faster than plain <a href="">ActiveModel::Serializers</a>
+for small data sets, and 160X faster for larger data sets?</p>
+
+<p>Typically when you have an API serving up JSON responses, your web
+framework serializes your data after retrieving it with its ORM. We&#39;ll
+talk about Rails specifically in this article, but this will generally
+apply to most frameworks. So the typical Rails request will roughly
+follow this flow (I am purposely brushing over some parts of the request
+response cycle):</p>
+
+<ol>
+<li>Rails receives the JSON request from the browser/client</li>
+<li>Rails will apply some business logic and craft a query via
+ ActiveRecord</li>
+<li>ActiveRecord serializes its query and sends the query to PostgreSQL</li>
+<li>PostgreSQL will compile the result set and serializes the records
+ in its protocol format</li>
+<li>ActiveRecord deserializes the records into a set of rows object</li>
+<li>ActiveRecord will convert the set of rows into a set of model
+ object instances</li>
+<li>Rails will convert the set of models objects into a JSON string</li>
+<li>Rails will send the JSON string down to the browser</li>
+</ol>
+
+<p>Most of the time in this response cycle is spent in steps 6 and 7. Rails
+has to deserialize one format, then store that deserialized content in
+memory just to serialize it in a different format. Since <a href="">PostgreSQL
+supports JSON responses</a>, we can use its <a href="">JSON functions</a> to
+serialized our result set. That JSON response will still be serialized
+in PostgreSQL&#39;s protocol format, but ActiveRecord can deserialize it as
+a single string object, instead of a set of objects which it then
+converts and reserializes. We end up having this response cycle instead:</p>
+
+<ol>
+<li>Rails receives the JSON request from the browser/client</li>
+<li>Rails will apply some business logic and craft a query via
+ ActiveRecord</li>
+<li>ActiveRecord serializes its query and sends the query to PostgreSQL</li>
+<li>PostgreSQL will compile the result set, serializes it as JSON then 
+ serializes the JSON in its protocol format</li>
+<li>ActiveRecord deserializes the protocal format into a single JSON
+ string</li>
+<li>Rails will send the JSON string down to the browser</li>
+</ol>
+
+<p>We are only removing 2 steps, but it is the bulk of the time spent
+generating the response. We are also limiting the number of ruby objects
+created, so this reduces memory usage and time spent garbage collecting
+short lived Ruby objects used only for JSONification.</p>
+
+<h1>What Do We Gain by Generating Massive Queries for PostgreSQL</h1>
+
+<p>It takes a lot of work to tell PostgreSQL to generate a specific
+JSON object; what exactly does that buy us?
+By doing all this in PostgreSQL, we avoid using CPU cycles
+and memory on our web server. I&#39;ve done some very naive and basic
+testing with a new, unoptimized Rails project, and a database of 1000
+notes, each have 10 unique tags, totalling 10000 tags. When retrieving
+all 11000 records with Rails and <a href="https://github.com/rails-api/active_model_serializers">ActiveModel::Serializers</a>, it took
+roughly 9 seconds to generate the request. Most of the time was spent
+in the View generating the JSON object in memory, with 657 milliseconds
+in ActiveRecord, which (I think until someone tells me otherwise)
+includes creating all the model intances.</p>
+
+<p>When we apply the PostgreSQL technique outlined later in this article to the
+same result set, the response only takes 72 milliseconds for the first
+request. If we rerun this same request, PostgreSQL caching kicks in and
+the response time is 54 milliseconds. That is a <strong>~160X</strong> throughput
+increase when we use PostgreSQL to generate JSON payloads.</p>
+
+<p>The above numbers are a bit skewed by the size of this test payload.
+11000 objects would be completely crazy to present to an end user. If we
+pare back our result set 10 notes and 100 tags, the first and second
+response times for Ruby side JSONification  are 187 and 118 milliseconds.
+When using PostgreSQL to generate our JSON payload, the response times
+are 92 and 12 milliseconds. That is a <strong>2X/10X</strong> increase. By utilizing
+PostgreSQL, we can increase our applications&#39; response times and
+throughput.</p>
+
+<h1>Announce PostgresExt-Serializers</h1>
+
+<p>To utilize PostgreSQL, we have to generate a fairly complex query
+manually. That is, until you include the <a href="https://github.com/dockyard/postgres_ext-serializers">PostgresExt-Serializers</a>
+gem into the project. PostgresExt-Serializers (PES) monkey
+patches ActiveModel::Serializers (AMS),
+and anywhere an ActiveRecord::Relation is serialized by AMS, PES will
+take over and push the work to PostgreSQL. I wanted to use the awesome
+work of AMS&#39;s DSL for generating JSON schemas without having to duplicate
+that work. I am finding some pain points in terms of extracting the
+information I need to generate the SQL query from AMS, but right now the
+code for PES is very immature, hence the 0.0.1 release.</p>
+
+<h1>Nitty-Gritty Details About How it All Works: Massive PostgreSQL Queries</h1>
+
+<p>Let&#39;s say we have an Ember application that we are generating the JSON
+request for. The Ember app wants the list of notes, along with the tags
+associated with the notes, and we will side load the tags. Side loading
+allows you to specify the ids of the tags on the note, and then include
+a list of tags, which will be used to instantiate the tags on the note.
+The benefit of side loading is that it allows you to save bandwidth by
+use tag ids and an array of de-duplicated tags, instead of embedding the
+duplicate tags objects under the notes, where you would have to duplicate
+the tag objects. We only want notes with <code>id &lt; 40</code>, which is arbitrary
+in this example, but, as we will see, has implications on the query we
+need to execute.</p>
+
+<p>Here is the whole query we need to generate the JSON required, which is
+also the example JSON at the beginning of this article:</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+<strong>40</strong>
+41
+42
+43
+44
+45
+46
+47
+48
+49
+<strong>50</strong>
+51
+52
+53
+54
+</pre></td>
+  <td class="code"><pre><span class="comment">-- Note Ids</span>
+WITH notes_ids <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> id
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> &lt; <span class="integer">40</span>
+),
+<span class="comment">-- Tag Ids grouped by note id</span>
+tag_ids_by_notes <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>, array_agg(<span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>) <span class="keyword">AS</span> tag_ids
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">HAVING</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span> <span class="keyword">IN</span> (
+    <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>
+    <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>
+  )
+),
+<span class="comment">-- Tag records</span>
+tags_attributes_filter <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span> <span class="keyword">IN</span> (
+    <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>
+    <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>
+  )
+),
+<span class="comment">-- Tag records as a JSON array</span>
+tags_as_json_array <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> array_to_json(array_agg(row_to_json(tags_attributes_filter)))
+<span class="keyword">AS</span> tags, <span class="integer">1</span> <span class="keyword">AS</span> match
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_attributes_filter</span><span class="delimiter">&quot;</span></span>
+),
+<span class="comment">-- Note records</span>
+notes_attributes_filter <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>,
+coalesce(<span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">{}</span><span class="delimiter">'</span></span>::<span class="predefined-type">int</span>[]) <span class="keyword">AS</span> tag_ids
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">ON</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> &lt; <span class="integer">40</span>
+),
+<span class="comment">-- Note records as a JSON array</span>
+notes_as_json_array <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> array_to_json(array_agg(row_to_json(notes_attributes_filter)))
+<span class="keyword">AS</span> notes, <span class="integer">1</span> <span class="keyword">AS</span> match
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_attributes_filter</span><span class="delimiter">&quot;</span></span>
+),
+<span class="comment">-- Notes and tags together as one JSON object</span>
+jsons <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">ON</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">match</span><span class="delimiter">&quot;</span></span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">match</span><span class="delimiter">&quot;</span></span>
+)
+<span class="class">SELECT</span> row_to_json(jsons) <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">jsons</span><span class="delimiter">&quot;</span></span>;
+</pre></td>
+</tr></table>
+</div></div>
+<p>Let&#39;s break it down. You&#39;ll notice that I am making use of <a href="">Common Table
+Expressions (CTEs)</a>. CTEs allow you to use temporary table defininitions
+in queries instead of embedding the subqueries directly in your query.</p>
+
+<h2>Gathering our Note Ids</h2>
+
+<p>The first important step is getting the note ids of our final result
+set, which we do with:</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>WITH notes_ids <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> id
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> &lt; <span class="integer">40</span>
+),
+</pre></td>
+</tr></table>
+</div></div>
+<p>We are creating a CTE that represents the ids for our notes, we&#39;ll be
+using this extensively to generate our tag related records.</p>
+
+<h2>Getting Tag Ids Grouped by Note Ids</h2>
+
+<p>From our <code>note_ids</code>, we can assemble a list of tag ids grouped by notes.
+This will be used to create the <code>tag_ids</code> attribute on the notes later
+on.</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre>tag_ids_by_notes <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>, array_agg(<span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>) <span class="keyword">AS</span> tag_ids
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">HAVING</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span> <span class="keyword">IN</span> (
+    <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>
+    <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>
+  )
+),
+</pre></td>
+</tr></table>
+</div></div>
+<p>Our projection is the <code>note_id</code>, plus an <a href=""><code>array_agg</code></a> of the id of the
+tags in our grouping. <code>array_agg</code> aggregates the group into an array.
+This projection will return the following:</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>note_id | tag_ids
+=================
+      1 | [1,2]
+      2 | [1,3]
+</pre></td>
+</tr></table>
+</div></div>
+<p>In this example, the tags <code>belong_to</code> a note, so we are retrieving this
+data from the <code>tags</code> table. If this was a many-to-many relation, this
+query would execute against the join table (ie <code>notes_tags</code>).</p>
+
+<p>We group our tags by the <code>note_id</code>, and we use the <code>HAVING</code> clause to
+only group tags which have a <code>note_id</code> contained in the <code>note_ids</code> CTE
+that we created at the beginning.</p>
+
+<h2>Generating Our Note Records</h2>
+
+<p>Most of the time, we don&#39;t want to expose all of our record data to
+Ember, since whatever we send to the client will be accessible by the
+user, whether we intend it to be or not. We filter down the attributes
+sent to Ember by limiting the columns in our projection.</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre>notes_attributes_filter <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>,
+coalesce(<span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">{}</span><span class="delimiter">'</span></span>::<span class="predefined-type">int</span>[]) <span class="keyword">AS</span> tag_ids
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">ON</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">tag_ids_by_notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> &lt; <span class="integer">40</span>
+),
+</pre></td>
+</tr></table>
+</div></div>
+<p>Also note that in the projection, we are using <a href=""><code>coalesce</code></a> to ensure
+that we return an empty array if a specific note has no <code>tag_ids</code>. 
+We are using a <a href=""><code>LEFT OUTER JOIN</code></a> to combine our previously generated
+tag id groupings with our notes. We use an <code>OUTER JOIN</code> instead of an
+<a href=""><code>INNER JOIN</code></a> so that all our notes are returned, even if no tags are
+associated with it. An <code>INNER JOIN</code> would only return notes that have
+tags associated with it. We also use the same <code>WHERE</code> predicate in this
+query as we did in the <code>note_ids</code> CTE, to ensure our query only returns
+the desired records.</p>
+
+<h2>Turning Our Note Records into a Single JSON Array</h2>
+
+<p>So now that we have our notes records filtered down, we need to create a
+JSON array of these records to use in our final query. At this point, we
+will use two of PostgreSQL&#39;s <a href="">JSON functions</a> and the <code>array_agg</code>
+function that we used earlier. <code>row_to_json</code> takes a PostgreSQL row and
+converts it to a JSON object, where the columns of the row converted
+into JSON properties.</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>foo | bar
+=========
+  1 |   2
+</pre></td>
+</tr></table>
+</div></div>
+<p>Will be converted to</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>     json
+================
+{ foo: 1, bar: 2 }
+</pre></td>
+</tr></table>
+</div></div>
+<p>So at this point, our result set is a series of rows with a single
+column of JSON representing the original PostgreSQL row from our
+<code>notes_attribute_filter</code> CTE. We then use <code>array_agg</code> to turn the
+rows of JSON objects into a single row with a single PostgreSQL
+Array of JSON objects.</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>     json
+================
+{ foo: 1, bar: 2 }
+{ foo: 1, bar: 2 }
+{ foo: 1, bar: 2 }
+</pre></td>
+</tr></table>
+</div></div>
+<p>will be converted to</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>                    Array
+=======================================================
+{{ foo: 1, bar: 2 },{ foo: 1, bar: 2 },{ foo: 1, bar: 2 }}
+</pre></td>
+</tr></table>
+</div></div>
+<p>Lastly, we use <code>array_to_json</code> to convert the PostgreSQL array of JSON to a JSON array.</p>
+
+<p>After  combining these pieces, we get the following query:</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre>notes_as_json_array <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> array_to_json(array_agg(row_to_json(notes_attributes_filter)))
+<span class="keyword">AS</span> notes, <span class="integer">1</span> <span class="keyword">AS</span> match
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_attributes_filter</span><span class="delimiter">&quot;</span></span>
+),
+</pre></td>
+</tr></table>
+</div></div>
+<p>which yields</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>    notes    | match
+====================
+[{},{},{},{}]|     1
+</pre></td>
+</tr></table>
+</div></div>
+<p>We are using the <code>notes_attributes_filter</code> as our source for all the
+JSON functions, and adding a column <code>match</code> with a value of <code>1</code>, which
+we will need later.</p>
+
+<h2>Aggregating Our Tag Records</h2>
+
+<p>We apply the attribute filtering and the aggregation techniques to our
+<code>tags</code> table to generate our JSON array of tags. Note that when we
+filter the tags attributes, we only include tags that have a <code>note_id</code>
+of a note we are returning.</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+</pre></td>
+  <td class="code"><pre>tags_attributes_filter <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">WHERE</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">note_id</span><span class="delimiter">&quot;</span></span> <span class="keyword">IN</span> (
+    <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>
+    <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_ids</span><span class="delimiter">&quot;</span></span>
+  )
+),
+
+tags_as_json_array <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> array_to_json(array_agg(row_to_json(tags_attributes_filter)))
+<span class="keyword">AS</span> tags, <span class="integer">1</span> <span class="keyword">AS</span> match
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_attributes_filter</span><span class="delimiter">&quot;</span></span>
+),
+</pre></td>
+</tr></table>
+</div></div>
+<p>which yields</p>
+<div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>    tags     | match
+====================
+[{},{},{},{}]|     1
+</pre></td>
+</tr></table>
+</div></div>
+<h2>Combining Our Notes and Tags</h2>
+
+<p>So at this point, we have 2 CTEs that represent our notes and tags. We
+need to combine these two tables into a single row, so that we can convert
+that row to a JSON object with a <code>notes</code> and <code>tags</code> property. This is
+the reason we added a <code>match</code> column onto both CTEs; we join those two
+table into our final table, which we then call <code>row_to_json</code> on to get
+our final JSON object, which mirrors the example at the beginning of
+this article.</p>
+<div class="highlight sql "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td>
+  <td class="code"><pre>jsons <span class="keyword">AS</span> (
+  <span class="class">SELECT</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">tags</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">notes</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">ON</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">tags_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">match</span><span class="delimiter">&quot;</span></span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">notes_as_json_array</span><span class="delimiter">&quot;</span></span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">match</span><span class="delimiter">&quot;</span></span>
+)
+<span class="class">SELECT</span> row_to_json(jsons) <span class="keyword">FROM</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">jsons</span><span class="delimiter">&quot;</span></span>;
+</pre></td>
+</tr></table>
+</div></div>
+<p>So there you have it, you could generate this giant query by hand every
+time you need to create an API endpoint, or you could use ActiveModel::Serializers
+and utilize the PostgresExt-Seriliazers optimizations to avoid Ruby and
+Rails when generating API responses.</p>
+</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/02/15/avoid-rails-when-generating-json-repsonses-with-postgresql.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script><span class='post__share--github'>If you see an issue, please send a <a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/', class='text-link post__issue', target: '_blank'>pull request</a> to contribute.</span></div><div class='related-posts-wrap'><div class='post__avatar-wrap'><img class='post__avatar' src='/images/team/dan-mcclain.jpg'><h5 class='post__avatar__name'>Dan McClain</h5><h5 class='post__avatar__position headline--sub'>Partner &amp; Developer<br>At DockYard
+</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Dan</h3><a class="related-post" href="/2014/02/07/native-app-developers-we-can-help-you.html"><h2 class='related-post__title'>Native App Developers: We Can Help You</h2><p>February 7<sup>th</sup>, 2014</p></a>
+<a class="related-post" href="/2014/02/07/announcing-postgres_ext-postgis.html"><h2 class='related-post__title'>Announcing PostgresExt-PostGIS</h2><p>February 7<sup>th</sup>, 2014</p></a>
+<a class="related-posts-link text-link" href="/authors/dan-mcclain.html">See all 17 posts by Dan</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/ruby.html">Ruby&nbsp;<span class='post__tag__count'>(44)</span></a> <a class="post__tag" href="/categories/ruby-on-rails.html">Ruby on Rails&nbsp;<span class='post__tag__count'>(35)</span></a> <a class="post__tag" href="/categories/postgresql.html">PostgreSQL&nbsp;<span class='post__tag__count'>(12)</span></a> <a class="post__tag" href="/categories/postgres_ext.html">Postgres_ext&nbsp;<span class='post__tag__count'>(4)</span></a></p><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus</a>.</noscript></noscript><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.post__issue').attr('href', newpath);
+</script></div><div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/05/09/building-an-ember-app-with-rails-part-3.html"><strong>Building an Ember App with Rails Part 3</strong><h6 class='footer-desc'></h6></a>
+<a class="footer__post" href="/2014/05/08/building-an-ember-app-with-rails-part-2.html"><strong>Building an Ember App with Rails Part 2</strong><h6 class='footer-desc'>Writing our first ember test</h6></a>
+<a class="footer__post" href="/2014/05/07/building-an-ember-app-with-rails-part-1.html"><strong>Building an Ember App with Rails Part 1</strong><h6 class='footer-desc'>ember-cli & Rails</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
+<a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
+<a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>
