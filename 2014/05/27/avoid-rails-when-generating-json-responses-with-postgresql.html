@@ -95,7 +95,7 @@ in PostgreSQL?</p>
 </pre></td>
 </tr></table>
 </div></div>
-<p>What if I told you that it is over 10X faster than plain <a href="">ActiveModel::Serializers</a>
+<p>What if I told you that it is over 10X faster than plain <a href="https://github.com/rails-api/active_model_serializers/">ActiveModel::Serializers</a>
 for small data sets, and 160X faster for larger data sets?</p>
 
 <p>Typically when you have an API serving up JSON responses, your web
@@ -121,8 +121,9 @@ response cycle):</p>
 
 <p>Most of the time in this response cycle is spent in steps 6 and 7. Rails
 has to deserialize one format, then store that deserialized content in
-memory just to serialize it in a different format. Since <a href="">PostgreSQL
-supports JSON responses</a>, we can use its <a href="">JSON functions</a> to
+memory just to serialize it in a different format. Since <a href="http://www.postgresql.org/docs/current/static/datatype-json.html">PostgreSQL
+supports JSON responses</a>,
+we can use its <a href="http://www.postgresql.org/docs/current/static/functions-json.html">JSON functions</a> to
 serialized our result set. That JSON response will still be serialized
 in PostgreSQL&#39;s protocol format, but ActiveRecord can deserialize it as
 a single string object, instead of a set of objects which it then
@@ -316,7 +317,7 @@ jsons <span class="keyword">AS</span> (
 </pre></td>
 </tr></table>
 </div></div>
-<p>Let&#39;s break it down. You&#39;ll notice that I am making use of <a href="">Common Table
+<p>Let&#39;s break it down. You&#39;ll notice that I am making use of <a href="http://www.postgresql.org/docs/9.3/static/queries-with.html">Common Table
 Expressions (CTEs)</a>. CTEs allow you to use temporary table defininitions
 in queries instead of embedding the subqueries directly in your query.</p>
 
@@ -370,7 +371,7 @@ on.</p>
 </pre></td>
 </tr></table>
 </div></div>
-<p>Our projection is the <code>note_id</code>, plus an <a href=""><code>array_agg</code></a> of the id of the
+<p>Our projection is the <code>note_id</code>, plus an <a href="http://www.postgresql.org/docs/9.3/static/functions-aggregate.html"><code>array_agg</code></a> of the id of the
 tags in our grouping. <code>array_agg</code> aggregates the group into an array.
 This projection will return the following:</p>
 <div class="highlight text "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -421,11 +422,11 @@ coalesce(<span class="string"><span class="delimiter">&quot;</span><span class="
 </pre></td>
 </tr></table>
 </div></div>
-<p>Also note that in the projection, we are using <a href=""><code>coalesce</code></a> to ensure
-that we return an empty array if a specific note has no <code>tag_ids</code>. 
-We are using a <a href=""><code>LEFT OUTER JOIN</code></a> to combine our previously generated
+<p>Also note that in the projection, we are using <a href="http://www.postgresql.org/docs/9.3/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL"><code>coalesce</code></a>
+to ensure that we return an empty array if a specific note has no <code>tag_ids</code>. 
+We are using a <a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"><code>LEFT OUTER JOIN</code></a> to combine our previously generated
 tag id groupings with our notes. We use an <code>OUTER JOIN</code> instead of an
-<a href=""><code>INNER JOIN</code></a> so that all our notes are returned, even if no tags are
+<a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"><code>INNER JOIN</code></a> so that all our notes are returned, even if no tags are
 associated with it. An <code>INNER JOIN</code> would only return notes that have
 tags associated with it. We also use the same <code>WHERE</code> predicate in this
 query as we did in the <code>note_ids</code> CTE, to ensure our query only returns
@@ -435,7 +436,7 @@ the desired records.</p>
 
 <p>So now that we have our notes records filtered down, we need to create a
 JSON array of these records to use in our final query. At this point, we
-will use two of PostgreSQL&#39;s <a href="">JSON functions</a> and the <code>array_agg</code>
+will use two of PostgreSQL&#39;s <a href="http://www.postgresql.org/docs/current/static/functions-json.html">JSON functions</a> and the <code>array_agg</code>
 function that we used earlier. <code>row_to_json</code> takes a PostgreSQL row and
 converts it to a JSON object, where the columns of the row converted
 into JSON properties.</p>

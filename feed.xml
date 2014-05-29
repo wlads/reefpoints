@@ -115,7 +115,7 @@ in PostgreSQL?&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;What if I told you that it is over 10X faster than plain &lt;a href=""&gt;ActiveModel::Serializers&lt;/a&gt;
+&lt;p&gt;What if I told you that it is over 10X faster than plain &lt;a href="https://github.com/rails-api/active_model_serializers/"&gt;ActiveModel::Serializers&lt;/a&gt;
 for small data sets, and 160X faster for larger data sets?&lt;/p&gt;
 
 &lt;p&gt;Typically when you have an API serving up JSON responses, your web
@@ -141,8 +141,9 @@ response cycle):&lt;/p&gt;
 
 &lt;p&gt;Most of the time in this response cycle is spent in steps 6 and 7. Rails
 has to deserialize one format, then store that deserialized content in
-memory just to serialize it in a different format. Since &lt;a href=""&gt;PostgreSQL
-supports JSON responses&lt;/a&gt;, we can use its &lt;a href=""&gt;JSON functions&lt;/a&gt; to
+memory just to serialize it in a different format. Since &lt;a href="http://www.postgresql.org/docs/current/static/datatype-json.html"&gt;PostgreSQL
+supports JSON responses&lt;/a&gt;,
+we can use its &lt;a href="http://www.postgresql.org/docs/current/static/functions-json.html"&gt;JSON functions&lt;/a&gt; to
 serialized our result set. That JSON response will still be serialized
 in PostgreSQL&amp;#39;s protocol format, but ActiveRecord can deserialize it as
 a single string object, instead of a set of objects which it then
@@ -336,7 +337,7 @@ jsons &lt;span class="keyword"&gt;AS&lt;/span&gt; (
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;#39;s break it down. You&amp;#39;ll notice that I am making use of &lt;a href=""&gt;Common Table
+&lt;p&gt;Let&amp;#39;s break it down. You&amp;#39;ll notice that I am making use of &lt;a href="http://www.postgresql.org/docs/9.3/static/queries-with.html"&gt;Common Table
 Expressions (CTEs)&lt;/a&gt;. CTEs allow you to use temporary table defininitions
 in queries instead of embedding the subqueries directly in your query.&lt;/p&gt;
 
@@ -390,7 +391,7 @@ on.&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Our projection is the &lt;code&gt;note_id&lt;/code&gt;, plus an &lt;a href=""&gt;&lt;code&gt;array_agg&lt;/code&gt;&lt;/a&gt; of the id of the
+&lt;p&gt;Our projection is the &lt;code&gt;note_id&lt;/code&gt;, plus an &lt;a href="http://www.postgresql.org/docs/9.3/static/functions-aggregate.html"&gt;&lt;code&gt;array_agg&lt;/code&gt;&lt;/a&gt; of the id of the
 tags in our grouping. &lt;code&gt;array_agg&lt;/code&gt; aggregates the group into an array.
 This projection will return the following:&lt;/p&gt;
 &lt;div class="highlight text "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
@@ -441,11 +442,11 @@ coalesce(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Also note that in the projection, we are using &lt;a href=""&gt;&lt;code&gt;coalesce&lt;/code&gt;&lt;/a&gt; to ensure
-that we return an empty array if a specific note has no &lt;code&gt;tag_ids&lt;/code&gt;. 
-We are using a &lt;a href=""&gt;&lt;code&gt;LEFT OUTER JOIN&lt;/code&gt;&lt;/a&gt; to combine our previously generated
+&lt;p&gt;Also note that in the projection, we are using &lt;a href="http://www.postgresql.org/docs/9.3/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL"&gt;&lt;code&gt;coalesce&lt;/code&gt;&lt;/a&gt;
+to ensure that we return an empty array if a specific note has no &lt;code&gt;tag_ids&lt;/code&gt;. 
+We are using a &lt;a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"&gt;&lt;code&gt;LEFT OUTER JOIN&lt;/code&gt;&lt;/a&gt; to combine our previously generated
 tag id groupings with our notes. We use an &lt;code&gt;OUTER JOIN&lt;/code&gt; instead of an
-&lt;a href=""&gt;&lt;code&gt;INNER JOIN&lt;/code&gt;&lt;/a&gt; so that all our notes are returned, even if no tags are
+&lt;a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"&gt;&lt;code&gt;INNER JOIN&lt;/code&gt;&lt;/a&gt; so that all our notes are returned, even if no tags are
 associated with it. An &lt;code&gt;INNER JOIN&lt;/code&gt; would only return notes that have
 tags associated with it. We also use the same &lt;code&gt;WHERE&lt;/code&gt; predicate in this
 query as we did in the &lt;code&gt;note_ids&lt;/code&gt; CTE, to ensure our query only returns
@@ -455,7 +456,7 @@ the desired records.&lt;/p&gt;
 
 &lt;p&gt;So now that we have our notes records filtered down, we need to create a
 JSON array of these records to use in our final query. At this point, we
-will use two of PostgreSQL&amp;#39;s &lt;a href=""&gt;JSON functions&lt;/a&gt; and the &lt;code&gt;array_agg&lt;/code&gt;
+will use two of PostgreSQL&amp;#39;s &lt;a href="http://www.postgresql.org/docs/current/static/functions-json.html"&gt;JSON functions&lt;/a&gt; and the &lt;code&gt;array_agg&lt;/code&gt;
 function that we used earlier. &lt;code&gt;row_to_json&lt;/code&gt; takes a PostgreSQL row and
 converts it to a JSON object, where the columns of the row converted
 into JSON properties.&lt;/p&gt;
