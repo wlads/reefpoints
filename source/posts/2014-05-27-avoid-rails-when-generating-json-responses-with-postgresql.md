@@ -40,7 +40,7 @@ in PostgreSQL?
 }
 ```
 
-What if I told you that it is over 10X faster than plain [ActiveModel::Serializers]()
+What if I told you that it is over 10X faster than plain [ActiveModel::Serializers](https://github.com/rails-api/active_model_serializers/)
 for small data sets, and 160X faster for larger data sets?
 
 Typically when you have an API serving up JSON responses, your web
@@ -65,7 +65,8 @@ response cycle):
 Most of the time in this response cycle is spent in steps 6 and 7. Rails
 has to deserialize one format, then store that deserialized content in
 memory just to serialize it in a different format. Since [PostgreSQL
-supports JSON responses](), we can use its [JSON functions]() to
+supports JSON responses](http://www.postgresql.org/docs/current/static/datatype-json.html),
+we can use its [JSON functions](http://www.postgresql.org/docs/current/static/functions-json.html) to
 serialized our result set. That JSON response will still be serialized
 in PostgreSQL's protocol format, but ActiveRecord can deserialize it as
 a single string object, instead of a set of objects which it then
@@ -203,7 +204,7 @@ SELECT row_to_json(jsons) FROM "jsons";
 ```
 
 Let's break it down. You'll notice that I am making use of [Common Table
-Expressions (CTEs)](). CTEs allow you to use temporary table defininitions
+Expressions (CTEs)](http://www.postgresql.org/docs/9.3/static/queries-with.html). CTEs allow you to use temporary table defininitions
 in queries instead of embedding the subqueries directly in your query.
 
 ## Gathering our Note Ids
@@ -239,7 +240,7 @@ tag_ids_by_notes AS (
 ),
 ```
 
-Our projection is the `note_id`, plus an [`array_agg`]() of the id of the
+Our projection is the `note_id`, plus an [`array_agg`](http://www.postgresql.org/docs/9.3/static/functions-aggregate.html) of the id of the
 tags in our grouping. `array_agg` aggregates the group into an array.
 This projection will return the following:
 
@@ -276,11 +277,11 @@ coalesce("tag_ids_by_notes"."tag_ids", '{}'::int[]) AS tag_ids
 ),
 ```
 
-Also note that in the projection, we are using [`coalesce`]() to ensure
-that we return an empty array if a specific note has no `tag_ids`. 
-We are using a [`LEFT OUTER JOIN`]() to combine our previously generated
+Also note that in the projection, we are using [`coalesce`](http://www.postgresql.org/docs/9.3/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL)
+to ensure that we return an empty array if a specific note has no `tag_ids`. 
+We are using a [`LEFT OUTER JOIN`](http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN) to combine our previously generated
 tag id groupings with our notes. We use an `OUTER JOIN` instead of an
-[`INNER JOIN`]() so that all our notes are returned, even if no tags are
+[`INNER JOIN`](http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN) so that all our notes are returned, even if no tags are
 associated with it. An `INNER JOIN` would only return notes that have
 tags associated with it. We also use the same `WHERE` predicate in this
 query as we did in the `note_ids` CTE, to ensure our query only returns
@@ -290,7 +291,7 @@ the desired records.
 
 So now that we have our notes records filtered down, we need to create a
 JSON array of these records to use in our final query. At this point, we
-will use two of PostgreSQL's [JSON functions]() and the `array_agg`
+will use two of PostgreSQL's [JSON functions](http://www.postgresql.org/docs/current/static/functions-json.html) and the `array_agg`
 function that we used earlier. `row_to_json` takes a PostgreSQL row and
 converts it to a JSON object, where the columns of the row converted
 into JSON properties.
