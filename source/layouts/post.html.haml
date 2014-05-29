@@ -2,8 +2,7 @@
 
   .l-wrap--blog__post
     - if has_ad?
-      .ad
-        = partial "shared/ads/#{ad_partial}"
+      = partial "shared/ads/#{ad_partial}"
 
     %h1.post__title= current_page.title
 
