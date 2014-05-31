@@ -1,0 +1,100 @@
+/* line 3, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+.ad--ruby, .ad--ember {
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  border: 2px solid #fb755a; }
+  /* line 12, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad--ruby:before, .ad--ember:before {
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    opacity: 0; }
+  /* line 23, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad--ruby:hover:before, .ad--ember:hover:before {
+    opacity: 1; }
+  /* line 25, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad--ruby:hover .ad__text, .ad--ember:hover .ad__text {
+    color: white; }
+    /* line 27, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+    .ad--ruby:hover .ad__text:before, .ad--ruby:hover .ad__text:after, .ad--ember:hover .ad__text:before, .ad--ember:hover .ad__text:after {
+      background-color: white; }
+
+/* line 30, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+.ad--ruby:before {
+  background-image: url("/images/ruby.jpg"); }
+
+/* line 33, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+.ad--ember:before {
+  background-image: url("/images/ember.jpg"); }
+
+/* line 36, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+.ad__text {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  position: relative;
+  max-width: 330px;
+  width: 90%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fb755a;
+  line-height: 1.33; }
+  @media (min-width: 500px) {
+    /* line 29, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    .ad__text:after, .ad__text:before {
+      display: inline-block;
+      position: relative;
+      height: 6px;
+      width: 6px;
+      content: "";
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #fb755a; }
+    /* line 37, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    .ad__text:after {
+      top: 18px;
+      right: -30px; }
+    /* line 40, /Users/acheung/work/reefpoints/source/stylesheets/load.sass */
+    .ad__text:before {
+      top: 18px;
+      left: -30px; } }
+  /* line 53, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+  .ad__text:before, .ad__text:after {
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color; }
+    @media (min-width: 500px) {
+      /* line 53, /Users/acheung/work/reefpoints/source/stylesheets/modules/ad.sass */
+      .ad__text:before, .ad__text:after {
+        position: absolute; } }
