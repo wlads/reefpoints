@@ -1,52 +1,45 @@
 @import load
 
-.ad
-  border:
-    width: 2px
-    style: solid
-    color: $red
-  color: white
-  line-height: 1.5
-  padding: 1rem 9rem
-  font-weight: 700
-  margin-bottom: 15px
+.ad--ruby, .ad--ember
+  +transition-duration(.25s)
+  +transition-property(background-color, color)
+  margin-bottom: 50px
+  padding:
+    top: 20px
+    bottom: 20px
+  display: inline-block
+  width: 100%
+  border: 2px solid $red
+  &:hover
+    background:
+      color: rgba($red, .7)
+      size: cover
+    .ad__text
+      color: $white
+      &:before, &:after
+        background-color: $white
+
+.ad--ruby:hover
+  background-image: image-url('ruby.jpg')
+
+.ad--ember:hover
+  background-image: image-url('ember.jpg')
+
+.ad__text
+  margin:
+    right: auto
+    left: auto
+  display: block
   position: relative
-  text-align: center
-  text-transform: uppercase
-
+  max-width: 330px
+  width: 90%
+  text:
+    align: center
+    transform: uppercase
+  color: $red
+  line-height: 1.33
+  @media (min-width: 500px)
+    @include has-dots(18px, -30px)
   &:before, &:after
-    color: $red
-    content: "\00b7"
-    font-size: 3rem
-    position: absolute
-    // vertically align with CSS
-    top: 50%
-    transform: translateY(-50%)
-
-    -o-transform: translateY(-50%)
-    -ms-transform: translateY(-50%)
-    -moz-transform: translateY(-50%)
-    -webkit-transform: translateY(-50%)
-
-  &:before
-    left: 6rem
-
-  &:after
-    right: 6rem
-
-  a
-    color: $red
-
-    &:hover
-      text-decoration: underline
-
-@media all and (max-width: 320px)
-  .ad
-    font-size: 70%
-    padding: 1rem 1.5rem
-    
-    &:before
-      left: 0.7rem
-
-    &:after
-      right: 0.7rem
+    @media (min-width: 500px)
+      position: absolute
