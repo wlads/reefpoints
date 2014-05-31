@@ -1,0 +1,445 @@
+<!DOCTYPE html><html><head><title>Building an Ember App with Rails Part 4</title><link href="/stylesheets/all-1c41cbe7.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html' name='twitter:url'><meta content='Building an Ember App with Rails Part 4' name='twitter:title'><meta name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24185112-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<!--
+                                             ..
+                                           .O.
+                                       .:OO.
+                                      :OOO.
+                                    :OOO:.
+                         ...      :OOOO:
+                   ..ZOOOOOOOOO..OZ.O.
+                   OOOOOOOOOOOOOOOOI
+                  OOOOOOOOOOOOOOOOI,
+                 OOOOOOOO. .OOOOOOOO:
+                 OOOOOOOO   OOOOOOOOO:
+                OOOOOOOOOOOOOOOOOOOOO.
+                OOOOOOOOOOOOOOOOOOOOO:
+               .OOOOOOOOOOOOOOOOOOOOO:
+               .OOOOOOOOOOOOOOOOOOOOO.
+                OOOOOOOOOOOOOOOOOOOOO
+                OOOOOO?:   .OOOOOOOOO
+               .OOOOO      OOOOOOOOOO
+,OO ZO,        OOOOO,     OOOOOOOOOO+
+ OOOOO.        OOOOO     OOOOOOOOOOO+
+  OOO?        OOOOO     .OOOOOOOOOOO:
+   OOO,      OOOOO.    .OOOOOOOOOOOO
+    OOOOOOOOOOOOO.    .OOOOOOOOOOOO.
+     OOOOOOOOOOOO.  .OOOOOOOOOOOOO.
+      8OOOOOOOOOOOOOOOOOOOOOOOODO:
+         :OOOOOOOOOOOOOOOOOOOO::
+
+--></head><body class='x2014 x2014_05 x2014_05_31 x2014_05_31_building-an-ember-app-with-rails-part-4'><header><div class='extended-nav-wrap'><div class='l-wrap--wide'><nav class='extended-nav'><a class="extended-nav--logo" data-icon="⌂" href="http://dockyard.com/"><span class='is-hidden'>Home</span></a>
+<a class="extended-nav--close" data-icon="X" href="#"><span class='is-hidden'>Close</span></a><div class='extended-nav__items'><div class='extended-nav__items--mobile'><a class="extended-nav__item--work extended-nav__item" href="#">Work</a><nav class='work-nav--mobile'><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong></a>
+<a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong></a>
+<a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong></a>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong></a></nav></div><a class="extended-nav__item" href="http://dockyard.com/team">Our Team</a><a class="extended-nav__item" href="http://dockyard.com/process">Process</a><a class="extended-nav__item" href="http://dockyard.com/community">Community</a><a class="extended-nav__item active" href="/">Blog</a><a class="extended-nav__item" href="http://dockyard.com/hire-us">Hire Us</a></div></nav><nav class='work-nav'><h6>Selected Work</h6><a href="http://dockyard.com/work/credit-card-reviews" class="work-nav-item"><strong class='work-nav-item__title'>Credit Card Reviews</strong><p>Credit card advice from real people.</p></a>
+<a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
+<a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><a class='ad--ember' href='http://wickedgoodember.com' target='_blank'><strong class='ad__text'>Don&rsquo;t miss Wicked Good Ember Conf in Boston this June 17, 2014!</strong></a><h1 class='post__title'>Building an Ember App with Rails Part 4</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 31<sup>st</sup>, 2014</time><div class='post__content'><p>Before we get underway we need to update ember-data in our project to at
+least <code>beta.8</code>. Open <code>ember/bower.json</code> and if you have any version
+less than 8 you&#39;ll need to update to at least 8. If you are already on 8
+or higher you won&#39;t need to do anything.</p>
+
+<p>Once you&#39;ve made the change save the file and run <code>bower install</code> from
+the <code>ember/</code> directory. If you are asked to choose between different
+versions of ember-data make sure you choose the correct one.</p>
+
+<p>In this part we&#39;ll add Presentations to each of the Speaker pages. This
+means we&#39;ll have to add a relationship between two models.</p>
+
+<p>In <code>ember/tests/integration/speakers-page-test.js</code> modify the test
+&quot;Should list all speakers and number of presentations&quot;</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+  <td class="code"><pre><span class="comment">// ember/tests/integration/speaker-page-test.js</span>
+
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all speakers and number of presentations</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny (2)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote (1)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam (3)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+  });
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>The number in the parentheses will represent the number of presentations that this speaker 
+has given.</p>
+
+<p>Next we need to modify our <code>setup</code> function</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td>
+  <td class="code"><pre><span class="comment">// ember/tests/integration/speaker-page-test.js</span>
+
+<span class="keyword">var</span> speakers = [
+  { <span class="key">id</span>: <span class="integer">1</span>, <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>, <span class="key">presentation_ids</span>: [<span class="integer">1</span>,<span class="integer">2</span>] },
+  { <span class="key">id</span>: <span class="integer">2</span>, <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Wile E. Coyote</span><span class="delimiter">'</span></span>, <span class="key">presentation_ids</span>: [<span class="integer">3</span>] },
+  { <span class="key">id</span>: <span class="integer">3</span>, <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Yosemite Sam</span><span class="delimiter">'</span></span>, <span class="key">presentation_ids</span>: [<span class="integer">4</span>,<span class="integer">5</span>,<span class="integer">6</span>] }
+];
+
+<span class="keyword">var</span> presentations = [
+  { <span class="key">id</span>: <span class="integer">1</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">What's up with Docs?</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">1</span> },
+  { <span class="key">id</span>: <span class="integer">2</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Of course, you know, this means war.</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">1</span> },
+  { <span class="key">id</span>: <span class="integer">3</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Getting the most from the Acme categlog.</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">2</span> },
+  { <span class="key">id</span>: <span class="integer">4</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Shaaaad up!</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">3</span> },
+  { <span class="key">id</span>: <span class="integer">5</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Ah hates rabbits.</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">3</span> },
+  { <span class="key">id</span>: <span class="integer">6</span>, <span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">The Great horni-todes</span><span class="delimiter">&quot;</span></span>, <span class="key">speaker_id</span>: <span class="integer">3</span> }
+];
+
+server = <span class="keyword">new</span> Pretender(<span class="keyword">function</span>() {
+  <span class="local-variable">this</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/api/speakers</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(request) {
+    <span class="keyword">return</span> [<span class="integer">200</span>, {<span class="key"><span class="delimiter">&quot;</span><span class="content">Content-Type</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">application/json</span><span class="delimiter">&quot;</span></span>}, JSON.stringify({<span class="key">speakers</span>: speakers, <span class="key">presentations</span>: presentations})];
+  });
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>Completely replace the <code>speakers</code> variable that was previously there. The only change to the API stub is that
+<code>presentations</code> is being added to the payload. The JSON here is the
+style of JSON that ember-data expects to be emitted. We are returning a
+payload that includes all speakers and presentations. The speaker
+records include ids referencing the presentations associated.</p>
+
+<p>We can now add the Presentation model to our Ember app:</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre><span class="comment">// ember/app/models/presentation.js</span>
+
+<span class="reserved">export</span> <span class="keyword">default</span> DS.Model.extend({
+  <span class="key">title</span>: DS.attr(<span class="string"><span class="delimiter">'</span><span class="content">string</span><span class="delimiter">'</span></span>),
+  <span class="key">speaker</span>: DS.belongsTo(<span class="string"><span class="delimiter">'</span><span class="content">speaker</span><span class="delimiter">'</span></span>)
+}); 
+</pre></td>
+</tr></table>
+</div></div>
+<p>We&#39;ve told ember-data to expect the Presentation model to belong to the
+Speaker model. Let&#39;s set the inverse relationship</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td>
+  <td class="code"><pre><span class="comment">// ember/app/models/speaker.js</span>
+
+<span class="reserved">export</span> <span class="keyword">default</span> DS.Model.extend({
+  <span class="key">name</span>: DS.attr(<span class="string"><span class="delimiter">'</span><span class="content">string</span><span class="delimiter">'</span></span>),
+  <span class="key">presentations</span>: DS.hasMany(<span class="string"><span class="delimiter">'</span><span class="content">presentation</span><span class="delimiter">'</span></span>)
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>Modifying our existing Speaker model to add to relationship to its many
+Presentation models.</p>
+
+<p>Finally to make this tests green we need to change our template:</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td>
+  <td class="code"><pre>// ember/app/templates/speakers/index.hbs
+
+{#each}}
+ <span class="inline"><span class="inline-delimiter">{{</span><span class="error">~</span><span class="error">#</span><span class="attribute-name">link-to</span> <span class="error">'</span><span class="attribute-name">speakers.show</span><span class="error">'</span> <span class="attribute-name">this</span><span class="inline-delimiter">}}</span></span>
+   <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">name</span><span class="inline-delimiter">}}</span></span> (<span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">presentations.length</span><span class="inline-delimiter">}}</span></span>)
+ <span class="inline"><span class="inline-delimiter">{{</span><span class="error">~</span><span class="error">/</span><span class="attribute-name">link-to</span><span class="inline-delimiter">}}</span></span>
+{/each}}
+</pre></td>
+</tr></table>
+</div></div>
+<p>Notice that we we can call regular JavaScript properties like <code>length</code> on the association.
+There is also a slight change that I&#39;ve made to the <code>link-to</code>. Adding
+<code>~</code> will <a href="http://handlebarsjs.com/block_helpers.html#whitespace-control">tell Handlebars how to control
+whitespace</a>.</p>
+
+<p>At this point our new test should be green. Lets add another.</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre><span class="comment">// ember/tests/integration/speaker-page-test.js</span>
+
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all presentations for a speaker</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers/1</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;What</span><span class="char">\'</span><span class="content">s up with Docs?&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;Of course, you know, this means war.&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+  });
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>This new test is asserting that when we visit a given speaker&#39;s page all
+of those speaker&#39;s presentations will be listed. We first need to add
+presentation data to the API stub for visiting a speaker page.</p>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+</pre></td>
+  <td class="code"><pre><span class="local-variable">this</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/api/speakers/:id</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(request) {
+  <span class="keyword">var</span> speaker = speakers.find(<span class="keyword">function</span>(speaker) {
+    <span class="keyword">if</span> (speaker.id === parseInt(request.params.id, <span class="integer">10</span>)) {
+      <span class="keyword">return</span> speaker;
+    }
+  });
+
+  <span class="keyword">var</span> speakerPresentations = presentations.filter(<span class="keyword">function</span>(presentation) {
+    <span class="keyword">if</span> (presentation.speaker_id === speaker.id) {
+      <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+    }
+  });
+
+  <span class="keyword">return</span> [<span class="integer">200</span>, {<span class="key"><span class="delimiter">&quot;</span><span class="content">Content-Type</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">application/json</span><span class="delimiter">&quot;</span></span>}, JSON.stringify({<span class="key">speaker</span>: speaker, <span class="key">presentations</span>: speakerPresentations})];
+});
+</pre></td>
+</tr></table>
+</div></div>
+<p>This modification of the previously existing stub will build a new payload object that
+includes the speaker matching the id requested and all of the
+presentations specific to that speaker.</p>
+
+<p>Tying up this test is easy now, we just modify the Speaker&#39;s <code>show</code>
+template:</p>
+<div class="highlight handlebars "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;h4&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">name</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/h4&gt;</span>
+
+<span class="tag">&lt;h5&gt;</span>Presentations<span class="tag">&lt;/h5&gt;</span>
+<span class="tag">&lt;ul&gt;</span>
+  <span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">each</span> <span class="attribute-name">presentations</span><span class="inline-delimiter">}}</span></span>
+    <span class="tag">&lt;li&gt;</span><span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">title</span><span class="inline-delimiter">}}</span></span><span class="tag">&lt;/li&gt;</span>
+  <span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">each</span><span class="inline-delimiter">}}</span></span>
+<span class="tag">&lt;/ul&gt;</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Now that we have a green test suite with our mocked out API let&#39;s the
+real Rails endpoint. We&#39;ll start by generating a new Presentation model.
+Change to the <code>rails/</code> directory in your project and run <code>rails generate
+model presentation title:string speaker_id:integer</code>.</p>
+
+<p>Next we&#39;ll generate the serializer: <code>rails generate serializer
+presentation</code>.</p>
+
+<p>Let&#39;s expand upon the <code>rails/db/seeds.rb</code> file:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+</pre></td>
+  <td class="code"><pre><span class="comment"># rails/db/seeds.rb</span>
+
+bugs = <span class="constant">Speaker</span>.create(<span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Bug Bunny</span><span class="delimiter">'</span></span>)
+wile = <span class="constant">Speaker</span>.create(<span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Wile E. Coyote</span><span class="delimiter">'</span></span>)
+sam  = <span class="constant">Speaker</span>.create(<span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">Yosemite Sam</span><span class="delimiter">'</span></span>)
+
+bugs.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">What's up with Docs?</span><span class="delimiter">&quot;</span></span>)
+bugs.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Of course, you know, this means war.</span><span class="delimiter">&quot;</span></span>)
+
+wile.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Getting the most from the Acme categlog.</span><span class="delimiter">&quot;</span></span>)
+
+sam.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Shaaaad up!</span><span class="delimiter">&quot;</span></span>)
+sam.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Ah hates rabbits.</span><span class="delimiter">&quot;</span></span>)
+sam.presentations.create(<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">The Great horni-todes</span><span class="delimiter">&quot;</span></span>)
+</pre></td>
+</tr></table>
+</div></div>
+<p>Tell our <code>Speaker</code> model that there is a relationship to <code>Presentation</code>
+models:</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre><span class="comment"># rails/app/models/speaker.rb</span>
+
+<span class="keyword">class</span> <span class="class">Speaker</span> &lt; <span class="constant">ActiveRecord</span>::<span class="constant">Base</span>
+  has_many <span class="symbol">:presentations</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>Finally we need to modify the serializers.</p>
+<div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td>
+  <td class="code"><pre><span class="comment"># rails/app/serializers/presentation.rb</span>
+
+<span class="keyword">class</span> <span class="class">PresentationSerializer</span> &lt; <span class="constant">ActiveModel</span>::<span class="constant">Serializer</span>
+  attributes <span class="symbol">:id</span>, <span class="symbol">:title</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div><div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+  <td class="code"><pre><span class="comment"># rails/app/serializers/speaker.rb</span>
+
+<span class="keyword">class</span> <span class="class">SpeakerSerializer</span> &lt; <span class="constant">ActiveModel</span>::<span class="constant">Serializer</span>
+  embed <span class="symbol">:ids</span>, <span class="key">include</span>: <span class="predefined-constant">true</span>
+
+  attributes <span class="symbol">:id</span>, <span class="symbol">:name</span>
+  has_many <span class="symbol">:presentations</span>
+<span class="keyword">end</span>
+</pre></td>
+</tr></table>
+</div></div>
+<p>In the <code>SpekaerSerializer</code> we have instructed the serializer to include
+the associated <code>Presentation</code>s.</p>
+
+<p>Let&#39;s reset the database and re-seed <code>rake db:drop db:create db:migrate db:seed</code></p>
+
+<p>Make sure you are running your Emer server with the proxy enabled:
+<code>ember server --proxy http://localhost:3000</code></p>
+
+<p>Now you can hit your application and you should have a all of the
+necessary data. </p>
+
+<p><img src="http://i.imgur.com/jmHGxgS.png" alt="image1">
+<img src="http://i.imgur.com/plrKLvg.png" alt="image2"></p>
+
+<p>Next time we&#39;ll deploy our small app to Heroku.</p>
+
+<p><a href="https://github.com/bostonember/website/commit/10f838ff1bfb0aa1307d4de6587889489697c8da">Check out the actual code for this
+part</a></p>
+</div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+</script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
+  (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+</script><span class='post__share--github'>If you see an issue, please send a <a href='https://github.com/dockyard/reefpoints/blob/master/source/posts/', class='text-link post__issue', target: '_blank'>pull request</a> to contribute.</span></div><div class='related-posts-wrap'><div class='post__avatar-wrap'><img class='post__avatar' src='/images/team/brian-cardarella.jpg'><h5 class='post__avatar__name'>Brian Cardarella</h5><h5 class='post__avatar__position headline--sub'>CEO
+</h5></div><div class='related-posts'><h3 class='related-posts__header headline--sub'>Other posts by Brian</h3><a class="related-post" href="/2014/05/09/building-an-ember-app-with-rails-part-3.html"><h2 class='related-post__title'>Building an Ember App with Rails Part 3</h2><p>May 9<sup>th</sup>, 2014</p></a>
+<a class="related-post" href="/2014/05/08/building-an-ember-app-with-rails-part-2.html"><h2 class='related-post__title'>Building an Ember App with Rails Part 2</h2><p>May 8<sup>th</sup>, 2014</p></a>
+<a class="related-posts-link text-link" href="/authors/brian-cardarella.html">See all 65 posts by Brian</a></div></div><p class='post__tags'><a class="post__tag" href="/categories/ember.html">Ember.js&nbsp;<span class='post__tag__count'>(25)</span></a> <a class="post__tag" href="/categories/ruby.html">Ruby&nbsp;<span class='post__tag__count'>(45)</span></a> <a class="post__tag" href="/categories/ruby-on-rails.html">Ruby on Rails&nbsp;<span class='post__tag__count'>(36)</span></a></p><div id='disqus_thread'></div><script>
+  var disqus_shortname = 'reefpoints';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script><noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus</a>.</noscript></noscript><script>
+  var path = window.location.pathname.split('/').reverse();
+  var postname = path[0].split('.');
+  var change = postname[0] + '.md';
+  var newpath = 'https://github.com/dockyard/reefpoints/blob/master/source/posts/' + path[3] + '-' + path[2] + '-' + path[1] + '-' + change
+  $('.post__issue').attr('href', newpath);
+</script></div><div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/05/31/building-an-ember-app-with-rails-part-4.html"><strong>Building an Ember App with Rails Part 4</strong><h6 class='footer-desc'></h6></a>
+<a class="footer__post" href="/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"><strong>Avoid Rails When Generating JSON responses with PostgreSQL</strong><h6 class='footer-desc'>Let's use PostgreSQL instead of Ruby to generate JSON responses</h6></a>
+<a class="footer__post" href="/2014/05/09/building-an-ember-app-with-rails-part-3.html"><strong>Building an Ember App with Rails Part 3</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
+<a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
+<a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'reefpoints'; // required: replace example with your forum shortname
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script></body></html>

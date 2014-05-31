@@ -577,13 +577,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/ember-libraries.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/01/02/romina-vargas-is-a-dockyarder.html</loc>
     <lastmod>2014-05-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/02/04/ember-conf-ember-for-rails-devs.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/ember-libraries.html</loc>
     <lastmod>2014-05-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -728,6 +728,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html</loc>
+    <lastmod>2014-05-31T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/05/31/building-an-ember-app-with-rails-part-4.html</loc>
     <lastmod>2014-05-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1045,7 +1051,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/01/02/romina-vargas-is-a-dockyarder.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/02/04/ember-conf-ember-for-rails-devs.html</loc>
     <lastmod>2014-05-31T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

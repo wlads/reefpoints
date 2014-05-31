@@ -4,16 +4,389 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-05-27T00:00:00Z</updated>
+  <updated>2014-05-31T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Building an Ember App with Rails Part 4</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html"/>
+    <id>http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html</id>
+    <published>2014-05-31T00:00:00Z</published>
+    <updated>2014-05-31T11:43:00-04:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;Before we get underway we need to update ember-data in our project to at
+least &lt;code&gt;beta.8&lt;/code&gt;. Open &lt;code&gt;ember/bower.json&lt;/code&gt; and if you have any version
+less than 8 you&amp;#39;ll need to update to at least 8. If you are already on 8
+or higher you won&amp;#39;t need to do anything.&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;#39;ve made the change save the file and run &lt;code&gt;bower install&lt;/code&gt; from
+the &lt;code&gt;ember/&lt;/code&gt; directory. If you are asked to choose between different
+versions of ember-data make sure you choose the correct one.&lt;/p&gt;
+
+&lt;p&gt;In this part we&amp;#39;ll add Presentations to each of the Speaker pages. This
+means we&amp;#39;ll have to add a relationship between two models.&lt;/p&gt;
+
+&lt;p&gt;In &lt;code&gt;ember/tests/integration/speakers-page-test.js&lt;/code&gt; modify the test
+&amp;quot;Should list all speakers and number of presentations&amp;quot;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/speaker-page-test.js&lt;/span&gt;
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should list all speakers and number of presentations&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Bugs Bunny (2)&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Wile E. Coyote (1)&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Yosemite Sam (3)&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The number in the parentheses will represent the number of presentations that this speaker 
+has given.&lt;/p&gt;
+
+&lt;p&gt;Next we need to modify our &lt;code&gt;setup&lt;/code&gt; function&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/speaker-page-test.js&lt;/span&gt;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; speakers = [
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;, &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bugs Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;presentation_ids&lt;/span&gt;: [&lt;span class="integer"&gt;1&lt;/span&gt;,&lt;span class="integer"&gt;2&lt;/span&gt;] },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt;, &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Wile E. Coyote&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;presentation_ids&lt;/span&gt;: [&lt;span class="integer"&gt;3&lt;/span&gt;] },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt;, &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Yosemite Sam&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;presentation_ids&lt;/span&gt;: [&lt;span class="integer"&gt;4&lt;/span&gt;,&lt;span class="integer"&gt;5&lt;/span&gt;,&lt;span class="integer"&gt;6&lt;/span&gt;] }
+];
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; presentations = [
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;What's up with Docs?&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt; },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Of course, you know, this means war.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt; },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Getting the most from the Acme categlog.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt; },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;4&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Shaaaad up!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt; },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;5&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Ah hates rabbits.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt; },
+  { &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;6&lt;/span&gt;, &lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;The Great horni-todes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;speaker_id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt; }
+];
+
+server = &lt;span class="keyword"&gt;new&lt;/span&gt; Pretender(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speakers&lt;/span&gt;: speakers, &lt;span class="key"&gt;presentations&lt;/span&gt;: presentations})];
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Completely replace the &lt;code&gt;speakers&lt;/code&gt; variable that was previously there. The only change to the API stub is that
+&lt;code&gt;presentations&lt;/code&gt; is being added to the payload. The JSON here is the
+style of JSON that ember-data expects to be emitted. We are returning a
+payload that includes all speakers and presentations. The speaker
+records include ids referencing the presentations associated.&lt;/p&gt;
+
+&lt;p&gt;We can now add the Presentation model to our Ember app:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/presentation.js&lt;/span&gt;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;title&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+  &lt;span class="key"&gt;speaker&lt;/span&gt;: DS.belongsTo(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;speaker&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+}); 
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We&amp;#39;ve told ember-data to expect the Presentation model to belong to the
+Speaker model. Let&amp;#39;s set the inverse relationship&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/speaker.js&lt;/span&gt;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;name&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+  &lt;span class="key"&gt;presentations&lt;/span&gt;: DS.hasMany(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;presentation&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Modifying our existing Speaker model to add to relationship to its many
+Presentation models.&lt;/p&gt;
+
+&lt;p&gt;Finally to make this tests green we need to change our template:&lt;/p&gt;
+&lt;div class="highlight handlebars "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// ember/app/templates/speakers/index.hbs
+
+{#each}}
+ &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;#&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt; &lt;span class="error"&gt;'&lt;/span&gt;&lt;span class="attribute-name"&gt;speakers.show&lt;/span&gt;&lt;span class="error"&gt;'&lt;/span&gt; &lt;span class="attribute-name"&gt;this&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
+   &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;name&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt; (&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;presentations.length&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;)
+ &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;/&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
+{/each}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice that we we can call regular JavaScript properties like &lt;code&gt;length&lt;/code&gt; on the association.
+There is also a slight change that I&amp;#39;ve made to the &lt;code&gt;link-to&lt;/code&gt;. Adding
+&lt;code&gt;~&lt;/code&gt; will &lt;a href="http://handlebarsjs.com/block_helpers.html#whitespace-control"&gt;tell Handlebars how to control
+whitespace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;At this point our new test should be green. Lets add another.&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/speaker-page-test.js&lt;/span&gt;
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should list all presentations for a speaker&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers/1&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;li:contains(&amp;quot;What&lt;/span&gt;&lt;span class="char"&gt;\'&lt;/span&gt;&lt;span class="content"&gt;s up with Docs?&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;li:contains(&amp;quot;Of course, you know, this means war.&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This new test is asserting that when we visit a given speaker&amp;#39;s page all
+of those speaker&amp;#39;s presentations will be listed. We first need to add
+presentation data to the API stub for visiting a speaker page.&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers/:id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
+  &lt;span class="keyword"&gt;var&lt;/span&gt; speaker = speakers.find(&lt;span class="keyword"&gt;function&lt;/span&gt;(speaker) {
+    &lt;span class="keyword"&gt;if&lt;/span&gt; (speaker.id === parseInt(request.params.id, &lt;span class="integer"&gt;10&lt;/span&gt;)) {
+      &lt;span class="keyword"&gt;return&lt;/span&gt; speaker;
+    }
+  });
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; speakerPresentations = presentations.filter(&lt;span class="keyword"&gt;function&lt;/span&gt;(presentation) {
+    &lt;span class="keyword"&gt;if&lt;/span&gt; (presentation.speaker_id === speaker.id) {
+      &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="predefined-constant"&gt;true&lt;/span&gt;;
+    }
+  });
+
+  &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speaker&lt;/span&gt;: speaker, &lt;span class="key"&gt;presentations&lt;/span&gt;: speakerPresentations})];
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This modification of the previously existing stub will build a new payload object that
+includes the speaker matching the id requested and all of the
+presentations specific to that speaker.&lt;/p&gt;
+
+&lt;p&gt;Tying up this test is easy now, we just modify the Speaker&amp;#39;s &lt;code&gt;show&lt;/code&gt;
+template:&lt;/p&gt;
+&lt;div class="highlight handlebars "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;name&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+
+&lt;span class="tag"&gt;&amp;lt;h5&amp;gt;&lt;/span&gt;Presentations&lt;span class="tag"&gt;&amp;lt;/h5&amp;gt;&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{#&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt; &lt;span class="attribute-name"&gt;presentations&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;title&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{/&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now that we have a green test suite with our mocked out API let&amp;#39;s the
+real Rails endpoint. We&amp;#39;ll start by generating a new Presentation model.
+Change to the &lt;code&gt;rails/&lt;/code&gt; directory in your project and run &lt;code&gt;rails generate
+model presentation title:string speaker_id:integer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next we&amp;#39;ll generate the serializer: &lt;code&gt;rails generate serializer
+presentation&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s expand upon the &lt;code&gt;rails/db/seeds.rb&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/db/seeds.rb&lt;/span&gt;
+
+bugs = &lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bug Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+wile = &lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Wile E. Coyote&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+sam  = &lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Yosemite Sam&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+
+bugs.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;What's up with Docs?&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+bugs.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Of course, you know, this means war.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+
+wile.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Getting the most from the Acme categlog.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+
+sam.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Shaaaad up!&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+sam.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Ah hates rabbits.&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+sam.presentations.create(&lt;span class="key"&gt;title&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;The Great horni-todes&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Tell our &lt;code&gt;Speaker&lt;/code&gt; model that there is a relationship to &lt;code&gt;Presentation&lt;/code&gt;
+models:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/app/models/speaker.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Speaker&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="constant"&gt;Base&lt;/span&gt;
+  has_many &lt;span class="symbol"&gt;:presentations&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finally we need to modify the serializers.&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/app/serializers/presentation.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;PresentationSerializer&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveModel&lt;/span&gt;::&lt;span class="constant"&gt;Serializer&lt;/span&gt;
+  attributes &lt;span class="symbol"&gt;:id&lt;/span&gt;, &lt;span class="symbol"&gt;:title&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/app/serializers/speaker.rb&lt;/span&gt;
+
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;SpeakerSerializer&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveModel&lt;/span&gt;::&lt;span class="constant"&gt;Serializer&lt;/span&gt;
+  embed &lt;span class="symbol"&gt;:ids&lt;/span&gt;, &lt;span class="key"&gt;include&lt;/span&gt;: &lt;span class="predefined-constant"&gt;true&lt;/span&gt;
+
+  attributes &lt;span class="symbol"&gt;:id&lt;/span&gt;, &lt;span class="symbol"&gt;:name&lt;/span&gt;
+  has_many &lt;span class="symbol"&gt;:presentations&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the &lt;code&gt;SpekaerSerializer&lt;/code&gt; we have instructed the serializer to include
+the associated &lt;code&gt;Presentation&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s reset the database and re-seed &lt;code&gt;rake db:drop db:create db:migrate db:seed&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure you are running your Emer server with the proxy enabled:
+&lt;code&gt;ember server --proxy http://localhost:3000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can hit your application and you should have a all of the
+necessary data. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/jmHGxgS.png" alt="image1"&gt;
+&lt;img src="http://i.imgur.com/plrKLvg.png" alt="image2"&gt;&lt;/p&gt;
+
+&lt;p&gt;Next time we&amp;#39;ll deploy our small app to Heroku.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/10f838ff1bfb0aa1307d4de6587889489697c8da"&gt;Check out the actual code for this
+part&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Avoid Rails When Generating JSON responses with PostgreSQL</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html</id>
     <published>2014-05-27T00:00:00Z</published>
-    <updated>2014-05-29T10:57:27-04:00</updated>
+    <updated>2014-05-31T11:43:00-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -132,7 +505,7 @@ all 11000 records with Rails and &lt;a href="https://github.com/rails-api/active
 roughly 9 seconds to generate the request. Most of the time was spent
 in the View generating the JSON object in memory, with 657 milliseconds
 in ActiveRecord, which (I think until someone tells me otherwise)
-includes creating all the model intances.&lt;/p&gt;
+includes creating all the model instances.&lt;/p&gt;
 
 &lt;p&gt;When we apply the PostgreSQL technique outlined later in this article to the
 same result set, the response only takes 72 milliseconds for the first
@@ -292,7 +665,7 @@ jsons &lt;span class="keyword"&gt;AS&lt;/span&gt; (
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Let&amp;#39;s break it down. You&amp;#39;ll notice that I am making use of &lt;a href="http://www.postgresql.org/docs/9.3/static/queries-with.html"&gt;Common Table
-Expressions (CTEs)&lt;/a&gt;. CTEs allow you to use temporary table defininitions
+Expressions (CTEs)&lt;/a&gt;. CTEs allow you to use temporary table definitions
 in queries instead of embedding the subqueries directly in your query.&lt;/p&gt;
 
 &lt;h2&gt;Gathering our Note Ids&lt;/h2&gt;
@@ -363,7 +736,7 @@ This projection will return the following:&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;In this example, the tags &lt;code&gt;belong_to&lt;/code&gt; a note, so we are retrieving this
 data from the &lt;code&gt;tags&lt;/code&gt; table. If this was a many-to-many relation, this
-query would execute against the join table (ie &lt;code&gt;notes_tags&lt;/code&gt;).&lt;/p&gt;
+query would execute against the join table (i.e. &lt;code&gt;notes_tags&lt;/code&gt;).&lt;/p&gt;
 
 &lt;p&gt;We group our tags by the &lt;code&gt;note_id&lt;/code&gt;, and we use the &lt;code&gt;HAVING&lt;/code&gt; clause to
 only group tags which have a &lt;code&gt;note_id&lt;/code&gt; contained in the &lt;code&gt;note_ids&lt;/code&gt; CTE
@@ -397,7 +770,7 @@ coalesce(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Also note that in the projection, we are using &lt;a href="http://www.postgresql.org/docs/9.3/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL"&gt;&lt;code&gt;coalesce&lt;/code&gt;&lt;/a&gt;
-to ensure that we return an empty array if a specific note has no &lt;code&gt;tag_ids&lt;/code&gt;. 
+to ensure that we return an empty array if a specific note has no &lt;code&gt;tag_ids&lt;/code&gt;.
 We are using a &lt;a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"&gt;&lt;code&gt;LEFT OUTER JOIN&lt;/code&gt;&lt;/a&gt; to combine our previously generated
 tag id groupings with our notes. We use an &lt;code&gt;OUTER JOIN&lt;/code&gt; instead of an
 &lt;a href="http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN"&gt;&lt;code&gt;INNER JOIN&lt;/code&gt;&lt;/a&gt; so that all our notes are returned, even if no tags are
@@ -593,7 +966,7 @@ Rails when generating API responses.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
     <published>2014-05-09T00:00:00Z</published>
-    <updated>2014-05-31T05:48:26-04:00</updated>
+    <updated>2014-05-31T11:42:58-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1170,7 +1543,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-31T05:49:19-04:00</updated>
+    <updated>2014-05-31T11:42:58-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1306,7 +1679,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
     <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-05-31T05:51:06-04:00</updated>
+    <updated>2014-05-31T11:42:58-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
