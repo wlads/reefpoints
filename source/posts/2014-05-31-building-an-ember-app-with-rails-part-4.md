@@ -228,12 +228,12 @@ class SpeakerSerializer < ActiveModel::Serializer
 end
 ```
 
-In the `SpekaerSerializer` we have instructed the serializer to include
+In the `SpeakerSerializer` we have instructed the serializer to include
 the associated `Presentation`s.
 
 Let's reset the database and re-seed `rake db:drop db:create db:migrate db:seed`
 
-Make sure you are running your Emer server with the proxy enabled:
+Make sure you are running your Ember server with the proxy enabled:
 `ember server --proxy http://localhost:3000`
 
 Now you can hit your application and you should have a all of the
