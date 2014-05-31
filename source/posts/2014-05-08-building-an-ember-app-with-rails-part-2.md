@@ -101,3 +101,6 @@ Congratulations on your first ember test!
 
 Next time we'll build out some pages and write tests to interact with
 these pages.
+
+[Check out the actual code for this
+part](https://github.com/bostonember/website/commit/b17a67b9368acec29c88f4aaa83eceb82a9f143d)

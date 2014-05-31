@@ -157,3 +157,6 @@ gc -m "Removed asset pipeline and added active_model_serializers in Rails"
 
 That wraps up Part 1. In Part 2 will focus on Ember and creating
 some functionality in our app.
+
+[Check out the actual code for this
+part](https://github.com/bostonember/website/commit/cf2d9e18342979b1c187328c4cf29de16599e61d)
