@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html</id>
     <published>2014-05-27T00:00:00Z</published>
-    <updated>2014-05-29T10:01:26-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -593,7 +593,7 @@ Rails when generating API responses.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
     <published>2014-05-09T00:00:00Z</published>
-    <updated>2014-05-19T01:40:34-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1167,7 +1167,7 @@ should see:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-05-09T16:07:24-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1300,7 +1300,7 @@ these pages.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
     <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-05-07T15:17:11-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1503,7 +1503,7 @@ some functionality in our app.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html</id>
     <published>2014-05-06T00:00:00Z</published>
-    <updated>2014-05-06T12:50:16-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1565,7 +1565,7 @@ microphone say you should.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html</id>
     <published>2014-05-05T00:00:00Z</published>
-    <updated>2014-05-05T12:56:46-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1666,7 +1666,7 @@ the following mixin:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
     <published>2014-05-04T00:00:00Z</published>
-    <updated>2014-05-05T10:16:12-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1814,7 +1814,7 @@ an actual name for this. If you do please share!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html</id>
     <published>2014-05-02T00:00:00Z</published>
-    <updated>2014-05-05T12:56:44-04:00</updated>
+    <updated>2014-05-29T10:57:27-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
