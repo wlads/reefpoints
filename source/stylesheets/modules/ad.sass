@@ -1,31 +1,41 @@
 @import load
 
 .ad--ruby, .ad--ember
-  +transition-duration(.25s)
-  +transition-property(background-color, color)
   margin-bottom: 50px
   padding:
     top: 20px
     bottom: 20px
   display: inline-block
+  position: relative
   width: 100%
   border: 2px solid $red
+  &:before
+    +transition-duration(.25s)
+    +transition-property(opacity)
+    content: ''
+    height: 100%
+    width: 100%
+    position: absolute
+    top: 0
+    background-size: cover
+    opacity: 0
   &:hover
-    background:
-      color: rgba($red, .7)
-      size: cover
+    &:before
+      opacity: 1
     .ad__text
       color: $white
       &:before, &:after
         background-color: $white
 
-.ad--ruby:hover
+.ad--ruby:before
   background-image: image-url('ruby.jpg')
 
-.ad--ember:hover
+.ad--ember:before
   background-image: image-url('ember.jpg')
 
 .ad__text
+  +transition-duration(.25s)
+  +transition-property(color)
   margin:
     right: auto
     left: auto
@@ -41,5 +51,7 @@
   @media (min-width: 500px)
     @include has-dots(18px, -30px)
   &:before, &:after
+    +transition-duration(.25s)
+    +transition-property(background-color)
     @media (min-width: 500px)
       position: absolute
