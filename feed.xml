@@ -1205,6 +1205,9 @@ should see:&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://i.imgur.com/dcdkJDo.png" alt="Screen1"&gt;&lt;/p&gt;
 
 &lt;p&gt;We did a lot today, next we&amp;#39;ll get into relationships.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/a21e06a9a29b19d405e50268a6d276b8db758261"&gt;Check out the actual code for this
+part&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -1337,6 +1340,9 @@ change. Now you should see your failing test:&lt;/p&gt;
 
 &lt;p&gt;Next time we&amp;#39;ll build out some pages and write tests to interact with
 these pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/b17a67b9368acec29c88f4aaa83eceb82a9f143d"&gt;Check out the actual code for this
+part&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -1539,6 +1545,9 @@ gc -m &amp;quot;Removed asset pipeline and added active_model_serializers in Rai
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;That wraps up Part 1. In Part 2 will focus on Ember and creating
 some functionality in our app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/cf2d9e18342979b1c187328c4cf29de16599e61d"&gt;Check out the actual code for this
+part&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
