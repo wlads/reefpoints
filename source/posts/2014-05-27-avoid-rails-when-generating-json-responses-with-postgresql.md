@@ -99,7 +99,7 @@ all 11000 records with Rails and [ActiveModel::Serializers](https://github.com/r
 roughly 9 seconds to generate the request. Most of the time was spent
 in the View generating the JSON object in memory, with 657 milliseconds
 in ActiveRecord, which (I think until someone tells me otherwise)
-includes creating all the model intances.
+includes creating all the model instances.
 
 When we apply the PostgreSQL technique outlined later in this article to the
 same result set, the response only takes 72 milliseconds for the first
@@ -204,7 +204,7 @@ SELECT row_to_json(jsons) FROM "jsons";
 ```
 
 Let's break it down. You'll notice that I am making use of [Common Table
-Expressions (CTEs)](http://www.postgresql.org/docs/9.3/static/queries-with.html). CTEs allow you to use temporary table defininitions
+Expressions (CTEs)](http://www.postgresql.org/docs/9.3/static/queries-with.html). CTEs allow you to use temporary table definitions
 in queries instead of embedding the subqueries directly in your query.
 
 ## Gathering our Note Ids
@@ -253,7 +253,7 @@ note_id | tag_ids
 
 In this example, the tags `belong_to` a note, so we are retrieving this
 data from the `tags` table. If this was a many-to-many relation, this
-query would execute against the join table (ie `notes_tags`).
+query would execute against the join table (i.e. `notes_tags`).
 
 We group our tags by the `note_id`, and we use the `HAVING` clause to
 only group tags which have a `note_id` contained in the `note_ids` CTE
@@ -278,7 +278,7 @@ coalesce("tag_ids_by_notes"."tag_ids", '{}'::int[]) AS tag_ids
 ```
 
 Also note that in the projection, we are using [`coalesce`](http://www.postgresql.org/docs/9.3/static/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL)
-to ensure that we return an empty array if a specific note has no `tag_ids`. 
+to ensure that we return an empty array if a specific note has no `tag_ids`.
 We are using a [`LEFT OUTER JOIN`](http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN) to combine our previously generated
 tag id groupings with our notes. We use an `OUTER JOIN` instead of an
 [`INNER JOIN`](http://www.postgresql.org/docs/9.3/static/queries-table-expressions.html#QUERIES-JOIN) so that all our notes are returned, even if no tags are
