@@ -192,11 +192,11 @@ Presentation models.</p>
 </pre></td>
   <td class="code"><pre>// ember/app/templates/speakers/index.hbs
 
-{#each}}
+<span class="inline"><span class="inline-delimiter">{{#</span><span class="attribute-name">each</span><span class="inline-delimiter">}}</span></span>
  <span class="inline"><span class="inline-delimiter">{{</span><span class="error">~</span><span class="error">#</span><span class="attribute-name">link-to</span> <span class="error">'</span><span class="attribute-name">speakers.show</span><span class="error">'</span> <span class="attribute-name">this</span><span class="inline-delimiter">}}</span></span>
    <span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">name</span><span class="inline-delimiter">}}</span></span> (<span class="inline"><span class="inline-delimiter">{{</span><span class="attribute-name">presentations.length</span><span class="inline-delimiter">}}</span></span>)
  <span class="inline"><span class="inline-delimiter">{{</span><span class="error">~</span><span class="error">/</span><span class="attribute-name">link-to</span><span class="inline-delimiter">}}</span></span>
-{/each}}
+<span class="inline"><span class="inline-delimiter">{{/</span><span class="attribute-name">each</span><span class="inline-delimiter">}}</span></span>
 </pre></td>
 </tr></table>
 </div></div>

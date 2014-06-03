@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html</id>
     <published>2014-05-31T00:00:00Z</published>
-    <updated>2014-05-31T14:48:35-04:00</updated>
+    <updated>2014-06-02T21:44:35-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -166,11 +166,11 @@ Presentation models.&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;// ember/app/templates/speakers/index.hbs
 
-{#each}}
+&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{#&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;#&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt; &lt;span class="error"&gt;'&lt;/span&gt;&lt;span class="attribute-name"&gt;speakers.show&lt;/span&gt;&lt;span class="error"&gt;'&lt;/span&gt; &lt;span class="attribute-name"&gt;this&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;name&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt; (&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;presentations.length&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;)
  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;/&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
-{/each}}
+&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{/&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;

@@ -212,11 +212,11 @@ Presentation models.&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;// ember/app/templates/speakers/index.hbs
 
-{#each}}
+&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{#&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;#&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt; &lt;span class="error"&gt;'&lt;/span&gt;&lt;span class="attribute-name"&gt;speakers.show&lt;/span&gt;&lt;span class="error"&gt;'&lt;/span&gt; &lt;span class="attribute-name"&gt;this&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;name&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt; (&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="attribute-name"&gt;presentations.length&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;)
  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{&lt;/span&gt;&lt;span class="error"&gt;~&lt;/span&gt;&lt;span class="error"&gt;/&lt;/span&gt;&lt;span class="attribute-name"&gt;link-to&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
-{/each}}
+&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;{{/&lt;/span&gt;&lt;span class="attribute-name"&gt;each&lt;/span&gt;&lt;span class="inline-delimiter"&gt;}}&lt;/span&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
