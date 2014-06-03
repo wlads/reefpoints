@@ -104,11 +104,11 @@ Finally to make this tests green we need to change our template:
 ```handlebars
 // ember/app/templates/speakers/index.hbs
 
-{#each}}
+{{#each}}
  {{~#link-to 'speakers.show' this}}
    {{name}} ({{presentations.length}})
  {{~/link-to}}
-{/each}}
+{{/each}}
 ```
 
 Notice that we we can call regular JavaScript properties like `length` on the association.
