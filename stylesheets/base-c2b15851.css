@@ -58,8 +58,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: "icomoon";
   font-weight: normal;
   font-style: normal;
-  src: url("/fonts/icomoon-021598c6.eot");
-  src: url("/fonts/icomoon-021598c6.eot?#iefix") format("eot"), url("/fonts/icomoon-b0b7db8b.woff") format("woff"), url("/fonts/icomoon-d8d52647.ttf") format("truetype"); }
+  src: url("/fonts/icomoon-182e3171.eot");
+  src: url("/fonts/icomoon-182e3171.eot?#iefix") format("eot"), url("/fonts/icomoon-41501900.woff") format("woff"), url("/fonts/icomoon-dee9cac7.ttf") format("truetype"); }
 
 @font-face {
   font-family: "NiveauGroteskRegular";
@@ -110,3 +110,10 @@ a {
   color: black;
   text-decoration: none;
   cursor: pointer; }
+
+/* line 65, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/base.sass */
+[data-icon]:before {
+  font-weight: normal;
+  font-family: "icomoon";
+  content: attr(data-icon);
+  speak: none; }

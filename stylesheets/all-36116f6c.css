@@ -58,8 +58,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: "icomoon";
   font-weight: normal;
   font-style: normal;
-  src: url("/fonts/icomoon-021598c6.eot");
-  src: url("/fonts/icomoon-021598c6.eot?#iefix") format("eot"), url("/fonts/icomoon-b0b7db8b.woff") format("woff"), url("/fonts/icomoon-d8d52647.ttf") format("truetype"); }
+  src: url("/fonts/icomoon-182e3171.eot");
+  src: url("/fonts/icomoon-182e3171.eot?#iefix") format("eot"), url("/fonts/icomoon-41501900.woff") format("woff"), url("/fonts/icomoon-dee9cac7.ttf") format("truetype"); }
 
 @font-face {
   font-family: "NiveauGroteskRegular";
@@ -110,6 +110,13 @@ a {
   color: black;
   text-decoration: none;
   cursor: pointer; }
+
+/* line 65, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/base.sass */
+[data-icon]:before {
+  font-weight: normal;
+  font-family: "icomoon";
+  content: attr(data-icon);
+  speak: none; }
 /* line 3, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/blog-layout.sass */
 .l-wrap--blog {
   margin-right: auto;
@@ -539,9 +546,33 @@ code {
 
 /* line 73, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
 .post__avatar__position {
+  margin-bottom: 20px;
   line-height: 1.33; }
 
-/* line 76, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+/* line 77, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+.post__avatar__social-link--twitter, .post__avatar__social-link--github {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  display: block;
+  color: #cdcdcd; }
+  /* line 82, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+  .post__avatar__social-link--twitter:hover, .post__avatar__social-link--github:hover {
+    color: #43c0ef; }
+  /* line 84, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+  .post__avatar__social-link--twitter:before, .post__avatar__social-link--github:before {
+    margin-right: 3px;
+    margin-left: -28px;
+    position: relative;
+    top: 5px;
+    font-size: 24px; }
+
+/* line 92, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
 .post__avatar-wrap-is-centered {
   margin-right: auto;
   margin-left: auto;

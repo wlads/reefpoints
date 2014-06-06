@@ -103,9 +103,33 @@
 
 /* line 73, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
 .post__avatar__position {
+  margin-bottom: 20px;
   line-height: 1.33; }
 
-/* line 76, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+/* line 77, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+.post__avatar__social-link--twitter, .post__avatar__social-link--github {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  display: block;
+  color: #cdcdcd; }
+  /* line 82, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+  .post__avatar__social-link--twitter:hover, .post__avatar__social-link--github:hover {
+    color: #43c0ef; }
+  /* line 84, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
+  .post__avatar__social-link--twitter:before, .post__avatar__social-link--github:before {
+    margin-right: 3px;
+    margin-left: -28px;
+    position: relative;
+    top: 5px;
+    font-size: 24px; }
+
+/* line 92, /Users/bcardarella/Dropbox/projects/reefpoints/source/stylesheets/modules/avatar.sass */
 .post__avatar-wrap-is-centered {
   margin-right: auto;
   margin-left: auto;
