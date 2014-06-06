@@ -51,10 +51,34 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-05-31T00:00:00Z</updated>
+  <updated>2014-06-06T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>The Process Paradox</title>
+    <link rel="alternate" href="/2014/06/06/process-paradox.html"/>
+    <id>/2014/06/06/process-paradox.html</id>
+    <published>2014-06-06T00:00:00Z</published>
+    <updated>2014-06-06T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;If it feels like process, it is not working… It should feel like a logical means to achieve an end.&lt;/p&gt;
+
+&lt;p&gt;For much of my career as a Project Manager I have been inundated with software development process, theories, techniques, methodologies and related tools - which by association has trickled into the teams I have worked with.  Over time I have observed team members feeling the frustration that “Process” can bring to a project when it is applied in a theoretical way vs. a practical way.  Have you ever facilitated a planning meeting while team members glaze over and bury their heads into their laptops? To all my Project Management brethren - if this is something you are observing in your teams, don’t accept this reality; realize that your process &amp;quot;is not working&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;The art of project management is not dictating process but finding practices that align with the team’s needs and context.   For purposes of this blog post these are the “logical means” I refer to in my opening statement above.  A little Scrum here, a little Waterfall there, and a sprinkle of Kanban might be the right recipe for a particular project - whereas it could be totally wrong for another.   &lt;/p&gt;
+
+&lt;p&gt;In many ways this context is driven by the pyramid of constraints - cost/scope/time, which is project management 101.  However, other contexts might be size of team, remote/co-located, green-field development, team member experience, criticality of deliverables to human life, number of stakeholders, thick/thin management hierarchy, complexity of business rules/logic, and many others which are industry specific.  &lt;/p&gt;
+
+&lt;p&gt;One of my biggest gripes with the “Agile” movement is that companies/teams are adopting variations of the methodology as a prescription to execute projects. I am pretty damn sure the pioneering thinkers who wrote the Agile Manifesto wanted teams to become more principled in thinking about the practices they chose to use vs. following the playbook blindly and not making sure it aligns with the project context.&lt;/p&gt;
+
+&lt;p&gt;It has been very affirming to know that engineers and designers in large and small companies loath process – I’d say this is pretty universal. However, I have found that these same people are incredibly logical people who are willing to do something non-engineering/design related if  they feel deep down it is a “logical means to achieve an end.” I believe it is the project manager’s responsibility as a servant leader to make sure teams don’t feel like process is holding them back but that it is helping them move forward.&lt;/p&gt;
+
+&lt;p&gt;What I love about being a Project Manager at DockYard is the diversity of the project contexts that come through our door. For me it is and has been a great way to experiment, mix, and match processes to find the right practices for a team/project context.  I believe that DockYard’s acknowledgment of this reality allows us to better serve our clients’ unique contexts.  Not by accident - it is a very deliberate way to approach projects and one size never fits all.   &lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Building an Ember App with Rails Part 4</title>
     <link rel="alternate" href="/2014/05/31/building-an-ember-app-with-rails-part-4.html"/>
@@ -1922,72 +1946,11 @@ some functionality in our app.&lt;/p&gt;
 part&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>The other thing DHH mentioned</title>
-    <link rel="alternate" href="/2014/05/06/the-other-thing-dhh-mentioned.html"/>
-    <id>/2014/05/06/the-other-thing-dhh-mentioned.html</id>
-    <published>2014-05-06T00:00:00Z</published>
-    <updated>2014-05-06T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;By now &lt;a href="http://www.confreaks.com/videos/3315-railsconf-keynote"&gt;you&amp;#39;ve probably seen DHH&amp;#39;s Rails Conf 2014 Keynote&lt;/a&gt;. 
-Love it or hate it, the one thing you can&amp;#39;t do is deny it got people&amp;#39;s attention. I wasn&amp;#39;t there, and I admit I reacted to Twitter
-before actually viewing it. If you only listened on Twitter your
-perception of the keynote is most likely that DHH is anti-testing. That
-is very far from the truth. Go and watch the video, a lot of what he
-talks about resonated with me. I still believe in &amp;quot;testing first&amp;quot; and
-&amp;quot;red-green-refactor&amp;quot; but my style is not as dogmatic as some other&amp;#39;s. I
-rely on integration tests quite a bit, and I don&amp;#39;t mind hitting the database
-during unit tests. Slow tests that actually test how clients
-use your app are much better than fast tests that actually test nothing.&lt;/p&gt;
-
-&lt;p&gt;On a side-note, I would be interested to know what DHH thinks about BDD
-as opposed to TDD, if he even thinks there is a difference. For me I
-feel there is a distinct difference and I would characterize my style of
-development as BDD.&lt;/p&gt;
-
-&lt;p&gt;But I don&amp;#39;t want to talk about testing. I want to talk about the other
-thing DHH came down on during his keynote: Design Patterns.&lt;/p&gt;
-
-&lt;p&gt;Now before I get raked over the coals let me start by saying that
-overall design patterns are great. It was the MVC(ish) and ActiveRecord
-patterns that made Rails itself possible. When we speak in patterns it
-becomes the lingua franca for programmers. I can jump from language to
-language and can, with relative ease, recognize the patterns.&lt;/p&gt;
-
-&lt;p&gt;However, in the Ruby/Rails communities we have gone overboard. Design
-Patterns are the new Holy Grail of software development. A few
-years ago people were very excited about TDD, as DHH said it was sold to
-us as a necessary tool for &amp;quot;professional software development&amp;quot;. Now that
-everybody just assumes TDD is happening the thought leaders went in
-search of the next intellectually challenging concept to hold everyone
-accountable for. This began to spring up maybe 2 years ago, at least
-that&amp;#39;s when I started to notice it. Design pattern talks at conferences, books
-dedicated to design patterns, podcasts talking about patterns, blog
-posts (of which we have written a few), code schools teaching design
-patterns - developers ate them up. The Ruby community was hungry for
-patterns.&lt;/p&gt;
-
-&lt;p&gt;There feels to me a loss of pragmatism in the ruby community. I think
-this is due to there being no major problems to solve in Rails anymore.
-Developers are always looking for problems to solve, and in this case
-the hive mind has decided to hyper optimize on patterns.&lt;/p&gt;
-
-&lt;p&gt;I get it, they are intellectually stimulating. Implementing a pattern to
-&amp;quot;perfection&amp;quot; will give a developer that sense of self-satisfaction. &amp;quot;My
-code is clean&amp;quot;. Until the next feature comes in and you have to blow up
-what you&amp;#39;ve been perfecting.&lt;/p&gt;
-
-&lt;p&gt;Be pragmatic. Don&amp;#39;t follow the trends just because some guys behind a
-microphone say you should.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/06/06/process-paradox.html"><strong>The Process Paradox</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/05/31/building-an-ember-app-with-rails-part-4.html"><strong>Building an Ember App with Rails Part 4</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"><strong>Avoid Rails When Generating JSON responses with PostgreSQL</strong><h6 class='footer-desc'>Let's use PostgreSQL instead of Ruby to generate JSON responses</h6></a>
-<a class="footer__post" href="/2014/05/09/building-an-ember-app-with-rails-part-3.html"><strong>Building an Ember App with Rails Part 3</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"><strong>Avoid Rails When Generating JSON responses with PostgreSQL</strong><h6 class='footer-desc'>Let's use PostgreSQL instead of Ruby to generate JSON responses</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
