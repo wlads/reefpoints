@@ -138,6 +138,8 @@ our server:
 
 ```js
 // ember/app/adapters/application.js
+import DS from 'ember-data';
+
 export default DS.ActiveModelAdapter.extend({
   namespace: 'api'
 });
@@ -271,6 +273,8 @@ Router.map(function() {
 
 ```js
 // ember/app/models/speaker.js
+import DS from 'ember-data';
+
 export default DS.Model.extend({
   name: DS.attr('string')
 });
@@ -278,6 +282,8 @@ export default DS.Model.extend({
 
 ```js
 // ember/app/routes/speakers/index.js
+import Ember from 'ember';
+
 export default Ember.Route.extend({
   model: function() {
     return this.store.find('speaker');
