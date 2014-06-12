@@ -64,6 +64,16 @@ server = new Pretender(function() {
   this.get('/api/speakers', function(request) {
     return [200, {"Content-Type": "application/json"}, JSON.stringify({speakers: speakers, presentations: presentations})];
   });
+
+  this.get('/api/speakers/:id', function(request) {
+    var speaker = speakers.find(function(speaker) {
+      if (speaker.id === parseInt(request.params.id, 10)) {
+        return speaker;
+      }
+    });
+
+    return [200, {"Content-Type": "application/json"}, JSON.stringify({speaker: speaker, presentations: presentations})];
+  });
 });
 ```
 
@@ -77,6 +87,7 @@ We can now add the Presentation model to our Ember app:
 
 ```javascript
 // ember/app/models/presentation.js
+import DS from 'ember-data';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
@@ -89,6 +100,7 @@ Speaker model. Let's set the inverse relationship
 
 ```javascript
 // ember/app/models/speaker.js
+import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
