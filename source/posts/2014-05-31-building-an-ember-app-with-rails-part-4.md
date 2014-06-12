@@ -143,9 +143,11 @@ test('Should list all presentations for a speaker', function() {
 
 This new test is asserting that when we visit a given speaker's page all
 of those speaker's presentations will be listed. We first need to add
-presentation data to the API stub for visiting a speaker page.
+presentation data to the API stub (within our setup function) for visiting a speaker page.
 
 ```javascript
+// ember/tests/integration/speaker-page-test.js
+
 this.get('/api/speakers/:id', function(request) {
   var speaker = speakers.find(function(speaker) {
     if (speaker.id === parseInt(request.params.id, 10)) {
@@ -181,7 +183,7 @@ template:
 </ul>
 ```
 
-Now that we have a green test suite with our mocked out API let's the
+Now that we have a green test suite with our mocked out API let's add the
 real Rails endpoint. We'll start by generating a new Presentation model.
 Change to the `rails/` directory in your project and run `rails generate
 model presentation title:string speaker_id:integer`.
