@@ -117,7 +117,7 @@ We first add Pretender to the `bower.json` in our project root:
 
 then run `bower install`
 
-Next we will need to tell Broccoli to compile these new dependencies:
+Next we will need to tell Broccoli to compile these new dependencies. Add the following lines to `Brocfile.js` in our project root:
 
 ```js
 app.import({development:'vendor/route-recognizer/dist/route-recognizer.js'});
