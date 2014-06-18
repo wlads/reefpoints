@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-36116f6c.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-67b0a301.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,341 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-06-06T00:00:00Z</updated>
+  <updated>2014-06-15T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Swift and JavaScript</title>
+    <link rel="alternate" href="/2014/06/15/swift-and-javascript.html"/>
+    <id>/2014/06/15/swift-and-javascript.html</id>
+    <published>2014-06-15T00:00:00Z</published>
+    <updated>2014-06-15T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;You might have already heard about a new language from Apple, &lt;a href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt;.
+If you haven&amp;#39;t, make sure to check it out. This is the language that is going to replace &lt;a href="https://en.wikipedia.org/wiki/Objective-C"&gt;Objective-C&lt;/a&gt; in the future.&lt;/p&gt;
+
+&lt;p&gt;So why should a JavaScript developer be excited about a language like Swift?
+Because semicolons are optional in Swift, too.&lt;/p&gt;
+
+&lt;h3&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s declare a variable in &lt;code&gt;JavaScript&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; country = &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Argentina&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here&amp;#39;s how the same declaration looks like in Swift:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;var country: String = &amp;quot;Argentina&amp;quot;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;However, the same statement can be rewritten as such:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;var country = &amp;quot;Argentina&amp;quot;; // inferred as String
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Swift uses type inference. It looks on the right hand side of the assignment
+to figure out the type of the variable.&lt;/p&gt;
+
+&lt;p&gt;Swift is type safe language. It performs type checks during compilation time
+and informs you if there are any type mismatch errors. Unlike in JavaScript,
+that means that after you defined &lt;code&gt;country&lt;/code&gt; variable and its type was
+inferred to be &lt;code&gt;String&lt;/code&gt;, you can&amp;#39;t re-assign with another type:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;country = 2; // Cannot convert the expression's type to type 'String'
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Constants&lt;/h3&gt;
+
+&lt;p&gt;JavaScript doesn&amp;#39;t have a concept of a &lt;code&gt;constant&lt;/code&gt;. All &amp;quot;constants&amp;quot; are just
+variables (typically in the outer scope). You can &amp;quot;freeze&amp;quot; the object using
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze"&gt;Object.freeze()&lt;/a&gt;
+to prevent new properties to be added and existing properties to be removed.&lt;/p&gt;
+
+&lt;p&gt;The next version of JavaScript is going to introduce &lt;a href="https://people.mozilla.org/%7Ejorendorff/es6-draft.html#sec-13.2.1"&gt;const&lt;/a&gt;
+keyword and will support constants:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;const y = &lt;span class="integer"&gt;10&lt;/span&gt;; &lt;span class="comment"&gt;// Note that you need to specift the value of the constant&lt;/span&gt;
+y = &lt;span class="integer"&gt;20&lt;/span&gt;;       &lt;span class="comment"&gt;// SyntaxError: Assignment to constant variable&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you want to define a constant in Swift, you will use &lt;code&gt;let&lt;/code&gt; keyword:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;let bestCity = &amp;quot;Boston&amp;quot;;
+bestCity = &amp;quot;Cape Town&amp;quot;; // Cannot assign to 'let' value 'bestCity'
+
+// Swift allows you to use underscore as a delimiter
+// to improve readability of your code
+let oneMillion = 1_000_000;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Tuples&lt;/h3&gt;
+
+&lt;p&gt;So what is a &lt;a href="http://en.wikipedia.org/wiki/Tuple"&gt;tuple&lt;/a&gt;? TL;DR it&amp;#39;s an ordered list of things.&lt;/p&gt;
+
+&lt;p&gt;You can think of a tuple as if it&amp;#39;s an object:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; villain = {
+  &lt;span class="key"&gt;name&lt;/span&gt;:     &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Magneto&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;realName&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Max Eisenhardt&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;powers&lt;/span&gt;:   [&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Magnetic flight&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Magnetic force fields&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;]
+};
+
+villain.name; &lt;span class="comment"&gt;// =&amp;gt; 'Magneto'&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In Swift, the declaration of a tuple will look like this:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;let villain = (
+  name:     &amp;quot;Magneto&amp;quot;,
+  realName: &amp;quot;Max Eisenhardt&amp;quot;,
+  powers:   [&amp;quot;Magnetic flight&amp;quot;, &amp;quot;Magnetic force fields&amp;quot;]
+);
+
+villain.name; // =&amp;gt; &amp;quot;Magneto&amp;quot;
+villain.1;    // =&amp;gt; &amp;quot;Max Eisenhardt&amp;quot;
+villain.2;    // =&amp;gt; [...]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Tuples are useful when you want to return multiple values from a function as a single compound value (that is
+exactly what we do so often in JavaScript).&lt;/p&gt;
+
+&lt;h3&gt;Arrays and Dictionaries&lt;/h3&gt;
+
+&lt;p&gt;Definining an array or a dictionary looks very similar.&lt;/p&gt;
+
+&lt;p&gt;In JavaScript:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; names = [&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Alex&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Rob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Dan&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;];
+&lt;span class="keyword"&gt;var&lt;/span&gt; ages  = { &lt;span class="key"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Alex&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;: &lt;span class="integer"&gt;13&lt;/span&gt;, &lt;span class="key"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Rob&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;: &lt;span class="integer"&gt;5&lt;/span&gt;, &lt;span class="key"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Dan&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;: &lt;span class="integer"&gt;4&lt;/span&gt; };
+
+names[&lt;span class="integer"&gt;0&lt;/span&gt;];     &lt;span class="comment"&gt;// =&amp;gt; 'Alex'&lt;/span&gt;
+ages[&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Alex&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;]; &lt;span class="comment"&gt;// =&amp;gt; 13&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In Swift:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;var names = [&amp;quot;Alex&amp;quot;, &amp;quot;Rob&amp;quot;, &amp;quot;Dan&amp;quot;];
+var ages  = [&amp;quot;Alex&amp;quot;: 13, &amp;quot;Rob&amp;quot;: 5, &amp;quot;Dan&amp;quot;: 4];
+
+names[0];     // =&amp;gt; &amp;quot;Alex&amp;quot;
+ages[&amp;quot;Alex&amp;quot;]; // 13
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Generics&lt;/h3&gt;
+
+&lt;p&gt;In a very generic, hand wavy terms &lt;code&gt;Generics&lt;/code&gt; introduce type safety and reusability of the code. They&amp;#39;re frequently used
+in classes and methods that operate on them.&lt;/p&gt;
+
+&lt;p&gt;To illustrate what &lt;code&gt;Generics&lt;/code&gt; are, let&amp;#39;s implement a &lt;a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)"&gt;&lt;code&gt;Queue&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;Queue&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._queue = [];
+}
+
+Queue.prototype.&lt;span class="function"&gt;enqueue&lt;/span&gt; = &lt;span class="keyword"&gt;function&lt;/span&gt;(item) {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._queue.push(item);
+}
+
+Queue.prototype.&lt;span class="function"&gt;dequeue&lt;/span&gt; = &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+ &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="local-variable"&gt;this&lt;/span&gt;._queue.shift();
+}
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; queue = &lt;span class="keyword"&gt;new&lt;/span&gt; Queue();
+
+queue.enqueue(&lt;span class="integer"&gt;2&lt;/span&gt;);
+queue.enqueue(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+queue.enqueue(&lt;span class="float"&gt;0.5&lt;/span&gt;);
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now wasn&amp;#39;t that easy, eh?&lt;/p&gt;
+
+&lt;p&gt;Note, that you don&amp;#39;t have to care about types in JavaScript that much. You just &lt;code&gt;enqueue&lt;/code&gt; a value of any type
+and you&amp;#39;re all set.&lt;/p&gt;
+
+&lt;p&gt;Swift is different. You can&amp;#39;t push objects of different types onto the array.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a &lt;code&gt;Queue&lt;/code&gt; class for &lt;code&gt;Integer&lt;/code&gt; values:&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;class Queue {
+  var _queue = Int[]();
+
+  func enqueue(item: Int) {
+    _queue.append(item);
+  }
+
+  func dequeue() -&amp;gt; Int {
+    return _queue.removeAtIndex(0);
+  }
+}
+
+var queue = Queue();
+
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+queue.enqueue(&amp;quot;4&amp;quot;); // Cannot convert the expression's type to type 'Int'
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;What if you want to create a &lt;code&gt;Queue&lt;/code&gt; class for &lt;code&gt;String&lt;/code&gt; values? You&amp;#39;re going to have copy implementation of &lt;code&gt;Queue&amp;lt;Int&amp;gt;&lt;/code&gt; class
+and replace &lt;code&gt;Int&lt;/code&gt; with &lt;code&gt;String&lt;/code&gt;. A lot of code duplication. Here&amp;#39;s where &lt;code&gt;Generics&lt;/code&gt; shine.&lt;/p&gt;
+&lt;div class="highlight swift "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;class Queue&amp;lt;T&amp;gt; {
+  var _queue = T[]();
+
+  func enqueue(item: T) {
+    _queue.append(item);
+  }
+
+  func dequeue() -&amp;gt; T {
+    return _queue.removeAtIndex(0);
+  }
+}
+
+var intQueue    = Queue&amp;lt;Int&amp;gt;();
+var stringQueue = Queue&amp;lt;String&amp;gt;();
+
+intQueue.enqueue(2);
+intQueue.enqueue(3);
+intQueue.enqueue(4);
+
+stringQueue.enqueue(&amp;quot;2&amp;quot;);
+stringQueue.enqueue(&amp;quot;3&amp;quot;);
+stringQueue.enqueue(&amp;quot;4&amp;quot;);
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now you can create &lt;code&gt;Queue&lt;/code&gt; of the different types with just one &lt;code&gt;Queue&lt;/code&gt; implementation.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Swift is a step in the right direction in my opinion. They lowered the &amp;quot;language ramp up&amp;quot; time by simplifying Objective-C syntax
+quite a bit without damaging the power of the language. I feel like it looks really compelling to JavaScript developers.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Process Paradox</title>
     <link rel="alternate" href="/2014/06/06/process-paradox.html"/>
@@ -152,6 +483,16 @@ has given.&lt;/p&gt;
 &lt;strong&gt;20&lt;/strong&gt;
 21
 22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/speaker-page-test.js&lt;/span&gt;
 
@@ -174,6 +515,16 @@ server = &lt;span class="keyword"&gt;new&lt;/span&gt; Pretender(&lt;span class="
   &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
     &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speakers&lt;/span&gt;: speakers, &lt;span class="key"&gt;presentations&lt;/span&gt;: presentations})];
   });
+
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers/:id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
+    &lt;span class="keyword"&gt;var&lt;/span&gt; speaker = speakers.find(&lt;span class="keyword"&gt;function&lt;/span&gt;(speaker) {
+      &lt;span class="keyword"&gt;if&lt;/span&gt; (speaker.id === parseInt(request.params.id, &lt;span class="integer"&gt;10&lt;/span&gt;)) {
+        &lt;span class="keyword"&gt;return&lt;/span&gt; speaker;
+      }
+    });
+
+    &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speaker&lt;/span&gt;: speaker, &lt;span class="key"&gt;presentations&lt;/span&gt;: presentations})];
+  });
 });
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
@@ -192,8 +543,10 @@ records include ids referencing the presentations associated.&lt;/p&gt;
 4
 5
 6
+7
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/presentation.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
 
 &lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
   &lt;span class="key"&gt;title&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
@@ -211,8 +564,10 @@ Speaker model. Let&amp;#39;s set the inverse relationship&lt;/p&gt;
 4
 5
 6
+7
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/speaker.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
 
 &lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
   &lt;span class="key"&gt;name&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
@@ -1204,7 +1559,7 @@ responses.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;then run &lt;code&gt;bower install&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Next we will need to tell Broccoli to compile these new dependencies:&lt;/p&gt;
+&lt;p&gt;Next we will need to tell Broccoli to compile these new dependencies. Add the following lines to &lt;code&gt;Brocfile.js&lt;/code&gt; in our project root:&lt;/p&gt;
 &lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
@@ -1231,8 +1586,12 @@ our server:&lt;/p&gt;
 2
 3
 4
+5
+6
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/adapters/application.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
 &lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.ActiveModelAdapter.extend({
   &lt;span class="key"&gt;namespace&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;api&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
 });
@@ -1468,8 +1827,12 @@ Router.map(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
 2
 3
 4
+5
+6
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/speaker.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
 &lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
   &lt;span class="key"&gt;name&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
 });
@@ -1482,8 +1845,12 @@ Router.map(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
 4
 5
 6
+7
+8
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/routes/speakers/index.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; Ember from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
 &lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.Route.extend({
   &lt;span class="function"&gt;model&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
     &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="local-variable"&gt;this&lt;/span&gt;.store.find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;speaker&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
@@ -1741,216 +2108,11 @@ these pages.&lt;/p&gt;
 part&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Building an Ember App with Rails Part 1</title>
-    <link rel="alternate" href="/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
-    <id>/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
-    <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-05-07T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;This series will take us through building and structuring an application
-with an Ember front-end built with
-&lt;a href="https://github.com/stefanpenner/ember-cli"&gt;ember-cli&lt;/a&gt; and a Ruby on
-Rails backend. We&amp;#39;ll discuss project structure, testing, and deployment
-to Heroku.&lt;/p&gt;
-
-&lt;p&gt;During the course of this series I am going to re-build the
-&lt;a href="http://bostonember.com"&gt;Boston Ember&lt;/a&gt; website. (if it looks terrible
-that means I&amp;#39;m not done yet)&lt;/p&gt;
-
-&lt;h2&gt;Getting setup with our tools&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;#39;s start by making sure all relevant dev tools are installed on our
-machine. I am using the following:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ruby 2.1.1&lt;/li&gt;
-&lt;li&gt;Rails 4.1.1&lt;/li&gt;
-&lt;li&gt;Node 0.10.26&lt;/li&gt;
-&lt;li&gt;npm 1.4.7&lt;/li&gt;
-&lt;li&gt;Postgres (only necessary because we are deploying to Heroku)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Versions at or above these versions should be OK for following along. Please refer elsewhere on how to install these tools on your development
-machine.&lt;/p&gt;
-
-&lt;p&gt;Next I will install ember-cli&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;npm install -g ember-cli
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Confirm that you have &lt;code&gt;ember-cli&lt;/code&gt; installed:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;ember --version
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;You should see:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;version: 0.0.27
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Or a greater version.&lt;/p&gt;
-
-&lt;h2&gt;Setting up our project&lt;/h2&gt;
-
-&lt;p&gt;For this project we will keep our Rails and our Ember apps in separate
-directories with a top-level directory containing the two. We&amp;#39;ll have to
-do some project generating and renaming. &lt;/p&gt;
-
-&lt;p&gt;I first create a new top-level directory:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;mkdir bostonember
-cd bostonember
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now we&amp;#39;re going to generate our Rails project:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;rails new bostonember -B -S -d postgresql
-mv bostonember rails
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Note how we renamed the directory the Rails project is in to &lt;code&gt;rails&lt;/code&gt;. This
-does not affect anything in that directory. If you do not have Postgres
-on your machine omit &lt;code&gt;-d postgresql&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Now the ember project:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;ember new bostonember
-mv bostonember ember
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now it should be obvious why we moved the Rails project. We should now have
-a structure like:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;bostonember
-|- ember
-|- rails
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;#39;s confirm that our ember app runs:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;cd ember
-ember server
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In your browser visit &lt;code&gt;http://localhost:4200&lt;/code&gt; and you should see &amp;quot;Welcome to Ember.js&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;At this point you can put everything in your top level directory under
-version control:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;git init
-git add .
-gc -m &amp;quot;Initial commit&amp;quot;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;#39;s make some modifications to our Rails app.&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;rm -rf rails/app/assets
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In &lt;code&gt;rails/Gemfile&lt;/code&gt; remove the following:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;coffee-rails&lt;/li&gt;
-&lt;li&gt;jquery-rails&lt;/li&gt;
-&lt;li&gt;turbolinks&lt;/li&gt;
-&lt;li&gt;jbuilder&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now everything related to the Asset Pipeline is completely removed.&lt;/p&gt;
-
-&lt;p&gt;Add the following to the &lt;code&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;active_model_serializers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;If you don&amp;#39;t have Postgres on your machine you can set this for
-Production only:&lt;/p&gt;
-&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;group &lt;span class="symbol"&gt;:development&lt;/span&gt;, &lt;span class="symbol"&gt;:test&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;sqlite3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-
-group &lt;span class="symbol"&gt;:production&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
-  gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;pg&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
-&lt;span class="keyword"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Run &lt;code&gt;bundle install&lt;/code&gt; in your &lt;code&gt;rails&lt;/code&gt; directory. Let&amp;#39;s commit our
-changes:&lt;/p&gt;
-&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;git add .
-gc -m &amp;quot;Removed asset pipeline and added active_model_serializers in Rails&amp;quot;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;That wraps up Part 1. In Part 2 will focus on Ember and creating
-some functionality in our app.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/cf2d9e18342979b1c187328c4cf29de16599e61d"&gt;Check out the actual code for this
-part&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/06/15/swift-and-javascript.html"><strong>Swift and JavaScript</strong><h6 class='footer-desc'>Swift explained for JavaScript developers</h6></a>
 <a class="footer__post" href="/2014/06/06/process-paradox.html"><strong>The Process Paradox</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/05/31/building-an-ember-app-with-rails-part-4.html"><strong>Building an Ember App with Rails Part 4</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"><strong>Avoid Rails When Generating JSON responses with PostgreSQL</strong><h6 class='footer-desc'>Let's use PostgreSQL instead of Ruby to generate JSON responses</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/05/31/building-an-ember-app-with-rails-part-4.html"><strong>Building an Ember App with Rails Part 4</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
