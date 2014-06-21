@@ -63,4 +63,4 @@ To make a color impression at a low cost we used a rubber stamp with a purple in
 The badges felt about right for the event, not too formal, not too shabby. Some lanyards turned out a bit short, but people were creative with placement, wearing them not only around the neck but on a sleeve, on the hat, tying them to the belt loop or a shirt button, and even wearing as a soft choker.
 Next time around we can also experiment with other paper types and have the paper cut to size, to allow for a sturdier badge in a wider range of colors.
 
-Were you at WGR? Let us know what you thought of the DIY badges!
+Were you at WGE? Let us know what you thought of the DIY badges!
