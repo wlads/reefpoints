@@ -3,9 +3,9 @@ layout: post
 title: 'Making the DIY conference badges'
 twitter: rgbcolor
 author: 'Maria Matveeva'
-tags: design thinking, design, DIY
+tags: design, DIY, events
 social: true
-published: false
+published: true
 comments: true
 summary: 'What are badges for, anyway?'
 ---
