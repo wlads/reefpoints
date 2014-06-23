@@ -595,7 +595,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/vim.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/02/07/native-app-developers-we-can-help-you.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -607,7 +607,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/03/03/using-database-templates.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -757,6 +757,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2014/06/23/kapow-using-framer.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ember.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -812,6 +818,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/brian-cardarella.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/prototyping.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -914,12 +926,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/art.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1105,7 +1111,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/02/07/native-app-developers-we-can-help-you.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/vim.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/03/03/using-database-templates.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
