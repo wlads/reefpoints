@@ -44,7 +44,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T15:24:52-04:00</updated>
+    <updated>2014-06-23T15:27:09-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -93,7 +93,7 @@ a 5 minute downtime &lt;em&gt;at most&lt;/em&gt; turns into a 30 minute downtime
 
 &lt;h2&gt;Buildpacks&lt;/h2&gt;
 
-&lt;p&gt;Buildpacks are fucking terrible.&lt;/p&gt;
+&lt;p&gt;Buildpacks are just terrible.&lt;/p&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
