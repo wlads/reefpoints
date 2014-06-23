@@ -35,7 +35,11 @@ problem.
 I am convinced their Status team just sits on Twitter all day and waits
 for enough people to bitch and complain that Heroku is down before they
 update the status page. I don't care what data they provide to the
-contrary.
+contrary. Why is the updated status page important? When our customers
+email us during our vacation pissed off that we are not around and we
+have *nothing* to show to them to prove that this is Heroku's fault and
+not ours, to me that status page being updated immediately **before**
+our customers discover on their own is very important.
 
 ## Price
 
