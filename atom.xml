@@ -44,11 +44,11 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T15:21:13-04:00</updated>
+    <updated>2014-06-23T15:22:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
-    <summary>Done with their shit</summary>
+    <summary>Done with them</summary>
     <content type="html">&lt;p&gt;I&amp;#39;ve been a Heroku user since the beginning. And I understand they have
 had their ups and downs but over the past 2 years the service has been
 degrading and today was the last straw for me. Allow me to elaborate.&lt;/p&gt;
@@ -58,7 +58,7 @@ degrading and today was the last straw for me. Allow me to elaborate.&lt;/p&gt;
 &lt;p&gt;Today Heroku had a &amp;quot;Scheduled Maintenance at 2pm EST&amp;quot;. First of all,
 this is just stupid. Don&amp;#39;t schedule a mainteance period at 2pm EST for
 &lt;strong&gt;anything&lt;/strong&gt;. That period of time has to be one of the most heavily
-trafficed timeslots on the web. Its an hour after everyone on the East
+trafficked timeslots on the web. Its an hour after everyone on the East
 Coast has come back from lunch. It is an hour before lunch on the West
 Coast. This, to me, demonstrates a lack of judgement on Heroku&amp;#39;s part. I
 know the counter-argument is going to be &amp;quot;we&amp;#39;ve done plenty of other
