@@ -12,7 +12,7 @@ tags: design, design process, prototyping
 
 I've finally used [Framer](http://framerjs.com/) on a client project and couldn't be happier with the result. I normally use [InVision](http://www.invisionapp.com/) and highly recommend it, but Framer is the obvious choice when we need the experience to feel significantly more real.
 
-[Every tool has it's pros and cons](http://www.cooper.com/journal/2013/07/designers-toolkit-proto-testing-for-prototypes), however, so it won't *always* be the best choice for you.
+[Every tool has its pros and cons](http://www.cooper.com/journal/2013/07/designers-toolkit-proto-testing-for-prototypes), however, so it won't *always* be the best choice for you.
 
 Let me start with Framer's big con: you must write JavaScript to knit a prototype together. The code itself is very easy to learn, but understanding how the Framer script interacts with your PSD's groups and layer organization is like flying blind. With practice you can get past this and work gets much, much faster.
 
