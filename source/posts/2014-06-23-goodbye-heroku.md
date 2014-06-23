@@ -54,7 +54,7 @@ a 5 minute downtime *at most* turns into a 30 minute downtime **at least**.
 
 ## Buildpacks
 
-Buildpacks are fucking terrible.
+Buildpacks are just terrible.
 
 ## Conclusion
 
