@@ -6,7 +6,7 @@ author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
 summary: 'A look at Framer.js, a powerful prototyping tool.'
-published: false
+published: true
 tags: design, design process, prototyping
 ---
 
