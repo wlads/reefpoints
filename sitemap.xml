@@ -613,13 +613,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/postgis.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/03/30/magic_behind_es6_generators.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -835,24 +835,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/web.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/software.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/deployment.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://reefpoints.dockyard.com//categories/events.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -932,6 +914,24 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/postgres_ext-postgis.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/postgis.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/rails.html</loc>
+    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/art.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1123,25 +1123,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/art.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/rails.html</loc>
-    <lastmod>2014-06-23T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//2014/03/30/magic_behind_es6_generators.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</loc>
     <lastmod>2014-06-23T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
