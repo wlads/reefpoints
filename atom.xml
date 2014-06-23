@@ -44,7 +44,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T15:31:40-04:00</updated>
+    <updated>2014-06-23T15:43:50-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -106,7 +106,7 @@ today&amp;#39;s are completely avoidable yet Heroku chose to expose everyone to
 this increased risk for no good reason that I can see.&lt;/p&gt;
 
 &lt;p&gt;We will no longer be starting any new customers on Heroku. And we will
-recommend to our current customers to move off of Heorku. We&amp;#39;re big fans
+recommend to our current customers to move off of Heroku. We&amp;#39;re big fans
 of Digital Ocean so we&amp;#39;re likely to land there as our preferred hosting
 service.&lt;/p&gt;
 </content>
