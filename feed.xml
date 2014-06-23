@@ -51,40 +51,10 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-06-23T00:00:00Z</updated>
+  <updated>2014-06-21T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
-  <entry>
-    <title>KAPOW! Writing prototypes with Framer</title>
-    <link rel="alternate" href="/2014/06/23/kapow-using-framer.html"/>
-    <id>/2014/06/23/kapow-using-framer.html</id>
-    <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I&amp;#39;ve finally used &lt;a href="http://framerjs.com/"&gt;Framer&lt;/a&gt; on a client project and couldn&amp;#39;t be happier with the result. I normally use &lt;a href="http://www.invisionapp.com/"&gt;InVision&lt;/a&gt; and highly recommend it, but Framer is the obvious choice when we need the experience to feel significantly more real.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.cooper.com/journal/2013/07/designers-toolkit-proto-testing-for-prototypes"&gt;Every tool has it&amp;#39;s pros and cons&lt;/a&gt;, however, so it won&amp;#39;t &lt;em&gt;always&lt;/em&gt; be the best choice for you.&lt;/p&gt;
-
-&lt;p&gt;Let me start with Framer&amp;#39;s big con: you must write JavaScript to knit a prototype together. The code itself is very easy to learn, but understanding how the Framer script interacts with your PSD&amp;#39;s groups and layer organization is like flying blind. With practice you can get past this and work gets much, much faster.&lt;/p&gt;
-
-&lt;p&gt;The one other con is that their documentation is made more for developers than designers. So if you&amp;#39;re not used to digging into developer docs you will likely be overwhelmed and unsure what you&amp;#39;re looking for. Looking elsewhere won&amp;#39;t help you either, there doesn&amp;#39;t seem to be much community around this (yet).&lt;/p&gt;
-
-&lt;p&gt;Someone with less coding experience will find Framer difficult and more intimidating than it has to be. I&amp;#39;d recommend dealing with the learning curve by practicing on a few side projects before you put anything important on the line (not that side projects aren&amp;#39;t important).&lt;/p&gt;
-
-&lt;p&gt;Where Framer really shines bright: you won&amp;#39;t have to verbalize (or make embarrassing gestures) for how your app should feel, because you define that with enormous control. Oddly enough, the biggest con is your ally here, as writing custom JavaScript is what makes this control possible.&lt;/p&gt;
-
-&lt;p&gt;Framer supports clicks and taps just the same, supports many animation options, is highly configurable, and runs very, very smoothly on all (of my) devices. I&amp;#39;ve tested it on iPhone, iPad, and a Mac. Because of this control and variability of use, your prototypes will feel much more real to the user in a testing scenario. This is especially good when your interactions help communicate state and position.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;ve used Framer before, let me know how you like it. There&amp;#39;s only so much time in the world to play with prototyping tools, but my next experiment will be with &lt;a href="http://facebook.github.io/origami/"&gt;Origami&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Bonus!&lt;/h2&gt;
-
-&lt;p&gt;While doing user testing sessions, you may want the testee to work on the actual device. To do so you can use &lt;a href="http://anvilformac.com/"&gt;Anvil&lt;/a&gt; to create a local web address using &lt;a href="http://pow.cx/"&gt;Pow&lt;/a&gt;. This will give you an address (something like &lt;code&gt;http://yourappname.youripaddress.xip.io/&lt;/code&gt;) that you may access on your device.&lt;/p&gt;
-</content>
-  </entry>
   <entry>
     <title>Making the DIY conference badges</title>
     <link rel="alternate" href="/2014/06/21/making-the-diy-badges.html"/>
@@ -1487,11 +1457,599 @@ and utilize the PostgresExt-Seriliazers optimizations to avoid Ruby and
 Rails when generating API responses.&lt;/p&gt;
 </content>
   </entry>
+  <entry>
+    <title>Building an Ember App with Rails Part 3</title>
+    <link rel="alternate" href="/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
+    <id>/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
+    <published>2014-05-09T00:00:00Z</published>
+    <updated>2014-05-09T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Let&amp;#39;s implement some navigation in the Boston Ember app.&lt;/p&gt;
+
+&lt;p&gt;Here is a list of sections in the Boston Ember website I&amp;#39;d like to add:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;About&lt;/li&gt;
+&lt;li&gt;Speakers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For this part we will work with faked out data. In a future part we will
+provide the Rails backend.&lt;/p&gt;
+
+&lt;p&gt;Our first navigation test will be an easy one, create
+&lt;code&gt;ember/tests/integration/about-page-test.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; startApp from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bostonember/tests/helpers/start-app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; App;
+
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Integration - About Page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    App = startApp();
+  },
+  &lt;span class="function"&gt;teardown&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    Ember.run(App, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;destroy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should navigate to the About page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    click(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;a:contains('About')&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;About&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    });
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;After writing this test we can confirm that our test is red in our browser. To make this green we need to add an &lt;code&gt;About&lt;/code&gt; route, 
+a link from the landing page to the &lt;code&gt;About&lt;/code&gt; route, and a template for the
+&lt;code&gt;About&lt;/code&gt; route.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/router.js&lt;/span&gt;
+Router.map(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.route(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/templates/application.hbs&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;h2&lt;/span&gt; &lt;span class="attribute-name"&gt;id&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;title&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Welcome to Boston Ember&lt;span class="tag"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+
+{{link-to &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;About&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;}}
+
+{{outlet}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/templates/about.hbs&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;About&lt;span class="tag"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+
+&lt;span class="tag"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Boston Ember is the monthly meetup where awesome people get together
+to do awesome Ember related things!&lt;span class="tag"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Your test should now be green. If you navigate to the root path in your
+browser you should be able to click through the app. What about getting
+back to root? We can add a test to for this navigation as well.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/landing-page-test.js&lt;/span&gt;
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should allow navigating back to root from another page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    click(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Home&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      notEqual(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;About&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    });
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/templates/application.hbs&lt;/span&gt;
+{{link-to &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Home&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;application&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;}}
+{{link-to &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;About&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Great! A very simple navigation is setup and fully tested. How about something more complex. Let&amp;#39;s allow our visitors
+to see the people that have spoken at Boston Ember. Before we do that we
+need to add new dependencies to our app for mocking out remote
+requests.&lt;/p&gt;
+
+&lt;p&gt;We will be using
+&lt;a href="https://github.com/trek/pretender/tree/0.0.5"&gt;Pretender&lt;/a&gt; by Ember Core
+member Trek Glowacki. Pretender is a nice DSL for faking out remote
+responses.&lt;/p&gt;
+
+&lt;p&gt;We first add Pretender to the &lt;code&gt;bower.json&lt;/code&gt; in our project root:&lt;/p&gt;
+&lt;div class="highlight json "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;    &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;ember-load-initializers&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;stefanpenner/ember-load-initializers#0.0.1&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;pretender&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;trek/pretender#0.0.5&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  }
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;then run &lt;code&gt;bower install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Next we will need to tell Broccoli to compile these new dependencies. Add the following lines to &lt;code&gt;Brocfile.js&lt;/code&gt; in our project root:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;app.&lt;span class="reserved"&gt;import&lt;/span&gt;({&lt;span class="key"&gt;development&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;vendor/route-recognizer/dist/route-recognizer.js&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;});
+app.&lt;span class="reserved"&gt;import&lt;/span&gt;({&lt;span class="key"&gt;development&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;vendor/FakeXMLHttpRequest/fake_xml_http_request.js&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;});
+app.&lt;span class="reserved"&gt;import&lt;/span&gt;({&lt;span class="key"&gt;development&lt;/span&gt;:&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;vendor/pretender/pretender.js&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We are telling Broccoli to &lt;strong&gt;only&lt;/strong&gt; compile for the &lt;em&gt;development&lt;/em&gt;
+environment. This differs from Rails in that there is no specific &lt;em&gt;test&lt;/em&gt;
+environment. (at least not yet anyway)&lt;/p&gt;
+
+&lt;p&gt;Tell &lt;code&gt;JSHint&lt;/code&gt; to ignore the &lt;code&gt;Pretender&lt;/code&gt; constant.
+Open up &lt;code&gt;ember/tests/.jshintrc&lt;/code&gt; and add &lt;code&gt;&amp;quot;Pretender&amp;quot;&lt;/code&gt; to the end of the
+&lt;code&gt;&amp;quot;predef&amp;quot;&lt;/code&gt; array.&lt;/p&gt;
+
+&lt;p&gt;Finally we need ember-data to make requests namespaced under &lt;code&gt;api&lt;/code&gt; to
+our server:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/adapters/application.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.ActiveModelAdapter.extend({
+  &lt;span class="key"&gt;namespace&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;api&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We should be in a good place to write our tests.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+55
+56
+57
+58
+59
+&lt;strong&gt;60&lt;/strong&gt;
+61
+62
+63
+64
+65
+66
+67
+68
+69
+&lt;strong&gt;70&lt;/strong&gt;
+71
+72
+73
+74
+75
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/tests/integration/speakers-page-test.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; startApp from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bostonember/tests/helpers/start-app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; App, server;
+
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Integration - Speaker Page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    App = startApp();
+    &lt;span class="keyword"&gt;var&lt;/span&gt; speakers = [
+      {
+        &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt;,
+        &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bugs Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+      },
+      {
+        &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt;,
+        &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Wile E. Coyote&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+      },
+      {
+        &lt;span class="key"&gt;id&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt;,
+        &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Yosemite Sam&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+      }
+    ];
+
+    server = &lt;span class="keyword"&gt;new&lt;/span&gt; Pretender(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
+        &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speakers&lt;/span&gt;: speakers})];
+      });
+
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/api/speakers/:id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(request) {
+        &lt;span class="keyword"&gt;var&lt;/span&gt; speaker = speakers.find(&lt;span class="keyword"&gt;function&lt;/span&gt;(speaker) {
+          &lt;span class="keyword"&gt;if&lt;/span&gt; (speaker.id === parseInt(request.params.id, &lt;span class="integer"&gt;10&lt;/span&gt;)) {
+            &lt;span class="keyword"&gt;return&lt;/span&gt; speaker;
+          }
+        });
+
+        &lt;span class="keyword"&gt;return&lt;/span&gt; [&lt;span class="integer"&gt;200&lt;/span&gt;, {&lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;Content-Type&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;application/json&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}, JSON.stringify({&lt;span class="key"&gt;speaker&lt;/span&gt;: speaker})];
+      });
+    });
+
+  },
+  &lt;span class="function"&gt;teardown&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    Ember.run(App, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;destroy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    server.shutdown();
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should allow navigation to the speakers page from the landing page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    click(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Speakers&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h3&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    });
+  });
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should list all speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Bugs Bunny&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Wile E. Coyote&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Yosemite Sam&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).length, &lt;span class="integer"&gt;1&lt;/span&gt;);
+  });
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should be able to navigate to a speaker page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    click(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;a:contains(&amp;quot;Bugs Bunny&amp;quot;)&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h4&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bugs Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    });
+  });
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Should be able visit a speaker page&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  visit(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;/speakers/1&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    equal(find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;h4&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bugs Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Take a look at the &lt;code&gt;setup&lt;/code&gt; function. There is an array of objects that contains the speaker data, currently only &lt;code&gt;id&lt;/code&gt;s and &lt;code&gt;name&lt;/code&gt;s.
+Below that we are setting up the request stubs. Currently this feels
+like a lot of boilerplate, and that is because it is. I&amp;#39;m sure
+eventually someone will write a nice abstraction to clean this up. This
+code simply stubs out the expected server-side calls and returns a JSON
+string in the format ember-data expects.&lt;/p&gt;
+
+&lt;p&gt;Our four tests are very simple. The first tests the navigation, the 2nd
+tests the speakers are in the list, the 3rd tests that we can navigate
+to an individual speaker, and the 4th tests that we can visit the speaker page directly.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s make each pass:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/router.js&lt;/span&gt;
+Router.map(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.route(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.resource(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// ember/app/templates/application.hbs
+{{link-to 'About' 'about'}}
+{{link-to 'Speakers' 'speakers'}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// ember/app/templates/speakers.hbs
+&amp;lt;h3&amp;gt;Speakers&amp;lt;/h3&amp;gt;
+
+{{outlet}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The first test should now be passing.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/router.js&lt;/span&gt;
+Router.map(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.route(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;about&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;.resource(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;speakers&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.route(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;show&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {&lt;span class="key"&gt;path&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;:speaker_id&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;});
+  });
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/models/speaker.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; DS from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-data&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;name&lt;/span&gt;: DS.attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;string&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// ember/app/routes/speakers/index.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; Ember from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.Route.extend({
+  &lt;span class="function"&gt;model&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="local-variable"&gt;this&lt;/span&gt;.store.find(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;speaker&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// ember/templates/speakers/index.hbs
+{{#each}}
+  {{link-to name 'speakers.show' this}}
+{{/each}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The 2nd test should now be passing.&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// ember/templates/speakers/show.hbs
+&amp;lt;h4&amp;gt;{{name}}&amp;lt;/h4&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The 3rd &amp;amp; 4th tests should now be passing.&lt;/p&gt;
+
+&lt;p&gt;Passing tests are great and all, but let&amp;#39;s actually make the app useable by getting our Rails backend
+in the game. &lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s generate a model from our Rails app &lt;code&gt;rails g model speaker name:string&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add some seed data&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/db/seeds.rb&lt;/span&gt;
+&lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Bugs Bunny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Wile E. Coyote&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;span class="constant"&gt;Speaker&lt;/span&gt;.create(&lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Yosemite Sam&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Create, migrate and seed &lt;code&gt;rake db:create db:migrate db:seed&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add a &lt;code&gt;speakers&lt;/code&gt; resource under an &lt;code&gt;api&lt;/code&gt; namespace`&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/config/routes.rb&lt;/span&gt;
+namespace &lt;span class="symbol"&gt;:api&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+  resources &lt;span class="symbol"&gt;:speakers&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now add the controller&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# rails/app/controllers/api/speakers_controller.rb&lt;/span&gt;
+&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;Api::SpeakersController&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ApplicationController&lt;/span&gt;
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;index&lt;/span&gt;
+    render &lt;span class="key"&gt;json&lt;/span&gt;: &lt;span class="constant"&gt;Speaker&lt;/span&gt;.all
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;show&lt;/span&gt;
+    render &lt;span class="key"&gt;json&lt;/span&gt;: &lt;span class="constant"&gt;Speaker&lt;/span&gt;.find(params[&lt;span class="symbol"&gt;:id&lt;/span&gt;])
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finally we need to generate a serializer &lt;code&gt;rails g serializer speaker&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add &lt;code&gt;name&lt;/code&gt; to the list of attributes to serialize&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;class&lt;/span&gt; &lt;span class="class"&gt;SpeakerSerializer&lt;/span&gt; &amp;lt; &lt;span class="constant"&gt;ActiveModel&lt;/span&gt;::&lt;span class="constant"&gt;Serializer&lt;/span&gt;
+  attributes &lt;span class="symbol"&gt;:id&lt;/span&gt;, &lt;span class="symbol"&gt;:name&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Start your Rails server with port &lt;code&gt;3000&lt;/code&gt; and restart your ember server with the command 
+&lt;code&gt;ember server --proxy http://localhost:3000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Any remote requests will be proxied to this location. Now you can point
+your browser to &lt;code&gt;http://localhost:4200&lt;/code&gt;, click on &lt;code&gt;Speakers&lt;/code&gt; and you
+should see:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/dcdkJDo.png" alt="Screen1"&gt;&lt;/p&gt;
+
+&lt;p&gt;We did a lot today, next we&amp;#39;ll get into relationships.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bostonember/website/commit/a21e06a9a29b19d405e50268a6d276b8db758261"&gt;Check out the actual code for this
+part&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
-<a class="footer__post" href="/2014/06/23/kapow-using-framer.html"><strong>KAPOW! Writing prototypes with Framer</strong><h6 class='footer-desc'>A look at Framer.js, a powerful prototyping tool.</h6></a>
 <a class="footer__post" href="/2014/06/21/making-the-diy-badges.html"><strong>Making the DIY conference badges</strong><h6 class='footer-desc'>What are badges for, anyway?</h6></a>
-<a class="footer__post" href="/2014/06/15/swift-and-javascript.html"><strong>Swift and JavaScript</strong><h6 class='footer-desc'>Swift explained for JavaScript developers</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/06/15/swift-and-javascript.html"><strong>Swift and JavaScript</strong><h6 class='footer-desc'>Swift explained for JavaScript developers</h6></a>
+<a class="footer__post" href="/2014/06/06/process-paradox.html"><strong>The Process Paradox</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>

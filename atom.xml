@@ -4,41 +4,10 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-06-23T00:00:00Z</updated>
+  <updated>2014-06-21T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
-  <entry>
-    <title>KAPOW! Writing prototypes with Framer</title>
-    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/kapow-using-framer.html"/>
-    <id>http://reefpoints.dockyard.com/2014/06/23/kapow-using-framer.html</id>
-    <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T12:33:14-04:00</updated>
-    <author>
-      <name>Steven Trevathan</name>
-    </author>
-    <summary>A look at Framer.js, a powerful prototyping tool.</summary>
-    <content type="html">&lt;p&gt;I&amp;#39;ve finally used &lt;a href="http://framerjs.com/"&gt;Framer&lt;/a&gt; on a client project and couldn&amp;#39;t be happier with the result. I normally use &lt;a href="http://www.invisionapp.com/"&gt;InVision&lt;/a&gt; and highly recommend it, but Framer is the obvious choice when we need the experience to feel significantly more real.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.cooper.com/journal/2013/07/designers-toolkit-proto-testing-for-prototypes"&gt;Every tool has it&amp;#39;s pros and cons&lt;/a&gt;, however, so it won&amp;#39;t &lt;em&gt;always&lt;/em&gt; be the best choice for you.&lt;/p&gt;
-
-&lt;p&gt;Let me start with Framer&amp;#39;s big con: you must write JavaScript to knit a prototype together. The code itself is very easy to learn, but understanding how the Framer script interacts with your PSD&amp;#39;s groups and layer organization is like flying blind. With practice you can get past this and work gets much, much faster.&lt;/p&gt;
-
-&lt;p&gt;The one other con is that their documentation is made more for developers than designers. So if you&amp;#39;re not used to digging into developer docs you will likely be overwhelmed and unsure what you&amp;#39;re looking for. Looking elsewhere won&amp;#39;t help you either, there doesn&amp;#39;t seem to be much community around this (yet).&lt;/p&gt;
-
-&lt;p&gt;Someone with less coding experience will find Framer difficult and more intimidating than it has to be. I&amp;#39;d recommend dealing with the learning curve by practicing on a few side projects before you put anything important on the line (not that side projects aren&amp;#39;t important).&lt;/p&gt;
-
-&lt;p&gt;Where Framer really shines bright: you won&amp;#39;t have to verbalize (or make embarrassing gestures) for how your app should feel, because you define that with enormous control. Oddly enough, the biggest con is your ally here, as writing custom JavaScript is what makes this control possible.&lt;/p&gt;
-
-&lt;p&gt;Framer supports clicks and taps just the same, supports many animation options, is highly configurable, and runs very, very smoothly on all (of my) devices. I&amp;#39;ve tested it on iPhone, iPad, and a Mac. Because of this control and variability of use, your prototypes will feel much more real to the user in a testing scenario. This is especially good when your interactions help communicate state and position.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;ve used Framer before, let me know how you like it. There&amp;#39;s only so much time in the world to play with prototyping tools, but my next experiment will be with &lt;a href="http://facebook.github.io/origami/"&gt;Origami&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Bonus!&lt;/h2&gt;
-
-&lt;p&gt;While doing user testing sessions, you may want the testee to work on the actual device. To do so you can use &lt;a href="http://anvilformac.com/"&gt;Anvil&lt;/a&gt; to create a local web address using &lt;a href="http://pow.cx/"&gt;Pow&lt;/a&gt;. This will give you an address (something like &lt;code&gt;http://yourappname.youripaddress.xip.io/&lt;/code&gt;) that you may access on your device.&lt;/p&gt;
-</content>
-  </entry>
   <entry>
     <title>Making the DIY conference badges</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/21/making-the-diy-badges.html"/>
