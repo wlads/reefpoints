@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Goodbye Heroku"
-comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
 github: 'bcardarella'
