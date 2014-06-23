@@ -67,6 +67,6 @@ today's are completely avoidable yet Heroku chose to expose everyone to
 this increased risk for no good reason that I can see.
 
 We will no longer be starting any new customers on Heroku. And we will
-recommend to our current customers to move off of Heorku. We're big fans
+recommend to our current customers to move off of Heroku. We're big fans
 of Digital Ocean so we're likely to land there as our preferred hosting
 service.
