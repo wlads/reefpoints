@@ -48,7 +48,7 @@ you very much!" to all of its customers.
 ## Fixes for All
 
 The major downside to hosted devops is that when something goes wrong
-that effects everyone you usually have to wait until they make the fix
+that affects everyone you usually have to wait until they make the fix
 for **everyone** before your app comes back up. What should probably be
 a 5 minute downtime *at most* turns into a 30 minute downtime **at least**.
 
