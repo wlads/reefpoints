@@ -7,7 +7,7 @@ github: 'bcardarella'
 social: true
 summary: 'Done with them'
 published: true
-tags: deployment, software, web
+tags: opinion
 ---
 
 I've been a Heroku user since the beginning. And I understand they have
