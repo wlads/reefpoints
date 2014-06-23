@@ -25,7 +25,7 @@ Coast has come back from lunch. It is an hour before lunch on the West
 Coast. This, to me, demonstrates a lack of judgement on Heroku's part. I
 know the counter-argument is going to be "we've done plenty of other
 scheduled maintenances at 2pm EST without incident". My reply is that
-this counter-argument is *bullshit*. Just because you go away without
+this counter-argument is *bullshit*. Just because you got away without
 problems previously doesn't mean they won't happen in the future. Things
 go wrong, people screw up. When Heroku has control over when those
 screwups occur and they choose to push that risk at 2pm EST that is a
@@ -45,6 +45,13 @@ over the past few years. Yet, how many times has Heroku reduced its
 price? (Heroku resells AWS) To my knowledge **zero**. So everytime Amazon
 reduces EC2 pricing Heroku just pockets the difference and gives a "fuck
 you very much!" to all of its customers.
+
+## Fixes for All
+
+The major downside to hosted devops is that when something goes wrong
+that effects everyone you usually have to wait until they make the fix
+for **everyone** before your app comes back up. What should probably be
+a 5 minute downtime *at most* turns into a 30 minute downtime **at least**.
 
 ## Buildpacks
 
