@@ -4,7 +4,7 @@ title: "Goodbye Heroku"
 comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
-github: 'bcardarella
+github: 'bcardarella'
 social: true
 summary: 'Done with their shit'
 published: true
