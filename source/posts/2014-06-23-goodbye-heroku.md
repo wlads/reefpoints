@@ -5,7 +5,7 @@ author: 'Brian Cardarella'
 twitter: 'bcardarella'
 github: 'bcardarella'
 social: true
-summary: 'Done with their shit'
+summary: 'Done with them'
 published: true
 tags: deployment, software, web
 ---
@@ -19,7 +19,7 @@ degrading and today was the last straw for me. Allow me to elaborate.
 Today Heroku had a "Scheduled Maintenance at 2pm EST". First of all,
 this is just stupid. Don't schedule a mainteance period at 2pm EST for
 **anything**. That period of time has to be one of the most heavily
-trafficed timeslots on the web. Its an hour after everyone on the East
+trafficked timeslots on the web. Its an hour after everyone on the East
 Coast has come back from lunch. It is an hour before lunch on the West
 Coast. This, to me, demonstrates a lack of judgement on Heroku's part. I
 know the counter-argument is going to be "we've done plenty of other
