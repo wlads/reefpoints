@@ -44,7 +44,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-06-23T17:52:45-04:00</updated>
+    <updated>2014-06-23T21:14:04-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -56,7 +56,7 @@ degrading and today was the last straw for me. Allow me to elaborate.&lt;/p&gt;
 &lt;h2&gt;Downtime&lt;/h2&gt;
 
 &lt;p&gt;Today Heroku had a &amp;quot;Scheduled Maintenance at 2pm EST&amp;quot;. First of all,
-this is just stupid. Don&amp;#39;t schedule a mainteance period at 2pm EST for
+this is just stupid. Don&amp;#39;t schedule a maintenance period at 2pm EST for
 &lt;strong&gt;anything&lt;/strong&gt;. That period of time has to be one of the most heavily
 trafficked timeslots on the web. Its an hour after everyone on the East
 Coast has come back from lunch. It is an hour before lunch on the West
