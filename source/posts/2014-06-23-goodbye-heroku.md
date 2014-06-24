@@ -17,7 +17,7 @@ degrading and today was the last straw for me. Allow me to elaborate.
 ## Downtime
 
 Today Heroku had a "Scheduled Maintenance at 2pm EST". First of all,
-this is just stupid. Don't schedule a mainteance period at 2pm EST for
+this is just stupid. Don't schedule a maintenance period at 2pm EST for
 **anything**. That period of time has to be one of the most heavily
 trafficked timeslots on the web. Its an hour after everyone on the East
 Coast has come back from lunch. It is an hour before lunch on the West
