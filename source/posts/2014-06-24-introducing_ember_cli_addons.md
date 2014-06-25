@@ -6,6 +6,7 @@ github: 'rjackson'
 author: 'Robert Jackson'
 tags: ember, ember cli
 social: true
+comments: true
 published: true
 ---
 
