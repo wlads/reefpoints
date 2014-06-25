@@ -6,7 +6,7 @@ github: 'rjackson'
 author: 'Robert Jackson'
 tags: ember, ember cli
 social: true
-published: false
+published: true
 ---
 
 Distribution of reusable Ember.js libraries has been a pain point for quite a while. During application development we have frequently wished for a silver bullet for the sharing of concepts/code from one project to another.
