@@ -13,19 +13,25 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//authors/robert-jackson.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//authors/jon-lacks.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//authors/maria-matveeva.html</loc>
+    <loc>http://reefpoints.dockyard.com//</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//</loc>
+    <loc>http://reefpoints.dockyard.com//authors/maria-matveeva.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -50,12 +56,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/alex-navasardyan.html</loc>
-    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//authors/doug-yun.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -613,13 +613,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/03/30/magic_behind_es6_generators.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/rails.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -769,6 +769,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2014/06/24/introducing_ember_cli_addons.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ember.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -776,6 +782,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ruby.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//authors/doug-yun.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -824,6 +836,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/brian-cardarella.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/ember-cli.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -920,18 +938,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/postgis.html</loc>
-    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/rails.html</loc>
-    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/art.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1123,7 +1129,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/03/17/emberconf-picks-ups-where-the-rails-community-left-off.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/illustration.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/art.html</loc>
+    <lastmod>2014-06-24T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/03/30/magic_behind_es6_generators.html</loc>
     <lastmod>2014-06-24T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

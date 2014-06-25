@@ -4,10 +4,93 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-06-23T00:00:00Z</updated>
+  <updated>2014-06-24T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Introducing Ember CLI Addons</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html"/>
+    <id>http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html</id>
+    <published>2014-06-24T00:00:00Z</published>
+    <updated>2014-06-24T21:55:10-04:00</updated>
+    <author>
+      <name>Robert Jackson</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;Distribution of reusable Ember.js libraries has been a pain point for quite a while. During application development we have frequently wished for a silver bullet for the sharing of concepts/code from one project to another.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/stefanpenner/ember-cli"&gt;Ember CLI&lt;/a&gt; has given us the opportunity to set the conventions for sharing that we have been searching for.&lt;/p&gt;
+
+&lt;p&gt;Over the last few weeks we have been focusing our efforts on the Ember CLI Addon story, and current support the following scenarios out of the box:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Performing operations on the &lt;code&gt;EmberApp&lt;/code&gt; created in the consuming applications &lt;code&gt;Brocfile.js&lt;/code&gt;. The most common things this would be used to call &lt;code&gt;app.import&lt;/code&gt; (see &lt;a href="iamstef.net/ember-cli/#managing-dependencies"&gt;Ember CLI - Managing Dependencies&lt;/a&gt; for more details) or process the various options provided by the consuming application. Examples: &lt;a href="https://github.com/rjackson/ember-cli-pretender"&gt;ember-cli-pretender&lt;/a&gt;, &lt;a href="https://github.com/firebase/emberFire"&gt;emberFire&lt;/a&gt;, and &lt;a href="https://github.com/rjackson/ember-cli-ic-ajax"&gt;ember-cli-ic-ajax&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Adding preprocessors to the default registry. This allows us to use a custom preprocessor to handle our templates, JavaScript, and/or styles. Example: &lt;a href="https://github.com/rjackson/ember-cli-esnext"&gt;ember-cli-esnext&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Providing a custom application tree to be merged with the consuming application. This allows you to distribute anything that might need to be imported in the consuming application; including components, templates, routes, mixins, helpers, etc. Example: &lt;a href="https://github.com/rondale-sc/ember-cli-super-number"&gt;ember-cli-super-number&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Providing custom express middlewares. This allows for an addon to completely customize the development servers behaviors, making things like automated mock Ember Data API&amp;#39;s actually possible. This is currently only available on master (will be available in  0.0.37 and higher).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One of the design goals that the current crop of example addons follow is that they can all be installed and used simply via:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;npm install --save-dev &amp;lt;package name&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+
+&lt;h3&gt;Discovery&lt;/h3&gt;
+
+&lt;p&gt;Ember CLI detects the presence of an addon by inspecting each of your applications dependencies and searching their &lt;code&gt;package.json&lt;/code&gt; files for the presence of &lt;code&gt;ember-addon&lt;/code&gt; in the keywords section. &lt;/p&gt;
+
+&lt;h3&gt;Creation&lt;/h3&gt;
+
+&lt;p&gt;Once the available addons are detected, Ember CLI will require the addon.  By default it will use standard Node.js require rules (see &lt;a href="http://nodejs.org/api/modules.html#modules_all_together"&gt;here&lt;/a&gt; for a breakdown), but you can provide a custom entry point by specifying a &lt;code&gt;ember-addon-main&lt;/code&gt; property in your &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Either way you go, during the various commands that cause a new build to be done (&lt;code&gt;ember server&lt;/code&gt;, &lt;code&gt;ember test&lt;/code&gt;, &lt;code&gt;ember build&lt;/code&gt;, etc) Ember CLI will create a new instance of the class that your addon returns passing it the &lt;code&gt;Project&lt;/code&gt; instance for the current project. The &lt;code&gt;Project&lt;/code&gt; model has a few functions that might be useful to your addon. You can see a full list by inspecting the &lt;a href="https://github.com/stefanpenner/ember-cli/blob/master/lib/models/project.js"&gt;source&lt;/a&gt;, but to name a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;require&lt;/code&gt; -- Lets you require files or packages from the consuming application.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config&lt;/code&gt; -- Returns the configuration for the provided environment.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resolve&lt;/code&gt; -- Looks up a file from the root of the project using standard Node require semantics, but with the projects root as the base directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Build Process Inclusion&lt;/h3&gt;
+
+&lt;p&gt;When the consuming application&amp;#39;s &lt;code&gt;Brocfile.js&lt;/code&gt; is processed by Ember CLI to build/serve/etc the addon&amp;#39;s &lt;code&gt;included&lt;/code&gt; function is called passing the &lt;code&gt;EmberApp&lt;/code&gt; instance. You can use this to access the options provided (for configuration of your addon for example).&lt;/p&gt;
+
+&lt;h3&gt;Intra Build Hooks&lt;/h3&gt;
+
+&lt;p&gt;There are a few other points in the build process that your addon can hook into via the &lt;code&gt;treeFor&lt;/code&gt; function. &lt;code&gt;treeFor&lt;/code&gt; is called to setup the final build output for a few specific points in the build process. The addons &lt;code&gt;treeFor&lt;/code&gt; function will be called with an argument that signifies which tree is being asked for.&lt;/p&gt;
+
+&lt;p&gt;Currently, the following trees can be customized by the addon:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app&lt;/code&gt; -- The tree returned by your addon for the &lt;code&gt;app&lt;/code&gt; tree will be merged with that of the application. This is an excellent place to add custom initializers for your addon, add routes/controllers/views/components/templates/etc (anything that goes in &lt;code&gt;app/&lt;/code&gt; really). For additional information read through the &lt;a href="http://hashrocket.com/blog/posts/building-ember-addons"&gt;blog post&lt;/a&gt; describing how &lt;code&gt;ember-cli-super-number&lt;/code&gt; was turned into an addon.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;styles&lt;/code&gt; -- The tree returned by your addon for the &lt;code&gt;styles&lt;/code&gt; tree will be merged with your applications styles (generally &lt;code&gt;app/styles/&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vendor&lt;/code&gt; -- The tree returned by your addon for the &lt;code&gt;vendor&lt;/code&gt; tree will be merged with your applications vendor tree (generally &lt;code&gt;vendor/&lt;/code&gt;). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All of the trees returned by addons are merged into the corresponding tree in the application. The application&amp;#39;s direct trees are always last so they will always override any files from an addon. This actually makes a wonderful place for application specific customization: your addon could provide a good default template, and the application can override by simple placing their own template in lat same path.&lt;/p&gt;
+
+&lt;h2&gt;Future&lt;/h2&gt;
+
+&lt;p&gt;Many things are still planned for the &amp;quot;Addon Story&amp;quot; in Ember CLI. A few of them below:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allow addons to specify preferred ordering (before or after another addon). Similar in concept (and stolen from) the Ember initializer ordering. This is implemented on master and will be included in 0.0.37.&lt;/li&gt;
+&lt;li&gt;Allow addons to provide a &lt;code&gt;blueprintPaths&lt;/code&gt; function that will return addition paths for blueprints to be looked up. This will allow an addon to override internal blueprints or add their own.&lt;/li&gt;
+&lt;li&gt;Allow more than one preprocessor to be used at once. Currently, it is only possible to have a single preprocessor, but this is a limitation if you want both SCSS and plain CSS (for example).&lt;/li&gt;
+&lt;li&gt;Expose post-processed stages. This will allow for better customization of the final output which things like &lt;a href="https://github.com/ai/autoprefixer"&gt;autoprefixer&lt;/a&gt; would be able to take advantage of.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Call To Arms&lt;/h2&gt;
+
+&lt;p&gt;This API is still very fluid and not set in stone. We need as much feedback as possible to truly solidify things.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>KAPOW! Writing prototypes with Framer</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/kapow-using-framer.html"/>
