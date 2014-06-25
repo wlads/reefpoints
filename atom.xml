@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html</id>
     <published>2014-06-24T00:00:00Z</published>
-    <updated>2014-06-24T22:07:56-04:00</updated>
+    <updated>2014-06-25T16:21:50-04:00</updated>
     <author>
       <name>Robert Jackson</name>
     </author>
@@ -25,7 +25,7 @@
 &lt;p&gt;Over the last few weeks we have been focusing our efforts on the Ember CLI Addon story, and current support the following scenarios out of the box:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Performing operations on the &lt;code&gt;EmberApp&lt;/code&gt; created in the consuming applications &lt;code&gt;Brocfile.js&lt;/code&gt;. The most common things this would be used to call &lt;code&gt;app.import&lt;/code&gt; (see &lt;a href="iamstef.net/ember-cli/#managing-dependencies"&gt;Ember CLI - Managing Dependencies&lt;/a&gt; for more details) or process the various options provided by the consuming application. Examples: &lt;a href="https://github.com/rjackson/ember-cli-pretender"&gt;ember-cli-pretender&lt;/a&gt;, &lt;a href="https://github.com/firebase/emberFire"&gt;emberFire&lt;/a&gt;, and &lt;a href="https://github.com/rjackson/ember-cli-ic-ajax"&gt;ember-cli-ic-ajax&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Performing operations on the &lt;code&gt;EmberApp&lt;/code&gt; created in the consuming applications &lt;code&gt;Brocfile.js&lt;/code&gt;. The most common things this would be used to call &lt;code&gt;app.import&lt;/code&gt; (see &lt;a href="http://iamstef.net/ember-cli/#managing-dependencies"&gt;Ember CLI - Managing Dependencies&lt;/a&gt; for more details) or process the various options provided by the consuming application. Examples: &lt;a href="https://github.com/rjackson/ember-cli-pretender"&gt;ember-cli-pretender&lt;/a&gt;, &lt;a href="https://github.com/firebase/emberFire"&gt;emberFire&lt;/a&gt;, and &lt;a href="https://github.com/rjackson/ember-cli-ic-ajax"&gt;ember-cli-ic-ajax&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Adding preprocessors to the default registry. This allows us to use a custom preprocessor to handle our templates, JavaScript, and/or styles. Example: &lt;a href="https://github.com/rjackson/ember-cli-esnext"&gt;ember-cli-esnext&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Providing a custom application tree to be merged with the consuming application. This allows you to distribute anything that might need to be imported in the consuming application; including components, templates, routes, mixins, helpers, etc. Example: &lt;a href="https://github.com/rondale-sc/ember-cli-super-number"&gt;ember-cli-super-number&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Providing custom express middlewares. This allows for an addon to completely customize the development servers behaviors, making things like automated mock Ember Data API&amp;#39;s actually possible. This is currently only available on master (will be available in  0.0.37 and higher).&lt;/p&gt;&lt;/li&gt;
