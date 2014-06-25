@@ -16,7 +16,7 @@ Distribution of reusable Ember.js libraries has been a pain point for quite a wh
 
 Over the last few weeks we have been focusing our efforts on the Ember CLI Addon story, and current support the following scenarios out of the box:
 
-* Performing operations on the `EmberApp` created in the consuming applications `Brocfile.js`. The most common things this would be used to call `app.import` (see [Ember CLI - Managing Dependencies](iamstef.net/ember-cli/#managing-dependencies) for more details) or process the various options provided by the consuming application. Examples: [ember-cli-pretender](https://github.com/rjackson/ember-cli-pretender), [emberFire](https://github.com/firebase/emberFire), and [ember-cli-ic-ajax](https://github.com/rjackson/ember-cli-ic-ajax)
+* Performing operations on the `EmberApp` created in the consuming applications `Brocfile.js`. The most common things this would be used to call `app.import` (see [Ember CLI - Managing Dependencies](http://iamstef.net/ember-cli/#managing-dependencies) for more details) or process the various options provided by the consuming application. Examples: [ember-cli-pretender](https://github.com/rjackson/ember-cli-pretender), [emberFire](https://github.com/firebase/emberFire), and [ember-cli-ic-ajax](https://github.com/rjackson/ember-cli-ic-ajax)
   
 * Adding preprocessors to the default registry. This allows us to use a custom preprocessor to handle our templates, JavaScript, and/or styles. Example: [ember-cli-esnext](https://github.com/rjackson/ember-cli-esnext)
 
