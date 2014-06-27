@@ -60,7 +60,7 @@ Currently, the following trees can be customized by the addon:
 * `styles` -- The tree returned by your addon for the `styles` tree will be merged with your applications styles (generally `app/styles/`).
 * `vendor` -- The tree returned by your addon for the `vendor` tree will be merged with your applications vendor tree (generally `vendor/`). 
 
-All of the trees returned by addons are merged into the corresponding tree in the application. The application's direct trees are always last so they will always override any files from an addon. This actually makes a wonderful place for application specific customization: your addon could provide a good default template, and the application can override by simple placing their own template in lat same path.
+All of the trees returned by addons are merged into the corresponding tree in the application. The application's direct trees are always last so they will always override any files from an addon. This actually makes a wonderful place for application specific customization: your addon could provide a good default template, and the application can override by simply placing their own template in the same path.
 
 ## Future
 
