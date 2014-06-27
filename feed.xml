@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-36116f6c.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-85297736.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,779 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-06-24T00:00:00Z</updated>
+  <updated>2014-06-27T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ember Macros for DRY and Testable Code</title>
+    <link rel="alternate" href="/2014/06/27/ember-macros-for-DRY-and-testable-code.html"/>
+    <id>/2014/06/27/ember-macros-for-DRY-and-testable-code.html</id>
+    <published>2014-06-27T00:00:00Z</published>
+    <updated>2014-06-27T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h3&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;This post in going to explore the idea of writing your own Ember macros
+as a strategy for DRYing up and creating more modular Ember code. 
+As you&amp;#39;ll see, besides the maintainability and flexibility benefits gained by DRYing
+up and decoupling code, isolated code is significantly easier to test.
+We&amp;#39;ll be using a sample application to illustrate refactoring some code
+into a macro.&lt;/p&gt;
+
+&lt;h3&gt;What is a Computed Property Macro?&lt;/h3&gt;
+
+&lt;p&gt;A computed property macro can really be thought of as a function that returns the
+definition of a computed property. Essentially, we are creating a function that will
+define computed properties for us. They look something like this:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Defining a computed property macro&lt;/span&gt;
+&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;greeting&lt;/span&gt;(dependentKey, greeting) {
+  &lt;span class="keyword"&gt;return&lt;/span&gt; Ember.computed(dependentKey, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; greeting + &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;, &lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; + dependentKey;
+  });
+}
+
+&lt;span class="comment"&gt;// Consuming a computed property macro&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Greeter = Ember.Object.extend({
+  &lt;span class="key"&gt;user&lt;/span&gt;: &lt;span class="predefined-constant"&gt;null&lt;/span&gt;,
+  &lt;span class="key"&gt;englishGreeting&lt;/span&gt;: greeting(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;user&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Hello&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+  &lt;span class="key"&gt;spanishGreeting&lt;/span&gt;: greeting(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;user&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Hola&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; concierge = Greeter.create({ &lt;span class="key"&gt;user&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Narwin&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; });
+concierge.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;englishGreeting&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="comment"&gt;// =&amp;gt; 'Hello, Narwin'&lt;/span&gt;
+concierge.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;spanishGreeting&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="comment"&gt;// =&amp;gt; 'Hola, Narwin'&lt;/span&gt;
+
+concierge.set(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;user&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Boomer&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+concierge.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;englishGreeting&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="comment"&gt;// =&amp;gt; 'Hello, Boomer'&lt;/span&gt;
+concierge.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;spanishGreeting&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class="comment"&gt;// =&amp;gt; 'Hola, Boomer'&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So, why not just use a standard computed property? Macros give us the
+ability to take common chunks of functionality and share them throughout
+our code, allowing us to avoid re-writing the logic every time we need
+it. &lt;/p&gt;
+
+&lt;p&gt;Ember provides us with a bunch of useful computed macros
+right out of the box. If you&amp;#39;re not familiar with them, you should
+definitely &lt;a href="http://emberjs.com/api/#method_computed"&gt;check them out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now that we&amp;#39;ve covered our bases, lets move on to the sample app.&lt;/p&gt;
+
+&lt;h3&gt;Sample App&lt;/h3&gt;
+
+&lt;p&gt;The goal of our sample application is to track financial transactions
+and to provide an overview of income and expenses for a given time frame.
+Our app has a &lt;code&gt;Month&lt;/code&gt; model which has many &lt;code&gt;transactions&lt;/code&gt;. A &lt;code&gt;Month&lt;/code&gt; also
+has &lt;code&gt;incomeTransactions&lt;/code&gt; (transactions with positive amounts) and
+&lt;code&gt;expenseTransactions&lt;/code&gt; (transactions with negative amounts). Below are
+tests and code for our &lt;code&gt;Month&lt;/code&gt; and &lt;code&gt;Transaction&lt;/code&gt; models.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app/models/month.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; hasMany = DS.hasMany;
+&lt;span class="keyword"&gt;var&lt;/span&gt; filter = Ember.computed.filter;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;transactions&lt;/span&gt;: hasMany(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+
+  &lt;span class="key"&gt;incomeTransactions&lt;/span&gt;: filter(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(transaction) {
+      &lt;span class="comment"&gt;// Grab all transactions with a positive amount.&lt;/span&gt;
+      &lt;span class="keyword"&gt;return&lt;/span&gt; transaction.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &amp;gt; &lt;span class="integer"&gt;0&lt;/span&gt;;
+    }
+  ),
+
+  &lt;span class="key"&gt;expenseTransactions&lt;/span&gt;: filter(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(transaction) {
+      &lt;span class="comment"&gt;// Grab all transactions with a negative amount.&lt;/span&gt;
+      &lt;span class="keyword"&gt;return&lt;/span&gt; transaction.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;) &amp;lt; &lt;span class="integer"&gt;0&lt;/span&gt;;
+    }
+  )
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;tests/unit/models/month-test.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForModel } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; store, month, transactions, tran1, tran2, tran3, tran4;
+
+moduleForModel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;month&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Unit - Month Model&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;needs&lt;/span&gt;: [&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;model:transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;],
+
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(container) {
+    store = container.lookup(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;store:main&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+    month = &lt;span class="local-variable"&gt;this&lt;/span&gt;.subject({
+      &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;June&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+    });
+
+    Ember.run(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      tran1 = store.createRecord(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;100&lt;/span&gt; });
+      tran2 = store.createRecord(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;200&lt;/span&gt; });
+      tran3 = store.createRecord(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;300&lt;/span&gt; });
+      tran4 = store.createRecord(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;400&lt;/span&gt; });
+
+      transactions = [tran1, tran2, tran3, tran4];
+
+      month.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).addObjects(transactions);
+    });
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions returns positive transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; results = month.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  deepEqual(results, [tran1, tran2]);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions returns negative transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; results = month.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  deepEqual(results, [tran3, tran4]);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;app/models/transaction.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; attr = DS.attr;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;amount&lt;/span&gt;: attr(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;number&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The month controller will handle computing the &lt;code&gt;incomeTotal&lt;/code&gt; and
+&lt;code&gt;expenseTotal&lt;/code&gt; for the month.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app/controllers/month.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; computed = Ember.computed;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.ObjectController.extend({
+  &lt;span class="key"&gt;incomeTotal&lt;/span&gt;: computed(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions.[]&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="comment"&gt;// Get the amount for each transaction in incomeTransactions.&lt;/span&gt;
+    &lt;span class="keyword"&gt;var&lt;/span&gt; amounts = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).mapBy(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+    &lt;span class="comment"&gt;// Sum the amounts&lt;/span&gt;
+    &lt;span class="keyword"&gt;return&lt;/span&gt; amounts.reduce(&lt;span class="keyword"&gt;function&lt;/span&gt;(previousValue, currentValue) {
+      &lt;span class="keyword"&gt;return&lt;/span&gt; previousValue += currentValue;
+    }, &lt;span class="integer"&gt;0&lt;/span&gt;);
+  }),
+
+  &lt;span class="key"&gt;expenseTotal&lt;/span&gt;: computed(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions.[]&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="comment"&gt;// Get the amount for each transaction in expenseTransactions.&lt;/span&gt;
+    &lt;span class="keyword"&gt;var&lt;/span&gt; amounts = &lt;span class="local-variable"&gt;this&lt;/span&gt;.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).mapBy(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+    &lt;span class="comment"&gt;// Sum the amounts&lt;/span&gt;
+    &lt;span class="keyword"&gt;return&lt;/span&gt; amounts.reduce(&lt;span class="keyword"&gt;function&lt;/span&gt;(previousValue, currentValue) {
+      &lt;span class="keyword"&gt;return&lt;/span&gt; previousValue += currentValue;
+    }, &lt;span class="integer"&gt;0&lt;/span&gt;);
+  })
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;tests/unit/controllers/month-test.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+52
+53
+54
+55
+56
+57
+58
+59
+&lt;strong&gt;60&lt;/strong&gt;
+61
+62
+63
+64
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleFor } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; set = Ember.set;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; monthController, incomeTransactions, expenseTransactions;
+
+moduleFor(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;controller:month&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Unit - Month Controller&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    incomeTransactions = [
+      { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;100&lt;/span&gt; },
+      { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;200&lt;/span&gt; }
+    ];
+
+    expenseTransactions = [
+      { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;300&lt;/span&gt; },
+      { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;400&lt;/span&gt; }
+    ];
+
+    monthController = &lt;span class="local-variable"&gt;this&lt;/span&gt;.subject({
+      &lt;span class="key"&gt;incomeTransactions&lt;/span&gt;: incomeTransactions,
+      &lt;span class="key"&gt;expenseTransactions&lt;/span&gt;: expenseTransactions
+    });
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTotal returns the total of all incomeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; result = monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTotal&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  equal(result, &lt;span class="integer"&gt;300&lt;/span&gt;);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTotal recomputes when an incomeTransaction is added&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; newTransaction = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;500&lt;/span&gt; };
+
+  monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).addObject(newTransaction);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; result = monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTotal&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  equal(result, &lt;span class="integer"&gt;800&lt;/span&gt;);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTotal returns the total of all expenseTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; result = monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTotal&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  equal(result, -&lt;span class="integer"&gt;700&lt;/span&gt;);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTotal recomputes when an expenseTransaction is added&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; newTransaction = { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;600&lt;/span&gt; };
+
+  monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).addObject(newTransaction);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; result = monthController.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTotal&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  equal(result, -&lt;span class="integer"&gt;1300&lt;/span&gt;);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If your spidey senses are tingling, they should be. There is a lot of
+duplication going on in above code. In fact, the only difference between &lt;code&gt;incomeTotal&lt;/code&gt; and
+&lt;code&gt;expenseTotal&lt;/code&gt; is which set of transactions they are working with (incomeTransactions
+or expenseTransactions). Similarly, the only difference between &lt;code&gt;incomeTransactions&lt;/code&gt; and &lt;code&gt;expenseTransactions&lt;/code&gt;
+is whether the amount is a positive or negative number. Let&amp;#39;s write a couple of macros to DRY up this code.&lt;/p&gt;
+
+&lt;h3&gt;Creating custom Ember Macros&lt;/h3&gt;
+
+&lt;p&gt;Both &lt;code&gt;incomeTotal&lt;/code&gt; and &lt;code&gt;expenseTotal&lt;/code&gt; have almost exactly the same
+logic. The goal of each is to take an array of objects and return the
+sum of a specific property on each object. Let&amp;#39;s create a &lt;code&gt;sumBy&lt;/code&gt; macro
+with the goal of being able to write something like: &lt;code&gt;sumBy(&amp;#39;array&amp;#39;, &amp;#39;property&amp;#39;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app/utils/sum-by.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; &lt;span class="keyword"&gt;function&lt;/span&gt;(collection, property) {
+  &lt;span class="keyword"&gt;return&lt;/span&gt; Ember.reduceComputed(collection, {
+    &lt;span class="key"&gt;initialValue&lt;/span&gt;: &lt;span class="float"&gt;0.0&lt;/span&gt;,
+
+    &lt;span class="function"&gt;addedItem&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(accumulatedValue, item){
+      &lt;span class="keyword"&gt;return&lt;/span&gt; accumulatedValue + Ember.get(item, property);
+    },
+
+    &lt;span class="function"&gt;removedItem&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(accumulatedValue, item){
+      &lt;span class="keyword"&gt;return&lt;/span&gt; accumulatedValue - Ember.get(item, property);
+    }
+  });
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;tests/utils/sum-by.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; { test } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;span class="reserved"&gt;import&lt;/span&gt; sumBy from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;../../../utils/sum-by&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; set = Ember.set;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; bankAccount, transactions, tran1, tran2, tran3, tran4;
+
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Unit - SumBy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    tran1 = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt; };
+    tran2 = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt; };
+    tran3 = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;3&lt;/span&gt; };
+    tran4 = { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;4&lt;/span&gt; };
+
+    transactions = [tran1, tran2, tran3, tran4];
+
+    bankAccount = Ember.Object.extend({
+      &lt;span class="key"&gt;transactions&lt;/span&gt;: transactions,
+      &lt;span class="key"&gt;totalAmount&lt;/span&gt;: sumBy(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+    }).create();
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;returns the sum of property for all objects in collection&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; actual = bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;totalAmount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  deepEqual(actual, &lt;span class="integer"&gt;2&lt;/span&gt;);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;recomputes when a new object is added to the collection&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;2&lt;/span&gt;);
+  deepEqual(bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;totalAmount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;), &lt;span class="integer"&gt;2&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;precondition&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; newTrans = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;10&lt;/span&gt; };
+
+  bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).addObject(newTrans);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; actual = bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;totalAmount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  deepEqual(actual, &lt;span class="integer"&gt;12&lt;/span&gt;);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;incomeTransactions&lt;/code&gt; and &lt;code&gt;expenseTransactions&lt;/code&gt; could also use some
+DRYing up. The only difference between the two is whether they are
+filtering by positive of negative numbers. Let&amp;#39;s write a &lt;code&gt;filterBySign&lt;/code&gt;
+macro with the goal of being able to write something like: 
+&lt;code&gt;filterBySign(&amp;#39;array&amp;#39;, &amp;#39;property&amp;#39;, &amp;#39;+&amp;#39;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app/utils/filter-by-sign.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;var&lt;/span&gt; get = Ember.get;
+&lt;span class="keyword"&gt;var&lt;/span&gt; filter = Ember.computed.filter;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; &lt;span class="keyword"&gt;function&lt;/span&gt;(collection, property, sign) {
+  &lt;span class="keyword"&gt;return&lt;/span&gt; filter(collection, &lt;span class="keyword"&gt;function&lt;/span&gt;(object) {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; (sign + &lt;span class="integer"&gt;1&lt;/span&gt;) * get(object, property) &amp;gt; &lt;span class="integer"&gt;0&lt;/span&gt;;
+  });
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;tests/unit/utils/filter-by-sign-test.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;strong&gt;30&lt;/strong&gt;
+31
+32
+33
+34
+35
+36
+37
+38
+39
+&lt;strong&gt;40&lt;/strong&gt;
+41
+42
+43
+44
+45
+46
+47
+48
+49
+&lt;strong&gt;50&lt;/strong&gt;
+51
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; { test } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;span class="reserved"&gt;import&lt;/span&gt; filterBySign from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;../../../utils/filter-by-sign&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; bankAccount, transactions, tran1, tran2, tran3, tran4;
+
+module(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Unit - filterBySign&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    tran1 = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt; };
+    tran2 = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;2&lt;/span&gt; };
+    tran3 = { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;3&lt;/span&gt; };
+    tran4 = { &lt;span class="key"&gt;amount&lt;/span&gt;: -&lt;span class="integer"&gt;4&lt;/span&gt; };
+
+    transactions = [tran1, tran2, tran3, tran4];
+
+    bankAccount = Ember.Object.extend({
+      &lt;span class="key"&gt;transactions&lt;/span&gt;: transactions,
+      &lt;span class="key"&gt;positiveTransactions&lt;/span&gt;: filterBySign(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;+&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+      &lt;span class="key"&gt;negativeTransactions&lt;/span&gt;: filterBySign(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;-&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+    }).create();
+  }
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;'+' returns all objects with positive property values&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; actual = bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;positiveTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; expected = [tran1, tran2];
+
+  deepEqual(actual, expected);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;'-' returns all objects with negative property values&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;1&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; actual = bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;negativeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; expected = [tran3, tran4];
+
+  deepEqual(actual, expected);
+});
+
+test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;recomputes when a new object is added to the dependent array&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  expect(&lt;span class="integer"&gt;2&lt;/span&gt;);
+  deepEqual(bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;positiveTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;), [tran1, tran2]);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; newTrans = { &lt;span class="key"&gt;amount&lt;/span&gt;: &lt;span class="integer"&gt;1000&lt;/span&gt; };
+  bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).addObject(newTrans);
+
+  &lt;span class="keyword"&gt;var&lt;/span&gt; actual = bankAccount.get(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;positiveTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  &lt;span class="keyword"&gt;var&lt;/span&gt; expected = [tran1, tran2, newTrans];
+
+  deepEqual(actual, expected);
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;When reading through the tests for &lt;code&gt;filterBySign&lt;/code&gt;, note how much easier the setup is compared
+to our original tests for the same functionality on the &lt;code&gt;Month&lt;/code&gt; model. Because
+we&amp;#39;re testing the code in isolation, we&amp;#39;re able to use POJOs
+and arrays to test our code. This allows us to avoid having to work
+around the &lt;code&gt;Month&lt;/code&gt; model&amp;#39;s relationships, creating records with the
+store and wrapping our setup code in an &lt;code&gt;Ember.run&lt;/code&gt; to handle async
+behavior. Much nicer!&lt;/p&gt;
+
+&lt;h3&gt;Refactoring the Month Model and Controller&lt;/h3&gt;
+
+&lt;p&gt;We can now refactor our month model and controller to use our new
+macros.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app/model/month.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; filterBySign from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;../utils/filter-by-sign&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; hasMany = DS.hasMany;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; DS.Model.extend({
+  &lt;span class="key"&gt;transactions&lt;/span&gt;: hasMany(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transaction&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+
+  &lt;span class="key"&gt;incomeTransactions&lt;/span&gt;: filterBySign(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;+&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+  &lt;span class="key"&gt;expenseTransactions&lt;/span&gt;: filterBySign(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;transactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;-&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;app/controllers/month.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; sumBy from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;../utils/sum-by&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.ObjectController.extend({
+  &lt;span class="key"&gt;incomeTotal&lt;/span&gt;: sumBy(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;incomeTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;),
+  &lt;span class="key"&gt;expenseTotal&lt;/span&gt;: sumBy(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;expenseTransactions&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;amount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The refactored model and controller are nice and concise while still
+maintaining their readability. We can now delete our old unit tests on
+our &lt;code&gt;Month&lt;/code&gt; model and controller as they now overlap with our macro tests.
+The net result is trimming down the code we have to maintain by about
+half.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re thinking about writing a macro or just want to see what other macros
+are out there, check out &lt;a href="https://github.com/jamesarosen/ember-cpm"&gt;ember-cpm&lt;/a&gt;. 
+It&amp;#39;s a library of non-core macros that you can plug in to you Ember app.
+If you can&amp;#39;t find what you&amp;#39;re looking for there, take a shot at writing
+your own macro and send in a pull request to share it with the
+community!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Introducing Ember CLI Addons</title>
     <link rel="alternate" href="/2014/06/24/introducing_ember_cli_addons.html"/>
@@ -119,7 +888,7 @@
 &lt;li&gt;&lt;code&gt;vendor&lt;/code&gt; -- The tree returned by your addon for the &lt;code&gt;vendor&lt;/code&gt; tree will be merged with your applications vendor tree (generally &lt;code&gt;vendor/&lt;/code&gt;). &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;All of the trees returned by addons are merged into the corresponding tree in the application. The application&amp;#39;s direct trees are always last so they will always override any files from an addon. This actually makes a wonderful place for application specific customization: your addon could provide a good default template, and the application can override by simple placing their own template in lat same path.&lt;/p&gt;
+&lt;p&gt;All of the trees returned by addons are merged into the corresponding tree in the application. The application&amp;#39;s direct trees are always last so they will always override any files from an addon. This actually makes a wonderful place for application specific customization: your addon could provide a good default template, and the application can override by simply placing their own template in the same path.&lt;/p&gt;
 
 &lt;h2&gt;Future&lt;/h2&gt;
 
@@ -641,35 +1410,11 @@ stringQueue.enqueue(&amp;quot;4&amp;quot;);
 quite a bit without damaging the power of the language. I feel like it looks really compelling to JavaScript developers.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>The Process Paradox</title>
-    <link rel="alternate" href="/2014/06/06/process-paradox.html"/>
-    <id>/2014/06/06/process-paradox.html</id>
-    <published>2014-06-06T00:00:00Z</published>
-    <updated>2014-06-06T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;If it feels like process, it is not working… It should feel like a logical means to achieve an end.&lt;/p&gt;
-
-&lt;p&gt;For much of my career as a Project Manager I have been inundated with software development process, theories, techniques, methodologies and related tools - which by association has trickled into the teams I have worked with.  Over time I have observed team members feeling the frustration that “Process” can bring to a project when it is applied in a theoretical way vs. a practical way.  Have you ever facilitated a planning meeting while team members glaze over and bury their heads into their laptops? To all my Project Management brethren - if this is something you are observing in your teams, don’t accept this reality; realize that your process &amp;quot;is not working&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;The art of project management is not dictating process but finding practices that align with the team’s needs and context.   For purposes of this blog post these are the “logical means” I refer to in my opening statement above.  A little Scrum here, a little Waterfall there, and a sprinkle of Kanban might be the right recipe for a particular project - whereas it could be totally wrong for another.   &lt;/p&gt;
-
-&lt;p&gt;In many ways this context is driven by the pyramid of constraints - cost/scope/time, which is project management 101.  However, other contexts might be size of team, remote/co-located, green-field development, team member experience, criticality of deliverables to human life, number of stakeholders, thick/thin management hierarchy, complexity of business rules/logic, and many others which are industry specific.  &lt;/p&gt;
-
-&lt;p&gt;One of my biggest gripes with the “Agile” movement is that companies/teams are adopting variations of the methodology as a prescription to execute projects. I am pretty damn sure the pioneering thinkers who wrote the Agile Manifesto wanted teams to become more principled in thinking about the practices they chose to use vs. following the playbook blindly and not making sure it aligns with the project context.&lt;/p&gt;
-
-&lt;p&gt;It has been very affirming to know that engineers and designers in large and small companies loath process – I’d say this is pretty universal. However, I have found that these same people are incredibly logical people who are willing to do something non-engineering/design related if  they feel deep down it is a “logical means to achieve an end.” I believe it is the project manager’s responsibility as a servant leader to make sure teams don’t feel like process is holding them back but that it is helping them move forward.&lt;/p&gt;
-
-&lt;p&gt;What I love about being a Project Manager at DockYard is the diversity of the project contexts that come through our door. For me it is and has been a great way to experiment, mix, and match processes to find the right practices for a team/project context.  I believe that DockYard’s acknowledgment of this reality allows us to better serve our clients’ unique contexts.  Not by accident - it is a very deliberate way to approach projects and one size never fits all.   &lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgr" target="_blank" href="http://wickedgoodruby.com/">Wicked Good Ruby Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/06/27/ember-macros-for-DRY-and-testable-code.html"><strong>Ember Macros for DRY and Testable Code</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/06/24/introducing_ember_cli_addons.html"><strong>Introducing Ember CLI Addons</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/06/23/kapow-using-framer.html"><strong>KAPOW! Writing prototypes with Framer</strong><h6 class='footer-desc'>A look at Framer.js, a powerful prototyping tool.</h6></a>
-<a class="footer__post" href="/2014/06/23/goodbye-heroku.html"><strong>Goodbye Heroku</strong><h6 class='footer-desc'>Done with them</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/06/23/kapow-using-framer.html"><strong>KAPOW! Writing prototypes with Framer</strong><h6 class='footer-desc'>A look at Framer.js, a powerful prototyping tool.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
