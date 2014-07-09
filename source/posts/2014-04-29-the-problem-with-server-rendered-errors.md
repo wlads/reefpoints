@@ -41,7 +41,7 @@ server-side the odds are high that these are not validations that can be
 known to be resolved on the client unless you do another data
 submission and wait to see how the server responds.
 
-So to re-cap the two isses are:
+So to re-cap the two issues are:
 
 1. Potential lack of context on which properties errors can map back to
 1. Inability to know when server-rendered validation errors are
@@ -49,7 +49,7 @@ So to re-cap the two isses are:
 
 To start to consider a possible solution I think we need to step back
 and consider the ultimate goal of client side validations. In my mind
-this is puropse: *to help the user submit valid data to the server*.
+this is purpose: *to help the user submit valid data to the server*.
 
 Client side validations are just UI sugar. They are there to guide your
 users. ember-validations only has model-layer concerns, which means you
@@ -83,7 +83,7 @@ Ember.ObjectController.extend(Ember.Validations.Mixin, {
 ```
 
 This way the controller has its own `errors` object which will not clash
-with the `errors` object on your data model. One possiblity of
+with the `errors` object on your data model. One possibility of
 referencing the model's server-rendered errors is to have a `base`
 validator that is not part of the validation graph but who's errors can
 be used for presentation purposes.
