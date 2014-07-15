@@ -59,6 +59,7 @@ format. If you are unfamiliar with ES6 modules I suggest you go and read
 up.
 
 ```js
+import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
 
 var App;
