@@ -5,7 +5,7 @@ twitter: rgbcolor
 author: 'Maria Matveeva'
 tags: experiments, advertising
 social: true
-published: false
+published: true
 comments: true
 summary: 'How I tried to experiment back on Facebook.'
 ---
