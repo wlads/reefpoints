@@ -61,7 +61,7 @@ helpers do
   end
 
   def all_ads
-    { 'ruby' => 'wicked-good-ruby', 'rails' => 'wicked-good-ruby', 'ruby on rails' => 'wicked-good-ruby' }
+    { }
   end
 
   def ad_partial
