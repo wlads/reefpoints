@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Design as conversation"
+title: "Design as Conversation"
 comments: true
 author: 'Ashley Treni'
 social: true
