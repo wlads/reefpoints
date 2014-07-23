@@ -9,6 +9,8 @@ published: true
 tags: design, design process, design thinking
 ---
 
+![Forest Creatures of the Round Table](/images/illustrations/ashley_conversation.jpg)
+
 Our understanding of design is perpetually in flux. Over the years design has transitioned from print and typography to web design, communication design to interaction design, user experience design to information design and design thinking. The space of design expands to encapsulate all these areas, while simultaneously formalizing specialized methodologies.
 
 Design is a process; it no longer refers only to static artifacts or visualizations. Design is a craft as much as it is a way of thinking and interacting.
