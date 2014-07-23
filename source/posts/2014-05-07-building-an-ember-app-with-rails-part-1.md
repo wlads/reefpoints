@@ -155,7 +155,7 @@ git add .
 gc -m "Removed asset pipeline and added active_model_serializers in Rails"
 ```
 
-That wraps up Part 1. In Part 2 will focus on Ember and creating
+That wraps up Part 1. In [Part 2](http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html) will focus on Ember and creating
 some functionality in our app.
 
 [Check out the actual code for this
