@@ -10,6 +10,8 @@ comments: true
 summary: 'My favorite technique to avoid the obvious tiled look.'
 ---
 
+![A most zen-like practice](/images/illustrations/maria_patterns.jpg)
+
 I enjoy the look of hand-drawn things. And I use patterns a lot. But when the two are combined, the results are often disappointing. My least favorite thing is to see a pattern where identical copies of a hand drawn object were repeated without variation. The automatic repetition here is not appropriate to the shaky handmade look of the art.
 
 The effect reminds me of Office circa 1995 (remember the classic marble and granite patterns?) or the obviously tiled walls in video game environments. In a 3D environment, a small size of the tile that causes this obvious tiled look is a necessity to conserve processing power.
