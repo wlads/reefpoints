@@ -9,6 +9,43 @@
     <name>DockYard</name>
   </author>
   <entry>
+    <title>Facebook Experiment</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html"/>
+    <id>http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html</id>
+    <published>2014-07-18T00:00:00Z</published>
+    <updated>2014-07-23T08:17:43-04:00</updated>
+    <author>
+      <name>Maria Matveeva</name>
+    </author>
+    <summary>How I tried to experiment back on Facebook.</summary>
+    <content type="html">&lt;p&gt;I just read this &lt;a href="https://medium.com/@scottrob/facebooks-going-to-be-ok-but-science-is-taking-a-hit-fd512b250f3e"&gt;thoughtful and refreshing article&lt;/a&gt; about Facebook&amp;#39;s now infamous experiment on a large group of users. It outlines the ethical problems in running an experiment on unwilling participants, and how the scandal that followed damages the reputation of scientific research, which has ethical (not just legal) restrictions. It also reminds us that testing different versions of a product on users is nothing new, and we all seem OK with it as long as it stays in the realm of marketing.&lt;/p&gt;
+
+&lt;p&gt;The outrage over users&amp;#39; emotions being manipulated without consent reminds me of my own feeling of insecurity a few years ago, when personalized ads just started appearing on Facebook (somewhere around 2009?). Suddenly this free service, which I use for talking to friends, is listening in and pushing ads on me. Weird. I wanted to push them back.&lt;/p&gt;
+
+&lt;p&gt;Can I do anything to these algorithms that determine what ads I see? I wanted to experiment with them - to manipulate the ads by intentionally changing my information and posting fake content from my profile. I didn&amp;#39;t keep any screenshots for evidence, so you&amp;#39;ll just have to believe that some of it worked well.&lt;/p&gt;
+
+&lt;p&gt;At the time, I had to use Facebook at work quite a lot. As &amp;quot;the web design person&amp;quot; for a nonprofit organization, I posted to Facebook regularly and kept track of potentially abusive comments on the official page, so I had to be logged in and therefore exposed to the ads at the same time.&lt;/p&gt;
+
+&lt;p&gt;If you are a female - especially a female of an important purchasing age like me - you&amp;#39;ll have many companies fighting for your attention. In your early 20s it&amp;#39;s mostly personal purchases like shoes, clothes and makeup. A few years later, you qualify into the coveted &amp;quot;homemaker&amp;quot; target market. You supposedly start making decisions for a growing family about which groceries, appliances and brand of house paint to get - and companies really want your attention.&lt;/p&gt;
+
+&lt;p&gt;I was getting tired of the keywords and browsing history from my personal life following me around at work with supposedly relevant shopping ads, so I tried to confuse Facebook. &lt;/p&gt;
+
+&lt;p&gt;First I tried posting fake announcements of a tropical vacation and labeling some of my photos with far-away locations, but the ads didn&amp;#39;t change much. I would see the occasional 50% off ad for brand name luggage, but nothing drastic. Many of my Facebook friends were confused, including a few coworkers. (&amp;quot;A three week vacation? What about my report?&amp;quot;)&lt;/p&gt;
+
+&lt;p&gt;Next, I changed my gender to male. I loved the ads that I got in return. Suddenly there were no glitter shoes, no 75% off designer dresses, no engagement rings. Instead I saw &amp;quot;finish your computer science degree&amp;quot;, high quality leather goods, and website hosting ads. I had not changed anything else about my behavior. The same keywords and likes give a girl and a boy version of me a completely different market persona. I enjoyed the boy version a lot more.&lt;/p&gt;
+
+&lt;p&gt;The third thing I changed was location. Facebook seemed to save different location privacy settings on desktop and in the browser, and defaulted back to showing my location once in a while. I was not happy to reveal my exact location with each post. It just seemed too invasive. On top of that, Facebook started mining my friends&amp;#39; location settings to determine mine whether I wanted to reveal it or not. It seemed easier to claim a false location than to keep fighting for it to remain blank. I set my hometown and current location to North Pole, Alaska.&lt;/p&gt;
+
+&lt;p&gt;The ads felt a bit more brawny on top of my previous change to &amp;quot;male&amp;quot;. Some offers of rugged hiking boots (I actually buy hiking boots!) and tactical something or other. On the downside, one real life friend later said she was confused by the  North Pole location.&lt;/p&gt;
+
+&lt;p&gt;Since I tried those interventions, Facebook algorithms have of course advanced, and the simple gender setting change today might not produce a significant change in ads. But it felt rewarding to kick back at the marketing machine, and to sometimes get results. I am a web designer, so I have to be a user of web things as well as a maker. I do not think I will be quitting Facebook this week, or next. But I enjoy running experiments back on it.&lt;/p&gt;
+
+&lt;p&gt;As a user, I was able to influence my ads. As a designer, I remain skeptical of user declared content. For example, if I had access to the kind of data Facebook has on most users, and wanted to target a person of a specific age and gender, I would consider their behavior instead of relying on one setting. I would look to confirm their gender, relationship status and age settings with specific keywords or themes in their posts and things they reacted to. &lt;/p&gt;
+
+&lt;p&gt;We should make sure our products do not break in &amp;quot;weird&amp;quot; cases (for example, when user settings and behavior seemingly contradict each other), and remain aware of the assumptions we make in the design process.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Design as conversation</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html</id>
