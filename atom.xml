@@ -4,16 +4,63 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-07-23T00:00:00Z</updated>
+  <updated>2014-07-25T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>On Selling UX</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/25/on-selling-ux.html"/>
+    <id>http://reefpoints.dockyard.com/2014/07/25/on-selling-ux.html</id>
+    <published>2014-07-25T00:00:00Z</published>
+    <updated>2014-07-25T17:16:51-04:00</updated>
+    <author>
+      <name>Steven Trevathan</name>
+    </author>
+    <summary>Getting what you want out of your design process.</summary>
+    <content type="html">&lt;h2&gt;The Talk&lt;/h2&gt;
+
+&lt;p&gt;People are talking about the difficulties of selling UX process to their boss, their clients, or their prospective clients. They&amp;#39;re upset that they don&amp;#39;t have the tools to create the caliber of experience others are building and it&amp;#39;s all because a few people aren&amp;#39;t buying into their process. You might have heard it or said it yourself that those in the way &amp;quot;just don&amp;#39;t get UX&amp;quot;. I know I&amp;#39;ve said it.&lt;/p&gt;
+
+&lt;p&gt;From this point of view, we appear to be looking at the problem as a matter of conversion; turning someone who isn&amp;#39;t interested in change of process into someone who&amp;#39;ll embrace it. It&amp;#39;s a hard sell and, if you&amp;#39;ve ever experienced being hung up on while cold calling someone, you&amp;#39;ll know that your chances of failure are much greater than your chance of conversion. But don&amp;#39;t let that scare you.&lt;/p&gt;
+
+&lt;p&gt;Just like the design process itself, there are many ways to approach this problem. Success in your approach is a matter of understanding perspective and - dare I say - empathy for those in the critical path.&lt;/p&gt;
+
+&lt;h2&gt;Definitions&lt;/h2&gt;
+
+&lt;p&gt;We all have a habit of creating definitions in our minds of what other people do from what we hear around the office (or internet) and they&amp;#39;re often pretty far off base. Those definitions become our foundation for what it means to be those other things: a designer, a developer, a product manager, a CEO. Those definitions, baseless or not, are used to judge the value of the things we do.&lt;/p&gt;
+
+&lt;p&gt;An example might be that most people realize they need a software developer to build an application but they may not understand the angles to be considered, the processes for discovering those angles, or the costs involved. It&amp;#39;s easily misunderstood and can be a surprise for those outside of your industry.&lt;/p&gt;
+
+&lt;h2&gt;Shared Values&lt;/h2&gt;
+
+&lt;p&gt;We intend to create a great product and we understand there are many variations in process that could bring it to life. As creators, that process can often be poorly preconceived and unnecessarily limited before we get a hand in it. We have a few options from here to deliver our full value, and selling isn&amp;#39;t one of them.&lt;/p&gt;
+
+&lt;p&gt;Aaron Scott from &lt;a href="http://leap.agency/"&gt;Leap&lt;/a&gt; gave a talk at &lt;a href="http://www.meetup.com/uxboston/events/136304392/"&gt;UX Boston Conf&lt;/a&gt; about doing your best in getting to know those you&amp;#39;re working with to help deliver a winning concept to the client. This approach holds true in more ways than just reaching a final design; it will help you gain the buy-in you need to perform at your full potential.&lt;/p&gt;
+
+&lt;p&gt;The stakeholder may understand what you do, need some experience of your process before understanding, or maybe they&amp;#39;re not ready for it all. You need to know that they&amp;#39;re acting off of their definitions, and it&amp;#39;s not always their fault for having an incomplete picture. Just the same, it is equally important for us to understand them and their needs.&lt;/p&gt;
+
+&lt;p&gt;If they&amp;#39;re not ready, convincing them otherwise will cause anxiety during the project and potentially cause issues of trust with you or future designers if things don&amp;#39;t go well. Use your best judgment and tread lightly.&lt;/p&gt;
+
+&lt;h2&gt;Collaboration&lt;/h2&gt;
+
+&lt;p&gt;When your work is primarily visual it can be especially difficult to get the buy in you need. Most of the stakeholders will have had vision for their entire lives and trust themselves to judge what they feel is good and bad. They have their own tastes, their own definitions of what you do, and their own expectations of the process.&lt;/p&gt;
+
+&lt;p&gt;Our value as designers is best understood when demonstrated and this is your most powerful tool to gain buy in. Make room for them to be part of your design conversation. Problem solve and communicate with them like you might your design team. Let them breath the same air you are and replace your salesmanship with collaboration. Use this method instead of presentations and cold hard salesmanship or politics.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;#39;t believe they&amp;#39;re a good fit to collaborate with your design team, you may wish to pass on their project. Consider them a &amp;quot;client in training&amp;quot;, give them your best advice, and set them free. Of course this isn&amp;#39;t as easy when working in-house, where I would hope that if you&amp;#39;ve come to this conclusion you&amp;#39;d start looking for a more collaborative environment.&lt;/p&gt;
+
+&lt;p&gt;So stop &lt;em&gt;selling&lt;/em&gt; UX. Look around, listen, ask questions, and help the client in training see further before you put a contract in front of them. Your process of gaining an understanding of the product, users, and their context will sell your expertise all on its own. If they&amp;#39;re not ready, which is up to you to decide, set them free.&lt;/p&gt;
+
+&lt;p&gt;They may not always be a returning client, but they will respect you for being honest with them every step of the way - and that&amp;#39;s a lifelong trust.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Making better repeat patterns</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/23/repeat-patterns.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/23/repeat-patterns.html</id>
     <published>2014-07-23T00:00:00Z</published>
-    <updated>2014-07-25T16:05:22-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -60,7 +107,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html</id>
     <published>2014-07-18T00:00:00Z</published>
-    <updated>2014-07-23T09:31:40-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -97,7 +144,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html</id>
     <published>2014-07-18T00:00:00Z</published>
-    <updated>2014-07-25T16:05:22-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Ashley Treni</name>
     </author>
@@ -122,7 +169,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/27/ember-macros-for-DRY-and-testable-code.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/27/ember-macros-for-DRY-and-testable-code.html</id>
     <published>2014-06-27T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Lin Reid</name>
     </author>
@@ -892,7 +939,7 @@ community!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/24/introducing_ember_cli_addons.html</id>
     <published>2014-06-24T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Robert Jackson</name>
     </author>
@@ -975,7 +1022,7 @@ community!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/kapow-using-framer.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/kapow-using-framer.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Steven Trevathan</name>
     </author>
@@ -1006,7 +1053,7 @@ community!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/23/goodbye-heroku.html</id>
     <published>2014-06-23T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1078,7 +1125,7 @@ service.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/21/making-the-diy-badges.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/21/making-the-diy-badges.html</id>
     <published>2014-06-21T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -1151,7 +1198,7 @@ Next time around we can also experiment with other paper types and have the pape
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/15/swift-and-javascript.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/15/swift-and-javascript.html</id>
     <published>2014-06-15T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -1483,7 +1530,7 @@ quite a bit without damaging the power of the language. I feel like it looks rea
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/06/06/process-paradox.html"/>
     <id>http://reefpoints.dockyard.com/2014/06/06/process-paradox.html</id>
     <published>2014-06-06T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Jon Lacks</name>
     </author>
@@ -1508,7 +1555,7 @@ quite a bit without damaging the power of the language. I feel like it looks rea
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html</id>
     <published>2014-05-31T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -1905,7 +1952,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/27/avoid-rails-when-generating-json-responses-with-postgresql.html</id>
     <published>2014-05-27T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Dan McClain</name>
     </author>
@@ -2485,7 +2532,7 @@ Rails when generating API responses.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html</id>
     <published>2014-05-09T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3074,7 +3121,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html</id>
     <published>2014-05-08T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3210,7 +3257,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html</id>
     <published>2014-05-07T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3416,7 +3463,7 @@ part&lt;/a&gt;&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/06/the-other-thing-dhh-mentioned.html</id>
     <published>2014-05-06T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3478,7 +3525,7 @@ microphone say you should.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/05/preserve-scroll-position-in-ember-apps.html</id>
     <published>2014-05-05T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3579,7 +3626,7 @@ the following mixin:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/04/stop-using-ember-appkit-rails.html</id>
     <published>2014-05-04T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3619,7 +3666,7 @@ We actually sunset the gem about 2 months ago.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/03/guarding-with-arrays.html</id>
     <published>2014-05-03T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3727,7 +3774,7 @@ an actual name for this. If you do please share!&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/02/what-is-holding-up-uniqueness-validator.html</id>
     <published>2014-05-02T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3792,7 +3839,7 @@ few months from now.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html"/>
     <id>http://reefpoints.dockyard.com/2014/05/01/alert-messages-in-ember-apps.html</id>
     <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -3866,7 +3913,7 @@ css opacity transition completes. Browser support may vary.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/30/understanding-validation-graphs.html</id>
     <published>2014-04-30T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4012,7 +4059,7 @@ can see the &lt;code&gt;isValid&lt;/code&gt; states bubbling up to the original 
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/29/the-problem-with-server-rendered-errors.html</id>
     <published>2014-04-29T00:00:00Z</published>
-    <updated>2014-07-18T13:30:13-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4140,7 +4187,7 @@ direction for this. Please feel free to comment below.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/first-few-months.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/28/first-few-months.html</id>
     <published>2014-04-28T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -4183,7 +4230,7 @@ direction for this. Please feel free to comment below.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html</id>
     <published>2014-04-28T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -4254,7 +4301,7 @@ behavior of the object.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/25/ryo-takemasa.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/25/ryo-takemasa.html</id>
     <published>2014-04-25T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Logan Faerber</name>
     </author>
@@ -4281,7 +4328,7 @@ behavior of the object.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/17/ember-object-self-troll.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Alex Navasardyan</name>
     </author>
@@ -4472,7 +4519,7 @@ its own implementation of &lt;code&gt;setWeeks&lt;/code&gt;:&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html"/>
     <id>http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html</id>
     <published>2014-04-10T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Doug Yun</name>
     </author>
@@ -6519,7 +6566,7 @@ benefits, not just the benefits that everyone is touting.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html"/>
     <id>http://reefpoints.dockyard.com/2013/11/11/capybara-extensions.html</id>
     <published>2013-11-11T00:00:00Z</published>
-    <updated>2014-06-23T12:26:07-04:00</updated>
+    <updated>2014-07-25T16:26:13-04:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>

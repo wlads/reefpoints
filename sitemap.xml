@@ -625,13 +625,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/services.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/04/04/design-within-the-browser.html</loc>
     <lastmod>2014-07-25T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/04/10/vim-on-your-mark.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/services.html</loc>
     <lastmod>2014-07-25T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -794,6 +794,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2014/07/23/repeat-patterns.html</loc>
+    <lastmod>2014-07-25T00:00:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/07/25/on-selling-ux.html</loc>
     <lastmod>2014-07-25T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1189,7 +1195,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/04/04/design-within-the-browser.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/04/10/vim-on-your-mark.html</loc>
     <lastmod>2014-07-25T00:00:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
