@@ -30,6 +30,14 @@ module Middleman::Blog::BlogArticle
     end
     Array.wrap(data['legacy_category']) + article_tags
   end
+
+  def illustration
+    data['illustration']
+  end
+
+  def illustration_alt
+    data['illustration_alt']
+  end
 end
 
 helpers do
@@ -70,6 +78,10 @@ helpers do
 
   def has_ad?
     (all_ads.keys & current_page.tags).any?
+  end
+
+  def has_illustration?
+    !current_page.illustration.nil?
   end
 end
 

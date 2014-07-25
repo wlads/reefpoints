@@ -1,9 +1,14 @@
 - wrap_layout :layout do
 
-  .l-wrap--blog__post
-    - if has_ad?
+  - if has_ad?
+    .l-wrap--blog__post
       = partial "shared/ads/#{ad_partial}"
 
+  - if has_illustration?
+    .post__illustration-wrap
+      %img.post__illustration{src: "/images/illustrations/#{current_page.illustration}", alt: "#{current_page.illustration_alt}"}
+
+  .l-wrap--blog__post
     %h1.post__title= current_page.title
 
     = link_to current_page.author, author_path(current_page.author), class: 'post__author'
@@ -24,7 +29,7 @@
     .related-posts-wrap
       - if blog.articles.select { |article| article.author == current_page.author }.size > 1
         .post__avatar-wrap
-          %img{src: "/images/team/#{current_page.author.parameterize}.jpg", class: 'post__avatar'}
+          %img.post__avatar{src: "/images/team/#{current_page.author.parameterize}.jpg"}
           %h5.post__avatar__name= current_page.author
           %h5.post__avatar__position.headline--sub
             = partial 'shared/' + current_page.author.parameterize<<'-position'
