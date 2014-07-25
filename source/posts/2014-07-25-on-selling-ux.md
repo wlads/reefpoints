@@ -39,9 +39,7 @@ If they're not ready, convincing them otherwise will cause anxiety during the pr
 
 ## Collaboration
 
-I don't often hear a developer getting frustrated and claiming someone "just doesn't understand software development". When a developer is asked to solve a problem, they'll discuss the possibilities and desired outcomes at length with the decision makers before plucking from their understood tools and methods to propose any solutions. If they can't or feel uncomfortable, they'll lead you to someone who will, ask for help, or turn the project down if they're in a position to do so. There are exceptions to this, of course, such as when code needs to be refactored and the request is denied because it is perceived as not adding immediate value.
-
-Now, if your work is primarily visual this can be especially difficult. Most of the stakeholders will have had vision for their entire lives and trust themselves to judge what they feel is good and bad. They have their own tastes, their own definitions of what you do, and their own expectations of the process.
+When your work is primarily visual it can be especially difficult to get the buy in you need. Most of the stakeholders will have had vision for their entire lives and trust themselves to judge what they feel is good and bad. They have their own tastes, their own definitions of what you do, and their own expectations of the process.
 
 Our value as designers is best understood when demonstrated and this is your most powerful tool to gain buy in. Make room for them to be part of your design conversation. Problem solve and communicate with them like you might your design team. Let them breath the same air you are and replace your salesmanship with collaboration. Use this method instead of presentations and cold hard salesmanship or politics.
 
