@@ -8,8 +8,6 @@ published: true
 tags: project management, planning
 ---
 
-# Project Carpe Diem — “Game-Plan”
-
 I have been exposed to many different work tracking/planning tools during my time as Project Manager. Early on it was tools like Excel, MS Project, IBM Rational. Later it was Jira, Kanban Boards, GitHub Issue Visualization Tools and physical PostIt Note boards. I would classify the former tools being more aligned with senior management's desire to be “Well Informed” and the latter being more team centric and aligned with Iterative software development. 
 
 Working with both distributed and co-located teams has challenged me to devise appropriate work tracking strategies for these very different team contexts.  However, one thing has remained the same to this day: I have never worked with a team that has determined they do not want to do any level of work tracking either in a high or low fidelity way regardless of the software development methodology being applied.
