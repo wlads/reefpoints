@@ -28,7 +28,7 @@ footer
 .footer-desc
   color: $gray
 
-.footer__event--wgr, .footer__event--openhack, .footer__event--ember, .footer__event--ux
+.footer__event--wgc, .footer__event--openhack, .footer__event--ember, .footer__event--ux, .footer__event--swift, .footer__event--uxhh
   padding:
     top: 1.25em
     bottom: 1.25em
@@ -42,17 +42,24 @@ footer
   &:nth-child(n+3)
     @include has-border(top)
 
-.footer__event--wgr
+.footer__event--wgc
   margin-top: -20px
+  background-position: left 6px
 
 .footer__event--ember
   background-position: left -64px
 
-.footer__event--ux
-  background-position: left -128px
-
 .footer__event--openhack
-  background-position: left -192px
+  background-position: left -136px
+
+.footer__event--ux
+  background-position: left -206px
+
+.footer__event--swift
+  background-position: left -277px
+
+.footer__event--uxhh
+  background-position: left -345px
 
 .footer__post
   margin-bottom: 1.5em
@@ -67,4 +74,3 @@ footer
   display: block
   @include has-border(top)
   color: $gray
-
