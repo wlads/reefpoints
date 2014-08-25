@@ -4,16 +4,43 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-08-22T00:00:00Z</updated>
+  <updated>2014-08-25T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Comics and Big Data</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/08/25/design-and-big-data.html"/>
+    <id>http://reefpoints.dockyard.com/2014/08/25/design-and-big-data.html</id>
+    <published>2014-08-25T00:00:00Z</published>
+    <updated>2014-08-25T10:50:58-04:00</updated>
+    <author>
+      <name>Ashley Treni</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would ever “get” the appeal of a comic book.&lt;/p&gt;
+
+&lt;p&gt;I took a data mining class last semester, and we discussed the importance of &lt;strong&gt;visual storytelling&lt;/strong&gt;. I jotted down notes and took away a comprehensive understanding of design implications - keep colors relative and consistent, scale, got it, check.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.northeastern.edu/camd/artdesign/people/dietmar-offenhuber/"&gt;Dietmar&lt;/a&gt;, my professor, had mentioned a book by Scott McCloud, &lt;a href="http://scottmccloud.com/2-print/1-uc/"&gt;Understanding Comics&lt;/a&gt;, and suggested looking to comics and film as an important metaphor for data visualization. Though I didn’t pay much attention at the time, this notion stuck with me, and a few weeks ago I invested in that very book.&lt;/p&gt;
+
+&lt;p&gt;Comics are a brilliant demonstration of visualizations that show multivariate information. Interactions, emotions, time, and space are all present, concurrent, and in flux - using frames and transitions to move the reader from one thought to the next. Comics pay attention to the readability of a story, by piecing together &amp;quot;juxtaposed images in deliberate sequence.&amp;quot; (McCloud, &lt;em&gt;Understanding Comics&lt;/em&gt;) Unlike film, however, the static nature of comics leaves room for creative challenges balancing those variables simultaneously, especially the evolution of time. &lt;/p&gt;
+
+&lt;p&gt;A series of information graphics is subject to the same dimensional considerations. Data Visualization is a balance of data analytics, visual representations, and a narration which provides a context for each investigation. Designing complex data to be comprehensive, interactive, and inviting is quite a challenge. While there are tools we can use to inspire visualization methods and techniques, there is much more to consider. There is an entire science behind visual cognition; why humans respond to certain characteristics faster than others (to be elaborated on at another point in time).&lt;/p&gt;
+
+&lt;p&gt;To incorporate storytelling into data visualization is to consider who we design for. Like comics, we must create an environment for the audience to become immersed, and the presentation of ideas shapes the interaction. The visual language we use, the way we sequence through visualizations, directly influences the legibility of the information. When we embrace the humanism of comprehension and perception, we design the experience to promote the success of the reader&amp;#39;s ability to understand.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s design to agitate curiosity and engagement. How can we utilize visual storytelling to inspire research, critical analysis, and conversation? Harnessing the power of design, we can draw inspiration from comics, and present information in a way that considers how the mind observes and acquires ideas.&lt;/p&gt;
+
+&lt;p&gt;As it were, I’m now devouring comics - making up for lost time. I’ve put my summer reading list on hold - to make time for books shared with me from fellow designers at DockYard, who maybe not so surprisingly, already have a deep appreciation and love for the brilliant medium that is comics.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Designing an Experience</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/08/22/design-an-experience.html"/>
     <id>http://reefpoints.dockyard.com/2014/08/22/design-an-experience.html</id>
     <published>2014-08-22T00:00:00Z</published>
-    <updated>2014-08-22T16:54:39-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Tim Walsh</name>
     </author>
@@ -34,7 +61,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/08/06/the-most-difficult-position-to-hire-for-in-tech-right-now.html"/>
     <id>http://reefpoints.dockyard.com/2014/08/06/the-most-difficult-position-to-hire-for-in-tech-right-now.html</id>
     <published>2014-08-06T00:00:00Z</published>
-    <updated>2014-08-22T16:38:26-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -83,7 +110,7 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html</id>
     <published>2014-07-29T00:00:00Z</published>
-    <updated>2014-08-22T16:38:26-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Jon Lacks</name>
     </author>
@@ -129,7 +156,7 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/25/on-selling-ux.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/25/on-selling-ux.html</id>
     <published>2014-07-25T00:00:00Z</published>
-    <updated>2014-07-25T17:16:51-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Steven Trevathan</name>
     </author>
@@ -176,7 +203,7 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/23/repeat-patterns.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/23/repeat-patterns.html</id>
     <published>2014-07-23T00:00:00Z</published>
-    <updated>2014-07-25T16:26:13-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -223,7 +250,7 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/18/facebook-experimentation.html</id>
     <published>2014-07-18T00:00:00Z</published>
-    <updated>2014-07-25T16:26:13-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Maria Matveeva</name>
     </author>
@@ -260,7 +287,7 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html"/>
     <id>http://reefpoints.dockyard.com/2014/07/18/design-as-conversation.html</id>
     <published>2014-07-18T00:00:00Z</published>
-    <updated>2014-07-25T16:26:13-04:00</updated>
+    <updated>2014-08-25T10:31:33-04:00</updated>
     <author>
       <name>Ashley Treni</name>
     </author>

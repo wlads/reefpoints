@@ -51,10 +51,36 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-08-22T00:00:00Z</updated>
+  <updated>2014-08-25T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Comics and Big Data</title>
+    <link rel="alternate" href="/2014/08/25/design-and-big-data.html"/>
+    <id>/2014/08/25/design-and-big-data.html</id>
+    <published>2014-08-25T00:00:00Z</published>
+    <updated>2014-08-25T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would ever “get” the appeal of a comic book.&lt;/p&gt;
+
+&lt;p&gt;I took a data mining class last semester, and we discussed the importance of &lt;strong&gt;visual storytelling&lt;/strong&gt;. I jotted down notes and took away a comprehensive understanding of design implications - keep colors relative and consistent, scale, got it, check.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.northeastern.edu/camd/artdesign/people/dietmar-offenhuber/"&gt;Dietmar&lt;/a&gt;, my professor, had mentioned a book by Scott McCloud, &lt;a href="http://scottmccloud.com/2-print/1-uc/"&gt;Understanding Comics&lt;/a&gt;, and suggested looking to comics and film as an important metaphor for data visualization. Though I didn’t pay much attention at the time, this notion stuck with me, and a few weeks ago I invested in that very book.&lt;/p&gt;
+
+&lt;p&gt;Comics are a brilliant demonstration of visualizations that show multivariate information. Interactions, emotions, time, and space are all present, concurrent, and in flux - using frames and transitions to move the reader from one thought to the next. Comics pay attention to the readability of a story, by piecing together &amp;quot;juxtaposed images in deliberate sequence.&amp;quot; (McCloud, &lt;em&gt;Understanding Comics&lt;/em&gt;) Unlike film, however, the static nature of comics leaves room for creative challenges balancing those variables simultaneously, especially the evolution of time. &lt;/p&gt;
+
+&lt;p&gt;A series of information graphics is subject to the same dimensional considerations. Data Visualization is a balance of data analytics, visual representations, and a narration which provides a context for each investigation. Designing complex data to be comprehensive, interactive, and inviting is quite a challenge. While there are tools we can use to inspire visualization methods and techniques, there is much more to consider. There is an entire science behind visual cognition; why humans respond to certain characteristics faster than others (to be elaborated on at another point in time).&lt;/p&gt;
+
+&lt;p&gt;To incorporate storytelling into data visualization is to consider who we design for. Like comics, we must create an environment for the audience to become immersed, and the presentation of ideas shapes the interaction. The visual language we use, the way we sequence through visualizations, directly influences the legibility of the information. When we embrace the humanism of comprehension and perception, we design the experience to promote the success of the reader&amp;#39;s ability to understand.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s design to agitate curiosity and engagement. How can we utilize visual storytelling to inspire research, critical analysis, and conversation? Harnessing the power of design, we can draw inspiration from comics, and present information in a way that considers how the mind observes and acquires ideas.&lt;/p&gt;
+
+&lt;p&gt;As it were, I’m now devouring comics - making up for lost time. I’ve put my summer reading list on hold - to make time for books shared with me from fellow designers at DockYard, who maybe not so surprisingly, already have a deep appreciation and love for the brilliant medium that is comics.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Designing an Experience</title>
     <link rel="alternate" href="/2014/08/22/design-an-experience.html"/>
@@ -260,47 +286,11 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
 &lt;p&gt;&lt;a href="/images/downloadables/patterns/pattern-swatches-CS5-and-later.ai"&gt;Download the Illustrator file&lt;/a&gt; and use these patterns in any project. We only ask that you do not resell them. Enjoy!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Facebook Experiment</title>
-    <link rel="alternate" href="/2014/07/18/facebook-experimentation.html"/>
-    <id>/2014/07/18/facebook-experimentation.html</id>
-    <published>2014-07-18T00:00:00Z</published>
-    <updated>2014-07-18T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I just read this &lt;a href="https://medium.com/@scottrob/facebooks-going-to-be-ok-but-science-is-taking-a-hit-fd512b250f3e"&gt;thoughtful and refreshing article&lt;/a&gt; about Facebook&amp;#39;s now infamous experiment on a large group of users. It outlines the ethical problems in running an experiment on unwilling participants, and how the scandal that followed damages the reputation of scientific research, which has ethical (not just legal) restrictions. It also reminds us that testing different versions of a product on users is nothing new, and we all seem OK with it as long as it stays in the realm of marketing.&lt;/p&gt;
-
-&lt;p&gt;The outrage over users&amp;#39; emotions being manipulated without consent reminds me of my own feeling of insecurity a few years ago, when personalized ads just started appearing on Facebook (somewhere around 2009?). Suddenly this free service, which I use for talking to friends, is listening in and pushing ads on me. Weird. I wanted to push them back.&lt;/p&gt;
-
-&lt;p&gt;Can I do anything to these algorithms that determine what ads I see? I wanted to experiment with them - to manipulate the ads by intentionally changing my information and posting fake content from my profile. I didn&amp;#39;t keep any screenshots for evidence, so you&amp;#39;ll just have to believe that some of it worked well.&lt;/p&gt;
-
-&lt;p&gt;At the time, I had to use Facebook at work quite a lot. As &amp;quot;the web design person&amp;quot; for a nonprofit organization, I posted to Facebook regularly and kept track of potentially abusive comments on the official page, so I had to be logged in and therefore exposed to the ads at the same time.&lt;/p&gt;
-
-&lt;p&gt;If you are a female - especially a female of an important purchasing age like me - you&amp;#39;ll have many companies fighting for your attention. In your early 20s it&amp;#39;s mostly personal purchases like shoes, clothes and makeup. A few years later, you qualify into the coveted &amp;quot;homemaker&amp;quot; target market. You supposedly start making decisions for a growing family about which groceries, appliances and brand of house paint to get - and companies really want your attention.&lt;/p&gt;
-
-&lt;p&gt;I was getting tired of the keywords and browsing history from my personal life following me around at work with supposedly relevant shopping ads, so I tried to confuse Facebook. &lt;/p&gt;
-
-&lt;p&gt;First I tried posting fake announcements of a tropical vacation and labeling some of my photos with far-away locations, but the ads didn&amp;#39;t change much. I would see the occasional 50% off ad for brand name luggage, but nothing drastic. Many of my Facebook friends were confused, including a few coworkers. (&amp;quot;A three week vacation? What about my report?&amp;quot;)&lt;/p&gt;
-
-&lt;p&gt;Next, I changed my gender to male. I loved the ads that I got in return. Suddenly there were no glitter shoes, no 75% off designer dresses, no engagement rings. Instead I saw &amp;quot;finish your computer science degree&amp;quot;, high quality leather goods, and website hosting ads. I had not changed anything else about my behavior. The same keywords and likes give a girl and a boy version of me a completely different market persona. I enjoyed the boy version a lot more.&lt;/p&gt;
-
-&lt;p&gt;The third thing I changed was location. Facebook seemed to save different location privacy settings on desktop and in the browser, and defaulted back to showing my location once in a while. I was not happy to reveal my exact location with each post. It just seemed too invasive. On top of that, Facebook started mining my friends&amp;#39; location settings to determine mine whether I wanted to reveal it or not. It seemed easier to claim a false location than to keep fighting for it to remain blank. I set my hometown and current location to North Pole, Alaska.&lt;/p&gt;
-
-&lt;p&gt;The ads felt a bit more brawny on top of my previous change to &amp;quot;male&amp;quot;. Some offers of rugged hiking boots (I actually buy hiking boots!) and tactical something or other. On the downside, one real life friend later said she was confused by the  North Pole location.&lt;/p&gt;
-
-&lt;p&gt;Since I tried those interventions, Facebook algorithms have of course advanced, and the simple gender setting change today might not produce a significant change in ads. But it felt rewarding to kick back at the marketing machine, and to sometimes get results. I am a web designer, so I have to be a user of web things as well as a maker. I do not think I will be quitting Facebook this week, or next. But I enjoy running experiments back on it.&lt;/p&gt;
-
-&lt;p&gt;As a user, I was able to influence my ads. As a designer, I remain skeptical of user declared content. For example, if I had access to the kind of data Facebook has on most users, and wanted to target a person of a specific age and gender, I would consider their behavior instead of relying on one setting. I would look to confirm their gender, relationship status and age settings with specific keywords or themes in their posts and things they reacted to. &lt;/p&gt;
-
-&lt;p&gt;We should make sure our products do not break in &amp;quot;weird&amp;quot; cases (for example, when user settings and behavior seemingly contradict each other), and remain aware of the assumptions we make in the design process.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/08/25/design-and-big-data.html"><strong>Comics and Big Data</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/08/22/design-an-experience.html"><strong>Designing an Experience</strong><h6 class='footer-desc'>A parallel between live performance and experience design.</h6></a>
-<a class="footer__post" href="/2014/08/06/the-most-difficult-position-to-hire-for-in-tech-right-now.html"><strong>The most difficult position to hire for in tech right now</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/07/29/project-carpe-diem.html"><strong>Project Carpe Diem - "Game Plan"</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/08/06/the-most-difficult-position-to-hire-for-in-tech-right-now.html"><strong>The most difficult position to hire for in tech right now</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
