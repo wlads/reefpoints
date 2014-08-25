@@ -5,7 +5,7 @@ comments: true
 author: 'Ashley Treni'
 social: true
 published: true
-tags: design, design process, design thinking
+tags: design, storytelling, information graphics
 ---
 
 I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would ever “get” the appeal of a comic book.
