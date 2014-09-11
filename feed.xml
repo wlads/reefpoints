@@ -51,10 +51,32 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-08-25T00:00:00Z</updated>
+  <updated>2014-09-11T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>The Fear of Failure</title>
+    <link rel="alternate" href="/2014/09/11/fear-of-failure.html"/>
+    <id>/2014/09/11/fear-of-failure.html</id>
+    <published>2014-09-11T00:00:00Z</published>
+    <updated>2014-09-11T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;When confronted with a new task it&amp;#39;s natural for someone to feel a sense of anxious hesitation. Sure, it varies between individuals depending on the activity or setting, but entering an unfamiliar scenario can make anyone feel uncomfortable. Often this anxiety leads someone to succumb to their fears of failure, which ultimately results in them not even taking a chance at learning something new.&lt;/p&gt;
+
+&lt;p&gt;No one wants to be a failure - there&amp;#39;s a connotation that you should just give up or else be publicly humiliated. Thanks to the recent development of social networks, anyone can declare someone as a failure simply by leaving a comment on a video online or posting blanketed statements on various articles - all the while never having to say it to their face directly or give useful constructive feedback. This mentality comes from a very judgmental and one sided declaration that spurs from people&amp;#39;s fear of being a failure themselves. &lt;/p&gt;
+
+&lt;p&gt;Alone, the term failure is a simple solution to a more complex problem. It&amp;#39;s quick to label the scenario as everything having gone wrong rather than taking the time necessary to provide constructive feedback or to consider steps leading up to the &amp;quot;failure&amp;quot;. By neglecting to reflect on the the particulars of the situation we are not learning from our mis-steps. &lt;/p&gt;
+
+&lt;p&gt;Rather than refer to these results as failures, I like to think of them as mistakes, granting more leniency to a lifetime of self-educating. While a failure feels conclusive, a mistake feels like a small part of a whole, which is more representative of how learning a new skill or concept should be. We should always be approaching the chance to learn something new with an optimistic and open mind, and the only way to do that successfully is to embrace the fact that you&amp;#39;re bound to make mistakes along the way. Think about it; if a kid messes up, we don&amp;#39;t instantly jump to calling them a failure. We let them know that it&amp;#39;s okay, they&amp;#39;ve made a mistake, but then we follow up with an instruction or demonstration on how they could improve next time. This ability to showcase compassion when sharing ideas is how we&amp;#39;ve come so far as a human race. We tend to be most curious as children because we&amp;#39;re unaware of the cultural judgment that comes from not being right all the time. We&amp;#39;re still willing to experiment without that fear of failure. The curiosity to learn something new is an exciting one, where we focus on ourselves improving and not the jealousy of what others have accomplished, so why not treat our entire lifetime of learning with a similar level of patience and understanding? &lt;/p&gt;
+
+&lt;p&gt;Fear can be incredibly influential when learning something new as long as it&amp;#39;s used to fuel the fire and not extinguish it - prove it wrong. Instead of focusing on what you have to accomplish and getting overwhelmed, take time to learn at your own pace; as they say, patience is a virtue. The best way to learn is to dive right in without thinking too heavily. By getting directly involved you will be learning through a hands on experience, which helps to reconfirm what works and what doesn&amp;#39;t. As with most things, repetition is key to retaining information.  If you&amp;#39;re willing to make mistakes along the way, jump right in and get your hands dirty. Not only will you avoid wasting time hesitating, but you&amp;#39;re forced to find a solution now that you&amp;#39;ve already begun. The less you think in these scenarios, the better. &lt;/p&gt;
+
+&lt;p&gt;In order to learn we must be willing to make mistakes. Hundreds if not thousands of them. You&amp;#39;ll probably even make some incredible, irreversible messes along the way. But rather than wasting time to criticize yourself or worry about what others think of you, focus on the task at hand. Take time to acknowledge what wasn&amp;#39;t working, why it wasn&amp;#39;t working, and move on. It&amp;#39;s as simple as that. Ultimately our biggest failures lead to our greatest successes. So in order for us to improve and grow as individuals as well as a society we must try to overcome this fear or else we&amp;#39;ll never progress, and that&amp;#39;s the real failure.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Comics and Big Data</title>
     <link rel="alternate" href="/2014/08/25/design-and-big-data.html"/>
@@ -240,57 +262,11 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
 &lt;p&gt;They may not always be a returning client, but they will respect you for being honest with them every step of the way - and that&amp;#39;s a lifelong trust.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Making better repeat patterns</title>
-    <link rel="alternate" href="/2014/07/23/repeat-patterns.html"/>
-    <id>/2014/07/23/repeat-patterns.html</id>
-    <published>2014-07-23T00:00:00Z</published>
-    <updated>2014-07-23T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I enjoy the look of hand-drawn things. And I use patterns a lot. But when the two are combined, the results are often disappointing. My least favorite thing is to see a pattern where identical copies of a hand drawn object were repeated without variation. The automatic repetition here is not appropriate to the shaky handmade look of the art.&lt;/p&gt;
-
-&lt;p&gt;The effect reminds me of Office circa 1995 (remember the classic marble and granite patterns?) or the obviously tiled walls in video game environments. In a 3D environment, a small size of the tile that causes this obvious tiled look is a necessity to conserve processing power.&lt;/p&gt;
-
-&lt;p&gt;Remember these?
-&lt;img src="/images/post-assets/maria/001-bad-textures.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Because I want to use hand drawn repeat patterns in my work, and it would be impractical to draw a thousand individual pieces to create the pattern, I experimented to determine exactly how many pieces I need to preserve the varied look, while being able to tile.&lt;/p&gt;
-
-&lt;p&gt;When I intentionally draw similar objects, I found that 15-30 copies will make a decent repeat pattern. I draw more than I need, then squint and get rid of a few that are too dissimilar. Once pieces are arranged on the pattern, there will always be a few that stick out and attract attention to the “seams” between your pattern tiles. To solve this, I leave only a small amount of variation in both shape and placement, and I repeat a few of the shapes several times in a single tile. This distracts from the “edges” of the tiles because repetition happens on two different rhythms.&lt;/p&gt;
-
-&lt;p&gt;Pattern element 2 is repeated several times within one unit.
-&lt;img src="/images/post-assets/maria/002-repeat-pieces.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Trying to get as far away as I can from the obvious square tiled look, I also experimented with other manners of tiling. Adobe Illustrator offers brick (offset), hexagonal and other options, but I eventually need to go back to a rectangular repeating unit because I want to use my pattern in browsers.&lt;/p&gt;
-
-&lt;p&gt;A rectangular repeat unit is used to make hexagonal tiles.
-&lt;img src="/images/post-assets/maria/003-repeat-hex.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is one of the patterns I ended up making in this non-repeated style.&lt;/p&gt;
-
-&lt;p&gt;One unit of the repeat pattern.
-&lt;img src="/images/post-assets/maria/004-trees.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;I used this tree, circled, several times inside one repeating unit.
-&lt;img src="/images/post-assets/maria/005-trees.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The pieces are aligned to the grid, of course, but they are hand drawn so sizes are slightly off. I intentionally spaced them slightly off the grid as well, but preserved the overall balanced appearance (just squint and fix whatever looks off  - very scientific!)
-&lt;img src="/images/post-assets/maria/006-trees.png" alt=""&gt;&lt;/p&gt;
-
-&lt;h2&gt;And finally - here are the patterns!&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/post-assets/maria/099-swatches-of-all-patterns.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="/images/downloadables/patterns/pattern-swatches-CS5-and-later.ai"&gt;Download the Illustrator file&lt;/a&gt; and use these patterns in any project. We only ask that you do not resell them. Enjoy!&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/09/11/fear-of-failure.html"><strong>The Fear of Failure</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/08/25/design-and-big-data.html"><strong>Comics and Big Data</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/08/22/design-an-experience.html"><strong>Designing an Experience</strong><h6 class='footer-desc'>A parallel between live performance and experience design.</h6></a>
-<a class="footer__post" href="/2014/08/06/the-most-difficult-position-to-hire-for-in-tech-right-now.html"><strong>The most difficult position to hire for in tech right now</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/08/22/design-an-experience.html"><strong>Designing an Experience</strong><h6 class='footer-desc'>A parallel between live performance and experience design.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
