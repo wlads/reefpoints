@@ -5,7 +5,7 @@ twitter: LoganFaerber
 author: 'Logan Faerber'
 tags: Art, Design, Design Thinking, Inspiration, Design Process
 social: true
-published: false
+published: true
 comments: true
 ---
 
