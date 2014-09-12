@@ -96,42 +96,27 @@ test('Should allow navigating back to root from another page', function() {
 {{link-to 'About' 'about'}}
 ```
 
-Great! A very simple navigation is setup and fully tested. How about something more complex. Let's allow our visitors
-to see the people that have spoken at Boston Ember. Before we do that we
-need to add new dependencies to our app for mocking out remote
-requests.
+Great! A very simple navigation is setup and fully tested. How about something
+more complex. Let's allow our visitors to see the people that have spoken at
+Boston Ember. Before we do that we need to add new dependencies to our app for
+mocking out remote requests.
 
 We will be using
 [Pretender](https://github.com/trek/pretender/tree/0.0.5) by Ember Core
 member Trek Glowacki. Pretender is a nice DSL for faking out remote
 responses.
 
-We first add Pretender to the `bower.json` in our project root:
-
-```json
-    "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
-    "pretender": "trek/pretender#0.0.5"
-  }
-}
-```
-
-then run `bower install`
-
-Next we will need to tell Broccoli to compile these new dependencies. Add the following lines to `Brocfile.js` in our project root:
+We can use the
+[ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
+Ember CLI Addon to quickly set up Pretender:
 
 ```js
-app.import({development:'vendor/route-recognizer/dist/route-recognizer.js'});
-app.import({development:'vendor/FakeXMLHttpRequest/fake_xml_http_request.js'});
-app.import({development:'vendor/pretender/pretender.js'});
+npm install --save-dev ember-cli-pretender
 ```
 
-We are telling Broccoli to **only** compile for the *development*
-environment. This differs from Rails in that there is no specific *test*
-environment. (at least not yet anyway)
-
-Tell `JSHint` to ignore the `Pretender` constant.
-Open up `ember/tests/.jshintrc` and add `"Pretender"` to the end of the
-`"predef"` array.
+Tell `JSHint` to ignore the `Pretender` constant.  Open up
+`ember/tests/.jshintrc` and add `"Pretender"` to the end of the `"predef"`
+array.
 
 Finally we need ember-data to make requests namespaced under `api` to
 our server:
