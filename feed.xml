@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-804a5f51.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-3775efcf.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,55 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-09-11T00:00:00Z</updated>
+  <updated>2014-09-12T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Reducing Project Costs: Features As Business Objectives</title>
+    <link rel="alternate" href="/2014/09/12/features-as-business-objectives.html"/>
+    <id>/2014/09/12/features-as-business-objectives.html</id>
+    <published>2014-09-12T00:00:00Z</published>
+    <updated>2014-09-12T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;There is a lot of insight a developer can offer when it comes to reducing costs associated with building web applications. While few developers have MBA degrees, we are “in the trenches” when it comes to bringing a project from &lt;a href="http://www.wikiwand.com/en/Ideation_(idea_generation)"&gt;ideation&lt;/a&gt; to completion. We see where projects go astray and where in the process complexity gets introduced, timelines gets pushed out, and costs rise.&lt;/p&gt;
+
+&lt;p&gt;Failed features are a significant cost to any project. I’m defining a failed feature as a feature which gets implemented by the developer correctly, but which was ill-conceived in the planning stages. There’s no 404 error pages, just poor user experiences that don’t serve the application’s aim.&lt;/p&gt;
+
+&lt;p&gt;To mitigate failed features, there is a first principle that I think clients should apply at the outset of any software project: &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Align the application’s features with business goals.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;“Have attainable goals,” is something you hear in a range of industries – from fitness to financial planning. For example, it is common when designing an investment portfolio to come up with a baseline for what you’d like to have saved by the time you retire. Goals help quantify short-term success (meeting monthly savings goals) and bring context to immediate financial decisions (going on an extravagant vacation vs contributing to the 401k).&lt;/p&gt;
+
+&lt;p&gt;In many regards, defining business goals is far harder than designing a feature for an application. Developers can implement an idea, but if the idea is not well grounded or refined enough, the implementation does not matter. Application consumers will not be able to use the feature in a way that translates to success for the business. For all intents and purposes, the feature is “broken” and costs are about to go up because it will need to be fixed.&lt;/p&gt;
+
+&lt;p&gt;This is why coming to a consultancy with a list of features is problematic. Features are not grounded in any sort of reasoning; business objectives are. Enter the planning process with a set of business objectives for the application.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a simple case. A client is overhauling their marketing site. They sit down in their first planning meeting with the designers and developers and say “we want a blog.” A blog is a feature – it is not a business objective. What would be more helpful from the designer and developers’ perspectives is to hear: “we want a way to show prospective clients that our firm is transparent.” This a business objective. It informs the designer that there is a target audience to design for (prospective clients). It tells the designer a little bit about the client’s values (transparency). Yes, it may lead to a blog, but what’s important is that it grounds the feature with a purpose.&lt;/p&gt;
+
+&lt;p&gt;Features must align with business goals, because they create the theoretical framework in which the application operates; the alternative is an aimless applications with a lot of code, a lot of options, and a lot of usability problems. Designing a user experience which gets the consumer from point A to point B becomes difficult because there is not a logical consistency to the elements in the application. Features do not have a unique roles, and so the designer cannot delegate responsibility in a predictable manner.&lt;/p&gt;
+
+&lt;p&gt;Features that are not aligned with business objectives are expensive.&lt;/p&gt;
+
+&lt;p&gt;It goes without saying, but clear design thinking translates into cleaner implementations for the developers building the application. Features can be added, removed, and enhanced without hurting other elements of the application. Code becomes less coupled, is more maintainable, and can be better tested.&lt;/p&gt;
+
+&lt;p&gt;Features without well-defined roles don’t have a place in the application’s ecosystem, and so they often fail This is a worst case scenario. It means that users can’t interact with the application in a way that’s meaningful for the business. And since these failed features need to be fixed and re-worked to meet the business objective (which should have been known and communicated at the outset of the project “discovery” process), the client has expended the following resources:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;the time that went into designing and implementing the failed feature&lt;/li&gt;
+&lt;li&gt;the cost that went into designing and implementing the failed feature&lt;/li&gt;
+&lt;li&gt;the time that will go into designing and implementing the correct feature&lt;/li&gt;
+&lt;li&gt;the cost that will go into designing and implementing the correct feature&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is to say nothing of the opportunity costs. While one client is figuring all of this out, a competitor who aligned their features with their business objectives and “got it right” on the first attempt is gaining happy, new users. &lt;/p&gt;
+
+&lt;p&gt;When a businesses hires a software consultancy to develop an application, they’re bringing in skills and expertise from the outside. It’s unlikely that a developer is going to advise a client on how to gain market share, and it’s just as unlikely that a client is going to open a designer/developer’s eyes to a new application feature. Rather than planning an application around a set of features, clients can make the most of a consultancy&amp;#39;s resources by coming to the planning stages of a project with well-defined business objectives.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Fear of Failure</title>
     <link rel="alternate" href="/2014/09/11/fear-of-failure.html"/>
@@ -86,7 +131,7 @@
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would ever “get” the appeal of a comic book.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would never “get” the appeal of a comic book.&lt;/p&gt;
 
 &lt;p&gt;I took a data mining class last semester, and we discussed the importance of &lt;strong&gt;visual storytelling&lt;/strong&gt;. I jotted down notes and took away a comprehensive understanding of design implications - keep colors relative and consistent, scale, got it, check.&lt;/p&gt;
 
@@ -216,57 +261,11 @@ growing field? I&amp;#39;d like to hear from some people.&lt;/p&gt;
 &lt;p&gt;So Carpe Diem fellow Project Teams - I’d love to hear if any teams out there are up to something similar or has learnings to share!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>On Selling UX</title>
-    <link rel="alternate" href="/2014/07/25/on-selling-ux.html"/>
-    <id>/2014/07/25/on-selling-ux.html</id>
-    <published>2014-07-25T00:00:00Z</published>
-    <updated>2014-07-25T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;The Talk&lt;/h2&gt;
-
-&lt;p&gt;People are talking about the difficulties of selling UX process to their boss, their clients, or their prospective clients. They&amp;#39;re upset that they don&amp;#39;t have the tools to create the caliber of experience others are building and it&amp;#39;s all because a few people aren&amp;#39;t buying into their process. You might have heard it or said it yourself that those in the way &amp;quot;just don&amp;#39;t get UX&amp;quot;. I know I&amp;#39;ve said it.&lt;/p&gt;
-
-&lt;p&gt;From this point of view, we appear to be looking at the problem as a matter of conversion; turning someone who isn&amp;#39;t interested in change of process into someone who&amp;#39;ll embrace it. It&amp;#39;s a hard sell and, if you&amp;#39;ve ever experienced being hung up on while cold calling someone, you&amp;#39;ll know that your chances of failure are much greater than your chance of conversion. But don&amp;#39;t let that scare you.&lt;/p&gt;
-
-&lt;p&gt;Just like the design process itself, there are many ways to approach this problem. Success in your approach is a matter of understanding perspective and - dare I say - empathy for those in the critical path.&lt;/p&gt;
-
-&lt;h2&gt;Definitions&lt;/h2&gt;
-
-&lt;p&gt;We all have a habit of creating definitions in our minds of what other people do from what we hear around the office (or internet) and they&amp;#39;re often pretty far off base. Those definitions become our foundation for what it means to be those other things: a designer, a developer, a product manager, a CEO. Those definitions, baseless or not, are used to judge the value of the things we do.&lt;/p&gt;
-
-&lt;p&gt;An example might be that most people realize they need a software developer to build an application but they may not understand the angles to be considered, the processes for discovering those angles, or the costs involved. It&amp;#39;s easily misunderstood and can be a surprise for those outside of your industry.&lt;/p&gt;
-
-&lt;h2&gt;Shared Values&lt;/h2&gt;
-
-&lt;p&gt;We intend to create a great product and we understand there are many variations in process that could bring it to life. As creators, that process can often be poorly preconceived and unnecessarily limited before we get a hand in it. We have a few options from here to deliver our full value, and selling isn&amp;#39;t one of them.&lt;/p&gt;
-
-&lt;p&gt;Aaron Scott from &lt;a href="http://leap.agency/"&gt;Leap&lt;/a&gt; gave a talk at &lt;a href="http://www.meetup.com/uxboston/events/136304392/"&gt;UX Boston Conf&lt;/a&gt; about doing your best in getting to know those you&amp;#39;re working with to help deliver a winning concept to the client. This approach holds true in more ways than just reaching a final design; it will help you gain the buy-in you need to perform at your full potential.&lt;/p&gt;
-
-&lt;p&gt;The stakeholder may understand what you do, need some experience of your process before understanding, or maybe they&amp;#39;re not ready for it all. You need to know that they&amp;#39;re acting off of their definitions, and it&amp;#39;s not always their fault for having an incomplete picture. Just the same, it is equally important for us to understand them and their needs.&lt;/p&gt;
-
-&lt;p&gt;If they&amp;#39;re not ready, convincing them otherwise will cause anxiety during the project and potentially cause issues of trust with you or future designers if things don&amp;#39;t go well. Use your best judgment and tread lightly.&lt;/p&gt;
-
-&lt;h2&gt;Collaboration&lt;/h2&gt;
-
-&lt;p&gt;When your work is primarily visual it can be especially difficult to get the buy in you need. Most of the stakeholders will have had vision for their entire lives and trust themselves to judge what they feel is good and bad. They have their own tastes, their own definitions of what you do, and their own expectations of the process.&lt;/p&gt;
-
-&lt;p&gt;Our value as designers is best understood when demonstrated and this is your most powerful tool to gain buy in. Make room for them to be part of your design conversation. Problem solve and communicate with them like you might your design team. Let them breath the same air you are and replace your salesmanship with collaboration. Use this method instead of presentations and cold hard salesmanship or politics.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;#39;t believe they&amp;#39;re a good fit to collaborate with your design team, you may wish to pass on their project. Consider them a &amp;quot;client in training&amp;quot;, give them your best advice, and set them free. Of course this isn&amp;#39;t as easy when working in-house, where I would hope that if you&amp;#39;ve come to this conclusion you&amp;#39;d start looking for a more collaborative environment.&lt;/p&gt;
-
-&lt;p&gt;So stop &lt;em&gt;selling&lt;/em&gt; UX. Look around, listen, ask questions, and help the client in training see further before you put a contract in front of them. Your process of gaining an understanding of the product, users, and their context will sell your expertise all on its own. If they&amp;#39;re not ready, which is up to you to decide, set them free.&lt;/p&gt;
-
-&lt;p&gt;They may not always be a returning client, but they will respect you for being honest with them every step of the way - and that&amp;#39;s a lifelong trust.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/09/12/features-as-business-objectives.html"><strong>Reducing Project Costs: Features As Business Objectives</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/09/11/fear-of-failure.html"><strong>The Fear of Failure</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/08/25/design-and-big-data.html"><strong>Comics and Big Data</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/08/22/design-an-experience.html"><strong>Designing an Experience</strong><h6 class='footer-desc'>A parallel between live performance and experience design.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/08/25/design-and-big-data.html"><strong>Comics and Big Data</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
