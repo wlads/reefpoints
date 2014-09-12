@@ -13,18 +13,18 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/09/12/features-as-business-objectives.html"/>
     <id>http://reefpoints.dockyard.com/2014/09/12/features-as-business-objectives.html</id>
     <published>2014-09-12T00:00:00Z</published>
-    <updated>2014-09-12T13:49:46-04:00</updated>
+    <updated>2014-09-12T14:10:30-04:00</updated>
     <author>
       <name>Michael Dupuis</name>
     </author>
     <summary/>
-    <content type="html">&lt;p&gt;There is a lot of insight a developer can offer when it comes to reducing costs associated with building web applications. While few developers have MBA degrees, we are “in the trenches” when it comes to bringing a project from &lt;a href="http://www.wikiwand.com/en/Ideation_(idea_generation)"&gt;ideation&lt;/a&gt; to completion. We see where projects go astray and where in the process complexity gets introduced, timelines gets pushed out, and costs rise.&lt;/p&gt;
+    <content type="html">&lt;p&gt;There is a lot of insight a developer can offer when it comes to reducing costs associated with building web applications. While few developers have MBA degrees, we are “in the trenches” when it comes to bringing a project from &lt;a href="http://www.wikiwand.com/en/Ideation_(idea_generation)"&gt;ideation&lt;/a&gt; to completion. We see where projects go astray and where in the process complexity gets introduced, timelines get pushed out, and costs rise.&lt;/p&gt;
 
 &lt;p&gt;Failed features are a significant cost to any project. I’m defining a failed feature as a feature which gets implemented by the developer correctly, but which was ill-conceived in the planning stages. There’s no 404 error pages, just poor user experiences that don’t serve the application’s aim.&lt;/p&gt;
 
 &lt;p&gt;To mitigate failed features, there is a first principle that I think clients should apply at the outset of any software project: &lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Align the application’s features with business goals.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Align the application’s features with business goals.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;“Have attainable goals,” is something you hear in a range of industries – from fitness to financial planning. For example, it is common when designing an investment portfolio to come up with a baseline for what you’d like to have saved by the time you retire. Goals help quantify short-term success (meeting monthly savings goals) and bring context to immediate financial decisions (going on an extravagant vacation vs contributing to the 401k).&lt;/p&gt;
 
@@ -34,13 +34,13 @@
 
 &lt;p&gt;Let’s take a simple case. A client is overhauling their marketing site. They sit down in their first planning meeting with the designers and developers and say “we want a blog.” A blog is a feature – it is not a business objective. What would be more helpful from the designer and developers’ perspectives is to hear: “we want a way to show prospective clients that our firm is transparent.” This a business objective. It informs the designer that there is a target audience to design for (prospective clients). It tells the designer a little bit about the client’s values (transparency). Yes, it may lead to a blog, but what’s important is that it grounds the feature with a purpose.&lt;/p&gt;
 
-&lt;p&gt;Features must align with business goals, because they create the theoretical framework in which the application operates; the alternative is an aimless applications with a lot of code, a lot of options, and a lot of usability problems. Designing a user experience which gets the consumer from point A to point B becomes difficult because there is not a logical consistency to the elements in the application. Features do not have a unique roles, and so the designer cannot delegate responsibility in a predictable manner.&lt;/p&gt;
+&lt;p&gt;Features must align with business goals, because they create the theoretical framework in which the application operates; the alternative is an aimless application with a lot of code, a lot of options, and a lot of usability problems. Designing a user experience which gets the consumer from point A to point B becomes difficult because there is not a logical consistency to the elements in the application. Features do not have a unique roles, and so the designer cannot delegate responsibility in a predictable manner.&lt;/p&gt;
 
 &lt;p&gt;Features that are not aligned with business objectives are expensive.&lt;/p&gt;
 
 &lt;p&gt;It goes without saying, but clear design thinking translates into cleaner implementations for the developers building the application. Features can be added, removed, and enhanced without hurting other elements of the application. Code becomes less coupled, is more maintainable, and can be better tested.&lt;/p&gt;
 
-&lt;p&gt;Features without well-defined roles don’t have a place in the application’s ecosystem, and so they often fail This is a worst case scenario. It means that users can’t interact with the application in a way that’s meaningful for the business. And since these failed features need to be fixed and re-worked to meet the business objective (which should have been known and communicated at the outset of the project “discovery” process), the client has expended the following resources:&lt;/p&gt;
+&lt;p&gt;Features without well-defined roles don’t have a place in the application’s ecosystem, and so they often fail. This is a worst case scenario. It means that users can’t interact with the application in a way that’s meaningful for the business. And since these failed features need to be fixed and re-worked to meet the business objective (which should have been known and communicated at the outset of the project “discovery” process), the client has expended the following resources:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;the time that went into designing and implementing the failed feature&lt;/li&gt;
