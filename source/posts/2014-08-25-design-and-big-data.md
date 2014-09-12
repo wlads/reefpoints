@@ -8,7 +8,7 @@ published: true
 tags: design, storytelling, information graphics
 ---
 
-I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would ever “get” the appeal of a comic book.
+I’ve never been into comics or graphic novels. They’ve always remained in my periphery, but I never took the time to be interested in them. I appreciated good illustration, but rarely watched animations (except for Disney and Pixar of course) and pretty much ruled out that I would never “get” the appeal of a comic book.
 
 I took a data mining class last semester, and we discussed the importance of **visual storytelling**. I jotted down notes and took away a comprehensive understanding of design implications - keep colors relative and consistent, scale, got it, check.
 
