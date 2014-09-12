@@ -3,8 +3,7 @@ layout: post
 title: 'Reducing Project Costs: Features As Business Objectives'
 twitter: michaeldupuisjr
 author: 'Michael Dupuis'
-tags: Design Process, Business, Design Thinking,
-Engineering, Planning, Process
+tags: Design Process, Business, Design Thinking, Engineering, Planning, Process
 social: true
 published: true
 comments: true
