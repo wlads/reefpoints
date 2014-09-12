@@ -99,7 +99,7 @@ Check your test suite and it should be all green.
 
 Congratulations on your first ember test!
 
-Next time we'll build out some pages and write tests to interact with
+In [part 3](http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html) we'll build out some pages and write tests to interact with
 these pages.
 
 [Check out the actual code for this
