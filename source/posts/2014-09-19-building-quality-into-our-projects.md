@@ -20,7 +20,7 @@ When making an investment in development of an application, the level of desired
 
 Before the Engineer writes a line of code they are investing time in thinking about and writing the appropriate test cases for the code - these tests will serve as a functional quality benchmark which the engineer can code towards. In parallel these efforts build up a library of automated tests that will ensure that the “working” features built early in the project continue to work when new features (code) are introduced later on.  If we don’t have these tests and we have 1000’s of lines of code, testing/debugging overhead raises exponentially which will result in increased risk to project cost and/or desired schedule.  It’s also important to note that this practice is functionally-centric and not visual which is addressed with other practices described below.
 
-<i>What this means to the client</i> -
+<b><i>What this means to the client</i> -
 
 The cost and eventual savings related to this practice manifest themselves as time spent thinking vs. coding vs. testing. When we estimate what it will take to develop a given feature, we consider the time spent thinking about these tests, writing the tests, maintaining the tests in addition to writing the feature code.  However, keep in mind that the time spent testing later on in the project, when the code base has grown exponentially, is reduced due to this upfront investment of time (see figure below) because we have a growing set of automated tests that will ensure we continue to maintain high quality throughout the development cycle.
 
@@ -32,7 +32,7 @@ Sometimes (usually) two heads are better than one.  Pair Programming is exactly 
 
 Additionally, Code Reviews by a peer or more senior engineer serve to ensure that the code being written meets agreed best practices and that mistakes of the past don’t get reintroduced. 
 
-<i>What this means to the client -</i>
+<b><i>What this means to the client -</i>
 
 Pair programing and Code Reviews are practices DockYard believes yield higher quality code while also establishing a continuous learning culture across our engineering team.  The extent to which we apply these practices is less variable in that it is part of our company DNA - however, like any practice, a client’s project context will dictate the extent to which these apply.  The client will incur the benefit of a well rounded and productive engineering team which can translate to reduced project cost.
 
@@ -40,7 +40,7 @@ Pair programing and Code Reviews are practices DockYard believes yield higher qu
 
 In a literal sense this is the type of testing conducted by a human who seeks to ensure the less common use cases which may not have been exercised by an Automated Test or code review are working as expected. Additionally, this type of testing ensures the visual design of the product has been upheld -  Spacing, pixels, colors, fonts, etc.  Browser compatibility is also something manual testing will verify. This type of testing is usually conducted by members of the project team and the client. They work in collaboration across the feature set, report and classify severity of bugs which are eventually assigned to engineers when appropriate.
 
-<i>What this means to the client -</i>
+<b><i>What this means to the client -</i>
 
 The client should be prepared to be a very active participant in this practice and schedule their time accordingly.  Feature complexity will drive the amount of time required for this type of testing - which might be nil if complexity is low.  A very rich user experience will require more testing and thus manifest itself in terms of increased time/cost.  
 
@@ -54,7 +54,7 @@ allows the team to reflect and continuously improve how they are executing the p
 
 When a feature is ready for prime time, we will usually ask the client to formally accept the feature as complete.  This ensures the team can shift their full focus and attention to building the next features on the backlog. Context switching can be very costly in terms of productivity, therefore we try to call things “Done Done” before moving on. 
 
-<i>What this means to the client -</i>
+<b><i>What this means to the client -</i>
 
 Similar to manual testing, client should be prepared to be a very active participant in both demos and conducting acceptance testing within agreed timeframes.  Deviation from established timeframes will result in increased project cost/time.  Therefore, whenever we engage with a client, we request upfront a high level of collaboration and availability to keep things moving along.  
 
