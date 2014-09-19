@@ -8,13 +8,13 @@ published: true
 comments: true
 ---
 
-This article serves as a continuation of a “Client Targeted” article recently published by our own Michael Dupuis (<a href="http://reefpoints.dockyard.com/2014/09/12/features-as-business-objectives.html">Features As Business Objectives.</a> ) These posts aim to provide our current and prospective clients insight into how we approach development at DockYard.
+This article serves as a continuation of a “Client Targeted” article recently published by our own Michael Dupuis (<a href="http://reefpoints.dockyard.com/2014/09/12/features-as-business-objectives.html">Features As Business Objectives</a>). These posts aim to provide our current and prospective clients insight into how we approach development at DockYard.
 
 Building "Quality" software does not happen by accident. It is actually one of the unspoken sides of the “iron triangle” of project constraints (Scope, Cost, Time) - or should we call it a diamond now? Let’s not go there! 
 
 ![image](http://imgur.com/zXrxLSh.jpg)
 
-When making an investment in development of an application, the level of desired quality influences project cost and schedule.  Building an appropriate Quality Plan for a project requires time, planning and execution which is the responsibility of DockYard and the clients with whom we engage.  Below I layout the primary types of quality related practices we may consider applying to our (your) projects; always driven by clients’ unique context (See my earlier blog post about context driving practices - <a href="http://reefpoints.dockyard.com/2014/06/06/process-paradox.html">Process Paradox.</a> )  This article does not serve to describe these quality practices in depth but will cover the basics in terms of how they could apply to client projects.  Any one of these practices in isolation is not an effective recipe for quality, it is the degree to which these practices are commingled in a logical way that results in positive outcomes. 
+When making an investment in development of an application, the level of desired quality influences project cost and schedule.  Building an appropriate Quality Plan for a project requires time, planning and execution which is the responsibility of DockYard and the clients with whom we engage.  Below I layout the primary types of quality related practices we may consider applying to our (your) projects; always driven by clients’ unique context (See my earlier blog post about context driving practices - <a href="http://reefpoints.dockyard.com/2014/06/06/process-paradox.html">Process Paradox</a>).  This article does not serve to describe these quality practices in depth but will cover the basics in terms of how they could apply to client projects.  Any one of these practices in isolation is not an effective recipe for quality, it is the degree to which these practices are commingled in a logical way that results in positive outcomes. 
 
 <b>Practice #1 - Test-Driven Development / Automated Testing -
 
