@@ -28,7 +28,7 @@ The cost and eventual savings related to this practice manifest themselves as ti
 
 <b>Practice #2 - Pair Programing / Code Reviews - 
 
-Sometimes (usually) two heads are better than one.  Pair Programming is exactly as it is described. Two engineers team up to work side by side on a single unit of code (or feature.) In a 2013 article published by the Economist a study conducted by Laurie Williams of the University of Utah showed “...paired programmers are 15% slower than two independent individual programmers, while "error-free" code increased from 70% to 85%. Since testing and debugging are often many times more costly than initial programming, this is an impressive result. Pairs typically consider more design alternatives than programmers working alone, and arrive at simpler, more maintainable designs; they also catch design defects early.”
+Sometimes (usually) two heads are better than one.  Pair Programming is exactly as it is described. Two engineers team up to work side by side on a single unit of code (or feature.) In a 2013 article published by the Economist a study conducted by Laurie Williams of the University of Utah showed “<i>...paired programmers are 15% slower than two independent individual programmers, while "error-free" code increased from 70% to 85%. Since testing and debugging are often many times more costly than initial programming, this is an impressive result. Pairs typically consider more design alternatives than programmers working alone, and arrive at simpler, more maintainable designs; they also catch design defects early.</i>”
 
 Additionally, Code Reviews by a peer or more senior engineer serve to ensure that the code being written meets agreed best practices and that mistakes of the past don’t get reintroduced. 
 
