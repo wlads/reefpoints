@@ -10,7 +10,7 @@ comments: true
 
 This article serves as a continuation of a “Client Targeted” article recently published by our own Michael Dupuis (<a href="http://reefpoints.dockyard.com/2014/09/12/features-as-business-objectives.html">Features As Business Objectives.</a> ) These posts aim to provide our current and prospective clients insight into how we approach development at DockYard.
 
-Building "Quality" software does not happen by accident. It is actually one of the unspoken sides of the “pyramid” of project constraints (Scope, Cost, Time) - or should we call it a diamond now? Let’s not go there! 
+Building "Quality" software does not happen by accident. It is actually one of the unspoken sides of the “iron triangle” of project constraints (Scope, Cost, Time) - or should we call it a diamond now? Let’s not go there! 
 
 ![image](http://imgur.com/zXrxLSh.jpg)
 
