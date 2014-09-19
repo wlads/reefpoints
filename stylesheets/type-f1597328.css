@@ -23,61 +23,65 @@ p, label, h4, em {
   font-size: 18px; }
 
 /* line 14, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
-strong, h4, b {
+strong, h4 {
   font-family: "NiveauGroteskBold", sans-serif; }
 
 /* line 17, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 em {
   font-family: "NiveauGroteskLight-Italic", sans-serif; }
 
-/* line 20, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 21, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+strong em, h4 em {
+  font-family: "NiveauGroteskBold-Italic", sans-serif; }
+
+/* line 23, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 p {
   margin-bottom: 1em; }
 
-/* line 23, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 26, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 h1, h2 {
   font-family: "LatoLight", sans-serif; }
 
-/* line 26, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 29, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 h1 {
   margin-bottom: 0.5em; }
   @media (max-width: 649px) {
-    /* line 26, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+    /* line 29, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
     h1 {
       font-size: 40px; } }
   @media (min-width: 650px) {
-    /* line 26, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+    /* line 29, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
     h1 {
       font-size: 72px; } }
 
-/* line 33, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 36, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 h2 {
   line-height: 1.25; }
   @media (max-width: 860px) {
-    /* line 33, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+    /* line 36, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
     h2 {
       font-size: 24px; } }
   @media (min-width: 860px) {
-    /* line 33, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+    /* line 36, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
     h2 {
       font-size: 42px; } }
 
-/* line 40, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 43, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 h3 {
   font-family: "LatoRegular", sans-serif; }
 
-/* line 50, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 53, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 h6 {
   font-size: 16px; }
 
-/* line 56, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 59, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 sup {
   position: relative;
   top: -5px;
   left: 1px;
   font-size: 70%; }
 
-/* line 62, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 65, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .text-link {
   color: #43c0ef;
   -webkit-transition-duration: 0.25s;
@@ -92,19 +96,19 @@ sup {
   .text-link:hover {
     color: #72d0f3; }
 
-/* line 66, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 69, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .text--center {
   text-align: center; }
 
-/* line 69, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 72, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--big, .headline--big--preview {
   font-size: 24px; }
 
-/* line 72, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 75, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--big--preview {
   line-height: 1.25; }
 
-/* line 76, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 79, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--icon {
   text-align: center;
   line-height: 1; }
@@ -130,20 +134,20 @@ sup {
     top: -4px;
     left: -30px; }
 
-/* line 81, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 84, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--text, .headline--text--center {
   margin-top: 40px;
   margin-bottom: 10px; }
 
-/* line 86, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 89, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--text--center {
   text-align: center; }
 
-/* line 90, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 93, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .headline--sub {
   color: #cdcdcd; }
 
-/* line 93, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
+/* line 96, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
 .icon__desc {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
