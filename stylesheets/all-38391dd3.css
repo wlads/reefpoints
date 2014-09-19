@@ -1745,7 +1745,7 @@ p, label, h4, em {
   font-size: 18px; }
 
 /* line 14, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */
-strong, h4 {
+strong, h4, b {
   font-family: "NiveauGroteskBold", sans-serif; }
 
 /* line 17, /Users/steventrevathan/Sites/reefpoints/source/stylesheets/type.sass */

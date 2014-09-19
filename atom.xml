@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/09/19/building-quality-into-our-projects.html"/>
     <id>http://reefpoints.dockyard.com/2014/09/19/building-quality-into-our-projects.html</id>
     <published>2014-09-19T00:00:00Z</published>
-    <updated>2014-09-19T13:59:34-04:00</updated>
+    <updated>2014-09-19T14:11:15-04:00</updated>
     <author>
       <name>Jon Lacks</name>
     </author>
@@ -26,35 +26,35 @@
 
 &lt;p&gt;When making an investment in development of an application, the level of desired quality influences project cost and schedule.  Building an appropriate Quality Plan for a project requires time, planning and execution which is the responsibility of DockYard and the clients with whom we engage.  Below I layout the primary types of quality related practices we may consider applying to our (your) projects; always driven by clients’ unique context (See my earlier blog post about context driving practices - &lt;a href="http://reefpoints.dockyard.com/2014/06/06/process-paradox.html"&gt;Process Paradox&lt;/a&gt;).  This article does not serve to describe these quality practices in depth but will cover the basics in terms of how they could apply to client projects.  Any one of these practices in isolation is not an effective recipe for quality, it is the degree to which these practices are commingled in a logical way that results in positive outcomes. &lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;Practice #1 - Test-Driven Development / Automated Testing -&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Practice #1 - Test-Driven Development / Automated Testing -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Before the Engineer writes a line of code they are investing time in thinking about and writing the appropriate test cases for the code - these tests will serve as a functional quality benchmark which the engineer can code towards. In parallel these efforts build up a library of automated tests that will ensure that the “working” features built early in the project continue to work when new features (code) are introduced later on.  If we don’t have these tests and we have 1000’s of lines of code, testing/debugging overhead raises exponentially which will result in increased risk to project cost and/or desired schedule.  It’s also important to note that this practice is functionally-centric and not visual which is addressed with other practices described below.&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;&lt;i&gt;What this means to the client&lt;/i&gt; -&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What this means to the client&lt;/em&gt; -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The cost and eventual savings related to this practice manifest themselves as time spent thinking vs. coding vs. testing. When we estimate what it will take to develop a given feature, we consider the time spent thinking about these tests, writing the tests, maintaining the tests in addition to writing the feature code.  However, keep in mind that the time spent testing later on in the project, when the code base has grown exponentially, is reduced due to this upfront investment of time (see figure below) because we have a growing set of automated tests that will ensure we continue to maintain high quality throughout the development cycle.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://imgur.com/2HBq9ie.jpg" alt="image"&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;Practice #2 - Pair Programing / Code Reviews - &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Practice #2 - Pair Programing / Code Reviews -&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Sometimes (usually) two heads are better than one.  Pair Programming is exactly as it is described. Two engineers team up to work side by side on a single unit of code (or feature.) In a 2013 article published by the Economist a study conducted by Laurie Williams of the University of Utah showed “&lt;i&gt;...paired programmers are 15% slower than two independent individual programmers, while &amp;quot;error-free&amp;quot; code increased from 70% to 85%. Since testing and debugging are often many times more costly than initial programming, this is an impressive result. Pairs typically consider more design alternatives than programmers working alone, and arrive at simpler, more maintainable designs; they also catch design defects early.&lt;/i&gt;”&lt;/p&gt;
+&lt;p&gt;Sometimes (usually) two heads are better than one.  Pair Programming is exactly as it is described. Two engineers team up to work side by side on a single unit of code (or feature.) In a 2013 article published by the Economist a study conducted by Laurie Williams of the University of Utah showed “&lt;em&gt;...paired programmers are 15% slower than two independent individual programmers, while &amp;quot;error-free&amp;quot; code increased from 70% to 85%. Since testing and debugging are often many times more costly than initial programming, this is an impressive result. Pairs typically consider more design alternatives than programmers working alone, and arrive at simpler, more maintainable designs; they also catch design defects early.&lt;/em&gt;”&lt;/p&gt;
 
 &lt;p&gt;Additionally, Code Reviews by a peer or more senior engineer serve to ensure that the code being written meets agreed best practices and that mistakes of the past don’t get reintroduced. &lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;&lt;i&gt;What this means to the client -&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What this means to the client&lt;/em&gt; -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Pair programing and Code Reviews are practices DockYard believes yield higher quality code while also establishing a continuous learning culture across our engineering team.  The extent to which we apply these practices is less variable in that it is part of our company DNA - however, like any practice, a client’s project context will dictate the extent to which these apply.  The client will incur the benefit of a well rounded and productive engineering team which can translate to reduced project cost.&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;Practice #3 - Manual Testing -&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Practice #3 - Manual Testing -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;In a literal sense this is the type of testing conducted by a human who seeks to ensure the less common use cases which may not have been exercised by an Automated Test or code review are working as expected. Additionally, this type of testing ensures the visual design of the product has been upheld -  Spacing, pixels, colors, fonts, etc.  Browser compatibility is also something manual testing will verify. This type of testing is usually conducted by members of the project team and the client. They work in collaboration across the feature set, report and classify severity of bugs which are eventually assigned to engineers when appropriate.&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;&lt;i&gt;What this means to the client -&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What this means to the client&lt;/em&gt; -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The client should be prepared to be a very active participant in this practice and schedule their time accordingly.  Feature complexity will drive the amount of time required for this type of testing - which might be nil if complexity is low.  A very rich user experience will require more testing and thus manifest itself in terms of increased time/cost.  &lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;Practice #4 - Client Demos (and Acceptance Testing) -&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Practice #4 - Client Demos (and Acceptance Testing) -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;For most projects we work in 1-2 week iterations (sprints) and at the conclusion of this time period we typically demonstrate the progress we have made by sharing working software. These demonstrations serve a dual purpose:&lt;/p&gt;
 
@@ -65,7 +65,7 @@
 
 &lt;p&gt;When a feature is ready for prime time, we will usually ask the client to formally accept the feature as complete.  This ensures the team can shift their full focus and attention to building the next features on the backlog. Context switching can be very costly in terms of productivity, therefore we try to call things “Done Done” before moving on. &lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;&lt;i&gt;What this means to the client -&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What this means to the client&lt;/em&gt; -&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Similar to manual testing, client should be prepared to be a very active participant in both demos and conducting acceptance testing within agreed timeframes.  Deviation from established timeframes will result in increased project cost/time.  Therefore, whenever we engage with a client, we request upfront a high level of collaboration and availability to keep things moving along.  &lt;/p&gt;
 
