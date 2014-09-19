@@ -49,8 +49,8 @@ The client should be prepared to be a very active participant in this practice a
 
 For most projects we work in 1-2 week iterations (sprints) and at the conclusion of this time period we typically demonstrate the progress we have made by sharing working software. These demonstrations serve a dual purpose:
 
-gives the client opportunity to verify development is proceeding in the desired direction, and if not, attempt to course correct early on vs. late in the project when course correction can be very costly
-allows the team to reflect and continuously improve how they are executing the project.
+1. gives the client opportunity to verify development is proceeding in the desired direction, and if not, attempt to course correct early on vs. late in the project when course correction can be very costly
+2. allows the team to reflect and continuously improve how they are executing the project.
 
 When a feature is ready for prime time, we will usually ask the client to formally accept the feature as complete.  This ensures the team can shift their full focus and attention to building the next features on the backlog. Context switching can be very costly in terms of productivity, therefore we try to call things “Done Done” before moving on. 
 
