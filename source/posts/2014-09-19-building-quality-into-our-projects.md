@@ -24,7 +24,7 @@ Before the Engineer writes a line of code they are investing time in thinking ab
 
 The cost and eventual savings related to this practice manifest themselves as time spent thinking vs. coding vs. testing. When we estimate what it will take to develop a given feature, we consider the time spent thinking about these tests, writing the tests, maintaining the tests in addition to writing the feature code.  However, keep in mind that the time spent testing later on in the project, when the code base has grown exponentially, is reduced due to this upfront investment of time (see figure below) because we have a growing set of automated tests that will ensure we continue to maintain high quality throughout the development cycle.
 
-![image](http://imgur.com/wp67s61.jpg)
+![image]( http://imgur.com/2HBq9ie.jpg)
 
 <b>Practice #2 - Pair Programing / Code Reviews - 
 
