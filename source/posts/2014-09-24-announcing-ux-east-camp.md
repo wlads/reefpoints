@@ -14,7 +14,7 @@ We are pleased to announce [UX East's UX Camp](http://uxeast.org/), a weekend of
 
 This isn't a typical networking event or conference. We'll escape the busy and distracting city environment to focus on our craft alongside others interested in design. It's a project weekend, a getaway, and a mini–conference all rolled into one.
 
-The environment is intimate by design. There will only be 30 people at this event and you will work, live, share rooms with, and eat alongside other designers. On top of all this there will be a workshop and few talks available to all who attend.
+The environment is intimate by design. There will only be 30 people at this event who you'll eat, sleep, and work alongside. On top of all this, there will be a workshop and a few talks available to all who attend.
 
 There are many more details to come, and I'm excited to share them with you! Follow our [UX East](https://twitter.com/ux_east) twitter account or check back here for updates. If you're interested in taking part in the event in any capacity, please reach out to [steven@dockyard.com](mailTo:steven@dockyard.com).
 
