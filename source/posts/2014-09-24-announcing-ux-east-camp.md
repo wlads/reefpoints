@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Announcing UX East's UX Camp"
+title: "Go: UX East's UX Camp"
 comments: true
 author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
-summary: 'A weekend of creative thinking, collaboration, and design.'
+summary: 'A weekend of creative thinking and collaboration.'
 published: true
 tags: design, design process, design thinking, conferences, UX East
 ---
 
-We are pleased to announce [UX East's UX Camp](http://uxeast.org/), a weekend of creative thinking, collaboration, and design in one big house in Bryant Pond, ME.
+We are pleased to announce [UX East's UX Camp](http://uxeast.org/), a weekend of creative thinking, collaboration, and design in one big house from Nov 14—16th in Bryant Pond, ME.
 
 This isn't a typical networking event or conference. We'll escape the busy and distracting city environment to focus on our craft alongside others interested in design. It's a project weekend, a get away, and a mini–conference all rolled into one.
 
