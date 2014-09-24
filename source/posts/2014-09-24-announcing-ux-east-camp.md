@@ -16,6 +16,6 @@ This isn't a typical networking event or conference. We'll escape the busy and d
 
 The environment is intimate by design. There will only be 30 people at this event and you will work, live, share rooms with, and eat alongside other designers. On top of all this there will be a workshop and few talks available to all who attend.
 
-There are many more details to come, and I'm excited to share them with you! Follow our [UX East](https://twitter.com/ux_east) twitter account or check back here for updates. If you're interested in taking part in the event in any capacity, please reach out to steven@dockyard.com.
+There are many more details to come, and I'm excited to share them with you! Follow our [UX East](https://twitter.com/ux_east) twitter account or check back here for updates. If you're interested in taking part in the event in any capacity, please reach out to [steven@dockyard.com](mailTo:steven@dockyard.com).
 
 See you all in Maine!
