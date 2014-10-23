@@ -351,7 +351,7 @@ should see:
 
 ![Screen1](http://i.imgur.com/dcdkJDo.png)
 
-We did a lot today, next we'll get into relationships.
+That wraps up Part 3. In [Part 4](http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html) we will get into relationships.
 
 [Check out the actual code for this
 part](https://github.com/bostonember/website/commit/a21e06a9a29b19d405e50268a6d276b8db758261)
