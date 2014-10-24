@@ -23,7 +23,7 @@ A KSS styleguide can be designed to reflect the look and layout of your project 
 
 ![Two KSS Styleguides](/images/kss-styleguide-examples.jpg)
 
-**KSS isn't magic. It's not going to create the styelguide for you.** You still have to do a lot of custom configuration and coding. Coding the styleguide starts with commenting your CSS. You have been leaving helpful comments for future developers all along, right? KSS [defines a syntax](http://warpspire.com/kss/syntax/) for these comments:
+**KSS isn't magic. It's not going to create the styleguide for you.** You still have to do a lot of custom configuration and coding. Coding the styleguide starts with commenting your CSS. You have been leaving helpful comments for future developers all along, right? KSS [defines a syntax](http://warpspire.com/kss/syntax/) for these comments:
 
 ```sass
 // Short description of the element to be documented
@@ -96,7 +96,7 @@ You'll also need to create a controller, a template, helpers, and a front-end KS
 
 - Styleguides created with KSS are only as reliable as the CSS and markup used to generate them. If an element is changed in a way that no longer conforms to the design comps, the styleguide will no longer reflect the correct way that element is supposed to be styled. For example, a developer might change the border radius of a particular button for a new page and doesn't realize that he or she has just changed the base button style in the styleguide. Now the button entry styleguide is no longer a reliable representation of the styles established in the design comps.
 
-- When elements are taken out of their context it can change how styles are applied. Elements have to be adjusted and changed just to appear correctly in the styelguide. This is work beyond what is strictly required to develop a site.
+- When elements are taken out of their context it can change how styles are applied. Elements have to be adjusted and changed just to appear correctly in the styleguide. This is work beyond what is strictly required to develop a site.
 
 - Styleguide-only styles and markup might be confusing to developers joining a project. The rules and markup in the styleguide aren't necessarily the same rules or markup used in the site. When creating new elements that follow from a styleguide entry, simply copying the elements as they appear styleguide could cause layout and style problems.
 
@@ -108,7 +108,7 @@ You'll also need to create a controller, a template, helpers, and a front-end KS
 
 The strength of KSS – automation – is also the source of its weakness – mutable elements. If the styleguide can be updated automatically, it can also be sabotaged accidentally. The styleguide must be QA'ed alongside the site to ensure that it conforms to the design comps and that it accurately illustrates elements as they appear in the actual site pages. Developers must take care to pay attention to styleguide-only rules and markup.
 
-You could generate a static styeguide in your comping tool of choice as a definitive reference against which to check the living styleguide. But then you're just creating more documents that must be updated. You haven't solved the original problem.
+You could generate a static styleguide in your comping tool of choice as a definitive reference against which to check the living styleguide. But then you're just creating more documents that must be updated. You haven't solved the original problem.
 
 Implementing KSS requires additional UX Development and Design resources (additional QA, more templates, styleguide-only styles, controllers, etc.), but may save resources spent creating and updating a static styleguide.
 
