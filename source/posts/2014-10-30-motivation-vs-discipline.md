@@ -44,4 +44,4 @@ around you. Ask yourself are they successful because of some outside
 motivation or are they successful because they've made a conscience
 decision they're going to wade through the muck to get what they want.
 
-Focus on being disciplined instead of motivated. 
+Focus on being disciplined instead of waiting to be motivated. 
