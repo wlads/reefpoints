@@ -27,10 +27,10 @@ long-term. Instead you should be looking toward discipline.
 
 There is a saying *"it takes 3 weeks for a new behavior to become
 habit"*. If you haven't heard that before that's OK because it isn't
-true. According to research it acturally takes [on average 66 days of
+true. According to research it actually takes [on average 66 days of
 continual behavior to form a
 habit](http://www.huffingtonpost.com/james-clear/forming-new-habits_b_5104807.html).
 So ask yourself this. Can you use the same motivation for 66 days in a
-row? If not do have that many different forms of motivation to form this
+row? If not do you have that many different forms of motivation to form this
 new habit over this period of time? I don't think many of us do. Focus
 on being disciplined.
