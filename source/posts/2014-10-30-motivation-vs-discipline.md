@@ -31,7 +31,7 @@ true. According to research it actually takes [on average 66 days of
 continual behavior to form a
 habit](http://www.huffingtonpost.com/james-clear/forming-new-habits_b_5104807.html).
 So ask yourself this. Can you use the same motivation for 66 days in a
-row? If not do you have that many different forms of motivation to form this
+row? If not, do you have that many different forms of motivation to form this
 new habit over this period of time? I don't think many of us do.
 
 Discipline on the otherhand is you saying to yourself *"I will do this
