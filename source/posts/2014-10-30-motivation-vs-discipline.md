@@ -32,5 +32,16 @@ continual behavior to form a
 habit](http://www.huffingtonpost.com/james-clear/forming-new-habits_b_5104807.html).
 So ask yourself this. Can you use the same motivation for 66 days in a
 row? If not do you have that many different forms of motivation to form this
-new habit over this period of time? I don't think many of us do. Focus
-on being disciplined.
+new habit over this period of time? I don't think many of us do.
+
+Discipline on the otherhand is you saying to yourself *"I will do this
+even if I would prefer to do something else"*. It's not an easy trait to
+establish but if you can do so you'll find that making changes happen
+more easily. I think many of us have a *will* to overcome existing habits and
+form new ones but we lack the *way* to do so. Too many distractions, too
+many opportunities, too many excuses. Take a look at successful people
+around you. Ask yourself are they successful because of some outside
+motivation or are they successful because they've made a conscience
+decision they're going to wade through the muck to get what they want.
+
+Focus on being disciplined instead of motivated. 
