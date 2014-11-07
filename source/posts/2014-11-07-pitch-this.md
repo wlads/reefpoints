@@ -18,7 +18,7 @@ them. It's just that I find it incredibly difficult to describe to
 others in an "elevator pitch" what a software consultancy can offer
 without going down the "technology" rabbit hole.
 
-The exercise is: *if I were introduced to someone at a party how do I convince them they should 
+The exercise is: *if I were introduced to someone at a party, how do I convince them they should 
 hire DockYard*? Funny enough, I can't do it. This is a very large
 deficiency for me/my company right now. To date **all** of our
 contracts have been from inbound sales. Which is great, but we need to
