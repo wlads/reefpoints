@@ -29,7 +29,7 @@ create web & mobile applications*. Which is 100% true, but if I told
 this to you I doubt you'd hire us. Some of our clients get in touch with
 us because of our expertise with Ember.js. At that point the sale is
 actually quite easy. There aren't a lot of consultanices right now
-claiming expertise in Ember. And amongst those firms I believe that
+claiming expertise in Ember. Amongst those firms I believe that
 DockYard is considered one of the top. So by the time the client
 contacts us they have probably already decided to go with us. This is
 great but it paints us into a niche. We're missing out on the other
