@@ -70,7 +70,7 @@ design.*
 I don't know if this really helps me or confuses me even more. These are
 all over the place, from general, to technology specific, to downright
 vague. Each of these companies have been very successful. How much of
-their success do they own to their sales pitches? **37signals** (when
+their success do they owe to their sales pitches? **37signals** (when
 they were a consultancy) was famous for being a referral based business.
 (or at least advertising themselves as such) I don't know **thoughtbot**
 as well as I used to but I believe they still don't have any internal
