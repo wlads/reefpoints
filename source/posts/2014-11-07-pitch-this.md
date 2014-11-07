@@ -32,6 +32,7 @@ here is what they came up with:
 
 * *DockYard designs and develops applications for people who have an idea and don't know what to do next*
 * *We build web products, and focus on quality.*
+* *We create software that helps people. A client can come to us seeking advice regarding software development practices or looking to implement a product he/she has been thinking about. Our main focus is delivering a solution that a client is happy with by using powerful visual design, best software engineering practices and latest technologies.*
 * *We're a design and development shop specializing in really intuitive, responsive user interfaces. We work primarily with Ember.js, which is a JavaScript framework similar to Angular and Backbone. On the backend, we prefer a Rails backend and transactional database, which is more reliable than the NoSQL databases out there.*
 * *DockYard leads projects from ideas to user-friendly products that are built by cutting edge technologies and methodologies. As a team, we put clients' business goals in the forefront through the collaborative expertise of our designers and developers.*
 * *DockYard helps business owners create web apps with the combined power of Ember and great design.*
@@ -51,7 +52,7 @@ contacts us they have probably already decided to go with us. This is
 great but it paints us into a niche. We're missing out on the other
 99.99% of the opportunities that don't know about us.
 
-So how do some other software consultanices pitch? I don't know if it is
+So how do some other software consultancies pitch? I don't know if it is
 fair to use the marketing tagline from their website as their "pitch"
 but I think it is close enough for the purposes of this article. Let's
 take a look:
@@ -62,7 +63,7 @@ take a look:
 * **thoughtbot** *Our clients hire us to design and build their
   products. We focus on user outcomes and simplicity. We write code for
 iOS, Android, and the web.*
-* **37signals** *an elite team of experts web design and usability
+* **37signals** *an elite team of expert web design and usability
   specialists dedicated to simple, clear, and useable customer-focused
 design.*
 
