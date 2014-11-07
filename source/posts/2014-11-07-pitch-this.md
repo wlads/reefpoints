@@ -16,7 +16,7 @@ what we do. It's not that I don't believe in us, in fact we
 have big growth plans for the next 3 years and I am certain we'll meet
 them. It's just that I find it incredibly difficult to describe to
 others in a "elevator pitch" what a software consultancy can offer
-without goign down the "technology" rabbit hole.
+without going down the "technology" rabbit hole.
 
 The exercise is: *if I were introduced to someone at a party how do I convince them they should 
 hire DockYard*? Funny enough, I can't do it. This is a very large
