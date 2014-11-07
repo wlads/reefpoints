@@ -38,14 +38,42 @@ here is what they came up with:
 * We're a team of software designers and engineers deeply invested in producing the best solution to a challenge, rather than just the one that works.
 * We do a lot of research before we start designing, so our projects are thought through. Designers have a lot of say in what we actually build, compared to other shops, so it makes the work more meaningful. (when telling other designers about my work. Sort of related to pitching because those people influence purchasing decisions in their area of expertise)
 
-Some of these go beyond the scope of a "pitch" but I think the message is clear: this is not an easy assignment. The common theme is the focus on our expertise which is a good angle, that has been what defines DockYard.
+Some of these go beyond the scope of a "pitch" but I think the message is clear: this is not an easy assignment. 
+The common theme is the focus on our expertise, which is a good angle. Expertise has been what defines DockYard.
 But do all companies care about **how** we build? 
 
-Some of our clients get in touch with us because of our expertise with Ember.js. At that point the sale is
-actually quite easy. There aren't a lot of consultanices right now
+Currently nearly all of our clients get in touch with us because
+of our expertise in Ember.js. At that point the sale is
+actually quite easy. There aren't a lot of consultancies right now
 claiming expertise in Ember. Amongst those firms I believe that
 DockYard is considered one of the top. So by the time the client
 contacts us they have probably already decided to go with us. This is
 great but it paints us into a niche. We're missing out on the other
-99.99% of the opportunties that don't know about us. It's sad to say but 
-I am currently at a loss on how to properly sell my own company. 
+99.99% of the opportunities that don't know about us.
+
+So how do some other software consultanices pitch? I don't know if it is
+fair to use the marketing tagline from their website as their "pitch"
+but I think it is close enough for the purposes of this article. Let's
+take a look:
+
+* **Thoughtworks** *We provide software delivery, pioneering tools and
+  consulting for organizations with ambitious missions.*
+* **Pivotal Labs** *We transform how the world builds software.*
+* **thoughtbot** *Our clients hire us to design and build their
+  products. We focus on user outcomes and simplicity. We write code for
+iOS, Android, and the web.*
+* **37signals** *an elite team of experts web design and usability
+  specialists dedicated to simple, clear, and useable customer-focused
+design.*
+
+I don't know if this really helps me or confuses me even more. These are
+all over the place, from general, to technology specific, to downright
+vague. Each of these companies have been very successful. How much of
+their success do they own to their sales pitches? **37signals** (when
+they were a consultancy) was famous for being a referral based business.
+(or at least advertising themselves as such) I don't know **thoughtbot**
+as well as I used to but I believe they still don't have any internal
+sales team. **Thoughtworks** and **Pivotal** both have sales/biz-dev
+teams. Their marketing lines are very vague, very "wide-net".
+
+It's sad to say but I am currently at a loss on how to effectively sell my own company. 
