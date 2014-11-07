@@ -4,10 +4,97 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-10-30T00:00:00Z</updated>
+  <updated>2014-11-07T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Pitch This</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/11/07/pitch-this.html"/>
+    <id>http://reefpoints.dockyard.com/2014/11/07/pitch-this.html</id>
+    <published>2014-11-07T00:00:00Z</published>
+    <updated>2014-11-07T12:47:02-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;Here is something I probably shouldn&amp;#39;t be admitting: I can&amp;#39;t put
+together a sales pitch for my own company.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s not that I don&amp;#39;t know what we do, I am intimately familiar with
+what we do. It&amp;#39;s not that I don&amp;#39;t believe in us, in fact we
+have big growth plans for the next 3 years and I am certain we&amp;#39;ll meet
+them. It&amp;#39;s just that I find it incredibly difficult to describe to
+others in an &amp;quot;elevator pitch&amp;quot; what a software consultancy can offer
+without going down the &amp;quot;technology&amp;quot; rabbit hole.&lt;/p&gt;
+
+&lt;p&gt;The exercise is: &lt;em&gt;if I were introduced to someone at a party, how do I convince them they should 
+hire DockYard&lt;/em&gt;? Funny enough, I can&amp;#39;t do it. This is a very large
+deficiency for me/my company right now. To date &lt;strong&gt;all&lt;/strong&gt; of our
+contracts have been from inbound sales. Which is great, but we need to
+be able to sell our services to companies that don&amp;#39;t yet know about us.&lt;/p&gt;
+
+&lt;p&gt;So what does DockYard do? According to our current landing page &lt;em&gt;We
+create web &amp;amp; mobile applications&lt;/em&gt;. Which is 100% true, but if I told
+this to you I doubt you&amp;#39;d hire us. I asked other DockYard&amp;#39;ers to try
+their hand at writing the DY pitch. To illustrate how difficult this is
+here is what they came up with:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;DockYard designs and develops applications for people who have an idea and don&amp;#39;t know what to do next&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;We build web products, and focus on quality.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;We create software that helps people. A client can come to us seeking advice regarding software development practices or looking to implement a product he/she has been thinking about. Our main focus is delivering a solution that a client is happy with by using powerful visual design, best software engineering practices and latest technologies.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;We&amp;#39;re a design and development shop specializing in really intuitive, responsive user interfaces. We work primarily with Ember.js, which is a JavaScript framework similar to Angular and Backbone. On the backend, we prefer a Rails backend and transactional database, which is more reliable than the NoSQL databases out there.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;DockYard leads projects from ideas to user-friendly products that are built by cutting edge technologies and methodologies. As a team, we put clients&amp;#39; business goals in the forefront through the collaborative expertise of our designers and developers.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;DockYard helps business owners create web apps with the combined power of Ember and great design.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;We&amp;#39;re a team of software designers and engineers deeply invested in producing the best solution to a challenge, rather than just the one that works.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;We do a lot of research before we start designing, so our projects are thought through. Designers have a lot of say in what we actually build, compared to other shops, so it makes the work more meaningful.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some of these go beyond the scope of a &amp;quot;pitch&amp;quot; but I think the message is clear: this is not an easy assignment. 
+The common theme is the focus on our expertise, which is a good angle. Expertise has been what defines DockYard.
+But do all companies care about &lt;strong&gt;how&lt;/strong&gt; we build? &lt;/p&gt;
+
+&lt;p&gt;Currently nearly all of our clients get in touch with us because
+of our expertise in Ember.js. At that point the sale is
+actually quite easy. There aren&amp;#39;t a lot of consultancies right now
+claiming expertise in Ember. Amongst those firms I believe that
+DockYard is considered one of the top. So by the time the client
+contacts us they have probably already decided to go with us. This is
+great but it paints us into a niche. We&amp;#39;re missing out on the other
+99.99% of the opportunities that don&amp;#39;t know about us.&lt;/p&gt;
+
+&lt;p&gt;So how do some other software consultancies pitch? I don&amp;#39;t know if it is
+fair to use the marketing tagline from their website as their &amp;quot;pitch&amp;quot;
+but I think it is close enough for the purposes of this article. Let&amp;#39;s
+take a look:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thoughtworks&lt;/strong&gt; &lt;em&gt;We provide software delivery, pioneering tools and
+consulting for organizations with ambitious missions.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pivotal Labs&lt;/strong&gt; &lt;em&gt;We transform how the world builds software.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;thoughtbot&lt;/strong&gt; &lt;em&gt;Our clients hire us to design and build their
+products. We focus on user outcomes and simplicity. We write code for
+iOS, Android, and the web.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;37signals&lt;/strong&gt; &lt;em&gt;an elite team of expert web design and usability
+specialists dedicated to simple, clear, and useable customer-focused
+design.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I don&amp;#39;t know if this really helps me or confuses me even more. These are
+all over the place, from general, to technology specific, to downright
+vague. Each of these companies have been very successful. How much of
+their success do they own to their sales pitches? &lt;strong&gt;37signals&lt;/strong&gt; (when
+they were a consultancy) was famous for being a referral based business.
+(or at least advertising themselves as such) I don&amp;#39;t know &lt;strong&gt;thoughtbot&lt;/strong&gt;
+as well as I used to but I believe they still don&amp;#39;t have any internal
+sales team. &lt;strong&gt;Thoughtworks&lt;/strong&gt; and &lt;strong&gt;Pivotal&lt;/strong&gt; both have sales/biz-dev
+teams. Their marketing lines are very vague, very &amp;quot;wide-net&amp;quot;. No help
+here.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s sad to say but I am currently at a loss on how to effectively sell my own company. &lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Motivation vs Discipline</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/10/30/motivation-vs-discipline.html"/>
