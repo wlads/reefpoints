@@ -74,6 +74,7 @@ they were a consultancy) was famous for being a referral based business.
 (or at least advertising themselves as such) I don't know **thoughtbot**
 as well as I used to but I believe they still don't have any internal
 sales team. **Thoughtworks** and **Pivotal** both have sales/biz-dev
-teams. Their marketing lines are very vague, very "wide-net".
+teams. Their marketing lines are very vague, very "wide-net". No help
+here.
 
 It's sad to say but I am currently at a loss on how to effectively sell my own company. 
