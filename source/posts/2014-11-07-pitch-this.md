@@ -30,7 +30,8 @@ this to you I doubt you'd hire us. Some of our clients get in touch with
 us because of our expertise with Ember.js. At that point the sale is
 actually quite easy. There aren't a lot of consultanices right now
 claiming expertise in Ember. And amongst those firms I believe that
-DockYard is considered one of the top ones. So by the time the client
+DockYard is considered one of the top. So by the time the client
 contacts us they have probably already decided to go with us. This is
-great but it paints us into a niche, but we're missing out on the other
-99.99% of the opportunties that don't know about DockYard.
+great but it paints us into a niche. We're missing out on the other
+99.99% of the opportunties that don't know about us. Its sad to say but 
+I am currently at a loss on how to properly sell my own company. 
