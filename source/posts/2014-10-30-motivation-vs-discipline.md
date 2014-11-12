@@ -41,7 +41,7 @@ more easily. I think many of us have a *will* to overcome existing habits and
 form new ones but we lack the *way* to do so. Too many distractions, too
 many opportunities, too many excuses. Take a look at successful people
 around you. Ask yourself are they successful because of some outside
-motivation or are they successful because they've made a conscience
+motivation or are they successful because they've made a conscious
 decision they're going to wade through the muck to get what they want.
 
 Focus on being disciplined instead of waiting to be motivated. 
