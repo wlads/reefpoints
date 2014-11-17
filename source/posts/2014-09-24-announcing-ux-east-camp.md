@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go: UX East's UX Camp"
-comments: true
+comments: false
 author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
