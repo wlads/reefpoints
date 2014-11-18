@@ -4,10 +4,31 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-11-12T00:00:00Z</updated>
+  <updated>2014-11-18T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>UX East Camp 2014</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/11/18/we-did-it.html"/>
+    <id>http://reefpoints.dockyard.com/2014/11/18/we-did-it.html</id>
+    <published>2014-11-18T00:00:00Z</published>
+    <updated>2014-11-18T12:46:26-05:00</updated>
+    <author>
+      <name>Steven Trevathan</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;We did it. This weekend went far better than we ever could have imagined. We’re grateful and maybe a tad bit emotional, so bear with us.&lt;/p&gt;
+
+&lt;p&gt;The camp was initially intended as somewhat of a proof of concept, but became something much more real than that. Beyond proving that we are all willing to spend 3 days living with complete strangers, we experienced the unique value of the connections, friendships, and mentoring that this style of event facilitated. It turns out that the people who pay good money for and spend a whole weekend on such a unique social and learning environment are exactly the type of people who make it worthwhile. The need to learn, share, and be challenged by their peers is in their blood. This is who they are, and they’re the people we want to bring together.&lt;/p&gt;
+
+&lt;p&gt;It goes without saying: &lt;a href="https://twitter.com/michelleyaiser" title="Michelle Yaiser"&gt;Michelle&lt;/a&gt;, &lt;a href="https://twitter.com/StayingInDroves" title="Ed King"&gt;Ed&lt;/a&gt;, &lt;a href="https://twitter.com/CalamityJD" title="JD Jordan"&gt;JD&lt;/a&gt;, and &lt;a href="https://twitter.com/benjordan" title="Ben Jordan"&gt;Ben&lt;/a&gt; did much more than they were asked to and were the core of what made the camp so great. They shared their wisdom, challenged us to solve hilariously weird and unique problems, guided us, and befriended us. They poured their hearts into this and we are proud and humbled to have had them for our first UX East Camp.&lt;/p&gt;
+
+&lt;p&gt;The event was a risk, but the speakers and attendees overwhelming proved to us that it can and should be done. So we’re going to do it again.&lt;/p&gt;
+
+&lt;p&gt;See you next year at UX East Camp, Spring 2015.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>My project for UX Camp</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/11/12/bring-to-ux-east.html"/>
@@ -196,7 +217,7 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/10/24/kss-your-styleguide.html"/>
     <id>http://reefpoints.dockyard.com/2014/10/24/kss-your-styleguide.html</id>
     <published>2014-10-24T00:00:00Z</published>
-    <updated>2014-11-05T09:03:35-05:00</updated>
+    <updated>2014-11-18T12:46:26-05:00</updated>
     <author>
       <name>Christopher Plummer</name>
     </author>
@@ -217,7 +238,7 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
 
 &lt;p&gt;&lt;img src="/images/kss-styleguide-examples.jpg" alt="Two KSS Styleguides"&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;KSS isn&amp;#39;t magic. It&amp;#39;s not going to create the styelguide for you.&lt;/strong&gt; You still have to do a lot of custom configuration and coding. Coding the styleguide starts with commenting your CSS. You have been leaving helpful comments for future developers all along, right? KSS &lt;a href="http://warpspire.com/kss/syntax/"&gt;defines a syntax&lt;/a&gt; for these comments:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;KSS isn&amp;#39;t magic. It&amp;#39;s not going to create the styleguide for you.&lt;/strong&gt; You still have to do a lot of custom configuration and coding. Coding the styleguide starts with commenting your CSS. You have been leaving helpful comments for future developers all along, right? KSS &lt;a href="http://warpspire.com/kss/syntax/"&gt;defines a syntax&lt;/a&gt; for these comments:&lt;/p&gt;
 &lt;div class="highlight sass "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 2
@@ -337,7 +358,7 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Styleguides created with KSS are only as reliable as the CSS and markup used to generate them. If an element is changed in a way that no longer conforms to the design comps, the styleguide will no longer reflect the correct way that element is supposed to be styled. For example, a developer might change the border radius of a particular button for a new page and doesn&amp;#39;t realize that he or she has just changed the base button style in the styleguide. Now the button entry styleguide is no longer a reliable representation of the styles established in the design comps.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;When elements are taken out of their context it can change how styles are applied. Elements have to be adjusted and changed just to appear correctly in the styelguide. This is work beyond what is strictly required to develop a site.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When elements are taken out of their context it can change how styles are applied. Elements have to be adjusted and changed just to appear correctly in the styleguide. This is work beyond what is strictly required to develop a site.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Styleguide-only styles and markup might be confusing to developers joining a project. The rules and markup in the styleguide aren&amp;#39;t necessarily the same rules or markup used in the site. When creating new elements that follow from a styleguide entry, simply copying the elements as they appear styleguide could cause layout and style problems.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The KSS documention is spread out over many files. Nothing is centralized. Simply restructuring the styleguide, editing sections, or even adding new items requires sifting through many CSS files and templates. And when styles for elements are duplicated or spread across several pages, where do we put the documentation?&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Deciding what goes in the styleguide and how it is documented becomes another tangle of challenging questions. How do we describe this element? How to we organize the guide? What do we include?&lt;/p&gt;&lt;/li&gt;
@@ -347,7 +368,7 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
 
 &lt;p&gt;The strength of KSS – automation – is also the source of its weakness – mutable elements. If the styleguide can be updated automatically, it can also be sabotaged accidentally. The styleguide must be QA&amp;#39;ed alongside the site to ensure that it conforms to the design comps and that it accurately illustrates elements as they appear in the actual site pages. Developers must take care to pay attention to styleguide-only rules and markup.&lt;/p&gt;
 
-&lt;p&gt;You could generate a static styeguide in your comping tool of choice as a definitive reference against which to check the living styleguide. But then you&amp;#39;re just creating more documents that must be updated. You haven&amp;#39;t solved the original problem.&lt;/p&gt;
+&lt;p&gt;You could generate a static styleguide in your comping tool of choice as a definitive reference against which to check the living styleguide. But then you&amp;#39;re just creating more documents that must be updated. You haven&amp;#39;t solved the original problem.&lt;/p&gt;
 
 &lt;p&gt;Implementing KSS requires additional UX Development and Design resources (additional QA, more templates, styleguide-only styles, controllers, etc.), but may save resources spent creating and updating a static styleguide.&lt;/p&gt;
 
@@ -359,7 +380,7 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/09/24/announcing-ux-east-camp.html"/>
     <id>http://reefpoints.dockyard.com/2014/09/24/announcing-ux-east-camp.html</id>
     <published>2014-09-24T00:00:00Z</published>
-    <updated>2014-11-12T19:32:52-05:00</updated>
+    <updated>2014-11-18T12:46:26-05:00</updated>
     <author>
       <name>Steven Trevathan</name>
     </author>
