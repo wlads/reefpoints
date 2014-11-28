@@ -177,6 +177,7 @@ could put it on the right track:</p>
 9
 <strong>10</strong>
 11
+12
 </pre></td>
   <td class="code"><pre><span class="function">resolveOther</span>: <span class="keyword">function</span>(name) {
   <span class="keyword">if</span> (needAsyncLoad(name)) {
@@ -186,8 +187,9 @@ could put it on the right track:</p>
       <span class="comment">// resources requiring async loading</span>
       resolveOther(name);
     }
+  } <span class="keyword">else</span> {
+    <span class="keyword">return</span> require(name);
   }
-  <span class="keyword">return</span> require(name);
 }
 </pre></td>
 </tr></table>

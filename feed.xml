@@ -197,6 +197,7 @@ could put it on the right track:&lt;/p&gt;
 9
 &lt;strong&gt;10&lt;/strong&gt;
 11
+12
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="function"&gt;resolveOther&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(name) {
   &lt;span class="keyword"&gt;if&lt;/span&gt; (needAsyncLoad(name)) {
@@ -206,8 +207,9 @@ could put it on the right track:&lt;/p&gt;
       &lt;span class="comment"&gt;// resources requiring async loading&lt;/span&gt;
       resolveOther(name);
     }
+  } &lt;span class="keyword"&gt;else&lt;/span&gt; {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; require(name);
   }
-  &lt;span class="keyword"&gt;return&lt;/span&gt; require(name);
 }
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
