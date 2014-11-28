@@ -51,10 +51,180 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-11-18T00:00:00Z</updated>
+  <updated>2014-11-28T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ember Wish List</title>
+    <link rel="alternate" href="/2014/11/28/ember-wish-list.html"/>
+    <id>/2014/11/28/ember-wish-list.html</id>
+    <published>2014-11-28T00:00:00Z</published>
+    <updated>2014-11-28T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;It&amp;#39;s getting close to Christmas and I&amp;#39;ve got a few things on my list for
+Tomster Claus this year. All of my wishes are about making my
+applications smaller. One of the constant complaints I see about Ember
+is that it is &amp;quot;too fat&amp;quot;. You may not know this but this problem is
+solveable and can actually grow alongside Ember to ensure your assets
+are a slim as they can be. On to the wish list!&lt;/p&gt;
+
+&lt;h3&gt;Tree Shaking&lt;/h3&gt;
+
+&lt;p&gt;Are you familiar with Tree Shaking? The concept is simple, a dependency
+graph of your application is built. Let&amp;#39;s say one of your files requires
+&lt;code&gt;A&lt;/code&gt;, &lt;code&gt;B&lt;/code&gt;, and &lt;code&gt;C&lt;/code&gt;. And &lt;code&gt;A&lt;/code&gt; requires &lt;code&gt;D&lt;/code&gt;, and &lt;code&gt;F&lt;/code&gt;. And &lt;code&gt;C&lt;/code&gt; required &lt;code&gt;F&lt;/code&gt;.
+Currently with Ember CLI all files for all of your dependencies will get
+included in the final build. So if there is an &lt;code&gt;E&lt;/code&gt; file it will be in
+the final build even if you are not using it in any way, this is wasteful.
+With ES6 the dependency graph can be built between your files, any files
+that are not in the graph are not included in the final built. They are
+&amp;quot;shaken&amp;quot; out of the build process. This means a smaller footprint for your assets.&lt;/p&gt;
+
+&lt;p&gt;There are two major hurdles to implementing this in Ember CLI right now.
+The first is that doing a static analysis on the dependency graph may
+result in false positives of what files to ignore for the build. While
+there are many files that you are depending upon via the &lt;code&gt;import&lt;/code&gt;
+statement:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; { foo, bar } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;baz&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is very easy to parse. But your application can also import
+resources via the Ember Resolver:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;container.lookup(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;model:foo&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;A few levels down a &lt;code&gt;resolveOther&lt;/code&gt; function is called and &lt;code&gt;lookup&lt;/code&gt; is
+turned into a &lt;code&gt;require&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app/models/foo&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;parsing this out is not as simple. We could just assume everything in
+the app&amp;#39;s namespace should be part of the final build, but when other
+libraries are doing more complex tricks with importing this presents a
+problem. For example, in the latest version of Ember Validations the
+validators themselves live in the &lt;code&gt;ember-validations&lt;/code&gt; namespace. You can
+override validators by placing them in your namespace. The lookup is
+something like this:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;lookupValidator&lt;/span&gt;(name) {
+  &lt;span class="keyword"&gt;return&lt;/span&gt; container.lookup(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;validator:&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;+name) ||
+    container.lookup(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-validations@validator:&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;+name);
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How do we properly parse this out to include the correct validators in
+the dependency graph? One solution might be for library authors to
+declare which files should always be included in the final build, but
+this defeats the purpose of only including what is being used. If the
+application is using the Presence Validator but not the Inclusion
+Validator why would I want those extra LOCs?&lt;/p&gt;
+
+&lt;p&gt;The other major hurdle is Ember itself. While Ember&amp;#39;s source is in ES6
+form the final build that you get is in AMD. Which means it is one file.
+Ember will have to be distributed in the original ES6 form. I am also
+not a fan of the current package names. If this ever happens I would
+much prefer:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; Component from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember/component&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;rather than&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; Component from &lt;span class="error"&gt;`&lt;/span&gt;ember-views/views/component&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Separate builds&lt;/h3&gt;
+
+&lt;p&gt;Ember CLI is all or nothing right now. Which means that you have a
+single build pipeline for your application assets (&lt;code&gt;app-name.js&lt;/code&gt;) and a single build
+pipeline for 3rd party assets (&lt;code&gt;vendor.js&lt;/code&gt;). It would be nice to define
+additional assets that can be built into final files. For example, &lt;a href="https://github.com/dockyard/ember-admin/issues/32"&gt;this
+request for Ember
+Admin&lt;/a&gt;. Technically
+this could be done right now but it would require some heavy hacking of
+the vendor asset pipeline in Ember CLI. Personally I would like to see
+an API for this specifically. Perhaps it could be in the form of isolating a namespace to
+be ignored in the &lt;code&gt;vendor.js&lt;/code&gt; final concat but still output in the
+&lt;code&gt;dist/&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;h3&gt;Async code loading&lt;/h3&gt;
+
+&lt;p&gt;This wish dove-tails off the previous one. Now that we have our separate
+assets how do we safely load them into our Ember apps? If we are
+isolating the assets I would think this implies they aren&amp;#39;t meant for
+consumption at application launch. Going back to the Ember Admin
+example, not all users need those LOCs. Only when an authorized user
+hits the admin functionality should it pull down the Ember Admin assets
+and plug into the app. This would be ideal. The major hurdle here is
+with how the container currently works. Perhaps something like this
+could put it on the right track:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="function"&gt;resolveOther&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(name) {
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (needAsyncLoad(name)) {
+    asyncLoad(name).then(&lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="comment"&gt;// after this load completes the name&lt;/span&gt;
+      &lt;span class="comment"&gt;// would be removed from the list of&lt;/span&gt;
+      &lt;span class="comment"&gt;// resources requiring async loading&lt;/span&gt;
+      resolveOther(name);
+    }
+  }
+  &lt;span class="keyword"&gt;return&lt;/span&gt; require(name);
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This would allow even further shrinking of the initial applicaiton
+footprint. Only include what is necessary, async load other assets. This
+creates the illusion of speed which is just as good as actual speed. You
+will have the trade-off of periodic sections of your app with a longer
+than normal loading state, but that should only happen once per
+application instance.&lt;/p&gt;
+
+&lt;h3&gt;Wishes to reality&lt;/h3&gt;
+
+&lt;p&gt;Fulfilling these wishes should go a long way to negating the &amp;quot;too fat&amp;quot; argument for
+Ember. Here&amp;#39;s to hoping that 2015 will see a more lean Tomster.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>UX East Camp 2014</title>
     <link rel="alternate" href="/2014/11/18/we-did-it.html"/>
@@ -288,173 +458,11 @@ decision they&amp;#39;re going to wade through the muck to get what they want.&l
 &lt;p&gt;Focus on being disciplined instead of waiting to be motivated. &lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>KSS Your Styleguide Goodbye</title>
-    <link rel="alternate" href="/2014/10/24/kss-your-styleguide.html"/>
-    <id>/2014/10/24/kss-your-styleguide.html</id>
-    <published>2014-10-24T00:00:00Z</published>
-    <updated>2014-10-24T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Styleguides are a place where developers and designers can find authoritative information about how elements are to be styled throughout a project. Contributors can always refer to a styleguide to help them create new pages and elements. Careful attention to a styleguide can prevent a contributor from designing or developing components that don&amp;#39;t conform to the designers&amp;#39; vision.&lt;/p&gt;
-
-&lt;p&gt;Most styleguides are created by designers and developers prior to development to guide the translation of comps into code. In a perfect world, that styleguide is a living document that is updated as changes are made to the design. This often doesn&amp;#39;t happen. As changes are made throughout a project&amp;#39;s development cycle, the styleguide is rarely updated. At some point on almost every project, that styleguide is no longer a reliable, authoritative document.&lt;/p&gt;
-
-&lt;p&gt;If only there was a better way...&lt;/p&gt;
-
-&lt;h2&gt;Enter KSS&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://warpspire.com/kss/"&gt;KSS&lt;/a&gt; is a methodology and set of tools that will help you create automated, living styleguides. Through the KSS menting syntax and the KSS parser, the guide can be updated automatically throughout the development cycle. All those little adjustments and decisions that happen in conversations outside your documented channels will be reflected in your KSS styleguide. In theory, the styleguide will show the most up-to-date styles. KSS styleguides also render element states like &lt;code&gt;:hover&lt;/code&gt; as you can see in this &lt;a href="https://github.com/styleguide/css/"&gt;example from GitHub&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/github-styleguide.jpg" alt="GitHub Styleguide"&gt;&lt;/p&gt;
-
-&lt;p&gt;A KSS styleguide can be designed to reflect the look and layout of your project using existing styles:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/kss-styleguide-examples.jpg" alt="Two KSS Styleguides"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;KSS isn&amp;#39;t magic. It&amp;#39;s not going to create the styleguide for you.&lt;/strong&gt; You still have to do a lot of custom configuration and coding. Coding the styleguide starts with commenting your CSS. You have been leaving helpful comments for future developers all along, right? KSS &lt;a href="http://warpspire.com/kss/syntax/"&gt;defines a syntax&lt;/a&gt; for these comments:&lt;/p&gt;
-&lt;div class="highlight sass "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;span class="content"&gt; Short description of the element to be documented&lt;/span&gt;&lt;/span&gt;
-&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;/span&gt;
-&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;span class="content"&gt; :hover             - description of this modifier.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;span class="content"&gt; .disabled          - description of this state class modifier.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;/span&gt;
-&lt;span class="comment"&gt;&lt;span class="delimiter"&gt;//&lt;/span&gt;&lt;span class="content"&gt; Styleguide x.x.x. Section Name and/or Number&lt;/span&gt;&lt;/span&gt;
-&lt;span class="class"&gt;.element-to-be-documented&lt;/span&gt; {
-  ...
-  &lt;span class="local-variable"&gt;&amp;amp;&lt;/span&gt;:&lt;span class="value"&gt;hover&lt;/span&gt;{
-    ...
-  }
-  &lt;span class="local-variable"&gt;&amp;amp;&lt;/span&gt;.&lt;span class="key"&gt;disabled&lt;/span&gt;{
-    ...
-  }
-}
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;A KSS parser like &lt;a href="https://github.com/kneath/kss"&gt;this one for ruby&lt;/a&gt; parses the elements of those comments – the description, modifiers, and section – and applies it to a partial like this:&lt;/p&gt;
-&lt;div class="highlight erb "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;strong&gt;30&lt;/strong&gt;
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-example&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-
-  &lt;span class="tag"&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;
-    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; &lt;span class="instance-variable"&gt;@section&lt;/span&gt;.section &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="tag"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-  &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-description markdown-body&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="tag"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; markdown h(&lt;span class="instance-variable"&gt;@section&lt;/span&gt;.description) &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; &lt;span class="keyword"&gt;if&lt;/span&gt; &lt;span class="instance-variable"&gt;@section&lt;/span&gt;.modifiers.any? &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class="tag"&gt;&amp;lt;ul&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-modifier&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; modifiers.each &lt;span class="keyword"&gt;do&lt;/span&gt; |modifier| &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-          &lt;span class="tag"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; modifier.name &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt; - &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; modifier.description &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-        &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; &lt;span class="keyword"&gt;end&lt;/span&gt; &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class="tag"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; &lt;span class="keyword"&gt;end&lt;/span&gt; &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-  &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-element&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; &lt;span class="instance-variable"&gt;@example_html&lt;/span&gt;.gsub(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;$modifier_class&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).html_safe &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; modifiers.each &lt;span class="keyword"&gt;do&lt;/span&gt; |modifier| &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-element styleguide-modifier&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-modifier-name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; modifier.name &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-      &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; &lt;span class="instance-variable"&gt;@example_html&lt;/span&gt;.gsub(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;$modifier_class&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt; &lt;/span&gt;&lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;#{&lt;/span&gt;modifier.class_name&lt;span class="inline-delimiter"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).html_safe &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%&lt;/span&gt; &lt;span class="keyword"&gt;end&lt;/span&gt; &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-
-  &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;styleguide-html&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="inline"&gt;&lt;span class="inline-delimiter"&gt;&amp;lt;%=&lt;/span&gt; &lt;span class="instance-variable"&gt;@example_html&lt;/span&gt; &lt;span class="inline-delimiter"&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;You&amp;#39;ll also need to create a controller, a template, helpers, and a front-end KSS script to render the styleguide. It&amp;#39;s a lot of up-front work, but there are examples and parsers already written for Node.js, Ruby, PHP, Sinatra, Rails, and so on.&lt;/p&gt;
-
-&lt;h2&gt;Why use KSS?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;If standards, methodolgies, and tools are your thing, you&amp;#39;ll like KSS:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The kss.js script can render elements with different states (called modifiers by KSS) directly in the styleguide blocks. For example, buttons with &lt;code&gt;:hover&lt;/code&gt;, &lt;code&gt;:focus&lt;/code&gt;, &lt;code&gt;:active&lt;/code&gt;, states or even modifier classes like &lt;code&gt;.red&lt;/code&gt;, &lt;code&gt;.is-active&lt;/code&gt;, or &lt;code&gt;.disabled&lt;/code&gt; will be automatically added to the styleguide allowing readers to see every possible state at once.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;CSS comments and styleguide documentation are bound together in the stylesheets, not some other styleguide-specific template. UX developers can comment the stylesheets they work in most while they&amp;#39;re working in them.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The styleguide templates can also include markup codeblocks, allowing readers to see the markup elements necessary to generate a component.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Why not use KSS?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;If you&amp;#39;re in the &amp;quot;tools are bullshit&amp;quot; crowd, you&amp;#39;re going to hate KSS:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Styleguides created with KSS are only as reliable as the CSS and markup used to generate them. If an element is changed in a way that no longer conforms to the design comps, the styleguide will no longer reflect the correct way that element is supposed to be styled. For example, a developer might change the border radius of a particular button for a new page and doesn&amp;#39;t realize that he or she has just changed the base button style in the styleguide. Now the button entry styleguide is no longer a reliable representation of the styles established in the design comps.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;When elements are taken out of their context it can change how styles are applied. Elements have to be adjusted and changed just to appear correctly in the styleguide. This is work beyond what is strictly required to develop a site.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Styleguide-only styles and markup might be confusing to developers joining a project. The rules and markup in the styleguide aren&amp;#39;t necessarily the same rules or markup used in the site. When creating new elements that follow from a styleguide entry, simply copying the elements as they appear styleguide could cause layout and style problems.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The KSS documention is spread out over many files. Nothing is centralized. Simply restructuring the styleguide, editing sections, or even adding new items requires sifting through many CSS files and templates. And when styles for elements are duplicated or spread across several pages, where do we put the documentation?&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Deciding what goes in the styleguide and how it is documented becomes another tangle of challenging questions. How do we describe this element? How to we organize the guide? What do we include?&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;KSS Is Just Another Thing&lt;/h2&gt;
-
-&lt;p&gt;The strength of KSS – automation – is also the source of its weakness – mutable elements. If the styleguide can be updated automatically, it can also be sabotaged accidentally. The styleguide must be QA&amp;#39;ed alongside the site to ensure that it conforms to the design comps and that it accurately illustrates elements as they appear in the actual site pages. Developers must take care to pay attention to styleguide-only rules and markup.&lt;/p&gt;
-
-&lt;p&gt;You could generate a static styleguide in your comping tool of choice as a definitive reference against which to check the living styleguide. But then you&amp;#39;re just creating more documents that must be updated. You haven&amp;#39;t solved the original problem.&lt;/p&gt;
-
-&lt;p&gt;Implementing KSS requires additional UX Development and Design resources (additional QA, more templates, styleguide-only styles, controllers, etc.), but may save resources spent creating and updating a static styleguide.&lt;/p&gt;
-
-&lt;p&gt;KSS is not a perfect solution to the problem of maintaining living styleguides. You&amp;#39;ll simply have to try it in your workflow to evaluate its utility.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/11/28/ember-wish-list.html"><strong>Ember Wish List</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/11/18/we-did-it.html"><strong>UX East Camp 2014</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/18/rubygems-redesign.html"><strong>Rubygems.org Redesign</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/12/bring-to-ux-east.html"><strong>My project for UX Camp</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/11/18/rubygems-redesign.html"><strong>Rubygems.org Redesign</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
