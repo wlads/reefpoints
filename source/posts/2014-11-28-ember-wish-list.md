@@ -125,8 +125,9 @@ resolveOther: function(name) {
       // resources requiring async loading
       resolveOther(name);
     }
+  } else {
+    return require(name);
   }
-  return require(name);
 }
 ```
 
