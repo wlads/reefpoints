@@ -63,7 +63,7 @@ something like this:
 ```javascript
 function lookupValidator(name) {
   return container.lookup('validator:'+name) ||
-  container.lookup('ember-validations@validator:'+name)
+    container.lookup('ember-validations@validator:'+name);
 }
 ```
 
