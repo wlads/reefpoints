@@ -22,11 +22,11 @@ Are you familiar with Tree Shaking? The concept is simple, a dependency
 graph of your application is built. Let's say one of your files requires
 `A`, `B`, and `C`. And `A` requires `D`, and `F`. And `C` required `F`.
 Currently with Ember CLI all files for all of your dependencies will get
-included in the final build. You may not be using much of the
-functionality that is included with your final build and this is
-wasteful. With ES6 the dependency graph can be built between your files
-and anything unused will not go into the final build. This means a
-smaller footprint for your assets.
+included in the final build. So if there is an `E` file it will be in
+the final build even if you are not using it in any way, this is wasteful.
+With ES6 the dependency graph can be built between your files, any files
+that are not in the graph are not included in the final built. They are
+"shaken" out of the build process. This means a smaller footprint for your assets.
 
 There are two major hurdles to implementing this in Ember CLI right now.
 The first is that doing a static analysis on the dependency graph may
@@ -110,11 +110,11 @@ This wish dove-tails off the previous one. Now that we have our separate
 assets how do we safely load them into our Ember apps? If we are
 isolating the assets I would think this implies they aren't meant for
 consumption at application launch. Going back to the Ember Admin
-example, not all users need those LOCs. And only when an authorized user
+example, not all users need those LOCs. Only when an authorized user
 hits the admin functionality should it pull down the Ember Admin assets
 and plug into the app. This would be ideal. The major hurdle here is
 with how the container currently works. Perhaps something like this
-would work:
+could put it on the right track:
 
 ```javascript
 resolveOther: function(name) {
@@ -132,7 +132,10 @@ resolveOther: function(name) {
 
 This would allow even further shrinking of the initial applicaiton
 footprint. Only include what is necessary, async load other assets. This
-creates the illusion of speed which is just as good as actual speed.
+creates the illusion of speed which is just as good as actual speed. You
+will have the trade-off of periodic sections of your app with a longer
+than normal loading state, but that should only happen once per
+application instance.
 
 ### Wishes to reality
 
