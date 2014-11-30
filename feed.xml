@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-c4584ad1.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-1eed914f.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,97 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-11-28T00:00:00Z</updated>
+  <updated>2014-11-30T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>HTMLBars: Calling All Testers</title>
+    <link rel="alternate" href="/2014/11/30/htmlbars_calling_all_testers.html"/>
+    <id>/2014/11/30/htmlbars_calling_all_testers.html</id>
+    <published>2014-11-30T00:00:00Z</published>
+    <updated>2014-11-30T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;HTMLBars support has landed in Ember&amp;#39;s canary channel thanks to the tireless work
+of the HTMLBars team. Make sure to chat them up at &lt;a href="http://emberconf.com/"&gt;EmberConf&lt;/a&gt; (you
+are going right?!?!) for some war stories.&lt;/p&gt;
+
+&lt;p&gt;We are nearing the end of the 1.9 &lt;a href="http://emberjs.com/builds/#/beta"&gt;beta cycle&lt;/a&gt; (aiming for 2014-12-06)
+which means we will be making the go / no-go decision on all pending features in Canary when we branch
+for the next beta cycle. Clearly, we would all love to have 1.10 use HTMLBars.&lt;/p&gt;
+
+&lt;p&gt;In order to enable the HTMLBars feature flag in the 1.10 betas (shipping around 2014-12-09), we need
+help confirming that no major issues exist. This is where &lt;em&gt;you&lt;/em&gt; come in!&lt;/p&gt;
+
+&lt;h3&gt;Using Canary Builds with Ember CLI&lt;/h3&gt;
+
+&lt;p&gt;Upgrading to the canary channel with Ember CLI is very straightforward.&lt;/p&gt;
+
+&lt;h4&gt;Update Bower&lt;/h4&gt;
+
+&lt;p&gt;Run the following:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;rm -rf bower_components
+bower install --save handlebars#~2.0.0
+bower install --save ember#canary
+bower install
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Bower also prompts you to confirm various &amp;quot;resolutions&amp;quot; that it is unsure of. Make sure you
+pick &lt;code&gt;ember#canary&lt;/code&gt; and Handlebars 2.0 if prompted.&lt;/p&gt;
+
+&lt;h4&gt;Update NPM Dependencies&lt;/h4&gt;
+
+&lt;p&gt;Run the following:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;npm uninstall --save-dev broccoli-ember-hbs-template-compiler
+npm install --save-dev ember-cli-htmlbars
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h4&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;Now we have successfully updated to the latest canary builds of Ember. Next up: HTMLBars.&lt;/p&gt;
+
+&lt;h3&gt;Using HTMLBars with Ember CLI&lt;/h3&gt;
+
+&lt;p&gt;Enabling HTMLBars is as simple as adding the following to your &lt;code&gt;config/environment.js&lt;/code&gt; (under
+&lt;code&gt;EmberENV.FEATURES&lt;/code&gt; section):&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;EmberENV: {
+  FEATURES: {
+    'ember-htmlbars': true
+  }
+},
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now restart any running &lt;code&gt;ember serve&lt;/code&gt; commands you have and you should be running with HTMLBars.&lt;/p&gt;
+
+&lt;h3&gt;Report Issues&lt;/h3&gt;
+
+&lt;p&gt;This part is critical: Please report any issues &lt;a href="https://github.com/emberjs/ember.js/issues"&gt;at GitHub&lt;/a&gt;,
+especially regressions from 1.8 or 1.9-beta. If your business has certain browser requirements (IE8 for example)
+testing on those edge-case platforms today will help us resolve issues in time for 1.10.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ember Wish List</title>
     <link rel="alternate" href="/2014/11/28/ember-wish-list.html"/>
@@ -412,59 +499,11 @@ here.&lt;/p&gt;
 &lt;p&gt;It&amp;#39;s sad to say but I am currently at a loss on how to effectively sell my own company. &lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Motivation vs Discipline</title>
-    <link rel="alternate" href="/2014/10/30/motivation-vs-discipline.html"/>
-    <id>/2014/10/30/motivation-vs-discipline.html</id>
-    <published>2014-10-30T00:00:00Z</published>
-    <updated>2014-10-30T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;We&amp;#39;ve all seen the &lt;strong&gt;Motivational Posters&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/motivational-1.jpg" alt="Motivate"&gt;&lt;/p&gt;
-
-&lt;p&gt;I always hear people talk about
-&lt;strong&gt;motivation&lt;/strong&gt;. &lt;em&gt;What motivates you?&lt;/em&gt; &lt;em&gt;I&amp;#39;m lacking motivation.&lt;/em&gt; Well I&amp;#39;m
-here to tell you that motivation is bullshit.&lt;/p&gt;
-
-&lt;p&gt;Motivation may get you to take on a task or behavior that you don&amp;#39;t
-normally do but eventually that motivation will either not be there any
-more or won&amp;#39;t be effective. Then you&amp;#39;ll slip, and you justify it by
-thinking &lt;em&gt;&amp;quot;well I just lacked proper motivation&amp;quot;&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Motivation&lt;/em&gt; as a concept is a cop-out. If you feel that you need
-motivation to accomplish your goals you will likely fail over the
-long-term. Instead you should be looking toward discipline.&lt;/p&gt;
-
-&lt;p&gt;There is a saying &lt;em&gt;&amp;quot;it takes 3 weeks for a new behavior to become
-habit&amp;quot;&lt;/em&gt;. If you haven&amp;#39;t heard that before that&amp;#39;s OK because it isn&amp;#39;t
-true. According to research it actually takes &lt;a href="http://www.huffingtonpost.com/james-clear/forming-new-habits_b_5104807.html"&gt;on average 66 days of
-continual behavior to form a
-habit&lt;/a&gt;.
-So ask yourself this. Can you use the same motivation for 66 days in a
-row? If not, do you have that many different forms of motivation to form this
-new habit over this period of time? I don&amp;#39;t think many of us do.&lt;/p&gt;
-
-&lt;p&gt;Discipline on the otherhand is you saying to yourself &lt;em&gt;&amp;quot;I will do this
-even if I would prefer to do something else&amp;quot;&lt;/em&gt;. It&amp;#39;s not an easy trait to
-establish but if you can do so you&amp;#39;ll find that making changes happen
-more easily. I think many of us have a &lt;em&gt;will&lt;/em&gt; to overcome existing habits and
-form new ones but we lack the &lt;em&gt;way&lt;/em&gt; to do so. Too many distractions, too
-many opportunities, too many excuses. Take a look at successful people
-around you. Ask yourself are they successful because of some outside
-motivation or are they successful because they&amp;#39;ve made a conscious
-decision they&amp;#39;re going to wade through the muck to get what they want.&lt;/p&gt;
-
-&lt;p&gt;Focus on being disciplined instead of waiting to be motivated. &lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/11/30/htmlbars_calling_all_testers.html"><strong>HTMLBars: Calling All Testers</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/11/28/ember-wish-list.html"><strong>Ember Wish List</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/18/we-did-it.html"><strong>UX East Camp 2014</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/18/rubygems-redesign.html"><strong>Rubygems.org Redesign</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/11/18/we-did-it.html"><strong>UX East Camp 2014</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
