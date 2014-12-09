@@ -16,7 +16,7 @@ class Middleman::Blog::TagPages
     when 'backbone'
       'Backbone.js'
     else
-      tag.split(' ').map(&:capitalize).join(' ')
+      tag.split(' ').map(&:downcase).map(&:capitalize).join(' ')
     end
   end
 

@@ -3,7 +3,7 @@ layout: post
 title: 'Making the DIY conference badges'
 twitter: rgbcolor
 author: 'Maria Matveeva'
-tags: design, DIY, events
+tags: design, diy, events
 social: true
 published: true
 comments: true

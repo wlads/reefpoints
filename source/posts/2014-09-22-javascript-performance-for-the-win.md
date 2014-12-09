@@ -2,7 +2,7 @@
 layout: post
 title: 'JavaScript Performance For The Win'
 author: 'Alex Navasardyan'
-tags: JavaScript, Engineering
+tags: javascript, engineering
 social: true
 published: true
 comments: true
