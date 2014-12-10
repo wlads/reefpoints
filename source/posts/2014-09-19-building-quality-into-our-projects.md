@@ -2,7 +2,7 @@
 layout: post
 title: 'Building Quality Into Our Projects'
 author: 'Jon Lacks'
-tags: Quality, Engineering, Planning, Process, Client, Project Management
+tags: quality, engineering, planning, process, client, project management
 social: true
 published: true
 comments: true

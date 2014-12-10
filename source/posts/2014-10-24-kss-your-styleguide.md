@@ -2,7 +2,7 @@
 layout: post
 title: 'KSS Your Styleguide Goodbye'
 author: 'Christopher Plummer'
-tags: Tools, Process, Web Development
+tags: tools, process, web development
 social: true
 published: true
 comments: true

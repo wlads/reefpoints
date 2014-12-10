@@ -3,7 +3,7 @@ layout: post
 title: 'The Fear of Failure'
 twitter: LoganFaerber
 author: 'Logan Faerber'
-tags: Art, Design, Design Thinking, Inspiration, Design Process
+tags: art, design, design thinking, inspiration, design process
 social: true
 published: true
 comments: true
