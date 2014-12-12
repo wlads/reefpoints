@@ -18,8 +18,7 @@ dangerous for a bigger company and just does not work.
 
 Initially, I resisted changing my process, like a fool/jerk. Why should I? My process has worked for
 years, it was inherently superior! *Obviously*, this was not true. I got too comfortable with how I
-had been coding and ignored requests to learn about [BEM syntax](http://csswizardry.com/2013/01/mindb
-emding-getting-your-head-round-bem-syntax) and organizing my CSS in a different order. Applying most
+had been coding and ignored requests to learn about [BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax) and organizing my CSS in a different order. Applying most
 of these new techniques to my own personal projects allowed me to see the usefulness to our UX team's
 (evolving) process. It was then that I realized, process is not about you or I, it is about the team.
 
