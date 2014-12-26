@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/12/26/pattern-matching-in-elixir-for-rubyists.html"/>
     <id>http://reefpoints.dockyard.com/2014/12/26/pattern-matching-in-elixir-for-rubyists.html</id>
     <published>2014-12-26T00:00:00Z</published>
-    <updated>2014-12-26T11:00:30-05:00</updated>
+    <updated>2014-12-26T11:04:54-05:00</updated>
     <author>
       <name>Brian Cardarella</name>
     </author>
@@ -25,7 +25,7 @@ some of the concepts in Elixir.&lt;/p&gt;
 
 &lt;p&gt;Pattern Matching is one of my favorite Elixir features. Let&amp;#39;s take a
 look. (using an &lt;a href="http://elixir-lang.org/getting_started/7.html#7.2-maps"&gt;Elixir
-Map&lt;/a&gt;&lt;/p&gt;
+Map&lt;/a&gt;)&lt;/p&gt;
 &lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 &lt;/pre&gt;&lt;/td&gt;
