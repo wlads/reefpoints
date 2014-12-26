@@ -16,7 +16,7 @@ some of the concepts in Elixir.
 
 Pattern Matching is one of my favorite Elixir features. Let's take a
 look. (using an [Elixir
-Map](http://elixir-lang.org/getting_started/7.html#7.2-maps)
+Map](http://elixir-lang.org/getting_started/7.html#7.2-maps))
 
 ```elixir
 %{foo: bar} = %{foo: "baz"}
