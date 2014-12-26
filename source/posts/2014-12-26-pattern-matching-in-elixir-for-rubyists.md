@@ -97,7 +97,7 @@ first `foo` defined. `foo(1, :other, 3)` matches the second. `foo(1, 2,
 functions are defined.
 
 Now our functions are concise, and focused on the very specific
-behavior. The condition is obfuscated through the pattern matching but
+behavior. The conditional is obfuscated through the pattern matching but
 this is a common design pattern in Elixir so it should be embrassed.
 
 The pattern matching can be more complex:
