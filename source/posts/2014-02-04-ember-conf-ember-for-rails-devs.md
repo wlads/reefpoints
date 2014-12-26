@@ -9,7 +9,7 @@ twitter: bcardarella
 github: bcardarella
 social: true
 published: true
-tags: ember, rails, ruby, announcement
+tags: ember, ruby on rails, ruby, announcement
 ---
 
 [![EmberConf](http://emberconf.com/images/header.png)](http://emberconf.com/)
