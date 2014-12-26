@@ -1,6 +1,8 @@
 class Middleman::Blog::TagPages
   def self.tag_name(tag)
     case tag.downcase
+    when 'rails'
+      'Ruby on Rails'
     when 'ruby on rails'
       'Ruby on Rails'
     when 'jquery'
