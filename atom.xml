@@ -4,10 +4,163 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-12-12T00:00:00Z</updated>
+  <updated>2014-12-26T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Pattern Matching in Elixir for Rubyists</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/12/26/pattern-matching-in-elixir-for-rubyists.html"/>
+    <id>http://reefpoints.dockyard.com/2014/12/26/pattern-matching-in-elixir-for-rubyists.html</id>
+    <published>2014-12-26T00:00:00Z</published>
+    <updated>2014-12-26T11:00:30-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;This is the first in a series of posts for helping Ruby devs understand
+some of the concepts in Elixir.&lt;/p&gt;
+
+&lt;h2&gt;Pattern Matching&lt;/h2&gt;
+
+&lt;p&gt;Pattern Matching is one of my favorite Elixir features. Let&amp;#39;s take a
+look. (using an &lt;a href="http://elixir-lang.org/getting_started/7.html#7.2-maps"&gt;Elixir
+Map&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;%{foo: bar} = %{foo: &amp;quot;baz&amp;quot;}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above is matching a pattern. Don&amp;#39;t think of &lt;code&gt;=&lt;/code&gt; as assignment, you
+should think of &lt;code&gt;=&lt;/code&gt; as &lt;em&gt;equality&lt;/em&gt;. The left-hand side of the &lt;code&gt;=&lt;/code&gt; is
+equal to the right-hand side. Through pattern matching the variable
+&lt;code&gt;bar&lt;/code&gt; is assigned the value &lt;code&gt;&amp;quot;baz&amp;quot;&lt;/code&gt;. Consider:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar] = [1, 2]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;foo&lt;/code&gt; is assigned &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; is assigned &lt;code&gt;2&lt;/code&gt;. Patterns can match to
+any depth:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar, [baz]] = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;here &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; have the same value from the previous example but
+&lt;code&gt;baz&lt;/code&gt; is now assigned the value of &lt;code&gt;3&lt;/code&gt;. Alternatively if we had written:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar, baz] = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;baz&lt;/code&gt; is now assigned the value of &lt;code&gt;[3]&lt;/code&gt;. This would be an example of a
+semi-greedy matcher. You can expand upon this to greedily match the
+entire statement:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;my_list = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now &lt;code&gt;my_list&lt;/code&gt; greedily matched to the entire right-hand side of the
+&lt;code&gt;=&lt;/code&gt;. So why is this cool? Let&amp;#39;s take a look at a Ruby method that
+has some conditions:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;foo&lt;/span&gt;(a, b, c)
+  &lt;span class="keyword"&gt;if&lt;/span&gt; a == &lt;span class="symbol"&gt;:something&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;elsif&lt;/span&gt; b == &lt;span class="symbol"&gt;:other&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;else&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above is likely something familar to many Ruby devs. This presents
+some problems. Any methods with several code paths increases the
+complexity of the method. Complex methods can be difficult to test in
+isolation. Let&amp;#39;s take a look at how this would be implemented in Elixir:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;def foo(:something, b, c) do
+  ...
+end
+
+def foo(a, :other, c) do
+  ...
+end
+
+def foo(a, b, c) do
+  ...
+end
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The first question Ruby devs have is &lt;em&gt;why are there three functions of the same
+name?&lt;/em&gt; In Elixir you can define multiple functions of the same name as
+long as the function signatures are unique. Functions are matched
+against the values passed in. So &lt;code&gt;foo(:something, 2, 3)&lt;/code&gt; would match the
+first &lt;code&gt;foo&lt;/code&gt; defined. &lt;code&gt;foo(1, :other, 3)&lt;/code&gt; matches the second. &lt;code&gt;foo(1, 2,
+3)&lt;/code&gt; matches the third. Match priority is the order in which the
+functions are defined.&lt;/p&gt;
+
+&lt;p&gt;Now our functions are concise, and focused on the very specific
+behavior. The condition is obfuscated through the pattern matching but
+this is a common design pattern in Elixir so it should be embrassed.&lt;/p&gt;
+
+&lt;p&gt;The pattern matching can be more complex:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;def foo(%{foo: bar}, &amp;quot;baz&amp;quot;) do
+  ...
+end
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above will match: &lt;code&gt;foo(%{foo: &amp;quot;zeb&amp;quot;}, &amp;quot;baz&amp;quot;)&lt;/code&gt; but would not match
+&lt;code&gt;foo(%{foo: &amp;quot;zeb&amp;quot;}, &amp;quot;bar&amp;quot;)&lt;/code&gt; because the second argument does not match.&lt;/p&gt;
+
+&lt;p&gt;Take a look at the &lt;a href="http://elixir-lang.org/getting_started/4.html"&gt;Elixir Pattern Matching
+Guide&lt;/a&gt; for more
+information.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Importance of Process, and Why It Matters</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/12/12/importance-of-process.html"/>

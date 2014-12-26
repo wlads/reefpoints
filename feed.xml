@@ -51,10 +51,162 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-12-12T00:00:00Z</updated>
+  <updated>2014-12-26T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Pattern Matching in Elixir for Rubyists</title>
+    <link rel="alternate" href="/2014/12/26/pattern-matching-in-elixir-for-rubyists.html"/>
+    <id>/2014/12/26/pattern-matching-in-elixir-for-rubyists.html</id>
+    <published>2014-12-26T00:00:00Z</published>
+    <updated>2014-12-26T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This is the first in a series of posts for helping Ruby devs understand
+some of the concepts in Elixir.&lt;/p&gt;
+
+&lt;h2&gt;Pattern Matching&lt;/h2&gt;
+
+&lt;p&gt;Pattern Matching is one of my favorite Elixir features. Let&amp;#39;s take a
+look. (using an &lt;a href="http://elixir-lang.org/getting_started/7.html#7.2-maps"&gt;Elixir
+Map&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;%{foo: bar} = %{foo: &amp;quot;baz&amp;quot;}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above is matching a pattern. Don&amp;#39;t think of &lt;code&gt;=&lt;/code&gt; as assignment, you
+should think of &lt;code&gt;=&lt;/code&gt; as &lt;em&gt;equality&lt;/em&gt;. The left-hand side of the &lt;code&gt;=&lt;/code&gt; is
+equal to the right-hand side. Through pattern matching the variable
+&lt;code&gt;bar&lt;/code&gt; is assigned the value &lt;code&gt;&amp;quot;baz&amp;quot;&lt;/code&gt;. Consider:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar] = [1, 2]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;foo&lt;/code&gt; is assigned &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; is assigned &lt;code&gt;2&lt;/code&gt;. Patterns can match to
+any depth:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar, [baz]] = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;here &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; have the same value from the previous example but
+&lt;code&gt;baz&lt;/code&gt; is now assigned the value of &lt;code&gt;3&lt;/code&gt;. Alternatively if we had written:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;[foo, bar, baz] = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;baz&lt;/code&gt; is now assigned the value of &lt;code&gt;[3]&lt;/code&gt;. This would be an example of a
+semi-greedy matcher. You can expand upon this to greedily match the
+entire statement:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;my_list = [1, 2, [3]]
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now &lt;code&gt;my_list&lt;/code&gt; greedily matched to the entire right-hand side of the
+&lt;code&gt;=&lt;/code&gt;. So why is this cool? Let&amp;#39;s take a look at a Ruby method that
+has some conditions:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="function"&gt;foo&lt;/span&gt;(a, b, c)
+  &lt;span class="keyword"&gt;if&lt;/span&gt; a == &lt;span class="symbol"&gt;:something&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;elsif&lt;/span&gt; b == &lt;span class="symbol"&gt;:other&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;else&lt;/span&gt;
+    ...
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above is likely something familar to many Ruby devs. This presents
+some problems. Any methods with several code paths increases the
+complexity of the method. Complex methods can be difficult to test in
+isolation. Let&amp;#39;s take a look at how this would be implemented in Elixir:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;def foo(:something, b, c) do
+  ...
+end
+
+def foo(a, :other, c) do
+  ...
+end
+
+def foo(a, b, c) do
+  ...
+end
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The first question Ruby devs have is &lt;em&gt;why are there three functions of the same
+name?&lt;/em&gt; In Elixir you can define multiple functions of the same name as
+long as the function signatures are unique. Functions are matched
+against the values passed in. So &lt;code&gt;foo(:something, 2, 3)&lt;/code&gt; would match the
+first &lt;code&gt;foo&lt;/code&gt; defined. &lt;code&gt;foo(1, :other, 3)&lt;/code&gt; matches the second. &lt;code&gt;foo(1, 2,
+3)&lt;/code&gt; matches the third. Match priority is the order in which the
+functions are defined.&lt;/p&gt;
+
+&lt;p&gt;Now our functions are concise, and focused on the very specific
+behavior. The condition is obfuscated through the pattern matching but
+this is a common design pattern in Elixir so it should be embrassed.&lt;/p&gt;
+
+&lt;p&gt;The pattern matching can be more complex:&lt;/p&gt;
+&lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;def foo(%{foo: bar}, &amp;quot;baz&amp;quot;) do
+  ...
+end
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above will match: &lt;code&gt;foo(%{foo: &amp;quot;zeb&amp;quot;}, &amp;quot;baz&amp;quot;)&lt;/code&gt; but would not match
+&lt;code&gt;foo(%{foo: &amp;quot;zeb&amp;quot;}, &amp;quot;bar&amp;quot;)&lt;/code&gt; because the second argument does not match.&lt;/p&gt;
+
+&lt;p&gt;Take a look at the &lt;a href="http://elixir-lang.org/getting_started/4.html"&gt;Elixir Pattern Matching
+Guide&lt;/a&gt; for more
+information.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Importance of Process, and Why It Matters</title>
     <link rel="alternate" href="/2014/12/12/importance-of-process.html"/>
@@ -404,57 +556,11 @@ Phoenix&lt;/a&gt;,
 enjoys the new look!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>My project for UX Camp</title>
-    <link rel="alternate" href="/2014/11/12/bring-to-ux-east.html"/>
-    <id>/2014/11/12/bring-to-ux-east.html</id>
-    <published>2014-11-12T00:00:00Z</published>
-    <updated>2014-11-12T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;This weekend, I am heading to &lt;a href="http://uxeast.org/"&gt;UX East&amp;#39;s camp&lt;/a&gt; in Maine. It is kind of like a conference, except you also get the opportunity to work on your own project and get feedback from others while there. I am helping organize the event, and a large chunk of my time will be spent taking photos and helping with other random tasks, so I wanted to bring a project that’s small and easy to manage.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/post-assets/maria/ux-east-sketches.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;My project is practicing how to quickly sketch ideas by hand.&lt;/p&gt;
-
-&lt;p&gt;When I first started as a UX Designer at &lt;a href="http://dockyard.com/"&gt;DockYard&lt;/a&gt;, I noticed how confident the other designers were at sketching. &lt;a href="http://dockyard.com/team#logan-faerber"&gt;Logan&lt;/a&gt; just happens to be a &lt;a href="https://dribbble.com/shots/1765074-UX-East-Icons?list=users&amp;amp;offset=3"&gt;kickass illustrator&lt;/a&gt;, which helps. But still, I felt like I lacked confidence in comparison. I’ve been trying to improve, but had not tried anything focused on sketching specifically yet.&lt;/p&gt;
-
-&lt;h2&gt;Why is sketching useful?&lt;/h2&gt;
-
-&lt;p&gt;Sketching is a great tool not only to produce work deliverable to the client (hand drawn wireframes are often part of the Discovery phase in our work) but also a way to think more clearly. If I can articulate an idea through a drawing, I have a good understanding of it. In the process of drawing something out, I also find the fuzzy areas that need more definition, and I am able to ask better questions as a result.&lt;/p&gt;
-
-&lt;p&gt;Writing on a subject is similar to this exploratory sketching. By trying to write on a subject, I find unexplained pieces, and am forced to form my thoughts clearly. But writing only uses one aspect of an idea. Visuals are something else. I want to rely on both verbal (writing) and visual (drawing) thinking in my work.&lt;/p&gt;
-
-&lt;h2&gt;How to practice?&lt;/h2&gt;
-
-&lt;p&gt;I decided to focus on practicing only the skill to express a single idea through a very simple drawing. As an art supply enthusiast, it is easy for me to get carried away in selecting just the right pen, paper or color for a project. To counter this, I limited my tools: a clipboard, a single medium-weight black marker, and a sizable stack of half-sheets of printer paper.&lt;/p&gt;
-
-&lt;p&gt;I further limited possible distractions by deciding not to focus on high quality, thoughtful drawings, and instead produce many simple drawings. For this reason, I will also not look for great reference material, but try to just get the visual idea down on paper quickly instead.&lt;/p&gt;
-
-&lt;p&gt;I will also focus on actually drawing, rather than annotating. In the few practice drawings I made so far I resorted to writing the details I could not get into the drawing. It would be great to get away from this.&lt;/p&gt;
-
-&lt;p&gt;When I finish one of these simple drawings, I will slide it to the bottom of the stack so I’m ready to start another one. I will not focus on judging the results too quickly.&lt;/p&gt;
-
-&lt;p&gt;At camp, I might share the drawings I make, and ask for feedback on how to make them more clear. Will they make sense? With some practice, I hope that they do.&lt;/p&gt;
-
-&lt;p&gt;So, here’s what I am working on. Pretty simple, and should be fun! I also asked a couple of colleagues what they are planning to do — and here it is:&lt;/p&gt;
-
-&lt;h2&gt;What Steve is working on&lt;/h2&gt;
-
-&lt;p&gt;He&amp;#39;s going to work on a video game idea that originally started as a web-comic at DockYard. In addition to that he&amp;#39;s taking a look at some various prototyping tools (as well exploring InVision a little deeper).&lt;/p&gt;
-
-&lt;h2&gt;What  Tim is working on&lt;/h2&gt;
-
-&lt;p&gt;Tim has been working on a typeface that is targeted to be both practical and highly legible. He&amp;#39;s hoping to gain some feedback from fellow campers and continue chipping away at the lowercase letterforms.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2014/12/26/pattern-matching-in-elixir-for-rubyists.html"><strong>Pattern Matching in Elixir for Rubyists</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2014/12/12/importance-of-process.html"><strong>The Importance of Process, and Why It Matters</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/30/htmlbars_calling_all_testers.html"><strong>HTMLBars: Calling All Testers</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2014/11/28/ember-wish-list.html"><strong>Ember Wish List</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2014/11/30/htmlbars_calling_all_testers.html"><strong>HTMLBars: Calling All Testers</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>

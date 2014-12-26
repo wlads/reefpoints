@@ -751,7 +751,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/html.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/06/21/making-the-diy-badges.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -763,7 +763,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/06/23/kapow-using-framer.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/css.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -913,6 +913,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2014/12/26/pattern-matching-in-elixir-for-rubyists.html</loc>
+    <lastmod>2014-12-26T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ember.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1009,6 +1015,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//categories/elixir.html</loc>
+    <lastmod>2014-12-26T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//categories/htmlbars.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1070,12 +1082,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/observations.html</loc>
-    <lastmod>2014-12-26T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/css.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1417,7 +1423,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/06/21/making-the-diy-badges.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/html.html</loc>
+    <lastmod>2014-12-26T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/06/23/kapow-using-framer.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
