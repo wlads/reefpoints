@@ -751,7 +751,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/06/21/making-the-diy-badges.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/css.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -763,7 +763,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/css.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/06/23/kapow-using-framer.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1285,12 +1285,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/rails.html</loc>
-    <lastmod>2014-12-26T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://reefpoints.dockyard.com//categories/postgis.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1429,7 +1423,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/06/23/kapow-using-framer.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/06/21/making-the-diy-badges.html</loc>
     <lastmod>2014-12-26T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
