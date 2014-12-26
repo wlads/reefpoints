@@ -17,6 +17,8 @@ class Middleman::Blog::TagPages
       'Backbone.js'
     when 'diy'
       'DIY'
+    when 'es6'
+      'ES6'
     else
       tag.split(' ').map(&:downcase).map(&:capitalize).join(' ')
     end
