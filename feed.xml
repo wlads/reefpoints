@@ -184,7 +184,7 @@ first &lt;code&gt;foo&lt;/code&gt; defined. &lt;code&gt;foo(1, :other, 3)&lt;/co
 functions are defined.&lt;/p&gt;
 
 &lt;p&gt;Now our functions are concise, and focused on the very specific
-behavior. The condition is obfuscated through the pattern matching but
+behavior. The conditional is obfuscated through the pattern matching but
 this is a common design pattern in Elixir so it should be embrassed.&lt;/p&gt;
 
 &lt;p&gt;The pattern matching can be more complex:&lt;/p&gt;
