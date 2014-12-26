@@ -98,7 +98,7 @@ functions are defined.
 
 Now our functions are concise, and focused on the very specific
 behavior. The conditional is obfuscated through the pattern matching but
-this is a common design pattern in Elixir so it should be embrassed.
+this is a common design pattern in Elixir so it should be embraced.
 
 The pattern matching can be more complex:
 
