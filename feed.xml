@@ -185,7 +185,7 @@ functions are defined.&lt;/p&gt;
 
 &lt;p&gt;Now our functions are concise, and focused on the very specific
 behavior. The conditional is obfuscated through the pattern matching but
-this is a common design pattern in Elixir so it should be embrassed.&lt;/p&gt;
+this is a common design pattern in Elixir so it should be embraced.&lt;/p&gt;
 
 &lt;p&gt;The pattern matching can be more complex:&lt;/p&gt;
 &lt;div class="highlight elixir "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
