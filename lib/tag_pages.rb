@@ -15,6 +15,8 @@ class Middleman::Blog::TagPages
       'Ember.js'
     when 'backbone'
       'Backbone.js'
+    when 'diy'
+      'DIY'
     else
       tag.split(' ').map(&:downcase).map(&:capitalize).join(' ')
     end
