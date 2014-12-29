@@ -80,8 +80,8 @@ accepted our offer for full-time employment just recently.
 
 Hiring continues to be hard. We have had success by focusing on
 technology niches, but we may have tapped that out. Going into 2015, we
-will have to consider how to not just reach out and attract top talent,
-but how do we improve the existing talent we have. Promoting from within
+will have to consider how do we reach out and attract top talent,
+*and* how do we improve the existing talent we have. Promoting from within
 is something I've talked a big game about but have done little with.
 This will change in 2015.
 
