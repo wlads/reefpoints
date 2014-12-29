@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lessons Learned - Three years of running a softward consultancy"
+title: "Lessons Learned - Three years of running a software consultancy"
 comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
@@ -14,23 +14,23 @@ still managed to pull off our most successful year yet.
 
 ## People
 
-In 2013 we ended the year with 11 employees. We made a key hire at the start of the year with [Robert
+In 2013, we ended the year with 11 employees. We made a key hire at the start of the year with [Robert
 Jackson](http://twitter.com/rwjblue) joining us. I had met Robert a few
 months prior at [Burlington Ruby
 Conf](http://burlingtonrubyconference.com/). Robert had been
-contributing to a few of our Ember libraries as well as making a name
+contributing to a few of our Ember libraries, as well as making a name
 for himself by quickly moving up the contributors list in Ember.js
 itself. Less than four months after we hired Robert he was welcomed onto
-the Ember.js Core Team which I'm extremely proud of him accomplishing
+the Ember.js Core Team. I'm extremely proud of him accomplishing
 that.
 
-We added depth to our design team in Q1 2015 with [Maria Matveeva](http://twitter.com/rgbcolor)
+We added depth to our design team in Q1 2014 with [Maria Matveeva](http://twitter.com/rgbcolor)
 and [Tim Walsh](http://twitter.com/imakemusic). Tim and Maria have been
 invaluable for us, their dedication and ability allows you to easily
 forget how young they are. I'm looking forward to seeing how they
 continue to grow in 2015.
 
-Early in 2014 we hired our first Project Manager, [Jon
+Early in 2014, we hired our first Project Manager, [Jon
 Lacks](https://twitter.com/jon_lacks). Jon and I went to college
 together, and historically I have not had a good run of
 working with friends. That has been my fault, I think I was more
@@ -40,7 +40,7 @@ potential issues that may arise that could conflict with our prior
 relationship should be aired out immediately. Jon joined
 DockYard in February and spent the first month or so observing our team
 more than taking complete ownership of our process. I gradually handed
-off some of what I was managing to Jon (running standups, involved with
+off some of what I was managing to Jon (running standups, getting involved with
 some client meetings, helping with estimations). All this to say that
 adding a dedicated PM was one of the highest impact decisions I made in
 2014. I suspect that many companies don't need one until they're around
@@ -48,22 +48,22 @@ adding a dedicated PM was one of the highest impact decisions I made in
 
 [Romina Vargas](https://twitter.com/i_am_romina) and [Lin Reid](https://twitter.com/Linstula) were two engineers that went through our
 intern program and we upgraded them to full-time as soon as we could.
-both Lin & Romina have been important members of some of our larger
-clients in 2014.
+Both Lin & Romina have been important members of some of our larger
+clients projects in 2014.
 
-A former engineering intern came back for her third (and final)
-internship with us, Marin Abernethy, after her graduation from college.
+Marin Abernethy, a former engineering intern, came back for her third (and final)
+internship with us after her graduation from college.
 In the Fall we hired her as a full-time engineer.
 
 [Paul Webb](https://twitter.com/netopwibby) interviewed with us in early 2014 but we had some projects
 fall through and things got very tight for us (more on this later) so we
-had to pass. But as soon as we had the badwidth we brough Paul onboard
+had to pass. But as soon as we had the bandwidth we brough Paul onboard
 to our UX Development team.
 
-Heading into the Summer we started to get sprad a little thin on the
+Heading into the Summer, we started to get sperad a little thin on the
 engineering team. I had come off of client work completely to focus on
 the business so we needed another Senior level engineer. I reached out
-to [Estelle DeBlois](https://twitter.com/edeblois) who had come to our
+to [Estelle DeBlois](https://twitter.com/edeblois), who had come to our
 [Wicked Good Ember](http://wickedgoodember.com) conference in June.
 She's been lead developer for one of our larger clients over the past
 few months.
@@ -73,27 +73,27 @@ Treni](https://twitter.com/ashleytreni) was actually tending bar at
 [Highball Lounge](http://www.highballboston.com/) right next door to our
 office (they can see us, we can see them). She asked what we did and it
 turns out that she is an amazing designer who was completing her Masters
-in Design at North Eastern. She did a summer internship with us and
+in Design at Northeastern. She did a summer internship with us and
 accepted our offer for full-time employment just recently.
 
 ### Hiring is hard
 
 Hiring continues to be hard. We have had success by focusing on
-technology niches, but we may have tapped that out. Going into 2015 we
-will have to consider how to not just reach out and attract top talent
+technology niches, but we may have tapped that out. Going into 2015, we
+will have to consider how to not just reach out and attract top talent,
 but how do we improve the existing talent we have. Promoting from within
 is something I've talked a big game about but have done little with.
 This will change in 2015.
 
 I began 2014 with the same trend I had in the previous two years: I
 would hire good people even if we didn't have projects to put them on.
-Coming out of Q1 2014 I had to stop this immediately. While we had built
+Coming out of Q1 2014, I had to stop this immediately. While we had built
 up a great team the weight of that payroll and our lack of cashflow at
 the time was at a breaking point where I could no longer cover the
 difference by taking myself off salary. Since then I have been very
 conservative with hiring. Unfortunately we actually missed out on some
 great people because of this, and I regret that as I was perhaps *too*
-conservative in our hiring at the time. Heading into 2015 this will
+conservative in our hiring at the time. Heading into 2015, this will
 probably continue to be an aspect of the company I will continue to
 improve.
 
@@ -123,6 +123,7 @@ some time to put it into words:
 * professional, kind and respectful
 * collaborative team players
 * disciplined
+* reputation
 * diverse
 * fun
 
@@ -365,7 +366,71 @@ design to manage our Discovery Phase, build and inform our estimations.
 Design has more impact on us converting a client out of Discovery to a
 full client than engineering does.
 
-### UX Easy
+### UX East
 
-This year we ran our first Design conference. Our Creative Director
-Steve Trevathan
+This year we ran our first Design conference, [UX East](http://uxeast.org/).
+It was structured as a design camp with two talks and one workshop.  The conference was organized by our Creative Director Steven Trevathan
+and Maria Matveeva we believe we were hugely successful.
+
+We're already beginning plans for next year's UX East (you can sign up for
+updates, including call for proposals, [here](http://eepurl.com/_NCUL)).
+
+### Team Structure
+
+Every project is now assigned at least two designers. This is partially
+because the projects are big enough to merit the team, but it also a huge
+qualititave add to the final delivery. Pairing designers is really helpful for "leveling up" as well. Matching
+designers by their different strengths they'll help each other grow. The
+concept is very similar to pair programming, however the designers go
+through many rounds of critiques instead of using the same computer for an
+extended period.
+
+While we hadn't previously done this, and it looks like a fairly obvious
+improvement to make, the result has been surprisingly positive and our most
+recent projects are seeing a huge benefit from it.
+
+### Setting Goals & Sticking To Them
+
+One thing we're very good at is coming up with ideas. Lot's of them. There is
+no shortage there, however there is a real challenge in effecively using down
+time and DockYard Fridays to commit to delivering on those ideas. I believe
+this is due to not having specific departmental goals that directly fit into
+company annual or quarterly objectives.
+
+An example of this challenge is [Tools of the Trade](http://toolsofthetrade.dockyard.com/).
+In the beginning of 2014 we put effort into creating small and novel icon packs
+and distrubuting them as free to use. It's generated some interest, and we had
+fun with our icons, but we dropped the ball and lost momentum on it. Not because
+we didn't enjoy making them or that it didn't benefit our designers by the
+challenge, but because it didn't fit cleanly into any company objective.
+
+We've set a Q1 2015 goal to create a program and agenda for design experimentation
+with a focus on single page web applications. By that objective we'll be aiming
+to provide more practical design tools, design and interaction patterns, and free
+assets for other designers in creating single page web applications. By commiting
+to this goal and using Tools of the Trade as vehicle, we should be able to promote
+ourselves, "level up" our designers, and effectively utilizing downtime.
+
+## Business
+
+On the business side of things we've begun to add more structure to DockYard. We hired a CEO 
+to take us through an OGSM (Objectives, Goals, Strategies and Measures)
+planning session for 2015. It was a tiring two days of time that helped
+us discover what type of company we want to be. The management team has
+all decided that DockYard should aim big and that is what we're going to
+do.
+
+### Office Space
+
+In Q2 2015 we'll be moving into a new office space. Our current space
+has served us well but it has its problems. The new space will be
+modern and have plenty of space for us (we're upgrading from 2,800 sq/ft to
+7,800 sq/ft). I'm excited to share those plans in the upcoming months.
+
+## Wrapping Up
+
+I hope this year's refelction has useful for you in some way. Each
+year's summary has felt different and I'm sure next year's will too. As
+a company DockYard has taken some knocks this year but we came out
+stronger for it with more focus and an actual gameplan. I'd love to hear
+other's experiences as well in the comments.
