@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lessons Learned - Three years of running a softward consultancy"
+title: "Lessons Learned - Three years of running a software consultancy"
 comments: true
 author: 'Brian Cardarella'
 twitter: 'bcardarella'
@@ -14,14 +14,14 @@ still managed to pull off our most successful year yet.
 
 ## People
 
-In 2013 we ended the year with 11 employees. We made a key hire at the start of the year with [Robert
+In 2013, we ended the year with 11 employees. We made a key hire at the start of the year with [Robert
 Jackson](http://twitter.com/rwjblue) joining us. I had met Robert a few
 months prior at [Burlington Ruby
 Conf](http://burlingtonrubyconference.com/). Robert had been
-contributing to a few of our Ember libraries as well as making a name
+contributing to a few of our Ember libraries, as well as making a name
 for himself by quickly moving up the contributors list in Ember.js
 itself. Less than four months after we hired Robert he was welcomed onto
-the Ember.js Core Team which I'm extremely proud of him accomplishing
+the Ember.js Core Team. I'm extremely proud of him accomplishing
 that.
 
 We added depth to our design team in Q1 2015 with [Maria Matveeva](http://twitter.com/rgbcolor)
@@ -30,7 +30,7 @@ invaluable for us, their dedication and ability allows you to easily
 forget how young they are. I'm looking forward to seeing how they
 continue to grow in 2015.
 
-Early in 2014 we hired our first Project Manager, [Jon
+Early in 2014, we hired our first Project Manager, [Jon
 Lacks](https://twitter.com/jon_lacks). Jon and I went to college
 together, and historically I have not had a good run of
 working with friends. That has been my fault, I think I was more
@@ -48,7 +48,7 @@ adding a dedicated PM was one of the highest impact decisions I made in
 
 [Romina Vargas](https://twitter.com/i_am_romina) and [Lin Reid](https://twitter.com/Linstula) were two engineers that went through our
 intern program and we upgraded them to full-time as soon as we could.
-both Lin & Romina have been important members of some of our larger
+Both Lin & Romina have been important members of some of our larger
 clients in 2014.
 
 A former engineering intern came back for her third (and final)
@@ -57,13 +57,13 @@ In the Fall we hired her as a full-time engineer.
 
 [Paul Webb](https://twitter.com/netopwibby) interviewed with us in early 2014 but we had some projects
 fall through and things got very tight for us (more on this later) so we
-had to pass. But as soon as we had the badwidth we brough Paul onboard
+had to pass. But as soon as we had the bandwidth we brough Paul onboard
 to our UX Development team.
 
-Heading into the Summer we started to get sprad a little thin on the
+Heading into the Summer, we started to get sprad a little thin on the
 engineering team. I had come off of client work completely to focus on
 the business so we needed another Senior level engineer. I reached out
-to [Estelle DeBlois](https://twitter.com/edeblois) who had come to our
+to [Estelle DeBlois](https://twitter.com/edeblois), who had come to our
 [Wicked Good Ember](http://wickedgoodember.com) conference in June.
 She's been lead developer for one of our larger clients over the past
 few months.
@@ -73,27 +73,27 @@ Treni](https://twitter.com/ashleytreni) was actually tending bar at
 [Highball Lounge](http://www.highballboston.com/) right next door to our
 office (they can see us, we can see them). She asked what we did and it
 turns out that she is an amazing designer who was completing her Masters
-in Design at North Eastern. She did a summer internship with us and
+in Design at Northeastern. She did a summer internship with us and
 accepted our offer for full-time employment just recently.
 
 ### Hiring is hard
 
 Hiring continues to be hard. We have had success by focusing on
-technology niches, but we may have tapped that out. Going into 2015 we
-will have to consider how to not just reach out and attract top talent
+technology niches, but we may have tapped that out. Going into 2015, we
+will have to consider how to not just reach out and attract top talent,
 but how do we improve the existing talent we have. Promoting from within
 is something I've talked a big game about but have done little with.
 This will change in 2015.
 
 I began 2014 with the same trend I had in the previous two years: I
 would hire good people even if we didn't have projects to put them on.
-Coming out of Q1 2014 I had to stop this immediately. While we had built
+Coming out of Q1 2014, I had to stop this immediately. While we had built
 up a great team the weight of that payroll and our lack of cashflow at
 the time was at a breaking point where I could no longer cover the
 difference by taking myself off salary. Since then I have been very
 conservative with hiring. Unfortunately we actually missed out on some
 great people because of this, and I regret that as I was perhaps *too*
-conservative in our hiring at the time. Heading into 2015 this will
+conservative in our hiring at the time. Heading into 2015, this will
 probably continue to be an aspect of the company I will continue to
 improve.
 
