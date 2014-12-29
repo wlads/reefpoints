@@ -57,7 +57,7 @@ In the Fall we hired her as a full-time engineer.
 
 [Paul Webb](https://twitter.com/netopwibby) interviewed with us in early 2014 but we had some projects
 fall through and things got very tight for us (more on this later) so we
-had to pass. But as soon as we had the bandwidth we brough Paul onboard
+had to pass. But as soon as we had the bandwidth we brought Paul onboard
 to our UX Development team.
 
 Heading into the Summer, we started to get sperad a little thin on the
@@ -88,7 +88,7 @@ This will change in 2015.
 I began 2014 with the same trend I had in the previous two years: I
 would hire good people even if we didn't have projects to put them on.
 Coming out of Q1 2014, I had to stop this immediately. While we had built
-up a great team the weight of that payroll and our lack of cashflow at
+up a great team, the weight of that payroll and our lack of cashflow at
 the time was at a breaking point where I could no longer cover the
 difference by taking myself off salary. Since then I have been very
 conservative with hiring. Unfortunately we actually missed out on some
@@ -135,7 +135,7 @@ these principles and expect everyone at DockYard to live up to them.
 
 We have a goal of expanding our team to over 25 by the end of 2015. I
 would actually prefer to be closer to 30. Our hiring will be focused on
-Sr level talent for engineering, design, and UX. We're always interested
+Senior Level talent for engineering, design, and UX. We're always interested
 in [hearing from great people, get in touch if you're
 interested](mailto:jobs@dockyard.com).
 
@@ -144,7 +144,7 @@ interested](mailto:jobs@dockyard.com).
 Our problems with maintaining our estimations was not significantly
 improving in early 2014. We had to eat a lot of money on contracts that
 was due either to bad estimations or our inability to properly manage our
-clients. If we ever expected to build a real company this had to be
+clients. If we ever expected to build a real company, this had to be
 fixed. This is where Jon came in as our first Project Managing hire. It
 took a few months but we've gone from being consistently late to being
 consistently early. Our estimtions are currently one of the more
