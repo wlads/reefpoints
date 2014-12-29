@@ -247,7 +247,7 @@ didn't consider this to be a big risk.
 
 What happened was that there was little to no incentive to speed up the
 contract signing for our client. We were working, doing what they
-wanted, and they had not obligation to pay us. I realize some of you are
+wanted, and they had no obligation to pay us. I realize some of you are
 reading this and thinking "Rookie Move!" but consider the context.
 Starting work with large clients prior to contracts being compelted is
 actually a common practice in the Enterprise. I hear some of you
