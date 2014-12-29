@@ -73,7 +73,7 @@ Treni](https://twitter.com/ashleytreni) was actually tending bar at
 [Highball Lounge](http://www.highballboston.com/) right next door to our
 office (they can see us, we can see them). She asked what we did and it
 turns out that she is an amazing designer who was completing her Masters
-in Design at Northeastern. She did a summer internship with us and
+in Information Design and Visualization at Northeastern. She did a summer internship with us and
 accepted our offer for full-time employment just recently.
 
 ### Hiring is hard
