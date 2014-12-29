@@ -147,7 +147,7 @@ was due either to bad estimations or our inability to properly manage our
 clients. If we ever expected to build a real company, this had to be
 fixed. This is where Jon came in as our first Project Managing hire. It
 took a few months but we've gone from being consistently late to being
-consistently early. Our estimtions are currently one of the more
+consistently early. Our estimations are currently one of the more
 reliable aspects of our business. This has not just helped relationships
 with existing clients but being able to reliably sell our services to
 new clients is incredibly powerful.
@@ -178,7 +178,7 @@ balancing people on and off between contracts. I was butting heads with
 our business developer. He and I had different ideas on how to run the
 company. The funny thing is that neither of us were wrong. He wanted to
 reduce price due to lack of the demand we had at the time. I didn't want
-to do that. I was willing to pass on contracts that we cold have
+to do that. I was willing to pass on contracts that we could have
 gotten if we cut our rate 25%. This eventually put us in a position of
 bringing in 0% of billings for more than 50% of the company rather than
 75% of billings. Which would you rather have?
@@ -249,7 +249,7 @@ What happened was that there was little to no incentive to speed up the
 contract signing for our client. We were working, doing what they
 wanted, and they had no obligation to pay us. I realize some of you are
 reading this and thinking "Rookie Move!" but consider the context.
-Starting work with large clients prior to contracts being compelted is
+Starting work with large clients prior to contracts being completed is
 actually a common practice in the Enterprise. I hear some of you
 screaming "no it isn't!". Yes, it is.
 
@@ -262,7 +262,7 @@ it) Thankfully the client saw the situation for what it was and we were
 able to move forward. This was in June.
 
 Putting the brakes on the project and getting the contract done and
-getting paid was the turning point for DockYard. We were from invoicing
+getting paid was the turning point for DockYard. We went from invoicing
 on average $30k/week to over $100k/week. With no contract longer than
 Net-30 by August we had all of our debts paid off and were in a position
 to hire again. By November we had gone from a 1% profit margin for the
@@ -296,7 +296,7 @@ One thing we've never dealt with is selling our services into another
 company. We've got most work by companies making a technology decision then
 finding who is good at working with said technology. How do you convince
 a company unfamiliar with Ember.js that it is what they should use to
-build their product with? What if this personal is not technology savvy?
+build their product with? What if this person is not technology savvy?
 
 I came to the conclusion that you cannot sell Ember.js directly. I
 needed help with building a sales pipeline and sales pitch. A friend put
@@ -337,7 +337,7 @@ The other choices I considered looking into were
 feels like the best of the three to me. It is far less popular than the
 other two but considering it is backed by Erlang and boasts the most
 approachable syntax, has meta-programming, concurrency, and is built for
-fault tolerance I fell of those three language Elixir is the best suited
+fault tolerance I feel of those three language Elixir is the best suited
 for the future. Of course, this is a gamble and time will tell.
 
 ### Ruby on Rails
@@ -379,7 +379,7 @@ updates, including call for proposals, [here](http://eepurl.com/_NCUL)).
 
 Every project is now assigned at least two designers. This is partially
 because the projects are big enough to merit the team, but it also a huge
-qualititave add to the final delivery. Pairing designers is really helpful for "leveling up" as well. Matching
+qualitative add to the final delivery. Pairing designers is really helpful for "leveling up" as well. Matching
 designers by their different strengths they'll help each other grow. The
 concept is very similar to pair programming, however the designers go
 through many rounds of critiques instead of using the same computer for an
@@ -429,7 +429,7 @@ modern and have plenty of space for us (we're upgrading from 2,800 sq/ft to
 
 ## Wrapping Up
 
-I hope this year's refelction has useful for you in some way. Each
+I hope this year's reflection has useful for you in some way. Each
 year's summary has felt different and I'm sure next year's will too. As
 a company DockYard has taken some knocks this year but we came out
 stronger for it with more focus and an actual gameplan. I'd love to hear
