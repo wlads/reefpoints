@@ -60,7 +60,7 @@ fall through and things got very tight for us (more on this later) so we
 had to pass. But as soon as we had the bandwidth we brought Paul onboard
 to our UX Development team.
 
-Heading into the Summer, we started to get sperad a little thin on the
+Heading into the Summer, we started to get spread a little thin on the
 engineering team. I had come off of client work completely to focus on
 the business so we needed another Senior level engineer. I reached out
 to [Estelle DeBlois](https://twitter.com/edeblois), who had come to our
@@ -176,7 +176,7 @@ and there. I like working on small projects but from a business
 perspective we were burning too much time negotiating contracts,
 balancing people on and off between contracts. I was butting heads with
 our business developer. He and I had different ideas on how to run the
-company. The funny this is that neither of us were wrong. He wanted to
+company. The funny thing is that neither of us were wrong. He wanted to
 reduce price due to lack of the demand we had at the time. I didn't want
 to do that. I was willing to pass on contracts that we cold have
 gotten if we cut our rate 25%. This eventually put us in a position of
