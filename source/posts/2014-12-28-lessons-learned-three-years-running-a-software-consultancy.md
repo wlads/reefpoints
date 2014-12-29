@@ -233,10 +233,10 @@ took months to complete.
 The problem with dealing with Enterprise companies is that they can
 outlast you. It isn't their intent to do so, it is in their best
 interest that their vendors are able to work on what they need to the
-vest of the vendor's ability. It doesn't help either party if the vendor
+best of the vendor's ability. It doesn't help either party if the vendor
 can't make payroll. However, because of how many Enterprise companies
 are structured, and who has to sign off on what, an unprepared small
-vendor can be put into a position of agreeing to somethings that are not
+vendor can be put into a position of agreeing to some things that are not
 in its best interest so it can start getting paid ASAP.
 
 I was perhaps too  risky in this regard. I held out on the contract, I
