@@ -413,7 +413,7 @@ ourselves, "level up" our designers, and effectively utilizing downtime.
 
 ## Business
 
-On the business side of things we've begun to add more structure to DockYard. We hired a CEO 
+On the business side of things we've begun to add more structure to DockYard. We hired a CEO coach 
 to take us through an OGSM (Objectives, Goals, Strategies and Measures)
 planning session for 2015. It was a tiring two days of time that helped
 us discover what type of company we want to be. The management team has
