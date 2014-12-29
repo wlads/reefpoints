@@ -4,10 +4,451 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2014-12-26T00:00:00Z</updated>
+  <updated>2014-12-28T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Lessons Learned - Three years of running a software consultancy</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2014/12/28/lessons-learned-three-years-running-a-software-consultancy.html"/>
+    <id>http://reefpoints.dockyard.com/2014/12/28/lessons-learned-three-years-running-a-software-consultancy.html</id>
+    <published>2014-12-28T00:00:00Z</published>
+    <updated>2014-12-29T15:27:39-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;This year&amp;#39;s story is one of how we nearly went out of business &lt;em&gt;twice&lt;/em&gt; yet
+still managed to pull off our most successful year yet.&lt;/p&gt;
+
+&lt;h2&gt;People&lt;/h2&gt;
+
+&lt;p&gt;In 2013, we ended the year with 11 employees. We made a key hire at the start of the year with &lt;a href="http://twitter.com/rwjblue"&gt;Robert
+Jackson&lt;/a&gt; joining us. I had met Robert a few
+months prior at &lt;a href="http://burlingtonrubyconference.com/"&gt;Burlington Ruby
+Conf&lt;/a&gt;. Robert had been
+contributing to a few of our Ember libraries, as well as making a name
+for himself by quickly moving up the contributors list in Ember.js
+itself. Less than four months after we hired Robert he was welcomed onto
+the Ember.js Core Team. I&amp;#39;m extremely proud of him accomplishing
+that.&lt;/p&gt;
+
+&lt;p&gt;We added depth to our design team in Q1 2014 with &lt;a href="http://twitter.com/rgbcolor"&gt;Maria Matveeva&lt;/a&gt;
+and &lt;a href="http://twitter.com/imakemusic"&gt;Tim Walsh&lt;/a&gt;. Tim and Maria have been
+invaluable for us, their dedication and ability allows you to easily
+forget how young they are. I&amp;#39;m looking forward to seeing how they
+continue to grow in 2015.&lt;/p&gt;
+
+&lt;p&gt;Early in 2014, we hired our first Project Manager, &lt;a href="https://twitter.com/jon_lacks"&gt;Jon
+Lacks&lt;/a&gt;. Jon and I went to college
+together, and historically I have not had a good run of
+working with friends. That has been my fault, I think I was more
+interested in working with people I was friends with than establishing
+what their responsibilities would be. Jon and I agreed that any and all
+potential issues that may arise that could conflict with our prior
+relationship should be aired out immediately. Jon joined
+DockYard in February and spent the first month or so observing our team
+more than taking complete ownership of our process. I gradually handed
+off some of what I was managing to Jon (running standups, getting involved with
+some client meetings, helping with estimations). All this to say that
+adding a dedicated PM was one of the highest impact decisions I made in
+2014. I suspect that many companies don&amp;#39;t need one until they&amp;#39;re around
+10 people in size but once you do hire one you&amp;#39;ll be thankful.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://twitter.com/i_am_romina"&gt;Romina Vargas&lt;/a&gt; and &lt;a href="https://twitter.com/Linstula"&gt;Lin Reid&lt;/a&gt; were two engineers that went through our
+intern program and we upgraded them to full-time as soon as we could.
+Both Lin &amp;amp; Romina have been important members of some of our larger
+clients projects in 2014.&lt;/p&gt;
+
+&lt;p&gt;Marin Abernethy, a former engineering intern, came back for her third (and final)
+internship with us after her graduation from college.
+In the Fall we hired her as a full-time engineer.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://twitter.com/netopwibby"&gt;Paul Webb&lt;/a&gt; interviewed with us in early 2014 but we had some projects
+fall through and things got very tight for us (more on this later) so we
+had to pass. But as soon as we had the bandwidth we brought Paul onboard
+to our UX Development team.&lt;/p&gt;
+
+&lt;p&gt;Heading into the Summer, we started to get spread a little thin on the
+engineering team. I had come off of client work completely to focus on
+the business so we needed another Senior level engineer. I reached out
+to &lt;a href="https://twitter.com/edeblois"&gt;Estelle DeBlois&lt;/a&gt;, who had come to our
+&lt;a href="http://wickedgoodember.com"&gt;Wicked Good Ember&lt;/a&gt; conference in June.
+She&amp;#39;s been lead developer for one of our larger clients over the past
+few months.&lt;/p&gt;
+
+&lt;p&gt;Our final hire starts full-time with us in January. &lt;a href="https://twitter.com/ashleytreni"&gt;Ashley
+Treni&lt;/a&gt; was actually tending bar at
+&lt;a href="http://www.highballboston.com/"&gt;Highball Lounge&lt;/a&gt; right next door to our
+office (they can see us, we can see them). She asked what we did and it
+turns out that she is an amazing designer who was completing her Masters
+in Information Design and Visualization at Northeastern. She did a summer internship with us and
+accepted our offer for full-time employment just recently.&lt;/p&gt;
+
+&lt;h3&gt;Hiring is hard&lt;/h3&gt;
+
+&lt;p&gt;Hiring continues to be hard. We have had success by focusing on
+technology niches, but we may have tapped that out. Going into 2015, we
+will have to consider how do we reach out and attract top talent,
+&lt;em&gt;and&lt;/em&gt; how do we improve the existing talent we have. Promoting from within
+is something I&amp;#39;ve talked a big game about but have done little with.
+This will change in 2015.&lt;/p&gt;
+
+&lt;p&gt;I began 2014 with the same trend I had in the previous two years: I
+would hire good people even if we didn&amp;#39;t have projects to put them on.
+Coming out of Q1 2014, I had to stop this immediately. While we had built
+up a great team, the weight of that payroll and our lack of cashflow at
+the time was at a breaking point where I could no longer cover the
+difference by taking myself off salary. Since then I have been very
+conservative with hiring. Unfortunately we actually missed out on some
+great people because of this, and I regret that as I was perhaps &lt;em&gt;too&lt;/em&gt;
+conservative in our hiring at the time. Heading into 2015, this will
+probably continue to be an aspect of the company I will continue to
+improve.&lt;/p&gt;
+
+&lt;h3&gt;Firing still sucks&lt;/h3&gt;
+
+&lt;p&gt;I had to fire two employees in 2014. Firing always sucks and I don&amp;#39;t
+think I&amp;#39;ll ever get used to it. There is a guilt that is attached that
+at some point is out-weighed by whatever you&amp;#39;re not getting from said
+employee. So how does one mitigate the guilt? &lt;a href="http://www.slideshare.net/reed2001/culture-1798664?ref=https://gigaom.com/2013/01/29/netflix-company-culture/"&gt;Netflix has a great
+policy when it comes to firing
+employees&lt;/a&gt;.
+The document outlines their full cultural philosophy but the gist of how
+they fire is that they give a very generous severance package. So
+managers don&amp;#39;t concern themselves with the guilt what will happen to
+this employee without their job. I think this is a great idea, but not
+always practical for all companies. If we had Netflix money then I would
+definitely align our severance package with theirs.&lt;/p&gt;
+
+&lt;h3&gt;Culture&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;ve done a lot of work to define what the culture of DockYard actually
+is. Until Q4 2014 our culture was never written in stone. So we took
+some time to put it into words:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;strong problem solvers, with attention to detail&lt;/li&gt;
+&lt;li&gt;coachable learners and willing mentors&lt;/li&gt;
+&lt;li&gt;professional, kind and respectful&lt;/li&gt;
+&lt;li&gt;collaborative team players&lt;/li&gt;
+&lt;li&gt;disciplined&lt;/li&gt;
+&lt;li&gt;reputation&lt;/li&gt;
+&lt;li&gt;diverse&lt;/li&gt;
+&lt;li&gt;fun&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;#39;m sure you&amp;#39;re looking at this list and thinking &amp;quot;yeah this is pretty much what every company will say&amp;quot;.
+That could be true, but these are going to be our hiring and retention criteria. We will be building a team around 
+these principles and expect everyone at DockYard to live up to them.&lt;/p&gt;
+
+&lt;h3&gt;Heading into next year&lt;/h3&gt;
+
+&lt;p&gt;We have a goal of expanding our team to over 25 by the end of 2015. I
+would actually prefer to be closer to 30. Our hiring will be focused on
+Senior Level talent for engineering, design, and UX. We&amp;#39;re always interested
+in &lt;a href="mailto:jobs@dockyard.com"&gt;hearing from great people, get in touch if you&amp;#39;re
+interested&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Estimations&lt;/h2&gt;
+
+&lt;p&gt;Our problems with maintaining our estimations was not significantly
+improving in early 2014. We had to eat a lot of money on contracts that
+was due either to bad estimations or our inability to properly manage our
+clients. If we ever expected to build a real company, this had to be
+fixed. This is where Jon came in as our first Project Managing hire. It
+took a few months but we&amp;#39;ve gone from being consistently late to being
+consistently early. Our estimtions are currently one of the more
+reliable aspects of our business. This has not just helped relationships
+with existing clients but being able to reliably sell our services to
+new clients is incredibly powerful.&lt;/p&gt;
+
+&lt;h3&gt;Heading into the next year&lt;/h3&gt;
+
+&lt;p&gt;I suspect we will continue to hone our ability to estimate. We will also
+be looking to hire an additional Project Manager as we decided we don&amp;#39;t
+ever want to spread a PM over more than three projects.&lt;/p&gt;
+
+&lt;h2&gt;Financials&lt;/h2&gt;
+
+&lt;p&gt;In 2013 we ended the year with $1.7m in revenue with about 20% profit
+margin. This year we improved that to $3.1 in revenue with 33% profit
+margin. This is a significant jump, in many ways I&amp;#39;m incredibly proud of
+what we were able to accomplish this year. However, I also know that we
+(as a company) underperformed. If we had been as productive in the first
+half of the year as we were in the second half we should have been
+closer to a $4m+ company with &amp;gt;50% profit margin.&lt;/p&gt;
+
+&lt;h3&gt;What went wrong&lt;/h3&gt;
+
+&lt;p&gt;We were getting contracts coming in through the year, but nothing with
+the challenge or scope that I was hoping for. Small $50k contracts here
+and there. I like working on small projects but from a business
+perspective we were burning too much time negotiating contracts,
+balancing people on and off between contracts. I was butting heads with
+our business developer. He and I had different ideas on how to run the
+company. The funny thing is that neither of us were wrong. He wanted to
+reduce price due to lack of the demand we had at the time. I didn&amp;#39;t want
+to do that. I was willing to pass on contracts that we cold have
+gotten if we cut our rate 25%. This eventually put us in a position of
+bringing in 0% of billings for more than 50% of the company rather than
+75% of billings. Which would you rather have?&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m sure there are people reading this was a deeper background in
+running a business than saying it was stupid not to take the 75%. Here
+is my problem: at that amount we weren&amp;#39;t making any profit and our
+people were tied up on projects. I was tired of living hand to mouth, I
+had taken myself off of payroll consistently for the past few years. I
+was living off my wife&amp;#39;s salary.&lt;/p&gt;
+
+&lt;p&gt;At the end of Q1 I was looking down the barrel of DockYard and not
+liking what I was seeing. Then we got a whale of a contract come our
+way. This was a contract that could right the ship. Or so I thought.&lt;/p&gt;
+
+&lt;p&gt;I was not heading up the contract negotiations. The only criteria I gave
+was what I thought our rate should be for this contract. When it came to
+it our business developer was not confident that we could get that rate.
+I was distraught. I was not willing to lock DockYard into a long-term
+contract at cost. I told my wife at dinner I was going to start looking
+for a &amp;quot;real job&amp;quot; and that DockYard was finished.&lt;/p&gt;
+
+&lt;p&gt;I didn&amp;#39;t sleep. I stayed up and kept mulling over the contract, was this
+it? I came to several conclusions:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The client could afford our rate.&lt;/li&gt;
+&lt;li&gt;We were worth the rate.&lt;/li&gt;
+&lt;li&gt;Our business developer did not believe in #2&lt;/li&gt;
+&lt;li&gt;I should be handling contract negotiations for DockYard&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I came into work that morning. Within a span of 15 minutes I fired our
+business developer and landed the client at the rate we felt we
+deserved.&lt;/p&gt;
+
+&lt;p&gt;I realize the above might seem indifferent to letting someone go. He and
+I actually got along very well on a personal level. But as I mentioned
+previously when it came to how to run DockYard we didn&amp;#39;t see eye to eye.
+I was stressing out over this constantly and in the event I was not able
+to land this client on my own at the very least I could say that I went
+out my way. Egotistical? Yes, of course. But it is something I needed to
+do. If we had slowly died over the rest of 2014 due to no real profit
+margin I would have quit.&lt;/p&gt;
+
+&lt;p&gt;This was the first of two near-deaths for DockYard this year. The second
+would come just two months later.&lt;/p&gt;
+
+&lt;p&gt;The large client came with a large legal team, one that I was unprepared
+for handling properly. We have an excellent lawyer we&amp;#39;re working with
+but I am accustomed to contract negotiation taking maybe a week. This
+took months to complete.&lt;/p&gt;
+
+&lt;p&gt;The problem with dealing with Enterprise companies is that they can
+outlast you. It isn&amp;#39;t their intent to do so, it is in their best
+interest that their vendors are able to work on what they need to the
+vest of the vendor&amp;#39;s ability. It doesn&amp;#39;t help either party if the vendor
+can&amp;#39;t make payroll. However, because of how many Enterprise companies
+are structured, and who has to sign off on what, an unprepared small
+vendor can be put into a position of agreeing to somethings that are not
+in its best interest so it can start getting paid ASAP.&lt;/p&gt;
+
+&lt;p&gt;I was perhaps too  risky in this regard. I held out on the contract, I
+put it through multiple rounds of negotionation. There was some legit
+scary stuff in it that I was not willing to agree to. We had started
+work with the client before the contract was completed. At the time I
+didn&amp;#39;t consider this to be a big risk.&lt;/p&gt;
+
+&lt;p&gt;What happened was that there was little to no incentive to speed up the
+contract signing for our client. We were working, doing what they
+wanted, and they had not obligation to pay us. I realize some of you are
+reading this and thinking &amp;quot;Rookie Move!&amp;quot; but consider the context.
+Starting work with large clients prior to contracts being compelted is
+actually a common practice in the Enterprise. I hear some of you
+screaming &amp;quot;no it isn&amp;#39;t!&amp;quot;. Yes, it is.&lt;/p&gt;
+
+&lt;p&gt;We ran out of money. We had a payroll that we were $25k short for. I had
+a very difficult conversation with the client and made the tough
+decision to stop work until the contract was signed and our existing
+invoices were immediately covered. I made a personal loan to DockYard to
+cover payroll. (as a side-note, banks never loan you money when you need
+it) Thankfully the client saw the situation for what it was and we were
+able to move forward. This was in June.&lt;/p&gt;
+
+&lt;p&gt;Putting the brakes on the project and getting the contract done and
+getting paid was the turning point for DockYard. We were from invoicing
+on average $30k/week to over $100k/week. With no contract longer than
+Net-30 by August we had all of our debts paid off and were in a position
+to hire again. By November we had gone from a 1% profit margin for the
+year in June to over 25%.&lt;/p&gt;
+
+&lt;p&gt;It is actually strange writing about this now, and I&amp;#39;m not entirely
+certain I should have written all of this. In some ways it was noe of
+the most stressful times in my life, and looking back it feels surreal.&lt;/p&gt;
+
+&lt;p&gt;I hope there are some nuggets of knowledge in here to help others avoid
+a similar situation.&lt;/p&gt;
+
+&lt;h3&gt;Heading into next year&lt;/h3&gt;
+
+&lt;p&gt;We have ambitious financial goals. We aim for a $5m+ business in 2015. A
+$10m+ business in 2016, each year with &amp;gt;25% margin. If we can maintain our current momentum we
+should easily meet 2015&amp;#39;s goal.&lt;/p&gt;
+
+&lt;h2&gt;Technology&lt;/h2&gt;
+
+&lt;h3&gt;Ember.js&lt;/h3&gt;
+
+&lt;p&gt;We bet very heavily on &lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt; in 2013. That bet
+has paid off very well for us in 2014. The client mentioned above hired
+us for our expertise in Ember.js. We landed another great client in the
+Summer because of Ember.js. We are seeing a steady flow of work come in
+because of Ember.js but I don&amp;#39;t think we can meet our $5m goal by
+relying on inbound leads from Ember.js.&lt;/p&gt;
+
+&lt;p&gt;One thing we&amp;#39;ve never dealt with is selling our services into another
+company. We&amp;#39;ve got most work by companies making a technology decision then
+finding who is good at working with said technology. How do you convince
+a company unfamiliar with Ember.js that it is what they should use to
+build their product with? What if this personal is not technology savvy?&lt;/p&gt;
+
+&lt;p&gt;I came to the conclusion that you cannot sell Ember.js directly. I
+needed help with building a sales pipeline and sales pitch. A friend put
+me in touch with &lt;a href="https://www.linkedin.com/pub/lorne-cooper/0/9a6/811"&gt;Lorne
+Cooper&lt;/a&gt; who I have
+been working with over the past two months. Lorne convinced me that I
+had sales backwards. We need to start with Marketing. (he also convinced
+me that I couldn&amp;#39;t sell Ember.js)&lt;/p&gt;
+
+&lt;p&gt;So what we built was the DockYard marketing funnel. Working backwards
+from Ember.js, we broadened the funnel. If the answer is: &lt;strong&gt;Ember.js&lt;/strong&gt;
+then the question should be &lt;strong&gt;What is the best Single Page App
+framework?&lt;/strong&gt; (let&amp;#39;s save tech debates for another time). I didn&amp;#39;t feel
+that selling SPAs was any better than selling Ember.js. Again, the
+answer is &lt;strong&gt;Single Page Apps&lt;/strong&gt; so the question should be &lt;strong&gt;How do you
+provide a modern user expereince on the web?&lt;/strong&gt;. Now were had something.
+Selling UX as a solution to companies was tangible. If we could market
+that UX improvements was the way to solve common problems in modern web
+apps then we could hook companies on the idea that Single Page Apps was
+the best way to deliver modern UX. If we could convince companies on
+SPAs then we have the chance to convince them that Ember.js is the best
+framework for building out SPAs. At this point we have to make a case
+that DockYard is the best company as building Ember.js applications. We
+now had our marketing funnel. We plan on putting this funnel to the test
+in early 2015, but don&amp;#39;t expect any significant number of qualified
+leads to be produced until late 2015, more likely early 2016.&lt;/p&gt;
+
+&lt;h3&gt;Elixir&lt;/h3&gt;
+
+&lt;p&gt;While we are not currently writing any &lt;a href="http://elixir-lang.org"&gt;Elixir&lt;/a&gt; apps I think 
+it will be part of our offerings around Q3 2015. Specifically because of
+the &lt;a href="http://www.phoenixframework.org/"&gt;Phoenix Framework&lt;/a&gt; being very
+similar to &lt;a href="http://rubyonrails.org"&gt;Ruby on Rails&lt;/a&gt; I think we should be
+able to ramp upon it quickly.&lt;/p&gt;
+
+&lt;p&gt;The other choices I considered looking into were
+&lt;a href="http://golang.org"&gt;Go&lt;/a&gt; and &lt;a href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt;. Elixir
+feels like the best of the three to me. It is far less popular than the
+other two but considering it is backed by Erlang and boasts the most
+approachable syntax, has meta-programming, concurrency, and is built for
+fault tolerance I fell of those three language Elixir is the best suited
+for the future. Of course, this is a gamble and time will tell.&lt;/p&gt;
+
+&lt;h3&gt;Ruby on Rails&lt;/h3&gt;
+
+&lt;p&gt;Our involvement with Ruby on Rails will never go away completely but I
+don&amp;#39;t see Ruby or Rails being a serious part of our technology identity
+in the future. I would like to think that we were out with a bang
+though, in early 2014 we were selected to redesign
+&lt;a href="http://rubygems.org"&gt;RubyGems&lt;/a&gt;. We launched the redesign at
+&lt;a href="http://rubyconf.org"&gt;RubyConf&lt;/a&gt; and it was a nice way to say &amp;quot;thank-you&amp;quot;
+to a community that we&amp;#39;ve benefited from for so long.&lt;/p&gt;
+
+&lt;h3&gt;Heading into next year&lt;/h3&gt;
+
+&lt;p&gt;I always want DockYard to be a company that does not stagnate on
+technology. I enjoy working with and exploring new technology and I
+always want to push our engineering team to do that same. In the near
+future I think Ember.js and Elixir will be important for us, of course
+we must be open-minded enough about new technology on the horizon.&lt;/p&gt;
+
+&lt;h2&gt;Design&lt;/h2&gt;
+
+&lt;p&gt;Design has become so essential to our process I don&amp;#39;t understand how we
+go by in the early years without a dedicated design team. We rely upon
+design to manage our Discovery Phase, build and inform our estimations.
+Design has more impact on us converting a client out of Discovery to a
+full client than engineering does.&lt;/p&gt;
+
+&lt;h3&gt;UX East&lt;/h3&gt;
+
+&lt;p&gt;This year we ran our first Design conference, &lt;a href="http://uxeast.org/"&gt;UX East&lt;/a&gt;.
+It was structured as a design camp with two talks and one workshop.  The conference was organized by our Creative Director Steven Trevathan
+and Maria Matveeva we believe we were hugely successful.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re already beginning plans for next year&amp;#39;s UX East (you can sign up for
+updates, including call for proposals, &lt;a href="http://eepurl.com/_NCUL"&gt;here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3&gt;Team Structure&lt;/h3&gt;
+
+&lt;p&gt;Every project is now assigned at least two designers. This is partially
+because the projects are big enough to merit the team, but it also a huge
+qualititave add to the final delivery. Pairing designers is really helpful for &amp;quot;leveling up&amp;quot; as well. Matching
+designers by their different strengths they&amp;#39;ll help each other grow. The
+concept is very similar to pair programming, however the designers go
+through many rounds of critiques instead of using the same computer for an
+extended period.&lt;/p&gt;
+
+&lt;p&gt;While we hadn&amp;#39;t previously done this, and it looks like a fairly obvious
+improvement to make, the result has been surprisingly positive and our most
+recent projects are seeing a huge benefit from it.&lt;/p&gt;
+
+&lt;h3&gt;Setting Goals &amp;amp; Sticking To Them&lt;/h3&gt;
+
+&lt;p&gt;One thing we&amp;#39;re very good at is coming up with ideas. Lot&amp;#39;s of them. There is
+no shortage there, however there is a real challenge in effecively using down
+time and DockYard Fridays to commit to delivering on those ideas. I believe
+this is due to not having specific departmental goals that directly fit into
+company annual or quarterly objectives.&lt;/p&gt;
+
+&lt;p&gt;An example of this challenge is &lt;a href="http://toolsofthetrade.dockyard.com/"&gt;Tools of the Trade&lt;/a&gt;.
+In the beginning of 2014 we put effort into creating small and novel icon packs
+and distrubuting them as free to use. It&amp;#39;s generated some interest, and we had
+fun with our icons, but we dropped the ball and lost momentum on it. Not because
+we didn&amp;#39;t enjoy making them or that it didn&amp;#39;t benefit our designers by the
+challenge, but because it didn&amp;#39;t fit cleanly into any company objective.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ve set a Q1 2015 goal to create a program and agenda for design experimentation
+with a focus on single page web applications. By that objective we&amp;#39;ll be aiming
+to provide more practical design tools, design and interaction patterns, and free
+assets for other designers in creating single page web applications. By commiting
+to this goal and using Tools of the Trade as vehicle, we should be able to promote
+ourselves, &amp;quot;level up&amp;quot; our designers, and effectively utilizing downtime.&lt;/p&gt;
+
+&lt;h2&gt;Business&lt;/h2&gt;
+
+&lt;p&gt;On the business side of things we&amp;#39;ve begun to add more structure to DockYard. We hired a CEO 
+to take us through an OGSM (Objectives, Goals, Strategies and Measures)
+planning session for 2015. It was a tiring two days of time that helped
+us discover what type of company we want to be. The management team has
+all decided that DockYard should aim big and that is what we&amp;#39;re going to
+do.&lt;/p&gt;
+
+&lt;h3&gt;Office Space&lt;/h3&gt;
+
+&lt;p&gt;In Q2 2015 we&amp;#39;ll be moving into a new office space. Our current space
+has served us well but it has its problems. The new space will be
+modern and have plenty of space for us (we&amp;#39;re upgrading from 2,800 sq/ft to
+7,800 sq/ft). I&amp;#39;m excited to share those plans in the upcoming months.&lt;/p&gt;
+
+&lt;h2&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;I hope this year&amp;#39;s refelction has useful for you in some way. Each
+year&amp;#39;s summary has felt different and I&amp;#39;m sure next year&amp;#39;s will too. As
+a company DockYard has taken some knocks this year but we came out
+stronger for it with more focus and an actual gameplan. I&amp;#39;d love to hear
+other&amp;#39;s experiences as well in the comments.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Pattern Matching in Elixir for Rubyists</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2014/12/26/pattern-matching-in-elixir-for-rubyists.html"/>
