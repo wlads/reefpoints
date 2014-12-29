@@ -366,7 +366,71 @@ design to manage our Discovery Phase, build and inform our estimations.
 Design has more impact on us converting a client out of Discovery to a
 full client than engineering does.
 
-### UX Easy
+### UX East
 
-This year we ran our first Design conference. Our Creative Director
-Steve Trevathan
+This year we ran our first Design conference, [UX East](http://uxeast.org/).
+It was structured as a design camp with two talks and one workshop.  The conference was organized by our Creative Director Steven Trevathan
+and Maria Matveeva we believe we were hugely successful.
+
+We're already beginning plans for next year's UX East (you can sign up for
+updates, including call for proposals, [here](http://eepurl.com/_NCUL)).
+
+### Team Structure
+
+Every project is now assigned at least two designers. This is partially
+because the projects are big enough to merit the team, but it also a huge
+qualititave add to the final delivery. Pairing designers is really helpful for "leveling up" as well. Matching
+designers by their different strengths they'll help each other grow. The
+concept is very similar to pair programming, however the designers go
+through many rounds of critiques instead of using the same computer for an
+extended period.
+
+While we hadn't previously done this, and it looks like a fairly obvious
+improvement to make, the result has been surprisingly positive and our most
+recent projects are seeing a huge benefit from it.
+
+### Setting Goals & Sticking To Them
+
+One thing we're very good at is coming up with ideas. Lot's of them. There is
+no shortage there, however there is a real challenge in effecively using down
+time and DockYard Fridays to commit to delivering on those ideas. I believe
+this is due to not having specific departmental goals that directly fit into
+company annual or quarterly objectives.
+
+An example of this challenge is [Tools of the Trade](http://toolsofthetrade.dockyard.com/).
+In the beginning of 2014 we put effort into creating small and novel icon packs
+and distrubuting them as free to use. It's generated some interest, and we had
+fun with our icons, but we dropped the ball and lost momentum on it. Not because
+we didn't enjoy making them or that it didn't benefit our designers by the
+challenge, but because it didn't fit cleanly into any company objective.
+
+We've set a Q1 2015 goal to create a program and agenda for design experimentation
+with a focus on single page web applications. By that objective we'll be aiming
+to provide more practical design tools, design and interaction patterns, and free
+assets for other designers in creating single page web applications. By commiting
+to this goal and using Tools of the Trade as vehicle, we should be able to promote
+ourselves, "level up" our designers, and effectively utilizing downtime.
+
+## Business
+
+On the business side of things we've begun to add more structure to DockYard. We hired a CEO 
+to take us through an OGSM (Objectives, Goals, Strategies and Measures)
+planning session for 2015. It was a tiring two days of time that helped
+us discover what type of company we want to be. The management team has
+all decided that DockYard should aim big and that is what we're going to
+do.
+
+### Office Space
+
+In Q2 2015 we'll be moving into a new office space. Our current space
+has served us well but it has its problems. The new space will be
+modern and have plenty of space for us (we're upgrading from 2,800 sq/ft to
+7,800 sq/ft). I'm excited to share those plans in the upcoming months.
+
+## Wrapping Up
+
+I hope this year's refelction has useful for you in some way. Each
+year's summary has felt different and I'm sure next year's will too. As
+a company DockYard has taken some knocks this year but we came out
+stronger for it with more focus and an actual gameplan. I'd love to hear
+other's experiences as well in the comments.
