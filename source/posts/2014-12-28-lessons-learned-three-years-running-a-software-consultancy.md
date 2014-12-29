@@ -170,7 +170,7 @@ closer to a $4m+ company with >50% profit margin.
 
 ### What went wrong
 
-We were getting contracts coming in through the year but nothing with
+We were getting contracts coming in through the year, but nothing with
 the challenge or scope that I was hoping for. Small $50k contracts here
 and there. I like working on small projects but from a business
 perspective we were burning too much time negotiating contracts,
