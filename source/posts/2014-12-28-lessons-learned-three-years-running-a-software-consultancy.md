@@ -269,7 +269,7 @@ to hire again. By November we had gone from a 1% profit margin for the
 year in June to over 25%.
 
 It is actually strange writing about this now, and I'm not entirely
-certain I should have written all of this. In some ways it was noe of
+certain I should have written all of this. In some ways it was one of
 the most stressful times in my life, and looking back it feels surreal.
 
 I hope there are some nuggets of knowledge in here to help others avoid
