@@ -378,7 +378,7 @@ updates, including call for proposals, [here](http://eepurl.com/_NCUL)).
 ### Team Structure
 
 Every project is now assigned at least two designers. This is partially
-because the projects are big enough to merit the team, but it also a huge
+because the projects are big enough to merit the team, but it's also a huge
 qualitative add to the final delivery. Pairing designers is really helpful for "leveling up" as well. Matching
 designers by their different strengths they'll help each other grow. The
 concept is very similar to pair programming, however the designers go
@@ -392,14 +392,14 @@ recent projects are seeing a huge benefit from it.
 ### Setting Goals & Sticking To Them
 
 One thing we're very good at is coming up with ideas. Lot's of them. There is
-no shortage there, however there is a real challenge in effecively using down
+no shortage there, however there is a real challenge in effectively using down
 time and DockYard Fridays to commit to delivering on those ideas. I believe
 this is due to not having specific departmental goals that directly fit into
 company annual or quarterly objectives.
 
 An example of this challenge is [Tools of the Trade](http://toolsofthetrade.dockyard.com/).
 In the beginning of 2014 we put effort into creating small and novel icon packs
-and distrubuting them as free to use. It's generated some interest, and we had
+and distrubuting them as free to use. It generated some interest, and we had
 fun with our icons, but we dropped the ball and lost momentum on it. Not because
 we didn't enjoy making them or that it didn't benefit our designers by the
 challenge, but because it didn't fit cleanly into any company objective.
@@ -429,7 +429,7 @@ modern and have plenty of space for us (we're upgrading from 2,800 sq/ft to
 
 ## Wrapping Up
 
-I hope this year's reflection has useful for you in some way. Each
+I hope this year's reflection has been useful for you in some way. Each
 year's summary has felt different and I'm sure next year's will too. As
 a company DockYard has taken some knocks this year but we came out
 stronger for it with more focus and an actual gameplan. I'd love to hear
