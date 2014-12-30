@@ -10,7 +10,7 @@ published: true
 tags: design, design process, design thinking
 ---
 
-Just as a single color can have conflicting associations between different cultures, mental models can vary widely between users. If you haven’t heard of [mental models], they are a beholder’s mental image of a designed object and how it may be interfaced with. 
+Just as a single color can have conflicting associations between different cultures, mental models can vary widely between users. If you haven’t heard of [mental models](http://en.wikipedia.org/wiki/Mental_model), they are a beholder’s mental image of a designed object and how it may be interfaced with. 
 
 Understanding the mental models our users have created of our product (or similar product experiences) will help us improve either by adjusting our product to better fit their mental model or by changing the users’ mental model to better fit our product. Neither are simple.
 
