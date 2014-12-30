@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Modeling Mental Models"
+title: "Tips on Mental Models"
 comments: true
 author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
-summary: 'Things to keep in mind.'
+summary: 'A few things to keep in mind.'
 published: true
 tags: design, design process, design thinking
 ---
 
 Just as a single color can have conflicting associations between different cultures, mental models can vary widely between users. If you haven’t heard of [mental models](http://en.wikipedia.org/wiki/Mental_model), they are a beholder’s mental image of a designed object and how it may be interfaced with. 
 
-Understanding the mental models our users have created of our product (or similar product experiences) will help us improve either by adjusting our product to better fit their mental model or by changing the users’ mental model to better fit our product. Neither are simple.
+Understanding the mental models your users have created of your product (or similar product experiences) is important. It will help you improve either by adjusting the product to better fit their mental model or by changing the users’ mental model to better fit your product. Neither are simple.
 
 To give you a sense of how a mental model is constructed or applied to a product, let's imagine looking at a new object in extreme slow motion:
 
@@ -20,7 +20,7 @@ The object is placed before you. The first thing you notice is its size and shap
 
 On the grey rectangle you can clearly see a small red button, a small green button, a large square button, and a series of small grey buttons in a familiar 3x3 grid. Given that the device is small enough to fit in your hand, has multiple buttons, and lacks a screen, you might conclude that it’s a remote of some kind. And you might stop there, unless you actually have to use the remote.
 
-While making these observations, your brain was building a mental model of how to interact with it by referencing past experiences with similar objects. Taking the path of least resistance, your brain wants to reapply these models wherever and whenever it can. You won’t need to reteach yourself how to use something you’ve consistently used over the years unless something significantly breaks the pattern. With each connection you make with familiar and unfamiliar qualities of the object, either consciously or not, you pave ways to interpret the purpose, value, and effectiveness of the object.
+While making these observations, your brain was building a mental model of how to interact with it by referencing past experiences with similar objects. Taking the path of least resistance, your brain wants to reapply these models wherever and whenever it can. You won’t need to re-teach yourself how to use something you’ve consistently used over the years unless something significantly breaks the pattern. With each connection you make with familiar and unfamiliar qualities of the object, either consciously or not, you pave ways to interpret the purpose, value, and effectiveness of the object.
 
 The speed with which we identify these things correlates to how similar the object is in form to other objects we’re familiar with. The models you create as a user aren’t originating solely with the object in front you; instead they are created from all the objects you’ve ever interacted with. This is where understanding and employing mental models gains value in design. We can use them to manipulate, speed up, or slow down interpretation of our products.
 
