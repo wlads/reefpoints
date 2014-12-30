@@ -49,7 +49,7 @@ If you said you’d point it with the slanted side forward and the red button in
 In other words, the mental model I have for remotes is not matched to the device because the manufacturer ignored a common design pattern without apparent reason, adding only momentary confusion, rather than enhanced functionality, to my experience.
 
 # Last words on defining (and refining) your models
-When designing your product, be aware of your users’ mental models and recognize that your own will be very different from theirs’. This is an overwhelmingly common mistake.
+When designing your product, be aware of your users’ mental models and recognize that your own will be very different from theirs. This is an overwhelmingly common mistake.
 
 You should also be aware of user and market contexts to judge what aspects of their models you may break and which you should keep. Don’t break the model just to be different if the difference provides no value or delightful experience for a user.
 
