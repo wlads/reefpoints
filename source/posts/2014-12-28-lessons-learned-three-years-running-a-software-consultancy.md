@@ -141,7 +141,7 @@ interested](mailto:jobs@dockyard.com).
 
 ## Estimations
 
-Our problems with maintaining our estimations was not significantly
+Our problems with maintaining our estimations were not significantly
 improving in early 2014. We had to eat a lot of money on contracts that
 was due either to bad estimations or our inability to properly manage our
 clients. If we ever expected to build a real company, this had to be
@@ -312,7 +312,7 @@ then the question should be **What is the best Single Page App
 framework?** (let's save tech debates for another time). I didn't feel
 that selling SPAs was any better than selling Ember.js. Again, the
 answer is **Single Page Apps** so the question should be **How do you
-provide a modern user expereince on the web?**. Now were had something.
+provide a modern user experience on the web?**. Now were had something.
 Selling UX as a solution to companies was tangible. If we could market
 that UX improvements was the way to solve common problems in modern web
 apps then we could hook companies on the idea that Single Page Apps was
