@@ -8,7 +8,7 @@ googleplus: 102648938707671188640
 github: danmcclain
 social: true
 summary: "Creating a better search experience with Ember"
-published: false
+published: true
 tags: ember
 ---
 
