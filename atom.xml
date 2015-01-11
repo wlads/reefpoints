@@ -4,10 +4,86 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2015-01-07T00:00:00Z</updated>
+  <updated>2015-01-11T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Why is Google ignoring over 400,000 backlinks to DockYard?</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/11/why-is-google-ignoring-over-400000-backlinks.html"/>
+    <id>http://reefpoints.dockyard.com/2015/01/11/why-is-google-ignoring-over-400000-backlinks.html</id>
+    <published>2015-01-11T00:00:00Z</published>
+    <updated>2015-01-11T12:23:47-05:00</updated>
+    <author>
+      <name>Brian Cardarella</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;Imagine our enthusiasm when the opportunity to add hundreds of thousands
+of backlinks from one of the web&amp;#39;s most popular library hosting websites
+back to our domain came our way. And imagine our surprise when Google
+decided they meant nothing.&lt;/p&gt;
+
+&lt;p&gt;Back in &lt;a href="http://reefpoints.dockyard.com/2014/11/18/rubygems-redesign.html"&gt;November we launched the redesign of
+RubyGems.org&lt;/a&gt;. We were contacted by
+&lt;a href="http://rubycentral.org"&gt;RubyCentral&lt;/a&gt; about 9 months prior. I was
+interested in this opportunity for three reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It gave DockYard the opportunity to give back to the Ruby community,
+one that has been so pivotal to our growth early on (and one that has
+been pivotal to my growth as a profressional engineer for nearly 10
+years)&lt;/li&gt;
+&lt;li&gt;DockYard can show of its design talents to the community&lt;/li&gt;
+&lt;li&gt;DockYard would get a &lt;em&gt;&amp;quot;Designed By&amp;quot;&lt;/em&gt; sponsor link at the bottom of
+every page.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This blog post is going to explore the third reason and the result of
+this over the past two months.&lt;/p&gt;
+
+&lt;p&gt;At the time of launch RubyGems.org had over 90,000 gems published. This
+meant a sponsor link at the bottom of every page that was backlinking
+to &lt;a href="http://dockyard.com"&gt;DockYard.com&lt;/a&gt;. In addition to the landing page
+and the other static pages. This was an appealing value to gain from a
+re-design effort. According to Google&amp;#39;s own backlink search DockYard had
+only 65 pages linking back. This struck me as odd considering this blog
+itself links back to DockYard.com and there were more than 65 posts. But
+surely after the redesign this number should go up. Our estimated
+PageRank was &lt;code&gt;5&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After the redesign we saw the expected spike in traffic&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/tpcgGpK.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Checking in on the referrals we can see that to date we have received
+over 600 referrals from RubyGems.org. I&amp;#39;m OK with these numbers as I
+never expected everyone to be clicking on those links.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/cM66gW5.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;However, what did shock me was that none of these backlinks were being
+counted by Google.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/fTyXVzV.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The sponsor link does not have a &lt;code&gt;nofollow&lt;/code&gt; attribute. And I admit that
+SEO is not something I&amp;#39;ve very good at. But if I were to look at another
+backlink source such as
+&lt;a href="https://ahrefs.com/site-explorer/overview/subdomains/?target=dockyard.com"&gt;ahrefs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/tlHt3sK.png" alt="ahrefs"&gt;&lt;/p&gt;
+
+&lt;p&gt;You can clearly see the spike in referring pages. A &lt;strong&gt;huge&lt;/strong&gt; jump from
+nearly nothing to over 400,000. The bottom graph shows that these are
+primarly &lt;em&gt;DoFollow&lt;/em&gt; links.&lt;/p&gt;
+
+&lt;p&gt;So these backlinks aren&amp;#39;t being counted by Google? Does Google only count
+one domain per backlink? Color me confused. I suspect we&amp;#39;re doing
+something wrong on our end to not get any credit. Could it be that such
+a huge spike in backlinks are flagged as suspicious by Google? I&amp;#39;d
+appreciate any thoughts in the comments.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Complex Search Pages Feel Better in Ember</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/07/complex-search-pages-feel-better-in-ember.html"/>
