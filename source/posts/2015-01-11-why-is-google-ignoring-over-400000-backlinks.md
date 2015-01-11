@@ -23,7 +23,7 @@ interested in this opportunity for three reasons:
   one that has been so pivotal to our growth early on (and one that has
 been pivotal to my growth as a profressional engineer for nearly 10
 years)
-* DockYard can show of its design talents to the community
+* DockYard can show off its design talents to the community
 * DockYard would get a *"Designed By"* sponsor link at the bottom of
   every page.
 
