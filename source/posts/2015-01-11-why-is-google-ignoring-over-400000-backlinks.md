@@ -21,7 +21,7 @@ interested in this opportunity for three reasons:
 
 * It gave DockYard the opportunity to give back to the Ruby community,
   one that has been so pivotal to our growth early on (and one that has
-been pivotal to my growth as a profressional engineer for nearly 10
+been pivotal to my growth as a professional engineer for nearly 10
 years)
 * DockYard can show off its design talents to the community
 * DockYard would get a *"Designed By"* sponsor link at the bottom of
