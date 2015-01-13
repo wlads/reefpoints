@@ -6,9 +6,8 @@ author: Maria Matveeva
 twitter: "rgbcolor"
 social: true
 summary: "Your normal is not always their normal."
-published: false
+published: true
 tags: design, observations
-
 ---
 
 #Check your expectations at the bathroom door

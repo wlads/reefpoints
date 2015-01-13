@@ -6,9 +6,8 @@ author: Maria Matveeva
 twitter: "rgbcolor"
 social: true
 summary: "Really understand your content, then select its format."
-published: false
+published: true
 tags: design, observations
-
 ---
 
 
