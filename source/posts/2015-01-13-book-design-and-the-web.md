@@ -10,10 +10,6 @@ published: true
 tags: design, observations
 ---
 
-
-#Book design and the web
-
-
 I recently attended a presentation by a [Swiss book designer Ludovic Balland](http://www.ludovic-balland.ch) where he described the process behind his beautiful and sophisticated books. His studio has done many architecture monographs, because the format lends itself well to carefully considered custom design. (Architects with lots of work to show also tend to have the budget for and interest in such things.)
 
 ## Formats in print

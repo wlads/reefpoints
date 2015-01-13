@@ -10,8 +10,6 @@ published: true
 tags: design, observations
 ---
 
-#Check your expectations at the bathroom door
-
 ![](/images/post-assets/maria/blog-bathroom-expectations-01.jpg)
 *This is what we walked through one Friday evening as we were leaving work.*
 
