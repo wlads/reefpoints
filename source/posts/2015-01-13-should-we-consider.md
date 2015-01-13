@@ -6,7 +6,7 @@ author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
 summary: 'Are we allowing users to walk right into identity theft?'
-published: false
+published: true
 tags: design, observation, privacy
 ---
 
