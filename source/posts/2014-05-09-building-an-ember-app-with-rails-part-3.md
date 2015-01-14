@@ -301,7 +301,7 @@ in the game.
 
 Let's generate a model from our Rails app `rails g model speaker name:string`
 
-Add some seed data
+Add some seed data:
 
 ```ruby
 # rails/db/seeds.rb
@@ -310,9 +310,9 @@ Speaker.create(name: 'Wile E. Coyote')
 Speaker.create(name: 'Yosemite Sam')
 ```
 
-Create, migrate and seed `rake db:create db:migrate db:seed`
+Create, migrate and seed `rake db:create db:migrate db:seed`.
 
-Add a `speakers` resource under an `api` namespace`
+Add a `speakers` resource under an `api` namespace:
 
 ```ruby
 # rails/config/routes.rb
@@ -321,7 +321,7 @@ namespace :api do
 end
 ```
 
-Now add the controller
+Now add the controller:
 
 ```ruby
 # rails/app/controllers/api/speakers_controller.rb
@@ -336,7 +336,7 @@ class Api::SpeakersController < ApplicationController
 end
 ```
 
-Finally we need to generate a serializer `rails g serializer speaker`
+Finally we need to generate a serializer `rails g serializer speaker`.
 
 Add `name` to the list of attributes to serialize
 
