@@ -26,4 +26,4 @@ We offer better than market rates. Full health and dental coverage (no matter wh
 
 This is an on-site position in Boston, MA.
 
-If this type of working environment interests you, then we’d love to hear from you. E-mail us at jobs@dockyard.com (we do not work with recruiters) to get in touch.
+If this type of working environment interests you, then we’d love to hear from you. [E-mail us](mailto:jobs@dockyard.com) (we do not work with recruiters) to get in touch.
