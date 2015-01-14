@@ -113,6 +113,7 @@ Ember CLI Addon to quickly set up Pretender:
 
 ```js
 npm install --save-dev ember-cli-pretender
+ember install:addon ember-cli-pretender
 ```
 
 Tell `JSHint` to ignore the `Pretender` constant.  Open up
@@ -137,6 +138,7 @@ We should be in a good place to write our tests.
 // ember/tests/integration/speakers-page-test.js
 import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
+import Pretender from 'pretender';
 
 var App, server;
 
