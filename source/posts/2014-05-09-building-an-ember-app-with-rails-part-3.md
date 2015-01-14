@@ -92,7 +92,7 @@ test('Should allow navigating back to root from another page', function() {
 ```
 
 ```js
-// ember/templates/application.hbs
+// ember/app/templates/application.hbs
 {{link-to 'Home' 'application'}}
 {{link-to 'About' 'about'}}
 ```
@@ -281,7 +281,7 @@ export default Ember.Route.extend({
 ```
 
 ```hbs
-// ember/templates/speakers/index.hbs
+// ember/app/templates/speakers/index.hbs
 {{#each}}
   {{link-to name 'speakers.show' this}}
 {{/each}}
@@ -290,7 +290,7 @@ export default Ember.Route.extend({
 The 2nd test should now be passing.
 
 ```hbs
-// ember/templates/speakers/show.hbs
+// ember/app/templates/speakers/show.hbs
 <h4>{{name}}</h4>
 ```
 
