@@ -138,8 +138,10 @@ Now everything related to the Asset Pipeline is completely removed.
 Add the following to the `Gemfile`:
 
 ```ruby
-gem 'active_model_serializers'
+gem 'active_model_serializers', '0.8.3'
 ```
+
+**Note:** If you're using Rails 4.2, you'll need to specify version 0.8.3 for the active\_model\_serializers gem.
 
 If you don't have Postgres on your machine you can set this for
 Production only:
