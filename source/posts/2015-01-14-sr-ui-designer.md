@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Job: Senior UI & Visual Designer"
-comments: true
+comments: false
 author: 'Steven Trevathan'
 twitter: 'strevat'
 social: true
