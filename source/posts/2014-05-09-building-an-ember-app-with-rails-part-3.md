@@ -24,6 +24,7 @@ Our first navigation test will be an easy one, create
 `ember/tests/integration/about-page-test.js`
 
 ```js
+import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
 
 var App;
@@ -134,6 +135,7 @@ We should be in a good place to write our tests.
 
 ```js
 // ember/tests/integration/speakers-page-test.js
+import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
 
 var App, server;
