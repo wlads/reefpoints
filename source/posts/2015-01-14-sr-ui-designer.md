@@ -24,4 +24,6 @@ DockYard also has a full engineering team on staff (actually much larger than th
 
 We offer better than market rates. Full health and dental coverage (no matter what your coverage requirements are). We also have 6 weeks of vacation time per year. 4 of those are mandatory vacation.
 
+This is an on-site position in Boston, MA.
+
 If this type of working environment interests you, then we’d love to hear from you. E-mail us at jobs@dockyard.com (we do not work with recruiters) to get in touch.
