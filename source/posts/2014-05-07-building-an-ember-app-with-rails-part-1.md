@@ -82,7 +82,7 @@ on your machine omit `-d postgresql`
 Now the ember project:
 
 ```bash
-ember new bostonember
+ember new bostonember --skip-git
 mv bostonember ember
 ```
 
@@ -105,16 +105,9 @@ ember server
 In your browser visit `http://localhost:4200` and you should see "Welcome to Ember.js"
 
 At this point you can put everything in your top level directory under
-version control.  First, remove the git repo that ember-cli generates for you in the `ember/` directory:
+version control:
 
 ```bash
-rm -rf .git
-```
-
-Then initialize a git repo in your top level directory:
-
-```bash
-cd ..
 git init
 git add -A
 gc -m "Initial commit"
