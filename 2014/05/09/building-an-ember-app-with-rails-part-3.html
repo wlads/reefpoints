@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Building an Ember App with Rails Part 3</title><link href="/stylesheets/all-afdd94c3.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html' name='twitter:url'><meta content='Building an Ember App with Rails Part 3' name='twitter:title'><meta name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>Building an Ember App with Rails Part 3</title><link href="/stylesheets/all-e7e7283c.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><meta content='bcardarella' name='twitter:creator'><meta content='summary' name='twitter:card'><meta content='@DockYard' name='twitter:site'><meta content='http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html' name='twitter:url'><meta content='Building an Ember App with Rails Part 3' name='twitter:title'><meta name='twitter:description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon-573a5e34.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon-573a5e34.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -79,8 +79,10 @@ provide the Rails backend.</p>
 18
 19
 <strong>20</strong>
+21
 </pre></td>
-  <td class="code"><pre><span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
+  <td class="code"><pre><span class="reserved">import</span> Ember from <span class="string"><span class="delimiter">'</span><span class="content">ember</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
 
 <span class="keyword">var</span> App;
 
@@ -177,7 +179,7 @@ test(<span class="string"><span class="delimiter">'</span><span class="content">
 2
 3
 </pre></td>
-  <td class="code"><pre><span class="comment">// ember/templates/application.hbs</span>
+  <td class="code"><pre><span class="comment">// ember/app/templates/application.hbs</span>
 {{link-to <span class="string"><span class="delimiter">'</span><span class="content">Home</span><span class="delimiter">'</span></span> <span class="string"><span class="delimiter">'</span><span class="content">application</span><span class="delimiter">'</span></span>}}
 {{link-to <span class="string"><span class="delimiter">'</span><span class="content">About</span><span class="delimiter">'</span></span> <span class="string"><span class="delimiter">'</span><span class="content">about</span><span class="delimiter">'</span></span>}}
 </pre></td>
@@ -198,8 +200,10 @@ responses.</p>
 Ember CLI Addon to quickly set up Pretender:</p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
+2
 </pre></td>
   <td class="code"><pre>npm install --save-dev ember-cli-pretender
+ember install:addon ember-cli-pretender
 </pre></td>
 </tr></table>
 </div></div>
@@ -303,9 +307,13 @@ our server:</p>
 73
 74
 75
+76
+77
 </pre></td>
   <td class="code"><pre><span class="comment">// ember/tests/integration/speakers-page-test.js</span>
+<span class="reserved">import</span> Ember from <span class="string"><span class="delimiter">'</span><span class="content">ember</span><span class="delimiter">'</span></span>;
 <span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> Pretender from <span class="string"><span class="delimiter">'</span><span class="content">pretender</span><span class="delimiter">'</span></span>;
 
 <span class="keyword">var</span> App, server;
 
@@ -492,7 +500,7 @@ Router.map(<span class="keyword">function</span>() {
 3
 4
 </pre></td>
-  <td class="code"><pre>// ember/templates/speakers/index.hbs
+  <td class="code"><pre>// ember/app/templates/speakers/index.hbs
 {{#each}}
   {{link-to name 'speakers.show' this}}
 {{/each}}
@@ -504,7 +512,7 @@ Router.map(<span class="keyword">function</span>() {
   <td class="line-numbers"><pre>1
 2
 </pre></td>
-  <td class="code"><pre>// ember/templates/speakers/show.hbs
+  <td class="code"><pre>// ember/app/templates/speakers/show.hbs
 &lt;h4&gt;{{name}}&lt;/h4&gt;
 </pre></td>
 </tr></table>
@@ -516,7 +524,7 @@ in the game. </p>
 
 <p>Let&#39;s generate a model from our Rails app <code>rails g model speaker name:string</code></p>
 
-<p>Add some seed data</p>
+<p>Add some seed data:</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -530,9 +538,9 @@ in the game. </p>
 </pre></td>
 </tr></table>
 </div></div>
-<p>Create, migrate and seed <code>rake db:create db:migrate db:seed</code></p>
+<p>Create, migrate and seed <code>rake db:create db:migrate db:seed</code>.</p>
 
-<p>Add a <code>speakers</code> resource under an <code>api</code> namespace`</p>
+<p>Add a <code>speakers</code> resource under an <code>api</code> namespace:</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -546,7 +554,7 @@ namespace <span class="symbol">:api</span> <span class="keyword">do</span>
 </pre></td>
 </tr></table>
 </div></div>
-<p>Now add the controller</p>
+<p>Now add the controller:</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -572,7 +580,7 @@ namespace <span class="symbol">:api</span> <span class="keyword">do</span>
 </pre></td>
 </tr></table>
 </div></div>
-<p>Finally we need to generate a serializer <code>rails g serializer speaker</code></p>
+<p>Finally we need to generate a serializer <code>rails g serializer speaker</code>.</p>
 
 <p>Add <code>name</code> to the list of attributes to serialize</p>
 <div class="highlight ruby "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
