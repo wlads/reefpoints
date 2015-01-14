@@ -11,7 +11,7 @@ published: true
 tags: ember, ruby, ruby on rails
 ---
 
-We need to start this part with a bug fix. There is a bug for the live reload. In `ember/tests/helpers/start-app.js` 
+If you are using an older version of ember-cli, you'll need to start this part with a bug fix. There is a bug for the live reload. In `ember/tests/helpers/start-app.js`
 insert the 2nd line:
 
 ```js
@@ -26,9 +26,7 @@ Router.reopen({
 });
 ```
 
-This bug exists in `0.0.27` of ember-cli and will hopefully be fixed in a future verision.
-
-([there is a pending PR to fix this](https://github.com/stefanpenner/ember-cli/issues/667))
+(This bug exists in `0.0.27` of ember-cli and [has been fixed](https://github.com/stefanpenner/ember-cli/issues/667) in a subsequent version.)
 
 Now start your server:
 
@@ -61,7 +59,6 @@ up.
 ```js
 import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
-import Ember from 'ember';
 
 var App;
 
