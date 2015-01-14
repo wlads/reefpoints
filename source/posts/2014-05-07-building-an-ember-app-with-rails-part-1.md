@@ -59,7 +59,7 @@ Or a greater version.
 
 For this project we will keep our Rails and our Ember apps in separate
 directories with a top-level directory containing the two. We'll have to
-do some project generating and renaming. 
+do some project generating and renaming.
 
 I first create a new top-level directory:
 
@@ -105,11 +105,18 @@ ember server
 In your browser visit `http://localhost:4200` and you should see "Welcome to Ember.js"
 
 At this point you can put everything in your top level directory under
-version control:
+version control.  First, remove the git repo that ember-cli generates for you in the `ember/` directory:
 
 ```bash
+rm -rf .git
+```
+
+Then initialize a git repo in your top level directory:
+
+```bash
+cd ..
 git init
-git add .
+git add -A
 gc -m "Initial commit"
 ```
 
@@ -151,7 +158,7 @@ Run `bundle install` in your `rails` directory. Let's commit our
 changes:
 
 ```bash
-git add .
+git add -A
 gc -m "Removed asset pipeline and added active_model_serializers in Rails"
 ```
 
