@@ -59,7 +59,7 @@ Or a greater version.
 
 For this project we will keep our Rails and our Ember apps in separate
 directories with a top-level directory containing the two. We'll have to
-do some project generating and renaming. 
+do some project generating and renaming.
 
 I first create a new top-level directory:
 
@@ -82,7 +82,7 @@ on your machine omit `-d postgresql`
 Now the ember project:
 
 ```bash
-ember new bostonember
+ember new bostonember --skip-git
 mv bostonember ember
 ```
 
@@ -131,8 +131,10 @@ Now everything related to the Asset Pipeline is completely removed.
 Add the following to the `Gemfile`:
 
 ```ruby
-gem 'active_model_serializers'
+gem 'active_model_serializers', '0.8.3'
 ```
+
+**Note:** If you're using Rails 4.2, you'll need to specify version 0.8.3 for the active\_model\_serializers gem.
 
 If you don't have Postgres on your machine you can set this for
 Production only:
@@ -151,7 +153,7 @@ Run `bundle install` in your `rails` directory. Let's commit our
 changes:
 
 ```bash
-git add .
+git add -A
 gc -m "Removed asset pipeline and added active_model_serializers in Rails"
 ```
 

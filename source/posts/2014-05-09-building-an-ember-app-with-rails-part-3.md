@@ -24,6 +24,7 @@ Our first navigation test will be an easy one, create
 `ember/tests/integration/about-page-test.js`
 
 ```js
+import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
 
 var App;
@@ -91,7 +92,7 @@ test('Should allow navigating back to root from another page', function() {
 ```
 
 ```js
-// ember/templates/application.hbs
+// ember/app/templates/application.hbs
 {{link-to 'Home' 'application'}}
 {{link-to 'About' 'about'}}
 ```
@@ -112,6 +113,7 @@ Ember CLI Addon to quickly set up Pretender:
 
 ```js
 npm install --save-dev ember-cli-pretender
+ember install:addon ember-cli-pretender
 ```
 
 Tell `JSHint` to ignore the `Pretender` constant.  Open up
@@ -134,7 +136,9 @@ We should be in a good place to write our tests.
 
 ```js
 // ember/tests/integration/speakers-page-test.js
+import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
+import Pretender from 'pretender';
 
 var App, server;
 
@@ -277,7 +281,7 @@ export default Ember.Route.extend({
 ```
 
 ```hbs
-// ember/templates/speakers/index.hbs
+// ember/app/templates/speakers/index.hbs
 {{#each}}
   {{link-to name 'speakers.show' this}}
 {{/each}}
@@ -286,7 +290,7 @@ export default Ember.Route.extend({
 The 2nd test should now be passing.
 
 ```hbs
-// ember/templates/speakers/show.hbs
+// ember/app/templates/speakers/show.hbs
 <h4>{{name}}</h4>
 ```
 
@@ -297,7 +301,7 @@ in the game.
 
 Let's generate a model from our Rails app `rails g model speaker name:string`
 
-Add some seed data
+Add some seed data:
 
 ```ruby
 # rails/db/seeds.rb
@@ -306,9 +310,9 @@ Speaker.create(name: 'Wile E. Coyote')
 Speaker.create(name: 'Yosemite Sam')
 ```
 
-Create, migrate and seed `rake db:create db:migrate db:seed`
+Create, migrate and seed `rake db:create db:migrate db:seed`.
 
-Add a `speakers` resource under an `api` namespace`
+Add a `speakers` resource under an `api` namespace:
 
 ```ruby
 # rails/config/routes.rb
@@ -317,7 +321,7 @@ namespace :api do
 end
 ```
 
-Now add the controller
+Now add the controller:
 
 ```ruby
 # rails/app/controllers/api/speakers_controller.rb
@@ -332,7 +336,7 @@ class Api::SpeakersController < ApplicationController
 end
 ```
 
-Finally we need to generate a serializer `rails g serializer speaker`
+Finally we need to generate a serializer `rails g serializer speaker`.
 
 Add `name` to the list of attributes to serialize
 

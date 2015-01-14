@@ -11,26 +11,7 @@ published: true
 tags: ember, ruby, ruby on rails
 ---
 
-We need to start this part with a bug fix. There is a bug for the live reload. In `ember/tests/helpers/start-app.js` 
-insert the 2nd line:
-
-```js
-var Router = require('bostonember/router')['default'];
-```
-
-Now on line 16 add:
-
-```js
-Router.reopen({
-  location: 'none'
-});
-```
-
-This bug exists in `0.0.27` of ember-cli and will hopefully be fixed in a future verision.
-
-([there is a pending PR to fix this](https://github.com/stefanpenner/ember-cli/issues/667))
-
-Now start your server:
+Start your server:
 
 ```bash
 cd ember
@@ -61,7 +42,6 @@ up.
 ```js
 import Ember from 'ember';
 import startApp from 'bostonember/tests/helpers/start-app';
-import Ember from 'ember';
 
 var App;
 

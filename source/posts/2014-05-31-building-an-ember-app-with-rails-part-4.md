@@ -224,7 +224,7 @@ end
 Finally we need to modify the serializers.
 
 ```ruby
-# rails/app/serializers/presentation.rb
+# rails/app/serializers/presentation_serializer.rb
 
 class PresentationSerializer < ActiveModel::Serializer
   attributes :id, :title
@@ -232,7 +232,7 @@ end
 ```
 
 ```ruby
-# rails/app/serializers/speaker.rb
+# rails/app/serializers/speaker_serializer.rb
 
 class SpeakerSerializer < ActiveModel::Serializer
   embed :ids, include: true
