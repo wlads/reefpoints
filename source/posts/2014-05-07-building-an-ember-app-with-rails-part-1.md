@@ -109,7 +109,7 @@ version control:
 
 ```bash
 git init
-git add -A
+git add .
 gc -m "Initial commit"
 ```
 
