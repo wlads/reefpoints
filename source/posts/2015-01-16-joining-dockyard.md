@@ -7,17 +7,16 @@ github: "brzpegasus"
 author: "Estelle DeBlois"
 tags: job, culture, team
 social: true
-published: false
+published: true
 summary: "Reflections on the past few months of being employed at
 DockYard"
 ---
 
-Six months ago from today was when I officially signed the
-letter accepting the offer to join DockYard as a Senior Developer. It
-was the best decision I could have made.
+Six months ago today, I signed the letter officially accepting the offer
+to join DockYard as a Senior Developer. It was the best decision I could have made.
 
-When I announced my resignation to my previous employer, he said that if
-they had known that choosing Ember as our new client-side framework would
+When I announced my resignation to my previous employer, he jokingly said that if
+they had known choosing Ember as a new client-side framework would
 eventually make me want to pursue a new Ember-focused opportunity, they would
 have chosen Angular.
 
@@ -40,7 +39,7 @@ as excited to have The Robert Jackson accept a fix that I submitted to
 pass on Windows (with Rake at the time) as I would have been meeting a film celebrity.
 
 DockYard further reinforced its reputation by organizing the Wicked Good Ember
-conference in Boston in June of 2014, which I of course attended.
+conference in Boston, in June of 2014, which I of course attended.
 
 Needless to say, when Brian reached out to me last July about joining the team, I
 saw it as an opportunity that was really hard to pass on. Logistically,
@@ -49,12 +48,12 @@ Joining DockYard would have doubled my commuting time. I was also
 comfortable with the position I was holding, building out cool D3.js
 charts with Ember, leading the development of new products, and getting
 myself involved in all kinds of engineering team growth efforts. But
-then there was DockYard. I went with my gut feel instead and left
-the warm and comfortable seat to face the exciting, though new and scary that was
+then there was DockYard. I went with my gut feeling instead and left
+the warm and comfortable seat to face the exciting, though new and scary thing that was
 DockYard.
 
-Scary? Yes. From everything DockYard had done to the Boston community
-and the talent behind its wheel, I was absolutely terrified of not
+Scary? Yes. From everything DockYard had done for the Boston community
+to the talent behind its wheel, I was absolutely terrified of not
 fitting in, that it was too elite for me. I checked out the team page on
 the website and read everyone's biography a number of times,
 trying to picture what kind of co-workers I would be interacting with
@@ -64,7 +63,7 @@ most with me in my 10 years of professional career.
 
 DockYard has a well-balanced team of young, bright minds and more
 seasoned developers, and I embrace that. There is none of that "I am
-better than you" bullshit. Those I once viewed as Ember gods and would
+better than you" bullshit. Those I once viewed as Ember Gods and would
 have been intimidated to talk to have been incredibly supportive and encouraging.
 In the past, whenever I was involved in the hiring process for
 Engineering, I had always wondered where all the great developers were.
@@ -78,21 +77,22 @@ Doing consultancy work was new to me, and I had been warned about what I was
 throwing myself into, that I'd end up losing focus on quality and just
 hack solutions together quickly to meet client deadlines. I don't doubt
 that those kinds of situations can creep up, but so far, I've found
-quite the opposite at DockYard in the two projects that I've been
-involved in. People care deeply about delivering clean, maintainable,
-and well-tested code, and they've been especially skillful at maintaining those
+quite the opposite in the two projects that I've been involved in.
+People care deeply about delivering clean, maintainable,
+and well-tested code, and they've been especially adept at maintaining those
 principles throughout the life of a project.
 
 It's also refreshing to be able to work on a diverse portfolio of
-projects. The first few months of joining DockYard, I worked on an Rails and Ember app
+projects. In the first few months since joining DockYard, I worked on a Rails and Ember app
 that incorporated some really cool geolocation functionality. I am now
 working on something that is unlike any other app I have ever developed.
-The project includes Arduino code, Ember.js, and Node WebKit (NW.js).
+The project includes Arduino code, Ember.js, and Node WebKit
+([NW.js](http://nwjs.io/)).
 
 The best, of course, is DockYard's mindset towards open source. I always
 look forward to our "DockYard days" on Fridays to hack on code, blog
 (this is my first one!), contribute back to the community in some ways,
-or just to level up our craftmanship.
+or just to level up our craftsmanship.
 
 And as much as everyone works really hard, we also know when to have
 fun, be it through Risk game tournaments, friendly games of Carcassonne
@@ -100,6 +100,6 @@ fun, be it through Risk game tournaments, friendly games of Carcassonne
 Minecraft.
 
 Finding a job that you'll love can be hard. Finding a team that you'll
-love working with can be twice that hard. And sometimes, it's okay
-to leave behind what is comfortable and secure in light of
-something promising yet unknown. You may be pleasantly surprised.
+love working with can be twice as hard. And sometimes, it's okay
+to leave behind what is comfortable and secure, in light of
+something promising, yet unknown. You may be pleasantly surprised.
