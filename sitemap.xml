@@ -13,19 +13,25 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//authors/estelle-deblois.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//authors/paul-webb.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//authors/christopher-plummer.html</loc>
+    <loc>http://reefpoints.dockyard.com//</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//</loc>
+    <loc>http://reefpoints.dockyard.com//authors/christopher-plummer.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -50,12 +56,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/robert-jackson.html</loc>
-    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//authors/jon-lacks.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -787,13 +787,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/storytelling.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/07/18/facebook-experimentation.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/07/23/repeat-patterns.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -973,6 +973,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2015/01/16/joining-dockyard.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ember.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -980,6 +986,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ruby.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//authors/jon-lacks.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1069,6 +1081,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//categories/team.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/culture.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/job.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//categories/privacy.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1112,30 +1142,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/uxeast.html</loc>
-    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
-    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/client.html</loc>
-    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/quality.html</loc>
-    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/information-graphics.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1489,7 +1495,31 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/07/18/facebook-experimentation.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/storytelling.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/information-graphics.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/quality.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/client.html</loc>
+    <lastmod>2015-01-16T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2014/07/23/repeat-patterns.html</loc>
     <lastmod>2015-01-16T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
