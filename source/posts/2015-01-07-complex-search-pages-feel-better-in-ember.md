@@ -24,7 +24,7 @@ refresh the whole page feel the slowest, but even when a partial
 change happens, it's obvious and slow. It feels clunky
 
 With Ember, we can provide a better experience. The video below is a similiar
-style search page on a site we built for [Learnivore](http://leanivore.com) with Ember.
+style search page on a site we built for [Learnivore](http://learnivore.com) with Ember.
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/7F2F1iGOw4s" frameborder="0" allowfullscreen></iframe>
 
