@@ -130,7 +130,7 @@ It was almost obvious that “all libraries will be closed” today — even
 
 ![](/images/20150120/12-Town-of-Franklin--MA---Franklin-Public-Library.jpg)
 
-The public library website seems to be just a layer fo content on top of the Franklin local government site. Very confusing. No indication of closure.
+The public library website seems to be just a layer of content on top of the Franklin local government site. Very confusing. No indication of closure.
 
 ###13. Holliston 
 ##2.5/3 
@@ -148,7 +148,7 @@ The fist indication of the library closure for MLK is in the featured image. It 
 
 ##What did I miss?
 
-Of course, this it a very small test for a very specific user need. The sites that did well on my scale for “closing hours” may fail miserably at providing an answer to “what’s the street address?” or “can I renew by book online?”.
+Of course, this is a very small test for a very specific user need. The sites that did well on my scale for “closing hours” may fail miserably at providing an answer to “what’s the street address?” or “can I renew my book online?”.
 
 This test reiterated for me the importance of research and real-life user testing. Knowing what problems people might try to solve by going to a website, and where the site fails them, is necessary for most any meaningful improvement. 
 
