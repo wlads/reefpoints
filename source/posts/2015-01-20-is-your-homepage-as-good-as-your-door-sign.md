@@ -12,7 +12,7 @@ tags: design, observations, user experience
 
 Today is a federal holiday, and a day off for us at DockYard. On days like this, when I do not travel, I often go to the local library, just across the street. 
 
-Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information(*is the library open today?*) on a library website.
+Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information (*is the library open today?*) on a library website.
 
 Like many government and community organizations, libraries are easy targets for ridicule when it comes to web design. Look at the outdated styles their site uses! How crowded it is! The HTML tables used for layout! The multi-colored announcements “designed” in Word! 
 
