@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Is your homepage as good as than your door sign?"
+title: "Is your homepage as good as your door sign?"
 comments: true
 author: Maria Matveeva
 twitter: "rgbcolor"
 social: true
 summary: "Ask good questions to solve for real user goals"
-published: true
+published: false
 tags: design, observations, user experience
 ---
 
