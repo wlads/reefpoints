@@ -31,6 +31,7 @@ I narrowed my search to just the homepage for this exercise, expecting to find t
 I saw most of these homepages for the first time today. A regular user of the local library may notice things differently than a new user, so for example the “CLOSED” text announcement that replaces a daily schedule of events, might stand out more for them.
 
 I looked for three things:
+
 -  was the holiday at all on the homepage,  
 - was it clear, and 
 - was it obvious?
@@ -95,7 +96,7 @@ Here’s where today’s closure information is, in fact, located:
 I would have to do this:
 - “find library hours” on the homepage
 - select “holidays” among eleven listings
-- see on the list that that today, January 19th, is a holiday
+- see on the list that today, January 19th, is a holiday
 
 ###8. Concord 
 ##0/3 
@@ -144,7 +145,7 @@ I found the closure information quickly, but it did not stand out enough (for my
 
 ![](/images/20150120/14-Cary-Memorial-Library.jpg)
 
-The fist indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.
+The first indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.
 
 ##What did I miss?
 
