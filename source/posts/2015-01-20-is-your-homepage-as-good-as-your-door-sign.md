@@ -42,55 +42,55 @@ Let’s roll:
 ### 1. Acton 
 ##3/3! 
 
-![](images/01-Acton-Memorial-Library.jpg)
+![](/images/20150120/01-Acton-Memorial-Library.jpg)
 
 The site is visually appealing and clear at the same time. I immediately got an answer to my question. Success!
 
 ###2. Arlington (Robbins Library)
 ##0/3 
 
-![](post_images/02-Robbins-Library.jpg)
+![](/images/20150120/02-Robbins-Library.jpg)
 
 Hours are clearly listed, but the holiday is not. Based on this page, I would assume it is open today — in fact, the clear listing of hours reinforces my wrong assumption. To see the holiday announcement, I would need to know to visit the Calendar. A shame, because the site looks quite polished to me and was likely re-designed fairly recently (guessing 2013, from its footer). An investment in a bit of user testing and research would have likely fixed this.
 
 ###3. Ashland 
 ##Huh? 0.5/3 
 
-![](post_images/03-Ashland--Massachusetts.jpg)
+![](/images/20150120/03-Ashland--Massachusetts.jpg)
 
 While there is no indication of library closure today, the Townhall is clearly  closed. As a local, I might know what that means for my library trip, so I gave 0.5 points for at least mentioning the holiday exists.
 
 ###4. Bedford 
 ##0/3 
 
-![](post_images/04-Bedford-Public-Library.jpg)
+![](/images/20150120/04-Bedford-Public-Library.jpg)
 
 Today’s closure is not mentioned anywhere. Neither are the regular hours. I would look  either in About Us, or (eventually) see a link for Hours & Directions close to the top right.
 
 ###5. Belmont 
 ##3/3! 
 
-![](post_images/05-Belmont-Public-Library.jpg)
+![](/images/20150120/05-Belmont-Public-Library.jpg)
 
 The site doesn’t look like much, but it accomplishes my goal today perfectly. The library is clearly closed.
 
 ###6. Brookline 
 ##3/3 
 
-![](post_images/06-The-Public-Library-of-Brookline-Home-Page-crop.jpg)
+![](/images/20150120/06-The-Public-Library-of-Brookline-Home-Page-crop.jpg)
 
 This library goes beyond my expectations by clearly listing not only today’s closure, but the entire holiday weekend for all three of its locations. The “Closed” notice is clear and immediately jumps to my attention. While there is no “closed TODAY” notice, I found this more detailed listing works just as well.
 
 ###7. Cambridge 
 ##0/3 
 
-![](post_images/07-a-Library---City-of-Cambridge--Massachusetts.jpg)
+![](/images/20150120/07-a-Library---City-of-Cambridge--Massachusetts.jpg)
 
 This library was a particular disappointment, because I have used it many times and the collection and its building are delightful. I am assuming it is one of the better funded libraries, given its location in direct proximity to Harvard. While the amount of content this page needs to show may be far greater than what a smaller local library deals with, this is no excuse for making things difficult to find. I get the feeling that the structure of the site is based on internal objectives, rather than user goals. 
 
 Here’s where today’s closure information is, in fact, located:
 
-![](post_images/07-b-c-Library---City-of-Cambridge--Massachusetts.jpg)
+![](/images/20150120/07-b-c-Library---City-of-Cambridge--Massachusetts.jpg)
 
 I would have to do this:
 - “find library hours” on the homepage
@@ -100,49 +100,49 @@ I would have to do this:
 ###8. Concord 
 ##0/3 
 
-![](post_images/08-Concord---page-title-is-Redirect-Page.jpg)
+![](/images/20150120/08-Concord---page-title-is-Redirect-Page.jpg)
 
 No indication of whether it is open today. The latest news seems to be the New Year’s.
 
 ###9. Dedham 
 ##3/3 
 
-![](post_images/09-Dedham-Public-Library.jpg)
+![](/images/20150120/09-Dedham-Public-Library.jpg)
 
 It is immediately clear that the library is closed today.
 
 ###10. Dover 
 ##2/3 
 
-![](post_images/10-Dover-Town-Library.jpg)
+![](/images/20150120/10-Dover-Town-Library.jpg)
 
 There is a clear indication that the library is closed today. I had to scan the page for a while and read a few things before I noticed it, so it was not obvious.
 
 ###11. Framingham 
 ##2.5/3 
 
-![](post_images/11-Framingham-Public-Library--Look-Here-First.jpg)
+![](/images/20150120/11-Framingham-Public-Library--Look-Here-First.jpg)
 
 It was almost obvious that “all libraries will be closed” today — even on this crowded page. I was distracted by the email sign-up notice, but the next thing I read was the closure notice. Not pretty, but close to functional.
 
 ###12. Franklin 
 ##0/3 
 
-![](post_images/12-Town-of-Franklin--MA---Franklin-Public-Library.jpg)
+![](/images/20150120/12-Town-of-Franklin--MA---Franklin-Public-Library.jpg)
 
 The public library website seems to be just a layer fo content on top of the Franklin local government site. Very confusing. No indication of closure.
 
 ###13. Holliston 
 ##2.5/3 
 
-![](post_images/13-Holliston-Public-Library---Holliston--Massachusetts.jpg)
+![](/images/20150120/13-Holliston-Public-Library---Holliston--Massachusetts.jpg)
 
 I found the closure information quickly, but it did not stand out enough (for my taste) from other news.
 
 ###14. Lexington 
 ##3.5/3 
 
-![](post_images/14-Cary-Memorial-Library.jpg)
+![](/images/20150120/14-Cary-Memorial-Library.jpg)
 
 The fist indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.
 
