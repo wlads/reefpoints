@@ -7,7 +7,7 @@ twitter: "rgbcolor"
 social: true
 summary: "Ask good questions to solve for real user goals"
 published: true
-tags: design, observations, UX, research
+tags: design, observations, user experience
 ---
 
 Today is a federal holiday, and a day off for us at DockYard. On days like this, when I do not travel, I often go to the local library, just across the street. 
