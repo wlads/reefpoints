@@ -10,7 +10,7 @@ published: false
 tags: design, observations, user experience
 ---
 
-Today is a federal holiday, and a day off for us at DockYard. On days like this, when I do not travel, I often go to the local library, just across the street. 
+Today is a federal holiday, and a day off for us at DockYard. On days like these, when I do not travel, I often go to the local library.
 
 Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information (*is the library open today?*) on a library website.
 
