@@ -6,7 +6,7 @@ author: Maria Matveeva
 twitter: "rgbcolor"
 social: true
 summary: "Ask good questions to solve for real user goals"
-published: false
+published: true
 tags: design, observations, user experience
 ---
 
