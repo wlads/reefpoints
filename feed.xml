@@ -51,10 +51,189 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-01-16T00:00:00Z</updated>
+  <updated>2015-01-20T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Is your homepage as good as your door sign?</title>
+    <link rel="alternate" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"/>
+    <id>/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</id>
+    <published>2015-01-20T00:00:00Z</published>
+    <updated>2015-01-20T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Today is a federal holiday, and a day off for us at DockYard. On days like these, when I do not travel, I often go to the local library.&lt;/p&gt;
+
+&lt;p&gt;Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information (&lt;em&gt;is the library open today?&lt;/em&gt;) on a library website.&lt;/p&gt;
+
+&lt;p&gt;Like many government and community organizations, libraries are easy targets for ridicule when it comes to web design. Look at the outdated styles their site uses! How crowded it is! The HTML tables used for layout! The multi-colored announcements “designed” in Word! &lt;/p&gt;
+
+&lt;p&gt;What I am looking for today is something else: I want to judge the achievability of a specific task regardless of the presentation. Presentation (layout, hierarchy, and just plain good design) affects a user’s ability to achieve her goals, no doubt. I just want to start with the goals, and a specific measurement, rather than starting with the common pitfall of visual designers like myself: noticing the surface details that seem broken rather than the process behind them.&lt;/p&gt;
+
+&lt;p&gt;So, here’s my experiment:&lt;/p&gt;
+
+&lt;h2&gt;Find out if the library is open today.&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;With a few considerations.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It may be &lt;strong&gt;self evident&lt;/strong&gt; that a library is closed on a government holiday. It was not to me. I assume that most casual users have a vague suspicion that it may be closed, and would seek confirmation via the website.&lt;/p&gt;
+
+&lt;p&gt;I narrowed my search to just the homepage for this exercise, expecting to find the equivalent of a physical “Sorry, closed today!” door sign. And while many libraries provided the same information on Twitter or Facebook, it would be prohibitive to compare all these resources for this quick study.&lt;/p&gt;
+
+&lt;p&gt;I saw most of these homepages for the first time today. A regular user of the local library may notice things differently than a new user, so for example the “CLOSED” text announcement that replaces a daily schedule of events, might stand out more for them.&lt;/p&gt;
+
+&lt;p&gt;I looked for three things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; was the holiday at all on the homepage,  &lt;/li&gt;
+&lt;li&gt;was it clear, and &lt;/li&gt;
+&lt;li&gt;was it obvious?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I got about halfway down the alphabetized list of Minuteman Library Network locations, and consider this to be a useful and fair sample for my purpose.&lt;/p&gt;
+
+&lt;p&gt;Let’s roll:&lt;/p&gt;
+
+&lt;h3&gt;1. Acton&lt;/h3&gt;
+
+&lt;h2&gt;3/3!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/ebDk2UJ.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The site is visually appealing and clear at the same time. I immediately got an answer to my question. Success!&lt;/p&gt;
+
+&lt;h3&gt;2. Arlington (Robbins Library)&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/CpqOqdR.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Hours are clearly listed, but the holiday is not. Based on this page, I would assume it is open today — in fact, the clear listing of hours reinforces my wrong assumption. To see the holiday announcement, I would need to know to visit the Calendar. A shame, because the site looks quite polished to me and was likely re-designed fairly recently (guessing 2013, from its footer). An investment in a bit of user testing and research would have likely fixed this.&lt;/p&gt;
+
+&lt;h3&gt;3. Ashland&lt;/h3&gt;
+
+&lt;h2&gt;Huh? 0.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/yQ2dOww.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;While there is no indication of library closure today, the Townhall is clearly  closed. As a local, I might know what that means for my library trip, so I gave 0.5 points for at least mentioning the holiday exists.&lt;/p&gt;
+
+&lt;h3&gt;4. Bedford&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/XhAfaNt.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Today’s closure is not mentioned anywhere. Neither are the regular hours. I would look  either in About Us, or (eventually) see a link for Hours &amp;amp; Directions close to the top right.&lt;/p&gt;
+
+&lt;h3&gt;5. Belmont&lt;/h3&gt;
+
+&lt;h2&gt;3/3!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/inJbhUs.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The site doesn’t look like much, but it accomplishes my goal today perfectly. The library is clearly closed.&lt;/p&gt;
+
+&lt;h3&gt;6. Brookline&lt;/h3&gt;
+
+&lt;h2&gt;3/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/jpBCY9k.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;This library goes beyond my expectations by clearly listing not only today’s closure, but the entire holiday weekend for all three of its locations. The “Closed” notice is clear and immediately jumps to my attention. While there is no “closed TODAY” notice, I found this more detailed listing works just as well.&lt;/p&gt;
+
+&lt;h3&gt;7. Cambridge&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/QVg8HQO.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;This library was a particular disappointment, because I have used it many times and the collection and its building are delightful. I am assuming it is one of the better funded libraries, given its location in direct proximity to Harvard. While the amount of content this page needs to show may be far greater than what a smaller local library deals with, this is no excuse for making things difficult to find. I get the feeling that the structure of the site is based on internal objectives, rather than user goals. &lt;/p&gt;
+
+&lt;p&gt;Here’s where today’s closure information is, in fact, located:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/W4eopoE.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;I would have to do this:
+- “find library hours” on the homepage
+- select “holidays” among eleven listings
+- see on the list that today, January 19th, is a holiday&lt;/p&gt;
+
+&lt;h3&gt;8. Concord&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/zH7HVUy.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;No indication of whether it is open today. The latest news seems to be the New Year’s.&lt;/p&gt;
+
+&lt;h3&gt;9. Dedham&lt;/h3&gt;
+
+&lt;h2&gt;3/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/8qHlEVH.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;It is immediately clear that the library is closed today.&lt;/p&gt;
+
+&lt;h3&gt;10. Dover&lt;/h3&gt;
+
+&lt;h2&gt;2/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/ZmLY9lq.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a clear indication that the library is closed today. I had to scan the page for a while and read a few things before I noticed it, so it was not obvious.&lt;/p&gt;
+
+&lt;h3&gt;11. Framingham&lt;/h3&gt;
+
+&lt;h2&gt;2.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/3j83pAP.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;It was almost obvious that “all libraries will be closed” today — even on this crowded page. I was distracted by the email sign-up notice, but the next thing I read was the closure notice. Not pretty, but close to functional.&lt;/p&gt;
+
+&lt;h3&gt;12. Franklin&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/9CnV6Uv.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The public library website seems to be just a layer of content on top of the Franklin local government site. Very confusing. No indication of closure.&lt;/p&gt;
+
+&lt;h3&gt;13. Holliston&lt;/h3&gt;
+
+&lt;h2&gt;2.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/UNEAehM.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;I found the closure information quickly, but it did not stand out enough (for my taste) from other news.&lt;/p&gt;
+
+&lt;h3&gt;14. Lexington&lt;/h3&gt;
+
+&lt;h2&gt;3.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/n6IeQHX.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The first indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.&lt;/p&gt;
+
+&lt;h2&gt;What did I miss?&lt;/h2&gt;
+
+&lt;p&gt;Of course, this is a very small test for a very specific user need. The sites that did well on my scale for “closing hours” may fail miserably at providing an answer to “what’s the street address?” or “can I renew my book online?”.&lt;/p&gt;
+
+&lt;p&gt;This test reiterated for me the importance of research and real-life user testing. Knowing what problems people might try to solve by going to a website, and where the site fails them, is necessary for most any meaningful improvement. &lt;/p&gt;
+
+&lt;h2&gt;How not to miss things:&lt;/h2&gt;
+
+&lt;p&gt;As a designer, I am often excited by a problem I see, and can jump to a solution I consider to be self-evident. (&lt;em&gt;The page is too crowded. Let’s change the typeface and layout!&lt;/em&gt;) But to make my solutions truly useful to other people, I must know what they need.&lt;/p&gt;
+
+&lt;p&gt;In this example, I am a user with a specific need. Designers do not often start working on a project with solid knowledge of user needs. To bridge this gap, we test the current product (if it exists), create personas and scenarios, and ask lots of questions.&lt;/p&gt;
+
+&lt;p&gt;Research could have prevented the “is the library closed?” problem. If there was one question I could ask people,  it would be “What was the most frustrating thing about this library?” Out of many responses, I would imagine at least one would mention showing up at the library to find it closed. Asking these types of general questions, not &lt;em&gt;“how satisfied are you with the library website? (on a scale from one to ten)”&lt;/em&gt;, will eventually lead us to meaningful design.&lt;/p&gt;
+
+&lt;p&gt;Or, at least, save us the frustration of showing up to a closed library.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Joining DockYard</title>
     <link rel="alternate" href="/2015/01/16/joining-dockyard.html"/>
@@ -298,86 +477,11 @@ something promising, yet unknown. You may be pleasantly surprised.&lt;/p&gt;
 &lt;p&gt;Our ability to select the appropriate format, or technology, for a task reflects our deep understanding of the content and the problem we are solving. The rejection of unnecessary improvements is an important decision. It makes our work efficient and focused.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Why is Google ignoring over 400,000 backlinks to DockYard?</title>
-    <link rel="alternate" href="/2015/01/11/why-is-google-ignoring-over-400000-backlinks.html"/>
-    <id>/2015/01/11/why-is-google-ignoring-over-400000-backlinks.html</id>
-    <published>2015-01-11T00:00:00Z</published>
-    <updated>2015-01-11T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Imagine our enthusiasm when the opportunity to add hundreds of thousands
-of backlinks from one of the web&amp;#39;s most popular library hosting websites
-back to our domain came our way. And imagine our surprise when Google
-decided they meant nothing.&lt;/p&gt;
-
-&lt;p&gt;Back in &lt;a href="http://reefpoints.dockyard.com/2014/11/18/rubygems-redesign.html"&gt;November we launched the redesign of
-RubyGems.org&lt;/a&gt;. We were contacted by
-&lt;a href="http://rubycentral.org"&gt;RubyCentral&lt;/a&gt; about 9 months prior. I was
-interested in this opportunity for three reasons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It gave DockYard the opportunity to give back to the Ruby community,
-one that has been so pivotal to our growth early on (and one that has
-been pivotal to my growth as a professional engineer for nearly 10
-years)&lt;/li&gt;
-&lt;li&gt;DockYard can show off its design talents to the community&lt;/li&gt;
-&lt;li&gt;DockYard would get a &lt;em&gt;&amp;quot;Designed By&amp;quot;&lt;/em&gt; sponsor link at the bottom of
-every page.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This blog post is going to explore the third reason and the result of
-this over the past two months.&lt;/p&gt;
-
-&lt;p&gt;At the time of launch RubyGems.org had over 90,000 gems published. This
-meant a sponsor link at the bottom of every page that was backlinking
-to &lt;a href="http://dockyard.com"&gt;DockYard.com&lt;/a&gt;. In addition to the landing page
-and the other static pages. This was an appealing value to gain from a
-re-design effort. According to Google&amp;#39;s own backlink search DockYard had
-only 65 pages linking back. This struck me as odd considering this blog
-itself links back to DockYard.com and there were more than 65 posts. But
-surely after the redesign this number should go up. Our estimated
-PageRank was &lt;code&gt;5&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;After the redesign we saw the expected spike in traffic&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://i.imgur.com/tpcgGpK.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Checking in on the referrals we can see that to date we have received
-over 600 referrals from RubyGems.org. I&amp;#39;m OK with these numbers as I
-never expected everyone to be clicking on those links.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://i.imgur.com/cM66gW5.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;However, what did shock me was that none of these backlinks were being
-counted by Google.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://i.imgur.com/fTyXVzV.png" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The sponsor link does not have a &lt;code&gt;nofollow&lt;/code&gt; attribute. And I admit that
-SEO is not something I&amp;#39;ve very good at. But if I were to look at another
-backlink source such as
-&lt;a href="https://ahrefs.com/site-explorer/overview/subdomains/?target=dockyard.com"&gt;ahrefs&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://i.imgur.com/tlHt3sK.png" alt="ahrefs"&gt;&lt;/p&gt;
-
-&lt;p&gt;You can clearly see the spike in referring pages. A &lt;strong&gt;huge&lt;/strong&gt; jump from
-nearly nothing to over 400,000. The bottom graph shows that these are
-primarly &lt;em&gt;DoFollow&lt;/em&gt; links.&lt;/p&gt;
-
-&lt;p&gt;So these backlinks aren&amp;#39;t being counted by Google? Does Google only count
-one domain per backlink? Color me confused. I suspect we&amp;#39;re doing
-something wrong on our end to not get any credit. Could it be that such
-a huge spike in backlinks are flagged as suspicious by Google? I&amp;#39;d
-appreciate any thoughts in the comments.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"><strong>Is your homepage as good as your door sign?</strong><h6 class='footer-desc'>Ask good questions to solve for real user goals</h6></a>
 <a class="footer__post" href="/2015/01/16/joining-dockyard.html"><strong>Joining DockYard</strong><h6 class='footer-desc'>Reflections on the past few months of being employed at DockYard</h6></a>
-<a class="footer__post" href="/2015/01/14/sr-ui-designer.html"><strong>Job: Senior UI & Visual Designer</strong><h6 class='footer-desc'>Work at DockYard designing highly interactive web applications!</h6></a>
-<a class="footer__post" href="/2015/01/14/check-your-expectations.html"><strong>Check your expectations (at the bathroom door)</strong><h6 class='footer-desc'>Your normal is not always their normal.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/01/14/sr-ui-designer.html"><strong>Job: Senior UI & Visual Designer</strong><h6 class='footer-desc'>Work at DockYard designing highly interactive web applications!</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>

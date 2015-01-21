@@ -793,7 +793,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/07/23/repeat-patterns.html</loc>
     <lastmod>2015-01-21T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -805,7 +805,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/07/29/project-carpe-diem.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
     <lastmod>2015-01-21T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -974,6 +974,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//2015/01/16/joining-dockyard.html</loc>
+    <lastmod>2015-01-21T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</loc>
     <lastmod>2015-01-21T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1519,7 +1525,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//2014/07/23/repeat-patterns.html</loc>
+    <loc>http://reefpoints.dockyard.com//2014/07/29/project-carpe-diem.html</loc>
     <lastmod>2015-01-21T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

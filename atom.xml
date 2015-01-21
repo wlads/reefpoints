@@ -4,10 +4,190 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2015-01-16T00:00:00Z</updated>
+  <updated>2015-01-20T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Is your homepage as good as your door sign?</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"/>
+    <id>http://reefpoints.dockyard.com/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</id>
+    <published>2015-01-20T00:00:00Z</published>
+    <updated>2015-01-21T14:13:39-05:00</updated>
+    <author>
+      <name>Maria Matveeva</name>
+    </author>
+    <summary>Ask good questions to solve for real user goals</summary>
+    <content type="html">&lt;p&gt;Today is a federal holiday, and a day off for us at DockYard. On days like these, when I do not travel, I often go to the local library.&lt;/p&gt;
+
+&lt;p&gt;Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information (&lt;em&gt;is the library open today?&lt;/em&gt;) on a library website.&lt;/p&gt;
+
+&lt;p&gt;Like many government and community organizations, libraries are easy targets for ridicule when it comes to web design. Look at the outdated styles their site uses! How crowded it is! The HTML tables used for layout! The multi-colored announcements “designed” in Word! &lt;/p&gt;
+
+&lt;p&gt;What I am looking for today is something else: I want to judge the achievability of a specific task regardless of the presentation. Presentation (layout, hierarchy, and just plain good design) affects a user’s ability to achieve her goals, no doubt. I just want to start with the goals, and a specific measurement, rather than starting with the common pitfall of visual designers like myself: noticing the surface details that seem broken rather than the process behind them.&lt;/p&gt;
+
+&lt;p&gt;So, here’s my experiment:&lt;/p&gt;
+
+&lt;h2&gt;Find out if the library is open today.&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;With a few considerations.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It may be &lt;strong&gt;self evident&lt;/strong&gt; that a library is closed on a government holiday. It was not to me. I assume that most casual users have a vague suspicion that it may be closed, and would seek confirmation via the website.&lt;/p&gt;
+
+&lt;p&gt;I narrowed my search to just the homepage for this exercise, expecting to find the equivalent of a physical “Sorry, closed today!” door sign. And while many libraries provided the same information on Twitter or Facebook, it would be prohibitive to compare all these resources for this quick study.&lt;/p&gt;
+
+&lt;p&gt;I saw most of these homepages for the first time today. A regular user of the local library may notice things differently than a new user, so for example the “CLOSED” text announcement that replaces a daily schedule of events, might stand out more for them.&lt;/p&gt;
+
+&lt;p&gt;I looked for three things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; was the holiday at all on the homepage,  &lt;/li&gt;
+&lt;li&gt;was it clear, and &lt;/li&gt;
+&lt;li&gt;was it obvious?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I got about halfway down the alphabetized list of Minuteman Library Network locations, and consider this to be a useful and fair sample for my purpose.&lt;/p&gt;
+
+&lt;p&gt;Let’s roll:&lt;/p&gt;
+
+&lt;h3&gt;1. Acton&lt;/h3&gt;
+
+&lt;h2&gt;3/3!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/ebDk2UJ.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The site is visually appealing and clear at the same time. I immediately got an answer to my question. Success!&lt;/p&gt;
+
+&lt;h3&gt;2. Arlington (Robbins Library)&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/CpqOqdR.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Hours are clearly listed, but the holiday is not. Based on this page, I would assume it is open today — in fact, the clear listing of hours reinforces my wrong assumption. To see the holiday announcement, I would need to know to visit the Calendar. A shame, because the site looks quite polished to me and was likely re-designed fairly recently (guessing 2013, from its footer). An investment in a bit of user testing and research would have likely fixed this.&lt;/p&gt;
+
+&lt;h3&gt;3. Ashland&lt;/h3&gt;
+
+&lt;h2&gt;Huh? 0.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/yQ2dOww.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;While there is no indication of library closure today, the Townhall is clearly  closed. As a local, I might know what that means for my library trip, so I gave 0.5 points for at least mentioning the holiday exists.&lt;/p&gt;
+
+&lt;h3&gt;4. Bedford&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/XhAfaNt.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Today’s closure is not mentioned anywhere. Neither are the regular hours. I would look  either in About Us, or (eventually) see a link for Hours &amp;amp; Directions close to the top right.&lt;/p&gt;
+
+&lt;h3&gt;5. Belmont&lt;/h3&gt;
+
+&lt;h2&gt;3/3!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/inJbhUs.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The site doesn’t look like much, but it accomplishes my goal today perfectly. The library is clearly closed.&lt;/p&gt;
+
+&lt;h3&gt;6. Brookline&lt;/h3&gt;
+
+&lt;h2&gt;3/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/jpBCY9k.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;This library goes beyond my expectations by clearly listing not only today’s closure, but the entire holiday weekend for all three of its locations. The “Closed” notice is clear and immediately jumps to my attention. While there is no “closed TODAY” notice, I found this more detailed listing works just as well.&lt;/p&gt;
+
+&lt;h3&gt;7. Cambridge&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/QVg8HQO.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;This library was a particular disappointment, because I have used it many times and the collection and its building are delightful. I am assuming it is one of the better funded libraries, given its location in direct proximity to Harvard. While the amount of content this page needs to show may be far greater than what a smaller local library deals with, this is no excuse for making things difficult to find. I get the feeling that the structure of the site is based on internal objectives, rather than user goals. &lt;/p&gt;
+
+&lt;p&gt;Here’s where today’s closure information is, in fact, located:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/W4eopoE.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;I would have to do this:
+- “find library hours” on the homepage
+- select “holidays” among eleven listings
+- see on the list that today, January 19th, is a holiday&lt;/p&gt;
+
+&lt;h3&gt;8. Concord&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/zH7HVUy.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;No indication of whether it is open today. The latest news seems to be the New Year’s.&lt;/p&gt;
+
+&lt;h3&gt;9. Dedham&lt;/h3&gt;
+
+&lt;h2&gt;3/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/8qHlEVH.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;It is immediately clear that the library is closed today.&lt;/p&gt;
+
+&lt;h3&gt;10. Dover&lt;/h3&gt;
+
+&lt;h2&gt;2/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/ZmLY9lq.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a clear indication that the library is closed today. I had to scan the page for a while and read a few things before I noticed it, so it was not obvious.&lt;/p&gt;
+
+&lt;h3&gt;11. Framingham&lt;/h3&gt;
+
+&lt;h2&gt;2.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/3j83pAP.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;It was almost obvious that “all libraries will be closed” today — even on this crowded page. I was distracted by the email sign-up notice, but the next thing I read was the closure notice. Not pretty, but close to functional.&lt;/p&gt;
+
+&lt;h3&gt;12. Franklin&lt;/h3&gt;
+
+&lt;h2&gt;0/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/9CnV6Uv.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The public library website seems to be just a layer of content on top of the Franklin local government site. Very confusing. No indication of closure.&lt;/p&gt;
+
+&lt;h3&gt;13. Holliston&lt;/h3&gt;
+
+&lt;h2&gt;2.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/UNEAehM.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;I found the closure information quickly, but it did not stand out enough (for my taste) from other news.&lt;/p&gt;
+
+&lt;h3&gt;14. Lexington&lt;/h3&gt;
+
+&lt;h2&gt;3.5/3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://imgur.com/n6IeQHX.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The first indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.&lt;/p&gt;
+
+&lt;h2&gt;What did I miss?&lt;/h2&gt;
+
+&lt;p&gt;Of course, this is a very small test for a very specific user need. The sites that did well on my scale for “closing hours” may fail miserably at providing an answer to “what’s the street address?” or “can I renew my book online?”.&lt;/p&gt;
+
+&lt;p&gt;This test reiterated for me the importance of research and real-life user testing. Knowing what problems people might try to solve by going to a website, and where the site fails them, is necessary for most any meaningful improvement. &lt;/p&gt;
+
+&lt;h2&gt;How not to miss things:&lt;/h2&gt;
+
+&lt;p&gt;As a designer, I am often excited by a problem I see, and can jump to a solution I consider to be self-evident. (&lt;em&gt;The page is too crowded. Let’s change the typeface and layout!&lt;/em&gt;) But to make my solutions truly useful to other people, I must know what they need.&lt;/p&gt;
+
+&lt;p&gt;In this example, I am a user with a specific need. Designers do not often start working on a project with solid knowledge of user needs. To bridge this gap, we test the current product (if it exists), create personas and scenarios, and ask lots of questions.&lt;/p&gt;
+
+&lt;p&gt;Research could have prevented the “is the library closed?” problem. If there was one question I could ask people,  it would be “What was the most frustrating thing about this library?” Out of many responses, I would imagine at least one would mention showing up at the library to find it closed. Asking these types of general questions, not &lt;em&gt;“how satisfied are you with the library website? (on a scale from one to ten)”&lt;/em&gt;, will eventually lead us to meaningful design.&lt;/p&gt;
+
+&lt;p&gt;Or, at least, save us the frustration of showing up to a closed library.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Joining DockYard</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/16/joining-dockyard.html"/>
