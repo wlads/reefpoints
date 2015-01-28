@@ -1,14 +1,14 @@
-+---
-+layout: post
-+title: "Estimation Buyers Guide"
-+comments: true
-+author: Jon Lacks
-+twitter: "Jon_Lacks"
-+social: true
-+summary: "Buyer beware of estimates without understanding how it was derived"
-+published: true
-+tags: project management
-+---
+---
+layout: post
+title: "Estimation Buyers Guide"
+comments: true
+author: Jon Lacks
+twitter: "Jon_Lacks"
+social: true
+summary: "Buyer beware of estimates without understanding how it was derived"
+published: true
+tags: project management
+---
 
 As a Project Manager, I have seen estimates in all forms - points, days, months, hours, mario coins, etc. Many say estimates in Software development are garbage and significant margin of error should be the expected norm. I believe this perspective to be true if estimation is conducted in a vacuum vs. as a means to have a conversation with prospective clients about what it is going to take to achieve their vision.
 
