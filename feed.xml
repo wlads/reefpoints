@@ -89,6 +89,144 @@
 </content>
   </entry>
   <entry>
+    <title>Bubbling actions through components</title>
+    <link rel="alternate" href="/2015/01/28/bubbling-actions-through-components.html"/>
+    <id>/2015/01/28/bubbling-actions-through-components.html</id>
+    <published>2015-01-28T00:00:00Z</published>
+    <updated>2015-01-28T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;If you&amp;#39;re building components for re-use, you&amp;#39;re likely to run into the
+following problem. Say you built a form component, and you also built some type
+of custom button component. You want the action triggered by the button to be
+handled in your controller or route. If you try to bind the action of that
+inner button, it will be captured by the component, not the controller. The
+issue is that components swallow actions that are triggered within them; they
+will not escape the component unless we punch a hole for them to bubble up.&lt;/p&gt;
+
+&lt;p&gt;You need to capture the action of the inner components and fire off new actions
+from the parent component. In the example below, the button is in a component
+that is inside of another component. The controller has an action to increment
+the counter.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class="jsbin-embed" href="http://jsbin.com/suvat/4/embed?output"&gt;Ember Starter Kit&lt;/a&gt;&lt;script src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Our components&amp;#39; templates are super simple:&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{{! index.hbs}}
+  {{pressCount}} Button presses
+  {{button-wrapper action=&amp;quot;buttonClick&amp;quot;}}
+
+{{! components/button-wrapper.hbs}}
+  &amp;lt;h2&amp;gt;Button Wrapper&amp;lt;/h2&amp;gt;
+  {{press-button action=&amp;quot;buttonClick&amp;quot;}}
+
+{{! components/press-button.hbs}}
+  &amp;lt;button {{action &amp;quot;buttonClick&amp;quot;}}&amp;gt;My Button&amp;lt;/button&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice we bind to the action of the &lt;code&gt;press-button&lt;/code&gt; component in our
+&lt;code&gt;button-wrapper&lt;/code&gt; component, and in our &lt;code&gt;index&lt;/code&gt; template, we bind to the action
+of the &lt;code&gt;button-wrapper&lt;/code&gt;. This alone doesn&amp;#39;t work; we need to send actions from
+each component when they receive actions from the underlying component.&lt;/p&gt;
+
+&lt;p&gt;In our &lt;code&gt;press-button&lt;/code&gt; component, we send an action when the button is clicked:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.PressButtonComponent = Ember.Component.extend({
+  &lt;span class="key"&gt;classNames&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;press-button&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.sendAction();
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Our &lt;code&gt;button-wrapper&lt;/code&gt; receives the action from the &lt;code&gt;press-button&lt;/code&gt; component and
+fires its own action:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.ButtonWrapperComponent = Ember.Component.extend({
+  &lt;span class="key"&gt;classNames&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;button-wrapper&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.sendAction();
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And our index controller receives that action from &lt;code&gt;button-wrapper&lt;/code&gt; and
+increments the &lt;code&gt;pressCount&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.IndexController = Ember.Controller.extend({
+  &lt;span class="key"&gt;pressCount&lt;/span&gt;: &lt;span class="integer"&gt;0&lt;/span&gt;,
+
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.incrementProperty(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;pressCount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;It&amp;#39;s pretty easy, yet tedious to wire up an action from a component within a
+component. You can trigger actions multiple levels above your initial action,
+and even mutate the action&amp;#39;s arguments on the way up. Maybe the model that
+triggered the initial action should be put into some type of intermediate
+state. Maybe you want to normalize several different actions that are bubbling
+up through certain components. Since you need to manually bubble these
+actions up, we can manipulate them at each level that the bubbling occurs. It&amp;#39;s
+somewhat trivial to handle, you just have to be aware of the work needed to
+tie all your pieces together.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Is your homepage as good as your door sign?</title>
     <link rel="alternate" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"/>
     <id>/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</id>
@@ -430,50 +568,11 @@ something promising, yet unknown. You may be pleasantly surprised.&lt;/p&gt;
 &lt;p&gt;To avoid the kind of toxic misunderstanding, it is important to communicate assumptions (even the &amp;quot;duh!&amp;quot; kind) early on in a project. It may feel awkward to have to say out loud the things that you consider to be understood by everyone involved. Get over it. When you find and defuse that one thing you did not agree was a given, it will all be worth it.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Masking private information from the owner</title>
-    <link rel="alternate" href="/2015/01/13/should-we-consider.html"/>
-    <id>/2015/01/13/should-we-consider.html</id>
-    <published>2015-01-13T00:00:00Z</published>
-    <updated>2015-01-13T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h2&gt;Should we consider allowing the display of all private or risky information to the owner strictly through a prompt?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;This could include:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;username&lt;/li&gt;
-&lt;li&gt;password&lt;/li&gt;
-&lt;li&gt;e-mail&lt;/li&gt;
-&lt;li&gt;birth date&lt;/li&gt;
-&lt;li&gt;social security number&lt;/li&gt;
-&lt;li&gt;credit card info (maybe never show it)&lt;/li&gt;
-&lt;li&gt;account numbers&lt;/li&gt;
-&lt;li&gt;you get it by now&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Why?&lt;/h2&gt;
-
-&lt;p&gt;Well, one little bit of information that someone tweets about themselves in a screenshot could mean they’re sharing a useful piece of data to a DOXX operation by some douchebag on the internet. That’s the theory, but as I know very little about DOXXing it may not make sense.&lt;/p&gt;
-
-&lt;h2&gt;Why am I thinking this?&lt;/h2&gt;
-
-&lt;p&gt;I just tweeted a photo and I realized after the fact I might have put some sensitive information in it. Not like credit cards or actionable items to any normal viewer, but the kind of information that could add up to something a technically sophisticated malicious person might like. Turns out it was just my name, which seems ok to me.&lt;/p&gt;
-
-&lt;h2&gt;Because users don’t really know better and they never will&lt;/h2&gt;
-
-&lt;p&gt;I’ve spent a lot of time resisting the “our users don’t know” mantra in certain scenarios, and I can tell you why sometimes still resist it, but I digress. When it comes to security, our brains aren’t very good at remembering the pieces of information we’ve shared. I have 4k+ tweets and I know a lot of people are at that or beyond. How can we be sure we haven’t shared too much information? I don’t think we can.&lt;/p&gt;
-
-&lt;p&gt;It could certainly be a pain in the designer&amp;#39;s ass to worry about protecting the user from doing something harmful to themselves (on purpose yet without being aware) in addition to everything else our daunting jobs require us to, but maybe this really warrants consideration by designers. Maybe it’s part of the job.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
 <a class="footer__post" href="/2015/01/28/estimation-buyers-guide.html"><strong>Estimation Buyers Guide</strong><h6 class='footer-desc'>Buyer beware of estimates without understanding how it was derived</h6></a>
-<a class="footer__post" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"><strong>Is your homepage as good as your door sign?</strong><h6 class='footer-desc'>Ask good questions to solve for real user goals</h6></a>
-<a class="footer__post" href="/2015/01/16/joining-dockyard.html"><strong>Joining DockYard</strong><h6 class='footer-desc'>Reflections on the past few months of being employed at DockYard</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/01/28/bubbling-actions-through-components.html"><strong>Bubbling actions through components</strong><h6 class='footer-desc'>Let your actions be handled in your controllers and routes</h6></a>
+<a class="footer__post" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"><strong>Is your homepage as good as your door sign?</strong><h6 class='footer-desc'>Ask good questions to solve for real user goals</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>

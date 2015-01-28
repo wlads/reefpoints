@@ -43,6 +43,145 @@
 </content>
   </entry>
   <entry>
+    <title>Bubbling actions through components</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/28/bubbling-actions-through-components.html"/>
+    <id>http://reefpoints.dockyard.com/2015/01/28/bubbling-actions-through-components.html</id>
+    <published>2015-01-28T00:00:00Z</published>
+    <updated>2015-01-28T13:51:34-05:00</updated>
+    <author>
+      <name>Dan McClain</name>
+    </author>
+    <summary>Let your actions be handled in your controllers and routes</summary>
+    <content type="html">&lt;p&gt;If you&amp;#39;re building components for re-use, you&amp;#39;re likely to run into the
+following problem. Say you built a form component, and you also built some type
+of custom button component. You want the action triggered by the button to be
+handled in your controller or route. If you try to bind the action of that
+inner button, it will be captured by the component, not the controller. The
+issue is that components swallow actions that are triggered within them; they
+will not escape the component unless we punch a hole for them to bubble up.&lt;/p&gt;
+
+&lt;p&gt;You need to capture the action of the inner components and fire off new actions
+from the parent component. In the example below, the button is in a component
+that is inside of another component. The controller has an action to increment
+the counter.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class="jsbin-embed" href="http://jsbin.com/suvat/4/embed?output"&gt;Ember Starter Kit&lt;/a&gt;&lt;script src="http://static.jsbin.com/js/embed.js"&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Our components&amp;#39; templates are super simple:&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{{! index.hbs}}
+  {{pressCount}} Button presses
+  {{button-wrapper action=&amp;quot;buttonClick&amp;quot;}}
+
+{{! components/button-wrapper.hbs}}
+  &amp;lt;h2&amp;gt;Button Wrapper&amp;lt;/h2&amp;gt;
+  {{press-button action=&amp;quot;buttonClick&amp;quot;}}
+
+{{! components/press-button.hbs}}
+  &amp;lt;button {{action &amp;quot;buttonClick&amp;quot;}}&amp;gt;My Button&amp;lt;/button&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice we bind to the action of the &lt;code&gt;press-button&lt;/code&gt; component in our
+&lt;code&gt;button-wrapper&lt;/code&gt; component, and in our &lt;code&gt;index&lt;/code&gt; template, we bind to the action
+of the &lt;code&gt;button-wrapper&lt;/code&gt;. This alone doesn&amp;#39;t work; we need to send actions from
+each component when they receive actions from the underlying component.&lt;/p&gt;
+
+&lt;p&gt;In our &lt;code&gt;press-button&lt;/code&gt; component, we send an action when the button is clicked:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.PressButtonComponent = Ember.Component.extend({
+  &lt;span class="key"&gt;classNames&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;press-button&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.sendAction();
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Our &lt;code&gt;button-wrapper&lt;/code&gt; receives the action from the &lt;code&gt;press-button&lt;/code&gt; component and
+fires its own action:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.ButtonWrapperComponent = Ember.Component.extend({
+  &lt;span class="key"&gt;classNames&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;button-wrapper&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.sendAction();
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And our index controller receives that action from &lt;code&gt;button-wrapper&lt;/code&gt; and
+increments the &lt;code&gt;pressCount&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;App.IndexController = Ember.Controller.extend({
+  &lt;span class="key"&gt;pressCount&lt;/span&gt;: &lt;span class="integer"&gt;0&lt;/span&gt;,
+
+  &lt;span class="key"&gt;actions&lt;/span&gt;: {
+    &lt;span class="function"&gt;buttonClick&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;.incrementProperty(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;pressCount&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+    }
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h2&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;It&amp;#39;s pretty easy, yet tedious to wire up an action from a component within a
+component. You can trigger actions multiple levels above your initial action,
+and even mutate the action&amp;#39;s arguments on the way up. Maybe the model that
+triggered the initial action should be put into some type of intermediate
+state. Maybe you want to normalize several different actions that are bubbling
+up through certain components. Since you need to manually bubble these
+actions up, we can manipulate them at each level that the bubbling occurs. It&amp;#39;s
+somewhat trivial to handle, you just have to be aware of the work needed to
+tie all your pieces together.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Is your homepage as good as your door sign?</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"/>
     <id>http://reefpoints.dockyard.com/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</id>

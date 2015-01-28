@@ -811,7 +811,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/uxeast.html</loc>
     <lastmod>2015-01-28T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -985,6 +985,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2015/01/28/bubbling-actions-through-components.html</loc>
+    <lastmod>2015-01-28T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//2015/01/28/estimation-buyers-guide.html</loc>
     <lastmod>2015-01-28T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1093,6 +1099,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//categories/emberjs.html</loc>
+    <lastmod>2015-01-28T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//categories/team.html</loc>
     <lastmod>2015-01-28T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1148,12 +1160,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/tools.html</loc>
-    <lastmod>2015-01-28T00:00:00-05:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/uxeast.html</loc>
     <lastmod>2015-01-28T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1526,6 +1532,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/client.html</loc>
+    <lastmod>2015-01-28T00:00:00-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/conferences.html</loc>
     <lastmod>2015-01-28T00:00:00-05:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
