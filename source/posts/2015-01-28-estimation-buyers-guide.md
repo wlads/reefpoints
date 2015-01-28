@@ -18,7 +18,7 @@ I would question any firm who claims to offer a high confidence estimate to a pr
 
 Let me paint this picture for you. Client X wants to build out a new application. The team to build said application provides client X with an estimate based off of a couple pre-sales meetings. Cost is negotiated until everyone around the table is happy with the economics and then the project is handed over to the project team and they are told to build “this” application in “this” amount of time. Client X is doomed regardless of whether or not that application is handed over in the agreed amount of time. Here’s why:
 
-* The team has no context - Therefore, they are going to spend the first weeks of development getting up to speed as opposed to delivering working features putting behind schedule right out of the gate
+* The team has no context - Therefore, they are going to spend the first weeks of development getting up to speed as opposed to delivering working features putting the schedule behind right out of the gate
 * The team does not own the estimate -  Someones else provided it on their behalf (who wants to be responsible for something they don’t own?)
 * Unexpected risks and complexity will (not “may”) put schedule at risk
 * Quality will (not “may") suffer because the team will attempt to meet the date commitment at the expense of quality
