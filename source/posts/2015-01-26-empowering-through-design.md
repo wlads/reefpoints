@@ -10,7 +10,7 @@ published: true
 tags: design, interaction, user experience, native web
 ---
 
-There has been some debate in the development community between the "tradeoffs in server side and client side rendering," [Malte Ubl](https://medium.com/@cramforce/tradeoffs-in-server-side-and-client-side-rendering-14dad8d4ff8b). Working at an Ember shop that focuses on rich client experiences, I've observed the benefits of single page web applications, from a design perspective.
+There has been some debate in the development community between the ["tradeoffs in server side and client side rendering."] (https://medium.com/@cramforce/tradeoffs-in-server-side-and-client-side-rendering-14dad8d4ff8b). Working at an Ember shop that focuses on rich client experiences, I've observed the benefits of single page web applications, from a design perspective.
 
 As a user experience designer at DockYard, my primary focus is on the user. The best kind of user experience is one where the system is always transparent, and moves the user fluently through relevant prompts to accomplish the task at hand.
 
