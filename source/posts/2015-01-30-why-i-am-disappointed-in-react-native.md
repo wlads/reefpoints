@@ -30,10 +30,10 @@ on an iOS device.
 
 This is *amazing* technology and I don't think anyone was expecting
 this. As an Ember developer I'm jealous. After some reflection I
-realized I was also incredibly disappointed in Facebook for developing
-this technology.
+realized I was also incredibly disappointed in Facebook for heading in
+this direction.
 
-### We were all in this together
+### We are (supposed to be) all in this together
 
 The web development Holy Grail right now is to compete directly with (perhaps
 someday replace) native mobile applications. With React Native the web
