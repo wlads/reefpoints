@@ -12,7 +12,7 @@ published: true
 
 [Broccoli](https://github.com/broccolijs/broccoli) is a great tool for building up assets gradually through a list of changing steps. Unfortunately, when things go wrong in one of your steps it is often very difficult to figure out what is happening at each stage.
 
-Here is where [broccoli-stew](https://github.com/stefanpenner/broccoli-stew) comes in, it is a Broccoli utility library that contains a number of super useful plugins with a posix flair to them. Tools like `mv`, `rename`, `find`, `map`, `rm`, `log`, and `debug` make it much easier to reason about your Broccoli build.
+Here is where [broccoli-stew](https://github.com/stefanpenner/broccoli-stew) comes in, it is a Broccoli utility library that contains a number of super useful plugins with a [posix](https://en.wikipedia.org/wiki/POSIX) flair to them. Tools like `mv`, `rename`, `find`, `map`, `rm`, `log`, and `debug` make it much easier to reason about your Broccoli build.
 
 And thanks to the `debug` and `log` plugins it has become **massively** easier to log the contents of each tree, or get an extra copy to poke at manually.
 
