@@ -22,7 +22,7 @@ allowfullscreen></iframe>
 
 The TLDR is that Facebook has developed a view layer for React that can
 be used within native mobile apps. Within this context React's templates
-can call native components and views as if you were referring to normal
+can call native components (and views) as if you were referring to normal
 HTML elements. Furthermore a JavaScript layer has been introduced to the
 native layer that runs the React applications, this means that you can
 debug your React Native applications in Chrome Web Tools while it runs
@@ -58,6 +58,12 @@ No longer is mobile web a matter of *if* but a matter of *when*.
 However, with Facebook effectively taking themselves out of the
 conversation we've lost one of the best use-cases and the largest voices
 with one of the most popular JavaScript frameworks.
+
+Mobile web is a point of friction currently, and that friction existing
+is good because it will drive people and companies to pursue solutions
+to the problem. React Native is a work-around for mobile web. Some will
+think of it as a "best of both worlds" and perhaps they are correct. But
+the problem of mobile web will continue to exist.
 
 ### Business needs trump ideological ones
 
