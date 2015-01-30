@@ -35,7 +35,7 @@ this technology.
 
 ### We were all in this together
 
-The web development Holy Grail right now is to compete directly (perhaps
+The web development Holy Grail right now is to compete directly with (perhaps
 someday replace) native mobile applications. With React Native the web
 has lost a huge partner in Facebook for helping make this a reality.
 What incentive does Facebook have for pushing forward mobile web now
