@@ -78,7 +78,7 @@ This is super helpful to see that the right files are selected, but what if you 
 
 ### Debug Tree
 
-Using `broccoli-stew`'s `debug` you can have a duplicate copy of the tree generated into the root of the project so you can inspect it later it will not get cleaned up at the end of the build like the temp folders do.
+Using `broccoli-stew`'s `debug` you can have a duplicate copy of the tree generated into the root of the project so you can inspect it later (it will not get cleaned up at the end of the build like the temp folders do).
 
 
 ```javascript
