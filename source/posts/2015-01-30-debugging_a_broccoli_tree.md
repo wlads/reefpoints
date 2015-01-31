@@ -104,4 +104,4 @@ The `debug` plugin as used above will create a folder on disk at `DEBUG-my-app-n
 
 Using `broccoli-stew` to debug a Broccoli pipeline is absolutely awesome, and makes getting a project using Broccoli much easier.  Thanks to [@stefanpenner](https://twitter.com/stefanpenner) and [@chadhietala](https://twitter.com/chadhietala) for pushing things forward!
 
-If you'd like to checkout and play with the `Brocfile.js` above, you can clone and play with https://github.com/rwjblue/debugging-broccoli.
+If you'd like to checkout and play with the `Brocfile.js` above, you can do the normal `git clone` and `npm install` song and dance with https://github.com/rwjblue/debugging-broccoli.
