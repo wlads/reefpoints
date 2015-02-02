@@ -4,10 +4,165 @@
   <id>http://reefpoints.dockyard.com</id>
   <link href="http://reefpoints.dockyard.com"/>
   <link href="http://reefpoints.dockyard.com/atom.xml" rel="self"/>
-  <updated>2015-01-30T00:00:00Z</updated>
+  <updated>2015-02-02T00:00:00Z</updated>
   <author>
     <name>DockYard</name>
   </author>
+  <entry>
+    <title>Debugging a Broccoli Tree</title>
+    <link rel="alternate" href="http://reefpoints.dockyard.com/2015/02/02/debugging-a-broccoli-tree.html"/>
+    <id>http://reefpoints.dockyard.com/2015/02/02/debugging-a-broccoli-tree.html</id>
+    <published>2015-02-02T00:00:00Z</published>
+    <updated>2015-02-02T14:58:48-05:00</updated>
+    <author>
+      <name>Robert Jackson</name>
+    </author>
+    <summary/>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/broccolijs/broccoli"&gt;Broccoli&lt;/a&gt; is a great tool for building up assets gradually through a list of changing steps. Unfortunately, when things go wrong in one of your steps it is often very difficult to figure out what is happening at each stage.&lt;/p&gt;
+
+&lt;p&gt;Here is where &lt;a href="https://github.com/stefanpenner/broccoli-stew"&gt;broccoli-stew&lt;/a&gt; comes in, it is a Broccoli utility library that contains a number of super useful plugins with a &lt;a href="https://en.wikipedia.org/wiki/POSIX"&gt;posix&lt;/a&gt; flair to them. Tools like &lt;code&gt;mv&lt;/code&gt;, &lt;code&gt;rename&lt;/code&gt;, &lt;code&gt;find&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;rm&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, and &lt;code&gt;debug&lt;/code&gt; make it much easier to reason about your Broccoli build.&lt;/p&gt;
+
+&lt;p&gt;And thanks to the &lt;code&gt;debug&lt;/code&gt; and &lt;code&gt;log&lt;/code&gt; plugins it has become &lt;strong&gt;massively&lt;/strong&gt; easier to log the contents of each tree, or get an extra copy to poke at manually.&lt;/p&gt;
+
+&lt;h3&gt;Initial Brocfile.js&lt;/h3&gt;
+
+&lt;p&gt;Lets assume you have the following &lt;code&gt;Brocfile.js&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(app);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The goal of the Brocfile.js listed above is:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Grab all files in &lt;code&gt;app/&lt;/code&gt; and its subdirectories&lt;/li&gt;
+&lt;li&gt;&amp;quot;move&amp;quot; those files to &lt;code&gt;my-app-name/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;transpile those files from ES2015.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So far this seems pretty easy, but what if your resulting output didn&amp;#39;t contain the files you expected?  How would you track that down?&lt;/p&gt;
+
+&lt;h3&gt;Log Tree&lt;/h3&gt;
+
+&lt;p&gt;You can log the files in a tree using &lt;code&gt;broccoli-stew&lt;/code&gt;&amp;#39;s &lt;code&gt;log&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; loggedApp = log(app, { &lt;span class="key"&gt;output&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tree&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;label&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name tree&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; });
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(loggedApp);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Using &lt;code&gt;log&lt;/code&gt; like this will list out the files that are present just after the &lt;code&gt;Funnel&lt;/code&gt; step.  It might output something like the following:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;my-app-name tree
+└── my-app-name/
+   ├── my-app-name/cat.js
+   └── my-app-name/dog.js
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is super helpful to see that the right files are selected, but what if you are seeing the right files but the contents were not right?&lt;/p&gt;
+
+&lt;h3&gt;Debug Tree&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;broccoli-stew&lt;/code&gt;&amp;#39;s &lt;code&gt;debug&lt;/code&gt; you can have a duplicate copy of the tree generated into the root of the project so you can inspect it later (it will not get cleaned up at the end of the build like the temp folders do).&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; debugApp = debug(app, { &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; });
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(debugApp);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;debug&lt;/code&gt; plugin as used above will create a folder on disk at &lt;code&gt;DEBUG-my-app-name&lt;/code&gt; in the root of your project with the full contents of the &lt;code&gt;app&lt;/code&gt; tree when it was called. You can review this folder&amp;#39;s contents at your leisure without worrying about the Broccoli server calling cleanup and deleting the directory.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;broccoli-stew&lt;/code&gt; to debug a Broccoli pipeline is absolutely awesome, and makes getting a project using Broccoli much easier.  Thanks to &lt;a href="https://twitter.com/stefanpenner"&gt;@stefanpenner&lt;/a&gt; and &lt;a href="https://twitter.com/chadhietala"&gt;@chadhietala&lt;/a&gt; for pushing things forward!&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;d like to checkout and play with the &lt;code&gt;Brocfile.js&lt;/code&gt; above, you can do the normal &lt;code&gt;git clone&lt;/code&gt; and &lt;code&gt;npm install&lt;/code&gt; song and dance with https://github.com/rwjblue/debugging-broccoli.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Why I'm disappointed in React Native</title>
     <link rel="alternate" href="http://reefpoints.dockyard.com/2015/01/30/why-i-am-disappointed-in-react-native.html"/>

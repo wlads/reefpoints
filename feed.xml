@@ -51,10 +51,164 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-01-30T00:00:00Z</updated>
+  <updated>2015-02-02T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Debugging a Broccoli Tree</title>
+    <link rel="alternate" href="/2015/02/02/debugging-a-broccoli-tree.html"/>
+    <id>/2015/02/02/debugging-a-broccoli-tree.html</id>
+    <published>2015-02-02T00:00:00Z</published>
+    <updated>2015-02-02T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/broccolijs/broccoli"&gt;Broccoli&lt;/a&gt; is a great tool for building up assets gradually through a list of changing steps. Unfortunately, when things go wrong in one of your steps it is often very difficult to figure out what is happening at each stage.&lt;/p&gt;
+
+&lt;p&gt;Here is where &lt;a href="https://github.com/stefanpenner/broccoli-stew"&gt;broccoli-stew&lt;/a&gt; comes in, it is a Broccoli utility library that contains a number of super useful plugins with a &lt;a href="https://en.wikipedia.org/wiki/POSIX"&gt;posix&lt;/a&gt; flair to them. Tools like &lt;code&gt;mv&lt;/code&gt;, &lt;code&gt;rename&lt;/code&gt;, &lt;code&gt;find&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;rm&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, and &lt;code&gt;debug&lt;/code&gt; make it much easier to reason about your Broccoli build.&lt;/p&gt;
+
+&lt;p&gt;And thanks to the &lt;code&gt;debug&lt;/code&gt; and &lt;code&gt;log&lt;/code&gt; plugins it has become &lt;strong&gt;massively&lt;/strong&gt; easier to log the contents of each tree, or get an extra copy to poke at manually.&lt;/p&gt;
+
+&lt;h3&gt;Initial Brocfile.js&lt;/h3&gt;
+
+&lt;p&gt;Lets assume you have the following &lt;code&gt;Brocfile.js&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;,
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(app);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The goal of the Brocfile.js listed above is:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Grab all files in &lt;code&gt;app/&lt;/code&gt; and its subdirectories&lt;/li&gt;
+&lt;li&gt;&amp;quot;move&amp;quot; those files to &lt;code&gt;my-app-name/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;transpile those files from ES2015.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So far this seems pretty easy, but what if your resulting output didn&amp;#39;t contain the files you expected?  How would you track that down?&lt;/p&gt;
+
+&lt;h3&gt;Log Tree&lt;/h3&gt;
+
+&lt;p&gt;You can log the files in a tree using &lt;code&gt;broccoli-stew&lt;/code&gt;&amp;#39;s &lt;code&gt;log&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; loggedApp = log(app, { &lt;span class="key"&gt;output&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;tree&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;label&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name tree&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; });
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(loggedApp);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Using &lt;code&gt;log&lt;/code&gt; like this will list out the files that are present just after the &lt;code&gt;Funnel&lt;/code&gt; step.  It might output something like the following:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;my-app-name tree
+└── my-app-name/
+   ├── my-app-name/cat.js
+   └── my-app-name/dog.js
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is super helpful to see that the right files are selected, but what if you are seeing the right files but the contents were not right?&lt;/p&gt;
+
+&lt;h3&gt;Debug Tree&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;broccoli-stew&lt;/code&gt;&amp;#39;s &lt;code&gt;debug&lt;/code&gt; you can have a duplicate copy of the tree generated into the root of the project so you can inspect it later (it will not get cleaned up at the end of the build like the temp folders do).&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Brocfile.js&lt;/span&gt;
+&lt;span class="keyword"&gt;var&lt;/span&gt; Funnel = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-funnel&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; ES2015 = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-es6modules&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+&lt;span class="keyword"&gt;var&lt;/span&gt; log = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;broccoli-stew&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;).log;
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; app = &lt;span class="keyword"&gt;new&lt;/span&gt; Funnel(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;app&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
+  &lt;span class="key"&gt;destDir&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+});
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; debugApp = debug(app, { &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-app-name&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; });
+
+&lt;span class="keyword"&gt;var&lt;/span&gt; transpiledTree = &lt;span class="keyword"&gt;new&lt;/span&gt; ES2015(debugApp);
+
+module.exports = transpiledTree;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;debug&lt;/code&gt; plugin as used above will create a folder on disk at &lt;code&gt;DEBUG-my-app-name&lt;/code&gt; in the root of your project with the full contents of the &lt;code&gt;app&lt;/code&gt; tree when it was called. You can review this folder&amp;#39;s contents at your leisure without worrying about the Broccoli server calling cleanup and deleting the directory.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;broccoli-stew&lt;/code&gt; to debug a Broccoli pipeline is absolutely awesome, and makes getting a project using Broccoli much easier.  Thanks to &lt;a href="https://twitter.com/stefanpenner"&gt;@stefanpenner&lt;/a&gt; and &lt;a href="https://twitter.com/chadhietala"&gt;@chadhietala&lt;/a&gt; for pushing things forward!&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;d like to checkout and play with the &lt;code&gt;Brocfile.js&lt;/code&gt; above, you can do the normal &lt;code&gt;git clone&lt;/code&gt; and &lt;code&gt;npm install&lt;/code&gt; song and dance with https://github.com/rwjblue/debugging-broccoli.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Why I'm disappointed in React Native</title>
     <link rel="alternate" href="/2015/01/30/why-i-am-disappointed-in-react-native.html"/>
@@ -508,113 +662,11 @@ tie all your pieces together.&lt;/p&gt;
 &lt;p&gt;Or, at least, save us the frustration of showing up to a closed library.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Joining DockYard</title>
-    <link rel="alternate" href="/2015/01/16/joining-dockyard.html"/>
-    <id>/2015/01/16/joining-dockyard.html</id>
-    <published>2015-01-16T00:00:00Z</published>
-    <updated>2015-01-16T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Six months ago today, I signed the letter officially accepting the offer
-to join DockYard as a Senior Developer. It was the best decision I could have made.&lt;/p&gt;
-
-&lt;p&gt;When I announced my resignation to my previous employer, he jokingly said that if
-they had known choosing Ember as a new client-side framework would
-eventually make me want to pursue a new Ember-focused opportunity, they would
-have chosen Angular.&lt;/p&gt;
-
-&lt;p&gt;I first started dipping my toes into Ember in late Spring 2013, some time after
-Ember 1.0 RC3 was released. The Ember.js community was undeniably very active and
-vibrant. That following June, I attended my first Boston Ember meetup,
-where &lt;a href="https://twitter.com/dgeb"&gt;Dan Gebhardt&lt;/a&gt; shared tips on testing Ember apps,
-and &lt;a href="https://twitter.com/twokul"&gt;Alex Navasardyan&lt;/a&gt; gave an introduction to Ember Data.
-That&amp;#39;s how I came to know of DockYard.&lt;/p&gt;
-
-&lt;p&gt;Soon, some names started to emerge as familiar names within the
-community. &lt;a href="https://twitter.com/bcardarella"&gt;Brian Cardarella&lt;/a&gt; became
-known within our dev team as the one who wrote
-&lt;a href="https://github.com/dockyard/ember-validations"&gt;ember-validations&lt;/a&gt;,
-which we were using in our application. &lt;a href="https://twitter.com/rwjblue"&gt;Robert
-Jackson&lt;/a&gt; was another name that kept popping
-up on my Twitter and GitHub feeds. Call me a nerd if you will, but I was
-as excited to have The Robert Jackson accept a fix that I submitted to
-&lt;a href="https://github.com/emberjs/ember-dev"&gt;ember-dev&lt;/a&gt; later that year to make builds
-pass on Windows (with Rake at the time) as I would have been meeting a film celebrity.&lt;/p&gt;
-
-&lt;p&gt;DockYard further reinforced its reputation by organizing the Wicked Good Ember
-conference in Boston, in June of 2014, which I of course attended.&lt;/p&gt;
-
-&lt;p&gt;Needless to say, when Brian reached out to me last July about joining the team, I
-saw it as an opportunity that was really hard to pass on. Logistically,
-I may have been better off staying where I was. I had a 40 min commute.
-Joining DockYard would have doubled my commuting time. I was also
-comfortable with the position I was holding, building out cool D3.js
-charts with Ember, leading the development of new products, and getting
-myself involved in all kinds of engineering team growth efforts. But
-then there was DockYard. I went with my gut feeling instead and left
-the warm and comfortable seat to face the exciting, though new and scary thing that was
-DockYard.&lt;/p&gt;
-
-&lt;p&gt;Scary? Yes. From everything DockYard had done for the Boston community
-to the talent behind its wheel, I was absolutely terrified of not
-fitting in, that it was too elite for me. I checked out the team page on
-the website and read everyone&amp;#39;s biography a number of times,
-trying to picture what kind of co-workers I would be interacting with
-daily. No matter how great the projects can be, culture is a big thing.
-To my delight, the culture at DockYard is one that resonates the
-most with me in my 10 years of professional career.&lt;/p&gt;
-
-&lt;p&gt;DockYard has a well-balanced team of young, bright minds and more
-seasoned developers, and I embrace that. There is none of that &amp;quot;I am
-better than you&amp;quot; bullshit. Those I once viewed as Ember Gods and would
-have been intimidated to talk to have been incredibly supportive and encouraging.
-In the past, whenever I was involved in the hiring process for
-Engineering, I had always wondered where all the great developers were.
-Well, they&amp;#39;re here, happily employed at places like DockYard. If there
-is one thing I can say about the company, it&amp;#39;s that it&amp;#39;s doing something
-right to attract an amazingly talented and diverse crew. I&amp;#39;ve been
-particularly impressed with our designers. It&amp;#39;s nice as a developer to
-work on such nifty UIs!&lt;/p&gt;
-
-&lt;p&gt;Doing consultancy work was new to me, and I had been warned about what I was
-throwing myself into, that I&amp;#39;d end up losing focus on quality and just
-hack solutions together quickly to meet client deadlines. I don&amp;#39;t doubt
-that those kinds of situations can creep up, but so far, I&amp;#39;ve found
-quite the opposite in the two projects that I&amp;#39;ve been involved in.
-People care deeply about delivering clean, maintainable,
-and well-tested code, and they&amp;#39;ve been especially adept at maintaining those
-principles throughout the life of a project.&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s also refreshing to be able to work on a diverse portfolio of
-projects. In the first few months since joining DockYard, I worked on a Rails and Ember app
-that incorporated some really cool geolocation functionality. I am now
-working on something that is unlike any other app I have ever developed.
-The project includes Arduino code, Ember.js, and Node WebKit
-(&lt;a href="http://nwjs.io/"&gt;NW.js&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;The best, of course, is DockYard&amp;#39;s mindset towards open source. I always
-look forward to our &amp;quot;DockYard days&amp;quot; on Fridays to hack on code, blog
-(this is my first one!), contribute back to the community in some ways,
-or just to level up our craftsmanship.&lt;/p&gt;
-
-&lt;p&gt;And as much as everyone works really hard, we also know when to have
-fun, be it through Risk game tournaments, friendly games of Carcassonne
-(or, as some would say, &amp;quot;Casserole&amp;quot;), or world exploring and building on
-Minecraft.&lt;/p&gt;
-
-&lt;p&gt;Finding a job that you&amp;#39;ll love can be hard. Finding a team that you&amp;#39;ll
-love working with can be twice as hard. And sometimes, it&amp;#39;s okay
-to leave behind what is comfortable and secure, in light of
-something promising, yet unknown. You may be pleasantly surprised.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/02/02/debugging-a-broccoli-tree.html"><strong>Debugging a Broccoli Tree</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2015/01/30/why-i-am-disappointed-in-react-native.html"><strong>Why I'm disappointed in React Native</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/01/30/empowering-through-design.html"><strong>Empowering through Design</strong><h6 class='footer-desc'>The UX benefits of Single Page Web Apps</h6></a>
-<a class="footer__post" href="/2015/01/28/estimation-buyers-guide.html"><strong>Estimation Buyers Guide</strong><h6 class='footer-desc'>Buyer beware of estimates without understanding how it was derived</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/01/30/empowering-through-design.html"><strong>Empowering through Design</strong><h6 class='footer-desc'>The UX benefits of Single Page Web Apps</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
