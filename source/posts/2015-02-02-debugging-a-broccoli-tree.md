@@ -39,7 +39,7 @@ The goal of the Brocfile.js listed above is:
 
 1. Grab all files in `app/` and its subdirectories
 2. "move" those files to `my-app-name/`
-3. transpile those files from ES2015.
+3. transpile those files from [ES2015](http://webreflection.blogspot.co.uk/2015/01/javascript-and-living-ecmascript.html).
 
 So far this seems pretty easy, but what if your resulting output didn't contain the files you expected?  How would you track that down?
 
