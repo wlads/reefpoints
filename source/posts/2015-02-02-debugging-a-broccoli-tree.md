@@ -85,7 +85,7 @@ Using `broccoli-stew`'s `debug` you can have a duplicate copy of the tree genera
 // Brocfile.js
 var Funnel = require('broccoli-funnel');
 var ES2015 = require('broccoli-es6modules');
-var log = require('broccoli-stew').log;
+var debug = require('broccoli-stew').debug;
 
 var app = new Funnel('app', {
   destDir: 'my-app-name'
