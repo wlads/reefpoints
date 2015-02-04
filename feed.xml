@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-70a495f9.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-e7e7283c.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -51,10 +51,205 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-02-02T00:00:00Z</updated>
+  <updated>2015-02-04T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Vim: Jump, Jump, Jump!</title>
+    <link rel="alternate" href="/2015/02/04/vim-jump.html"/>
+    <id>/2015/02/04/vim-jump.html</id>
+    <published>2015-02-04T00:00:00Z</published>
+    <updated>2015-02-04T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;a href="https://www.youtube.com/watch?v=010KyIQjkTk" target="_blank"&gt;Jump, Jump, Jump!&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;In the last Vim-related post, we
+&lt;a href="http://reefpoints.dockyard.com/2014/04/10/vim-on-your-mark.html"&gt;discussed &lt;strong&gt;mark&lt;/strong&gt; motion&lt;/a&gt;,
+and today, we&amp;#39;re going to cover another type of navigation: &lt;strong&gt;jump&lt;/strong&gt; motion.&lt;/p&gt;
+
+&lt;p&gt;The main benefit of jump motion is its speed; it allows us to quickly traverse through the current file
+open or previously visited files.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s briefly cover some of the most familiar ones.&lt;/p&gt;
+
+&lt;h2&gt;File Jumps&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;File jumps&lt;/em&gt; will navigate you to a location within the current file, regardless if that
+location is seen or not seen within the window.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="https://www.youtube.com/watch?v=Xz-UvQYAmbg" target="_blank"&gt;Ain&amp;#39;t no Mountain high enough, ain&amp;#39;t no valley low enough...&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;gg&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Will take you to the &lt;em&gt;top&lt;/em&gt; of the file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;G&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Will take you to the &lt;em&gt;bottom&lt;/em&gt; of the file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Sentences and Paragraphs&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;(&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Move a &lt;em&gt;sentence backwards&lt;/em&gt;, can take a prefix argument.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;5(&lt;/strong&gt; - Navigates you 5 sentences backwards.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;e Move a &lt;em&gt;sentence forward&lt;/em&gt;, can take a prefix argument.
+  * &lt;strong&gt;10)&lt;/strong&gt; - Navigates you 10 sentences forwards.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;{&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Move a &lt;em&gt;paragraph backward&lt;/em&gt;, can take a prefix argument.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;5{&lt;/strong&gt; - Navigates you 5 paragraphs backwards.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;}&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Move a &lt;em&gt;paragraph forward&lt;/em&gt;, can take a prefix argument.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;5}&lt;/strong&gt; - Navigates you 5 paragraphs forwards.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;a href="https://www.youtube.com/watch?v=EDNzQ3CXspU" target="_blank"&gt;Search and Destroy&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;/&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allows you to search &lt;em&gt;forwards&lt;/em&gt; for a desired pattern within the file.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;/fishsticks&lt;/strong&gt; - Searches for all occurences of &lt;code&gt;fishsticks&lt;/code&gt; ahead of your current cursor.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allows you to search &lt;em&gt;backwards&lt;/em&gt; for a desired pattern within the file.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;?catdog&lt;/strong&gt; - Searches for all occurences of &lt;code&gt;catdog&lt;/code&gt; behind your current cursor.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;n&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Repeats the last &lt;strong&gt;/&lt;/strong&gt; or &lt;strong&gt;?&lt;/strong&gt; search.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;N&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Repeats the last &lt;strong&gt;/&lt;/strong&gt; or &lt;strong&gt;?&lt;/strong&gt; search in the &lt;em&gt;opposite&lt;/em&gt; direction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Window Jumps&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Window&lt;/em&gt; jumps allow you to move within the current scope of the window or viewport.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="https://www.youtube.com/watch?v=JECF2EB3LXU" target="_blank"&gt;High, Middle, and Low&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;H&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jumps your cursor to the &lt;strong&gt;highest&lt;/strong&gt; line of the window.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;M&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jumps your cursor to the &lt;strong&gt;middle&lt;/strong&gt; line of the window.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;L&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jumps your cursor to the &lt;strong&gt;lowest&lt;/strong&gt; line of the window.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;System Wide Jumps&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;System&lt;/em&gt; jumps are special; they have the ability to take us to any previously visited file,
+regardless if those files are or are not within the same directory.&lt;/p&gt;
+
+&lt;p&gt;This is where jump motion really shines!&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="https://www.youtube.com/watch?v=KZaz7OqyTHQ" target="_blank"&gt;Jump Around&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Give these next commands a try:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CTRL-O&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jump to our previous position.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CTRL-I&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jump to our next postion.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By pressing these commands repeatedly, you&amp;#39;ll see that you are traversing through
+your recently visited files.&lt;/p&gt;
+
+&lt;h3&gt;Jump list&lt;/h3&gt;
+
+&lt;p&gt;Our recent jumps are stored on our &lt;em&gt;jump&lt;/em&gt; list. We can view all the jumps through Vim&amp;#39;s
+command-line mode. There are three ways to open up the jump list.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;:jumps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;:jump&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;:ju&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Opens up the jump list&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://i.imgur.com/mFc1cHz.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Above is an example of a jump list. There are four columns: &lt;em&gt;jump&lt;/em&gt;, &lt;em&gt;line&lt;/em&gt;, &lt;em&gt;col&lt;/em&gt; and &lt;em&gt;file/text&lt;/em&gt;.
+The numbers underneath the &lt;em&gt;jump&lt;/em&gt; column are used to prefix our jump command, &lt;strong&gt;CTRL-O&lt;/strong&gt; and &lt;strong&gt;CTRL-I&lt;/strong&gt;.
+We are also given the position of our cursor from the  &lt;em&gt;line&lt;/em&gt; and &lt;em&gt;col&lt;/em&gt;umn columns. Lastly, the
+&lt;em&gt;file/text&lt;/em&gt; column, gives us either the file path or, if the jump is located in our currently opened file,
+the line of text.&lt;/p&gt;
+
+&lt;p&gt;Using our example jump list, if we want to jump to the &lt;code&gt;4&lt;/code&gt;th jump, located within &lt;code&gt;~/dir2/file.md&lt;/code&gt;, we&amp;#39;d
+prefix our previous jump command with the number &lt;strong&gt;4&lt;/strong&gt;, i.e. &lt;strong&gt;4CTRL-O&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next if we want to get back to our previous position, the line
+&lt;code&gt;This is another sentence!&lt;/code&gt; we can cycle back to it with a couple of &lt;strong&gt;CTRL-I&lt;/strong&gt;s. Cool!&lt;/p&gt;
+
+&lt;p&gt;I find that &lt;em&gt;jump&lt;/em&gt; motion complements &lt;em&gt;mark&lt;/em&gt; motion really well. By setting multiple marks in the current file,
+and flying to different files with jumps, my workflow has greatly improved.&lt;/p&gt;
+
+&lt;p&gt;Hope you give &lt;em&gt;jump&lt;/em&gt; motion a try!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Debugging a Broccoli Tree</title>
     <link rel="alternate" href="/2015/02/02/debugging-a-broccoli-tree.html"/>
@@ -483,190 +678,11 @@ somewhat trivial to handle, you just have to be aware of the work needed to
 tie all your pieces together.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Is your homepage as good as your door sign?</title>
-    <link rel="alternate" href="/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html"/>
-    <id>/2015/01/20/is-your-homepage-as-good-as-your-door-sign.html</id>
-    <published>2015-01-20T00:00:00Z</published>
-    <updated>2015-01-20T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Today is a federal holiday, and a day off for us at DockYard. On days like these, when I do not travel, I often go to the local library.&lt;/p&gt;
-
-&lt;p&gt;Today gave me the perfect opportunity to see how easy it would be to find a specific bit of information (&lt;em&gt;is the library open today?&lt;/em&gt;) on a library website.&lt;/p&gt;
-
-&lt;p&gt;Like many government and community organizations, libraries are easy targets for ridicule when it comes to web design. Look at the outdated styles their site uses! How crowded it is! The HTML tables used for layout! The multi-colored announcements “designed” in Word! &lt;/p&gt;
-
-&lt;p&gt;What I am looking for today is something else: I want to judge the achievability of a specific task regardless of the presentation. Presentation (layout, hierarchy, and just plain good design) affects a user’s ability to achieve her goals, no doubt. I just want to start with the goals, and a specific measurement, rather than starting with the common pitfall of visual designers like myself: noticing the surface details that seem broken rather than the process behind them.&lt;/p&gt;
-
-&lt;p&gt;So, here’s my experiment:&lt;/p&gt;
-
-&lt;h2&gt;Find out if the library is open today.&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;With a few considerations.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;It may be &lt;strong&gt;self evident&lt;/strong&gt; that a library is closed on a government holiday. It was not to me. I assume that most casual users have a vague suspicion that it may be closed, and would seek confirmation via the website.&lt;/p&gt;
-
-&lt;p&gt;I narrowed my search to just the homepage for this exercise, expecting to find the equivalent of a physical “Sorry, closed today!” door sign. And while many libraries provided the same information on Twitter or Facebook, it would be prohibitive to compare all these resources for this quick study.&lt;/p&gt;
-
-&lt;p&gt;I saw most of these homepages for the first time today. A regular user of the local library may notice things differently than a new user, so for example the “CLOSED” text announcement that replaces a daily schedule of events, might stand out more for them.&lt;/p&gt;
-
-&lt;p&gt;I looked for three things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt; was the holiday at all on the homepage,  &lt;/li&gt;
-&lt;li&gt;was it clear, and &lt;/li&gt;
-&lt;li&gt;was it obvious?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I got about halfway down the alphabetized list of Minuteman Library Network locations, and consider this to be a useful and fair sample for my purpose.&lt;/p&gt;
-
-&lt;p&gt;Let’s roll:&lt;/p&gt;
-
-&lt;h3&gt;1. Acton&lt;/h3&gt;
-
-&lt;h2&gt;3/3!&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/ebDk2UJ.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The site is visually appealing and clear at the same time. I immediately got an answer to my question. Success!&lt;/p&gt;
-
-&lt;h3&gt;2. Arlington (Robbins Library)&lt;/h3&gt;
-
-&lt;h2&gt;0/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/CpqOqdR.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Hours are clearly listed, but the holiday is not. Based on this page, I would assume it is open today — in fact, the clear listing of hours reinforces my wrong assumption. To see the holiday announcement, I would need to know to visit the Calendar. A shame, because the site looks quite polished to me and was likely re-designed fairly recently (guessing 2013, from its footer). An investment in a bit of user testing and research would have likely fixed this.&lt;/p&gt;
-
-&lt;h3&gt;3. Ashland&lt;/h3&gt;
-
-&lt;h2&gt;Huh? 0.5/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/yQ2dOww.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;While there is no indication of library closure today, the Townhall is clearly  closed. As a local, I might know what that means for my library trip, so I gave 0.5 points for at least mentioning the holiday exists.&lt;/p&gt;
-
-&lt;h3&gt;4. Bedford&lt;/h3&gt;
-
-&lt;h2&gt;0/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/XhAfaNt.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;Today’s closure is not mentioned anywhere. Neither are the regular hours. I would look  either in About Us, or (eventually) see a link for Hours &amp;amp; Directions close to the top right.&lt;/p&gt;
-
-&lt;h3&gt;5. Belmont&lt;/h3&gt;
-
-&lt;h2&gt;3/3!&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/inJbhUs.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The site doesn’t look like much, but it accomplishes my goal today perfectly. The library is clearly closed.&lt;/p&gt;
-
-&lt;h3&gt;6. Brookline&lt;/h3&gt;
-
-&lt;h2&gt;3/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/jpBCY9k.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;This library goes beyond my expectations by clearly listing not only today’s closure, but the entire holiday weekend for all three of its locations. The “Closed” notice is clear and immediately jumps to my attention. While there is no “closed TODAY” notice, I found this more detailed listing works just as well.&lt;/p&gt;
-
-&lt;h3&gt;7. Cambridge&lt;/h3&gt;
-
-&lt;h2&gt;0/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/QVg8HQO.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;This library was a particular disappointment, because I have used it many times and the collection and its building are delightful. I am assuming it is one of the better funded libraries, given its location in direct proximity to Harvard. While the amount of content this page needs to show may be far greater than what a smaller local library deals with, this is no excuse for making things difficult to find. I get the feeling that the structure of the site is based on internal objectives, rather than user goals. &lt;/p&gt;
-
-&lt;p&gt;Here’s where today’s closure information is, in fact, located:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/W4eopoE.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;I would have to do this:
-- “find library hours” on the homepage
-- select “holidays” among eleven listings
-- see on the list that today, January 19th, is a holiday&lt;/p&gt;
-
-&lt;h3&gt;8. Concord&lt;/h3&gt;
-
-&lt;h2&gt;0/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/zH7HVUy.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;No indication of whether it is open today. The latest news seems to be the New Year’s.&lt;/p&gt;
-
-&lt;h3&gt;9. Dedham&lt;/h3&gt;
-
-&lt;h2&gt;3/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/8qHlEVH.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;It is immediately clear that the library is closed today.&lt;/p&gt;
-
-&lt;h3&gt;10. Dover&lt;/h3&gt;
-
-&lt;h2&gt;2/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/ZmLY9lq.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a clear indication that the library is closed today. I had to scan the page for a while and read a few things before I noticed it, so it was not obvious.&lt;/p&gt;
-
-&lt;h3&gt;11. Framingham&lt;/h3&gt;
-
-&lt;h2&gt;2.5/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/3j83pAP.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;It was almost obvious that “all libraries will be closed” today — even on this crowded page. I was distracted by the email sign-up notice, but the next thing I read was the closure notice. Not pretty, but close to functional.&lt;/p&gt;
-
-&lt;h3&gt;12. Franklin&lt;/h3&gt;
-
-&lt;h2&gt;0/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/9CnV6Uv.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The public library website seems to be just a layer of content on top of the Franklin local government site. Very confusing. No indication of closure.&lt;/p&gt;
-
-&lt;h3&gt;13. Holliston&lt;/h3&gt;
-
-&lt;h2&gt;2.5/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/UNEAehM.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;I found the closure information quickly, but it did not stand out enough (for my taste) from other news.&lt;/p&gt;
-
-&lt;h3&gt;14. Lexington&lt;/h3&gt;
-
-&lt;h2&gt;3.5/3&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://imgur.com/n6IeQHX.jpg" alt=""&gt;&lt;/p&gt;
-
-&lt;p&gt;The first indication of the library closure for MLK is in the featured image. It eventually changes to another feature, but there is a second indicator (Today’s hours: CLOSED) that makes the situation obvious. This fall-back “closed” notice got this site an extra .5 points on my scale.&lt;/p&gt;
-
-&lt;h2&gt;What did I miss?&lt;/h2&gt;
-
-&lt;p&gt;Of course, this is a very small test for a very specific user need. The sites that did well on my scale for “closing hours” may fail miserably at providing an answer to “what’s the street address?” or “can I renew my book online?”.&lt;/p&gt;
-
-&lt;p&gt;This test reiterated for me the importance of research and real-life user testing. Knowing what problems people might try to solve by going to a website, and where the site fails them, is necessary for most any meaningful improvement. &lt;/p&gt;
-
-&lt;h2&gt;How not to miss things:&lt;/h2&gt;
-
-&lt;p&gt;As a designer, I am often excited by a problem I see, and can jump to a solution I consider to be self-evident. (&lt;em&gt;The page is too crowded. Let’s change the typeface and layout!&lt;/em&gt;) But to make my solutions truly useful to other people, I must know what they need.&lt;/p&gt;
-
-&lt;p&gt;In this example, I am a user with a specific need. Designers do not often start working on a project with solid knowledge of user needs. To bridge this gap, we test the current product (if it exists), create personas and scenarios, and ask lots of questions.&lt;/p&gt;
-
-&lt;p&gt;Research could have prevented the “is the library closed?” problem. If there was one question I could ask people,  it would be “What was the most frustrating thing about this library?” Out of many responses, I would imagine at least one would mention showing up at the library to find it closed. Asking these types of general questions, not &lt;em&gt;“how satisfied are you with the library website? (on a scale from one to ten)”&lt;/em&gt;, will eventually lead us to meaningful design.&lt;/p&gt;
-
-&lt;p&gt;Or, at least, save us the frustration of showing up to a closed library.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/02/04/vim-jump.html"><strong>Vim: Jump, Jump, Jump!</strong><h6 class='footer-desc'>Kris Kross' favorite Vim feature</h6></a>
 <a class="footer__post" href="/2015/02/02/debugging-a-broccoli-tree.html"><strong>Debugging a Broccoli Tree</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/01/30/why-i-am-disappointed-in-react-native.html"><strong>Why I'm disappointed in React Native</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/01/30/empowering-through-design.html"><strong>Empowering through Design</strong><h6 class='footer-desc'>The UX benefits of Single Page Web Apps</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/01/30/why-i-am-disappointed-in-react-native.html"><strong>Why I'm disappointed in React Native</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
