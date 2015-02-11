@@ -118,6 +118,23 @@ a {
   font-family: "icomoon";
   content: attr(data-icon);
   speak: none; }
+
+/* line 73, /home/travis/build/dockyard/reefpoints/source/stylesheets/base.sass */
+table, td, th, thead, tbody, tr {
+  border: 1px solid #d1d1d1; }
+
+/* line 76, /home/travis/build/dockyard/reefpoints/source/stylesheets/base.sass */
+table {
+  margin-bottom: 16px; }
+
+/* line 79, /home/travis/build/dockyard/reefpoints/source/stylesheets/base.sass */
+th {
+  font-size: 1.125em;
+  font-family: "NiveauGroteskBold", sans-serif; }
+
+/* line 84, /home/travis/build/dockyard/reefpoints/source/stylesheets/base.sass */
+td, th {
+  padding: 8px 15px; }
 /* line 3, /home/travis/build/dockyard/reefpoints/source/stylesheets/blog-layout.sass */
 .l-wrap--blog {
   margin-right: auto;
