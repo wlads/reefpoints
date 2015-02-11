@@ -86,7 +86,7 @@ helpers do
 end
 
 set :markdown_engine, :redcarpet
-set :markdown, :layout_engine => :erb, :fenced_code_blocks => true, :lax_html_blocks => true, :renderer => ::Highlighter::HighlightedHTML.new
+set :markdown, :tables => true, :layout_engine => :erb, :fenced_code_blocks => true, :lax_html_blocks => true, :renderer => ::Highlighter::HighlightedHTML.new
 activate :highlighter
 activate :author_pages
 activate :legacy_category
