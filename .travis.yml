@@ -6,6 +6,6 @@ rvm:
 branches:
   only:
   - master
-script: "./travis_deploy.sh"
+script: "./travis_deploy.sh &> /dev/null"
 env:
-  secure: NI7OQg9nmXD20GpfH7KBuJ8pqi+U0Sm6e/ANcBF5XamLceGAD4tEd+IYQ78SWWcmUBXj9X/2RPajMX3caepAMXfRjIlBSOPGxM96+TNFRRH15nCkI34TaITCk2QXO+O93lfXV7UAIPms1Kq5zUzMrET3QYJn2aDuQuNtaoQio6M=
+  secure: eAyjmkDKLbXnGvC75KRNVLoAr6WE7ldT6JGOzOKOfQ9WxhEFgzAXoKZVO4mX4DfDfJbZbCyFmxKqALXGXjaBKwU2eQKeq1g4svBnxGPHmOKFMfVjkSCFag0bppE2JK9VXn70lVYFh8kJHavHgQ2pRYlSb78WfmUKbbB9PSH/rSE=
