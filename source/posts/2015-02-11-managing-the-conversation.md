@@ -36,11 +36,11 @@ There is a lot of prep work involved, before the conversations can even start. T
 
 ###2. Establish context
 
-Your interviewee should theoretically know who you are and what you’re talking about. After all, they agreed to the interview. However, it is always a good idea to confirm your assumptions. A brief introduction won’t hurt. For example, you could start with *“Hi ____, thank you for taking time to do this! My name is ____, and my company was hired by ____ to improve their product. How familiar are you with the product?”*
+Your interviewee should theoretically know who you are and what you’re talking about. After all, they agreed to the interview. However, it is always a good idea to confirm your assumptions. A brief introduction won’t hurt. For example, you could start with *“Hi \_\_\_\_, thank you for taking time to do this! My name is \_\_\_\_, and my company was hired by \_\_\_\_ to improve their product. How familiar are you with the product?”*
 
 ###3. Direct the conversation
 
-For a UX designer starting out, it may seem rude to redirect the conversation. Especially so if your interviewee is describing, with passion and detail, a subject they are an expert in. But don't be afraid to redirect the conversation. You need to get to the specific questions you want answered (but of course be nice about it!). For example, to get back on track, you might say *“Great - this extra information is very helpful, but I’d like to get back to the original reason you started using _____?”*  This acknowledges the value of their insight, then nudges them to answer your original question.
+For a UX designer starting out, it may seem rude to redirect the conversation. Especially so if your interviewee is describing, with passion and detail, a subject they are an expert in. But don't be afraid to redirect the conversation. You need to get to the specific questions you want answered (but of course be nice about it!). For example, to get back on track, you might say *“Great - this extra information is very helpful, but I’d like to get back to the original reason you started using \_\_\_\_?”*  This acknowledges the value of their insight, then nudges them to answer your original question.
 
 ###4. Go with the flow
 
