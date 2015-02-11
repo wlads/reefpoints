@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 git config --global user.email "socko@dockyard.com"
 git config --global user.name "sockothesock"
 
@@ -10,6 +12,8 @@ USER="sockothesock"
 # sending output to /dev/null to prevent GH_TOKEN leak on error
 git remote rm origin
 git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
+
+git status
 
 bundle exec rake publish
 
