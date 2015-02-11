@@ -9,8 +9,8 @@ USER="sockothesock"
 
 # sending output to /dev/null to prevent GH_TOKEN leak on error
 git remote rm origin
-git remote add origin https://${USER}:${GH_TOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
+git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
 
-rake publish
+bundle exec rake publish
 
 echo -e "Done\n"

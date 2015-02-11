@@ -6,5 +6,4 @@ branches:
   - master
 script: "./travis_deploy.sh"
 env:
-  GHTOKEN:
-    secure: ZpM/at6O8TPFwv8vBjd4jUIryG3co/BEgEKxh+Fd2TZ3SiMKyOhPrtwSNBxeDOVbqxcGvp2+vtMZdm/apNvHt6tYrRWmGGLSVe0EfHtACdj4V1A03ye9b/fuE+P+2TwDlQFeF+TEvHpPRPX+t4A8/2bySpfczjG5k3ebhEsEf4o=
+  secure: NI7OQg9nmXD20GpfH7KBuJ8pqi+U0Sm6e/ANcBF5XamLceGAD4tEd+IYQ78SWWcmUBXj9X/2RPajMX3caepAMXfRjIlBSOPGxM96+TNFRRH15nCkI34TaITCk2QXO+O93lfXV7UAIPms1Kq5zUzMrET3QYJn2aDuQuNtaoQio6M=
