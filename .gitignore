@@ -8,3 +8,4 @@ bin/*
 .ruby-version
 build/*
 build
+vendor/

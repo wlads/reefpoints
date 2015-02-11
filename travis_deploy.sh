@@ -13,8 +13,6 @@ USER="sockothesock"
 git remote rm origin
 git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
 
-git status
-
 bundle exec rake publish
 
 echo -e "Done\n"
