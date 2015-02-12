@@ -24,11 +24,26 @@ module Middleman::Blog::BlogArticle
     article_tags = data['tags']
 
     if data['tags'].is_a? String
-        article_tags = article_tags.split(',').map(&:strip)
+      article_tags = article_tags.split(',').map(&:strip).map { |tag| normalize_tag(tag) }
     else
       article_tags = Array.wrap(article_tags)
     end
     Array.wrap(data['legacy_category']) + article_tags
+  end
+
+  def normalize_tag(tag)
+    case tag.downcase
+    when 'ember.js', 'ember', 'emberjs'
+      'ember'
+    when 'ember-cli', 'ember cli'
+      'ember-cli'
+    when 'jobs', 'job'
+      'jobs'
+    when 'observations', 'observation'
+      'observations'
+    else
+      tag
+    end
   end
 
   def illustration
