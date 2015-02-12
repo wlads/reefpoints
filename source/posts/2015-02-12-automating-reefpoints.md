@@ -15,8 +15,7 @@ tags: automation
 We have a healthy mix of developers and designers, plus a project manager and
 office manager. This results in a group of people with varying degress of command line expertise.
 To make it easier to write blog posts, [I added instructions to create a blog
-post using only GitHub to add a new blog
-post](https://github.com/dockyard/reefpoints#the-github-web-interface-way).
+post using only GitHub](https://github.com/dockyard/reefpoints#the-github-web-interface-way).
 
 This made it super easy for anyone to create a new blog post, have people
 review it, but one piece was missing: making it easy for people to publish
@@ -72,7 +71,7 @@ notifications:
 
 I also added a Slack notification so that people can see when new blog posts
 get published. The last thing I did was go into the Travis-CI setting and
-turned of the option to build Pull Requests, as that would publish articles
+turned off the option to build Pull Requests, as that would publish articles
 before they were merged.  I accidentally leaked the OAuth Token in the Travis
 logs (that's why the `script` step is redirecting output to `/dev/null`).
 
