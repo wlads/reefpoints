@@ -21,15 +21,23 @@ I feel this article will be well-suited for Rubyists who find themselves increas
 Rather than explaining how a line of Ruby or JavaScript code gets processed and run, I’d like to work our way backwards, beginning with machine code. When you write a line of Ruby, it doesn’t simply go to the processor when you run the script. It goes through a number of translations before being turned into machine code that the processor can execute. We’ll look at how Ruby gets processed and then touch on how JavaScript differs.
 
 # Ruby
+![Ruby execution diagram](http://i.imgur.com/Sa1qURz.png)
+
 ## Machine code
 Machine code is binary that is executed directly by your computer’s CPU. The bit patterns correspond directly to the architecture design of the processor.
 
-Before a statement in a scripted language becomes machine code, it likely gets compiled by a compiler. [LLVM](http://www.aosabook.org/en/llvm.html) compiles and optimizes your code on most Unix-based machines.
+Before a statement in a scripted language becomes machine code, it gets compiled into machine code by a compiler.
 
 ## Virtual Machine
-LLVM optimizes and translates byte-code into a low-level language resembling assembly (another low-level language that has nearly a one-to-one relationship with machine code). 
+[LLVM](http://www.aosabook.org/en/llvm.html) compiles code on most
+Unix-based machines. It generates the machine code for the processor
+during compilation, which is just the process of translating one language to another.
 
-But before your original Ruby statement gets here, it is turned into C by the Yet Another Ruby Virtual Machine ([YARV](http://en.wikipedia.org/wiki/YARV)) interpreter. But YARV doesn’t receive the Ruby statement as you typed it either; YARV goes through the code’s [Abstract Syntax Tree (AST)](http://en.wikipedia.org/wiki/Abstract_syntax_tree). The Interpreter evaluates nodes on the Abstract Syntax Tree that are created by the parser.
+The virtual machine executes your code. It's written in C and is known as the [YARV](http://en.wikipedia.org/wiki/YARV) interpreter. It is at the heart of a scripting languages "implementation," as it executes the source code via whatever language the scripting language is built upon ([C](http://en.wikipedia.org/wiki/C_(programming_language)) in the case of [Ruby MRI](http://en.wikipedia.org/wiki/Ruby_MRI)). 
+
+YARV doesn’t receive the Ruby statement as you typed it. It goes through an abstraction of your code known as an [Abstract Syntax Tree (AST)](http://en.wikipedia.org/wiki/Abstract_syntax_tree), which get compiled to YARV byte code and run.
+
+This "tree" is made up of nodes assembled by something called the parser. 
 
 ## Parser
 You can think of a node on the Abstract Syntax Tree as an atomic representation of a Ruby grammar rule. The reason that Ruby knows to print “Hello, World” when it sees `print 'Hello, World'` is because the parser knows that `print` is a method and the string `'Hello, World'` is its argument. These syntax rules are located inside of a language’s grammar rule file.
@@ -45,7 +53,7 @@ And that’s the 10,000 foot lifecycle of a Ruby statement, as it goes from Toke
 ## Client-side
 Most browsers implement [Just-In-Time (JIT) compiling](http://en.wikipedia.org/wiki/Just-in-time_compilation). This means that the JavaScript code you write is compiled right before it gets executed by the virtual machine; though, in JavaScript, the interpreter is not referred to as a virtual machine, but as a JavaScript engine.
 
-V8 is the engine that interprets and executes JavaScript in the Chrome browser, Nitro is the engine for Safari, SpiderMonkey for Firefox, and Chakra on Internet Explorer. The efficiency with which a browser interprets JavaScript accounts for much of its performance these days, especially as JavaScript-heavy, Single Page Applications become increasingly important.
+V8 is the engine that interprets and executes JavaScript in the Chrome browser, Nitro is the engine for Safari, SpiderMonkey for Firefox, and Chakra on Internet Explorer. The efficiency with which a browser interprets JavaScript accounts for a substantial portion of its performance these days, especially as JavaScript-heavy, Single Page Applications become increasingly important.
 
 ## Server-side
 Node.js is the predominant framework for running JavaScript server-side. It is built on top of Google’s V8 engine, which is a little confusing if you’ve just read that V8 interprets JavaScript in the browser. In general terms, the JavaScript interpreter is extracted from Chrome, compiled on the server, and utilized by Node.js, allowing you to execute JavaScript outside of the browser.
