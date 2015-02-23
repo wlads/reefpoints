@@ -43,7 +43,7 @@ And that’s the 10,000 foot lifecycle of a Ruby statement, as it goes from Toke
 
 # JavaScript
 ## Client-side
-Most browsers implement Just In Time (JIT) compiling. This means that the JavaScript code you write is compiled right before it gets executed by the virtual machine; though, in JavaScript, the interpreter is not referred to as a virtual machine, but as a JavaScript engine.
+Most browsers implement [Just-In-Time (JIT) compiling](http://en.wikipedia.org/wiki/Just-in-time_compilation). This means that the JavaScript code you write is compiled right before it gets executed by the virtual machine; though, in JavaScript, the interpreter is not referred to as a virtual machine, but as a JavaScript engine.
 
 V8 is the engine that interprets and executes JavaScript in the Chrome browser, Nitro is the engine for Safari, SpiderMonkey for Firefox, and Chakra on Internet Explorer. The efficiency with which a browser interprets JavaScript accounts for much of its performance these days, especially as JavaScript-heavy, Single Page Applications become increasingly important.
 
