@@ -1,0 +1,29 @@
+@import load
+
+.header
+  width: 100%
+  background-color: $navy
+  z-index: 5
+  @media (max-width: 549px)
+    border-bottom: 1px solid $extra-light-navy
+  @media (min-width: 550px)
+    position: fixed
+    top: 0
+
+.header__logo
+  display: block
+  font-size: 15px
+  font-family: $whitney
+  font-weight: $bold
+  text-align: center
+  text-transform: uppercase
+  color: $white
+  letter-spacing: 1px
+  @include transition-duration(.25s)
+  @include transition-property(color)
+  &:hover
+    color: $gold
+  @media (max-width: 549px)
+    line-height: 42px
+  @media (min-width: 550px)
+    line-height: 72px

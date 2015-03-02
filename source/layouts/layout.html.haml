@@ -81,8 +81,9 @@
 
   %body{class: page_classes}
 
-    %header
-      = partial 'header'
+    %header.header
+      = link_to 'DockYard', 'http://dockyard.com', class: 'header__logo'
+
     .push--header
 
     .l-wrap--blog
@@ -98,8 +99,6 @@
     = yield
 
     .push--footer
-    %footer
-      = partial 'footer'
 
     :javascript
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
