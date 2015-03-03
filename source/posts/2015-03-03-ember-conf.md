@@ -15,7 +15,7 @@ tags: ember
 
 * To kick off the conference Tomster joined Tom Dale and Yehuda Katz on stage!
 * [@mixonic](https://github.com/mixonic) [@ef4](https://github.com/ef4) [@mmun](https://github.com/mmunm) were welcomed as new members to the Ember Core Team
-* Big thanks to Robert Jackson @rwjblue!!!! http://getrwjblueabeer.com
+* Big thanks to Robert Jackson [@rwjblue](https://github.com/rwjblue)!!!! [Get rwjblue a beer!](http://getrwjblueabeer.com)
 
 ## Ember 2014 in Review
 
@@ -33,13 +33,13 @@ instead of
 <a {{bindAttr href="url"}}> 
 ```
 
-* Block parameters, Faster and lower memory, Validation for Templates
+* Block parameters, faster and lower memory, validation for templates
 * Killed metamorphs!
-* Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple `<iframe>`s, redesigned UI, to name a few
+* Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple `<iframe>`s, and redesigned UI, to name a few.
 
 ### Ember CLI
 
-* Single install command for Addons, Test support, massive performance improvements, and API stubbing, server proxy, to name a few.
+* Single install command for Addons, test support, massive performance improvements, and API stubbing, and server proxy (the list goes on!).
 
 ### Testing Ecosystem
 
@@ -47,12 +47,12 @@ instead of
 
 ### Ember Data
 
-* Relationship Syncing, Async Relationships - built with async loading in mind
+* Relationship syncing, async relationships - built with async loading in mind.
 * Adapter Ecosystem
 
 ## That was last year, what's next?
 
-* Versioned Guides -- live today! http://guides.emberjs.com
+* [Versioned Guides](http://guides.emberjs.com) -- live today!
 * Next Version of Ember CLI (as of last night)
 * Engines
 * List View
@@ -90,7 +90,7 @@ Solution: Embrace super
 
 * Explicit defaults in super
 * Don't set properties until super
-* When to call _super(): When overwriting a framework method before touching `this`
+* When to call `_super()`: When overwriting a framework method before touching `this`
 
 ## Mis-alignment #3
 
