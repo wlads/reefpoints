@@ -70,18 +70,18 @@
 
 &lt;ul&gt;
 &lt;li&gt;To kick off the conference Tomster joined Tom Dale and Yehuda Katz on stage!&lt;/li&gt;
-&lt;li&gt;@mixonic @ef4 @mmun were welcomed as new members to the Ember Core Team&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/mixonic"&gt;@mixonic&lt;/a&gt; &lt;a href="https://github.com/ef4"&gt;@ef4&lt;/a&gt; &lt;a href="https://github.com/mmunm"&gt;@mmun&lt;/a&gt; were welcomed as new members to the Ember Core Team&lt;/li&gt;
 &lt;li&gt;Big thanks to Robert Jackson @rwjblue!!!! http://getrwjblueabeer.com&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Ember 2014 in Review&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Rapid Release worked great! 6 week release cycle to get new features into everyones hands.&lt;/li&gt;
+&lt;li&gt;Rapid Release worked great! 6 week release cycle to get new features into everyone&amp;#39;s hands.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;HTMLBars&lt;/h3&gt;
-&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 &lt;/pre&gt;&lt;/td&gt;
   &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a href={{url}}&amp;gt;
@@ -89,29 +89,29 @@
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;instead of&lt;/p&gt;
-&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a {{bindAttr href=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;url&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}}&amp;gt; 
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a {{bindAttr href=&amp;quot;url&amp;quot;}}&amp;gt; 
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Block parameters, Faster and lower memory, Validation for Templates&lt;/li&gt;
 &lt;li&gt;Killed metamorphs!&lt;/li&gt;
-&lt;li&gt;Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, redesigned UI, to name a few&lt;/li&gt;
+&lt;li&gt;Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, redesigned UI, to name a few&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Ember CLI&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Single install command for Addons, Test support, massivem performnace improvements, and API stubbing, server proxy, to name a few.&lt;/li&gt;
+&lt;li&gt;Single install command for Addons, Test support, massive performance improvements, and API stubbing, server proxy, to name a few.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Testing Ecosystem&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;handles asynchroney &lt;/li&gt;
+&lt;li&gt;handles asynchrony &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Ember Data&lt;/h3&gt;
@@ -134,8 +134,42 @@
 &lt;li&gt;Ember Data: JSON API support out of the box&lt;/li&gt;
 &lt;li&gt;Pagination and Filtering&lt;/li&gt;
 &lt;li&gt;Shipping Ember Data 1.0&lt;/li&gt;
-&lt;li&gt;6/12 release date for Ember 2.0, Ember Instpector, Ember CLI, LiquidFire, etc.&lt;/li&gt;
+&lt;li&gt;6/12 release date for Ember 2.0, Ember Inspector, Ember CLI, LiquidFire, etc.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Ember.js Performance by Stefan Penner&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/stefanpenner"&gt;@stefanpenner&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Important choices to make, how to make the right choices?&lt;/li&gt;
+&lt;li&gt;Time vs. Space&lt;/li&gt;
+&lt;li&gt;Things that are costly in space: closures, objects, non-optimized code, compiled code, excess shape allocations&lt;/li&gt;
+&lt;li&gt;In Ember.js, need to do less work, align with primitives&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Mis-alignment #1&lt;/h2&gt;
+
+&lt;p&gt;Problem: Ember does too much work.
+Solution: do less
+* Actions up, bindings down, no two-way bindings, explicit data flow
+* RIP singleton controllers, explicit lifecycle&lt;/p&gt;
+
+&lt;h2&gt;Mis-alignment #2&lt;/h2&gt;
+
+&lt;p&gt;Problem: &lt;code&gt;init&lt;/code&gt; and &lt;code&gt;super&lt;/code&gt; are hard to learn and mis-aligned with ES2015
+Solution: Embrace super
+* Explicit defaults in super
+* Don&amp;#39;t set properties until super
+* When to call _super(): When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Mis-alignment #3&lt;/h2&gt;
+
+&lt;p&gt;Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp;amp; shapes
+Solution: Limit reopen to before first instantiation
+* Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &amp;quot;live&amp;quot; inheriting. If can limit reopen, can make all metas one shape.
+* meta.listeners is crazier
+* Solution: work with V8 to make things better&lt;/p&gt;
 </content>
   </entry>
   <entry>

@@ -50,18 +50,18 @@
 
 <ul>
 <li>To kick off the conference Tomster joined Tom Dale and Yehuda Katz on stage!</li>
-<li>@mixonic @ef4 @mmun were welcomed as new members to the Ember Core Team</li>
+<li><a href="https://github.com/mixonic">@mixonic</a> <a href="https://github.com/ef4">@ef4</a> <a href="https://github.com/mmunm">@mmun</a> were welcomed as new members to the Ember Core Team</li>
 <li>Big thanks to Robert Jackson @rwjblue!!!! http://getrwjblueabeer.com</li>
 </ul>
 
 <h2>Ember 2014 in Review</h2>
 
 <ul>
-<li>Rapid Release worked great! 6 week release cycle to get new features into everyones hands.</li>
+<li>Rapid Release worked great! 6 week release cycle to get new features into everyone&#39;s hands.</li>
 </ul>
 
 <h3>HTMLBars</h3>
-<div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+<div class="highlight hbs "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 </pre></td>
   <td class="code"><pre>&lt;a href={{url}}&gt;
@@ -69,29 +69,29 @@
 </tr></table>
 </div></div>
 <p>instead of</p>
-<div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+<div class="highlight hbs "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 </pre></td>
-  <td class="code"><pre>&lt;a {{bindAttr href=<span class="string"><span class="delimiter">&quot;</span><span class="content">url</span><span class="delimiter">&quot;</span></span>}}&gt; 
+  <td class="code"><pre>&lt;a {{bindAttr href=&quot;url&quot;}}&gt; 
 </pre></td>
 </tr></table>
 </div></div>
 <ul>
 <li>Block parameters, Faster and lower memory, Validation for Templates</li>
 <li>Killed metamorphs!</li>
-<li>Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple <code>&lt;iframe&gt;</code>s, redesigned UI, to name a few</li>
+<li>Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple <code>&lt;iframe&gt;</code>s, redesigned UI, to name a few</li>
 </ul>
 
 <h3>Ember CLI</h3>
 
 <ul>
-<li>Single install command for Addons, Test support, massivem performnace improvements, and API stubbing, server proxy, to name a few.</li>
+<li>Single install command for Addons, Test support, massive performance improvements, and API stubbing, server proxy, to name a few.</li>
 </ul>
 
 <h3>Testing Ecosystem</h3>
 
 <ul>
-<li>handles asynchroney </li>
+<li>handles asynchrony </li>
 </ul>
 
 <h3>Ember Data</h3>
@@ -114,8 +114,42 @@
 <li>Ember Data: JSON API support out of the box</li>
 <li>Pagination and Filtering</li>
 <li>Shipping Ember Data 1.0</li>
-<li>6/12 release date for Ember 2.0, Ember Instpector, Ember CLI, LiquidFire, etc.</li>
+<li>6/12 release date for Ember 2.0, Ember Inspector, Ember CLI, LiquidFire, etc.</li>
 </ul>
+
+<h1>Ember.js Performance by Stefan Penner</h1>
+
+<p><a href="https://github.com/stefanpenner">@stefanpenner</a></p>
+
+<ul>
+<li>Important choices to make, how to make the right choices?</li>
+<li>Time vs. Space</li>
+<li>Things that are costly in space: closures, objects, non-optimized code, compiled code, excess shape allocations</li>
+<li>In Ember.js, need to do less work, align with primitives</li>
+</ul>
+
+<h2>Mis-alignment #1</h2>
+
+<p>Problem: Ember does too much work.
+Solution: do less
+* Actions up, bindings down, no two-way bindings, explicit data flow
+* RIP singleton controllers, explicit lifecycle</p>
+
+<h2>Mis-alignment #2</h2>
+
+<p>Problem: <code>init</code> and <code>super</code> are hard to learn and mis-aligned with ES2015
+Solution: Embrace super
+* Explicit defaults in super
+* Don&#39;t set properties until super
+* When to call _super(): When overwriting a framework method before touching <code>this</code></p>
+
+<h2>Mis-alignment #3</h2>
+
+<p>Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp; shapes
+Solution: Limit reopen to before first instantiation
+* Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &quot;live&quot; inheriting. If can limit reopen, can make all metas one shape.
+* meta.listeners is crazier
+* Solution: work with V8 to make things better</p>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
