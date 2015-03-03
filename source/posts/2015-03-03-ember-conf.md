@@ -26,13 +26,16 @@ tags: ember
 ```js 
 <a href={{url}}>
 ```
-instead of 
+
+instead of
+
 ```js
 <a {{bindAttr href="url"}}> 
 ```
+
 * Block parameters, Faster and lower memory, Validation for Templates
 * Killed metamorphs!
-* Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple <iframe>s, redesigned UI, to name a few
+* Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple `<iframe>`s, redesigned UI, to name a few
 
 ### Ember CLI
 
