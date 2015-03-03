@@ -8,7 +8,7 @@ twitter: "parinMarin"
 github: maabernethy
 summary: "Live blog of EmberConf 2015"
 published: true
-tags: ember, separating each, with commas
+tags: ember
 ---
 
 # Opening Keynote: Tom Dale and Yehuda Katz
