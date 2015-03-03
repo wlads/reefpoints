@@ -76,14 +76,18 @@ instead of
 ## Mis-alignment #1
 
 Problem: Ember does too much work.
+
 Solution: do less
+
 * Actions up, bindings down, no two-way bindings, explicit data flow
 * RIP singleton controllers, explicit lifecycle
 
 ## Mis-alignment #2
 
 Problem: `init` and `super` are hard to learn and mis-aligned with ES2015
+
 Solution: Embrace super
+
 * Explicit defaults in super
 * Don't set properties until super
 * When to call _super(): When overwriting a framework method before touching `this`
@@ -91,7 +95,9 @@ Solution: Embrace super
 ## Mis-alignment #3
 
 Problem: Ember.Object.reopen, buggy, complex internals, massive allocations & shapes
+
 Solution: Limit reopen to before first instantiation
+
 * Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is "live" inheriting. If can limit reopen, can make all metas one shape.
 * meta.listeners is crazier
 * Solution: work with V8 to make things better
