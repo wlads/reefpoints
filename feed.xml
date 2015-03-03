@@ -249,6 +249,61 @@
 &lt;ul&gt;
 &lt;li&gt;A free design pattern library for Ember apps. &lt;a href="http://toolsofthetrade.dockyard.com"&gt;Sign up!!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Hijaking Hacker News with Ember.js by Godfrey Chan&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/chancancode"&gt;@chancancode&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Being a canadian is awesome&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/chancancode/hn-reader"&gt;Hijacking Hacker News App&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Browser extension that transforms old site design to new, more usable app&lt;/li&gt;
+&lt;li&gt;Runs in hacker news domain&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Getting the Data&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$.get(&amp;quot;/news&amp;#39;).then()&lt;/code&gt;: request html page, extract data, then manipulate&lt;/li&gt;
+&lt;li&gt;Hacker News HTML Scrapper: need adapter to help talk to Ember Data store; customize adapter and serializer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixing the URLs&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hacker news urls are not ideal for building an Ember app.&lt;/li&gt;
+&lt;li&gt;Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+
+&lt;ul&gt;
+&lt;li&gt;trick Ember into seeing URLs that are different from what is in the address bar&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+
+&lt;ul&gt;
+&lt;li&gt;Can use same mechanism to make a custom Ember.Location: &lt;code&gt;App.HackerNewsLocation = Ember.Location.extend()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Preferences&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Changing preferences in one place and can see changes reflected in other
+
+&lt;ul&gt;
+&lt;li&gt;Use observer pattern&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;The Possibilities&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What if your ideas do not line up with the framework&amp;#39;s choices?&lt;/li&gt;
+&lt;li&gt;If the frameworks is doing it&amp;#39;s job, than the possibilities should be endless!&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>

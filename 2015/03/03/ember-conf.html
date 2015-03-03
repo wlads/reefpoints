@@ -229,6 +229,61 @@
 <ul>
 <li>A free design pattern library for Ember apps. <a href="http://toolsofthetrade.dockyard.com">Sign up!!</a></li>
 </ul>
+
+<h1>Hijaking Hacker News with Ember.js by Godfrey Chan</h1>
+
+<p><a href="https://github.com/chancancode">@chancancode</a></p>
+
+<ul>
+<li>Being a canadian is awesome</li>
+</ul>
+
+<h2><a href="https://github.com/chancancode/hn-reader">Hijacking Hacker News App</a></h2>
+
+<ul>
+<li>Browser extension that transforms old site design to new, more usable app</li>
+<li>Runs in hacker news domain</li>
+</ul>
+
+<h3>Getting the Data</h3>
+
+<ul>
+<li><code>$.get(&quot;/news&#39;).then()</code>: request html page, extract data, then manipulate</li>
+<li>Hacker News HTML Scrapper: need adapter to help talk to Ember Data store; customize adapter and serializer.</li>
+</ul>
+
+<h3>Fixing the URLs</h3>
+
+<ul>
+<li>Hacker news urls are not ideal for building an Ember app.</li>
+<li>Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+
+<ul>
+<li>trick Ember into seeing URLs that are different from what is in the address bar</li>
+</ul></li>
+<li>Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+
+<ul>
+<li>Can use same mechanism to make a custom Ember.Location: <code>App.HackerNewsLocation = Ember.Location.extend()</code></li>
+</ul></li>
+</ul>
+
+<h3>Preferences</h3>
+
+<ul>
+<li>Changing preferences in one place and can see changes reflected in other
+
+<ul>
+<li>Use observer pattern</li>
+</ul></li>
+</ul>
+
+<h3>The Possibilities</h3>
+
+<ul>
+<li>What if your ideas do not line up with the framework&#39;s choices?</li>
+<li>If the frameworks is doing it&#39;s job, than the possibilities should be endless!</li>
+</ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
