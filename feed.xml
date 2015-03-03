@@ -150,26 +150,38 @@
 
 &lt;h2&gt;Mis-alignment #1&lt;/h2&gt;
 
-&lt;p&gt;Problem: Ember does too much work.
-Solution: do less
-* Actions up, bindings down, no two-way bindings, explicit data flow
-* RIP singleton controllers, explicit lifecycle&lt;/p&gt;
+&lt;p&gt;Problem: Ember does too much work.&lt;/p&gt;
+
+&lt;p&gt;Solution: do less&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Actions up, bindings down, no two-way bindings, explicit data flow&lt;/li&gt;
+&lt;li&gt;RIP singleton controllers, explicit lifecycle&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2&gt;Mis-alignment #2&lt;/h2&gt;
 
-&lt;p&gt;Problem: &lt;code&gt;init&lt;/code&gt; and &lt;code&gt;super&lt;/code&gt; are hard to learn and mis-aligned with ES2015
-Solution: Embrace super
-* Explicit defaults in super
-* Don&amp;#39;t set properties until super
-* When to call _super(): When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Problem: &lt;code&gt;init&lt;/code&gt; and &lt;code&gt;super&lt;/code&gt; are hard to learn and mis-aligned with ES2015&lt;/p&gt;
+
+&lt;p&gt;Solution: Embrace super&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explicit defaults in super&lt;/li&gt;
+&lt;li&gt;Don&amp;#39;t set properties until super&lt;/li&gt;
+&lt;li&gt;When to call _super(): When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2&gt;Mis-alignment #3&lt;/h2&gt;
 
-&lt;p&gt;Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp;amp; shapes
-Solution: Limit reopen to before first instantiation
-* Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &amp;quot;live&amp;quot; inheriting. If can limit reopen, can make all metas one shape.
-* meta.listeners is crazier
-* Solution: work with V8 to make things better&lt;/p&gt;
+&lt;p&gt;Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp;amp; shapes&lt;/p&gt;
+
+&lt;p&gt;Solution: Limit reopen to before first instantiation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &amp;quot;live&amp;quot; inheriting. If can limit reopen, can make all metas one shape.&lt;/li&gt;
+&lt;li&gt;meta.listeners is crazier&lt;/li&gt;
+&lt;li&gt;Solution: work with V8 to make things better&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>

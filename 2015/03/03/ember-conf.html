@@ -130,26 +130,38 @@
 
 <h2>Mis-alignment #1</h2>
 
-<p>Problem: Ember does too much work.
-Solution: do less
-* Actions up, bindings down, no two-way bindings, explicit data flow
-* RIP singleton controllers, explicit lifecycle</p>
+<p>Problem: Ember does too much work.</p>
+
+<p>Solution: do less</p>
+
+<ul>
+<li>Actions up, bindings down, no two-way bindings, explicit data flow</li>
+<li>RIP singleton controllers, explicit lifecycle</li>
+</ul>
 
 <h2>Mis-alignment #2</h2>
 
-<p>Problem: <code>init</code> and <code>super</code> are hard to learn and mis-aligned with ES2015
-Solution: Embrace super
-* Explicit defaults in super
-* Don&#39;t set properties until super
-* When to call _super(): When overwriting a framework method before touching <code>this</code></p>
+<p>Problem: <code>init</code> and <code>super</code> are hard to learn and mis-aligned with ES2015</p>
+
+<p>Solution: Embrace super</p>
+
+<ul>
+<li>Explicit defaults in super</li>
+<li>Don&#39;t set properties until super</li>
+<li>When to call _super(): When overwriting a framework method before touching <code>this</code></li>
+</ul>
 
 <h2>Mis-alignment #3</h2>
 
-<p>Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp; shapes
-Solution: Limit reopen to before first instantiation
-* Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &quot;live&quot; inheriting. If can limit reopen, can make all metas one shape.
-* meta.listeners is crazier
-* Solution: work with V8 to make things better</p>
+<p>Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp; shapes</p>
+
+<p>Solution: Limit reopen to before first instantiation</p>
+
+<ul>
+<li>Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &quot;live&quot; inheriting. If can limit reopen, can make all metas one shape.</li>
+<li>meta.listeners is crazier</li>
+<li>Solution: work with V8 to make things better</li>
+</ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
