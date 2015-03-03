@@ -101,3 +101,48 @@ Solution: Limit reopen to before first instantiation
 * Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is "live" inheriting. If can limit reopen, can make all metas one shape.
 * meta.listeners is crazier
 * Solution: work with V8 to make things better
+
+
+# Designing for Ember Apps by Steve Trevathan
+[@strevat](https://twitter.com/strevat)
+
+* Mental models: Understand where the user is coming from and what kinds of interactions they deal with
+    * "What I think the thing is"
+    * Influenced by experiences from the past
+    * Not always solid: can be updated and changed. (improvements)
+* 2 types of mental models
+    * Macro: what I think it is from a distance.
+    * Micro: how I think each individual interaction works; the specific feature.
+* Build a framework of understanding
+    * Some apps are just too complicated
+    * Use explicitly if they apply
+    * Break mental models if it improves the experience
+
+
+## Design Patterns
+
+### #1 Gradual Engagement
+
+* Core value given for free. Eventually you may be asked to sign up.
+
+### #2 Skeleton UI 
+
+* ex. Google maps: grid becomes fully rendered map.
+
+### #3 Carry Context
+
+* ex. rdio: music played on laptop is reflected on iPad (or other devices). 
+
+### #4 Reuse Core Interactions
+
+* ex. Browsing Pinterest: provides click and follow tangent.
+* Micro becomes Macro; core interactions become a symbol of your app.
+* "When I go home and think of your app, I think of the experience, the micro features more than the macro ones."
+
+### #5 Offline Mode
+
+* ex. Google Docs: “trying connect” message and can’t interact with document. Incredibly Frustrating.
+
+## Tools of the Trade
+
+ * A free design pattern library for Ember apps. [Sign up!!](toolsofthetrade.dockyard.com)
