@@ -71,7 +71,7 @@
 &lt;ul&gt;
 &lt;li&gt;To kick off the conference Tomster joined Tom Dale and Yehuda Katz on stage!&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/mixonic"&gt;@mixonic&lt;/a&gt; &lt;a href="https://github.com/ef4"&gt;@ef4&lt;/a&gt; &lt;a href="https://github.com/mmunm"&gt;@mmun&lt;/a&gt; were welcomed as new members to the Ember Core Team&lt;/li&gt;
-&lt;li&gt;Big thanks to Robert Jackson @rwjblue!!!! http://getrwjblueabeer.com&lt;/li&gt;
+&lt;li&gt;Big thanks to Robert Jackson &lt;a href="https://github.com/rwjblue"&gt;@rwjblue&lt;/a&gt;!!!! &lt;a href="http://getrwjblueabeer.com"&gt;Get rwjblue a beer!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Ember 2014 in Review&lt;/h2&gt;
@@ -97,15 +97,15 @@
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Block parameters, Faster and lower memory, Validation for Templates&lt;/li&gt;
+&lt;li&gt;Block parameters, faster and lower memory, validation for templates&lt;/li&gt;
 &lt;li&gt;Killed metamorphs!&lt;/li&gt;
-&lt;li&gt;Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, redesigned UI, to name a few&lt;/li&gt;
+&lt;li&gt;Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, and redesigned UI, to name a few.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Ember CLI&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Single install command for Addons, Test support, massive performance improvements, and API stubbing, server proxy, to name a few.&lt;/li&gt;
+&lt;li&gt;Single install command for Addons, test support, massive performance improvements, and API stubbing, and server proxy (the list goes on!).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Testing Ecosystem&lt;/h3&gt;
@@ -117,14 +117,14 @@
 &lt;h3&gt;Ember Data&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Relationship Syncing, Async Relationships - built with async loading in mind&lt;/li&gt;
+&lt;li&gt;Relationship syncing, async relationships - built with async loading in mind.&lt;/li&gt;
 &lt;li&gt;Adapter Ecosystem&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;That was last year, what&amp;#39;s next?&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Versioned Guides -- live today! http://guides.emberjs.com&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://guides.emberjs.com"&gt;Versioned Guides&lt;/a&gt; -- live today!&lt;/li&gt;
 &lt;li&gt;Next Version of Ember CLI (as of last night)&lt;/li&gt;
 &lt;li&gt;Engines&lt;/li&gt;
 &lt;li&gt;List View&lt;/li&gt;
@@ -168,7 +168,7 @@
 &lt;ul&gt;
 &lt;li&gt;Explicit defaults in super&lt;/li&gt;
 &lt;li&gt;Don&amp;#39;t set properties until super&lt;/li&gt;
-&lt;li&gt;When to call _super(): When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;When to call &lt;code&gt;_super()&lt;/code&gt;: When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Mis-alignment #3&lt;/h2&gt;
