@@ -146,3 +146,37 @@ Solution: Limit reopen to before first instantiation
 ## Tools of the Trade
 
  * A free design pattern library for Ember apps. [Sign up!!](http://toolsofthetrade.dockyard.com)
+
+
+# Hijaking Hacker News with Ember.js by Godfrey Chan
+[@chancancode](https://github.com/chancancode)
+
+* Being a canadian is awesome
+
+## [Hijacking Hacker News App](https://github.com/chancancode/hn-reader)
+
+* Browser extension that transforms old site design to new, more usable app
+* Runs in hacker news domain
+
+### Getting the Data
+
+* `$.get("/news').then()`: request html page, extract data, then manipulate
+* Hacker News HTML Scrapper: need adapter to help talk to Ember Data store; customize adapter and serializer.
+
+### Fixing the URLs
+
+* Hacker news urls are not ideal for building an Ember app.
+* Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+   * trick Ember into seeing URLs that are different from what is in the address bar
+* Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+   * Can use same mechanism to make a custom Ember.Location: `App.HackerNewsLocation = Ember.Location.extend()`
+
+### Preferences
+
+* Changing preferences in one place and can see changes reflected in other
+	* Use observer pattern
+
+### The Possibilities
+
+* What if your ideas do not line up with the framework's choices?
+* If the frameworks is doing it's job, than the possibilities should be endless!
