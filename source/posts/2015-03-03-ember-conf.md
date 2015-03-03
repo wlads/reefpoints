@@ -219,3 +219,48 @@ Solution: Limit reopen to before first instantiation
 	* `ember-cli-front-end-builds` becomes a plugin
 	* USAGE: `ember deploy staging`
 * Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.
+
+
+# Ambitious UX for Ambitious Apps by Lauren Tan
+[@poteto](https://github.com/poteto)
+
+Good Design is...
+
+	* how it works
+	* reactive
+	* playful
+	* informative
+	
+* Designing the product vs. designing the experience
+* You are not the same as your website users
+
+## Good Design is Reactive
+
+ * Instant feeback
+ * Flow of data and maintaining relationships between that data
+ * Ember allows reactivity through the observer pattern
+ 
+### The Observer Pattern
+
+* Computed properties transform properties and keep relationships in sync
+* Computed Property Macros to keep things DRY.
+	* Ember ships with a bunch of these out of the box (map, mapBy, concat, etc)
+* Observers synchronously invoked when dependent properties change
+
+## Good design is playful
+
+* Has personality
+* Ex. Slack when you open app (fun messages)
+
+## Good Design is Informative
+
+* Visibility of System Status
+	* Jakob Nielson - 10 heuristics for User Interface Design
+* Ex. Flash messages
+	* [`ember-cli-flash`](https://github.com/poteto/ember-cli-flash)
+
+## Good Design is Intuitive
+
+* Drag and drop (trello, Google Calendar, etc...)
+* Ember handles drag and drop events out of the box
+	* add `draggable=true` to any html element to make it draggable
