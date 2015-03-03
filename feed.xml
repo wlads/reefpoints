@@ -88,13 +88,19 @@
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;instead of 
-&lt;code&gt;js
-&amp;lt;a {{bindAttr href=&amp;quot;url&amp;quot;}}&amp;gt; 
-&lt;/code&gt;
-* Block parameters, Faster and lower memory, Validation for Templates
-* Killed metamorphs!
-* Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple &lt;iframe&gt;s, redesigned UI, to name a few&lt;/p&gt;
+&lt;p&gt;instead of&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a {{bindAttr href=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;url&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;}}&amp;gt; 
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Block parameters, Faster and lower memory, Validation for Templates&lt;/li&gt;
+&lt;li&gt;Killed metamorphs!&lt;/li&gt;
+&lt;li&gt;Improvements to Ember Inspector including Ember data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, redesigned UI, to name a few&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3&gt;Ember CLI&lt;/h3&gt;
 
