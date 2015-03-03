@@ -182,6 +182,73 @@
 &lt;li&gt;meta.listeners is crazier&lt;/li&gt;
 &lt;li&gt;Solution: work with V8 to make things better&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Designing for Ember Apps by Steve Trevathan&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://twitter.com/strevat"&gt;@strevat&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mental models: Understand where the user is coming from and what kinds of interactions they deal with
+
+&lt;ul&gt;
+&lt;li&gt;&amp;quot;What I think the thing is&amp;quot;&lt;/li&gt;
+&lt;li&gt;Influenced by experiences from the past&lt;/li&gt;
+&lt;li&gt;Not always solid: can be updated and changed. (improvements)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;2 types of mental models
+
+&lt;ul&gt;
+&lt;li&gt;Macro: what I think it is from a distance.&lt;/li&gt;
+&lt;li&gt;Micro: how I think each individual interaction works; the specific feature.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Build a framework of understanding
+
+&lt;ul&gt;
+&lt;li&gt;Some apps are just too complicated&lt;/li&gt;
+&lt;li&gt;Use explicitly if they apply&lt;/li&gt;
+&lt;li&gt;Break mental models if it improves the experience&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Design Patterns&lt;/h2&gt;
+
+&lt;h3&gt;#1 Gradual Engagement&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Core value given for free. Eventually you may be asked to sign up.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;#2 Skeleton UI&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ex. Google maps: grid becomes fully rendered map.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;#3 Carry Context&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ex. rdio: music played on laptop is reflected on iPad (or other devices). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;#4 Reuse Core Interactions&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ex. Browsing Pinterest: provides click and follow tangent.&lt;/li&gt;
+&lt;li&gt;Micro becomes Macro; core interactions become a symbol of your app.&lt;/li&gt;
+&lt;li&gt;&amp;quot;When I go home and think of your app, I think of the experience, the micro features more than the macro ones.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;#5 Offline Mode&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ex. Google Docs: “trying connect” message and can’t interact with document. Incredibly Frustrating.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Tools of the Trade&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A free design pattern library for Ember apps. &lt;a href="toolsofthetrade.dockyard.com"&gt;Sign up!!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
