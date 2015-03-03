@@ -275,13 +275,13 @@
 &lt;h3&gt;Fixing the URLs&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Hacker news urls are not ideal for building an Ember app.&lt;/li&gt;
-&lt;li&gt;Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+&lt;li&gt;Hacker News urls are not ideal for building an Ember app.&lt;/li&gt;
+&lt;li&gt;HN urls (serialized App States) to Ember Router (Actual App States)
 
 &lt;ul&gt;
 &lt;li&gt;trick Ember into seeing URLs that are different from what is in the address bar&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+&lt;li&gt;Router location types: &lt;code&gt;Ember.HistoryLocation&lt;/code&gt; vs. &lt;code&gt;Ember.HashLocation&lt;/code&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Can use same mechanism to make a custom Ember.Location: &lt;code&gt;App.HackerNewsLocation = Ember.Location.extend()&lt;/code&gt;&lt;/li&gt;
@@ -303,6 +303,64 @@
 &lt;ul&gt;
 &lt;li&gt;What if your ideas do not line up with the framework&amp;#39;s choices?&lt;/li&gt;
 &lt;li&gt;If the frameworks is doing it&amp;#39;s job, than the possibilities should be endless!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;The Art of Ember App Deployment by Luke Melia&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/lukemelia"&gt;@lukemelia&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to adjust deployment techniques from &amp;quot;server app&amp;quot; days&lt;/li&gt;
+&lt;li&gt;When traffic starts routing to the new app, finger-printed assets can no longer be accessed
+
+&lt;ul&gt;
+&lt;li&gt;Need to keep old and new finger printed assets for a few minutes after a deploy.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Versioning&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Learn from native apps - phones run different versions of an app&lt;/li&gt;
+&lt;li&gt;Keep API working for older clients through API versioning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Deployment &amp;amp; serving strategy&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTML page should be managed and deployed as part of static asset deployment process&lt;/li&gt;
+&lt;li&gt;HTML page should be served by the API server&lt;/li&gt;
+&lt;li&gt;Preview before activating&lt;/li&gt;
+&lt;li&gt;A/B Testing
+
+&lt;ul&gt;
+&lt;li&gt;Setting global flags based on A/B buckets&lt;/li&gt;
+&lt;li&gt;Serving up wholly different HTML based on A/B bucket&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Notify connected clients&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;The New &lt;a href="github.com/ember-cli/ember-cli-deploy"&gt;&lt;code&gt;ember-cli-deploy&lt;/code&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Merged these three projects: &lt;code&gt;ember-deploy&lt;/code&gt;, &lt;code&gt;front-end-builds&lt;/code&gt;, &lt;code&gt;ember-cli-deploy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Now, one project with 6 maintainers (and growing!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Roadmap&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Release 0.4.0 by the end of this week!&lt;/li&gt;
+&lt;li&gt;Reelease 0.5.0 
+
+&lt;ul&gt;
+&lt;li&gt;New pipeline hooks and plugins architecture&lt;/li&gt;
+&lt;li&gt;Includes post-deploy hook&lt;/li&gt;
+&lt;li&gt;Documentation for plugin developers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ember-cli-front-end-builds&lt;/code&gt; becomes a plugin&lt;/li&gt;
+&lt;li&gt;USAGE: &lt;code&gt;ember deploy staging&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>

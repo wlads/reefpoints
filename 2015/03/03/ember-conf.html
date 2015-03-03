@@ -255,13 +255,13 @@
 <h3>Fixing the URLs</h3>
 
 <ul>
-<li>Hacker news urls are not ideal for building an Ember app.</li>
-<li>Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+<li>Hacker News urls are not ideal for building an Ember app.</li>
+<li>HN urls (serialized App States) to Ember Router (Actual App States)
 
 <ul>
 <li>trick Ember into seeing URLs that are different from what is in the address bar</li>
 </ul></li>
-<li>Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+<li>Router location types: <code>Ember.HistoryLocation</code> vs. <code>Ember.HashLocation</code>
 
 <ul>
 <li>Can use same mechanism to make a custom Ember.Location: <code>App.HackerNewsLocation = Ember.Location.extend()</code></li>
@@ -283,6 +283,64 @@
 <ul>
 <li>What if your ideas do not line up with the framework&#39;s choices?</li>
 <li>If the frameworks is doing it&#39;s job, than the possibilities should be endless!</li>
+</ul>
+
+<h1>The Art of Ember App Deployment by Luke Melia</h1>
+
+<p><a href="https://github.com/lukemelia">@lukemelia</a></p>
+
+<ul>
+<li>Need to adjust deployment techniques from &quot;server app&quot; days</li>
+<li>When traffic starts routing to the new app, finger-printed assets can no longer be accessed
+
+<ul>
+<li>Need to keep old and new finger printed assets for a few minutes after a deploy.</li>
+</ul></li>
+</ul>
+
+<h2>Versioning</h2>
+
+<ul>
+<li>Learn from native apps - phones run different versions of an app</li>
+<li>Keep API working for older clients through API versioning</li>
+</ul>
+
+<h2>Deployment &amp; serving strategy</h2>
+
+<ul>
+<li>HTML page should be managed and deployed as part of static asset deployment process</li>
+<li>HTML page should be served by the API server</li>
+<li>Preview before activating</li>
+<li>A/B Testing
+
+<ul>
+<li>Setting global flags based on A/B buckets</li>
+<li>Serving up wholly different HTML based on A/B bucket</li>
+</ul></li>
+<li>Notify connected clients</li>
+</ul>
+
+<h2>The New <a href="github.com/ember-cli/ember-cli-deploy"><code>ember-cli-deploy</code></a></h2>
+
+<ul>
+<li>Merged these three projects: <code>ember-deploy</code>, <code>front-end-builds</code>, <code>ember-cli-deploy</code></li>
+<li>Now, one project with 6 maintainers (and growing!)</li>
+</ul>
+
+<h3>Roadmap</h3>
+
+<ul>
+<li>Release 0.4.0 by the end of this week!</li>
+<li>Reelease 0.5.0 
+
+<ul>
+<li>New pipeline hooks and plugins architecture</li>
+<li>Includes post-deploy hook</li>
+<li>Documentation for plugin developers</li>
+<li><code>ember-cli-front-end-builds</code> becomes a plugin</li>
+<li>USAGE: <code>ember deploy staging</code></li>
+</ul></li>
+<li>Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.</li>
 </ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
