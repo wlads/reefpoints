@@ -165,10 +165,10 @@ Solution: Limit reopen to before first instantiation
 
 ### Fixing the URLs
 
-* Hacker news urls are not ideal for building an Ember app.
-* Hacker News Urls (serialized App States) to Ember Router (Actual App States)
+* Hacker News urls are not ideal for building an Ember app.
+* HN urls (serialized App States) to Ember Router (Actual App States)
    * trick Ember into seeing URLs that are different from what is in the address bar
-* Router location types: Ember.HistoryLocation vs. Ember.HashLocation
+* Router location types: `Ember.HistoryLocation` vs. `Ember.HashLocation`
    * Can use same mechanism to make a custom Ember.Location: `App.HackerNewsLocation = Ember.Location.extend()`
 
 ### Preferences
@@ -180,3 +180,42 @@ Solution: Limit reopen to before first instantiation
 
 * What if your ideas do not line up with the framework's choices?
 * If the frameworks is doing it's job, than the possibilities should be endless!
+
+
+# The Art of Ember App Deployment by Luke Melia
+[@lukemelia](https://github.com/lukemelia)
+
+* Need to adjust deployment techniques from "server app" days
+* When traffic starts routing to the new app, finger-printed assets can no longer be accessed
+	* Need to keep old and new finger printed assets for a few minutes after a deploy.
+
+## Versioning
+
+* Learn from native apps - phones run different versions of an app
+* Keep API working for older clients through API versioning
+
+## Deployment & serving strategy
+
+* HTML page should be managed and deployed as part of static asset deployment process
+* HTML page should be served by the API server
+* Preview before activating
+* A/B Testing
+	* Setting global flags based on A/B buckets
+	* Serving up wholly different HTML based on A/B bucket
+* Notify connected clients
+
+## The New [`ember-cli-deploy`](github.com/ember-cli/ember-cli-deploy)
+
+* Merged these three projects: `ember-deploy`, `front-end-builds`, `ember-cli-deploy`
+* Now, one project with 6 maintainers (and growing!)
+
+### Roadmap
+
+* Release 0.4.0 by the end of this week!
+* Reelease 0.5.0 
+	* New pipeline hooks and plugins architecture
+	* Includes post-deploy hook
+	* Documentation for plugin developers
+	* `ember-cli-front-end-builds` becomes a plugin
+	* USAGE: `ember deploy staging`
+* Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.
