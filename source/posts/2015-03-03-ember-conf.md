@@ -145,4 +145,4 @@ Solution: Limit reopen to before first instantiation
 
 ## Tools of the Trade
 
- * A free design pattern library for Ember apps. [Sign up!!](toolsofthetrade.dockyard.com)
+ * A free design pattern library for Ember apps. [Sign up!!](http://toolsofthetrade.dockyard.com)
