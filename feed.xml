@@ -362,6 +362,82 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Ambitious UX for Ambitious Apps by Lauren Tan&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/poteto"&gt;@poteto&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Good Design is...&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;* how it works
+* reactive
+* playful
+* informative
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Designing the product vs. designing the experience&lt;/li&gt;
+&lt;li&gt;You are not the same as your website users&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Good Design is Reactive&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Instant feeback&lt;/li&gt;
+&lt;li&gt;Flow of data and maintaining relationships between that data&lt;/li&gt;
+&lt;li&gt;Ember allows reactivity through the observer pattern&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;The Observer Pattern&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Computed properties transform properties and keep relationships in sync&lt;/li&gt;
+&lt;li&gt;Computed Property Macros to keep things DRY.
+
+&lt;ul&gt;
+&lt;li&gt;Ember ships with a bunch of these out of the box (map, mapBy, concat, etc)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Observers synchronously invoked when dependent properties change&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Good design is playful&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Has personality&lt;/li&gt;
+&lt;li&gt;Ex. Slack when you open app (fun messages)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Good Design is Informative&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Visibility of System Status
+
+&lt;ul&gt;
+&lt;li&gt;Jakob Nielson - 10 heuristics for User Interface Design&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ex. Flash messages
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/poteto/ember-cli-flash"&gt;&lt;code&gt;ember-cli-flash&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Good Design is Intuitive&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Drag and drop (trello, Google Calendar, etc...)&lt;/li&gt;
+&lt;li&gt;Ember handles drag and drop events out of the box
+
+&lt;ul&gt;
+&lt;li&gt;add &lt;code&gt;draggable=true&lt;/code&gt; to any html element to make it draggable&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>

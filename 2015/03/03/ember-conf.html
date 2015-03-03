@@ -342,6 +342,82 @@
 </ul></li>
 <li>Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.</li>
 </ul>
+
+<h1>Ambitious UX for Ambitious Apps by Lauren Tan</h1>
+
+<p><a href="https://github.com/poteto">@poteto</a></p>
+
+<p>Good Design is...</p>
+<div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td>
+  <td class="code"><pre>* how it works
+* reactive
+* playful
+* informative
+</pre></td>
+</tr></table>
+</div></div>
+<ul>
+<li>Designing the product vs. designing the experience</li>
+<li>You are not the same as your website users</li>
+</ul>
+
+<h2>Good Design is Reactive</h2>
+
+<ul>
+<li>Instant feeback</li>
+<li>Flow of data and maintaining relationships between that data</li>
+<li>Ember allows reactivity through the observer pattern</li>
+</ul>
+
+<h3>The Observer Pattern</h3>
+
+<ul>
+<li>Computed properties transform properties and keep relationships in sync</li>
+<li>Computed Property Macros to keep things DRY.
+
+<ul>
+<li>Ember ships with a bunch of these out of the box (map, mapBy, concat, etc)</li>
+</ul></li>
+<li>Observers synchronously invoked when dependent properties change</li>
+</ul>
+
+<h2>Good design is playful</h2>
+
+<ul>
+<li>Has personality</li>
+<li>Ex. Slack when you open app (fun messages)</li>
+</ul>
+
+<h2>Good Design is Informative</h2>
+
+<ul>
+<li>Visibility of System Status
+
+<ul>
+<li>Jakob Nielson - 10 heuristics for User Interface Design</li>
+</ul></li>
+<li>Ex. Flash messages
+
+<ul>
+<li><a href="https://github.com/poteto/ember-cli-flash"><code>ember-cli-flash</code></a></li>
+</ul></li>
+</ul>
+
+<h2>Good Design is Intuitive</h2>
+
+<ul>
+<li>Drag and drop (trello, Google Calendar, etc...)</li>
+<li>Ember handles drag and drop events out of the box
+
+<ul>
+<li>add <code>draggable=true</code> to any html element to make it draggable</li>
+</ul></li>
+</ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>
