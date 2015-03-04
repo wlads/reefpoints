@@ -181,3 +181,60 @@ Community building is a design and engineering challenge
 ### [Treasure Hunt Demo Application](https://github.com/blangslet/treasure-hunt)
 
 * "Demonstrates an experimental integration between ember.js routing and Polymer's core-animated-pages component to create beautiful inter-state animated transitions"
+
+
+# Building Applications for Custom Environments with Ember CLI by Brittany Storoz
+[@brittanystoroz](https://github.com/brittanystoroz)
+
+### Ember CLI
+
+* Everyones favorite command line tool
+* Build organized ember apps quickly
+* Fills huge void in toolset for JS devs
+
+### Ember CLI Addons
+
+* Extend ember-cli beyond core fucntionality
+* Follow standard npm conventions
+* Easy to create & install:
+
+`ember addon name-of-your-addon`
+
+`ember install:addon name-of-your-addon`
+
+## Firefox OS
+
+* Requirements that Ember CLI could not provide
+    1. Generate and validate a manifest file (same concept as package.json)
+    2. UI components that mimic OS interface
+    3. Publish to Firefox marketplace
+* Ember CLI Addon was born to fill those requirements.
+
+### 1st Requirement: Generating The Manifest
+
+* Creating Blueprints
+  * rules for generating common code and file structures:
+
+`ember generate blueprint name-of-blueprint`
+
+### 2nd Requirement: FirefoxOS UI ([Gaia](https://github.com/gaia-components/gaia-tabs))
+
+* Building components
+`bower install gaia-components/gaia-stubs`
+* 2 responsibilities:
+  * including dependencies and creating the addon
+  * making both available to the consuming application
+
+## Components Review
+
+* Dependencies:
+  * bower install within addon
+  * bower install withing consuming logic
+* Component logic
+  * create component
+  * export components to consuming aplication
+  * define component template
+* Validation & Publishing
+  * creating commands for control over when these things happen
+  * `includedCommands` hook: returns object of commands which are found inside `lb/commands`
+  * `ember help` lists out information about available add-on commands. And lots more useful info.
