@@ -106,8 +106,82 @@
 <h3><a href="https://github.com/orbitjs/ember-orbit">ember-orbit</a></h3>
 
 <ul>
-<li>provides store with synchronous and asynchronous methods</li>
+<li>Provides a store with synchronous and asynchronous methods</li>
 </ul>
+
+<h1>Aligning Ember with Web Standards by Matthew Beale</h1>
+
+<p><a href="https://github.com/mixonic">@mixonic</a></p>
+
+<h2>Standards</h2>
+
+<ul>
+<li>The JS standardization process is about to change: ES5, ES6, ES2015!</li>
+<li>Standards Process
+
+<ul>
+<li>5 stages - strawman, proposal(polyfills), draft(experimental), candidate(compliant), finished(shipping)</li>
+<li><a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">Polyfill</a>: A polyfill is a piece of code (or plugin) that provides the technology that you expect the browser to provide natively. </li>
+</ul></li>
+<li>2 major standards groups:
+
+<ul>
+<li>WHATWG + W3C (html / dom related)</li>
+<li>TC39 + Ecma International (promises, classes, for loops, etc)</li>
+</ul></li>
+<li>Aligning with standards is not a one time event. It is ongoing!</li>
+</ul>
+
+<h2>Why Standards?</h2>
+
+<ul>
+<li>The goal is productivity</li>
+<li>Standards are portable, reflect best preactices, and endure </li>
+<li>Participants win</li>
+</ul>
+
+<h3>ES5 -> ES2015</h3>
+
+<ul>
+<li>New API for maps</li>
+<li>Promises</li>
+<li>Proxies</li>
+</ul>
+
+<h3>Babel</h3>
+
+<ul>
+<li>Babel will turn your ES6+ code into ES5 friendly code
+
+<ul>
+<li>Enables new syntax (fat arrow, let) , APIs (map, set), not everything</li>
+</ul></li>
+</ul>
+
+<h3>Aligning Ember&#39;s Object Model</h3>
+
+<ul>
+<li> is this feature: stable? a good pattern? implemented correctly? implemented performantly?</li>
+</ul>
+
+<h3>ES Classes</h3>
+
+<ul>
+<li>Three new tools: class, extend, super</li>
+<li>More gotchas: 
+
+<ul>
+<li>setUnknownProperty </li>
+<li>Transpiler output</li>
+<li>New syntax</li>
+<li>Changes in way that super behaves</li>
+<li>Mixins</li>
+</ul></li>
+</ul>
+
+<p>Remember: standards are a two-way street!</p>
+
+<p><a href="http://www.201-created.com/ember-community-survey-2015">Ember Community Survey</a></p>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/04/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>

@@ -126,8 +126,82 @@
 &lt;h3&gt;&lt;a href="https://github.com/orbitjs/ember-orbit"&gt;ember-orbit&lt;/a&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;provides store with synchronous and asynchronous methods&lt;/li&gt;
+&lt;li&gt;Provides a store with synchronous and asynchronous methods&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Aligning Ember with Web Standards by Matthew Beale&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/mixonic"&gt;@mixonic&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Standards&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The JS standardization process is about to change: ES5, ES6, ES2015!&lt;/li&gt;
+&lt;li&gt;Standards Process
+
+&lt;ul&gt;
+&lt;li&gt;5 stages - strawman, proposal(polyfills), draft(experimental), candidate(compliant), finished(shipping)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://remysharp.com/2010/10/08/what-is-a-polyfill"&gt;Polyfill&lt;/a&gt;: A polyfill is a piece of code (or plugin) that provides the technology that you expect the browser to provide natively. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;2 major standards groups:
+
+&lt;ul&gt;
+&lt;li&gt;WHATWG + W3C (html / dom related)&lt;/li&gt;
+&lt;li&gt;TC39 + Ecma International (promises, classes, for loops, etc)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Aligning with standards is not a one time event. It is ongoing!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Why Standards?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The goal is productivity&lt;/li&gt;
+&lt;li&gt;Standards are portable, reflect best preactices, and endure &lt;/li&gt;
+&lt;li&gt;Participants win&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;ES5 -&gt; ES2015&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New API for maps&lt;/li&gt;
+&lt;li&gt;Promises&lt;/li&gt;
+&lt;li&gt;Proxies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Babel&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Babel will turn your ES6+ code into ES5 friendly code
+
+&lt;ul&gt;
+&lt;li&gt;Enables new syntax (fat arrow, let) , APIs (map, set), not everything&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Aligning Ember&amp;#39;s Object Model&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt; is this feature: stable? a good pattern? implemented correctly? implemented performantly?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;ES Classes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Three new tools: class, extend, super&lt;/li&gt;
+&lt;li&gt;More gotchas: 
+
+&lt;ul&gt;
+&lt;li&gt;setUnknownProperty &lt;/li&gt;
+&lt;li&gt;Transpiler output&lt;/li&gt;
+&lt;li&gt;New syntax&lt;/li&gt;
+&lt;li&gt;Changes in way that super behaves&lt;/li&gt;
+&lt;li&gt;Mixins&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Remember: standards are a two-way street!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.201-created.com/ember-community-survey-2015"&gt;Ember Community Survey&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
