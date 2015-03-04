@@ -144,4 +144,40 @@ How did a tech community come to be so vibrant? How can we continue?
 Community building is a design and engineering challenge
 
 
+# Interaction Design with Ember 2.0 and Polymer by Bryan Langslet
+[@blangslet](https://github.com/blangslet)
 
+* The web browser is the largest app runtime in the world, and will continue to grow
+* Every device has to be connected to the web
+* Web frameworks and toolkits are getting closer to native performance everyday 
+
+"How can I - one person with a laptop - leverage my time as powerfully as I possibly can, every minute I work?"
+
+## Ember-Flow
+
+* A paradigm shift for web interaction design
+* The goal: to blur the lines between native and web applications
+
+### Web Components
+
+* Extends the browser itself
+  * Polymer components extend a base component
+* Encapsulation
+* Declarative
+* True reusability/portability
+
+## Ember vs. Polymer Use Cases:
+
+* Ember: developer productivity, conventions
+* Ember: community
+* Ember: World-class routing and state management
+* Polymer: constantly pushing the web forward
+
+### Web Animations API
+
+* Has the best of both CSS and javascript animations
+* Web animations run outside of the main thread and can be accelerated on the GPU
+
+### [Treasure Hunt Demo Application](https://github.com/blangslet/treasure-hunt)
+
+* "Demonstrates an experimental integration between ember.js routing and Polymer's core-animated-pages component to create beautiful inter-state animated transitions"
