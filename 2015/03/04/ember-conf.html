@@ -295,6 +295,93 @@
 <ul>
 <li>&quot;Demonstrates an experimental integration between ember.js routing and Polymer&#39;s core-animated-pages component to create beautiful inter-state animated transitions&quot;</li>
 </ul>
+
+<h1>Building Applications for Custom Environments with Ember CLI by Brittany Storoz</h1>
+
+<p><a href="https://github.com/brittanystoroz">@brittanystoroz</a></p>
+
+<h3>Ember CLI</h3>
+
+<ul>
+<li>Everyones favorite command line tool</li>
+<li>Build organized ember apps quickly</li>
+<li>Fills huge void in toolset for JS devs</li>
+</ul>
+
+<h3>Ember CLI Addons</h3>
+
+<ul>
+<li>Extend ember-cli beyond core fucntionality</li>
+<li>Follow standard npm conventions</li>
+<li>Easy to create &amp; install:</li>
+</ul>
+
+<p><code>ember addon name-of-your-addon</code></p>
+
+<p><code>ember install:addon name-of-your-addon</code></p>
+
+<h2>Firefox OS</h2>
+
+<ul>
+<li>Requirements that Ember CLI could not provide
+
+<ol>
+<li>Generate and validate a manifest file (same concept as package.json)</li>
+<li>UI components that mimic OS interface</li>
+<li>Publish to Firefox marketplace</li>
+</ol></li>
+<li>Ember CLI Addon was born to fill those requirements.</li>
+</ul>
+
+<h3>1st Requirement: Generating The Manifest</h3>
+
+<ul>
+<li>Creating Blueprints
+
+<ul>
+<li>rules for generating common code and file structures:</li>
+</ul></li>
+</ul>
+
+<p><code>ember generate blueprint name-of-blueprint</code></p>
+
+<h3>2nd Requirement: FirefoxOS UI (<a href="https://github.com/gaia-components/gaia-tabs">Gaia</a>)</h3>
+
+<ul>
+<li>Building components
+<code>bower install gaia-components/gaia-stubs</code></li>
+<li>2 responsibilities:
+
+<ul>
+<li>including dependencies and creating the addon</li>
+<li>making both available to the consuming application</li>
+</ul></li>
+</ul>
+
+<h2>Components Review</h2>
+
+<ul>
+<li>Dependencies:
+
+<ul>
+<li>bower install within addon</li>
+<li>bower install withing consuming logic</li>
+</ul></li>
+<li>Component logic
+
+<ul>
+<li>create component</li>
+<li>export components to consuming aplication</li>
+<li>define component template</li>
+</ul></li>
+<li>Validation &amp; Publishing
+
+<ul>
+<li>creating commands for control over when these things happen</li>
+<li><code>includedCommands</code> hook: returns object of commands which are found inside <code>lb/commands</code></li>
+<li><code>ember help</code> lists out information about available add-on commands. And lots more useful info.</li>
+</ul></li>
+</ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/04/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>

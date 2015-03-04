@@ -315,6 +315,93 @@
 &lt;ul&gt;
 &lt;li&gt;&amp;quot;Demonstrates an experimental integration between ember.js routing and Polymer&amp;#39;s core-animated-pages component to create beautiful inter-state animated transitions&amp;quot;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Building Applications for Custom Environments with Ember CLI by Brittany Storoz&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/brittanystoroz"&gt;@brittanystoroz&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Ember CLI&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Everyones favorite command line tool&lt;/li&gt;
+&lt;li&gt;Build organized ember apps quickly&lt;/li&gt;
+&lt;li&gt;Fills huge void in toolset for JS devs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Ember CLI Addons&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Extend ember-cli beyond core fucntionality&lt;/li&gt;
+&lt;li&gt;Follow standard npm conventions&lt;/li&gt;
+&lt;li&gt;Easy to create &amp;amp; install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;ember addon name-of-your-addon&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ember install:addon name-of-your-addon&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Firefox OS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Requirements that Ember CLI could not provide
+
+&lt;ol&gt;
+&lt;li&gt;Generate and validate a manifest file (same concept as package.json)&lt;/li&gt;
+&lt;li&gt;UI components that mimic OS interface&lt;/li&gt;
+&lt;li&gt;Publish to Firefox marketplace&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Ember CLI Addon was born to fill those requirements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;1st Requirement: Generating The Manifest&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creating Blueprints
+
+&lt;ul&gt;
+&lt;li&gt;rules for generating common code and file structures:&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;ember generate blueprint name-of-blueprint&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;2nd Requirement: FirefoxOS UI (&lt;a href="https://github.com/gaia-components/gaia-tabs"&gt;Gaia&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Building components
+&lt;code&gt;bower install gaia-components/gaia-stubs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2 responsibilities:
+
+&lt;ul&gt;
+&lt;li&gt;including dependencies and creating the addon&lt;/li&gt;
+&lt;li&gt;making both available to the consuming application&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Components Review&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dependencies:
+
+&lt;ul&gt;
+&lt;li&gt;bower install within addon&lt;/li&gt;
+&lt;li&gt;bower install withing consuming logic&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Component logic
+
+&lt;ul&gt;
+&lt;li&gt;create component&lt;/li&gt;
+&lt;li&gt;export components to consuming aplication&lt;/li&gt;
+&lt;li&gt;define component template&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Validation &amp;amp; Publishing
+
+&lt;ul&gt;
+&lt;li&gt;creating commands for control over when these things happen&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;includedCommands&lt;/code&gt; hook: returns object of commands which are found inside &lt;code&gt;lb/commands&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ember help&lt;/code&gt; lists out information about available add-on commands. And lots more useful info.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
