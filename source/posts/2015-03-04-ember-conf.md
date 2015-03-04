@@ -238,3 +238,31 @@ Community building is a design and engineering challenge
   * creating commands for control over when these things happen
   * `includedCommands` hook: returns object of commands which are found inside `lb/commands`
   * `ember help` lists out information about available add-on commands. And lots more useful info.
+
+
+# Building Real-time Applications with Ember by Steve Kinney
+[@stevekinney](https://github.com/stevekinney)
+
+* Integrating browser functionality and third party code into our applications. In this case, WebSockets.
+* What is a WebSocket Used for? 
+  * Collaboration, analytics dashboards, prompting user to upgrade application
+* Can I actually use WebSockets? 
+  * For the most part, yes (some earlier version of IE not supported)
+* Socket.io -> library for Node
+* Faye  -> simple pub/sub messaging
+
+### Approach #1: Use Standalone Controller
+
+* Somewhat limited because it only works between controllers
+
+### Approach #2: Dependency Injection with Services
+
+* `ember generate service websocket`
+* Declare where you want to inject it inside the Initializer
+* Inside controller: `websocket: Ember.inject.service()`
+
+### Approach #3 Using Socket.io
+
+  * Socket.io is both a server and client side library
+
+[What is your favorite thing about JavaScript?](bit.ly/js-poll)
