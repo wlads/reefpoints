@@ -104,3 +104,44 @@ tags: ember
 Remember: standards are a two-way street!
 
 [Ember Community Survey](http://www.201-created.com/ember-community-survey-2015)
+
+
+# Growing Ember One Tomster at a Time by Jamie White
+[@jgwhite](https://github.com/jgwhite)
+
+How did a tech community come to be so vibrant? How can we continue?
+
+## 1. The Tomster
+
+* Representation of productivity and friendliness
+* Tomster wore different hats
+  * Custom tomsters
+* Good defaults
+  * Having a friendly mascot makes things easier.
+  * “Ambition” and “friendliness” is hard to juxtapose
+* Composing concepts
+
+## 2. Language
+
+* Tomster is a tool. Productivity and friendliness implicitly part of conversation
+  * Words stick; the right words enable conversations
+  * “hack” is not a good vocabulary word - negative connotation 
+
+## 3. User Interface
+
+* Programming language and documentation with good user interface
+
+## 4. Hackability
+
+* Parts have to be accesible - has to feel hackable.
+  * Tomster was not overly done.
+
+## 5. Roles
+
+* Many specialisms in Ember Community: documenteer, student, mentor, critic, explorer, and many more!
+
+
+Community building is a design and engineering challenge
+
+
+
