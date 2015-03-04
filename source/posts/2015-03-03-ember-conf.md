@@ -291,3 +291,46 @@ Good Design is:
 	* Then, deliberately fold in shared solutions
 
 In summary, innovate & share!
+
+
+# Dynamic Graphic Composition In Ember by Chris Henn
+[@chnn](https://github.com/chnn)
+
+## Spliting a Statistical Graphic into Parts
+
+* Splitting a problem allows us to change one feature of the graphic at a time
+* Suggests the aspects of a plot that are possible to change
+* Encourages custom visualizations for every data situation
+* Demo: [Scatterplot example](https://github.com/chnn/composing-graphics)
+	*  Adds multiple regression lines (in example, based on # of cylinders of each car)
+
+    	```hbs
+    	{{#each subset as |subset|}}
+          // component
+      	{{/each}}
+      	```
+     * Each point in the graph is an svg circle
+
+### Grammer of Graphics by Hadley Wickham
+(Book of guidlines to follow)
+
+* Data to Aesthetic Mappings
+* Scales: one per Asthetic mapping
+	* Each data to aesthetic mapping has some mapping function
+	* he has chosen to represent these as points in scatterplot example
+* Layers: geom, stat, optional data to aesthetic mapping
+* Coordinate System
+* Faceting
+
+### What does this look like using Ember?
+
+* Data to Aesthetics =  outer layer component which takes in the data as params
+* Scales = computed properties (using computer property macros)
+* Layers = looks like top level component, but must pass the scales
+
+### Further Considerations
+
+* Interactivity
+* Animations and transitions
+	* performance (updating graphic many times per second)
+
