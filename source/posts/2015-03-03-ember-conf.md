@@ -224,7 +224,7 @@ Solution: Limit reopen to before first instantiation
 # Ambitious UX for Ambitious Apps by Lauren Tan
 [@poteto](https://github.com/poteto)
 
-Good Design is...
+Good Design is:
 
 	* how it works
 	* reactive
@@ -264,3 +264,30 @@ Good Design is...
 * Drag and drop (trello, Google Calendar, etc...)
 * Ember handles drag and drop events out of the box
 	* add `draggable=true` to any html element to make it draggable
+
+
+# Bring Sanity to Frontend Infastructure with Ember by Sam Selikoff
+[@samselikoff](https://github.com/samselikoff)
+
+## How Ember Can Help Today:
+
+* Ember and Ember CLI helps infastructure by reducing boilerplate
+* Similar directory structure and architecture
+* Conventions: eliminate trivial differences that hold us back
+* Writing add-ons for shareable code. Allows us to build structure.
+* Use `ember deploy` to deploy apps. Auth and backend config work into separate deploy server.
+* Testing in Ember using `ember test`. QUnit provides helpers.
+* Identify redundancies and abstractions
+
+## How Ember Can Help Tomorrow:
+
+* Semantic versioning and CLI conventions
+* Flexibility
+* New standards and best practices
+	* generally, shared solutions/frameworks help identify and discover ways of improving applications
+	* Ember always keeps up to date with these best practices
+* “Ember is not just a framework, it’s a philosophy” of how to create and improve software
+	* First, give real developers the tools to tinker
+	* Then, deliberately fold in shared solutions
+
+In summary, innovate & share!
