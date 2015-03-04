@@ -527,7 +527,7 @@
 &lt;h3&gt;What does this look like using Ember?&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Data to Aesthetics =  outer layer component which takes in the data as params&lt;/li&gt;
+&lt;li&gt;Data to Aesthetics = outer layer component which takes in the data as params&lt;/li&gt;
 &lt;li&gt;Scales = computed properties (using computer property macros)&lt;/li&gt;
 &lt;li&gt;Layers = looks like top level component, but must pass the scales&lt;/li&gt;
 &lt;/ul&gt;
@@ -541,6 +541,29 @@
 &lt;ul&gt;
 &lt;li&gt;performance (updating graphic many times per second)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Test-Driven Development By Example by Toran Billups&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/toranbn"&gt;@toranb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Live coding!!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Red, green, refactor
+
+&lt;ul&gt;
+&lt;li&gt;You get a lot of feedback from red (so it can be red, red, red, green, refactor)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Incorrect selector in template to make sure you’re doing it correctly (aka. test should fail)&lt;/li&gt;
+&lt;li&gt;Test should not be very layout dependent
+
+&lt;ul&gt;
+&lt;li&gt;Should be more general and not break whenever you make template changes that do not change app functionality.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Test names should be descriptive&lt;/li&gt;
+&lt;li&gt;Testing computed properties is recommended because of how caching works with them. Failing test will let you know which properties should be observed in order to break the cache.&lt;/li&gt;
+&lt;li&gt;Design proof testing&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>

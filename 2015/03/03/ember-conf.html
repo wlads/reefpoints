@@ -507,7 +507,7 @@
 <h3>What does this look like using Ember?</h3>
 
 <ul>
-<li>Data to Aesthetics =  outer layer component which takes in the data as params</li>
+<li>Data to Aesthetics = outer layer component which takes in the data as params</li>
 <li>Scales = computed properties (using computer property macros)</li>
 <li>Layers = looks like top level component, but must pass the scales</li>
 </ul>
@@ -521,6 +521,29 @@
 <ul>
 <li>performance (updating graphic many times per second)</li>
 </ul></li>
+</ul>
+
+<h1>Test-Driven Development By Example by Toran Billups</h1>
+
+<p><a href="https://github.com/toranbn">@toranb</a></p>
+
+<p>Live coding!!</p>
+
+<ul>
+<li>Red, green, refactor
+
+<ul>
+<li>You get a lot of feedback from red (so it can be red, red, red, green, refactor)</li>
+</ul></li>
+<li>Incorrect selector in template to make sure you’re doing it correctly (aka. test should fail)</li>
+<li>Test should not be very layout dependent
+
+<ul>
+<li>Should be more general and not break whenever you make template changes that do not change app functionality.</li>
+</ul></li>
+<li>Test names should be descriptive</li>
+<li>Testing computed properties is recommended because of how caching works with them. Failing test will let you know which properties should be observed in order to break the cache.</li>
+<li>Design proof testing</li>
 </ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
