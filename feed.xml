@@ -261,6 +261,60 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Community building is a design and engineering challenge&lt;/p&gt;
+
+&lt;h1&gt;Interaction Design with Ember 2.0 and Polymer by Bryan Langslet&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/blangslet"&gt;@blangslet&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The web browser is the largest app runtime in the world, and will continue to grow&lt;/li&gt;
+&lt;li&gt;Every device has to be connected to the web&lt;/li&gt;
+&lt;li&gt;Web frameworks and toolkits are getting closer to native performance everyday &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;quot;How can I - one person with a laptop - leverage my time as powerfully as I possibly can, every minute I work?&amp;quot;&lt;/p&gt;
+
+&lt;h2&gt;Ember-Flow&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A paradigm shift for web interaction design&lt;/li&gt;
+&lt;li&gt;The goal: to blur the lines between native and web applications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Web Components&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Extends the browser itself
+
+&lt;ul&gt;
+&lt;li&gt;Polymer components extend a base component&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Encapsulation&lt;/li&gt;
+&lt;li&gt;Declarative&lt;/li&gt;
+&lt;li&gt;True reusability/portability&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Ember vs. Polymer Use Cases:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ember: developer productivity, conventions&lt;/li&gt;
+&lt;li&gt;Ember: community&lt;/li&gt;
+&lt;li&gt;Ember: World-class routing and state management&lt;/li&gt;
+&lt;li&gt;Polymer: constantly pushing the web forward&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Web Animations API&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Has the best of both CSS and javascript animations&lt;/li&gt;
+&lt;li&gt;Web animations run outside of the main thread and can be accelerated on the GPU&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;a href="https://github.com/blangslet/treasure-hunt"&gt;Treasure Hunt Demo Application&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;quot;Demonstrates an experimental integration between ember.js routing and Polymer&amp;#39;s core-animated-pages component to create beautiful inter-state animated transitions&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
