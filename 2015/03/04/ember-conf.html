@@ -382,6 +382,48 @@
 <li><code>ember help</code> lists out information about available add-on commands. And lots more useful info.</li>
 </ul></li>
 </ul>
+
+<h1>Building Real-time Applications with Ember by Steve Kinney</h1>
+
+<p><a href="https://github.com/stevekinney">@stevekinney</a></p>
+
+<ul>
+<li>Integrating browser functionality and third party code into our applications. In this case, WebSockets.</li>
+<li>What is a WebSocket Used for? 
+
+<ul>
+<li>Collaboration, analytics dashboards, prompting user to upgrade application</li>
+</ul></li>
+<li>Can I actually use WebSockets? 
+
+<ul>
+<li>For the most part, yes (some earlier version of IE not supported)</li>
+</ul></li>
+<li>Socket.io -> library for Node</li>
+<li>Faye  -> simple pub/sub messaging</li>
+</ul>
+
+<h3>Approach #1: Use Standalone Controller</h3>
+
+<ul>
+<li>Somewhat limited because it only works between controllers</li>
+</ul>
+
+<h3>Approach #2: Dependency Injection with Services</h3>
+
+<ul>
+<li><code>ember generate service websocket</code></li>
+<li>Declare where you want to inject it inside the Initializer</li>
+<li>Inside controller: <code>websocket: Ember.inject.service()</code></li>
+</ul>
+
+<h3>Approach #3 Using Socket.io</h3>
+
+<ul>
+<li>Socket.io is both a server and client side library</li>
+</ul>
+
+<p><a href="bit.ly/js-poll">What is your favorite thing about JavaScript?</a></p>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/04/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>

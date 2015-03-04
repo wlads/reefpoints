@@ -402,6 +402,48 @@
 &lt;li&gt;&lt;code&gt;ember help&lt;/code&gt; lists out information about available add-on commands. And lots more useful info.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;Building Real-time Applications with Ember by Steve Kinney&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/stevekinney"&gt;@stevekinney&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Integrating browser functionality and third party code into our applications. In this case, WebSockets.&lt;/li&gt;
+&lt;li&gt;What is a WebSocket Used for? 
+
+&lt;ul&gt;
+&lt;li&gt;Collaboration, analytics dashboards, prompting user to upgrade application&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Can I actually use WebSockets? 
+
+&lt;ul&gt;
+&lt;li&gt;For the most part, yes (some earlier version of IE not supported)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Socket.io -&gt; library for Node&lt;/li&gt;
+&lt;li&gt;Faye  -&gt; simple pub/sub messaging&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Approach #1: Use Standalone Controller&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Somewhat limited because it only works between controllers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Approach #2: Dependency Injection with Services&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ember generate service websocket&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Declare where you want to inject it inside the Initializer&lt;/li&gt;
+&lt;li&gt;Inside controller: &lt;code&gt;websocket: Ember.inject.service()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Approach #3 Using Socket.io&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Socket.io is both a server and client side library&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="bit.ly/js-poll"&gt;What is your favorite thing about JavaScript?&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
