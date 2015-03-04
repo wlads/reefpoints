@@ -324,7 +324,7 @@ In summary, innovate & share!
 
 ### What does this look like using Ember?
 
-* Data to Aesthetics =  outer layer component which takes in the data as params
+* Data to Aesthetics = outer layer component which takes in the data as params
 * Scales = computed properties (using computer property macros)
 * Layers = looks like top level component, but must pass the scales
 
@@ -334,3 +334,17 @@ In summary, innovate & share!
 * Animations and transitions
 	* performance (updating graphic many times per second)
 
+
+# Test-Driven Development By Example by Toran Billups
+[@toranb](https://github.com/toranbn)
+
+Live coding!!
+
+ * Red, green, refactor
+ 	* You get a lot of feedback from red (so it can be red, red, red, green, refactor)
+ * Incorrect selector in template to make sure you’re doing it correctly (aka. test should fail)
+ * Test should not be very layout dependent
+ 	* Should be more general and not break whenever you make template changes that do not change app functionality.
+ * Test names should be descriptive
+ * Testing computed properties is recommended because of how caching works with them. Failing test will let you know which properties should be observed in order to break the cache.
+ * Design proof testing
