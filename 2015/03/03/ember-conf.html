@@ -455,6 +455,73 @@
 </ul>
 
 <p>In summary, innovate &amp; share!</p>
+
+<h1>Dynamic Graphic Composition In Ember by Chris Henn</h1>
+
+<p><a href="https://github.com/chnn">@chnn</a></p>
+
+<h2>Spliting a Statistical Graphic into Parts</h2>
+
+<ul>
+<li>Splitting a problem allows us to change one feature of the graphic at a time</li>
+<li>Suggests the aspects of a plot that are possible to change</li>
+<li>Encourages custom visualizations for every data situation</li>
+<li><p>Demo: <a href="https://github.com/chnn/composing-graphics">Scatterplot example</a></p>
+
+<ul>
+<li><p>Adds multiple regression lines (in example, based on # of cylinders of each car)</p>
+<div class="highlight hbs "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+</pre></td>
+  <td class="code"><pre>{{#each subset as |subset|}}
+  // component
+{{/each}}
+</pre></td>
+</tr></table>
+</div></div>
+<ul>
+<li>Each point in the graph is an svg circle</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3>Grammer of Graphics by Hadley Wickham</h3>
+
+<p>(Book of guidlines to follow)</p>
+
+<ul>
+<li>Data to Aesthetic Mappings</li>
+<li>Scales: one per Asthetic mapping
+
+<ul>
+<li>Each data to aesthetic mapping has some mapping function</li>
+<li>he has chosen to represent these as points in scatterplot example</li>
+</ul></li>
+<li>Layers: geom, stat, optional data to aesthetic mapping</li>
+<li>Coordinate System</li>
+<li>Faceting</li>
+</ul>
+
+<h3>What does this look like using Ember?</h3>
+
+<ul>
+<li>Data to Aesthetics =  outer layer component which takes in the data as params</li>
+<li>Scales = computed properties (using computer property macros)</li>
+<li>Layers = looks like top level component, but must pass the scales</li>
+</ul>
+
+<h3>Further Considerations</h3>
+
+<ul>
+<li>Interactivity</li>
+<li>Animations and transitions
+
+<ul>
+<li>performance (updating graphic many times per second)</li>
+</ul></li>
+</ul>
 </div><div class='post__share'><a class='twitter-share-button' data-url='http://reefpoints.dockyard.com/2015/03/03/ember-conf.html' data-via='DockYard' href='https://twitter.com/share'>Tweet</a><script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
 </script><div class='g-plusone' data-href='#' data-size='medium' data-width='100'></div><script>

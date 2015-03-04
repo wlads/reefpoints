@@ -475,6 +475,73 @@
 &lt;/ul&gt;
 
 &lt;p&gt;In summary, innovate &amp;amp; share!&lt;/p&gt;
+
+&lt;h1&gt;Dynamic Graphic Composition In Ember by Chris Henn&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/chnn"&gt;@chnn&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Spliting a Statistical Graphic into Parts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Splitting a problem allows us to change one feature of the graphic at a time&lt;/li&gt;
+&lt;li&gt;Suggests the aspects of a plot that are possible to change&lt;/li&gt;
+&lt;li&gt;Encourages custom visualizations for every data situation&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Demo: &lt;a href="https://github.com/chnn/composing-graphics"&gt;Scatterplot example&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Adds multiple regression lines (in example, based on # of cylinders of each car)&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{{#each subset as |subset|}}
+  // component
+{{/each}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Each point in the graph is an svg circle&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Grammer of Graphics by Hadley Wickham&lt;/h3&gt;
+
+&lt;p&gt;(Book of guidlines to follow)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Data to Aesthetic Mappings&lt;/li&gt;
+&lt;li&gt;Scales: one per Asthetic mapping
+
+&lt;ul&gt;
+&lt;li&gt;Each data to aesthetic mapping has some mapping function&lt;/li&gt;
+&lt;li&gt;he has chosen to represent these as points in scatterplot example&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Layers: geom, stat, optional data to aesthetic mapping&lt;/li&gt;
+&lt;li&gt;Coordinate System&lt;/li&gt;
+&lt;li&gt;Faceting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;What does this look like using Ember?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Data to Aesthetics =  outer layer component which takes in the data as params&lt;/li&gt;
+&lt;li&gt;Scales = computed properties (using computer property macros)&lt;/li&gt;
+&lt;li&gt;Layers = looks like top level component, but must pass the scales&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Further Considerations&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Interactivity&lt;/li&gt;
+&lt;li&gt;Animations and transitions
+
+&lt;ul&gt;
+&lt;li&gt;performance (updating graphic many times per second)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
