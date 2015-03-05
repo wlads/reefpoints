@@ -444,6 +444,65 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href="bit.ly/js-poll"&gt;What is your favorite thing about JavaScript?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;Minitalks!&lt;/h1&gt;
+
+&lt;h2&gt;1. Measuring Performance with User Timing API by Bill Heaton&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/pixelhandler"&gt;@pixelhandler&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Measuring the differences in template rendering speeds between Ember.js v1.8.1 w/Handlebars v1.3 and Ember.js v1.10.0 w/HTMLBars&lt;/li&gt;
+&lt;li&gt;Check out his findings on &lt;a href="http://pixelhandler.com/posts/measuring-performance-with-user-timing-api-in-an-ember-application"&gt;blog!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;2. &lt;code&gt;ember-islands&lt;/code&gt; by Mitch Lloyd&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/mitchlloyd"&gt;@mitchlloyd&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/mitchlloyd/ember-islands"&gt;&lt;code&gt;ember-islands&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Render Ember components UJS-style to achieve &amp;quot;Islands of Richness&amp;quot;. You can arbitrarily render Ember components in the body of the page and they will all be connected to the same Ember app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;3. Ember Testing with Chemistry Dog by Liz Bailey&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/lizzerdrix"&gt;@lizzerdrix&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Migration from Rails to Ember&lt;/li&gt;
+&lt;li&gt;Ember does not provide as much documentation on testing&lt;/li&gt;
+&lt;li&gt;Would love to help make Ember more approachable to beginners&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;4. Running C++ in ember-cli with Emscripten by Michael Nutt&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/mnutt"&gt;@mnutt&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/movableink/ember-cli-emscripten"&gt;&lt;code&gt;ember-cli-emscripten&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Allows you to add C or C++ to your ember app, then require the exposed functions and classes.&lt;/li&gt;
+&lt;li&gt;Fibonacci sequence demo!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;5. Ember Observer by Kate Gengler&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/kategengler"&gt;@kategengler&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/emberobserver/client"&gt;Ember Observer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Gives addons a score out of 10&lt;/li&gt;
+&lt;li&gt;pulls hourly from npm and Github&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;6. CSS is Hard by Erik Bryn&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ebryn"&gt;@ebryn&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ebryn/ember-component-css"&gt;&lt;code&gt;ember-component-css&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;namespaces our component styles automatically!&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
