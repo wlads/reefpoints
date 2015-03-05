@@ -266,3 +266,45 @@ Community building is a design and engineering challenge
   * Socket.io is both a server and client side library
 
 [What is your favorite thing about JavaScript?](bit.ly/js-poll)
+
+
+# Minitalks!
+
+## 1. Measuring Performance with User Timing API by Bill Heaton
+[@pixelhandler](https://github.com/pixelhandler)
+
+* Measuring the differences in template rendering speeds between Ember.js v1.8.1 w/Handlebars v1.3 and Ember.js v1.10.0 w/HTMLBars
+* Check out his findings on [blog!](http://pixelhandler.com/posts/measuring-performance-with-user-timing-api-in-an-ember-application)
+
+## 2. `ember-islands` by Mitch Lloyd 
+[@mitchlloyd](https://github.com/mitchlloyd)
+
+* [`ember-islands`](https://github.com/mitchlloyd/ember-islands)
+* Render Ember components UJS-style to achieve "Islands of Richness". You can arbitrarily render Ember components in the body of the page and they will all be connected to the same Ember app.
+
+## 3. Ember Testing with Chemistry Dog by Liz Bailey 
+[@lizzerdrix](https://github.com/lizzerdrix)
+
+* Migration from Rails to Ember
+* Ember does not provide as much documentation on testing
+* Would love to help make Ember more approachable to beginners
+
+## 4. Running C++ in ember-cli with Emscripten by Michael Nutt
+[@mnutt](https://github.com/mnutt)
+
+ * [`ember-cli-emscripten`](https://github.com/movableink/ember-cli-emscripten)
+ * Allows you to add C or C++ to your ember app, then require the exposed functions and classes.
+ * Fibonacci sequence demo!
+
+## 5. Ember Observer by Kate Gengler
+[@kategengler](https://github.com/kategengler)
+
+* [Ember Observer](https://github.com/emberobserver/client)
+* Gives addons a score out of 10
+* pulls hourly from npm and Github
+
+## 6. CSS is Hard by Erik Bryn
+[@ebryn](https://github.com/ebryn)
+
+* [`ember-component-css`](https://github.com/ebryn/ember-component-css)
+* namespaces our component styles automatically!
