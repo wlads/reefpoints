@@ -308,3 +308,16 @@ Community building is a design and engineering challenge
 
 * [`ember-component-css`](https://github.com/ebryn/ember-component-css)
 * namespaces our component styles automatically!
+
+
+# Physical Design by Edward Faulkner
+[@ef4](https://github.com/ef4)
+
+* Computers are so abstract. Possibilities are endless, only hindered by your imagination.
+* Constrained by physics
+* Googles material design spec
+  * does not break rules of physics
+  * animations and motion appeal to us because they fit into our idea of how it should physically work.
+*[Liquid Fire](https://github.com/ef4/liquid-fire) live demo!
+  *  `npm install —save-dev liquid-fire` for Ember 1.11+
+* [Ember Paper](http://miguelcobain.github.io/ember-paper)
