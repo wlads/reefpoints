@@ -321,3 +321,22 @@ Community building is a design and engineering challenge
 * [Liquid Fire](https://github.com/ef4/liquid-fire) live demo!
   *  `npm install —save-dev liquid-fire` for Ember 1.11+
 * [Ember Paper](http://miguelcobain.github.io/ember-paper)
+
+
+# Closing Keynote: Chris Eppstein
+[@chriseppstein](https://github.com/chriseppstein)
+
+## Announcing: Eyeglass
+
+* Distribute SASS extensions as NPM modules for [LIBSASS](https://github.com/sass/libsass)
+* Will be able to integrate with a number of different build systems, including Ember CLI
+* Major performance improvements
+* The best parts of SASS and Compass, working with the best tools JS has to offer
+
+## A Selection of Chris' Inspirational Messages
+
+* "Don't be a Sasshole"
+* "People come to a community for the tech, but stay for the love!"
+* "Sass didn't lose when I started ignoring the haters"
+* "If you use a framework you love, you'll never work a day in your life"
+* "Secret to a vibrant community: be excellent to eachother"
