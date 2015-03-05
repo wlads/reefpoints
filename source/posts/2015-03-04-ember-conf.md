@@ -318,6 +318,6 @@ Community building is a design and engineering challenge
 * Googles material design spec
   * does not break rules of physics
   * animations and motion appeal to us because they fit into our idea of how it should physically work.
-*[Liquid Fire](https://github.com/ef4/liquid-fire) live demo!
+* [Liquid Fire](https://github.com/ef4/liquid-fire) live demo!
   *  `npm install —save-dev liquid-fire` for Ember 1.11+
 * [Ember Paper](http://miguelcobain.github.io/ember-paper)
