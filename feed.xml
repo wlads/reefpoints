@@ -515,8 +515,11 @@
 
 &lt;ul&gt;
 &lt;li&gt;does not break rules of physics&lt;/li&gt;
-&lt;li&gt;animations and motion appeal to us because they fit into our idea of how it should physically work.
-*&lt;a href="https://github.com/ef4/liquid-fire"&gt;Liquid Fire&lt;/a&gt; live demo!&lt;/li&gt;
+&lt;li&gt;animations and motion appeal to us because they fit into our idea of how it should physically work.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ef4/liquid-fire"&gt;Liquid Fire&lt;/a&gt; live demo!
+
+&lt;ul&gt;
 &lt;li&gt; &lt;code&gt;npm install —save-dev liquid-fire&lt;/code&gt; for Ember 1.11+&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://miguelcobain.github.io/ember-paper"&gt;Ember Paper&lt;/a&gt;&lt;/li&gt;
