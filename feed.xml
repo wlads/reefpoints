@@ -53,10 +53,36 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-04T00:00:00Z</updated>
+  <updated>2015-03-09T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>DockYard is now accepting staff augmentation Ember.js contracts</title>
+    <link rel="alternate" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"/>
+    <id>/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html</id>
+    <published>2015-03-09T00:00:00Z</published>
+    <updated>2015-03-09T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Over the past three years DockYard has primarily taken on &amp;quot;greenfield&amp;quot;
+projects, where we are responsible for building applications from
+scratch through design, development, and launch. Starting today we&amp;#39;re
+adding Ember.js Staff Augmentation to the services we provide to our
+clients.&lt;/p&gt;
+
+&lt;p&gt;If you are looking to add an Ember.js expert to help your team you
+should contact us. Our entire engineering team is extremely experienced
+in Ember.js application development, Ember.js best practices, and Ember.js Test Driven
+Development. We can help your team finish existing features, guide
+your team on how to properly build an Ember.js application, and help you
+hit your delivery deadline.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://dockyard.com/contact"&gt;Visit our contact page and choose
+&amp;quot;Staff Augmentation&amp;quot; for the Budget&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>EmberConf 2015 Day 2</title>
     <link rel="alternate" href="/2015/03/04/ember-conf.html"/>
@@ -1301,267 +1327,11 @@ request is merged.&lt;/p&gt;
 &lt;p&gt;Remember, both you and the interviewee are there because you want to improve some aspect of people’s lives through your work and their experience. You’re on the same side, and you share this interest in the thing you’re discussing. Make the most of this interviewing situation, and you will see improved results each time.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Ember QUnit 0.2.x</title>
-    <link rel="alternate" href="/2015/02/06/ember-qunit-0-2.html"/>
-    <id>/2015/02/06/ember-qunit-0-2.html</id>
-    <published>2015-02-06T00:00:00Z</published>
-    <updated>2015-02-06T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a href="https://github.com/rwjblue/ember-qunit"&gt;Ember QUnit&lt;/a&gt; 0.2.x has been released. It brings a whole bunch of bug fixes and some much needed cleanup, but there are a couple breaking changes also.&lt;/p&gt;
-
-&lt;h3&gt;History of the changes&lt;/h3&gt;
-
-&lt;p&gt;Ember QUnit started as a self contained library to make unit testing of Ember applications significantly easier. Ember QUnit proved that unit testing an Ember application could be very simple, and users of other testing frameworks wanted to join in the unit testing fun.  Unfortunately, the early code was fairly coupled to &lt;a href="http://qunitjs.com"&gt;QUnit&lt;/a&gt; (the testing framework being used) so reusing the Ember unit testing helpers separate from QUnit was not possible.&lt;/p&gt;
-
-&lt;p&gt;Ember QUnit 0.2.x is a complete organizational refactor to remove the Ember unit testing helpers (into the appropriately named &lt;a href="https://github.com/switchfly/ember-test-helpers"&gt;ember-test-helpers&lt;/a&gt;) and keep the QUnit specific parts in Ember QUnit. The majority of this refactoring effort was done by &lt;a href="https://twitter.com/dgeb"&gt;Dan Gebhardt&lt;/a&gt; and sponsored by the good folks at &lt;a href="http://www.switchfly.com"&gt;SwitchFly&lt;/a&gt; (you can read their write-up of the work &lt;a href="http://blog.switchfly.com/2014/11/Refactoring-Ember-Testing-for-Mocha"&gt;here&lt;/a&gt;). Out of this effort we have been able to create &lt;a href="https://github.com/switchfly/ember-mocha"&gt;Ember Mocha&lt;/a&gt; which now has feature parity with Ember QUnit and is a truly first class Ember unit testing solution. Due to the usage of a general purpose underlying ember-test-helpers library, it should now be possible to create a nice wrapper around nearly any JS testing framework.&lt;/p&gt;
-
-&lt;h3&gt;Notable Changes&lt;/h3&gt;
-
-&lt;h4&gt;setup and teardown Deprecation&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;setup&lt;/code&gt; and &lt;code&gt;teardown&lt;/code&gt; are deprecated in favor of &lt;code&gt;beforeEach&lt;/code&gt; / &lt;code&gt;afterEach&lt;/code&gt;. This update was made to allow closer conformance to &lt;a href="http://qunitjs.com/upgrade-guide-2.x/"&gt;QUnit 2.x&lt;/a&gt; concepts.&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Refactor from (under 0.1.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;AwesomeSauceComponent&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
-  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() { },
-
-  &lt;span class="function"&gt;teardown&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() { }
-});
-
-&lt;span class="comment"&gt;// To (under 0.2.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;AwesomeSauceComponent&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
-  &lt;span class="function"&gt;beforeEach&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() { },
-
-  &lt;span class="function"&gt;afterEach&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() { }
-});
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h4&gt;Global Assertion Deprecation&lt;/h4&gt;
-
-&lt;p&gt;Usage of global assertions are deprecated and should be replaced with the &lt;code&gt;Assert&lt;/code&gt; argument to your test callbacks. This update was made to allow closer conformance to &lt;a href="http://qunitjs.com/upgrade-guide-2.x/"&gt;QUnit 2.x&lt;/a&gt; concepts.&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Refactor from (under 0.1.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-
-test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;implements awesomeness&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-  equal(....);
-  ok(....);
-});
-
-&lt;span class="comment"&gt;// To (under 0.2.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-
-test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;implements awesomeness&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(assert) {
-  assert.equal(....);
-  assert.ok(....);
-});
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h4&gt;Arguments to setup / teardown / beforeEach / afterEach&lt;/h4&gt;
-
-&lt;p&gt;In prior versions of Ember QUnit, the &lt;code&gt;setup&lt;/code&gt; and &lt;code&gt;teardown&lt;/code&gt; hooks were called with a single argument: the container. In Ember QUnit 0.2 this argument is no longer present.&lt;/p&gt;
-
-&lt;p&gt;Note: usage of &lt;code&gt;setup&lt;/code&gt; and &lt;code&gt;teardown&lt;/code&gt; are deprecated, you should use &lt;code&gt;beforeEach&lt;/code&gt; and &lt;code&gt;afterEach&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Refactor from (under 0.1.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;AwesomeSauceComponent&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
-  &lt;span class="function"&gt;setup&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(container) {
-    &lt;span class="comment"&gt;/* do stuff */&lt;/span&gt;
-  },
-
-  &lt;span class="function"&gt;teardown&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;(container) {
-    &lt;span class="comment"&gt;/* do stuff */&lt;/span&gt;
-  }
-});
-
-&lt;span class="comment"&gt;// To (under 0.2.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, {
-  &lt;span class="function"&gt;beforeEach&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    &lt;span class="keyword"&gt;var&lt;/span&gt; container = &lt;span class="local-variable"&gt;this&lt;/span&gt;.container;
-
-    &lt;span class="comment"&gt;/* do stuff */&lt;/span&gt;
-  },
-
-  &lt;span class="function"&gt;afterEach&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-    &lt;span class="keyword"&gt;var&lt;/span&gt; container = &lt;span class="local-variable"&gt;this&lt;/span&gt;.container;
-
-    &lt;span class="comment"&gt;/* do stuff */&lt;/span&gt;
-  }
-});
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h4&gt;Deprecated this.append in Component tests&lt;/h4&gt;
-
-&lt;p&gt;In a component test you would previously call &lt;code&gt;this.append()&lt;/code&gt; to append your component into the DOM.  This was somewhat confusing, and took some explaining when teaching to newcomers, so it has been replaced with &lt;code&gt;this.render()&lt;/code&gt; which fits much better in our Ember mindset.&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Refactor from (under 0.1.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-
-test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;implements awesomeness&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-  &lt;span class="keyword"&gt;var&lt;/span&gt; component = &lt;span class="local-variable"&gt;this&lt;/span&gt;.subject();
-
-  &lt;span class="local-variable"&gt;this&lt;/span&gt;.append();
-
-  equal(component.&lt;span class="predefined"&gt;$&lt;/span&gt;().text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;WHOAA!! AWESOME!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-});
-
-&lt;span class="comment"&gt;// To (under 0.2.x):&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; { test, moduleForComponent } from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember-qunit&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-
-moduleForComponent(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;awesome-sauce&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-
-test(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;implements awesomeness&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;(assert) {
-  &lt;span class="keyword"&gt;var&lt;/span&gt; component = &lt;span class="local-variable"&gt;this&lt;/span&gt;.subject();
-
-  &lt;span class="local-variable"&gt;this&lt;/span&gt;.render();
-
-  assert.equal(component.&lt;span class="predefined"&gt;$&lt;/span&gt;().text(), &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;WHOAA!! AWESOME!!!&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
-});
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h4&gt;Ordering of afterEach / teardown Callback&lt;/h4&gt;
-
-&lt;p&gt;In Ember QUnit 0.1.x, the &lt;code&gt;teardown&lt;/code&gt; callback was called &lt;em&gt;after&lt;/em&gt; all internal cleanup was finished (like clearing the container, removing any views from the DOM, etc).  In Ember QUnit 0.2.x &lt;code&gt;afterEach&lt;/code&gt; / &lt;code&gt;teardown&lt;/code&gt; is called before the internal hooks.&lt;/p&gt;
-
-&lt;h4&gt;Build Changes&lt;/h4&gt;
-
-&lt;p&gt;There are a few build related changes with Ember QUnit 0.2.x:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Build output is removed from the main repo, and now is maintained at &lt;a href="https://github.com/rwjblue/ember-qunit-builds"&gt;ember-qunit-builds&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The output file locations are no longer nested in &lt;code&gt;dist/&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;CJS and AMD output is no longer generated.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;&lt;a href="https://github.com/ember-cli/ember-cli-qunit"&gt;ember-cli-qunit&lt;/a&gt; Version&lt;/h4&gt;
-
-&lt;p&gt;If you are using Ember CLI, you should update to &lt;a href="https://github.com/ember-cli/ember-cli-qunit"&gt;ember-cli-qunit&lt;/a&gt; version 0.3.7.&lt;/p&gt;
-
-&lt;h3&gt;Summary&lt;/h3&gt;
-
-&lt;p&gt;Please file issues &lt;a href="https://github.com/rwjblue/ember-qunit/issues"&gt;ember-qunit issues&lt;/a&gt; if you come across anything that isn&amp;#39;t listed here.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"><strong>DockYard is now accepting staff augmentation Ember.js contracts</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2015/03/04/ember-conf.html"><strong>EmberConf 2015 Day 2</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a>
-<a class="footer__post" href="/2015/03/03/ember-conf.html"><strong>EmberConf 2015 Day 1</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a>
-<a class="footer__post" href="/2015/02/24/rubyists-guide-to-executing-javascript.html"><strong>Rubyist's Guide to Executing JavaScript</strong><h6 class='footer-desc'>A high-level look at how your Ruby and JavaScript code gets executed.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/03/ember-conf.html"><strong>EmberConf 2015 Day 1</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
