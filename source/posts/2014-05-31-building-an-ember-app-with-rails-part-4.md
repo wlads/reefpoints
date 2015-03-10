@@ -10,6 +10,12 @@ published: true
 tags: ember, ruby, ruby on rails
 ---
 
+*This is a four-part series:
+[Part 1](http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html),
+[Part 2](http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html),
+[Part 3](http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html),
+[Part 4](http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html)*
+
 Before we get underway we need to update ember-data in our project to at
 least `beta.8`. Open `ember/bower.json` and if you have any version
 less than 8 you'll need to update to at least 8. If you are already on 8
