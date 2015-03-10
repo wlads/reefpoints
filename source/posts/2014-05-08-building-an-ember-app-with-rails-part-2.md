@@ -17,7 +17,7 @@ tags: ember, ruby, ruby on rails
 [Part 3](http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html),
 [Part 4](http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html)*
 
-Start your server:
+From your project directory root, go to your ember directory and start your server:
 
 ```bash
 cd ember
@@ -41,28 +41,30 @@ application over this multi-part series. Create a new directory and file
 `ember/tests/integration/landing-page-test.js`.
 
 All of our files will be in
-[ES6 module](http://wiki.ecmascript.org/doku.php?id=harmony:modules)
+[ES6
+module](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts)
 format. If you are unfamiliar with ES6 modules I suggest you go and read
 up.
 
 ```js
 import Ember from 'ember';
-import startApp from 'bostonember/tests/helpers/start-app';
+import { module, test } from 'qunit';
+import startApp from '../helpers/start-app';
 
 var App;
 
 module('Integration - Landing Page', {
-  setup: function() {
+  beforeEach: function() {
     App = startApp();
   },
-  teardown: function() {
+  afterEach: function() {
     Ember.run(App, 'destroy');
   }
 });
 
-test('Should welcome me to Boston Ember', function() {
+test('Should welcome me to Boston Ember', function(assert) {
   visit('/').then(function() {
-    equal(find('h2#title').text(), 'Welcome to Boston Ember');
+    assert.equal(find('h2#title').text(), 'Welcome to Boston Ember');
   });
 });
 ```

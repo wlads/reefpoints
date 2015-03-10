@@ -36,18 +36,18 @@ import startApp from 'bostonember/tests/helpers/start-app';
 var App;
 
 module('Integration - About Page', {
-  setup: function() {
+  beforeEach: function() {
     App = startApp();
   },
-  teardown: function() {
+  afterEach: function() {
     Ember.run(App, 'destroy');
   }
 });
 
 test('Should navigate to the About page', function() {
-  visit('/').then(function() {
-    click("a:contains('About')").then(function() {
-      equal(find('h3').text(), 'About');
+  visit('/').then(function(assert) {
+    click("a:contains('About')").then(function(assert) {
+      assert.equal(find('h3').text(), 'About');
     });
   });
 });
@@ -88,10 +88,10 @@ back to root? We can add a test to for this navigation as well.
 
 ```js
 // ember/tests/integration/landing-page-test.js
-test('Should allow navigating back to root from another page', function() {
+test('Should allow navigating back to root from another page', function(assert) {
   visit('/about').then(function() {
-    click('a:contains("Home")').then(function() {
-      notEqual(find('h3').text(), 'About');
+    click('a:contains("Home")').then(function(assert) {
+      assert.notEqual(find('h3').text(), 'About');
     });
   });
 });
@@ -122,6 +122,8 @@ npm install --save-dev ember-cli-pretender
 ember install:addon ember-cli-pretender
 ```
 
+You may need to restart your server at this point.
+
 Tell `JSHint` to ignore the `Pretender` constant.  Open up
 `ember/tests/.jshintrc` and add `"Pretender"` to the end of the `"predef"`
 array.
@@ -143,13 +145,13 @@ We should be in a good place to write our tests.
 ```js
 // ember/tests/integration/speakers-page-test.js
 import Ember from 'ember';
-import startApp from 'bostonember/tests/helpers/start-app';
+import startApp from '../helpers/start-app';
 import Pretender from 'pretender';
 
 var App, server;
 
 module('Integration - Speaker Page', {
-  setup: function() {
+  beforeEach: function() {
     App = startApp();
     var speakers = [
       {
@@ -183,44 +185,44 @@ module('Integration - Speaker Page', {
     });
 
   },
-  teardown: function() {
+  afterEach: function() {
     Ember.run(App, 'destroy');
     server.shutdown();
   }
 });
 
-test('Should allow navigation to the speakers page from the landing page', function() {
+test('Should allow navigation to the speakers page from the landing page', function(assert) {
   visit('/').then(function() {
-    click('a:contains("Speakers")').then(function() {
-      equal(find('h3').text(), 'Speakers');
+    click('a:contains("Speakers")').then(function(assert) {
+      assert.equal(find('h3').text(), 'Speakers');
     });
   });
 });
 
-test('Should list all speakers', function() {
+test('Should list all speakers', function(assert) {
   visit('/speakers').then(function() {
-    equal(find('a:contains("Bugs Bunny")').length, 1);
-    equal(find('a:contains("Wile E. Coyote")').length, 1);
-    equal(find('a:contains("Yosemite Sam")').length, 1);
+    assert.equal(find('a:contains("Bugs Bunny")').length, 1);
+    assert.equal(find('a:contains("Wile E. Coyote")').length, 1);
+    assert.equal(find('a:contains("Yosemite Sam")').length, 1);
   });
 });
 
-test('Should be able to navigate to a speaker page', function() {
+test('Should be able to navigate to a speaker page', function(assert) {
   visit('/speakers').then(function() {
-    click('a:contains("Bugs Bunny")').then(function() {
-      equal(find('h4').text(), 'Bugs Bunny');
+    click('a:contains("Bugs Bunny")').then(function(assert) {
+      assert.equal(find('h4').text(), 'Bugs Bunny');
     });
   });
 });
 
-test('Should be able visit a speaker page', function() {
+test('Should be able visit a speaker page', function(assert) {
   visit('/speakers/1').then(function() {
-    equal(find('h4').text(), 'Bugs Bunny');
+    assert.equal(find('h4').text(), 'Bugs Bunny');
   });
 });
 ```
 
-Take a look at the `setup` function. There is an array of objects that contains the speaker data, currently only `id`s and `name`s.
+Take a look at the `beforeEach` function. There is an array of objects that contains the speaker data, currently only `id`s and `name`s.
 Below that we are setting up the request stubs. Currently this feels
 like a lot of boilerplate, and that is because it is. I'm sure
 eventually someone will write a nice abstraction to clean this up. This
@@ -355,7 +357,9 @@ end
 Start your Rails server with port `3000` and restart your ember server with the command 
 `ember server --proxy http://localhost:3000`
 
-Any remote requests will be proxied to this location. Now you can point
+Any remote requests will be proxied to this location.
+
+Now you can point
 your browser to `http://localhost:4200`, click on `Speakers` and you
 should see:
 
