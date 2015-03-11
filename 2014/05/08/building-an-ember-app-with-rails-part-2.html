@@ -46,7 +46,13 @@
 <a href="http://dockyard.com/work/scratch" class="work-nav-item"><strong class='work-nav-item__title'>Scratch Wireless</strong><p>Never pay another penny for smartphone service.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 2</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 8<sup>th</sup>, 2014</time><div class='post__content'><p>Start your server:</p>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 2</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 8<sup>th</sup>, 2014</time><div class='post__content'><p><em>This is a four-part series:
+<a href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html">Part 1</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html">Part 2</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html">Part 3</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html">Part 4</a></em></p>
+
+<p>From your project directory root, go to your ember directory and start your server:</p>
 <div class="highlight bash "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -73,7 +79,8 @@ application over this multi-part series. Create a new directory and file
 <code>ember/tests/integration/landing-page-test.js</code>.</p>
 
 <p>All of our files will be in
-<a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">ES6 module</a>
+<a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">ES6
+module</a>
 format. If you are unfamiliar with ES6 modules I suggest you go and read
 up.</p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -96,24 +103,26 @@ up.</p>
 17
 18
 19
+<strong>20</strong>
 </pre></td>
   <td class="code"><pre><span class="reserved">import</span> Ember from <span class="string"><span class="delimiter">'</span><span class="content">ember</span><span class="delimiter">'</span></span>;
-<span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> { module, test } from <span class="string"><span class="delimiter">'</span><span class="content">qunit</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">../helpers/start-app</span><span class="delimiter">'</span></span>;
 
 <span class="keyword">var</span> App;
 
 module(<span class="string"><span class="delimiter">'</span><span class="content">Integration - Landing Page</span><span class="delimiter">'</span></span>, {
-  <span class="function">setup</span>: <span class="keyword">function</span>() {
+  <span class="function">beforeEach</span>: <span class="keyword">function</span>() {
     App = startApp();
   },
-  <span class="function">teardown</span>: <span class="keyword">function</span>() {
+  <span class="function">afterEach</span>: <span class="keyword">function</span>() {
     Ember.run(App, <span class="string"><span class="delimiter">'</span><span class="content">destroy</span><span class="delimiter">'</span></span>);
   }
 });
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should welcome me to Boston Ember</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should welcome me to Boston Ember</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h2#title</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Welcome to Boston Ember</span><span class="delimiter">'</span></span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h2#title</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Welcome to Boston Ember</span><span class="delimiter">'</span></span>);
   });
 });
 </pre></td>

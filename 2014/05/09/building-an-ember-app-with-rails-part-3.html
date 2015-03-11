@@ -46,7 +46,13 @@
 <a href="http://dockyard.com/work/scratch" class="work-nav-item"><strong class='work-nav-item__title'>Scratch Wireless</strong><p>Never pay another penny for smartphone service.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 3</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 9<sup>th</sup>, 2014</time><div class='post__content'><p>Let&#39;s implement some navigation in the Boston Ember app.</p>
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 3</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 9<sup>th</sup>, 2014</time><div class='post__content'><p><em>This is a four-part series:
+<a href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html">Part 1</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html">Part 2</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html">Part 3</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html">Part 4</a></em></p>
+
+<p>Let&#39;s implement some navigation in the Boston Ember app.</p>
 
 <p>Here is a list of sections in the Boston Ember website I&#39;d like to add:</p>
 
@@ -89,18 +95,18 @@ provide the Rails backend.</p>
 <span class="keyword">var</span> App;
 
 module(<span class="string"><span class="delimiter">'</span><span class="content">Integration - About Page</span><span class="delimiter">'</span></span>, {
-  <span class="function">setup</span>: <span class="keyword">function</span>() {
+  <span class="function">beforeEach</span>: <span class="keyword">function</span>() {
     App = startApp();
   },
-  <span class="function">teardown</span>: <span class="keyword">function</span>() {
+  <span class="function">afterEach</span>: <span class="keyword">function</span>() {
     Ember.run(App, <span class="string"><span class="delimiter">'</span><span class="content">destroy</span><span class="delimiter">'</span></span>);
   }
 });
 
 test(<span class="string"><span class="delimiter">'</span><span class="content">Should navigate to the About page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
-  visit(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    click(<span class="string"><span class="delimiter">&quot;</span><span class="content">a:contains('About')</span><span class="delimiter">&quot;</span></span>).then(<span class="keyword">function</span>() {
-      equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">About</span><span class="delimiter">'</span></span>);
+  visit(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+    click(<span class="string"><span class="delimiter">&quot;</span><span class="content">a:contains('About')</span><span class="delimiter">&quot;</span></span>).then(<span class="keyword">function</span>(assert) {
+      assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">About</span><span class="delimiter">'</span></span>);
     });
   });
 });
@@ -167,10 +173,10 @@ back to root? We can add a test to for this navigation as well.</p>
 8
 </pre></td>
   <td class="code"><pre><span class="comment">// ember/tests/integration/landing-page-test.js</span>
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should allow navigating back to root from another page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should allow navigating back to root from another page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/about</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Home&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-      notEqual(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">About</span><span class="delimiter">'</span></span>);
+    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Home&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+      assert.notEqual(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">About</span><span class="delimiter">'</span></span>);
     });
   });
 });
@@ -209,6 +215,8 @@ ember install:addon ember-cli-pretender
 </pre></td>
 </tr></table>
 </div></div>
+<p>You may need to restart your server at this point.</p>
+
 <p>Tell <code>JSHint</code> to ignore the <code>Pretender</code> constant.  Open up
 <code>ember/tests/.jshintrc</code> and add <code>&quot;Pretender&quot;</code> to the end of the <code>&quot;predef&quot;</code>
 array.</p>
@@ -314,13 +322,13 @@ our server:</p>
 </pre></td>
   <td class="code"><pre><span class="comment">// ember/tests/integration/speakers-page-test.js</span>
 <span class="reserved">import</span> Ember from <span class="string"><span class="delimiter">'</span><span class="content">ember</span><span class="delimiter">'</span></span>;
-<span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">bostonember/tests/helpers/start-app</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> startApp from <span class="string"><span class="delimiter">'</span><span class="content">../helpers/start-app</span><span class="delimiter">'</span></span>;
 <span class="reserved">import</span> Pretender from <span class="string"><span class="delimiter">'</span><span class="content">pretender</span><span class="delimiter">'</span></span>;
 
 <span class="keyword">var</span> App, server;
 
 module(<span class="string"><span class="delimiter">'</span><span class="content">Integration - Speaker Page</span><span class="delimiter">'</span></span>, {
-  <span class="function">setup</span>: <span class="keyword">function</span>() {
+  <span class="function">beforeEach</span>: <span class="keyword">function</span>() {
     App = startApp();
     <span class="keyword">var</span> speakers = [
       {
@@ -354,45 +362,45 @@ module(<span class="string"><span class="delimiter">'</span><span class="content
     });
 
   },
-  <span class="function">teardown</span>: <span class="keyword">function</span>() {
+  <span class="function">afterEach</span>: <span class="keyword">function</span>() {
     Ember.run(App, <span class="string"><span class="delimiter">'</span><span class="content">destroy</span><span class="delimiter">'</span></span>);
     server.shutdown();
   }
 });
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should allow navigation to the speakers page from the landing page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should allow navigation to the speakers page from the landing page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Speakers&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-      equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Speakers</span><span class="delimiter">'</span></span>);
+    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Speakers&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+      assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Speakers</span><span class="delimiter">'</span></span>);
     });
   });
 });
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all speakers</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all speakers</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
   });
 });
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should be able to navigate to a speaker page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should be able to navigate to a speaker page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-      equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h4</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>);
+    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+      assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h4</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>);
     });
   });
 });
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should be able visit a speaker page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should be able visit a speaker page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers/1</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h4</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h4</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>);
   });
 });
 </pre></td>
 </tr></table>
 </div></div>
-<p>Take a look at the <code>setup</code> function. There is an array of objects that contains the speaker data, currently only <code>id</code>s and <code>name</code>s.
+<p>Take a look at the <code>beforeEach</code> function. There is an array of objects that contains the speaker data, currently only <code>id</code>s and <code>name</code>s.
 Below that we are setting up the request stubs. Currently this feels
 like a lot of boilerplate, and that is because it is. I&#39;m sure
 eventually someone will write a nice abstraction to clean this up. This
@@ -599,7 +607,9 @@ namespace <span class="symbol">:api</span> <span class="keyword">do</span>
 <p>Start your Rails server with port <code>3000</code> and restart your ember server with the command 
 <code>ember server --proxy http://localhost:3000</code></p>
 
-<p>Any remote requests will be proxied to this location. Now you can point
+<p>Any remote requests will be proxied to this location.</p>
+
+<p>Now you can point
 your browser to <code>http://localhost:4200</code>, click on <code>Speakers</code> and you
 should see:</p>
 

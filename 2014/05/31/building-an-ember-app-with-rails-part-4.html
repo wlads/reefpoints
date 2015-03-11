@@ -46,8 +46,14 @@
 <a href="http://dockyard.com/work/scratch" class="work-nav-item"><strong class='work-nav-item__title'>Scratch Wireless</strong><p>Never pay another penny for smartphone service.</p></a>
 <a href="http://dockyard.com/work/coachup" class="work-nav-item"><strong class='work-nav-item__title'>CoachUp</strong><p>You should be training. Right now.</p></a>
 <a href="http://dockyard.com/work/askthem" class="work-nav-item"><strong class='work-nav-item__title'>AskThem</strong><p>Ask officials questions on city, state, and federal levels.</p></a>
-<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 4</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 31<sup>st</sup>, 2014</time><div class='post__content'><p>Before we get underway we need to update ember-data in our project to at
-least <code>beta.8</code>. Open <code>ember/bower.json</code> and if you have any version
+<a href="http://dockyard.com/work/beacon-hill-blitz" class="work-nav-item"><strong class='work-nav-item__title'>Beacon Hill Blitz</strong><p>How technology helped repeal the #TechTax.</p></a></nav></div></div><nav class='main-nav-wrap'><div class='main-nav l-wrap--wide'><a class="logo" href="http://dockyard.com">DockYard</a><a class="club-sandwich" data-icon="☰" href="#"><span class='is-hidden'>Navigation</span></a></div></nav></header><div class='push--header'></div><div class='l-wrap--blog'><a href="/"><strong class='logo--blog'>ReefPoints</strong><strong class='logo--blog__tagline'>Blog</strong></a><nav class='blog-nav'><a class="blog-nav__item " href="/">Posts</a><a class="blog-nav__item " href="/categories.html">Categories</a><a class="blog-nav__item " href="/authors.html">Authors</a></nav></div><div class='l-wrap--blog__post'><h1 class='post__title'>Building an Ember App with Rails Part 4</h1><a class="post__author" href="/authors/brian-cardarella.html">Brian Cardarella</a><time class='post__date'>May 31<sup>st</sup>, 2014</time><div class='post__content'><p><em>This is a four-part series:
+<a href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html">Part 1</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html">Part 2</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html">Part 3</a>,
+<a href="http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html">Part 4</a></em></p>
+
+<p>Before we get underway we need to update ember-data in our project to at
+least <code>1.0.0-beta.8</code>. Open <code>ember/bower.json</code> and if you have any version
 less than 8 you&#39;ll need to update to at least 8. If you are already on 8
 or higher you won&#39;t need to do anything.</p>
 
@@ -74,10 +80,10 @@ means we&#39;ll have to add a relationship between two models.</p>
   <td class="code"><pre><span class="comment">// ember/tests/integration/speaker-page-test.js</span>
 
 test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all speakers and number of presentations</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
-  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny (2)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote (1)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam (3)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny (2)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Wile E. Coyote (1)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Yosemite Sam (3)&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
   });
 });
 </pre></td>
@@ -86,7 +92,7 @@ test(<span class="string"><span class="delimiter">'</span><span class="content">
 <p>The number in the parentheses will represent the number of presentations that this speaker 
 has given.</p>
 
-<p>Next we need to modify our <code>setup</code> function</p>
+<p>Next we need to modify our <code>beforeEach</code> function</p>
 <div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -244,10 +250,10 @@ whitespace</a>.</p>
 </pre></td>
   <td class="code"><pre><span class="comment">// ember/tests/integration/speaker-page-test.js</span>
 
-test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all presentations for a speaker</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>() {
-  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers/1</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;What</span><span class="char">\'</span><span class="content">s up with Docs?&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
-    equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;Of course, you know, this means war.&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+test(<span class="string"><span class="delimiter">'</span><span class="content">Should list all presentations for a speaker</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
+  visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers/1</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;What</span><span class="char">\'</span><span class="content">s up with Docs?&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
+    assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">li:contains(&quot;Of course, you know, this means war.&quot;)</span><span class="delimiter">'</span></span>).length, <span class="integer">1</span>);
   });
 });
 </pre></td>
@@ -255,7 +261,7 @@ test(<span class="string"><span class="delimiter">'</span><span class="content">
 </div></div>
 <p>This new test is asserting that when we visit a given speaker&#39;s page all
 of those speaker&#39;s presentations will be listed. We first need to add
-presentation data to the API stub (within our setup function) for visiting a speaker page.</p>
+presentation data to the API stub (within our <code>beforeEach</code> function) for visiting a speaker page.</p>
 <div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -430,8 +436,6 @@ necessary data. </p>
 
 <p><img src="http://i.imgur.com/jmHGxgS.png" alt="image1">
 <img src="http://i.imgur.com/plrKLvg.png" alt="image2"></p>
-
-<p>Next time we&#39;ll deploy our small app to Heroku.</p>
 
 <p><a href="https://github.com/bostonember/website/commit/10f838ff1bfb0aa1307d4de6587889489697c8da">Check out the actual code for this
 part</a></p>
