@@ -6,7 +6,7 @@ author: Maria Matveeva
 twitter: "rgbcolor"
 social: true
 summary: "The only way to get real answers in user interviews for UX design"
-published: false
+published: true
 tags: design, observations, quality, workflow
 ---
 
