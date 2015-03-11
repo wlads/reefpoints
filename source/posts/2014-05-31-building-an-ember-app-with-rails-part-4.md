@@ -10,8 +10,14 @@ published: true
 tags: ember, ruby, ruby on rails
 ---
 
+*This is a four-part series:
+[Part 1](http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html),
+[Part 2](http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html),
+[Part 3](http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html),
+[Part 4](http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html)*
+
 Before we get underway we need to update ember-data in our project to at
-least `beta.8`. Open `ember/bower.json` and if you have any version
+least `1.0.0-beta.8`. Open `ember/bower.json` and if you have any version
 less than 8 you'll need to update to at least 8. If you are already on 8
 or higher you won't need to do anything.
 
@@ -29,10 +35,10 @@ In `ember/tests/integration/speakers-page-test.js` modify the test
 // ember/tests/integration/speaker-page-test.js
 
 test('Should list all speakers and number of presentations', function() {
-  visit('/speakers').then(function() {
-    equal(find('a:contains("Bugs Bunny (2)")').length, 1);
-    equal(find('a:contains("Wile E. Coyote (1)")').length, 1);
-    equal(find('a:contains("Yosemite Sam (3)")').length, 1);
+  visit('/speakers').then(function(assert) {
+    assert.equal(find('a:contains("Bugs Bunny (2)")').length, 1);
+    assert.equal(find('a:contains("Wile E. Coyote (1)")').length, 1);
+    assert.equal(find('a:contains("Yosemite Sam (3)")').length, 1);
   });
 });
 ```
@@ -40,7 +46,7 @@ test('Should list all speakers and number of presentations', function() {
 The number in the parentheses will represent the number of presentations that this speaker 
 has given.
 
-Next we need to modify our `setup` function
+Next we need to modify our `beforeEach` function
 
 ```javascript
 // ember/tests/integration/speaker-page-test.js
@@ -133,17 +139,17 @@ At this point our new test should be green. Lets add another.
 ```javascript
 // ember/tests/integration/speaker-page-test.js
 
-test('Should list all presentations for a speaker', function() {
-  visit('/speakers/1').then(function() {
-    equal(find('li:contains("What\'s up with Docs?")').length, 1);
-    equal(find('li:contains("Of course, you know, this means war.")').length, 1);
+test('Should list all presentations for a speaker', function(assert) {
+  visit('/speakers/1').then(function(assert) {
+    assert.equal(find('li:contains("What\'s up with Docs?")').length, 1);
+    assert.equal(find('li:contains("Of course, you know, this means war.")').length, 1);
   });
 });
 ```
 
 This new test is asserting that when we visit a given speaker's page all
 of those speaker's presentations will be listed. We first need to add
-presentation data to the API stub (within our setup function) for visiting a speaker page.
+presentation data to the API stub (within our `beforeEach` function) for visiting a speaker page.
 
 ```javascript
 // ember/tests/integration/speaker-page-test.js
@@ -255,8 +261,6 @@ necessary data.
 
 ![image1](http://i.imgur.com/jmHGxgS.png)
 ![image2](http://i.imgur.com/plrKLvg.png)
-
-Next time we'll deploy our small app to Heroku.
 
 [Check out the actual code for this
 part](https://github.com/bostonember/website/commit/10f838ff1bfb0aa1307d4de6587889489697c8da)

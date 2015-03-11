@@ -10,6 +10,11 @@ summary: ember-cli & Rails
 published: true
 tags: ember, ruby, ruby on rails
 ---
+*This is a four-part series:
+[Part 1](http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html),
+[Part 2](http://reefpoints.dockyard.com/2014/05/08/building-an-ember-app-with-rails-part-2.html),
+[Part 3](http://reefpoints.dockyard.com/2014/05/09/building-an-ember-app-with-rails-part-3.html),
+[Part 4](http://reefpoints.dockyard.com/2014/05/31/building-an-ember-app-with-rails-part-4.html)*
 
 This series will take us through building and structuring an application
 with an Ember front-end built with
@@ -27,9 +32,9 @@ Let's start by making sure all relevant dev tools are installed on our
 machine. I am using the following:
 
 * Ruby 2.1.1
-* Rails 4.1.1
-* Node 0.10.26
-* npm 1.4.7
+* Rails 4.2.0
+* Node 0.12.0
+* npm 2.7.0
 * Postgres (only necessary because we are deploying to Heroku)
 
 Versions at or above these versions should be OK for following along. Please refer elsewhere on how to install these tools on your development
@@ -50,7 +55,7 @@ ember --version
 You should see:
 
 ```bash
-version: 0.0.27
+version: 0.2.0
 ```
 
 Or a greater version.
@@ -131,10 +136,8 @@ Now everything related to the Asset Pipeline is completely removed.
 Add the following to the `Gemfile`:
 
 ```ruby
-gem 'active_model_serializers', '0.8.3'
+gem 'active_model_serializers', '0.9.3'
 ```
-
-**Note:** If you're using Rails 4.2, you'll need to specify version 0.8.3 for the active\_model\_serializers gem.
 
 If you don't have Postgres on your machine you can set this for
 Production only:
