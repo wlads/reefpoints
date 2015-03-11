@@ -10,14 +10,10 @@ published: true
 tags: design, observations, quality, workflow
 ---
 
-
-#Ask good questions
-
 In an [earlier post](http://reefpoints.dockyard.com/2015/02/11/managing-the-conversation.html), I focused on the challenges of leading a good user interview. Today, I’d like to focus on one rule about asking questions to get reliable results.
 
 ##Ask open-ended questions.
 Otherwise, the responses you get will be either biased or useless. 
-
 
 ##Let's look at some interview questions (from worst to best)
 
@@ -38,12 +34,10 @@ This question is so bad it's grotesque, but it may still happen to novice interv
 
 You may notice that it takes more  time to ask open-ended questions. You may trigger your interviewee to share a lot of extra information, not just a concise answer to the question you asked. You may have to follow up with more questions to get to the “why” behind a certain behavior. But with the increased effort comes a better result. The responses are real. They are not influenced by your opinion about the thing you’re asking, because you’ve kept that opinion outside the questions. These responses present a more nuanced picture of your users’ needs and environment.
 
-
 I condensed this principle from conference talks, books and workshops I attended over the past few years. Two sources in particular: 
 
  - [Michelle Yaiser's](https://twitter.com/michelleyaiser) talk on user research at [UX Camp](http://uxeast.org/)
 
  - [Sound reporting : the NPR guide to audio journalism and production](http://shop.npr.org/sound-reporting). This book is outside of the usual UX Design reading list, but it's useful for interviewing skills. It shows how much  effort and consideration it takes a journalist to gather information in a neutral, ethical way.
-
 
 It's almost always a better investment of your time to conduct a few in-depth, “difficult” and neutral interviews, than to rush many interviewees through surface-level questions. This is especially true at the beginning of a project, when more design options are open. Your effort to keep the process unbiased will yield quality results, and quality wins.
