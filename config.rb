@@ -72,7 +72,7 @@ helpers do
   end
 
   def tag_count(tag)
-    blog.articles.select { |article| article.tags.include?(tag) }.size
+    blog.articles.select { |article| article.tags.map(&:downcase).include?(tag.downcase) }.size
   end
 
   def tag_name(tag)
