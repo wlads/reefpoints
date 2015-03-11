@@ -53,10 +53,53 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-09T00:00:00Z</updated>
+  <updated>2015-03-11T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ask good questions</title>
+    <link rel="alternate" href="/2015/03/11/ask-good-questions.html"/>
+    <id>/2015/03/11/ask-good-questions.html</id>
+    <published>2015-03-11T00:00:00Z</published>
+    <updated>2015-03-11T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1&gt;Ask good questions&lt;/h1&gt;
+
+&lt;p&gt;In an &lt;a href="http://reefpoints.dockyard.com/2015/02/11/managing-the-conversation.html"&gt;earlier post&lt;/a&gt;, I focused on the challenges of leading a good user interview. Today, I’d like to focus on one rule about asking questions to get reliable results.&lt;/p&gt;
+
+&lt;h2&gt;Ask open-ended questions.&lt;/h2&gt;
+
+&lt;p&gt;Otherwise, the responses you get will be either biased or useless. &lt;/p&gt;
+
+&lt;h2&gt;Let&amp;#39;s look at some interview questions (from worst to best)&lt;/h2&gt;
+
+&lt;p&gt;They appear in order: from least useful to most useful in getting you good responses. For context, imagine you’re doing some user research and you&amp;#39;re in the middle of a project to design some widgets.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“You like this widget in green, right? We picked green because it’s calming.”&lt;/strong&gt;
+This question is so bad it&amp;#39;s grotesque, but it may still happen to novice interviewers. Not only does the question suggest a specific answer (you like it!), but it also gives reasons why that answer might be the right one (green is calming!) The interviewee is not likely to share a genuine opinion with this much pressure to say “yes, I love it in green!”.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“How do you feel about this widget? Do you like its color?”&lt;/strong&gt; Slightly better, but still of limited use. By suggesting a response and allowing the user to narrow it down to a binary yes/no, we’re getting a very limited amount of information back. In addition, likes and dislikes move the conversation into a potentially awkward area. Some people may not be comfortable telling you they don’t like something you made.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“How do you feel about this widget? What do you think it does?”&lt;/strong&gt; Now, this is better. We are opening up to qualitative responses with lots of detail. By not suggesting options for what an answer might be, we are more likely to get unexpected, valuable results.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“Talk me through what you see here.”&lt;/strong&gt; A super open-ended question, useful in the beginning of an interview. Do they even see the widget?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“How would you normally approach (widget-related task)?”&lt;/strong&gt; This seems to be the best opening question for a user interview. While not appropriate for all circumstances, it is great at opening up areas you may not have considered to be in the scope of the project. This question can help reframe the problem you are working to solve.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;“How did you last (widget-related task)?”&lt;/strong&gt; Past behavior is a more reliable indicator than a behavior people might describe as their normal. So, this re-phrasing can encourage more honest answers. &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may notice that it takes more  time to ask open-ended questions. You may trigger your interviewee to share a lot of extra information, not just a concise answer to the question you asked. You may have to follow up with more questions to get to the “why” behind a certain behavior. But with the increased effort comes a better result. The responses are real. They are not influenced by your opinion about the thing you’re asking, because you’ve kept that opinion outside the questions. These responses present a more nuanced picture of your users’ needs and environment.&lt;/p&gt;
+
+&lt;p&gt;I condensed this principle from conference talks, books and workshops I attended over the past few years. Two sources in particular: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://twitter.com/michelleyaiser"&gt;Michelle Yaiser&amp;#39;s&lt;/a&gt; talk on user research at &lt;a href="http://uxeast.org/"&gt;UX Camp&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://shop.npr.org/sound-reporting"&gt;Sound reporting : the NPR guide to audio journalism and production&lt;/a&gt;. This book is outside of the usual UX Design reading list, but it&amp;#39;s useful for interviewing skills. It shows how much  effort and consideration it takes a journalist to gather information in a neutral, ethical way.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It&amp;#39;s almost always a better investment of your time to conduct a few in-depth, “difficult” and neutral interviews, than to rush many interviewees through surface-level questions. This is especially true at the beginning of a project, when more design options are open. Your effort to keep the process unbiased will yield quality results, and quality wins.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>DockYard is now accepting staff augmentation Ember.js contracts</title>
     <link rel="alternate" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"/>
@@ -1264,74 +1307,11 @@ has the added bonus of publishing corrections to the blog when anyone&amp;#39;s 
 request is merged.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Manage the conversation</title>
-    <link rel="alternate" href="/2015/02/11/managing-the-conversation.html"/>
-    <id>/2015/02/11/managing-the-conversation.html</id>
-    <published>2015-02-11T00:00:00Z</published>
-    <updated>2015-02-11T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;One of my core UX design skills is finding information through user testing and interviews. What we gather will help us decide what to build, and how. This makes our ability to source qualitative information very important to the success of a product.&lt;/p&gt;
-
-&lt;p&gt;A user interview is, at its essence, a closely managed conversation. It is my responsibility, as the designer, to manage it. The level of control required of the UX designer in this situation is unfamiliar, and can be stressful in the beginning. I think the reason for this initial discomfort is that we have little context for this managed type of conversation in our everyday life. We’re used to conversations in which both parties share control over the direction and tone. Owning the conversation completely can feel rough and undemocratic. It takes skill and experience to do it while making the other party feel at ease.&lt;/p&gt;
-
-&lt;p&gt;I want to share what I learned while conducting interviews and user tests at DockYard. I hope this will take some of the edge off the initial difficulty for others also learning this skill, and make it a more pleasant and productive time for all.&lt;/p&gt;
-
-&lt;h2&gt;Lessons learned&lt;/h2&gt;
-
-&lt;h3&gt;1. Prepare well&lt;/h3&gt;
-
-&lt;p&gt;There is a lot of prep work involved, before the conversations can even start. Taking the time to do these steps properly allows me to get the most out of the time I spend with the interviewee.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Schedule the interviews. You may need to find suitable users yourself. Or, the client may help by putting you in touch with some preselected users to interview. Try not to schedule interviews back-to-back in case one takes a bit longer than expected.&lt;/li&gt;
-&lt;li&gt;Arrange for the legal details. This could include notifying the interviewee of privacy arrangements, having them sign an NDA, or otherwise vetting the situation. Basically, you want to protect yourself, the person you’re interviewing, and the client by specifying how information is going to be used.&lt;/li&gt;
-&lt;li&gt;Draft a sequence of questions that cover your desired information.&lt;/li&gt;
-&lt;li&gt;Edit until questions sound polished and neutral (more on this to follow, in a separate post)&lt;/li&gt;
-&lt;li&gt;Prepare a notebook, pen and a laptop.&lt;/li&gt;
-&lt;li&gt;Print the questions so I can write notes in context and check off completed ones.&lt;/li&gt;
-&lt;li&gt;Prepare backups and extra copies of any materials I’m planning to use.&lt;/li&gt;
-&lt;li&gt;Grab water and a snack! You don’t want to take focus away from the interview by being too thirsty or hungry.&lt;/li&gt;
-&lt;li&gt;If needed, also grab a timer and a sound recorder (your needs may vary)&lt;/li&gt;
-&lt;li&gt;Triple-check the list of interviewees and their basic information. For example, phone interviews can happen over different time zones. It’s nice to verify you&amp;#39;re not calling the person who kindly offered up their time at 6am.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;2. Establish context&lt;/h3&gt;
-
-&lt;p&gt;Your interviewee should theoretically know who you are and what you’re talking about. After all, they agreed to the interview. However, it is always a good idea to confirm your assumptions. A brief introduction won’t hurt. For example, you could start with &lt;em&gt;“Hi ____, thank you for taking time to do this! My name is ____, and my company was hired by ____ to improve their product. How familiar are you with the product?”&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3&gt;3. Direct the conversation&lt;/h3&gt;
-
-&lt;p&gt;For a UX designer starting out, it may seem rude to redirect the conversation. Especially so if your interviewee is describing, with passion and detail, a subject they are an expert in. But don&amp;#39;t be afraid to redirect the conversation. You need to get to the specific questions you want answered (but of course be nice about it!). For example, to get back on track, you might say &lt;em&gt;“Great - this extra information is very helpful, but I’d like to get back to the original reason you started using ____?”&lt;/em&gt;  This acknowledges the value of their insight, then nudges them to answer your original question.&lt;/p&gt;
-
-&lt;h3&gt;4. Go with the flow&lt;/h3&gt;
-
-&lt;p&gt;At the start of the interview, there is a prepared, logical sequence of questions to ask. But in a conversation, one thing may lead naturally to another. If it makes sense to ask things out of order, it’s totally acceptable to do so. This is where a printed list of questions helps. Check them off as you go to make sure none remain unanswered.&lt;/p&gt;
-
-&lt;h3&gt;5. Use teamwork&lt;/h3&gt;
-
-&lt;p&gt;It is definitely easier to have a team of two handling the interview. This way, one person asks questions while the other focuses on capturing notes. Some notes may be of things like body language, expression, and movement - all important indicators of how a user may feel about the questions in addition to what they actually say. An experienced interviewer could probably handle both tasks with grace. As a beginner, it&amp;#39;s almost impossible. Try to do both at once, and you&amp;#39;ll either get awkward pauses as you write notes, or you&amp;#39;ll fail to record some of the valuable details.&lt;/p&gt;
-
-&lt;h3&gt;6. Don’t be afraid to clarify&lt;/h3&gt;
-
-&lt;p&gt;Some interviews happen over the phone. The challenge here is that we lose most of the added information of body language and facial expression. This could be remedied with extra questions. For example, if I think the interviewee is referring to their laptop to answer something, I would literally ask that: &lt;em&gt;“I’m guessing you’re looking at the laptop screen for reference - is that correct?”&lt;/em&gt;  It is also important to be  attentive to the tone of voice so you can hear emotion, like hesitation.&lt;/p&gt;
-
-&lt;p&gt;Another possible challenge in phone interviews is sound quality. Users may be on a shaky cell phone connection, or calling us via Skype. This can make their (and potentially your own) voice difficult to understand. It is tempting to dismiss the poor quality of sound and just omit details you can’t quite hear. Make sure to always ask the interviewee to repeat or speak louder if you do not understand what’s being said.&lt;/p&gt;
-
-&lt;h2&gt;In conclusion&lt;/h2&gt;
-
-&lt;p&gt;Conducting interviews caused me to cringe quite a few times. Am I doing it right? What does the interviewee think of me? Do I sound professional? Looking back, I can see how I and my colleagues got over our fears, and made significant improvements with just a few rounds of practice.&lt;/p&gt;
-
-&lt;p&gt;Remember, both you and the interviewee are there because you want to improve some aspect of people’s lives through your work and their experience. You’re on the same side, and you share this interest in the thing you’re discussing. Make the most of this interviewing situation, and you will see improved results each time.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/11/ask-good-questions.html"><strong>Ask good questions</strong><h6 class='footer-desc'>The only way to get real answers in user interviews for UX design</h6></a>
 <a class="footer__post" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"><strong>DockYard is now accepting staff augmentation Ember.js contracts</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/04/ember-conf.html"><strong>EmberConf 2015 Day 2</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a>
-<a class="footer__post" href="/2015/03/03/ember-conf.html"><strong>EmberConf 2015 Day 1</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/04/ember-conf.html"><strong>EmberConf 2015 Day 2</strong><h6 class='footer-desc'>Live blog of EmberConf 2015</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
