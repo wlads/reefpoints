@@ -71,4 +71,4 @@ Be willing to be one of the first people at the office and leave later than most
 
 During all the chaos of starting a new job stay organized and keep notes of things you are learning, you will probably not remember that Git command after one or two uses.
 
-If you find yourself in a new work environment and feel overwhelmed justremember to ask as many questions as you can and work hard to understand the solutions your team provides you.
+If you find yourself in a new work environment and feel overwhelmed just remember to ask as many questions as you can and work hard to understand the solutions your team provides you.
