@@ -11,8 +11,6 @@ published: true
 tags: opinion, jobs, team
 ---
 
-# Thriving in a New Work Environment
-
 ## My Background
 If you asked me a month and a half ago when I was living and working near Philadelphia as a Director of digital communications, “Cory what are the chances that you will be in Boston working for a new company?”. I would have said you were crazy and I couldn’t see myself leaving the Philly area unless a company blew me away with their culture and work environment. How would I watch my Sixers, Eagles, and Phillies games if I left the Philly area?
 
