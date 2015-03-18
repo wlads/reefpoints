@@ -53,10 +53,64 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-16T00:00:00Z</updated>
+  <updated>2015-03-18T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>The Doldrums of Consulting</title>
+    <link rel="alternate" href="/2015/03/18/the-doldrums-of-consulting.html"/>
+    <id>/2015/03/18/the-doldrums-of-consulting.html</id>
+    <published>2015-03-18T00:00:00Z</published>
+    <updated>2015-03-18T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="http://i.imgur.com/X6DGygm.jpg" alt="http://i.imgur.com/X6DGygm.jpg"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Doldrums&lt;/em&gt; is a sailing term. It means when you&amp;#39;re stuck on the
+water with no wind. Your only option is to wait for the wind to pick up
+so you can continue on your way.&lt;/p&gt;
+
+&lt;p&gt;DockYard is currentlly in the doldrums.&lt;/p&gt;
+
+&lt;p&gt;Maybe this isn&amp;#39;t something that a consultancy should publically admit,
+but we&amp;#39;ve seen client engagement significantly dry up for us in the past
+month and a half. Where we were selling and turning clients away a few
+months ago we are struggling to close a single deal right now. This is
+the ebb and flow of consulting, it happens. Our only option is to wait
+for the wind to pick up so we can continue on our way.&lt;/p&gt;
+
+&lt;p&gt;I was speaking with a few other software (Ember) consultancies recently
+and they voiced similiar stories. I am not certain why Ember has seen
+such a steep drop off in interest, one theory is that Ember is currently
+in the &lt;em&gt;Trough of Sorrow&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/hkzpuBa.png" alt="http://i.imgur.com/hkzpuBa.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Does a framework follow similar trends to a startup? Perhaps. In any
+event, we&amp;#39;re now trying to diversify our offerings. I announced last
+week that DockYard is now offering Staff Augmentation services. This has
+piqued some interest but we&amp;#39;re seeing a lot of inquiries for starting a
+few months from now.&lt;/p&gt;
+
+&lt;p&gt;It is funny because I know in a month or two we&amp;#39;ll be fine. We just have
+to survive the thin times, which is always stressful. How we weather
+this will speak a lot about DockYard as a company. It is said the only
+way to survive the &lt;em&gt;Trough of Sorrow&lt;/em&gt; is going to be company culture, if
+this is true then I&amp;#39;m quite confident in us.&lt;/p&gt;
+
+&lt;p&gt;I also realize that we&amp;#39;re towards the end of a financial quarter.
+Companies tend to reach out after the start of a quarter, but if I were
+them I wouldn&amp;#39;t wait. If companies were to &lt;a href="http://dockyard.com/contact"&gt;contact
+us&lt;/a&gt; now they would find us in position that
+would be easy to negotiate with.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;d be interested in hearing from other shops, have you experienced The
+Doldrums? What pulled you through? What strategies have you put in place
+to avoid them in the future?&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Thriving in a New Work Environment</title>
     <link rel="alternate" href="/2015/03/16/thriving-in-a-new-work-environment.html"/>
@@ -1205,79 +1259,11 @@ hit your delivery deadline.&lt;/p&gt;
 &lt;/ul&gt;
 </content>
   </entry>
-  <entry>
-    <title>Rubyist's Guide to Executing JavaScript</title>
-    <link rel="alternate" href="/2015/02/24/rubyists-guide-to-executing-javascript.html"/>
-    <id>/2015/02/24/rubyists-guide-to-executing-javascript.html</id>
-    <published>2015-02-24T00:00:00Z</published>
-    <updated>2015-02-24T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;JavaScript is introduced to developers as a programming language that runs client-side, in the browser. This is convenient as a jumping off point for aspiring programmers, who can simply open up Chrome’s Web Inspector and start alerting “Hello, World!”, but it’s a concept that isn’t easy to unpack. Soon enough, the developer will likely find herself in contact with JavaScript outside of the browser – Node.js being the most prominent example of this. At this point, the notion of JavaScript being a language for the browser is no longer helpful; it obfuscates what is happening when a developer executes a line of code.&lt;/p&gt;
-
-&lt;p&gt;This post is a high level primer on what is happening “under the hood” with our code. It will lend some insight into what terminology like “tokenizing,” “interpreting,” “compiling,” and a host of other terms mean. You&amp;#39;ll gain a better sense of what the concept of a virtual machine encapsulates. And hopefully you&amp;#39;ll leave with a better understanding of what your script is doing before it hits your computer&amp;#39;s processor.&lt;/p&gt;
-
-&lt;p&gt;I feel this article will be well-suited for Rubyists who find themselves increasingly working in the realm of JavaScript, as I’ll be comparing how code executes between the two languages.&lt;/p&gt;
-
-&lt;p&gt;Rather than explaining how a line of Ruby or JavaScript code gets processed and run, I’d like to work our way backwards, beginning with machine code. When you write a line of Ruby, it doesn’t simply go to the processor when you run the script. It goes through a number of translations before being turned into machine code that the processor can execute. We’ll look at how Ruby gets processed and then touch on how JavaScript differs.&lt;/p&gt;
-
-&lt;h1&gt;Ruby&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src="http://i.imgur.com/Sa1qURz.png" alt="Ruby execution diagram"&gt;&lt;/p&gt;
-
-&lt;h2&gt;Machine code&lt;/h2&gt;
-
-&lt;p&gt;Machine code is binary that is executed directly by your computer’s CPU. The bit patterns correspond directly to the architecture design of the processor.&lt;/p&gt;
-
-&lt;p&gt;Before a statement in a scripted language becomes machine code, it gets compiled into machine code by a compiler.&lt;/p&gt;
-
-&lt;h2&gt;Virtual Machine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://www.aosabook.org/en/llvm.html"&gt;LLVM&lt;/a&gt; compiles code on most
-Unix-based machines. It generates the machine code for the processor
-during compilation, which is just the process of translating one language to another.&lt;/p&gt;
-
-&lt;p&gt;The virtual machine executes your code. It&amp;#39;s written in C and is known as the &lt;a href="http://en.wikipedia.org/wiki/YARV"&gt;YARV&lt;/a&gt; interpreter. It is at the heart of a scripting languages &amp;quot;implementation,&amp;quot; as it executes the source code via whatever language the scripting language is built upon (&lt;a href="http://en.wikipedia.org/wiki/C_(programming_language)"&gt;C&lt;/a&gt; in the case of &lt;a href="http://en.wikipedia.org/wiki/Ruby_MRI"&gt;Ruby MRI&lt;/a&gt;). &lt;/p&gt;
-
-&lt;p&gt;YARV doesn’t receive the Ruby statement as you typed it. It goes through an abstraction of your code known as an &lt;a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree"&gt;Abstract Syntax Tree (AST)&lt;/a&gt;, which get compiled to YARV byte code and run.&lt;/p&gt;
-
-&lt;p&gt;This &amp;quot;tree&amp;quot; is made up of nodes assembled by something called the parser. &lt;/p&gt;
-
-&lt;h2&gt;Parser&lt;/h2&gt;
-
-&lt;p&gt;You can think of a node on the Abstract Syntax Tree as an atomic representation of a Ruby grammar rule. The reason that Ruby knows to print “Hello, World” when it sees &lt;code&gt;print &amp;#39;Hello, World&amp;#39;&lt;/code&gt; is because the parser knows that &lt;code&gt;print&lt;/code&gt; is a method and the string &lt;code&gt;&amp;#39;Hello, World&amp;#39;&lt;/code&gt; is its argument. These syntax rules are located inside of a language’s grammar rule file.&lt;/p&gt;
-
-&lt;p&gt;Again, the parser creates the Abstract Syntax Tree that the virtual machine compiles and interprets.&lt;/p&gt;
-
-&lt;h2&gt;Tokenizer/Lexer&lt;/h2&gt;
-
-&lt;p&gt;If you’re wondering how Ruby knows that &lt;code&gt;print&lt;/code&gt; is a separate element in the language from &lt;code&gt;&amp;#39;Hello, World&amp;#39;&lt;/code&gt;, then you’re understanding the function of the Lexer or Tokenizer. The Tokenizer scans your line of Ruby code, character-by-character and determines where the &amp;quot;words&amp;quot; of the language begin and end. The Tokenizer can tell the difference between a space separating words and a space separating a method name from its arguments.&lt;/p&gt;
-
-&lt;p&gt;And that’s the 10,000 foot lifecycle of a Ruby statement, as it goes from Tokenization to becoming machine code. If you’re looking for the microscopic explanation, I’d recommend &lt;a href="http://www.nostarch.com/rum"&gt;Ruby Under a Microscope&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1&gt;JavaScript&lt;/h1&gt;
-
-&lt;h2&gt;Client-side&lt;/h2&gt;
-
-&lt;p&gt;Most browsers implement &lt;a href="http://en.wikipedia.org/wiki/Just-in-time_compilation"&gt;Just-In-Time (JIT) compiling&lt;/a&gt;. This means that the JavaScript code you write is compiled right before it gets executed by the virtual machine; though, in JavaScript, the interpreter is not referred to as a virtual machine, but as a JavaScript engine.&lt;/p&gt;
-
-&lt;p&gt;V8 is the engine that interprets and executes JavaScript in the Chrome browser, Nitro is the engine for Safari, SpiderMonkey for Firefox, and Chakra on Internet Explorer. The efficiency with which a browser interprets JavaScript accounts for a substantial portion of its performance these days, especially as JavaScript-heavy, Single Page Applications become increasingly important.&lt;/p&gt;
-
-&lt;h2&gt;Server-side&lt;/h2&gt;
-
-&lt;p&gt;Node.js is the predominant framework for running JavaScript server-side. It is built on top of Google’s V8 engine, which is a little confusing if you’ve just read that V8 interprets JavaScript in the browser. In general terms, the JavaScript interpreter is extracted from Chrome, compiled on the server, and utilized by Node.js, allowing you to execute JavaScript outside of the browser.&lt;/p&gt;
-
-&lt;h1&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Upon researching how a line of Ruby or JavaScript gets executed, you&amp;#39;ll quickly find that you can go down a rabbit hole. There are so many different implementations of Ruby, so many advancements in how code gets processed, and so much ambiguity in the terminology we use, that it can be quite challenging to form a mental model of what&amp;#39;s going on under the hood. That being said, a little patience goes a long way, and if you&amp;#39;re looking to dive into any one of the topics described above, I think you&amp;#39;ll be surprised at how readable much of the technical documentation is out there.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/18/the-doldrums-of-consulting.html"><strong>The Doldrums of Consulting</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2015/03/16/thriving-in-a-new-work-environment.html"><strong>Thriving in a New Work Environment</strong><h6 class='footer-desc'>Learn how to go beyond expectations at your new job</h6></a>
-<a class="footer__post" href="/2015/03/11/ask-good-questions.html"><strong>Ask good questions</strong><h6 class='footer-desc'>The only way to get real answers in user interviews for UX design</h6></a>
-<a class="footer__post" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"><strong>DockYard is now accepting staff augmentation Ember.js contracts</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/11/ask-good-questions.html"><strong>Ask good questions</strong><h6 class='footer-desc'>The only way to get real answers in user interviews for UX design</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
