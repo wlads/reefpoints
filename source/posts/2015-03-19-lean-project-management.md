@@ -44,7 +44,7 @@ As a PM, it’s your responsibility to hold up a mirror in front of your team th
 
 Everyone is a player. PM’s should be servant leaders, therefore any plan created needs to be the team's plan not he PM’s (or Sr. Mgmt.)  This way the team has accountability and ownership rights over what ever happens to the plan.  If something is not going as planned the team can understand the implications of this and course correct and work to reveal why something my not be working out.  Constant readjustment and calibration is required to keep things moving along. The project manger helps ensure these conversations happen.
 
-No team member can slip into the shadows. To be successful every contributor needs to have a voice.  A PM needs to put their “Facilitation” hats on and ensure they proactvily encourage all to participate and chime in on team affairs… That’s the beauty of teams, they succeed together not as single individuals.  
+No team member can slip into the shadows. To be successful every contributor needs to have a voice.  A PM needs to put their “Facilitation” hats on and ensure they proactively encourage all to participate and chime in on team affairs. That’s the beauty of teams. They succeed together, not as individuals. 
 
 **6.) Demonstrate Progress**
 
