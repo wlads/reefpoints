@@ -17,13 +17,12 @@ I am firm believer in Lean proccesses aimed to maximize value while minimizing w
  If any of these seem unreasonable, you need to take a hard look at your team and work environment. Any conccesions made here will reduce team effectviness.
 
 * A team well-balanced in terms of seniority - Experience is contagious !
-* Dedicated team members not split across multiple projects
+* Dedicated team members - not split across multiple projects
 * Co-located team members
-* Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view
-* Team members willing to be transparent about blockages and issues they face (but also think of creative ways to solve problems)
-* Conduct retrospectives with vocal contributors that embrace continuous improvement not only at the individual capability level (but at a team level)
-* Smaller teams (no more 5-7) —  Once you breach this team size communication complexity increases exponentially.  Frederick Brooks does a wonderful job explaining this phenomena in his book “Mythical Man Month”
+* Smaller teams (no more 5-7) —  Once you breach this team size communication complexity increases exponentially.  
+* Conduct retrospectives with full particpation - Always seek to get better
 * A knowledge management strategy ensure team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSGs, Test Cases, Context Diagrams )
+* Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view
 
 **1.) Breakdown the work**
 
@@ -49,7 +48,6 @@ No team member can slip into the shadows. To be successful every contributor nee
 
 **6.) Demonstrate Progress**
 
-The power of demonstration (enabled by time-boxed iterations/sprints,) whether it is for the client or kept internal to the team, results in extended benefits.  Demonstrations reground the team in terms necessity to make progress vs. spin wheels.  Demos encourge quality, because no one wants to demo something that does not work (or look good.) Stakeholders  can rest assured they did not buy snake oil and value is being delivered.  Demonstrations ensure your heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one !
+Demos encourge quality, because no one wants to demo something that does not work (or look good.) Stakeholders  can rest assured they did not buy snake oil and value is being delivered in some regular interval.  Demonstrations affirm your heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one !
 
-Give it a go and let me know if this works for your team.  Think this is too simple ? Well, that's the point.
-
+Give it a go and let me know if this works for your team.
