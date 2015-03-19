@@ -30,7 +30,7 @@ Decomposition of capabilities/features is a necessary and somewhat painful evil.
 
 **2.) Define a Path**
 
-Once you have step 1 in place, work with the team to derive a chronological execution of the work driven by precieved value and/or risk/complexity of a given feature.  Front loading your risk/complexity (as long as it is somewhat high value) is a very acceptable and smart approach because impact of course correction early on is much less invasive then the alternative.   Ensure a basic architecture for the overall solution is derived and communicated. This ensures that the team has a solid foundation to build upon.
+Once you have step 1 in place, work with the team to derive a chronological execution of the work driven by perceived value and/or risk/complexity of a given feature.  Front loading your risk/complexity (as long as it is somewhat high value) is a very acceptable and smart approach because impact of course correction early on is much less invasive than the alternative.   Ensure a basic architecture for the overall solution is derived and communicated. This ensures that the team has a solid foundation to build upon.
 
 **3.) Respect the Pyramid of constraint**
 
@@ -38,7 +38,7 @@ Scope, Time and Cost —  Fundamental variables applicable to any project contex
 
 **4.) Hold up the mirror**
 
-As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — Which show time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.) progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
+As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad, and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — which shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.), progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
 
 **5.) Create an environment of ownership and accountability**
 
