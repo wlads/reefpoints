@@ -27,7 +27,7 @@ I am firm believer in Lean proccesses aimed to maximize value while minimizing w
 
 **1.) Breakdown the work**
 
-Decomposition of capabilities/features is a necessary (and somewhat painfull) evil.  However, you do not need to go to painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (Best and worst case) for one of those lower level items your low level enough. If estimates are coming out to less then 1 day you have liekly gone too far.  Get the full team involved, apply the 80/20 rule in terms of completness and time-box the activity.  
+Decomposition of capabilities/features is a necessary (and somewhat painfull) evil.  However, you do not need to go to painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (Best and worst case) for one of those lower level items your low level enough. If estimates are coming out to less then 1 day you have likely gone too far.  Get the full team involved, apply the 80/20 rule in terms of completness and time-box the activity.  
 
 **2.) Define a Path**
 
