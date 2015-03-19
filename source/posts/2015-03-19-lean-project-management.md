@@ -39,7 +39,7 @@ Scope, Time and Cost —  Fundamental variables applicable to any project contex
 
 **4.) Hold up the mirror**
 
-As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad and the ugly.  This allows the team maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have blogged about in the past ( The "High level plan") — It shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.) progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
+As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad and the ugly.  This allows the team maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have blogged about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — Which show time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.) progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
 
 **5.) Create an environment of ownership and accountability**
 
