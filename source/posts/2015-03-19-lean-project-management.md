@@ -1,11 +1,11 @@
 ---
 layout: post
-title: “The Lean Project"
+title: "The Lean Project"
 comments: true
 author: Jon Lacks
 twitter: "Jon_Lacks"
 social: true
-summary: “The right recipe of team, process, communication, work environment and pride"
+summary: "The right recipe of team, process, communication, work environment and pride"
 published: true
 tags: project management, lean, agile
 ---
