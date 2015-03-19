@@ -21,7 +21,7 @@ I am a firm believer in Lean processes aimed to maximize value while minimizing 
 * Co-located team members
 * Smaller teams (no more than 5-7) —  Once you breach this team size communication complexity increases exponentially.  
 * Conduct retrospectives with full participation - Always seek to get better
-* A knowledge management strategy ensures team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSGs, Test Cases, Context Diagrams )
+* A knowledge management strategy ensures team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSDs, Test Cases, Context Diagrams )
 * Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view
 
 **1.) Breakdown the work**
@@ -32,7 +32,7 @@ Decomposition of capabilities/features is a necessary and somewhat painful evil.
 
 Once you have step 1 in place, work with the team to derive a chronological execution of the work driven by precieved value and/or risk/complexity of a given feature.  Front loading your risk/complexity (as long as it is somewhat high value) is a very acceptable and smart approach because impact of course correction early on is much less invasive then the alternative.   Ensure a basic architecture for the overall solution is derived and communicated. This ensures that the team has a solid foundation to build upon.
 
-**3.) Respect the Pyramid of Constraints**
+**3.) Respect the Pyramid of constraint**
 
 Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the "Rule" that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  
 
