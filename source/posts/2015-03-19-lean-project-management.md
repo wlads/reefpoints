@@ -34,7 +34,7 @@ Once you have step 1 in place, work with the team to derive a chronological exec
 
 **3.) Respect the Pyramid of constraint**
 
-Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the "Rule" that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  
+[Pyramid of constraint:](http://en.wikipedia.org/wiki/Project_management_triangle) Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the "Rule" that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  
 
 **4.) Hold up the mirror**
 
