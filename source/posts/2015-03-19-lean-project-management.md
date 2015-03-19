@@ -21,9 +21,10 @@ The Raw Materials -
 * Co-location of team members is most ideal
 * Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view
 * Team members willing to be transparent about blockages and issues they face (but also think of creative ways to solve problems)
-* Vocal contributors that embrace continuous improvement not only at the individual capability level (but at a team level)  
+* Conduct retrospectives with vocal contributors that embrace continuous improvement not only at the individual capability level (but at a team level)
 * Smaller teams (no more 5-7) —  Once you breach this team size communication complexity increases exponentially.  Frederick Brooks does a wonderful job explaining this phenomena in his book “Mythical Man Month”
 * A knowledge management strategy ensure team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSGs, Test Cases, Context Diagrams )
+* Conduct Retrospectives
 
 1.) Breakdown the work -
 Decomposition of capabilities/features is a necessary (and somewhat painfull) evil.  However, you do not need to go to painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go.  A good test of this is that a team member is able to provide some form of time estimate (Best and worst case) for one of those lower level items.  Get the full team involved, apply the 80/20 rule and time-box the activity.  
@@ -31,7 +32,7 @@ Decomposition of capabilities/features is a necessary (and somewhat painfull) ev
 2.) Define a Path -
 Once you know the work - work with the team to come up with a logical chronological execution of the work driven by value and risk/complexity of a given feature.  Front loading your risk/complexity is very acceptable and smart approach because impact of course correction early on is much less invasive.   Ensure basic architecture for the solution is derived and communicated. This ensures that the team has a solid foundation to build upon.
 
-3.) Respect the Triangle of Constraints
+3.) Respect the Pyramid of Constraints
 Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the fact that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  
 
 4.) Hold up the mirror -
