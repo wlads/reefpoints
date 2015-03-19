@@ -39,7 +39,7 @@ Scope, Time and Cost —  Fundamental variables applicable to any project contex
 
 **4.) Hold up the mirror**
 
-As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad and the ugly.  This allows the team maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have blogged about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — Which show time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.) progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
+As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — Which show time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.) progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
 
 **5.) Create an environment of ownership and accountability**
 
@@ -51,5 +51,5 @@ No team member can slip into the shadows. To be successful every contributor nee
 
 The power of demonstration (enabled by time-boxed iterations/sprints,) whether it is for the client or kept internal to the team, results in extended benefits.  Demonstrations reground the team in terms necessity to make progress vs. spin wheels.  Demos encourge quality, because no one wants to demo something that does not work (or look good.) Stakeholders  can rest assured they did not buy snake oil and value is being delivered.  Demonstrations ensure your heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one !
 
-Give it a go and let me know if this works for your team.
+Give it a go and let me know if this works for your team.  Think this is too simple ? Well, that's the point.
 
