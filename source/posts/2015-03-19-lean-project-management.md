@@ -26,7 +26,7 @@ I am a firm believer in Lean processes aimed to maximize value while minimizing 
 
 **1) Breakdown the work**
 
-Decomposition of capabilities/features is a necessary and somewhat painful evil.  However, you do not need to go to a painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (best and worst case) for one of those lower level items, you're low level enough. If estimates are coming out to less then 1 day you have likely gone too far.  Get the full team involved, apply the 80/20 rule in terms of completeness and time-box the activity.  
+Decomposition of capabilities/features is a necessary and somewhat painful evil.  However, you do not need to go to a painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (best and worst case) for one of those lower level items, you're low level enough. If estimates are coming out to less than 1 day you have likely gone too far.  Get the full team involved, apply the 80/20 rule in terms of completeness and time-box the activity.
 
 **2) Define a Path**
 
@@ -38,16 +38,16 @@ Scope, Time and Cost —  Fundamental variables applicable to any project contex
 
 **4) Hold up the mirror**
 
-As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad, and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — which shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.), progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
+As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad, and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past ([High and Mid-Level Plans](http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html)) — which shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.), progress made, unplanned work and deferred work that will come in later releases.  If you have this and revisit it often, consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)
 
 **5) Create an environment of ownership and accountability**
 
-Everyone is a player. PM’s should be servant leaders, therefore any plan created needs to be the team's plan not he PM’s (or Sr. Mgmt.)  This way the team has accountability and ownership rights over what ever happens to the plan.  If something is not going as planned the team can understand the implications of this and course correct and work to reveal why something my not be working out.  Constant readjustment and calibration is required to keep things moving along. The project manger helps ensure these conversations happen.
+Everyone is a player. PM’s should be servant leaders, therefore any plan created needs to be the team's plan not the PM’s (or Sr. Mgmt.)  This way the team has accountability and ownership rights over whatever happens to the plan.  If something is not going as planned the team can understand the implications of this and course correct and work to reveal why something may not be working out.  Constant readjustment and calibration is required to keep things moving along. The project manager helps ensure these conversations happen.
 
 No team member can slip into the shadows. To be successful every contributor needs to have a voice.  A PM needs to put their “Facilitation” hats on and ensure they proactively encourage all to participate and chime in on team affairs. That’s the beauty of teams. They succeed together, not as individuals. 
 
 **6) Demonstrate Progress**
 
-Demos encourage quality, because no one wants to demo something that works and looks subpar. Stakeholders  can rest assured they did not buy snake oil and value is being delivered in some regular interval.  Demonstrations affirm you're heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one !
+Demos encourage quality, because no one wants to demo something that works and looks subpar. Stakeholders  can rest assured they did not buy snake oil and value is being delivered in some regular interval.  Demonstrations affirm you're heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one!
 
 Give it a go and let me know if this works for your team.
