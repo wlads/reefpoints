@@ -53,10 +53,64 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-18T00:00:00Z</updated>
+  <updated>2015-03-19T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>The Lean Project</title>
+    <link rel="alternate" href="/2015/03/19/lean-project-management.html"/>
+    <id>/2015/03/19/lean-project-management.html</id>
+    <published>2015-03-19T00:00:00Z</published>
+    <updated>2015-03-19T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I am a firm believer in Lean processes aimed to maximize value while minimizing waste. When it comes to running projects in a Lean way, this goes far beyond the role of the Project Manager (or Scrum-master) thus requiring the right recipe of team, process, communication, work environment and pride. Often I am asked what are the typical practices I apply to projects which fall in the mobile/desktop application development context- this is my attempt to answer the question.  &lt;strong&gt;Important disclaimer&lt;/strong&gt; - this is not a prescription for how to run a project, nor does it guarantee success. The secret sauce is always the people NOT the process. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Raw Materials&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If any of these seem unreasonable, you need to take a hard look at your team and work environment. Any concessions made here will reduce team effectiveness.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A team well-balanced in terms of seniority - Experience is contagious!&lt;/li&gt;
+&lt;li&gt;Dedicated team members - not split across multiple projects&lt;/li&gt;
+&lt;li&gt;Co-located team members&lt;/li&gt;
+&lt;li&gt;Smaller teams (no more than 5-7) —  Once you breach this team size communication complexity increases exponentially.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Conduct retrospectives with full participation - Always seek to get better&lt;/li&gt;
+&lt;li&gt;A knowledge management strategy ensures team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSDs, Test Cases, Context Diagrams )&lt;/li&gt;
+&lt;li&gt;Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;1) Breakdown the work&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Decomposition of capabilities/features is a necessary and somewhat painful evil.  However, you do not need to go to a painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (best and worst case) for one of those lower level items, you&amp;#39;re low level enough. If estimates are coming out to less then 1 day you have likely gone too far.  Get the full team involved, apply the 80/20 rule in terms of completeness and time-box the activity.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2) Define a Path&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have step 1 in place, work with the team to derive a chronological execution of the work driven by perceived value and/or risk/complexity of a given feature.  Front loading your risk/complexity (as long as it is somewhat high value) is a very acceptable and smart approach because impact of course correction early on is much less invasive than the alternative.   Ensure a basic architecture for the overall solution is derived and communicated. This ensures that the team has a solid foundation to build upon.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3) Respect the &lt;a href="http://en.wikipedia.org/wiki/Project_management_triangle"&gt;Pyramid of constraint&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the &amp;quot;Rule&amp;quot; that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4) Hold up the mirror&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad, and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past (&lt;a href="http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html"&gt;High and Mid-Level Plans&lt;/a&gt;) — which shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.), progress made, unplanned work and deffered work that will come in later releases.  If you have this and revisit it often- consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5) Create an environment of ownership and accountability&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Everyone is a player. PM’s should be servant leaders, therefore any plan created needs to be the team&amp;#39;s plan not he PM’s (or Sr. Mgmt.)  This way the team has accountability and ownership rights over what ever happens to the plan.  If something is not going as planned the team can understand the implications of this and course correct and work to reveal why something my not be working out.  Constant readjustment and calibration is required to keep things moving along. The project manger helps ensure these conversations happen.&lt;/p&gt;
+
+&lt;p&gt;No team member can slip into the shadows. To be successful every contributor needs to have a voice.  A PM needs to put their “Facilitation” hats on and ensure they proactively encourage all to participate and chime in on team affairs. That’s the beauty of teams. They succeed together, not as individuals. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6) Demonstrate Progress&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Demos encourage quality, because no one wants to demo something that works and looks subpar. Stakeholders  can rest assured they did not buy snake oil and value is being delivered in some regular interval.  Demonstrations affirm you&amp;#39;re heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one !&lt;/p&gt;
+
+&lt;p&gt;Give it a go and let me know if this works for your team.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Doldrums of Consulting</title>
     <link rel="alternate" href="/2015/03/18/the-doldrums-of-consulting.html"/>
@@ -749,521 +803,11 @@ hit your delivery deadline.&lt;/p&gt;
 &lt;/ul&gt;
 </content>
   </entry>
-  <entry>
-    <title>EmberConf 2015 Day 1</title>
-    <link rel="alternate" href="/2015/03/03/ember-conf.html"/>
-    <id>/2015/03/03/ember-conf.html</id>
-    <published>2015-03-03T00:00:00Z</published>
-    <updated>2015-03-03T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h1&gt;Opening Keynote: Tom Dale and Yehuda Katz&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To kick off the conference Tomster joined Tom Dale and Yehuda Katz on stage!&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/mixonic"&gt;@mixonic&lt;/a&gt; &lt;a href="https://github.com/ef4"&gt;@ef4&lt;/a&gt; &lt;a href="https://github.com/mmunm"&gt;@mmun&lt;/a&gt; were welcomed as new members to the Ember Core Team&lt;/li&gt;
-&lt;li&gt;Big thanks to Robert Jackson &lt;a href="https://github.com/rwjblue"&gt;@rwjblue&lt;/a&gt;!!!! &lt;a href="http://getrwjblueabeer.com"&gt;Get rwjblue a beer!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Ember 2014 in Review&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rapid Release worked great! 6 week release cycle to get new features into everyone&amp;#39;s hands.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;HTMLBars&lt;/h3&gt;
-&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a href={{url}}&amp;gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;instead of&lt;/p&gt;
-&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&amp;lt;a {{bindAttr href=&amp;quot;url&amp;quot;}}&amp;gt; 
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Block parameters, faster and lower memory, validation for templates&lt;/li&gt;
-&lt;li&gt;Killed metamorphs!&lt;/li&gt;
-&lt;li&gt;Improvements to Ember Inspector including Ember Data and promises pane, render performance tab, multiple &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;s, and redesigned UI, to name a few.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Ember CLI&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Single install command for Addons, test support, massive performance improvements, and API stubbing, and server proxy (the list goes on!).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Testing Ecosystem&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;handles asynchrony &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Ember Data&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Relationship syncing, async relationships - built with async loading in mind.&lt;/li&gt;
-&lt;li&gt;Adapter Ecosystem&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;That was last year, what&amp;#39;s next?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://guides.emberjs.com"&gt;Versioned Guides&lt;/a&gt; -- live today!&lt;/li&gt;
-&lt;li&gt;Next Version of Ember CLI (as of last night)&lt;/li&gt;
-&lt;li&gt;Engines&lt;/li&gt;
-&lt;li&gt;List View&lt;/li&gt;
-&lt;li&gt;&lt;angle-bracket&gt; Components (already in Canary)&lt;/li&gt;
-&lt;li&gt;Liquid Fire&lt;/li&gt;
-&lt;li&gt;Async and Routable Components&lt;/li&gt;
-&lt;li&gt;Ember Data: JSON API support out of the box&lt;/li&gt;
-&lt;li&gt;Pagination and Filtering&lt;/li&gt;
-&lt;li&gt;Shipping Ember Data 1.0&lt;/li&gt;
-&lt;li&gt;6/12 release date for Ember 2.0, Ember Inspector, Ember CLI, LiquidFire, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Ember.js Performance by Stefan Penner&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/stefanpenner"&gt;@stefanpenner&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Important choices to make, how to make the right choices?&lt;/li&gt;
-&lt;li&gt;Time vs. Space&lt;/li&gt;
-&lt;li&gt;Things that are costly in space: closures, objects, non-optimized code, compiled code, excess shape allocations&lt;/li&gt;
-&lt;li&gt;In Ember.js, need to do less work, align with primitives&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Mis-alignment #1&lt;/h2&gt;
-
-&lt;p&gt;Problem: Ember does too much work.&lt;/p&gt;
-
-&lt;p&gt;Solution: do less&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Actions up, bindings down, no two-way bindings, explicit data flow&lt;/li&gt;
-&lt;li&gt;RIP singleton controllers, explicit lifecycle&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Mis-alignment #2&lt;/h2&gt;
-
-&lt;p&gt;Problem: &lt;code&gt;init&lt;/code&gt; and &lt;code&gt;super&lt;/code&gt; are hard to learn and mis-aligned with ES2015&lt;/p&gt;
-
-&lt;p&gt;Solution: Embrace super&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Explicit defaults in super&lt;/li&gt;
-&lt;li&gt;Don&amp;#39;t set properties until super&lt;/li&gt;
-&lt;li&gt;When to call &lt;code&gt;_super()&lt;/code&gt;: When overwriting a framework method before touching &lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Mis-alignment #3&lt;/h2&gt;
-
-&lt;p&gt;Problem: Ember.Object.reopen, buggy, complex internals, massive allocations &amp;amp; shapes&lt;/p&gt;
-
-&lt;p&gt;Solution: Limit reopen to before first instantiation&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Meta is a good thing. Every class has a meta, every instance has a meta. Metas for instances are what kill us. Meta is &amp;quot;live&amp;quot; inheriting. If can limit reopen, can make all metas one shape.&lt;/li&gt;
-&lt;li&gt;meta.listeners is crazier&lt;/li&gt;
-&lt;li&gt;Solution: work with V8 to make things better&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Designing for Ember Apps by Steve Trevathan&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/strevat"&gt;@strevat&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mental models: Understand where the user is coming from and what kinds of interactions they deal with
-
-&lt;ul&gt;
-&lt;li&gt;&amp;quot;What I think the thing is&amp;quot;&lt;/li&gt;
-&lt;li&gt;Influenced by experiences from the past&lt;/li&gt;
-&lt;li&gt;Not always solid: can be updated and changed. (improvements)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;2 types of mental models
-
-&lt;ul&gt;
-&lt;li&gt;Macro: what I think it is from a distance.&lt;/li&gt;
-&lt;li&gt;Micro: how I think each individual interaction works; the specific feature.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Build a framework of understanding
-
-&lt;ul&gt;
-&lt;li&gt;Some apps are just too complicated&lt;/li&gt;
-&lt;li&gt;Use explicitly if they apply&lt;/li&gt;
-&lt;li&gt;Break mental models if it improves the experience&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Design Patterns&lt;/h2&gt;
-
-&lt;h3&gt;#1 Gradual Engagement&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Core value given for free. Eventually you may be asked to sign up.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;#2 Skeleton UI&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ex. Google maps: grid becomes fully rendered map.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;#3 Carry Context&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ex. rdio: music played on laptop is reflected on iPad (or other devices). &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;#4 Reuse Core Interactions&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ex. Browsing Pinterest: provides click and follow tangent.&lt;/li&gt;
-&lt;li&gt;Micro becomes Macro; core interactions become a symbol of your app.&lt;/li&gt;
-&lt;li&gt;&amp;quot;When I go home and think of your app, I think of the experience, the micro features more than the macro ones.&amp;quot;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;#5 Offline Mode&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ex. Google Docs: “trying connect” message and can’t interact with document. Incredibly Frustrating.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Tools of the Trade&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A free design pattern library for Ember apps. &lt;a href="http://toolsofthetrade.dockyard.com"&gt;Sign up!!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Hijaking Hacker News with Ember.js by Godfrey Chan&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/chancancode"&gt;@chancancode&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Being a canadian is awesome&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;&lt;a href="https://github.com/chancancode/hn-reader"&gt;Hijacking Hacker News App&lt;/a&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Browser extension that transforms old site design to new, more usable app&lt;/li&gt;
-&lt;li&gt;Runs in hacker news domain&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Getting the Data&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;$.get(&amp;quot;/news&amp;#39;).then()&lt;/code&gt;: request html page, extract data, then manipulate&lt;/li&gt;
-&lt;li&gt;Hacker News HTML Scrapper: need adapter to help talk to Ember Data store; customize adapter and serializer.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Fixing the URLs&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Hacker News urls are not ideal for building an Ember app.&lt;/li&gt;
-&lt;li&gt;HN urls (serialized App States) to Ember Router (Actual App States)
-
-&lt;ul&gt;
-&lt;li&gt;trick Ember into seeing URLs that are different from what is in the address bar&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Router location types: &lt;code&gt;Ember.HistoryLocation&lt;/code&gt; vs. &lt;code&gt;Ember.HashLocation&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Can use same mechanism to make a custom Ember.Location: &lt;code&gt;App.HackerNewsLocation = Ember.Location.extend()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Preferences&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Changing preferences in one place and can see changes reflected in other
-
-&lt;ul&gt;
-&lt;li&gt;Use observer pattern&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;The Possibilities&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;What if your ideas do not line up with the framework&amp;#39;s choices?&lt;/li&gt;
-&lt;li&gt;If the frameworks is doing it&amp;#39;s job, than the possibilities should be endless!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;The Art of Ember App Deployment by Luke Melia&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/lukemelia"&gt;@lukemelia&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Need to adjust deployment techniques from &amp;quot;server app&amp;quot; days&lt;/li&gt;
-&lt;li&gt;When traffic starts routing to the new app, finger-printed assets can no longer be accessed
-
-&lt;ul&gt;
-&lt;li&gt;Need to keep old and new finger printed assets for a few minutes after a deploy.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Versioning&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Learn from native apps - phones run different versions of an app&lt;/li&gt;
-&lt;li&gt;Keep API working for older clients through API versioning&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Deployment &amp;amp; serving strategy&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTML page should be managed and deployed as part of static asset deployment process&lt;/li&gt;
-&lt;li&gt;HTML page should be served by the API server&lt;/li&gt;
-&lt;li&gt;Preview before activating&lt;/li&gt;
-&lt;li&gt;A/B Testing
-
-&lt;ul&gt;
-&lt;li&gt;Setting global flags based on A/B buckets&lt;/li&gt;
-&lt;li&gt;Serving up wholly different HTML based on A/B bucket&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Notify connected clients&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;The New &lt;a href="github.com/ember-cli/ember-cli-deploy"&gt;&lt;code&gt;ember-cli-deploy&lt;/code&gt;&lt;/a&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Merged these three projects: &lt;code&gt;ember-deploy&lt;/code&gt;, &lt;code&gt;front-end-builds&lt;/code&gt;, &lt;code&gt;ember-cli-deploy&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Now, one project with 6 maintainers (and growing!)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Roadmap&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Release 0.4.0 by the end of this week!&lt;/li&gt;
-&lt;li&gt;Reelease 0.5.0 
-
-&lt;ul&gt;
-&lt;li&gt;New pipeline hooks and plugins architecture&lt;/li&gt;
-&lt;li&gt;Includes post-deploy hook&lt;/li&gt;
-&lt;li&gt;Documentation for plugin developers&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ember-cli-front-end-builds&lt;/code&gt; becomes a plugin&lt;/li&gt;
-&lt;li&gt;USAGE: &lt;code&gt;ember deploy staging&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Beyond 0.5.0: deployment to named buckets, support A/B tests, beta testing, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Ambitious UX for Ambitious Apps by Lauren Tan&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/poteto"&gt;@poteto&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Good Design is:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;* how it works
-* reactive
-* playful
-* informative
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Designing the product vs. designing the experience&lt;/li&gt;
-&lt;li&gt;You are not the same as your website users&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Good Design is Reactive&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Instant feeback&lt;/li&gt;
-&lt;li&gt;Flow of data and maintaining relationships between that data&lt;/li&gt;
-&lt;li&gt;Ember allows reactivity through the observer pattern&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;The Observer Pattern&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Computed properties transform properties and keep relationships in sync&lt;/li&gt;
-&lt;li&gt;Computed Property Macros to keep things DRY.
-
-&lt;ul&gt;
-&lt;li&gt;Ember ships with a bunch of these out of the box (map, mapBy, concat, etc)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Observers synchronously invoked when dependent properties change&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Good design is playful&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Has personality&lt;/li&gt;
-&lt;li&gt;Ex. Slack when you open app (fun messages)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Good Design is Informative&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Visibility of System Status
-
-&lt;ul&gt;
-&lt;li&gt;Jakob Nielson - 10 heuristics for User Interface Design&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ex. Flash messages
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/poteto/ember-cli-flash"&gt;&lt;code&gt;ember-cli-flash&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Good Design is Intuitive&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Drag and drop (trello, Google Calendar, etc...)&lt;/li&gt;
-&lt;li&gt;Ember handles drag and drop events out of the box
-
-&lt;ul&gt;
-&lt;li&gt;add &lt;code&gt;draggable=true&lt;/code&gt; to any html element to make it draggable&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Bring Sanity to Frontend Infastructure with Ember by Sam Selikoff&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/samselikoff"&gt;@samselikoff&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;How Ember Can Help Today:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ember and Ember CLI helps infastructure by reducing boilerplate&lt;/li&gt;
-&lt;li&gt;Similar directory structure and architecture&lt;/li&gt;
-&lt;li&gt;Conventions: eliminate trivial differences that hold us back&lt;/li&gt;
-&lt;li&gt;Writing add-ons for shareable code. Allows us to build structure.&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;ember deploy&lt;/code&gt; to deploy apps. Auth and backend config work into separate deploy server.&lt;/li&gt;
-&lt;li&gt;Testing in Ember using &lt;code&gt;ember test&lt;/code&gt;. QUnit provides helpers.&lt;/li&gt;
-&lt;li&gt;Identify redundancies and abstractions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;How Ember Can Help Tomorrow:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Semantic versioning and CLI conventions&lt;/li&gt;
-&lt;li&gt;Flexibility&lt;/li&gt;
-&lt;li&gt;New standards and best practices
-
-&lt;ul&gt;
-&lt;li&gt;generally, shared solutions/frameworks help identify and discover ways of improving applications&lt;/li&gt;
-&lt;li&gt;Ember always keeps up to date with these best practices&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;“Ember is not just a framework, it’s a philosophy” of how to create and improve software
-
-&lt;ul&gt;
-&lt;li&gt;First, give real developers the tools to tinker&lt;/li&gt;
-&lt;li&gt;Then, deliberately fold in shared solutions&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In summary, innovate &amp;amp; share!&lt;/p&gt;
-
-&lt;h1&gt;Dynamic Graphic Composition In Ember by Chris Henn&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/chnn"&gt;@chnn&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Spliting a Statistical Graphic into Parts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Splitting a problem allows us to change one feature of the graphic at a time&lt;/li&gt;
-&lt;li&gt;Suggests the aspects of a plot that are possible to change&lt;/li&gt;
-&lt;li&gt;Encourages custom visualizations for every data situation&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Demo: &lt;a href="https://github.com/chnn/composing-graphics"&gt;Scatterplot example&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Adds multiple regression lines (in example, based on # of cylinders of each car)&lt;/p&gt;
-&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;{{#each subset as |subset|}}
-  // component
-{{/each}}
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Each point in the graph is an svg circle&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Grammer of Graphics by Hadley Wickham&lt;/h3&gt;
-
-&lt;p&gt;(Book of guidlines to follow)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data to Aesthetic Mappings&lt;/li&gt;
-&lt;li&gt;Scales: one per Asthetic mapping
-
-&lt;ul&gt;
-&lt;li&gt;Each data to aesthetic mapping has some mapping function&lt;/li&gt;
-&lt;li&gt;he has chosen to represent these as points in scatterplot example&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Layers: geom, stat, optional data to aesthetic mapping&lt;/li&gt;
-&lt;li&gt;Coordinate System&lt;/li&gt;
-&lt;li&gt;Faceting&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;What does this look like using Ember?&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data to Aesthetics = outer layer component which takes in the data as params&lt;/li&gt;
-&lt;li&gt;Scales = computed properties (using computer property macros)&lt;/li&gt;
-&lt;li&gt;Layers = looks like top level component, but must pass the scales&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Further Considerations&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Interactivity&lt;/li&gt;
-&lt;li&gt;Animations and transitions
-
-&lt;ul&gt;
-&lt;li&gt;performance (updating graphic many times per second)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Test-Driven Development By Example by Toran Billups&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/toranbn"&gt;@toranb&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Live coding!!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Red, green, refactor
-
-&lt;ul&gt;
-&lt;li&gt;You get a lot of feedback from red (so it can be red, red, red, green, refactor)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Incorrect selector in template to make sure you’re doing it correctly (aka. test should fail)&lt;/li&gt;
-&lt;li&gt;Test should not be very layout dependent
-
-&lt;ul&gt;
-&lt;li&gt;Should be more general and not break whenever you make template changes that do not change app functionality.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Test names should be descriptive&lt;/li&gt;
-&lt;li&gt;Testing computed properties is recommended because of how caching works with them. Failing test will let you know which properties should be observed in order to break the cache.&lt;/li&gt;
-&lt;li&gt;Design proof testing&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/19/lean-project-management.html"><strong>The Lean Project</strong><h6 class='footer-desc'>The right recipe of team, process, communication, work environment and pride</h6></a>
 <a class="footer__post" href="/2015/03/18/the-doldrums-of-consulting.html"><strong>The Doldrums of Consulting</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/16/thriving-in-a-new-work-environment.html"><strong>Thriving in a New Work Environment</strong><h6 class='footer-desc'>Learn how to go beyond expectations at your new job</h6></a>
-<a class="footer__post" href="/2015/03/11/ask-good-questions.html"><strong>Ask good questions</strong><h6 class='footer-desc'>The only way to get real answers in user interviews for UX design</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/16/thriving-in-a-new-work-environment.html"><strong>Thriving in a New Work Environment</strong><h6 class='footer-desc'>Learn how to go beyond expectations at your new job</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
