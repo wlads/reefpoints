@@ -130,6 +130,11 @@ behavior to its own dependency. For example,
 are both being used in
 [ember-admin](https://github.com/dockyard/ember-admin/blob/master/package.json#L21-L23).
 
+To use an addon as a dependency it *must* be put into the `dependencies`
+object in `package.json`, **not** `devDependencies`. You may need to
+add this keyword to your `package.json` as it is not part of the
+auto-generated file.
+
 Ember's addon eco-system is getting better every day, and as a community
 we are learning as we grow how best to build and maintain addons. I'm
 hoping you find these tips helpful. Please feel free to share your own
