@@ -133,8 +133,7 @@ are both being used in
 To use an addon as a dependency it *must* be put into the `dependencies`
 object in `package.json`, **not** `devDependencies`. You may need to
 add this keyword to your `package.json` as it is not part of the
-auto-generated file. The great thing about extractions is there is
-possibility of other addons that make use of it, share the wealth!
+auto-generated file.
 
 Ember's addon eco-system is getting better every day, and as a community
 we are learning as we grow how best to build and maintain addons. I'm
