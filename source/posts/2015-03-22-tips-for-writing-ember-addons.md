@@ -116,7 +116,7 @@ This one should go without saying but I have seen *way* too many addons
 out there that are untested. (the generated tests don't count) Please
 keep in mind that there are people building products that might consume
 your work. Untested code is just one more thing that could go wrong in
-somoene's app. If unit testing the code is too difficult at the very
+someone's app. If unit testing the code is too difficult, at the very
 least write integration tests against the dummy application to ensure
 the happy paths.
 
