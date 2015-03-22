@@ -39,7 +39,7 @@ gives you some nice styling that you don't have to spend time doing.
 
 ## 2. Allow for overrides
 
-I believe strongly in composable addons. A consumer should have he
+I believe strongly in composable addons. A consumer should have the
 ability to easily extend your addon to do whatever they want. This means
 organizing your code a certain way. To provide this you should put all
 of your business logic into `addon/` and then include wrapper classes in
@@ -67,7 +67,7 @@ consumers the option of overriding this in their own
 Currently ember-cli will not generate an addon project with Prototype
 Extensions turn off. However, [I have requested this be the
 default](https://github.com/ember-cli/ember-cli/issues/3443). Turning
-off Prototype Extensions will cause the following syntax for fail in
+off Prototype Extensions will cause the following syntax to fail in
 your addon's test suite:
 
 ```javascript
@@ -113,7 +113,7 @@ for an example of this in use.
 ## 4. Test your addon
 
 This one should go without saying but I have seen *way* too many addons
-out there that are untested. (the generated tests don't count) Please
+out there that are untested (the generated tests don't count). Please
 keep in mind that there are people building products that might consume
 your work. Untested code is just one more thing that could go wrong in
 someone's app. If unit testing the code is too difficult, at the very
