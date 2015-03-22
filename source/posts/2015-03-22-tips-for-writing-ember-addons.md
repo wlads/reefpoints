@@ -120,7 +120,7 @@ somoene's app. If unit testing the code is too difficult at the very
 least write integration tests against the dummy application to ensure
 the happy paths.
 
-## 5. Depends on other addons
+## 5. Depend on other addons
 
 You may not know this but addons can depend upon addons. Rather than
 recreating behavior per-addon it would be best to extract out common
@@ -133,7 +133,8 @@ are both being used in
 To use an addon as a dependency it *must* be put into the `dependencies`
 object in `package.json`, **not** `devDependencies`. You may need to
 add this keyword to your `package.json` as it is not part of the
-auto-generated file.
+auto-generated file. The great thing about extractions is there is
+possibility of other addons that make use of it, share the wealth!
 
 Ember's addon eco-system is getting better every day, and as a community
 we are learning as we grow how best to build and maintain addons. I'm
