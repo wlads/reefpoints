@@ -94,7 +94,7 @@ Extensions causes Ember itself to
 fail](https://github.com/emberjs/ember.js/issues/10590). This should be
 fixed in 1.10.1.
 
-Avoiding Prototype Extensions can be difficult, and I plan on writing a
+Avoiding Prototype Extensions can be difficult. I plan on writing a
 future blog post to outline certain strategies to duplicate the behavior
 that you miss out on without Prototype Extensions.
 
