@@ -54,7 +54,7 @@ export default Ember.Component.extend({
 
 // app/components/foo-bar.js
 import FooBar from 'my-addon/components/foo-bar';
-export FooBar.extend();
+export default FooBar;
 ```
 
 These light wrapper classes **should not** include any business logic.
