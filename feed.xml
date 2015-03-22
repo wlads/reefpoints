@@ -53,10 +53,172 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-19T00:00:00Z</updated>
+  <updated>2015-03-22T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Tips for writing Ember Addons</title>
+    <link rel="alternate" href="/2015/03/22/tips-for-writing-ember-addons.html"/>
+    <id>/2015/03/22/tips-for-writing-ember-addons.html</id>
+    <published>2015-03-22T00:00:00Z</published>
+    <updated>2015-03-22T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;After having published many Ember addons I have started to develop my
+own sense of &amp;quot;Best Practices&amp;quot; and I&amp;#39;d like to share those with you:&lt;/p&gt;
+
+&lt;h2&gt;1. Keep it minimal, don&amp;#39;t include stylesheets&lt;/h2&gt;
+
+&lt;p&gt;I see quite a few addons out there that include their own look &amp;amp; feel by
+including sytlesheets. I actually think this is a bad idea. &lt;em&gt;Keep in
+mind, every line of code you put into your addon will end up in the
+final footprint of the apps consuming it&lt;/em&gt;. This means if you are
+including stylesheets those will end up in &lt;code&gt;vendor.css&lt;/code&gt;. The odds are
+that whatever styles you decide look good, someone else might not.
+They&amp;#39;ll waste even more space by including their own overrides. This is
+wasteful.&lt;/p&gt;
+
+&lt;p&gt;Instead, you should &lt;em&gt;keep it minimal&lt;/em&gt;. See
+&lt;a href="https://github.com/dockyard/ember-admin"&gt;ember-admin&lt;/a&gt;. I intentionally
+did not style the addon so it is left as minimal as possible. If you
+want to show off a styled version of the addon, you can either include
+styles in the dummy app&amp;#39;s styles for the addon&amp;#39;s test dummy. Allow
+people to run the addon&amp;#39;s server locally and view what could be. Or, you
+can include an addon wrapper library that depends upon your addon. This
+wrapper can include default styles that consumers may choose not to
+alter. For example,
+&lt;a href="https://github.com/dockyard/ember-admin-bootstrap"&gt;ember-admin-bootstrap&lt;/a&gt;
+styles ember-admin with Twitter Bootstrap. If this is good enough for
+you then you just install this library and it pulls in ember-admin but
+gives you some nice styling that you don&amp;#39;t have to spend time doing.&lt;/p&gt;
+
+&lt;h2&gt;2. Allow for overrides&lt;/h2&gt;
+
+&lt;p&gt;I believe strongly in composable addons. A consumer should have he
+ability to easily extend your addon to do whatever they want. This means
+organizing your code a certain way. To provide this you should put all
+of your business logic into &lt;code&gt;addon/&lt;/code&gt; and then include wrapper classes in
+&lt;code&gt;app/&lt;/code&gt; that just &lt;code&gt;import&lt;/code&gt; then &lt;code&gt;export&lt;/code&gt; the extended class. For example:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// addon/components/foo-bar.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; Ember from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.Component.extend({
+  &lt;span class="comment"&gt;// business logic&lt;/span&gt;
+});
+
+&lt;span class="comment"&gt;// app/components/foo-bar.js&lt;/span&gt;
+&lt;span class="reserved"&gt;import&lt;/span&gt; FooBar from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-addon/components/foo-bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; FooBar;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;These light wrapper classes &lt;strong&gt;should not&lt;/strong&gt; include any business logic.
+Again, they simply &lt;code&gt;import&lt;/code&gt; then &lt;code&gt;export&lt;/code&gt; the extended class. This gives
+consumers the option of overriding this in their own
+&lt;code&gt;app/components/foo-bar.js&lt;/code&gt; file to extend and add customization.&lt;/p&gt;
+
+&lt;h2&gt;3. Turn off Prototype Extensions&lt;/h2&gt;
+
+&lt;p&gt;Currently ember-cli will not generate an addon project with Prototype
+Extensions turn off. However, &lt;a href="https://github.com/ember-cli/ember-cli/issues/3443"&gt;I have requested this be the
+default&lt;/a&gt;. Turning
+off Prototype Extensions will cause the following syntax for fail in
+your addon&amp;#39;s test suite:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="function"&gt;foo&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="comment"&gt;// whatever&lt;/span&gt;
+}.property(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;There are several syntax shortcuts that Ember injects into the base
+Types. Arrays have quite a bit. Turning off Prototype Extensions will
+force you to write the above code as:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;foo: Ember.computed(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="comment"&gt;// whatever&lt;/span&gt;
+})
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And this will play nice with consumer applications that must run with
+the Prototype Extensions turned off.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/emberjs/ember.js/issues/10590"&gt;It should be noted that Ember 1.10 has a bug where turning off Prototype
+Extensions causes Ember itself to
+fail&lt;/a&gt;. This should be
+fixed in 1.11.&lt;/p&gt;
+
+&lt;p&gt;Avoiding Prototype Extensions can be difficult. I plan on writing a
+future blog post to outline certain strategies to duplicate the behavior
+that you miss out on without Prototype Extensions.&lt;/p&gt;
+
+&lt;p&gt;To turn off Prototype Extensions you&amp;#39;ll need to add the line to
+&lt;code&gt;tests/dummy/config/environment.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;  EmberENV: {
+    &lt;span class="key"&gt;EXTEND_PROTOTYPES&lt;/span&gt;: &lt;span class="predefined-constant"&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;See
+&lt;a href="https://github.com/dockyard/ember-validations/blob/master/tests/dummy/config/environment.js#L10"&gt;ember-validations&lt;/a&gt;
+for an example of this in use.&lt;/p&gt;
+
+&lt;h2&gt;4. Test your addon&lt;/h2&gt;
+
+&lt;p&gt;This one should go without saying but I have seen &lt;em&gt;way&lt;/em&gt; too many addons
+out there that are untested. (the generated tests don&amp;#39;t count) Please
+keep in mind that there are people building products that might consume
+your work. Untested code is just one more thing that could go wrong in
+somoene&amp;#39;s app. If unit testing the code is too difficult at the very
+least write integration tests against the dummy application to ensure
+the happy paths.&lt;/p&gt;
+
+&lt;h2&gt;5. Depend on other addons&lt;/h2&gt;
+
+&lt;p&gt;You may not know this but addons can depend upon addons. Rather than
+recreating behavior per-addon it would be best to extract out common
+behavior to its own dependency. For example,
+&lt;a href="https://github.com/dockyard/ember-data-route"&gt;ember-data-route&lt;/a&gt; and
+&lt;a href="https://github.com/dockyard/ember-cli-async-button"&gt;ember-cli-async-button&lt;/a&gt;
+are both being used in
+&lt;a href="https://github.com/dockyard/ember-admin/blob/master/package.json#L21-L23"&gt;ember-admin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To use an addon as a dependency it &lt;em&gt;must&lt;/em&gt; be put into the &lt;code&gt;dependencies&lt;/code&gt;
+object in &lt;code&gt;package.json&lt;/code&gt;, &lt;strong&gt;not&lt;/strong&gt; &lt;code&gt;devDependencies&lt;/code&gt;. You may need to
+add this keyword to your &lt;code&gt;package.json&lt;/code&gt; as it is not part of the
+auto-generated file.&lt;/p&gt;
+
+&lt;p&gt;Ember&amp;#39;s addon eco-system is getting better every day, and as a community
+we are learning as we grow how best to build and maintain addons. I&amp;#39;m
+hoping you find these tips helpful. Please feel free to share your own
+in the comments below. &lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Lean Project</title>
     <link rel="alternate" href="/2015/03/19/lean-project-management.html"/>
@@ -311,503 +473,11 @@ hit your delivery deadline.&lt;/p&gt;
 &amp;quot;Staff Augmentation&amp;quot; for the Budget&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>EmberConf 2015 Day 2</title>
-    <link rel="alternate" href="/2015/03/04/ember-conf.html"/>
-    <id>/2015/03/04/ember-conf.html</id>
-    <published>2015-03-04T00:00:00Z</published>
-    <updated>2015-03-04T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;h1&gt;Fault Tolerant UX by Dan Gebhardt&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/dgeb"&gt;@dgeb&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Users should be shielded from any application issues that are encountered&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Transaction UX&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Atomic: all or nothing
-
-&lt;ul&gt;
-&lt;li&gt;Ex. if a user fills out a form your app should save all the data, not just some.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Consistent: move between different states&lt;/li&gt;
-&lt;li&gt;Isolated: allows concurrent changes&lt;/li&gt;
-&lt;li&gt;Durable: changes are persisted&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Apps MUST NOT violate the rules of transactional UX or you are violating the users trust&lt;/h3&gt;
-
-&lt;h2&gt;Forgiving User Experience&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fault Tolerant UX --&gt; Forgiving UX&lt;/li&gt;
-&lt;li&gt;Transitional experience: to persist data that has not yet be saved, but in the process of being edited&lt;/li&gt;
-&lt;li&gt;Undo/redo&lt;/li&gt;
-&lt;li&gt;Offline support&lt;/li&gt;
-&lt;li&gt;Asynchronous interface (non-blocking)
-
-&lt;ul&gt;
-&lt;li&gt;user can make changes as quickly as possible (changes can be queued up and synced at your apps convenience)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Engineering Fault Tolerant UX&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ember provides simple elgant patterns for building a consistent UX&lt;/li&gt;
-&lt;li&gt;Similarly, ember data provides durable UX&lt;/li&gt;
-&lt;li&gt;Ember data requires customization (extra code) to provide atomic and isolated code&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;&lt;a href="https://github.com/orbitjs"&gt;Orbit&lt;/a&gt;&lt;/h2&gt;
-
-&lt;h3&gt;Orbit application patterns&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Client first development&lt;/li&gt;
-&lt;li&gt;Pluggable sources&lt;/li&gt;
-&lt;li&gt;Data synchronization&lt;/li&gt;
-&lt;li&gt;Editing contexts&lt;/li&gt;
-&lt;li&gt;Undo/redo&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;&lt;a href="https://github.com/orbitjs/ember-orbit"&gt;ember-orbit&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Provides a store with synchronous and asynchronous methods&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Aligning Ember with Web Standards by Matthew Beale&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/mixonic"&gt;@mixonic&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Standards&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The JS standardization process is about to change: ES5, ES6, ES2015!&lt;/li&gt;
-&lt;li&gt;Standards Process
-
-&lt;ul&gt;
-&lt;li&gt;5 stages - strawman, proposal(polyfills), draft(experimental), candidate(compliant), finished(shipping)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://remysharp.com/2010/10/08/what-is-a-polyfill"&gt;Polyfill&lt;/a&gt;: A polyfill is a piece of code (or plugin) that provides the technology that you expect the browser to provide natively. &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;2 major standards groups:
-
-&lt;ul&gt;
-&lt;li&gt;WHATWG + W3C (html / dom related)&lt;/li&gt;
-&lt;li&gt;TC39 + Ecma International (promises, classes, for loops, etc)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Aligning with standards is not a one time event. It is ongoing!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Why Standards?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The goal is productivity&lt;/li&gt;
-&lt;li&gt;Standards are portable, reflect best preactices, and endure &lt;/li&gt;
-&lt;li&gt;Participants win&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;ES5 -&gt; ES2015&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;New API for maps&lt;/li&gt;
-&lt;li&gt;Promises&lt;/li&gt;
-&lt;li&gt;Proxies&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Babel&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Babel will turn your ES6+ code into ES5 friendly code
-
-&lt;ul&gt;
-&lt;li&gt;Enables new syntax (fat arrow, let) , APIs (map, set), not everything&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Aligning Ember&amp;#39;s Object Model&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt; is this feature: stable? a good pattern? implemented correctly? implemented performantly?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;ES Classes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Three new tools: class, extend, super&lt;/li&gt;
-&lt;li&gt;More gotchas: 
-
-&lt;ul&gt;
-&lt;li&gt;setUnknownProperty &lt;/li&gt;
-&lt;li&gt;Transpiler output&lt;/li&gt;
-&lt;li&gt;New syntax&lt;/li&gt;
-&lt;li&gt;Changes in way that super behaves&lt;/li&gt;
-&lt;li&gt;Mixins&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Remember: standards are a two-way street!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.201-created.com/ember-community-survey-2015"&gt;Ember Community Survey&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1&gt;Growing Ember One Tomster at a Time by Jamie White&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/jgwhite"&gt;@jgwhite&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;How did a tech community come to be so vibrant? How can we continue?&lt;/p&gt;
-
-&lt;h2&gt;1. The Tomster&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Representation of productivity and friendliness&lt;/li&gt;
-&lt;li&gt;Tomster wore different hats
-
-&lt;ul&gt;
-&lt;li&gt;Custom tomsters&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Good defaults
-
-&lt;ul&gt;
-&lt;li&gt;Having a friendly mascot makes things easier.&lt;/li&gt;
-&lt;li&gt;“Ambition” and “friendliness” is hard to juxtapose&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Composing concepts&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;2. Language&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Tomster is a tool. Productivity and friendliness implicitly part of conversation
-
-&lt;ul&gt;
-&lt;li&gt;Words stick; the right words enable conversations&lt;/li&gt;
-&lt;li&gt;“hack” is not a good vocabulary word - negative connotation &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;3. User Interface&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Programming language and documentation with good user interface&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;4. Hackability&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Parts have to be accesible - has to feel hackable.
-
-&lt;ul&gt;
-&lt;li&gt;Tomster was not overly done.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;5. Roles&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Many specialisms in Ember Community: documenteer, student, mentor, critic, explorer, and many more!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Community building is a design and engineering challenge&lt;/p&gt;
-
-&lt;h1&gt;Interaction Design with Ember 2.0 and Polymer by Bryan Langslet&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/blangslet"&gt;@blangslet&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The web browser is the largest app runtime in the world, and will continue to grow&lt;/li&gt;
-&lt;li&gt;Every device has to be connected to the web&lt;/li&gt;
-&lt;li&gt;Web frameworks and toolkits are getting closer to native performance everyday &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;quot;How can I - one person with a laptop - leverage my time as powerfully as I possibly can, every minute I work?&amp;quot;&lt;/p&gt;
-
-&lt;h2&gt;Ember-Flow&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A paradigm shift for web interaction design&lt;/li&gt;
-&lt;li&gt;The goal: to blur the lines between native and web applications&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Web Components&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Extends the browser itself
-
-&lt;ul&gt;
-&lt;li&gt;Polymer components extend a base component&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Encapsulation&lt;/li&gt;
-&lt;li&gt;Declarative&lt;/li&gt;
-&lt;li&gt;True reusability/portability&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Ember vs. Polymer Use Cases:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ember: developer productivity, conventions&lt;/li&gt;
-&lt;li&gt;Ember: community&lt;/li&gt;
-&lt;li&gt;Ember: World-class routing and state management&lt;/li&gt;
-&lt;li&gt;Polymer: constantly pushing the web forward&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Web Animations API&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Has the best of both CSS and javascript animations&lt;/li&gt;
-&lt;li&gt;Web animations run outside of the main thread and can be accelerated on the GPU&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;&lt;a href="https://github.com/blangslet/treasure-hunt"&gt;Treasure Hunt Demo Application&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;quot;Demonstrates an experimental integration between ember.js routing and Polymer&amp;#39;s core-animated-pages component to create beautiful inter-state animated transitions&amp;quot;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Building Applications for Custom Environments with Ember CLI by Brittany Storoz&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/brittanystoroz"&gt;@brittanystoroz&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Ember CLI&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Everyones favorite command line tool&lt;/li&gt;
-&lt;li&gt;Build organized ember apps quickly&lt;/li&gt;
-&lt;li&gt;Fills huge void in toolset for JS devs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Ember CLI Addons&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Extend ember-cli beyond core fucntionality&lt;/li&gt;
-&lt;li&gt;Follow standard npm conventions&lt;/li&gt;
-&lt;li&gt;Easy to create &amp;amp; install:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;ember addon name-of-your-addon&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ember install:addon name-of-your-addon&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt;Firefox OS&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Requirements that Ember CLI could not provide
-
-&lt;ol&gt;
-&lt;li&gt;Generate and validate a manifest file (same concept as package.json)&lt;/li&gt;
-&lt;li&gt;UI components that mimic OS interface&lt;/li&gt;
-&lt;li&gt;Publish to Firefox marketplace&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;Ember CLI Addon was born to fill those requirements.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;1st Requirement: Generating The Manifest&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Creating Blueprints
-
-&lt;ul&gt;
-&lt;li&gt;rules for generating common code and file structures:&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;ember generate blueprint name-of-blueprint&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3&gt;2nd Requirement: FirefoxOS UI (&lt;a href="https://github.com/gaia-components/gaia-tabs"&gt;Gaia&lt;/a&gt;)&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Building components
-&lt;code&gt;bower install gaia-components/gaia-stubs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;2 responsibilities:
-
-&lt;ul&gt;
-&lt;li&gt;including dependencies and creating the addon&lt;/li&gt;
-&lt;li&gt;making both available to the consuming application&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Components Review&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dependencies:
-
-&lt;ul&gt;
-&lt;li&gt;bower install within addon&lt;/li&gt;
-&lt;li&gt;bower install withing consuming logic&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Component logic
-
-&lt;ul&gt;
-&lt;li&gt;create component&lt;/li&gt;
-&lt;li&gt;export components to consuming aplication&lt;/li&gt;
-&lt;li&gt;define component template&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Validation &amp;amp; Publishing
-
-&lt;ul&gt;
-&lt;li&gt;creating commands for control over when these things happen&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;includedCommands&lt;/code&gt; hook: returns object of commands which are found inside &lt;code&gt;lb/commands&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ember help&lt;/code&gt; lists out information about available add-on commands. And lots more useful info.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Building Real-time Applications with Ember by Steve Kinney&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/stevekinney"&gt;@stevekinney&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Integrating browser functionality and third party code into our applications. In this case, WebSockets.&lt;/li&gt;
-&lt;li&gt;What is a WebSocket Used for? 
-
-&lt;ul&gt;
-&lt;li&gt;Collaboration, analytics dashboards, prompting user to upgrade application&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Can I actually use WebSockets? 
-
-&lt;ul&gt;
-&lt;li&gt;For the most part, yes (some earlier version of IE not supported)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Socket.io -&gt; library for Node&lt;/li&gt;
-&lt;li&gt;Faye  -&gt; simple pub/sub messaging&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Approach #1: Use Standalone Controller&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Somewhat limited because it only works between controllers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Approach #2: Dependency Injection with Services&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ember generate service websocket&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Declare where you want to inject it inside the Initializer&lt;/li&gt;
-&lt;li&gt;Inside controller: &lt;code&gt;websocket: Ember.inject.service()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Approach #3 Using Socket.io&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Socket.io is both a server and client side library&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href="bit.ly/js-poll"&gt;What is your favorite thing about JavaScript?&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1&gt;Minitalks!&lt;/h1&gt;
-
-&lt;h2&gt;1. Measuring Performance with User Timing API by Bill Heaton&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/pixelhandler"&gt;@pixelhandler&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Measuring the differences in template rendering speeds between Ember.js v1.8.1 w/Handlebars v1.3 and Ember.js v1.10.0 w/HTMLBars&lt;/li&gt;
-&lt;li&gt;Check out his findings on &lt;a href="http://pixelhandler.com/posts/measuring-performance-with-user-timing-api-in-an-ember-application"&gt;blog!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;2. &lt;code&gt;ember-islands&lt;/code&gt; by Mitch Lloyd&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/mitchlloyd"&gt;@mitchlloyd&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/mitchlloyd/ember-islands"&gt;&lt;code&gt;ember-islands&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Render Ember components UJS-style to achieve &amp;quot;Islands of Richness&amp;quot;. You can arbitrarily render Ember components in the body of the page and they will all be connected to the same Ember app.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;3. Ember Testing with Chemistry Dog by Liz Bailey&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/lizzerdrix"&gt;@lizzerdrix&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Migration from Rails to Ember&lt;/li&gt;
-&lt;li&gt;Ember does not provide as much documentation on testing&lt;/li&gt;
-&lt;li&gt;Would love to help make Ember more approachable to beginners&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;4. Running C++ in ember-cli with Emscripten by Michael Nutt&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/mnutt"&gt;@mnutt&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/movableink/ember-cli-emscripten"&gt;&lt;code&gt;ember-cli-emscripten&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Allows you to add C or C++ to your ember app, then require the exposed functions and classes.&lt;/li&gt;
-&lt;li&gt;Fibonacci sequence demo!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;5. Ember Observer by Kate Gengler&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/kategengler"&gt;@kategengler&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/emberobserver/client"&gt;Ember Observer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Gives addons a score out of 10&lt;/li&gt;
-&lt;li&gt;pulls hourly from npm and Github&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;6. CSS is Hard by Erik Bryn&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ebryn"&gt;@ebryn&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/ebryn/ember-component-css"&gt;&lt;code&gt;ember-component-css&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;namespaces our component styles automatically!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Physical Design by Edward Faulkner&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ef4"&gt;@ef4&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Computers are so abstract. Possibilities are endless, only hindered by your imagination.&lt;/li&gt;
-&lt;li&gt;Constrained by physics&lt;/li&gt;
-&lt;li&gt;Googles material design spec
-
-&lt;ul&gt;
-&lt;li&gt;does not break rules of physics&lt;/li&gt;
-&lt;li&gt;animations and motion appeal to us because they fit into our idea of how it should physically work.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ef4/liquid-fire"&gt;Liquid Fire&lt;/a&gt; live demo!
-
-&lt;ul&gt;
-&lt;li&gt; &lt;code&gt;npm install —save-dev liquid-fire&lt;/code&gt; for Ember 1.11+&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://miguelcobain.github.io/ember-paper"&gt;Ember Paper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1&gt;Closing Keynote: Chris Eppstein&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/chriseppstein"&gt;@chriseppstein&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Announcing: Eyeglass&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Distribute SASS extensions as NPM modules for &lt;a href="https://github.com/sass/libsass"&gt;LIBSASS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Will be able to integrate with a number of different build systems, including Ember CLI&lt;/li&gt;
-&lt;li&gt;Major performance improvements&lt;/li&gt;
-&lt;li&gt;The best parts of SASS and Compass, working with the best tools JS has to offer&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;A Selection of Chris&amp;#39; Inspirational Messages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;quot;Don&amp;#39;t be a Sasshole&amp;quot;&lt;/li&gt;
-&lt;li&gt;&amp;quot;People come to a community for the tech, but stay for the love!&amp;quot;&lt;/li&gt;
-&lt;li&gt;&amp;quot;Sass didn&amp;#39;t lose when I started ignoring the haters&amp;quot;&lt;/li&gt;
-&lt;li&gt;&amp;quot;If you use a framework you love, you&amp;#39;ll never work a day in your life&amp;quot;&lt;/li&gt;
-&lt;li&gt;&amp;quot;Secret to a vibrant community: be excellent to eachother&amp;quot;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/22/tips-for-writing-ember-addons.html"><strong>Tips for writing Ember Addons</strong><h6 class='footer-desc'></h6></a>
 <a class="footer__post" href="/2015/03/19/lean-project-management.html"><strong>The Lean Project</strong><h6 class='footer-desc'>The right recipe of team, process, communication, work environment and pride</h6></a>
-<a class="footer__post" href="/2015/03/18/the-doldrums-of-consulting.html"><strong>The Doldrums of Consulting</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/16/thriving-in-a-new-work-environment.html"><strong>Thriving in a New Work Environment</strong><h6 class='footer-desc'>Learn how to go beyond expectations at your new job</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/18/the-doldrums-of-consulting.html"><strong>The Doldrums of Consulting</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
