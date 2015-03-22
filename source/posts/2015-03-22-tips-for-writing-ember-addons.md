@@ -62,7 +62,7 @@ Again, they simply `import` then `export` the extended class. This gives
 consumers the option of overriding this in their own
 `app/components/foo-bar.js` file to extend and add customization.
 
-## 3. Turn of Prototype Extensions
+## 3. Turn off Prototype Extensions
 
 Currently ember-cli will not generate an addon project with Prototype
 Extensions turn off. However, [I have requested this be the
@@ -97,6 +97,18 @@ filed in 1.10.1.
 Avoiding Prototype Extensions can be difficult, and I plan on writing a
 future blog post to outline certain strategies to duplicate the behavior
 that you miss out on without Prototype Extensions.
+
+To turn off Prototype Extensions you'll need to add the line to
+`tests/dummy/config/environment.js`
+
+```javascript
+  EmberENV: {
+    EXTEND_PROTOTYPES: false
+```
+
+See
+[ember-validations](https://github.com/dockyard/ember-validations/blob/master/tests/dummy/config/environment.js#L10)
+for an example of this in use.
 
 ## 4. Test your addon
 
