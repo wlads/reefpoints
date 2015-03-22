@@ -92,7 +92,7 @@ the Prototype Extensions turned off.
 [It should be noted that Ember 1.10 has a bug where turning off Prototype
 Extensions causes Ember itself to
 fail](https://github.com/emberjs/ember.js/issues/10590). This should be
-fixed in 1.10.1.
+fixed in 1.11.
 
 Avoiding Prototype Extensions can be difficult. I plan on writing a
 future blog post to outline certain strategies to duplicate the behavior
