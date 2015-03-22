@@ -96,7 +96,7 @@ gives you some nice styling that you don&amp;#39;t have to spend time doing.&lt;
 
 &lt;h2&gt;2. Allow for overrides&lt;/h2&gt;
 
-&lt;p&gt;I believe strongly in composable addons. A consumer should have he
+&lt;p&gt;I believe strongly in composable addons. A consumer should have the
 ability to easily extend your addon to do whatever they want. This means
 organizing your code a certain way. To provide this you should put all
 of your business logic into &lt;code&gt;addon/&lt;/code&gt; and then include wrapper classes in
@@ -134,7 +134,7 @@ consumers the option of overriding this in their own
 &lt;p&gt;Currently ember-cli will not generate an addon project with Prototype
 Extensions turn off. However, &lt;a href="https://github.com/ember-cli/ember-cli/issues/3443"&gt;I have requested this be the
 default&lt;/a&gt;. Turning
-off Prototype Extensions will cause the following syntax for fail in
+off Prototype Extensions will cause the following syntax to fail in
 your addon&amp;#39;s test suite:&lt;/p&gt;
 &lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
@@ -191,7 +191,7 @@ for an example of this in use.&lt;/p&gt;
 &lt;h2&gt;4. Test your addon&lt;/h2&gt;
 
 &lt;p&gt;This one should go without saying but I have seen &lt;em&gt;way&lt;/em&gt; too many addons
-out there that are untested. (the generated tests don&amp;#39;t count) Please
+out there that are untested (the generated tests don&amp;#39;t count). Please
 keep in mind that there are people building products that might consume
 your work. Untested code is just one more thing that could go wrong in
 someone&amp;#39;s app. If unit testing the code is too difficult, at the very
