@@ -11,7 +11,7 @@ tags: design, observations
 
 ---
 
-When making any product, the experts are clearly the best people for the job. But experts have one significant blind spot - their extensive knowledge of the system makes them less likely to see the potential problems a novice would encounter. Anyone who is very familiar with a system, a discipline or a product has not dealt with beginner level problems for such a long time that they’ve developed an [expert blind spot](http://c4ed.lib.kmutt.ac.th/sites/default/files/HowLearningWorks-Ambrose.pdf).
+When making any product, the experts are clearly the best people for the job. But experts have one significant blind spot - their extensive knowledge of the system makes them less likely to see the potential problems a novice would encounter. Anyone who is very familiar with a system, a discipline, or a product has put some distance between them and their beginning level challenges that cause them to develop an [expert blind spot](http://c4ed.lib.kmutt.ac.th/sites/default/files/HowLearningWorks-Ambrose.pdf).
 
 I am sure you are familiar with this situation: you’re invited (or invite yourself) to an event at a university campus. You arrive a bit earlier than you needed, so you can orient yourself in the unfamiliar space. The map on your phone is only accurate to the nearest block, so you get a campus map and try to find room 41-B in the Humanities building named after someone important. You feel stupid.
 
@@ -29,9 +29,8 @@ For an outsider, the frame of reference is still the surrounding landscape. They
 
 I often see this situation reflected in the websites of large institutions. When someone very close to an institution thinks of how their web presence may be organized or used, they inevitably do so with the influence of all the expertise they have. They can’t help it - they “live” inside the campus, and they are good at what they do.
 
-There are many examples of this kind of insider thinking: organizing content by internal structure (instead of user need), breaking up a university website into Athletics, Academics and Arts (which one contains the event I want to attend?) or assuming that a typical user has even a basic understanding of specialized terminology and concepts.
+There are many examples of this kind of insider thinking: organizing content by internal structure (instead of user need), breaking up a university website into Athletics, Academics, and Arts (which one contains the event I want to attend?) or assuming that a typical user has even a basic understanding of specialized terminology and concepts.
 
-This is by no means a treaty against specialized knowledge and perspective. The insider knowledge of an industry expert makes a product good, their know-how makes it work. But the outside perspective of a novice truly helps make a product findable and usable.
+This is by no means a treaty against specialized knowledge and perspective. The insider knowledge of an industry expert makes a product good, their know-how makes it work. But the outside perspective of a novice-expert truly helps make a product findable and usable.
 
-
-To attract new customers or visitors, a product needs to make sense to someone unfamiliar with it, in their own broader frame of reference. To ask the right questions, to establish user goals and needs, and to judge the effectiveness and clarity of a product, we need both the insider and the outsider perspective.
+To attract new customers or visitors, a product needs to make sense to someone unfamiliar with it in their own broader frame of reference. To ask the right questions, to establish user goals and needs, and to judge the effectiveness and clarity of a product, we need both the insider and the outsider perspective.
