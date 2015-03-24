@@ -53,10 +53,135 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-22T00:00:00Z</updated>
+  <updated>2015-03-24T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Rubyists Guide to Ember.js Dependencies</title>
+    <link rel="alternate" href="/2015/03/24/rubyists-guide-to-ember-dependencies.html"/>
+    <id>/2015/03/24/rubyists-guide-to-ember-dependencies.html</id>
+    <published>2015-03-24T00:00:00Z</published>
+    <updated>2015-03-24T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;One of the early hurdles a Ruby developer faces when working on an Ember.js application is dependency management. A popular mechanism for managing a Ruby application’s dependencies is the &lt;a href="http://bundler.io/gemfile.html"&gt;Gemfile&lt;/a&gt; provided by &lt;a href="http://bundler.io/"&gt;Bundler&lt;/a&gt;. Including a library is as easy as declaring it in the Gemfile and running &lt;code&gt;bundle install&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight ruby "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;# Gemfile&lt;/span&gt;
+source &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;https://rubygems.org&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+gem &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;rails&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;~&amp;gt; 4.2.0&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;For better or worse, there is no dominant, single package manager in JavaScript. Ember applications, and more specifically, those running &lt;a href="http://www.ember-cli.com/"&gt;Ember-CLI&lt;/a&gt;, rely on two package managers: &lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt; for client-side libraries and &lt;a href="https://www.npmjs.com/"&gt;npm&lt;/a&gt; for server-side libraries.&lt;/p&gt;
+
+&lt;p&gt;In this post, I&amp;#39;ll provide a basic dependency management primer for
+those moving from Ruby to JavaScript.&lt;/p&gt;
+
+&lt;h1&gt;npm&lt;/h1&gt;
+
+&lt;p&gt;Ember-CLI uses npm to manage internal dependencies. npm resembles RubyGems, in so far as it allows you to install and manage third-party libraries, which in this case, are Node.js programs.&lt;/p&gt;
+
+&lt;h2&gt;package.json&lt;/h2&gt;
+
+&lt;p&gt;Libraries for npm are referred to as “packages.” Each package has a &lt;code&gt;package.json&lt;/code&gt; file which lists the dependencies of the library itself. In this regard, the &lt;code&gt;package.json&lt;/code&gt; is analogous to a RubyGem’s &lt;code&gt;gemspec&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;h2&gt;.npmrc&lt;/h2&gt;
+
+&lt;p&gt;You can configure how node packages get installed via the
+&lt;a href="https://docs.npmjs.com/files/npmrc"&gt;.npmrc file&lt;/a&gt;. You may have one
+globally, per user (&lt;code&gt;~/.npmrc&lt;/code&gt;), or per project.&lt;/p&gt;
+
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+
+&lt;p&gt;To install an npm package, run &lt;code&gt;npm install [package-name]&lt;/code&gt; from the
+command line.&lt;/p&gt;
+
+&lt;p&gt;This will either install the library and it&amp;#39;s dependencies
+into your current working directory or in one of its parent directores. Here&amp;#39;s how it works: if there is a &lt;code&gt;node_modules/&lt;/code&gt; or &lt;code&gt;package.json&lt;/code&gt; in any directory above the current working directory, packages will be installed into that directory. Otherwise, calling &lt;code&gt;npm install [package-name]&lt;/code&gt; creates a &lt;code&gt;node_modules/&lt;/code&gt; directory in your current working directory and installs the packages there.&lt;/p&gt;
+
+&lt;p&gt;This is a slightly different mental model for Rubyists who are not used to installing gems on a per project basis; gems are generally installed into version-specific Ruby directories with the more popular version managers like &lt;a href="https://github.com/sstephenson/rbenv"&gt;rbenv&lt;/a&gt; or &lt;a href="https://rvm.io/"&gt;RVM&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s also possible to install packages globally using the &lt;code&gt;--global&lt;/code&gt; flag when installing. This installs the package in your &lt;code&gt;usr/local/lib/&lt;/code&gt; directory by default. These packages typically contain executable files and are used via the command line (such as Ember-CLI).&lt;/p&gt;
+
+&lt;p&gt;Your dependencies will likely have dependencies. These get installed within a &lt;code&gt;node_modules/&lt;/code&gt; directory in the given package. It&amp;#39;s a little strange the first time you navigate into a &lt;code&gt;node_modules/package-name/&lt;/code&gt; only to find another &lt;code&gt;node_modules/&lt;/code&gt; directory, but that&amp;#39;s what that is. You’ll notice a &lt;code&gt;node_modules/&lt;/code&gt; directory for dependencies of global packages as well if you look in the &lt;code&gt;usr/local/lib/&lt;/code&gt; directory where global packages live.&lt;/p&gt;
+
+&lt;p&gt;One last thing to note regarding npm installations: npm caches the
+libraries you pull down to prevent you from having to download
+libraries that are already on your system. You&amp;#39;ll find that cache:
+&lt;code&gt;~/.npm/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1&gt;Bower&lt;/h1&gt;
+
+&lt;p&gt;While you&amp;#39;ll use npm to manage your server-side Node.js dependencies, you’ll use Bower for managing front-end assets, such as JavaScript, HTML, CSS, image, and font files.&lt;/p&gt;
+
+&lt;h2&gt;.bowerrc&lt;/h2&gt;
+
+&lt;p&gt;Bower itself is an npm package. Its libraries are referred to as “components” and the end user can configure their installations via a &lt;code&gt;.bowerrc&lt;/code&gt; file. This file specifies where dependent components will be installed, the URL where the component will be registered (its registry), and the JSON file used to define the component (&lt;code&gt;bower.json&lt;/code&gt; by default) among other things. A Bower component &lt;/p&gt;
+
+&lt;h2&gt;bower.json&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="http://bower.io/docs/creating-packages/#bowerjson"&gt;&lt;code&gt;bower.json&lt;/code&gt;&lt;/a&gt; file resembles the &lt;a href="http://guides.rubygems.org/specification-reference/"&gt;gemspec&lt;/a&gt; file you find in Ruby gems. It contains the library metadata, such as the name, version, dependencies, and development dependencies for the library.&lt;/p&gt;
+
+&lt;p&gt;As we mentioned, components can be searched for via registries. The registry matches the name of a component with the endpoint at which it’s hosted. &lt;a href="http://bower.io/search/"&gt;Bower.io/search&lt;/a&gt; closely resembles &lt;a href="https://rubygems.org/gems"&gt;rubygems.org&lt;/a&gt; in this way.&lt;/p&gt;
+
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+
+&lt;p&gt;When you install a Bower component via &lt;code&gt;bower install [component_name]&lt;/code&gt;, the repository will be cached locally to expedite any future installations of the component. In case you’re curious, the bower cache location is: &lt;code&gt;~/.cache/bower/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unlike npm, Bower components are installed &amp;quot;flat&amp;quot; as opposed to in a hierarchical manner; all of your project&amp;#39;s components (and their dependencies) will be installed into &lt;code&gt;bower_components/&lt;/code&gt; directory, by default. For example, if one of your components is dependent on the &lt;code&gt;underscore.js&lt;/code&gt; library, both will sit side-by-side in the &lt;code&gt;bower_components/&lt;/code&gt; directory (remember, with npm, dependencies of dependencies are continually nested in their parent&amp;#39;s directory within a &lt;code&gt;node_modules/&lt;/code&gt; directory).&lt;/p&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Here&amp;#39;s a quick wrap-up of the analogous files between Ruby and the JS
+package managers we discussed:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Ruby&lt;/th&gt;
+&lt;th&gt;JS (npm, server-side)&lt;/th&gt;
+&lt;th&gt;JS (Bower, client-side)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Term for external library&lt;/td&gt;
+&lt;td&gt;&amp;quot;Gem&amp;quot;&lt;/td&gt;
+&lt;td&gt;&amp;quot;Package&amp;quot;&lt;/td&gt;
+&lt;td&gt;&amp;quot;Component&amp;quot;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;End-user configuration file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.gemrc&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.npmrc&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.bowerrc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Per-library configuration file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;*.gemspec&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bower.json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cache directory&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;~/.gem/&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;~/.npm/&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;~/.cache/bower/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;As ES2015 (formerly known as &amp;quot;ES6&amp;quot;) becomes more prevalent and JavaScript code becomes more
+modular and better for passing around, dependency management grows in
+importance. Hopefully this quick primer will clear up some
+confusion Rubysists have as they transition from working with the
+Gemfile to working with the package managers JavaScript offers.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Tips for writing Ember Addons</title>
     <link rel="alternate" href="/2015/03/22/tips-for-writing-ember-addons.html"/>
@@ -447,37 +572,11 @@ This question is so bad it&amp;#39;s grotesque, but it may still happen to novic
 &lt;p&gt;It&amp;#39;s almost always a better investment of your time to conduct a few in-depth, “difficult” and neutral interviews, than to rush many interviewees through surface-level questions. This is especially true at the beginning of a project, when more design options are open. Your effort to keep the process unbiased will yield quality results, and quality wins.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>DockYard is now accepting staff augmentation Ember.js contracts</title>
-    <link rel="alternate" href="/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html"/>
-    <id>/2015/03/09/dockyard-is-now-accepting-staff-augmentation-ember-js-contracts.html</id>
-    <published>2015-03-09T00:00:00Z</published>
-    <updated>2015-03-09T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Over the past three years DockYard has primarily taken on &amp;quot;greenfield&amp;quot;
-projects, where we are responsible for building applications from
-scratch through design, development, and launch. Starting today we&amp;#39;re
-adding Ember.js Staff Augmentation to the services we provide to our
-clients.&lt;/p&gt;
-
-&lt;p&gt;If you are looking to add an Ember.js expert to help your team you
-should contact us. Our entire engineering team is extremely experienced
-in Ember.js application development, Ember.js best practices, and Ember.js Test Driven
-Development. We can help your team finish existing features, guide
-your team on how to properly build an Ember.js application, and help you
-hit your delivery deadline.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://dockyard.com/contact"&gt;Visit our contact page and choose
-&amp;quot;Staff Augmentation&amp;quot; for the Budget&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/24/rubyists-guide-to-ember-dependencies.html"><strong>Rubyists Guide to Ember.js Dependencies</strong><h6 class='footer-desc'>A dependency management primer for Rubysist living in a Gemfile-less, Ember.js world.</h6></a>
 <a class="footer__post" href="/2015/03/22/tips-for-writing-ember-addons.html"><strong>Tips for writing Ember Addons</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/19/lean-project-management.html"><strong>The Lean Project</strong><h6 class='footer-desc'>The right recipe of team, process, communication, work environment and pride</h6></a>
-<a class="footer__post" href="/2015/03/18/the-doldrums-of-consulting.html"><strong>The Doldrums of Consulting</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/19/lean-project-management.html"><strong>The Lean Project</strong><h6 class='footer-desc'>The right recipe of team, process, communication, work environment and pride</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
