@@ -103,7 +103,7 @@ globally, per user (&lt;code&gt;~/.npmrc&lt;/code&gt;), or per project.&lt;/p&gt
 command line.&lt;/p&gt;
 
 &lt;p&gt;This will either install the library and it&amp;#39;s dependencies
-into your current working directory or in one of its parent directores. Here&amp;#39;s how it works: if there is a &lt;code&gt;node_modules/&lt;/code&gt; or &lt;code&gt;package.json&lt;/code&gt; in any directory above the current working directory, packages will be installed into that directory. Otherwise, calling &lt;code&gt;npm install [package-name]&lt;/code&gt; creates a &lt;code&gt;node_modules/&lt;/code&gt; directory in your current working directory and installs the packages there.&lt;/p&gt;
+into your current working directory or in one of its parent directories. Here&amp;#39;s how it works: if there is a &lt;code&gt;node_modules/&lt;/code&gt; or &lt;code&gt;package.json&lt;/code&gt; in any directory above the current working directory, packages will be installed into that directory. Otherwise, calling &lt;code&gt;npm install [package-name]&lt;/code&gt; creates a &lt;code&gt;node_modules/&lt;/code&gt; directory in your current working directory and installs the packages there.&lt;/p&gt;
 
 &lt;p&gt;This is a slightly different mental model for Rubyists who are not used to installing gems on a per project basis; gems are generally installed into version-specific Ruby directories with the more popular version managers like &lt;a href="https://github.com/sstephenson/rbenv"&gt;rbenv&lt;/a&gt; or &lt;a href="https://rvm.io/"&gt;RVM&lt;/a&gt;.&lt;/p&gt;
 
@@ -122,7 +122,7 @@ libraries that are already on your system. You&amp;#39;ll find that cache:
 
 &lt;h2&gt;.bowerrc&lt;/h2&gt;
 
-&lt;p&gt;Bower itself is an npm package. Its libraries are referred to as “components” and the end user can configure their installations via a &lt;code&gt;.bowerrc&lt;/code&gt; file. This file specifies where dependent components will be installed, the URL where the component will be registered (its registry), and the JSON file used to define the component (&lt;code&gt;bower.json&lt;/code&gt; by default) among other things. A Bower component &lt;/p&gt;
+&lt;p&gt;Bower itself is an npm package. Its libraries are referred to as “components” and the end user can configure their installations via a &lt;code&gt;.bowerrc&lt;/code&gt; file. This file specifies where dependent components will be installed, the URL where the component will be registered (its registry), and the JSON file used to define the component (&lt;code&gt;bower.json&lt;/code&gt; by default) among other things.&lt;/p&gt;
 
 &lt;h2&gt;bower.json&lt;/h2&gt;
 
