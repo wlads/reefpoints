@@ -41,7 +41,7 @@ To install an npm package, run `npm install [package-name]` from the
 command line.
 
 This will either install the library and it's dependencies
-into your current working directory or in one of its parent directores. Here's how it works: if there is a `node_modules/` or `package.json` in any directory above the current working directory, packages will be installed into that directory. Otherwise, calling `npm install [package-name]` creates a `node_modules/` directory in your current working directory and installs the packages there.
+into your current working directory or in one of its parent directories. Here's how it works: if there is a `node_modules/` or `package.json` in any directory above the current working directory, packages will be installed into that directory. Otherwise, calling `npm install [package-name]` creates a `node_modules/` directory in your current working directory and installs the packages there.
 
 This is a slightly different mental model for Rubyists who are not used to installing gems on a per project basis; gems are generally installed into version-specific Ruby directories with the more popular version managers like [rbenv](https://github.com/sstephenson/rbenv) or [RVM](https://rvm.io/).
 
@@ -58,7 +58,7 @@ libraries that are already on your system. You'll find that cache:
 While you'll use npm to manage your server-side Node.js dependencies, you’ll use Bower for managing front-end assets, such as JavaScript, HTML, CSS, image, and font files.
 
 ## .bowerrc
-Bower itself is an npm package. Its libraries are referred to as “components” and the end user can configure their installations via a `.bowerrc` file. This file specifies where dependent components will be installed, the URL where the component will be registered (its registry), and the JSON file used to define the component (`bower.json` by default) among other things. A Bower component 
+Bower itself is an npm package. Its libraries are referred to as “components” and the end user can configure their installations via a `.bowerrc` file. This file specifies where dependent components will be installed, the URL where the component will be registered (its registry), and the JSON file used to define the component (`bower.json` by default) among other things.
 
 ## bower.json
 The [`bower.json`](http://bower.io/docs/creating-packages/#bowerjson) file resembles the [gemspec](http://guides.rubygems.org/specification-reference/) file you find in Ruby gems. It contains the library metadata, such as the name, version, dependencies, and development dependencies for the library.
