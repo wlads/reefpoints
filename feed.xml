@@ -454,26 +454,23 @@ the Prototype Extensions turned off.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/emberjs/ember.js/issues/10590"&gt;It should be noted that Ember 1.10 has a bug where turning off Prototype
 Extensions causes Ember itself to
 fail&lt;/a&gt;. This should be
-fixed in 1.11.&lt;/p&gt;
+fixed in 1.11 (&lt;strong&gt;Update: This has been addressed in &lt;a href="https://github.com/emberjs/ember.js/pull/10697"&gt;Ember&lt;/a&gt;.&lt;/strong&gt;).&lt;/p&gt;
 
 &lt;p&gt;Avoiding Prototype Extensions can be difficult. I plan on writing a
 future blog post to outline certain strategies to duplicate the behavior
 that you miss out on without Prototype Extensions.&lt;/p&gt;
 
-&lt;p&gt;To turn off Prototype Extensions you&amp;#39;ll need to add the line to
-&lt;code&gt;tests/dummy/config/environment.js&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+&lt;p&gt;To turn off Prototype Extensions you&amp;#39;ll need to install the &lt;code&gt;ember-disable-prototype-extensions&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
   &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
 &lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;  EmberENV: {
-    &lt;span class="key"&gt;EXTEND_PROTOTYPES&lt;/span&gt;: &lt;span class="predefined-constant"&gt;false&lt;/span&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;npm install --save-dev ember-disable-prototype-extensions
 &lt;/pre&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;See
-&lt;a href="https://github.com/dockyard/ember-validations/blob/master/tests/dummy/config/environment.js#L10"&gt;ember-validations&lt;/a&gt;
-for an example of this in use.&lt;/p&gt;
+&lt;a href="https://github.com/dockyard/ember-validations/pull/270"&gt;ember-validations&lt;/a&gt;
+for an example.&lt;/p&gt;
 
 &lt;h2&gt;4. Test your addon&lt;/h2&gt;
 

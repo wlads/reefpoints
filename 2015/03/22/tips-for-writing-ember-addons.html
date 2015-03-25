@@ -147,26 +147,23 @@ the Prototype Extensions turned off.</p>
 <p><a href="https://github.com/emberjs/ember.js/issues/10590">It should be noted that Ember 1.10 has a bug where turning off Prototype
 Extensions causes Ember itself to
 fail</a>. This should be
-fixed in 1.11.</p>
+fixed in 1.11 (<strong>Update: This has been addressed in <a href="https://github.com/emberjs/ember.js/pull/10697">Ember</a>.</strong>).</p>
 
 <p>Avoiding Prototype Extensions can be difficult. I plan on writing a
 future blog post to outline certain strategies to duplicate the behavior
 that you miss out on without Prototype Extensions.</p>
 
-<p>To turn off Prototype Extensions you&#39;ll need to add the line to
-<code>tests/dummy/config/environment.js</code></p>
-<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+<p>To turn off Prototype Extensions you&#39;ll need to install the <code>ember-disable-prototype-extensions</code>:</p>
+<div class="highlight  "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
-2
 </pre></td>
-  <td class="code"><pre>  EmberENV: {
-    <span class="key">EXTEND_PROTOTYPES</span>: <span class="predefined-constant">false</span>
+  <td class="code"><pre>npm install --save-dev ember-disable-prototype-extensions
 </pre></td>
 </tr></table>
 </div></div>
 <p>See
-<a href="https://github.com/dockyard/ember-validations/blob/master/tests/dummy/config/environment.js#L10">ember-validations</a>
-for an example of this in use.</p>
+<a href="https://github.com/dockyard/ember-validations/pull/270">ember-validations</a>
+for an example.</p>
 
 <h2>4. Test your addon</h2>
 
