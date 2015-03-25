@@ -23,7 +23,12 @@ using the web technologies that you love. You can essentially build an Ember app
 also invoke Node modules all within the browser, then package it up as
 a Mac OS X application or Windows `exe` file when you're ready to distribute.
 
+_Screenshot from a [demo](https://github.com/brzpegasus/ember-nw-markdown) app:_
 ![screenshot](https://cloud.githubusercontent.com/assets/1691398/6768192/536a6fde-d033-11e4-9375-e2f506c1c8c7.png)
+
+At DockYard, we recently had the opportunity to work with this
+technology for a really exciting client project. I wish I could speak more of
+the project itself, but for now, I'll just provide an introduction to NW.js and Ember.
 
 ## Getting Started
 
@@ -37,11 +42,23 @@ specify in your project's `package.json`:
 }
 ```
 
-NW.js will parse this manifest on startup, launch a new Chromium browser
-window, then set the location to that starting page:
+On startup, NW.js will launch a new Chromium browser window,
+then set the location to that starting page:
 `file:///Users/brzpegasus/projects/my-app/dist/index.html#/`.
+
 This does require that you set your `Ember.Router`
-[location type](http://emberjs.com/api/classes/Ember.Location.html) to `hash`.
+[location type](http://emberjs.com/api/classes/Ember.Location.html) to `hash`. In Ember CLI,
+this is a simple tweak to your `config/environment.js` file:
+
+```javascript
+// config/environment.js
+modules.exports = function(environment) {
+  var ENV = {
+    locationType: 'hash', // Change this from 'auto' to 'hash'
+    // ...
+  };
+};
+```
 
 From there on, you should feel quite at home and ready to develop your Ember app.
 
@@ -89,7 +106,8 @@ console.log(process.platform) // "darwin"
 
 ## Naming Conflicts
 
-Modules written with ES2015 syntax in your Ember app get transpiled into
+Modules written with ES2015 ([previously, ES6](https://esdiscuss.org/topic/javascript-2015#content-3))
+syntax in your Ember app get transpiled into
 AMD for today's browsers. This is problematic because AMD also specifies a
 `require` function for loading modules. In Ember CLI, this is implemented via
 [ember-cli/loader.js](https://github.com/ember-cli/loader.js).
@@ -126,7 +144,7 @@ easier. Simply install [ember-cli-node-webkit](https://github.com/brzpegasus/emb
 then start coding right away. All the configuration will be taken care
 of for you, so no need to worry about `require` naming conflicts.
 
-The addon can build your project, watch for changes, and reload in NW.js
+The addon can build your project, watch for changes, and reload the page in NW.js
 during development. And when you're ready to distribute, packaging is just
 one command away.
 
@@ -136,7 +154,7 @@ to get familiar with all the options that are at your disposal.
 
 ## Conclusion
 
-When we first set out to build a desktop app for a client project several months ago,
+When we first set out to build a desktop app for a client project,
 documentation on how to integrate NW.js with Ember was scarce. Even more
 scarce was documentation on how to integrate it with Ember CLI. I hope
 this post and this addon will provide some guidance to others down the
