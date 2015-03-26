@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bringing Ember to the Desktop with NW.js (Part 1)"
+title: "Bringing Ember to the Desktop with NW.js"
 comments: true
 twitter: "edeblois"
 github: "brzpegasus"
@@ -149,7 +149,7 @@ during development. And when you're ready to distribute, packaging is just
 one command away.
 
 I will not spend time talking about the addon in this blog post, but I
-invite you to check out the [documentation](https://github.com/brzpegasus/ember-cli-node-webkit/blob/master/README.md)
+invite you to check out the [README](https://github.com/brzpegasus/ember-cli-node-webkit/blob/master/README.md)
 to get familiar with all the options that are at your disposal.
 
 ## Conclusion
@@ -160,6 +160,7 @@ scarce was documentation on how to integrate it with Ember CLI. I hope
 this post and this addon will provide some guidance to others down the
 road.
 
-In my next post, I will dive into some code examples and discuss patterns
-you can adopt to make your NW.js app more manageable and testable.
-I have quite a bit to say on this topic, so stay tuned!
+I'd love to share some code samples and discuss patterns you can adopt
+to make your NW.js app more manageable and testable, but they'd be too
+dense for this introductory blog post. However, you'll be hearing more from me
+on this topic in the future!
