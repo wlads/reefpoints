@@ -10,7 +10,12 @@ social: true
 published: true
 ---
 
-Let me just put this out there: I love building for the web. The mere
+One of our recent client projects at DockYard had us go in a totally new
+direction in terms of technology stack. We needed to build a desktop
+application that could communicate with some Arduino devices via
+[WebSockets](https://developer.mozilla.org/en-US/docs/WebSockets).
+
+Let me first put this out there: I love building for the web. The mere
 thought of developing native desktop applications always makes me cringe
 a little, though I admit, I haven't done much in that arena since those
 [Java Swing](http://en.wikipedia.org/wiki/Swing_%28Java%29) days from forever ago.
@@ -23,12 +28,33 @@ using the web technologies that you love. You can essentially build an Ember app
 also invoke Node modules all within the browser, then package it up as
 a Mac OS X application or Windows `exe` file when you're ready to distribute.
 
-_Screenshot from a [demo](https://github.com/brzpegasus/ember-nw-markdown) app:_
+## Demo
+
+Here's a screenshot from a NW.js app built with Ember for demonstration
+purposes:
+
 ![screenshot](https://cloud.githubusercontent.com/assets/1691398/6768192/536a6fde-d033-11e4-9375-e2f506c1c8c7.png)
 
-At DockYard, we recently had the opportunity to work with this
-technology for a really exciting client project. I wish I could speak more of
-the project itself, but for now, I'll just provide an introduction to NW.js and Ember.
+It's a simple GitHub-flavored Markdown Editor that lets you create and preview
+Markdown documents, and save them to disk.
+
+You can try it for yourself. Just download the application from the
+following links for your platform, unzip, then double-click on `Markdown
+Editor.app` (Mac) or `Markdown Editor.exe` (Windows).
+
+* Mac OS X: [markdown-editor-osx64](https://s3.amazonaws.com/dockyard-general/ember-nw-demo/markdown-editor-osx64.zip)
+* Windows:
+[markdown-editor-win64](https://s3.amazonaws.com/dockyard-general/ember-nw-demo/markdown-editor-win64.zip)
+* [Source code](https://github.com/brzpegasus/ember-nw-markdown)
+
+For a touch of user friendliness, the app even ships with your favorite
+mascot:
+
+_Mac:_
+<img alt="Mac Icon" src="https://cloud.githubusercontent.com/assets/1691398/6853610/9ee8c52c-d3c2-11e4-971a-3472bfd35609.png" style="width: 600px; height: 205px;">
+
+_Windows:_
+<img alt="Win Icon" src="https://cloud.githubusercontent.com/assets/1691398/6853614/a32becc2-d3c2-11e4-9ed4-83d645825f4b.png" style="width: 114px; height: 312px;">
 
 ## Getting Started
 
@@ -146,7 +172,10 @@ of for you, so no need to worry about `require` naming conflicts.
 
 The addon can build your project, watch for changes, and reload the page in NW.js
 during development. And when you're ready to distribute, packaging is just
-one command away.
+one command away. The packaging is a wrapper around the excellent
+[node-webkit-builder](https://github.com/mllrsohn/node-webkit-builder)
+but the configuration is done automatically based on the addon's
+understanding of your app structure.
 
 I will not spend time talking about the addon in this blog post, but I
 invite you to check out the [README](https://github.com/brzpegasus/ember-cli-node-webkit/blob/master/README.md)
