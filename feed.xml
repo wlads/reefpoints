@@ -53,10 +53,131 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-26T00:00:00Z</updated>
+  <updated>2015-03-27T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Pluralize Your Word(s) With ember-pluralize</title>
+    <link rel="alternate" href="/2015/03/27/pluralize-your-words-with-ember-pluralize.html"/>
+    <id>/2015/03/27/pluralize-your-words-with-ember-pluralize.html</id>
+    <published>2015-03-27T00:00:00Z</published>
+    <updated>2015-03-27T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Do you ever find yourself repeating identical pieces of code throughout
+different projects? If so, that&amp;#39;s the perfect indicator for an addon
+opportunity. Ember Addons allow you to quickly integrate sharable code
+into different projects, without copy and pasting, via one simple command:&lt;/p&gt;
+&lt;div class="highlight bash "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;  ember install:addon addon-name
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;On some of our most recent projects, we kept finding the need to
+pluralize words based on &lt;em&gt;how many&lt;/em&gt; of each item we had. Also, since
+our data is dynamic and constantly changing, the pluralization of a
+word should remain in sync with our fluctuating data. And so
+&lt;a href="https://github.com/rsocci/ember-pluralize"&gt;&lt;code&gt;ember-pluralize&lt;/code&gt;&lt;/a&gt; was born.&lt;/p&gt;
+
+&lt;p&gt;After a quick &lt;code&gt;ember install:addon ember-pluralize&lt;/code&gt;, using the addon
+is a piece of cake.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s suppose we have a model like so:&lt;/p&gt;
+&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.Route.extend({
+  &lt;span class="function"&gt;model&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="keyword"&gt;return&lt;/span&gt; Ember.A([
+      Ember.Object.create({ &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Cartman&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;cheesyPoofs&lt;/span&gt;: &lt;span class="integer"&gt;20&lt;/span&gt; }),
+      Ember.Object.create({ &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Stan&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;cheesyPoofs&lt;/span&gt;: &lt;span class="integer"&gt;5&lt;/span&gt; }),
+      Ember.Object.create({ &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Kyle&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;cheesyPoofs&lt;/span&gt;: &lt;span class="integer"&gt;1&lt;/span&gt; }),
+      Ember.Object.create({ &lt;span class="key"&gt;name&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;Kenny&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="key"&gt;cheesyPoofs&lt;/span&gt;: &lt;span class="integer"&gt;0&lt;/span&gt; })
+    ]);
+  }
+});
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now we want to output how many Cheesy Poofs each person has. This addon
+provides a helper that allows us to do the following in our template:&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{{#each model as |person|}}
+  {{person.name}} has {{h-pluralize person.cheesyPoofs &amp;quot;Cheesy Poof&amp;quot;}}
+{{/each}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;which will output&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// Cartman has 20 Cheesy Poofs
+// Stan has 5 Cheesy Poofs
+// Kyle has 1 Cheesy Poof
+// Kenny has 0 Cheesy Poofs
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And now, as they each start throwing back some Cheesy Poofs, the counts
+will start to update, as well as the word &amp;quot;Cheesy Poof&amp;quot;, according to
+how many are remaining. Alternatively, if you don&amp;#39;t need to display the
+actual number, passing in &lt;code&gt;omitCount=true&lt;/code&gt; as the third parameter will
+exclude it from the output:&lt;/p&gt;
+&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;{{#each model as |person|}}
+  {{person.name}}'s {{h-pluralize person.cheesyPoofs &amp;quot;Cheesy Poof&amp;quot; omitCount=true}}
+{{/each}}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight hbs "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;// Cartman's Cheesy Poofs
+// Stan's Cheesy Poofs
+// Kyle's Cheesy Poof
+// Kenny's Cheesy Poofs
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note: If you&amp;#39;re using Ember Data, you will be provided with a built in pluralize
+helper through the &lt;a href="https://github.com/stefanpenner/ember-inflector"&gt;Ember Inflector&lt;/a&gt;
+library. The helper is registered for availability in the template; the
+functionality is similar, but given that it takes up to two arguments
+(the count and the word), you&amp;#39;re not able to solely display the pluralized
+word based on a given a count.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;d like to see more on the addon, it can be found on
+&lt;a href="https://github.com/rsocci/ember-pluralize"&gt;GitHub&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bringing Ember to the Desktop with NW.js</title>
     <link rel="alternate" href="/2015/03/26/bringing-ember-to-the-desktop-part.html"/>
@@ -741,65 +862,11 @@ hoping you find these tips helpful. Please feel free to share your own
 in the comments below. &lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>The Lean Project</title>
-    <link rel="alternate" href="/2015/03/19/lean-project-management.html"/>
-    <id>/2015/03/19/lean-project-management.html</id>
-    <published>2015-03-19T00:00:00Z</published>
-    <updated>2015-03-19T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I am a firm believer in Lean processes aimed to maximize value while minimizing waste. When it comes to running projects in a Lean way, this goes far beyond the role of the Project Manager (or Scrum-master) thus requiring the right recipe of team, process, communication, work environment and pride. Often I am asked what are the typical practices I apply to projects which fall in the mobile/desktop application development context- this is my attempt to answer the question.  &lt;strong&gt;Important disclaimer&lt;/strong&gt; - this is not a prescription for how to run a project, nor does it guarantee success. The secret sauce is always the people NOT the process. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The Raw Materials&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If any of these seem unreasonable, you need to take a hard look at your team and work environment. Any concessions made here will reduce team effectiveness.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A team well-balanced in terms of seniority - Experience is contagious!&lt;/li&gt;
-&lt;li&gt;Dedicated team members - not split across multiple projects&lt;/li&gt;
-&lt;li&gt;Co-located team members&lt;/li&gt;
-&lt;li&gt;Smaller teams (no more than 5-7) —  Once you breach this team size communication complexity increases exponentially.&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;Conduct retrospectives with full participation - Always seek to get better&lt;/li&gt;
-&lt;li&gt;A knowledge management strategy ensures team members know where to store/post directional artifacts that other team members require to do their job (e.g. Wireframes, PSDs, Test Cases, Context Diagrams )&lt;/li&gt;
-&lt;li&gt;Use of Information Radiators — Physical views into plans (e.g. Post-Its on a whiteboards) that may supplement a digital plan view&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;1) Breakdown the work&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Decomposition of capabilities/features is a necessary and somewhat painful evil.  However, you do not need to go to a painful level of detail to create this artifact.  The importance is breadth not necessarily depth.  The depth only needs to go as far as necessary for the team to directionally understand where a feature needs to go. If a team member is able to provide some form of time estimate (best and worst case) for one of those lower level items, you&amp;#39;re low level enough. If estimates are coming out to less than 1 day you have likely gone too far.  Get the full team involved, apply the 80/20 rule in terms of completeness and time-box the activity.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2) Define a Path&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you have step 1 in place, work with the team to derive a chronological execution of the work driven by perceived value and/or risk/complexity of a given feature.  Front loading your risk/complexity (as long as it is somewhat high value) is a very acceptable and smart approach because impact of course correction early on is much less invasive than the alternative.   Ensure a basic architecture for the overall solution is derived and communicated. This ensures that the team has a solid foundation to build upon.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3) Respect the &lt;a href="http://en.wikipedia.org/wiki/Project_management_triangle"&gt;Pyramid of constraint&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Scope, Time and Cost —  Fundamental variables applicable to any project context.  Visibility and active monitoring of these variables is essential to ensure project success.  First and foremost, ensure that a baseline is established for each of these variables before a team even start the project. Understand how your stakeholders rate the relative importance of each of these variables and uphold the &amp;quot;Rule&amp;quot; that trade-offs are the only way these baselines can/will adjust.   Deferring this activity to after a project gets going can result in scope creep and cost/time over runs.  &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4) Hold up the mirror&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;As a PM, it’s your responsibility to hold up a mirror in front of your team that shows the good, the bad, and the ugly.  This allows the team to maintain appreciation for the big picture while they do their best to work through the small one.   I am huge advocate of a plan view that I have written about in the past (&lt;a href="http://reefpoints.dockyard.com/2014/07/29/project-carpe-diem.html"&gt;High and Mid-Level Plans&lt;/a&gt;) — which shows time, features, tasks, distribution of work across team capability areas (Design, Backend, UXD, etc.), progress made, unplanned work and deferred work that will come in later releases.  If you have this and revisit it often, consider your team informed and that those Triangle of Constraint variables are being monitored (for the most part.)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5) Create an environment of ownership and accountability&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Everyone is a player. PM’s should be servant leaders, therefore any plan created needs to be the team&amp;#39;s plan not the PM’s (or Sr. Mgmt.)  This way the team has accountability and ownership rights over whatever happens to the plan.  If something is not going as planned the team can understand the implications of this and course correct and work to reveal why something may not be working out.  Constant readjustment and calibration is required to keep things moving along. The project manager helps ensure these conversations happen.&lt;/p&gt;
-
-&lt;p&gt;No team member can slip into the shadows. To be successful every contributor needs to have a voice.  A PM needs to put their “Facilitation” hats on and ensure they proactively encourage all to participate and chime in on team affairs. That’s the beauty of teams. They succeed together, not as individuals. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;6) Demonstrate Progress&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Demos encourage quality, because no one wants to demo something that works and looks subpar. Stakeholders  can rest assured they did not buy snake oil and value is being delivered in some regular interval.  Demonstrations affirm you&amp;#39;re heading in the right direction.  Last but not least, demos allow the team to celebrate success in short bursts - It feels great to get something done especially when the road ahead is a long one!&lt;/p&gt;
-
-&lt;p&gt;Give it a go and let me know if this works for your team.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/27/pluralize-your-words-with-ember-pluralize.html"><strong>Pluralize Your Word(s) With ember-pluralize</strong><h6 class='footer-desc'>Introducing a pluralizing addon based on a given count.</h6></a>
 <a class="footer__post" href="/2015/03/26/bringing-ember-to-the-desktop-part.html"><strong>Bringing Ember to the Desktop with NW.js</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/25/testing-when-your-frontend-and-backend-are-separated.html"><strong>Testing when your frontend and backend are separated</strong><h6 class='footer-desc'>How can you run full integration tests when using separate repos?</h6></a>
-<a class="footer__post" href="/2015/03/24/rubyists-guide-to-ember-dependencies.html"><strong>Rubyists Guide to Ember.js Dependencies</strong><h6 class='footer-desc'>A dependency management primer for Rubysist living in a Gemfile-less, Ember.js world.</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/25/testing-when-your-frontend-and-backend-are-separated.html"><strong>Testing when your frontend and backend are separated</strong><h6 class='footer-desc'>How can you run full integration tests when using separate repos?</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
