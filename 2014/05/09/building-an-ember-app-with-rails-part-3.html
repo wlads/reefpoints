@@ -386,7 +386,7 @@ test(<span class="string"><span class="delimiter">'</span><span class="content">
 
 test(<span class="string"><span class="delimiter">'</span><span class="content">Should be able to navigate to a speaker page</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(assert) {
   visit(<span class="string"><span class="delimiter">'</span><span class="content">/speakers</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
-    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>(assert) {
+    click(<span class="string"><span class="delimiter">'</span><span class="content">a:contains(&quot;Bugs Bunny&quot;)</span><span class="delimiter">'</span></span>).then(<span class="keyword">function</span>() {
       assert.equal(find(<span class="string"><span class="delimiter">'</span><span class="content">h4</span><span class="delimiter">'</span></span>).text(), <span class="string"><span class="delimiter">'</span><span class="content">Bugs Bunny</span><span class="delimiter">'</span></span>);
     });
   });
