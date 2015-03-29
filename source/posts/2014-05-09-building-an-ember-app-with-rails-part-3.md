@@ -209,7 +209,7 @@ test('Should list all speakers', function(assert) {
 
 test('Should be able to navigate to a speaker page', function(assert) {
   visit('/speakers').then(function() {
-    click('a:contains("Bugs Bunny")').then(function(assert) {
+    click('a:contains("Bugs Bunny")').then(function() {
       assert.equal(find('h4').text(), 'Bugs Bunny');
     });
   });
