@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-c23d5f09.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
+<!DOCTYPE html><html><head><title>DockYard</title><link href="/stylesheets/all-b0bb5399.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all-ce68a29a.js" type="text/javascript"></script><meta content='NO-CACHE' http-equiv='CACHE-CONTROL'><meta content='DockYard is a Ruby on Rails, PostgreSQL, and, Ember.js, web / mobile application development software consultancy based in Boston, MA.' namer='description'><meta content='ruby on rails, rails, ruby, ruby on rails training, ruby application development, ruby on rails application development, ember application development, ember.js application development, software application development, web, web application development, mobile, mobile application development, ios, ios application development, iphone, iphone application development, android, android application development, postgres, startups, enterprise, Boston, MA, Massachusetts, for hire' name='keywords'><meta content='web development, mobile development, startups, enterprise, ruby on rails, rails, ruby, ruby on rails training, Boston, for hire' name='keywords'><meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'><meta charset='utf-8'><meta content='DockYard.com - ' name='description'><link href='//cloud.typography.com/6496052/702882/css/fonts.css' rel='stylesheet' type='text/css'><link href='http://dockyard.com/humans.txt' rel='author'><link href='/favicon.png' rel='shortcut icon' type='image/x-icon'><link href='/favicon.png' rel='icon' type='image/x-icon'><link href='/apple-touch-icon.png' rel='apple-touch-icon'><link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed'><script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-24185112-2']);
     _gaq.push(['_trackPageview']);
@@ -53,10 +53,155 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-03-27T00:00:00Z</updated>
+  <updated>2015-03-31T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Helping Our Engineers</title>
+    <link rel="alternate" href="/2015/03/31/helping-our-engineers.html"/>
+    <id>/2015/03/31/helping-our-engineers.html</id>
+    <published>2015-03-31T00:00:00Z</published>
+    <updated>2015-03-31T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2&gt;Writing Pseudo-Code as UX Developers&lt;/h2&gt;
+
+&lt;p&gt;As a team, we are always trying to improve our process at DockYard to
+make things easier for one another. I’m part of the UX development team, which
+takes care of the HTML and CSS/Sass for our projects.
+One thing we have found to be helpful to our Ember/back-end engineers is pseudo-coding
+where loops and conditionals should go in our templates. It only takes a basic understanding of
+&lt;a href="https://pine.fm/LearnToProgram/chap_06.html"&gt;flow control&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When we are in the development phase of a project, UX development usually tries to
+complete HTML first. That way UX dev and engineering can work in
+parallel without completion times depending on each other. What can we
+do to make this process smoother? Below are two code examples of what an engineer may see given these mockups.
+&lt;img alt="Has no followers"
+src="https://dl.dropboxusercontent.com/u/38675407/followers--no-followers.png"&gt;
+&lt;img alt="Followers shows interests"
+src="https://dl.dropboxusercontent.com/u/38675407/followers--with-interests.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Unorganized comments:&lt;/p&gt;
+&lt;div class="highlight handlebars "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;{{! at the beginning the user will not have any followers so show this}}&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows-wrap&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;h2&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows--is-empty&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;You don’t have any followers.&lt;span class="tag"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class="comment"&gt;{{! when a user has followers show this block and not the block above}}&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows-wrap&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="tag"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="attribute-name"&gt;src&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__image&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="tag"&gt;&amp;lt;h2&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Alfred H.&lt;span class="tag"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+      &lt;span class="tag"&gt;&amp;lt;h3&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interests__heading&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Follows for:&lt;span class="tag"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+      &lt;span class="comment"&gt;{{! must be following for at least one interest to have a follower. when the follower is only following for one interest will not have the part that says 2 others or span below that}}&lt;/span&gt;
+      &lt;span class="tag"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Tennis &lt;span class="entity"&gt;&amp;amp;amp;&lt;/span&gt; Racquet Sports,
+        &lt;span class="tag"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="attribute-name"&gt;href&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;#&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interest--other&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;2 others&lt;span class="tag"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interests&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Photography&lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Soccer&lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+      &lt;span class="tag"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pseudo-code comments:&lt;/p&gt;
+&lt;div class="highlight handlebars "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows-wrap&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="comment"&gt;{{! if user has followers}}&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="comment"&gt;{{! each follower / following}}&lt;/span&gt;
+        &lt;span class="tag"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="attribute-name"&gt;src&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__image&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;h2&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Alfred H.&lt;span class="tag"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;h3&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interests__heading&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Follows for:&lt;span class="tag"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+            Tennis &lt;span class="entity"&gt;&amp;amp;amp;&lt;/span&gt; Racquet Sports
+            &lt;span class="comment"&gt;{{! if following for more than one interest}}&lt;/span&gt;
+              ,
+              &lt;span class="tag"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="attribute-name"&gt;href&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;#&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__interest--other&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;2 others&lt;span class="tag"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+              &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interests&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Photography&lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+                &lt;span class="tag"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follow__modal__interest&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;Soccer&lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+              &lt;span class="tag"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class="comment"&gt;{{!end if}}&lt;/span&gt;
+          &lt;span class="tag"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class="comment"&gt;{{! end each}}&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="comment"&gt;{{! else}}&lt;/span&gt;
+    &lt;span class="tag"&gt;&amp;lt;h2&lt;/span&gt; &lt;span class="attribute-name"&gt;class&lt;/span&gt;=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;follows--is-empty&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="tag"&gt;&amp;gt;&lt;/span&gt;You don’t have any followers.&lt;span class="tag"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+  &lt;span class="comment"&gt;{{! end if}}&lt;/span&gt;
+&lt;span class="tag"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The unorganized way can get out of hand with complex applications. The
+pseudo-code method turns out to be slightly more work for UX developers,
+but it saves our engineers a lot of time and confusion. Being able to break
+things down into simple if/else statements or each loops has been much more efficient.
+No more reading paragraphs of what’s supposed to go where and when, or
+re-organizing the template!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Pluralize Your Word(s) With ember-pluralize</title>
     <link rel="alternate" href="/2015/03/27/pluralize-your-words-with-ember-pluralize.html"/>
@@ -703,170 +848,11 @@ Gemfile to working with the package managers JavaScript offers.&lt;/p&gt;
 &lt;p&gt;To attract new customers or visitors, a product needs to make sense to someone unfamiliar with it in their own broader frame of reference. To ask the right questions, to establish user goals and needs, and to judge the effectiveness and clarity of a product, we need both the insider and the outsider perspective.&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Tips for writing Ember Addons</title>
-    <link rel="alternate" href="/2015/03/22/tips-for-writing-ember-addons.html"/>
-    <id>/2015/03/22/tips-for-writing-ember-addons.html</id>
-    <published>2015-03-22T00:00:00Z</published>
-    <updated>2015-03-22T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;After having published many Ember addons I have started to develop my
-own sense of &amp;quot;Best Practices&amp;quot; and I&amp;#39;d like to share those with you:&lt;/p&gt;
-
-&lt;h2&gt;1. Keep it minimal, don&amp;#39;t include stylesheets&lt;/h2&gt;
-
-&lt;p&gt;I see quite a few addons out there that include their own look &amp;amp; feel by
-including sytlesheets. I actually think this is a bad idea. &lt;em&gt;Keep in
-mind, every line of code you put into your addon will end up in the
-final footprint of the apps consuming it&lt;/em&gt;. This means if you are
-including stylesheets those will end up in &lt;code&gt;vendor.css&lt;/code&gt;. The odds are
-that whatever styles you decide look good, someone else might not.
-They&amp;#39;ll waste even more space by including their own overrides. This is
-wasteful.&lt;/p&gt;
-
-&lt;p&gt;Instead, you should &lt;em&gt;keep it minimal&lt;/em&gt;. See
-&lt;a href="https://github.com/dockyard/ember-admin"&gt;ember-admin&lt;/a&gt;. I intentionally
-did not style the addon so it is left as minimal as possible. If you
-want to show off a styled version of the addon, you can either include
-styles in the dummy app&amp;#39;s styles for the addon&amp;#39;s test dummy. Allow
-people to run the addon&amp;#39;s server locally and view what could be. Or, you
-can include an addon wrapper library that depends upon your addon. This
-wrapper can include default styles that consumers may choose not to
-alter. For example,
-&lt;a href="https://github.com/dockyard/ember-admin-bootstrap"&gt;ember-admin-bootstrap&lt;/a&gt;
-styles ember-admin with Twitter Bootstrap. If this is good enough for
-you then you just install this library and it pulls in ember-admin but
-gives you some nice styling that you don&amp;#39;t have to spend time doing.&lt;/p&gt;
-
-&lt;h2&gt;2. Allow for overrides&lt;/h2&gt;
-
-&lt;p&gt;I believe strongly in composable addons. A consumer should have the
-ability to easily extend your addon to do whatever they want. This means
-organizing your code a certain way. To provide this you should put all
-of your business logic into &lt;code&gt;addon/&lt;/code&gt; and then include wrapper classes in
-&lt;code&gt;app/&lt;/code&gt; that just &lt;code&gt;import&lt;/code&gt; then &lt;code&gt;export&lt;/code&gt; the extended class. For example:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// addon/components/foo-bar.js&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; Ember from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; Ember.Component.extend({
-  &lt;span class="comment"&gt;// business logic&lt;/span&gt;
-});
-
-&lt;span class="comment"&gt;// app/components/foo-bar.js&lt;/span&gt;
-&lt;span class="reserved"&gt;import&lt;/span&gt; FooBar from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;my-addon/components/foo-bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
-&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; FooBar;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;These light wrapper classes &lt;strong&gt;should not&lt;/strong&gt; include any business logic.
-Again, they simply &lt;code&gt;import&lt;/code&gt; then &lt;code&gt;export&lt;/code&gt; the extended class. This gives
-consumers the option of overriding this in their own
-&lt;code&gt;app/components/foo-bar.js&lt;/code&gt; file to extend and add customization.&lt;/p&gt;
-
-&lt;h2&gt;3. Turn off Prototype Extensions&lt;/h2&gt;
-
-&lt;p&gt;Currently ember-cli will not generate an addon project with Prototype
-Extensions turn off. However, &lt;a href="https://github.com/ember-cli/ember-cli/issues/3443"&gt;I have requested this be the
-default&lt;/a&gt;. Turning
-off Prototype Extensions will cause the following syntax to fail in
-your addon&amp;#39;s test suite:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="function"&gt;foo&lt;/span&gt;: &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-  &lt;span class="comment"&gt;// whatever&lt;/span&gt;
-}.property(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;There are several syntax shortcuts that Ember injects into the base
-Types. Arrays have quite a bit. Turning off Prototype Extensions will
-force you to write the above code as:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;foo: Ember.computed(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;bar&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-  &lt;span class="comment"&gt;// whatever&lt;/span&gt;
-})
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And this will play nice with consumer applications that must run with
-the Prototype Extensions turned off.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/emberjs/ember.js/issues/10590"&gt;It should be noted that Ember 1.10 has a bug where turning off Prototype
-Extensions causes Ember itself to
-fail&lt;/a&gt;. This should be
-fixed in 1.11 (&lt;strong&gt;Update: This has been addressed in &lt;a href="https://github.com/emberjs/ember.js/pull/10697"&gt;Ember&lt;/a&gt;.&lt;/strong&gt;).&lt;/p&gt;
-
-&lt;p&gt;Avoiding Prototype Extensions can be difficult. I plan on writing a
-future blog post to outline certain strategies to duplicate the behavior
-that you miss out on without Prototype Extensions.&lt;/p&gt;
-
-&lt;p&gt;To turn off Prototype Extensions you&amp;#39;ll need to install the &lt;code&gt;ember-disable-prototype-extensions&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight  "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;npm install --save-dev ember-disable-prototype-extensions
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;See
-&lt;a href="https://github.com/dockyard/ember-validations/pull/270"&gt;ember-validations&lt;/a&gt;
-for an example.&lt;/p&gt;
-
-&lt;h2&gt;4. Test your addon&lt;/h2&gt;
-
-&lt;p&gt;This one should go without saying but I have seen &lt;em&gt;way&lt;/em&gt; too many addons
-out there that are untested (the generated tests don&amp;#39;t count). Please
-keep in mind that there are people building products that might consume
-your work. Untested code is just one more thing that could go wrong in
-someone&amp;#39;s app. If unit testing the code is too difficult, at the very
-least write integration tests against the dummy application to ensure
-the happy paths.&lt;/p&gt;
-
-&lt;h2&gt;5. Depend on other addons&lt;/h2&gt;
-
-&lt;p&gt;You may not know this but addons can depend upon addons. Rather than
-recreating behavior per-addon it would be best to extract out common
-behavior to its own dependency. For example,
-&lt;a href="https://github.com/dockyard/ember-data-route"&gt;ember-data-route&lt;/a&gt; and
-&lt;a href="https://github.com/dockyard/ember-cli-async-button"&gt;ember-cli-async-button&lt;/a&gt;
-are both being used in
-&lt;a href="https://github.com/dockyard/ember-admin/blob/master/package.json#L21-L23"&gt;ember-admin&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To use an addon as a dependency it &lt;em&gt;must&lt;/em&gt; be put into the &lt;code&gt;dependencies&lt;/code&gt;
-object in &lt;code&gt;package.json&lt;/code&gt;, &lt;strong&gt;not&lt;/strong&gt; &lt;code&gt;devDependencies&lt;/code&gt;. You may need to
-add this keyword to your &lt;code&gt;package.json&lt;/code&gt; as it is not part of the
-auto-generated file.&lt;/p&gt;
-
-&lt;p&gt;Ember&amp;#39;s addon eco-system is getting better every day, and as a community
-we are learning as we grow how best to build and maintain addons. I&amp;#39;m
-hoping you find these tips helpful. Please feel free to share your own
-in the comments below. &lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/03/31/helping-our-engineers.html"><strong>Helping Our Engineers</strong><h6 class='footer-desc'>Writing Pseudo-Code as UX Developers</h6></a>
 <a class="footer__post" href="/2015/03/27/pluralize-your-words-with-ember-pluralize.html"><strong>Pluralize Your Word(s) With ember-pluralize</strong><h6 class='footer-desc'>Introducing a pluralizing addon based on a given count.</h6></a>
-<a class="footer__post" href="/2015/03/26/bringing-ember-to-the-desktop-part.html"><strong>Bringing Ember to the Desktop with NW.js</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/25/testing-when-your-frontend-and-backend-are-separated.html"><strong>Testing when your frontend and backend are separated</strong><h6 class='footer-desc'>How can you run full integration tests when using separate repos?</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/03/26/bringing-ember-to-the-desktop-part.html"><strong>Bringing Ember to the Desktop with NW.js</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
