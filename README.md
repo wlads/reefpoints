@@ -2,13 +2,13 @@
 
 ## Getting Setup ##
 
-```bash
+```shell
 $ bundle install
 ```
 
 ## Getting Up & Running ##
 
-```bash
+```shell
 $ bundle exec middleman
 
 # or run the Rake task
@@ -59,27 +59,34 @@ tags: tags, separating each, with commas
 
 * Pull down the latest
 
-```bash
+```shell
 $ git pull origin master
 ```
 
 * Make a new branch
 
-```bash
+```shell
 $ git checkout -b YOURNAME-your-topic-name
 ```
 
 * Done writing? Now you can submit your PR...
 
-```bash
+```shell
 $ git push origin YOURNAME-your-topic-name
 ```
 
-* Now, submit your PR via GitHub. Done getting feedback? Merge your branch into `master`.
+* Open a PR on Github using [hub](https://hub.github.com)
+
+```shell
+$ brew install hub
+$ hub pull-request -m "My awesome blog post" -b dockyard:master
+```
+
+* Or do it the old school way via the GitHub UI. Done getting feedback? Merge your branch into `master`.
 
 * Now publish your post to Reefpoints!
 
-```bash
+```shell
 $ git checkout master
 $ git pull origin master
 $ rake publish
