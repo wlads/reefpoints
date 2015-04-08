@@ -10,7 +10,7 @@ tags: elixir
 ---
 
 I have been programming for over 20 years now. I started with Basic,
-found my way to C++, sepnt two years writing Assembly (MASM). Then I
+found my way to C++, and spent two years writing Assembly (MASM). Then I
 found Ruby. Ruby completely changed everything for me. I loved Ruby. I
 loved Ruby for a reason that many "elite" programmers tend to dismiss:
 the syntax.
@@ -20,10 +20,10 @@ bikeshedding, OCD, stupidity. I care about syntax. It matters to me, and
 with Ruby I found a community that shared my thoughts.
 
 When Go and Rust came along I was disappointed. Clearly these two
-languages were superior in performance (and in many other areas) but were a syntatic step back
+languages were superior in performance (and in many other areas) but were a syntactic step back
 from Ruby. What was their reason? Clearly Ruby, and even Python, have
 proven that the masses are attracted by clear and readable syntax. New
-languages should take the best of what is currently availabale and
+languages should take the best of what is currently available and
 improve upon them. Go seems to target the C/C++ audience, whereas Rust
 seems to attract JavaScript developers. So I guess this becomes a matter
 of perspective and opinion.
@@ -54,7 +54,7 @@ This is an Erlang trait. Elixir apps will attempt to make the best use
 of all the cores in your CPU as possible. Compared to Ruby this is a big
 deal. We don't have to write anything special, the Erlang VM (BEAM) just
 handles this for us automatically. This means we are effeciently using
-our hardware. This type of approached didn't make a lot of sense a few
+our hardware. This type of approach didn't make a lot of sense a few
 years ago, multi-core CPUs were expensive. Now they're cheap and Elixir
 benefits.
 
@@ -75,7 +75,7 @@ object it will get GC'd eventually impacting performance.
 
 Immutability got a bad rap when memory was expensive. Why would we write
 applications in such a way so as to waste memory by having variables
-who's values couldn't be mutated. Memory is now super cheap, and this is
+who's values couldn't be mutated? Memory is now super cheap, and this is
 not much of a concern. With this in mind we can evaluate immutability
 within the context it was originally meant: to ensure state. When we
 talk about parallel processing the state of a process becomes very
@@ -108,6 +108,8 @@ did early on. I said the same thing about the Ember.js community. I
 guess I'm just chasing that Ruby dragon, trying to catch that high
 again.
 
+
+#### Conclusion
 
 We've been exploring Elixir heavily over the past few months. The more I
 dig into the language the more I love it. We're going to bet pretty
