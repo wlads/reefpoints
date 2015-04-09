@@ -13,19 +13,25 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//authors/lauren-tan.html</loc>
+    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//authors/cory-tanner.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//authors/estelle-deblois.html</loc>
+    <loc>http://reefpoints.dockyard.com//</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//</loc>
+    <loc>http://reefpoints.dockyard.com//authors/estelle-deblois.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -50,12 +56,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//authors/ashley-treni.html</loc>
-    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//authors/lin-reid.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -925,7 +925,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://reefpoints.dockyard.com//categories/culture.html</loc>
+    <loc>http://reefpoints.dockyard.com//categories/team.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1135,6 +1135,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://reefpoints.dockyard.com//2015/04/09/the-importance-of-being-experience-first.html</loc>
+    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ember.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1142,6 +1148,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//shared/ads/wicked-good-ruby.html</loc>
+    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//authors/lin-reid.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1292,12 +1304,6 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/interaction.html</loc>
-    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://reefpoints.dockyard.com//categories/team.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1718,6 +1724,12 @@
   </url>
   <url>
     <loc>http://reefpoints.dockyard.com//categories/privacy.html</loc>
+    <lastmod>2015-04-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://reefpoints.dockyard.com//categories/culture.html</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
