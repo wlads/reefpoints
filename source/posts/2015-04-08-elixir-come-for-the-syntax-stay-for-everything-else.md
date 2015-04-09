@@ -53,7 +53,7 @@ code. Let's break this down into a few points:
 This is an Erlang trait. Elixir apps will attempt to make the best use
 of all the cores in your CPU as possible. Compared to Ruby this is a big
 deal. We don't have to write anything special, the Erlang VM (BEAM) just
-handles this for us automatically. This means we are effeciently using
+handles this for us automatically. This means we are efficiently using
 our hardware. This type of approach didn't make a lot of sense a few
 years ago, multi-core CPUs were expensive. Now they're cheap and Elixir
 benefits.
