@@ -228,7 +228,7 @@ code. Let&amp;#39;s break this down into a few points:&lt;/p&gt;
 &lt;p&gt;This is an Erlang trait. Elixir apps will attempt to make the best use
 of all the cores in your CPU as possible. Compared to Ruby this is a big
 deal. We don&amp;#39;t have to write anything special, the Erlang VM (BEAM) just
-handles this for us automatically. This means we are effeciently using
+handles this for us automatically. This means we are efficiently using
 our hardware. This type of approach didn&amp;#39;t make a lot of sense a few
 years ago, multi-core CPUs were expensive. Now they&amp;#39;re cheap and Elixir
 benefits.&lt;/p&gt;
