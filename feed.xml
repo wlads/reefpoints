@@ -176,6 +176,61 @@ else who helped review this post.&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>The Beginner's Fallacy</title>
+    <link rel="alternate" href="/2015/04/09/the-beginners-fallacy.html"/>
+    <id>/2015/04/09/the-beginners-fallacy.html</id>
+    <published>2015-04-09T00:00:00Z</published>
+    <updated>2015-04-09T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Helping onboard beginners is a hot topic right now in software
+development. It is very good that this is important to people as we need
+new software developers. However, I have noticed that many of these
+developers are finding it difficult advancing beyond beginner. This
+is especially evident when they are taken out of their current
+development environment.&lt;/p&gt;
+
+&lt;p&gt;Beginners require guidance and a set of rules to follow. This has been
+shown time over time to be an effective strategy for learning. The
+rules/principles/laws, whatever you want to call them, are based upon
+the experience of more advanced developers that essentially boil down to 
+&amp;quot;here is what you want to do &lt;em&gt;most&lt;/em&gt; of the time&amp;quot;. They are a great
+substitute for experience. They also fit in very nicely with the notion
+of &lt;strong&gt;Convention Over Configuration&lt;/strong&gt;. But unless you are stepping
+outside of your framework the advantage of COC may turn into a career
+hindering disadvantage.&lt;/p&gt;
+
+&lt;p&gt;I am a big fan of Convention Over Configuration. I was first exposed to
+it with Ruby on Rails and I like that Ember.js has been
+following this path as well. However, I also believe that it can become
+a crutch for beginners. The rules that they are following coupled with
+the low friction environment of COC leads to a developer experience that
+does not present too many obstacles to be overcome. Learning requires
+challenge. You meet a challenge, you learn how to overcome that
+challenge, you move on and now that experience is a tool you can wield in
+the future.&lt;/p&gt;
+
+&lt;p&gt;The market being flooded with beginners along with COC frameworks should
+produce an environment that is heavily favored towards employers. (buyer&amp;#39;s market) 
+In most cases these developers will be
+able to accomplish most of what a very experienced developer can
+accomplish. This is great for the company&amp;#39;s bottom line but not so good
+for the individual developer&amp;#39;s own career growth.&lt;/p&gt;
+
+&lt;p&gt;Instead, if you are interested in advancing beyond being a beginner,
+you must get out of your comfort zone. This is going to require you to
+put more time into your craft than your job necessarily allows. Try new
+software languages, try old software languages. Go read
+&lt;a href="https://mitpress.mit.edu/sicp/"&gt;SICP&lt;/a&gt;. Attend meetups, &lt;a href="https://github.com/papers-we-love/papers-we-love"&gt;read
+papers&lt;/a&gt;,
+contribute to open source. &lt;em&gt;Contribute to open source even if you think
+your PR won&amp;#39;t be accepted&lt;/em&gt;. All of these things will take you out of the
+comfort zone that your daily work gives you, but you&amp;#39;ll grow and become
+a better (and more in demand) developer for it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Elixir: Come for the syntax, stay for everything else</title>
     <link rel="alternate" href="/2015/04/08/elixir-come-for-the-syntax-stay-for-everything-else.html"/>
     <id>/2015/04/08/elixir-come-for-the-syntax-stay-for-everything-else.html</id>
@@ -797,140 +852,11 @@ dense for this introductory blog post. However, you&amp;#39;ll be hearing more f
 on this topic in the future!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Testing when your frontend and backend are separated</title>
-    <link rel="alternate" href="/2015/03/25/testing-when-your-frontend-and-backend-are-separated.html"/>
-    <id>/2015/03/25/testing-when-your-frontend-and-backend-are-separated.html</id>
-    <published>2015-03-25T00:00:00Z</published>
-    <updated>2015-03-25T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;The last project I worked on was an Ember app that had a Rails backend that was
-deployed on Heroku. We had this application as a single repository, where there
-were two folders at the root, &lt;code&gt;frontend&lt;/code&gt; and &lt;code&gt;backend&lt;/code&gt;. This was somewhat easy
-to test on Travis-CI; it would check out the one repository, run the Rails
-tests, start the Rails server, then run the ember tests that hit the Rails
-server. This ended up being a pain to deploy, as when you changed the Rails app,
-you were going to redeploy the Ember app, and vice-versa.  It also presented an
-issue when deploying to Heroku, as &lt;a href="https://www.youtube.com/watch?v=ceFNLdswFxs&amp;amp;t=4103"&gt;we had to utilize &lt;code&gt;git subtree&lt;/code&gt; to push
-the backend&lt;/a&gt;, which
-contained the production assets.&lt;/p&gt;
-
-&lt;p&gt;With the latest project I started, I&amp;#39;m keeping the backend and the Ember app
-separate.  Since the apps are separate, they can be deployed independant of
-each other. This made it a little bit harder to run integration tests against
-the backend.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Side note:&lt;/strong&gt; while you can mock/stub your API in your Ember tests, it is
-important to run integration tests against your backend regularly. When you
-mock your API, it ends up giving you this false sense of security when it comes
-to your Ember app being compatible. Your models may line up perfectly with your
-mocks, but your mocks can fall out of date. To prevent this, at least when
-running on your continuous integration (CI) server, you should have your Ember
-app hit the backend server.&lt;/p&gt;
-
-&lt;p&gt;To run end-to-end integration tests on Travis-CI, I added tasks to the
-&lt;code&gt;.travis.yml&lt;/code&gt; file to clone the backend repository, install dependencies, and
-run the server:&lt;/p&gt;
-&lt;div class="highlight yml "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;strong&gt;20&lt;/strong&gt;
-21
-22
-23
-24
-25
-26
-27
-28
-29
-&lt;strong&gt;30&lt;/strong&gt;
-31
-32
-33
-34
-35
-36
-37
-38
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="key"&gt;language&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;node_js&lt;/span&gt;&lt;/span&gt;
-&lt;span class="key"&gt;node_js&lt;/span&gt;:
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;0.12&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class="key"&gt;sudo&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="content"&gt;false&lt;/span&gt;&lt;/span&gt;
-&lt;span class="key"&gt;cache&lt;/span&gt;:
-  &lt;span class="key"&gt;directories&lt;/span&gt;:
-    - &lt;span class="string"&gt;&lt;span class="content"&gt;node_modules&lt;/span&gt;&lt;/span&gt;
-    - &lt;span class="string"&gt;&lt;span class="content"&gt;backend&lt;/span&gt;&lt;/span&gt;
-    - &lt;span class="string"&gt;&lt;span class="content"&gt;vendor/bundle&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class="key"&gt;before_install&lt;/span&gt;:
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;npm config set spin false&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;npm install -g npm@^2&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Select the RVM version&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;rvm use 2.2.1 --install --binary --fuzzy&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Clone the repository if isn't cloned&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;[ -d backend/.git ] || git clone git@github.com:&amp;lt;backend-repo&amp;gt; backend&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;cd backend&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Reset the repo so we can have a conflict-less pull&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;git reset --hard&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;git clean -f&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;git pull&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Install dependencies&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;bundle install --path=../vendor/bundle --jobs=3 --retry=3 --deployment&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Run the server&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;RAILS_ENV=test ./bin/rails s &amp;amp;&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="comment"&gt;# Wait for the Rails app to start&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;sleep 5&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;cd ..&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class="key"&gt;install&lt;/span&gt;:
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;npm install -g bower&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;npm install&lt;/span&gt;&lt;/span&gt;
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;bower install&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class="key"&gt;script&lt;/span&gt;:
-  - &lt;span class="string"&gt;&lt;span class="content"&gt;npm test&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Note that I cached both the backend and bundle directories to speed up the time
-it takes to get the backend running. Since the backend is cached, we only have
-to pull the new code.&lt;/p&gt;
-
-&lt;p&gt;In this example, we have a Rails app with no database, but it would be pretty
-easy to add one. The only other required step was to add an SSH private key to
-the Travis settings, since you would have two separate deploy keys. That would
-prevent you from cloning the backend repository from the frontend test.  There
-should be nothing holding you back from performing end to end tests when you
-have separate repositories!&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
 <a class="footer__post" href="/2015/04/09/the-importance-of-being-experience-first.html"><strong>The Importance of Being Experience First</strong><h6 class='footer-desc'>Why being Experience First is more critical than ever – will the rise of website builders threaten the future of software consulting?</h6></a>
-<a class="footer__post" href="/2015/04/08/elixir-come-for-the-syntax-stay-for-everything-else.html"><strong>Elixir: Come for the syntax, stay for everything else</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/03/31/helping-our-engineers.html"><strong>Helping Our Engineers</strong><h6 class='footer-desc'>Writing Pseudo-Code as UX Developers</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/04/09/the-beginners-fallacy.html"><strong>The Beginner's Fallacy</strong><h6 class='footer-desc'></h6></a>
+<a class="footer__post" href="/2015/04/08/elixir-come-for-the-syntax-stay-for-everything-else.html"><strong>Elixir: Come for the syntax, stay for everything else</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
