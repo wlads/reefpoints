@@ -18,6 +18,9 @@ bundle exec rake publish
 
 # Push build/posts.json to homeport.dockyard.com
 bundle exec rake build
-scp build/posts.json temp_deploy@homeport.dockyard.com: -i reepoints_deploy
+echo -e "Built\n"
+
+scp build/posts.json temp_deploy@homeport.dockyard.com: -i reefpoints_deploy > status.txt
+cat status.txt
 
 echo -e "Done\n"
