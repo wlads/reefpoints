@@ -13,9 +13,11 @@ USER="sockothesock"
 git remote rm origin
 git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
 
-# Push build/posts.json to homeport.dockyard.com
-scp build/posts.json temp_deploy@homeport.dockyard.com: -i reepoints_deploy
 
 bundle exec rake publish
+
+# Push build/posts.json to homeport.dockyard.com
+bundle exec rake build
+scp build/posts.json temp_deploy@homeport.dockyard.com: -i reepoints_deploy
 
 echo -e "Done\n"
