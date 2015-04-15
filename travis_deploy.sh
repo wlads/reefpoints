@@ -20,6 +20,7 @@ USER="sockothesock"
 bundle exec rake build
 echo -e "Built\n"
 
-scp build/posts.json temp_deploy@homeport.dockyard.com: -i ./reefpoints_deploy
+[ -f ./reefpoints_deploy ] && echo -t "Key present"
+scp -i ./reefpoints_deploy build/posts.json temp_deploy@homeport.dockyard.com:
 
 echo -e "Done\n"
