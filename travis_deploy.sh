@@ -10,17 +10,16 @@ git config --global user.name "sockothesock"
 USER="sockothesock"
 
 # sending output to /dev/null to prevent GH_TOKEN leak on error
-git remote rm origin
-git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
+# git remote rm origin
+# git remote add origin https://${USER}:${GHTOKEN}@github.com/dockyard/reefpoints.git &> /dev/null
 
 
-bundle exec rake publish
+# bundle exec rake publish
 
 # Push build/posts.json to homeport.dockyard.com
 bundle exec rake build
 echo -e "Built\n"
 
-scp build/posts.json temp_deploy@homeport.dockyard.com: -i reefpoints_deploy > status.txt
-cat status.txt
+scp build/posts.json temp_deploy@homeport.dockyard.com: -i ./reefpoints_deploy
 
 echo -e "Done\n"
