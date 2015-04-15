@@ -18,9 +18,8 @@ USER="sockothesock"
 
 # Push build/posts.json to homeport.dockyard.com
 bundle exec rake build
-echo -e "Built\n"
 
-[ -f ./reefpoints_deploy ] && echo -t "Key present"
+ssh-keyscan -H homeport.dockyard.com >> ~/.ssh/known_hosts
 scp -i ./reefpoints_deploy build/posts.json temp_deploy@homeport.dockyard.com:
 
 echo -e "Done\n"
