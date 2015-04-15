@@ -9,3 +9,4 @@ bin/*
 build/*
 build
 vendor/
+reefpoints_deploy
