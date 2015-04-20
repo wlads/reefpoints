@@ -22,9 +22,10 @@ viewport), please have a read of that post first!
 
 This time, I want to talk about how I improved the original Mixin to use the
 [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
-API for improved performance at close to 60FPS. Because certain browsers
-(mainly IE) don't support `rAF`, we'll also setup an automatic fallback to using
-the Ember run loop method I used in my previous post.
+API for improved performance at close to 60FPS. Because
+[certain browsers](http://caniuse.com/#search=requestAnimationFrame) (mainly IE)
+don't support `rAF`, we'll also setup an automatic fallback to using the Ember
+run loop method I used in my previous post.
 
 ## Demo
 ![Featuring Brian](https://d262ilb51hltx0.cloudfront.net/max/1600/1*9WZqJfpL4daIEBJiufTolQ.png)
