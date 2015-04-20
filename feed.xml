@@ -53,10 +53,599 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-04-10T00:00:00Z</updated>
+  <updated>2015-04-20T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Detecting Ember.js Components Entering or Leaving the Viewport</title>
+    <link rel="alternate" href="/2015/04/20/ember-in-viewport.html"/>
+    <id>/2015/04/20/ember-in-viewport.html</id>
+    <published>2015-04-20T00:00:00Z</published>
+    <updated>2015-04-20T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;em&gt;This concise version originally appears on &lt;a href="https://medium.com/delightful-ui-for-ember-apps/creating-an-ember-cli-addon-detecting-ember-js-components-entering-or-leaving-the-viewport-7d95ceb4f5ed"&gt;Medium in longform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I &lt;a href="https://medium.com/delightful-ui-for-ember-apps/ember-js-detecting-if-a-dom-element-is-in-the-viewport-eafcc77a6f86"&gt;wrote a post&lt;/a&gt;
+last year about how I made an Ember Mixin that would let Ember Components or
+Views know if their DOM element had entered or left the viewport. If you&amp;#39;re
+unfamiliar with the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"&gt;&lt;code&gt;getBoundingClientRect&lt;/code&gt;&lt;/a&gt;
+API or the approach in general (for determining if an element is in the
+viewport), please have a read of that post first!&lt;/p&gt;
+
+&lt;p&gt;This time, I want to talk about how I improved the original Mixin to use the
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"&gt;&lt;code&gt;requestAnimationFrame&lt;/code&gt;&lt;/a&gt;
+API for improved performance at close to 60FPS. Because
+&lt;a href="http://caniuse.com/#search=requestAnimationFrame"&gt;certain browsers&lt;/a&gt; (mainly IE)
+don&amp;#39;t support &lt;code&gt;rAF&lt;/code&gt;, we&amp;#39;ll also setup an automatic fallback to using the Ember
+run loop method I used in my previous post.&lt;/p&gt;
+
+&lt;h2&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*9WZqJfpL4daIEBJiufTolQ.png" alt="Featuring Brian"&gt;&lt;/p&gt;
+
+&lt;p&gt;I made a simple &lt;a href="http://development.ember-in-viewport-demo.divshot.io/"&gt;demo app&lt;/a&gt;
+to demonstrate how you might use the Mixin. The goal for this addon was to allow
+you to easily style or do something with Components/Views when they enter or
+leave the viewport. For example, you could easily use this Mixin to build a
+lazy loader for images, or even for triggering animations. Using this Mixin,
+you won&amp;#39;t need to use a jQuery plugin and can instead rely on a highly
+performant ember-cli addon.&lt;/p&gt;
+
+&lt;h2&gt;Installing the addon&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re using ember-cli and want to use the addon, you can install it with:&lt;/p&gt;
+&lt;div class="highlight shell "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;$ ember install ember-in-viewport
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The source for the addon is available at &lt;a href="https://github.com/dockyard/ember-in-viewport"&gt;dockyard/ember-in-viewport&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Rewriting the In Viewport Mixin&lt;/h2&gt;
+
+&lt;p&gt;The Mixin still uses the &lt;a href="https://medium.com/delightful-ui-for-ember-apps/ember-js-detecting-if-a-dom-element-is-in-the-viewport-eafcc77a6f86"&gt;same method&lt;/a&gt;
+for determining if a DOM element is in the viewport, using
+&lt;code&gt;getBoundingClientRect&lt;/code&gt; and the window&amp;#39;s &lt;code&gt;innerHeight&lt;/code&gt; and &lt;code&gt;innerWidth&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Updating the Is In Viewport logic&lt;/h3&gt;
+
+&lt;p&gt;The method for calculating whether or not a DOM element is in the viewport
+remains mostly unchanged, except with the addition of a new &lt;code&gt;viewportTolerance&lt;/code&gt;
+argument.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="reserved"&gt;import&lt;/span&gt; Ember from &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;ember&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;;
+
+const { merge } = Ember;
+
+const defaultTolerance = {
+  &lt;span class="key"&gt;top&lt;/span&gt;    : &lt;span class="integer"&gt;0&lt;/span&gt;,
+  &lt;span class="key"&gt;left&lt;/span&gt;   : &lt;span class="integer"&gt;0&lt;/span&gt;,
+  &lt;span class="key"&gt;bottom&lt;/span&gt; : &lt;span class="integer"&gt;0&lt;/span&gt;,
+  &lt;span class="key"&gt;right&lt;/span&gt;  : &lt;span class="integer"&gt;0&lt;/span&gt;
+};
+
+&lt;span class="reserved"&gt;export&lt;/span&gt; &lt;span class="keyword"&gt;default&lt;/span&gt; &lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;isInViewport&lt;/span&gt;(boundingClientRect={}, height=&lt;span class="integer"&gt;0&lt;/span&gt;, width=&lt;span class="integer"&gt;0&lt;/span&gt;, tolerance=defaultTolerance) {
+  const { top, left, bottom, right } = boundingClientRect;
+  const tolerances = merge(defaultTolerance, tolerance);
+  let {
+    &lt;span class="key"&gt;top&lt;/span&gt;    : topTolerance,
+    &lt;span class="key"&gt;left&lt;/span&gt;   : leftTolerance,
+    &lt;span class="key"&gt;bottom&lt;/span&gt; : bottomTolerance,
+    &lt;span class="key"&gt;right&lt;/span&gt;  : rightTolerance
+  } = tolerances;
+
+  &lt;span class="keyword"&gt;return&lt;/span&gt; (
+    (top + topTolerance)       &amp;gt;= &lt;span class="integer"&gt;0&lt;/span&gt; &amp;amp;&amp;amp;
+    (left + leftTolerance)     &amp;gt;= &lt;span class="integer"&gt;0&lt;/span&gt; &amp;amp;&amp;amp;
+    (bottom - bottomTolerance) &amp;lt;= height &amp;amp;&amp;amp;
+    (right - rightTolerance)   &amp;lt;= width
+  );
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;With the addition of the &lt;code&gt;viewportTolerance&lt;/code&gt; option, addon users can relax how
+precise the check is. When set to &lt;code&gt;0&lt;/code&gt;, the Mixin only considers an element
+inside the viewport when it is completely visible inside of the viewport.&lt;/p&gt;
+
+&lt;h3&gt;Setting up the Class variables&lt;/h3&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;const {
+  get,
+  set,
+  setProperties,
+  computed,
+  run,
+  on,
+  &lt;span class="predefined"&gt;$&lt;/span&gt;,
+} = Ember;
+
+const {
+  scheduleOnce,
+  debounce,
+  bind,
+  next
+} = run;
+
+const { not }     = computed;
+const { forEach } = Ember.EnumerableUtils;
+
+const listeners = [
+  { &lt;span class="key"&gt;context&lt;/span&gt;: window,   &lt;span class="key"&gt;event&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;scroll.scrollable&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; },
+  { &lt;span class="key"&gt;context&lt;/span&gt;: window,   &lt;span class="key"&gt;event&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;resize.resizable&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; },
+  { &lt;span class="key"&gt;context&lt;/span&gt;: document, &lt;span class="key"&gt;event&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;touchmove.scrollable&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; }
+];
+
+let rAFIDS = {};
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you haven&amp;#39;t had the chance to use &lt;a href="https://babeljs.io/docs/learn-es6/"&gt;ES2015 features&lt;/a&gt;,
+now&amp;#39;s a good time to learn, since &lt;code&gt;ember-cli-babel&lt;/code&gt; has been shipped with
+ember-cli by default for a while now. Here, we&amp;#39;re destructuring certain methods
+from Ember, as well as setting up an array of listeners we want to register. I
+also declare a mutable variable &lt;code&gt;rAFIDS&lt;/code&gt; with &lt;code&gt;let&lt;/code&gt; — I&amp;#39;ll be using this object
+to store the ID that&amp;#39;s returned by &lt;code&gt;requestAnimationFrame&lt;/code&gt; so that we can cancel
+it later.&lt;/p&gt;
+
+&lt;p&gt;Something interesting to note is that these variables are actually shared by all
+instances of the Mixin. This means if we stored the ID in that variable, it would
+be overwritten by other instances of the Components that are being watched by
+the Mixin. So instead, we&amp;#39;ll store each ID as a key (the element ID for the
+Component) inside of an object. More on that later.&lt;/p&gt;
+
+&lt;h3&gt;Initial state&lt;/h3&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_setInitialState: on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;init&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  setProperties(&lt;span class="local-variable"&gt;this&lt;/span&gt;, {
+    &lt;span class="predefined"&gt;$viewportCachedEl&lt;/span&gt;   : &lt;span class="predefined-constant"&gt;undefined&lt;/span&gt;,
+    &lt;span class="key"&gt;viewportUseRAF&lt;/span&gt;      : canUseRAF(),
+    &lt;span class="key"&gt;viewportEntered&lt;/span&gt;     : &lt;span class="predefined-constant"&gt;false&lt;/span&gt;,
+    &lt;span class="key"&gt;viewportSpy&lt;/span&gt;         : &lt;span class="predefined-constant"&gt;false&lt;/span&gt;,
+    &lt;span class="key"&gt;viewportRefreshRate&lt;/span&gt; : &lt;span class="integer"&gt;100&lt;/span&gt;,
+    &lt;span class="key"&gt;viewportTolerance&lt;/span&gt;   : {
+      &lt;span class="key"&gt;top&lt;/span&gt;    : &lt;span class="integer"&gt;0&lt;/span&gt;,
+      &lt;span class="key"&gt;left&lt;/span&gt;   : &lt;span class="integer"&gt;0&lt;/span&gt;,
+      &lt;span class="key"&gt;bottom&lt;/span&gt; : &lt;span class="integer"&gt;0&lt;/span&gt;,
+      &lt;span class="key"&gt;right&lt;/span&gt;  : &lt;span class="integer"&gt;0&lt;/span&gt;
+    },
+  });
+})
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We&amp;#39;ll need to setup some initial values for our Mixin&amp;#39;s state. We do this when
+the Object the Mixin is mixed into is instantiated, by setting some properties
+on &lt;code&gt;init&lt;/code&gt;. This is because &lt;a href="http://emberjs.com/api/classes/Ember.Mixin.html"&gt;Mixins extend a constructor&amp;#39;s prototype&lt;/a&gt;,
+so certain properties will be shared amongst objects that implement the Mixin — 
+and in our case, we want these to be unique to each instance.&lt;/p&gt;
+
+&lt;p&gt;Here, we&amp;#39;re also going to make use of our utility function &lt;a href="https://github.com/dockyard/ember-in-viewport/blob/0.2.1/addon/utils/can-use-raf.js"&gt;&lt;code&gt;canUseRAF&lt;/code&gt;&lt;/a&gt;
+to let the Mixin know whether to use &lt;code&gt;requestAnimationFrame&lt;/code&gt; or fallback to the
+Ember run loop.&lt;/p&gt;
+
+&lt;h3&gt;Setting up the DOM element rendered by the component&lt;/h3&gt;
+
+&lt;p&gt;When the DOM element is inserted, we&amp;#39;ll need to do a few things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The initial check on render to see if the element is immediately in view&lt;/li&gt;
+&lt;li&gt;Setting up an observer to unbind listeners if we&amp;#39;re not spying on the element&lt;/li&gt;
+&lt;li&gt;Calling the recursive &lt;code&gt;requestAnimationFrame&lt;/code&gt; method&lt;/li&gt;
+&lt;li&gt;Setting up event listeners if we are spying on the element&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_setupElement: on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;didInsertElement&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (!canUseDOM) { &lt;span class="keyword"&gt;return&lt;/span&gt;; }
+
+  const viewportUseRAF = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportUseRAF&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._setInitialViewport(window);
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._addObserverIfNotSpying();
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._setViewportEntered(window);
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (!viewportUseRAF) {
+    forEach(listeners, (listener) =&amp;gt; {
+      const { context, event } = listener;
+      &lt;span class="local-variable"&gt;this&lt;/span&gt;._bindListeners(context, event);
+    });
+  }
+})
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Checking if the DOM element is immediately in view&lt;/h3&gt;
+
+&lt;p&gt;After the element has been rendered into the DOM, we want to immediately check
+if it&amp;#39;s visible. This calls the &lt;code&gt;_setViewportEntered&lt;/code&gt; method in the
+&lt;code&gt;afterRender&lt;/code&gt; queue of the Ember run loop, which ensures that the DOM element
+is actually already inserted and available for us.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_setInitialViewport(context=&lt;span class="predefined-constant"&gt;null&lt;/span&gt;) {
+  Ember.assert(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You must pass a valid context to _setInitialViewport&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, context);
+
+  &lt;span class="keyword"&gt;return&lt;/span&gt; scheduleOnce(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;afterRender&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;, () =&amp;gt; {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;._setViewportEntered(context);
+  });
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Unbinding listeners after entering the viewport&lt;/h3&gt;
+
+&lt;p&gt;It makes sense in certain use cases to stop watching the element after it has
+entered the viewport &lt;em&gt;at least once&lt;/em&gt;. For example, in an image lazy loader, we
+only want to load the image once, after which it makes sense to clean up
+listeners to reduce the load on the app. We do that with the &lt;code&gt;viewportSpy&lt;/code&gt;
+option.&lt;/p&gt;
+
+&lt;p&gt;Here, we programatically add an observer on the &lt;code&gt;viewportEntered&lt;/code&gt; prop if
+&lt;code&gt;viewportSpy&lt;/code&gt; has been set to &lt;code&gt;false&lt;/code&gt; by our addon user. The observer itself
+doesn&amp;#39;t do much — it unbinds listeners and then removes itself.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_addObserverIfNotSpying() {
+  const viewportSpy = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportSpy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (!viewportSpy) {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.addObserver(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportEntered&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;._viewportDidEnter);
+  }
+},
+
+_viewportDidEnter() {
+  const viewportEntered = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportEntered&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const viewportSpy     = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportSpy&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (!viewportSpy &amp;amp;&amp;amp; viewportEntered) {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;._unbindListeners();
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;.removeObserver(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportEntered&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;._viewportDidEnter);
+  }
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Setting up event listeners&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s look at binding our event listeners before we take a look at
+&lt;code&gt;_setViewportEntered&lt;/code&gt;, the main method for the mixin. We&amp;#39;ll be using the array
+of listeners we declared earlier at the top of the file, and binding the event
+to the appropriate context (&lt;code&gt;window&lt;/code&gt; or &lt;code&gt;document&lt;/code&gt;), like so:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_bindListeners(context=&lt;span class="predefined-constant"&gt;null&lt;/span&gt;, event=&lt;span class="predefined-constant"&gt;null&lt;/span&gt;) {
+  Ember.assert(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You must pass a valid context to _bindListeners&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, context);
+  Ember.assert(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You must pass a valid event to _bindListeners&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, event);
+
+  const elementId = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;elementId&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  Ember.warn(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;No elementId was found on this Object, `viewportSpy` will&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; +
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;not work as expected&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, elementId);
+
+  &lt;span class="predefined"&gt;$&lt;/span&gt;(context).on(&lt;span class="error"&gt;`&lt;/span&gt;&lt;span class="predefined"&gt;$&lt;/span&gt;{event}&lt;span class="error"&gt;#&lt;/span&gt;&lt;span class="predefined"&gt;$&lt;/span&gt;{elementId}&lt;span class="error"&gt;`&lt;/span&gt;, () =&amp;gt; {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;._scrollHandler(context);
+  });
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that we can actually pass the Component&amp;#39;s &lt;a href="http://emberjs.com/api/classes/Ember.View.html#property_elementId"&gt;&lt;code&gt;elementId&lt;/code&gt;&lt;/a&gt;
+(the &lt;code&gt;id&lt;/code&gt; attribute that is rendered into the DOM) to the event, which will
+allow us to only unbind the listener for that particular element. If we didn&amp;#39;t
+do this, all listeners would have been unbound when the first DOM element enters
+the viewport, which isn&amp;#39;t what we&amp;#39;d want.&lt;/p&gt;
+
+&lt;h3&gt;Handling the event&lt;/h3&gt;
+
+&lt;p&gt;Now, we can handle the event by debouncing the main method with the
+&lt;code&gt;viewportRefreshRate&lt;/code&gt; set by the addon user.&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_scrollHandler(context=&lt;span class="predefined-constant"&gt;null&lt;/span&gt;) {
+  Ember.assert(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You must pass a valid context to _scrollHandler&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, context);
+
+  const viewportRefreshRate = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportRefreshRate&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  debounce(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+    &lt;span class="local-variable"&gt;this&lt;/span&gt;._setViewportEntered(context);
+  }, viewportRefreshRate);
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;h3&gt;Unbinding listeners&lt;/h3&gt;
+
+&lt;p&gt;When we eventually destroy the Component, we want to make sure we also cleanup
+after ourselves. We&amp;#39;ll have to remove both event listeners and the recursive
+&lt;code&gt;requestAnimationFrame&lt;/code&gt; call:&lt;/p&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_unbindListeners() {
+  const elementId      = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;elementId&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const viewportUseRAF = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportUseRAF&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+  Ember.warn(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;No elementId was found on this Object, `viewportSpy` will&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt; +
+    &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;not work as expected&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, elementId);
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (viewportUseRAF) {
+    next(&lt;span class="local-variable"&gt;this&lt;/span&gt;, () =&amp;gt; {
+      window.cancelAnimationFrame(rAFIDS[elementId]);
+      rAFIDS[elementId] = &lt;span class="predefined-constant"&gt;null&lt;/span&gt;;
+    });
+  }
+
+  forEach(listeners, (listener) =&amp;gt; {
+    const { context, event } = listener;
+    &lt;span class="predefined"&gt;$&lt;/span&gt;(context).off(&lt;span class="error"&gt;`&lt;/span&gt;&lt;span class="predefined"&gt;$&lt;/span&gt;{event}&lt;span class="error"&gt;#&lt;/span&gt;&lt;span class="predefined"&gt;$&lt;/span&gt;{elementId}&lt;span class="error"&gt;`&lt;/span&gt;);
+  });
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_teardown: on(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;willDestroyElement&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="keyword"&gt;function&lt;/span&gt;() {
+  &lt;span class="local-variable"&gt;this&lt;/span&gt;._unbindListeners();
+})
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If you recall, the &lt;code&gt;requestAnimationFrame&lt;/code&gt; function returns an ID that uniquely
+identifies the entry in the callback list. We can pass this on to
+&lt;code&gt;cancelAnimationFrame&lt;/code&gt; in order to cancel the infinitely recursive call to the
+main method. Because we register the Component&amp;#39;s DOM &lt;code&gt;elementId&lt;/code&gt; as a key in the
+&lt;code&gt;rAFIDS&lt;/code&gt; object, we can remove the specific rAF call for that single Component.
+I&amp;#39;ve wrapped the cAF call in an &lt;code&gt;Ember.run.next&lt;/code&gt; to avoid a race condition that
+happens occasionally.&lt;/p&gt;
+
+&lt;h3&gt;Updating the viewportEntered property&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s take a look at the main method responsible for setting the
+&lt;code&gt;viewportEntered&lt;/code&gt; property. This method does two main things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Set &lt;code&gt;viewportEntered&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fire off the next &lt;code&gt;requestAnimationFrame&lt;/code&gt; step&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight js "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;strong&gt;10&lt;/strong&gt;
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;strong&gt;20&lt;/strong&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;_setViewportEntered(context=&lt;span class="predefined-constant"&gt;null&lt;/span&gt;) {
+  Ember.assert(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;You must pass a valid context to _setViewportEntered&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, context);
+
+  const &lt;span class="predefined"&gt;$viewportCachedEl&lt;/span&gt; = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;$viewportCachedEl&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const viewportUseRAF    = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportUseRAF&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const elementId         = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;elementId&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const tolerance         = get(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportTolerance&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);
+  const height            = &lt;span class="predefined"&gt;$&lt;/span&gt;(context) ? &lt;span class="predefined"&gt;$&lt;/span&gt;(context).height() : &lt;span class="integer"&gt;0&lt;/span&gt;;
+  const width             = &lt;span class="predefined"&gt;$&lt;/span&gt;(context) ? &lt;span class="predefined"&gt;$&lt;/span&gt;(context).width()  : &lt;span class="integer"&gt;0&lt;/span&gt;;
+
+  let boundingClientRect;
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (&lt;span class="predefined"&gt;$viewportCachedEl&lt;/span&gt;) {
+    boundingClientRect = &lt;span class="predefined"&gt;$viewportCachedEl&lt;/span&gt;[&lt;span class="integer"&gt;0&lt;/span&gt;].getBoundingClientRect();
+  } &lt;span class="keyword"&gt;else&lt;/span&gt; {
+    boundingClientRect = set(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;$viewportCachedEl&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;.&lt;span class="predefined"&gt;$&lt;/span&gt;())[&lt;span class="integer"&gt;0&lt;/span&gt;].getBoundingClientRect();
+  }
+
+  const viewportEntered = isInViewport(boundingClientRect, height, width, tolerance);
+
+  set(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;viewportEntered&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, viewportEntered);
+
+  &lt;span class="keyword"&gt;if&lt;/span&gt; (&lt;span class="predefined"&gt;$viewportCachedEl&lt;/span&gt; &amp;amp;&amp;amp; viewportUseRAF) {
+    rAFIDS[elementId] = window.requestAnimationFrame(
+      bind(&lt;span class="local-variable"&gt;this&lt;/span&gt;, &lt;span class="local-variable"&gt;this&lt;/span&gt;._setViewportEntered, context)
+    );
+  }
+}
+&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;As a simple optimization, we can cache the selected DOM element inside the
+Object as &lt;code&gt;$viewportCachedEl&lt;/code&gt; so we don&amp;#39;t have call the expensive DOM node
+selector method every time. Then, we pass the Component&amp;#39;s element properties to
+the utility we defined earlier, and set the &lt;code&gt;viewportEntered&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;p&gt;If &lt;code&gt;requestAnimationFrame&lt;/code&gt; is enabled, we call the method again inside of the
+rAF method, after binding it to the correct context. Like
+&lt;code&gt;Function.prototype.bind&lt;/code&gt;, this creates a new function, that when called, has
+its &lt;code&gt;this&lt;/code&gt; keyword set to the correct value (along with any arguments). With
+that first call after the element is inserted into the DOM, this fires off an
+infinitely recursive loop that will only end when we cancel it.&lt;/p&gt;
+
+&lt;p&gt;Hence, we don&amp;#39;t have to setup event listeners when rAF is enabled. And that&amp;#39;s it
+for the Mixin!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The Beginner's Fallacy</title>
     <link rel="alternate" href="/2015/04/10/the-beginners-fallacy.html"/>
@@ -614,249 +1203,11 @@ word based on a given a count.&lt;/p&gt;
 &lt;a href="https://github.com/rsocci/ember-pluralize"&gt;GitHub&lt;/a&gt;!&lt;/p&gt;
 </content>
   </entry>
-  <entry>
-    <title>Bringing Ember to the Desktop with NW.js</title>
-    <link rel="alternate" href="/2015/03/26/bringing-ember-to-the-desktop-part.html"/>
-    <id>/2015/03/26/bringing-ember-to-the-desktop-part.html</id>
-    <published>2015-03-26T00:00:00Z</published>
-    <updated>2015-03-26T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;One of our recent client projects at DockYard had us go in a totally new
-direction in terms of technology stack. We needed to build a desktop
-application that could communicate with some Arduino devices via
-&lt;a href="https://developer.mozilla.org/en-US/docs/WebSockets"&gt;WebSockets&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let me first put this out there: I love building for the web. The mere
-thought of developing native desktop applications always makes me cringe
-a little, though I admit, I haven&amp;#39;t done much in that arena since those
-&lt;a href="http://en.wikipedia.org/wiki/Swing_%28Java%29"&gt;Java Swing&lt;/a&gt; days from forever ago.
-Nevertheless, you may find yourself at some point needing to build for the desktop.
-Thankfully, you don&amp;#39;t have to put your fuzzy little Tomster away.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/nwjs/nw.js"&gt;NW.js&lt;/a&gt;, formerly known as Node WebKit, is a runtime
-built on top of Chromium and Node/IO.js that lets you develop native applications
-using the web technologies that you love. You can essentially build an Ember app, and
-also invoke Node modules all within the browser, then package it up as
-a Mac OS X application or Windows &lt;code&gt;exe&lt;/code&gt; file when you&amp;#39;re ready to distribute.&lt;/p&gt;
-
-&lt;h2&gt;Demo&lt;/h2&gt;
-
-&lt;p&gt;Here&amp;#39;s a screenshot from a NW.js app built with Ember for demonstration
-purposes:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://cloud.githubusercontent.com/assets/1691398/6768192/536a6fde-d033-11e4-9375-e2f506c1c8c7.png" alt="screenshot"&gt;&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s a simple GitHub-flavored Markdown Editor that lets you create and preview
-Markdown documents, and save them to disk.&lt;/p&gt;
-
-&lt;p&gt;You can try it for yourself. Just download the application from the
-following links for your platform, unzip, then double-click on &lt;code&gt;Markdown
-Editor.app&lt;/code&gt; (Mac) or &lt;code&gt;Markdown Editor.exe&lt;/code&gt; (Windows).&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mac OS X: &lt;a href="https://s3.amazonaws.com/dockyard-general/ember-nw-demo/markdown-editor-osx64.zip"&gt;markdown-editor-osx64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Windows:
-&lt;a href="https://s3.amazonaws.com/dockyard-general/ember-nw-demo/markdown-editor-win64.zip"&gt;markdown-editor-win64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/brzpegasus/ember-nw-markdown"&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For a touch of user friendliness, the app even ships with your favorite
-mascot:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Mac:&lt;/em&gt;
-&lt;img alt="Mac Icon" src="https://cloud.githubusercontent.com/assets/1691398/6853610/9ee8c52c-d3c2-11e4-971a-3472bfd35609.png" style="width: 600px; height: 205px;"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Windows:&lt;/em&gt;
-&lt;img alt="Win Icon" src="https://cloud.githubusercontent.com/assets/1691398/6853614/a32becc2-d3c2-11e4-9ed4-83d645825f4b.png" style="width: 114px; height: 312px;"&gt;&lt;/p&gt;
-
-&lt;h2&gt;Getting Started&lt;/h2&gt;
-
-&lt;p&gt;The main entry point to a NW.js application is an HTML page that you
-specify in your project&amp;#39;s &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight json "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;{
-  &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;name&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;my-app&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
-  &lt;span class="key"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;main&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;dist/index.html&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-}
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;On startup, NW.js will launch a new Chromium browser window,
-then set the location to that starting page:
-&lt;code&gt;file:///Users/brzpegasus/projects/my-app/dist/index.html#/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This does require that you set your &lt;code&gt;Ember.Router&lt;/code&gt;
-&lt;a href="http://emberjs.com/api/classes/Ember.Location.html"&gt;location type&lt;/a&gt; to &lt;code&gt;hash&lt;/code&gt;. In Ember CLI,
-this is a simple tweak to your &lt;code&gt;config/environment.js&lt;/code&gt; file:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// config/environment.js&lt;/span&gt;
-modules.&lt;span class="function"&gt;exports&lt;/span&gt; = &lt;span class="keyword"&gt;function&lt;/span&gt;(environment) {
-  &lt;span class="keyword"&gt;var&lt;/span&gt; ENV = {
-    &lt;span class="key"&gt;locationType&lt;/span&gt;: &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;hash&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class="comment"&gt;// Change this from 'auto' to 'hash'&lt;/span&gt;
-    &lt;span class="comment"&gt;// ...&lt;/span&gt;
-  };
-};
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;From there on, you should feel quite at home and ready to develop your Ember app.&lt;/p&gt;
-
-&lt;p&gt;Or maybe not quite yet.&lt;/p&gt;
-
-&lt;h2&gt;A Bit About NW.js&lt;/h2&gt;
-
-&lt;p&gt;NW.js tweaks Chromium and Node in order to
-&lt;a href="https://github.com/nwjs/nw.js/wiki/How-node.js-is-integrated-with-chromium"&gt;integrate&lt;/a&gt;
-the two worlds and make it possible for you to call Node modules from the client:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;console.log(location.href);   &lt;span class="comment"&gt;// Yup, we're in browser land&lt;/span&gt;
-
-&lt;span class="keyword"&gt;var&lt;/span&gt; fs = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;fs&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;);       &lt;span class="comment"&gt;// Call core Node modules&lt;/span&gt;
-&lt;span class="keyword"&gt;var&lt;/span&gt; async = require(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;async&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;); &lt;span class="comment"&gt;// Or even third-party modules!&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;If you&amp;#39;re used to Node and CommonJS, this &lt;code&gt;require&lt;/code&gt; function should look very
-familiar, but it isn&amp;#39;t exactly the same. Here&amp;#39;s what it does:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="function"&gt;require&lt;/span&gt;(name) {
-  &lt;span class="keyword"&gt;if&lt;/span&gt; (name == &lt;span class="string"&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;span class="content"&gt;nw.gui&lt;/span&gt;&lt;span class="delimiter"&gt;'&lt;/span&gt;&lt;/span&gt;)
-    &lt;span class="keyword"&gt;return&lt;/span&gt; nwDispatcher.requireNwGui();
-  &lt;span class="keyword"&gt;return&lt;/span&gt; global.require(name);
-}
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;So if you were to call &lt;code&gt;require(&amp;#39;nw.gui&amp;#39;)&lt;/code&gt;, you would get access to the
-&lt;a href="https://github.com/nwjs/nw.js/wiki/Native-UI-API-Manual"&gt;Native UI Library&lt;/a&gt;
-to do things like manipulating the window frame, adding menus, keyboard shortcuts, etc.
-Otherwise, the function ends up calling &lt;code&gt;global.require&lt;/code&gt; to import Node modules.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;global&lt;/code&gt; is Node&amp;#39;s global namespace object. You can use it to retrieve
-other global objects besides &lt;code&gt;require&lt;/code&gt;, such as &lt;code&gt;global.process&lt;/code&gt;.
-However, many of them are made available directly on the &lt;code&gt;window&lt;/code&gt; object, so you can
-reference them without prefix, just as you would in Node:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;console.log(window.process === global.process) &lt;span class="comment"&gt;// =&amp;gt; true&lt;/span&gt;
-console.log(process.env.USER) &lt;span class="comment"&gt;// &amp;quot;brzpegasus&amp;quot;&lt;/span&gt;
-console.log(process.platform) &lt;span class="comment"&gt;// &amp;quot;darwin&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Naming Conflicts&lt;/h2&gt;
-
-&lt;p&gt;Modules written with ES2015 (&lt;a href="https://esdiscuss.org/topic/javascript-2015#content-3"&gt;previously, ES6&lt;/a&gt;)
-syntax in your Ember app get transpiled into
-AMD for today&amp;#39;s browsers. This is problematic because AMD also specifies a
-&lt;code&gt;require&lt;/code&gt; function for loading modules. In Ember CLI, this is implemented via
-&lt;a href="https://github.com/ember-cli/loader.js"&gt;ember-cli/loader.js&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;By the time the app is done loading, any functionality that depends on
-the native UI library or Node modules will break as the &lt;code&gt;require&lt;/code&gt;
-function would have been redefined.&lt;/p&gt;
-
-&lt;p&gt;You can get around this by saving a reference to Node&amp;#39;s &lt;code&gt;require&lt;/code&gt; before loading
-any script. Once all scripts are loaded and executed, redefine &lt;code&gt;require&lt;/code&gt;
-to work with both module systems. This is necessary as certain operations
-will not work with the alias:&lt;/p&gt;
-&lt;div class="highlight javascript "&gt;&lt;div class="ribbon"&gt;&lt;/div&gt;&lt;div class="scroller"&gt;&lt;table class="CodeRay"&gt;&lt;tr&gt;
-  &lt;td class="line-numbers"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;strong&gt;10&lt;/strong&gt;
-11
-12
-13
-&lt;/pre&gt;&lt;/td&gt;
-  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="comment"&gt;// Before loading any script&lt;/span&gt;
-window.requireNode = require;
-
-&lt;span class="comment"&gt;// After all scripts are loaded&lt;/span&gt;
-&lt;span class="keyword"&gt;var&lt;/span&gt; requireAMD = require;
-
-window.&lt;span class="function"&gt;require&lt;/span&gt; = &lt;span class="keyword"&gt;function&lt;/span&gt;() {
-  &lt;span class="keyword"&gt;try&lt;/span&gt; {
-    &lt;span class="keyword"&gt;return&lt;/span&gt; requireAMD.apply(&lt;span class="predefined-constant"&gt;null&lt;/span&gt;, &lt;span class="local-variable"&gt;arguments&lt;/span&gt;);
-  } &lt;span class="keyword"&gt;catch&lt;/span&gt; (error) {
-    &lt;span class="keyword"&gt;return&lt;/span&gt; requireNode.apply(&lt;span class="predefined-constant"&gt;null&lt;/span&gt;, &lt;span class="local-variable"&gt;arguments&lt;/span&gt;);
-  }
-};
-&lt;/pre&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;An Addon For All Your NW.js Needs&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve recently released an Ember CLI addon to help make this process
-easier. Simply install &lt;a href="https://github.com/brzpegasus/ember-cli-node-webkit"&gt;ember-cli-node-webkit&lt;/a&gt;,
-then start coding right away. All the configuration will be taken care
-of for you, so no need to worry about &lt;code&gt;require&lt;/code&gt; naming conflicts.&lt;/p&gt;
-
-&lt;p&gt;The addon can build your project, watch for changes, and reload the page in NW.js
-during development. And when you&amp;#39;re ready to distribute, packaging is just
-one command away. The packaging is a wrapper around the excellent
-&lt;a href="https://github.com/mllrsohn/node-webkit-builder"&gt;node-webkit-builder&lt;/a&gt;
-but the configuration is done automatically based on the addon&amp;#39;s
-understanding of your app structure.&lt;/p&gt;
-
-&lt;p&gt;I will not spend time talking about the addon in this blog post, but I
-invite you to check out the &lt;a href="https://github.com/brzpegasus/ember-cli-node-webkit/blob/master/README.md"&gt;README&lt;/a&gt;
-to get familiar with all the options that are at your disposal.&lt;/p&gt;
-
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;When we first set out to build a desktop app for a client project,
-documentation on how to integrate NW.js with Ember was scarce. Even more
-scarce was documentation on how to integrate it with Ember CLI. I hope
-this post and this addon will provide some guidance to others down the
-road.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;d love to share some code samples and discuss patterns you can adopt
-to make your NW.js app more manageable and testable, but they&amp;#39;d be too
-dense for this introductory blog post. However, you&amp;#39;ll be hearing more from me
-on this topic in the future!&lt;/p&gt;
-</content>
-  </entry>
 </feed>
 <div class='push--footer'></div><footer><div class='l-wrap'><div class='l-footer-group'><h3 class='footer-group__title'>EVENTS</h3><a class="footer__event--wgc" target="_blank" href="http://wickedgoodember.com/">Wicked Good Ember Conf</a><a class="footer__event--ember" target="_blank" href="http://www.meetup.com/Boston-Ember-js/">Boston Ember.js Meetup</a><a class="footer__event--openhack" target="_blank" href="http://openhack.github.io/boston/">OpenHack Boston</a><a class="footer__event--ux" target="_blank" href="http://www.meetup.com/uxboston/">UX Boston Meetup</a><a class="footer__event--swift" target="_blank" href="http://www.meetup.com/Boston-Swift/">Boston Swift</a><a class="footer__event--uxhh" target="_blank" href="http://www.uxhappyhour.com/bos">UX Happy Hour</a></div><div class='l-footer-group'><a href="/"><h3 class='footer-group__title'>BLOG</h3></a>
+<a class="footer__post" href="/2015/04/20/ember-in-viewport.html"><strong>Detecting Ember.js Components Entering or Leaving the Viewport</strong><h6 class='footer-desc'>I wrote a post last year about how I made an Ember Mixin that would let Ember Components or Views know if their DOM element had entered or left the viewport. This time, I want to talk about how I improved the original Mixin to use the requestAnimationFrame API for improved performance at close to 60FPS.</h6></a>
 <a class="footer__post" href="/2015/04/10/the-beginners-fallacy.html"><strong>The Beginner's Fallacy</strong><h6 class='footer-desc'></h6></a>
-<a class="footer__post" href="/2015/04/09/the-importance-of-being-experience-first.html"><strong>The Importance of Being Experience First</strong><h6 class='footer-desc'>Why being Experience First is more critical than ever – will the rise of website builders threaten the future of software consulting?</h6></a>
-<a class="footer__post" href="/2015/04/08/elixir-come-for-the-syntax-stay-for-everything-else.html"><strong>Elixir: Come for the syntax, stay for everything else</strong><h6 class='footer-desc'></h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
+<a class="footer__post" href="/2015/04/09/the-importance-of-being-experience-first.html"><strong>The Importance of Being Experience First</strong><h6 class='footer-desc'>Why being Experience First is more critical than ever – will the rise of website builders threaten the future of software consulting?</h6></a></div><div class='l-footer-group'><a href="http://dockyard.com/hire-us"><h3 class='footer-group__title'>CONTACT</h3></a><h6 class='footer-desc'>DockYard HQ is located in Boston. Stop in sometime and meet our team!</h6><a class="footer__address" target="_blank" href="http://goo.gl/maps/zBGfn"><h6>DockYard Inc.<br>101 Tremont Street<br>Suite 200<br>Boston, MA 02108</h6></a>
 <a class="text-link" href="http://dockyard.com/hire-us">Get in touch.</a><div class='social-links--footer'><a target="_blank" data-icon="#" class="social-link" href="https://twitter.com/dockyard"><span class='is-hidden'>Twitter</span></a>
 <a target="_blank" data-icon="★" class="social-link" href="https://github.com/dockyard"><span class='is-hidden'>GitHub</span></a>
 <a target="_blank" data-icon="✒" class="social-link" href="http://reefpoints.dockyard.com/atom.xml"><span class='is-hidden'>RSS</span></a></div></div></div></footer><script>
