@@ -4,7 +4,7 @@ title: 'Detecting Ember.js Components Entering or Leaving the Viewport'
 twitter: 'sugarpirate_'
 github: 'poteto'
 author: 'Lauren Tan'
-tags: engineering, ember, addon, javascript
+tags: ember, addon, javascript
 social: true
 comments: true
 published: true
