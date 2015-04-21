@@ -22,5 +22,7 @@ bundle exec rake build
 chmod 600 ./reefpoints_deploy
 ssh-keyscan -H homeport.dockyard.com >> ~/.ssh/known_hosts
 scp -i ./reefpoints_deploy build/posts.json temp_deploy@homeport.dockyard.com:reefpoints/posts.json
+scp -i ./reefpoints_deploy build/new_sitemap.xml temp_deploy@homeport.dockyard.com:reefpoints/sitemap.xml
+scp -i ./reefpoints_deploy build/new_atom.xml temp_deploy@homeport.dockyard.com:reefpoints/atom.xml
 
 echo -e "Done\n"

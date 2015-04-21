@@ -146,7 +146,9 @@ activate :legacy_category
 activate :asset_hash, ignore: /images/
 ignore 'author.html.haml'
 page 'sitemap.xml', layout: false
+page 'new_sitemap.xml', layout: false
 page 'atom.xml', layout: false
+page 'new_atom.xml', layout: false
 page 'posts.json', layout: false
 
 set :css_dir, 'stylesheets'
