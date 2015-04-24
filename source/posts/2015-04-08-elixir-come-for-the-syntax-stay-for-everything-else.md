@@ -75,7 +75,7 @@ object it will get GC'd eventually impacting performance.
 
 Immutability got a bad rap when memory was expensive. Why would we write
 applications in such a way so as to waste memory by having variables
-who's values couldn't be mutated? Memory is now super cheap, and this is
+whose values couldn't be mutated? Memory is now super cheap, and this is
 not much of a concern. With this in mind we can evaluate immutability
 within the context it was originally meant: to ensure state. When we
 talk about parallel processing the state of a process becomes very
