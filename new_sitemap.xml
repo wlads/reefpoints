@@ -985,13 +985,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://dockyard.com/blog/categories/team</loc>
+    <loc>http://dockyard.com/blog/2014/12/30/modeling-mental-models</loc>
     <lastmod>2015-04-24T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://dockyard.com/blog/2015/01/05/avoid-chaining-modifiers</loc>
+    <loc>http://dockyard.com/blog/categories/team</loc>
     <lastmod>2015-04-24T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1807,7 +1807,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://dockyard.com/blog/2014/12/30/modeling-mental-models</loc>
+    <loc>http://dockyard.com/blog/2015/01/05/avoid-chaining-modifiers</loc>
     <lastmod>2015-04-24T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
