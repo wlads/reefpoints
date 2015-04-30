@@ -22,15 +22,15 @@ At DockYard, we always begin with benchmarking. Benchmarking helps us define a s
 
 These exercises give us a better understanding of the space we intend to support, and the expectations for building a system of our own. It sets a focus and direction for ideation and user interviews, and aligns our understanding with the client's, which supports conversation.
 
-There are several different layers to observe in a given case study from structural to aesthetic: content organization, accessibility, systems architecture, user experience methods, interface design, up to visual design. It can be challenging to observe all these different layers and identify what about them creates a quality online experience.
+There are several different layers to observe in a given case study from structural to aesthetic: content organization, accessibility, systems architecture, user experience methods, interface design, to visual design. It can be challenging to observe all these different layers and identify what about them creates a quality online experience.
 
 1. Start broad. Identify the overall goal of the service that brings you from A to B. Is that process transparent and supportive? Were you able to easily use and accomplish the task at hand? Is the information accessible? How is it organized and delivered?
 
-2. Look at the usability and interactions. Do the interactions make sense in context? Is the structure intuitive, clear, and easy to use? Are design patterns present: experiential, cognitive, tangible ways that help users interact with the interface? Identifying these patterns in context helps us understand where they can be used to support user experience.
+2. Look at the usability and interactions. Do the interactions make sense in context? Is the structure intuitive, clear, and easy to use? Are design patterns present: experiential, cognitive, tangible ways that help users interact with the interface? Identifying these patterns in context helps us understand where they can be used to support user interactions.
 
 3. Consider the visual design and experience. What is the quality of the experience, and does it reflect the overall goal of the service? Is it delightful? confusing? distracting? Does the visual language and style support understanding?
 
 
-Benchmarking isn't about taking someone else's solution and using it as your own. Every venture has different content, different goals, different challenges. Deconstructing existing design solutions is key to identifying structural and experiential decisions, and reflecting on why those decisions were made to support the task at hand. This kind of critical thinking allows us to be discerning, to ask questions about how others have solved problems in similar spaces, so that we can anticipate and identify the major goals for the system we intend to build.
+Benchmarking isn't about taking someone else's solution and using it as your own. Every project has different content, different goals, different challenges. Deconstructing existing design solutions is key to identifying structural and experiential decisions, and reflecting on why those decisions were made to support the task at hand. This kind of critical thinking allows us to be discerning, to ask questions about how others have solved problems in similar spaces, so that we can anticipate and identify the major goals for the system we intend to build.
 
 When we intentionally make ourselves aware of observing systems and strategies, we adopt a perpetually observant and critical mindset. The benchmarking mentality encourages us to pay attention to and appreciate the complexity of data driven web experiences, and to see how the challenges of vision, architecture, and experience were met and resolved.
