@@ -14,6 +14,7 @@ tags: design research, benchmarking, design strategy
 Design research is critical to the beginning stage of every design project. Research orients us in the world in which we intend to build and the audience we intend to build for. It is helpful to begin by identifying other services that already exist in that space, to observe the current market offerings. Building a research catalog for reference and critique is what we refer to as "benchmarking."
 
 Here are three major benefits to benchmarking:
+
 1. It helps you better understand and articulate how your product or service is different
 2. It is a tool for learning about topics you might not be familiar with (especially for client projects)
 3. It allows you to observe strengths and weaknesses of existing experiences to inform your own design decisions
